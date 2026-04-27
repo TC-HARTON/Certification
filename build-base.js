@@ -790,33 +790,9 @@ PAGES.push({
 </article>`,
 });
 
-// ─── 18. thanks（minimal / reading / Web3Forms 送信完了）───
-PAGES.push({
-  path: 'thanks.html',
-  variant: 'reading',
-  navActive: '',
-  title: 'お問合せありがとうございます — HARTON Certified',
-  description: 'お問合せを受領した。1 営業日以内に代表より返信する。HARTON Certified 認定機関。',
-  canonicalPath: '/thanks.html',
-  robots: 'noindex, nofollow',
-  mainContent: `
-<article>
-  <h1>お問合せを受領した</h1>
-  <section aria-label="完了">
-    <p>お問合せを正常に受信した。1 営業日以内に代表（HARTON Certified 認定運用責任者 / 大内 達也）より、ご記入いただいたメールアドレス宛に返信する。</p>
-    <p>もし 3 営業日以内に返信が無い場合、迷惑メールフォルダの確認、または別経路での再送をご検討いただきたい。</p>
-  </section>
-  <section aria-label="関連リンク">
-    <h2>関連リンク</h2>
-    <ul>
-      <li><a href="/">トップページへ戻る</a></li>
-      <li><a href="/methodology/">評価方法</a></li>
-      <li><a href="/apply/">掲載申請</a></li>
-      <li><a href="/about/">サイトについて</a></li>
-    </ul>
-  </section>
-</article>`,
-});
+// thanks.html は standalone（独立 HTML / build-base.js 管理外）として `certification/thanks.html` に配置。
+// tcharton.com/thanks.html を参照し、ヒーロー 2 col + アニメ check + 10 秒カウントダウン等の特殊レイアウトを実装。
+// build-base.js の通常 article 型レイアウトに合わないため意図的に分離（再ビルドで上書きしないよう PAGES から除外）。
 
 // ═══════════════════ 実行 ═══════════════════
 let written = 0;
