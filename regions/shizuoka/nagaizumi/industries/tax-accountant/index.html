@@ -1,0 +1,249 @@
+<!--
+  HARTON Certified サイト共通レイアウトテンプレート
+  ────────────────────────────────────────
+  生成元: certification/build-base.js（17 基盤） + certification/generate.js（動的ページ）
+  準拠: SPEC v3.4 §1.0 / §4.2 #1 / §8.1 / §8.5-§8.9 / MASTER-PLAN v1.1.4 §4.1 / §10
+  Variant: marketing（明色）/ reading（暗色）— SPEC §10.6.1 準拠
+
+  プレースホルダ仕様: lang / title / description / canonical_path / robots / og_type /
+    og_image_path / theme_color / color_scheme / body_class / breadcrumbs_jsonld /
+    additional_jsonld / main_content / nav_active_search / nav_active_methodology /
+    nav_active_apply / nav_active_about / nav_active_press
+  詳細は build-base.js / generate.js の applyLayout() コメントを参照。
+-->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>長泉町 税理士・会計士 TOP 10 — HARTON Certified</title>
+<meta name="description" content="長泉町（静岡県）の税理士・会計士 HARTON Certified 認定店舗 TOP 0 件。機械検証で公正評価、総合 70 点以上のみ掲載。">
+<meta name="author" content="T.C.HARTON / 大内 達也">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta name="theme-color" content="#FAF8F3">
+<meta name="color-scheme" content="light">
+
+<link rel="canonical" href="https://certification.tcharton.com/regions/shizuoka/nagaizumi/industries/tax-accountant/">
+<link rel="sitemap" type="application/xml" href="/sitemap.xml">
+
+<!-- CSP meta（HTTP _headers と二重防御 / spec-checker §11.6 整合 / SPEC §8.1.1 必須コア 6 + §8.1.2 推奨拡張 3） -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self'">
+
+<!-- favicon 3 種 -->
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+<!-- OGP 7 項目（SPEC §11.2-ogp 準拠） -->
+<meta property="og:title" content="長泉町 税理士・会計士 TOP 10 — HARTON Certified">
+<meta property="og:description" content="長泉町（静岡県）の税理士・会計士 HARTON Certified 認定店舗 TOP 0 件。機械検証で公正評価、総合 70 点以上のみ掲載。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://certification.tcharton.com/regions/shizuoka/nagaizumi/industries/tax-accountant/">
+<meta property="og:image" content="https://certification.tcharton.com/ogp.png">
+<meta property="og:site_name" content="HARTON Certified">
+<meta property="og:locale" content="ja_JP">
+
+<!-- Twitter Card 4 項目 -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="長泉町 税理士・会計士 TOP 10 — HARTON Certified">
+<meta name="twitter:description" content="長泉町（静岡県）の税理士・会計士 HARTON Certified 認定店舗 TOP 0 件。機械検証で公正評価、総合 70 点以上のみ掲載。">
+<meta name="twitter:image" content="https://certification.tcharton.com/ogp.png">
+
+<!-- フォント preconnect + preload + display=swap（SPEC §6.4） -->
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap">
+
+<!-- Tailwind ビルド成果物 -->
+<link rel="stylesheet" href="/dist/output.css">
+
+<!-- カスタム CSS（SPEC §9 / §11.5 prefers-reduced-motion 必須） -->
+<style>
+  html { scroll-behavior: smooth; }
+  .fade-in { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+  .fade-in.visible { opacity: 1; transform: translateY(0); }
+  .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+</style>
+
+<!-- SPEC v3.4 §4.2 #1 JSON-LD（@type 配列必須・additionalType + sameAs GBP） -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": ["Organization", "ProfessionalService", "LocalBusiness"],
+  "name": "HARTON Certified",
+  "alternateName": "ハートン認定",
+  "description": "WEB 品質を機械検証で公正に評価する地方発の認定機関。SPEC v3.x 2,554 項目 + 4 軸スキャナーで地域の優良サイトを認定。",
+  "url": "https://certification.tcharton.com/",
+  "logo": "https://certification.tcharton.com/assets/logo/logo.svg",
+  "image": "https://certification.tcharton.com/ogp.png",
+  "telephone": "+81-55-XXX-XXXX",
+  "email": "certification@tcharton.com",
+  "additionalType": [
+    "https://www.wikidata.org/wiki/Q11661",
+    "https://www.wikidata.org/wiki/Q189210"
+  ],
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "JP",
+    "addressRegion": "静岡県",
+    "addressLocality": "沼津市"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 35.0959,
+    "longitude": 138.8634
+  },
+  "founder": {
+    "@type": "Person",
+    "name": "大内 達也"
+  },
+  "foundingDate": "2026-04",
+  "knowsAbout": ["Web Quality Certification", "Machine Verification", "GEO/LLMO", "WCAG 2.2", "Core Web Vitals"],
+  "areaServed": [
+    { "@type": "AdministrativeArea", "name": "静岡県" },
+    { "@type": "Country", "name": "Japan" }
+  ],
+  "slogan": "移住者の眼で、地域の真価を測る",
+  "sameAs": [
+    "https://tcharton.com/",
+    "https://note.com/tcharton",
+    "https://www.google.com/maps/place/?cid=PLACEHOLDER_GBP_CID"
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "HARTON Certified",
+  "alternateName": "ハートン認定",
+  "url": "https://certification.tcharton.com/",
+  "inLanguage": "ja",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://certification.tcharton.com/regions/?q={search_term_string}"
+    },
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "トップ",
+      "item": "https://certification.tcharton.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "静岡県",
+      "item": "https://certification.tcharton.com/regions/shizuoka/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "長泉町",
+      "item": "https://certification.tcharton.com/regions/shizuoka/nagaizumi/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "税理士・会計士",
+      "item": "https://certification.tcharton.com/regions/shizuoka/nagaizumi/industries/tax-accountant/"
+    }
+  ]
+}
+</script>
+
+
+</head>
+<body class="bg-white text-dark-700 font-sans antialiased">
+
+<!-- スキップリンク（SPEC §11.5-skip） -->
+<a href="#main" class="sr-only">本文へスキップ</a>
+
+<header>
+  <nav aria-label="メインナビゲーション">
+    <a href="/" aria-label="HARTON Certified トップ">
+      <span>HARTON Certified</span>
+    </a>
+    <ul>
+      <li><a href="/regions/" >検索</a></li>
+      <li><a href="/methodology/" >評価方法</a></li>
+      <li><a href="/apply/" >掲載申請</a></li>
+      <li><a href="/about/" >サイトについて</a></li>
+      <li><a href="/press/" >メディア</a></li>
+    </ul>
+  </nav>
+  <button id="menuToggle" aria-label="モバイルメニューを開く" aria-expanded="false" aria-controls="mobile-menu" class="md:hidden p-3">
+    <span aria-hidden="true">≡</span>
+  </button>
+  <div id="mobile-menu" class="fixed inset-0 bg-white z-50 hidden">
+    <nav aria-label="モバイルナビゲーション">
+      <ul>
+        <li><a href="/">トップ</a></li>
+        <li><a href="/regions/">検索</a></li>
+        <li><a href="/methodology/">評価方法</a></li>
+        <li><a href="/apply/">掲載申請</a></li>
+        <li><a href="/about/">サイトについて</a></li>
+        <li><a href="/press/">メディア</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <article>
+    <h1>長泉町 税理士・会計士 TOP 10</h1>
+    <section aria-label="冒頭エビデンス">
+      <p>長泉町 の税理士・会計士 認定店舗 <strong>0</strong> 件。総合 <strong>70 点</strong>以上 + 致命的 NG <strong>0 件</strong>達成。出典: <a href="https://www.wikidata.org/wiki/Q41189" rel="nofollow">Wikidata Q41189</a>。</p>
+      <blockquote cite="/methodology/">「機械検証で WEB 品質を公正に測る」 — HARTON Certified</blockquote>
+    </section>
+    <section aria-label="認定店舗一覧">
+      <h2>認定店舗（0件）</h2>
+      <p>このカテゴリの認定店舗は現在準備中。</p>
+    </section>
+  </article>
+</main>
+
+<footer>
+  <nav aria-label="フッターナビゲーション">
+    <ul>
+      <li><a href="/about/">サイトについて</a></li>
+      <li><a href="/methodology/">評価方法</a></li>
+      <li><a href="/faq/">よくある質問</a></li>
+      <li><a href="/contact/">お問合せ</a></li>
+      <li><a href="/news/">お知らせ</a></li>
+      <li><a href="/legal/">利用規約・特商法</a></li>
+      <li><a href="/privacy/">プライバシーポリシー</a></li>
+      <li><a href="/opt-out/">掲載拒否権</a></li>
+    </ul>
+  </nav>
+  <p>&copy; 2026 T.C.HARTON / 大内 達也. All rights reserved.</p>
+</footer>
+
+<noscript>
+  <style>.fade-in { opacity: 1; transform: none; }</style>
+</noscript>
+
+</body>
+</html>

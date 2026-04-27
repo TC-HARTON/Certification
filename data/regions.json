@@ -1,0 +1,59 @@
+{
+  "shizuoka": {
+    "label": "静岡県",
+    "label_en": "Shizuoka",
+    "wikidata": "Q133928",
+    "phase": 0,
+    "cities": {
+      "numazu": {
+        "label": "沼津市",
+        "label_en": "Numazu",
+        "wikidata": "Q486049",
+        "phase": 0,
+        "geo": { "latitude": 35.0959, "longitude": 138.8634 }
+      },
+      "mishima": {
+        "label": "三島市",
+        "label_en": "Mishima",
+        "wikidata": "Q486060",
+        "phase": 1,
+        "geo": { "latitude": 35.1175, "longitude": 138.9189 }
+      },
+      "fuji": {
+        "label": "富士市",
+        "label_en": "Fuji",
+        "wikidata": "Q486012",
+        "phase": 1,
+        "geo": { "latitude": 35.1614, "longitude": 138.6764 }
+      },
+      "fujinomiya": {
+        "label": "富士宮市",
+        "label_en": "Fujinomiya",
+        "wikidata": "Q486000",
+        "phase": 1,
+        "geo": { "latitude": 35.2222, "longitude": 138.6219 }
+      },
+      "susono": {
+        "label": "裾野市",
+        "label_en": "Susono",
+        "wikidata": "Q486125",
+        "phase": 1,
+        "geo": { "latitude": 35.1729, "longitude": 138.9075 }
+      },
+      "nagaizumi": {
+        "label": "長泉町",
+        "label_en": "Nagaizumi",
+        "wikidata": "Q1132923",
+        "phase": 1,
+        "geo": { "latitude": 35.1422, "longitude": 138.9006 }
+      },
+      "shimizu": {
+        "label": "静岡市清水区",
+        "label_en": "Shimizu",
+        "wikidata": "Q486130",
+        "phase": 1,
+        "geo": { "latitude": 35.0156, "longitude": 138.4892 }
+      }
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "name": "tcharton",
+  "version": "0.1.0",
+  "private": true,
+  "description": "T.C.HARTON main site (tcharton.com) — SPEC v3.2 / GOOGLE v2.0 / GEO v2.1 compliant",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build:css": "npx tailwindcss -i ./src/input.css -o ./dist/output.css --minify",
+    "build:ogp": "node scripts/build-ogp.js",
+    "build:icons": "node scripts/build-icons.js",
+    "watch:css": "npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch",
+    "verify": "node spec-checker.js"
+  },
+  "devDependencies": {
+    "sharp": "^0.34.5",
+    "tailwindcss": "^3.4.0"
+  }
+}

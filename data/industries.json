@@ -1,0 +1,42 @@
+{
+  "tax-accountant": {
+    "label": "税理士・会計士",
+    "label_short": "税理士",
+    "wikidata": "Q41189",
+    "wikidata_uri": "https://www.wikidata.org/wiki/Q41189",
+    "schema_type": ["LocalBusiness", "ProfessionalService"],
+    "keywords": ["税理士", "会計士", "確定申告", "記帳代行", "決算"]
+  },
+  "lawyer": {
+    "label": "弁護士",
+    "label_short": "弁護士",
+    "wikidata": "Q40348",
+    "wikidata_uri": "https://www.wikidata.org/wiki/Q40348",
+    "schema_type": ["LocalBusiness", "ProfessionalService", "LegalService"],
+    "keywords": ["弁護士", "法律相談", "顧問弁護士"]
+  },
+  "real-estate": {
+    "label": "不動産仲介",
+    "label_short": "不動産",
+    "wikidata": "Q1473298",
+    "wikidata_uri": "https://www.wikidata.org/wiki/Q1473298",
+    "schema_type": ["LocalBusiness", "RealEstateAgent"],
+    "keywords": ["不動産", "仲介", "賃貸", "売買"]
+  },
+  "restaurant": {
+    "label": "飲食店",
+    "label_short": "飲食",
+    "wikidata": "Q11707",
+    "wikidata_uri": "https://www.wikidata.org/wiki/Q11707",
+    "schema_type": ["LocalBusiness", "Restaurant", "FoodEstablishment"],
+    "keywords": ["飲食店", "レストラン", "カフェ", "居酒屋", "ラーメン"]
+  },
+  "beauty": {
+    "label": "美容院",
+    "label_short": "美容",
+    "wikidata": "Q1257670",
+    "wikidata_uri": "https://www.wikidata.org/wiki/Q1257670",
+    "schema_type": ["LocalBusiness", "BeautySalon", "HairSalon"],
+    "keywords": ["美容院", "美容室", "ヘアサロン", "カット", "カラー"]
+  }
+}

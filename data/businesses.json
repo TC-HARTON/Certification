@@ -1,0 +1,61 @@
+{
+  "_schema": {
+    "version": "1.0",
+    "issued": "2026-04-27",
+    "spec_conformance": "SPEC v3.4 §4.2 #1 (LocalBusiness + ProfessionalService 配列・additionalType 配列・sameAs GBP URL 必須)",
+    "field_definitions": {
+      "name": "事業者名（公式表記）",
+      "industry": "data/industries.json のキー",
+      "region": "data/regions.json のパス（例: shizuoka/numazu）",
+      "url": "公式サイト URL",
+      "address": {
+        "addressRegion": "都道府県",
+        "addressLocality": "市区町村",
+        "streetAddress": "丁目以下"
+      },
+      "telephone": "+81-XX-XXXX-XXXX 形式",
+      "email": "事業者公開メールアドレス（任意）",
+      "gbp_cid": "Google ビジネスプロフィール CID（数値文字列）",
+      "gbp_url_short": "https://maps.app.goo.gl/XXXXXXXX 形式",
+      "scan": {
+        "rating": "★★★ / ★★★★ / ★★★★★",
+        "score": "総合スコア 0-100",
+        "axes": "A/B/C/D 各 0-100（並列独立評価 §3.2）",
+        "must5": "必須 5 条件達成数（例: 4/5）",
+        "critical_ng": "致命的 NG 件数（0 必須）",
+        "scanned_at": "YYYY-MM-DD",
+        "scanner_version": "scanner.py Phase バージョン"
+      },
+      "approved_at": "代表承認日（YYYY-MM-DD）",
+      "approved_by": "承認者署名（① 承認）",
+      "opt_out": "true なら掲載対象外"
+    }
+  },
+  "numazu-example-tax": {
+    "name": "○○税理士事務所（雛形・実データ未投入）",
+    "industry": "tax-accountant",
+    "region": "shizuoka/numazu",
+    "url": "https://example.com/",
+    "address": {
+      "addressRegion": "静岡県",
+      "addressLocality": "沼津市",
+      "streetAddress": "○○町X-X-X"
+    },
+    "telephone": "+81-55-XXX-XXXX",
+    "email": null,
+    "gbp_cid": "00000000000000000000",
+    "gbp_url_short": "https://maps.app.goo.gl/PLACEHOLDER",
+    "scan": {
+      "rating": "★★★★",
+      "score": 85,
+      "axes": { "A": 90, "B": 80, "C": 85, "D": 88 },
+      "must5": "4/5",
+      "critical_ng": 0,
+      "scanned_at": "2026-04-27",
+      "scanner_version": "Phase 9d"
+    },
+    "approved_at": null,
+    "approved_by": null,
+    "opt_out": false
+  }
+}
