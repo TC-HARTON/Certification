@@ -27,7 +27,7 @@
 <link rel="sitemap" type="application/xml" href="/sitemap.xml">
 
 <!-- CSP meta（HTTP _headers と二重防御 / spec-checker §11.6 整合 / SPEC §8.1.1 必須コア 6 + §8.1.2 推奨拡張 3） -->
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self' https://api.web3forms.com">
 
 <!-- favicon 3 種 -->
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
@@ -49,11 +49,12 @@
 <meta name="twitter:description" content="HARTON Certified の理念・運営者大内達也の略歴・移住者ナラティブ・運営体制を公開する。15 年のエンジニア経験と地域への一次情報に基づく独立認定機関の信頼基盤。">
 <meta name="twitter:image" content="https://certification.tcharton.com/ogp.png">
 
-<!-- フォント preconnect + preload + display=swap（SPEC §6.4） -->
+<!-- フォント preconnect + preload + display=swap（SPEC §6.4 / MASTER-PLAN §2.6） -->
+<!-- 見出し: Playfair Display + Cormorant Garamond（serif 500-600） / 本文: Inter + Noto Sans JP（sans 400-500）-->
 <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@500;600&display=swap">
 
 <!-- Tailwind ビルド成果物 -->
 <link rel="stylesheet" href="/dist/output.css">
@@ -95,7 +96,9 @@
     "@type": "PostalAddress",
     "addressCountry": "JP",
     "addressRegion": "静岡県",
-    "addressLocality": "沼津市"
+    "addressLocality": "沼津市",
+    "streetAddress": "大岡2690",
+    "postalCode": "410-0022"
   },
   "geo": {
     "@type": "GeoCoordinates",
@@ -224,7 +227,7 @@
 
 <article>
   <section aria-label="冒頭エビデンス">
-    <p>HARTON Certified は <strong>2026 年 4 月</strong>、静岡県沼津市で創設された独立認定機関である。創設者は IT エンジニア歴 <strong>15 年</strong>の大内達也、移住者として <strong>5 年</strong>地域を観察し、機械検証による地方 WEB 品質評価の必要性を確信して立ち上げた。出典: <a href="https://www.meti.go.jp/" rel="nofollow noopener">経済産業省（地方 DX の現状）</a>。</p>
+    <p>HARTON Certified は <strong>2026 年 4 月</strong>、静岡県沼津市で創設された独立認定機関である。創設者は IT エンジニア歴 <strong>15 年</strong>の大内達也、移住者として <strong>5 年</strong>地域を観察し、機械検証による地方 WEB 品質評価の必要性を確信して立ち上げた。出典: <a href="https://www.digital.go.jp/" rel="nofollow noopener noreferrer" target="_blank">経済産業省（地方 DX の現状）</a>。</p>
     <blockquote cite="https://certification.tcharton.com/methodology/">
       「技術は、本物を見抜くために使える」 — 大内達也（HARTON Certified 創設者）
     </blockquote>
@@ -233,7 +236,7 @@
   </section>
   <section aria-label="ビジョン">
     <h2>ビジョン</h2>
-    <p>日本の中小事業者の WEB 水準を世界基準（S クラス）へ押し上げる。タベログが料理を、ホットペッパーが美容を評価するように、HARTON Certified は WEB 品質という新しい軸で地域の事業者を公正に評価する。</p>
+    <p>日本の中小事業者の WEB 水準を世界基準（S クラス）へ押し上げる。食べログが料理を、ホットペッパーが美容を評価するように、HARTON Certified は WEB 品質という新しい軸で地域の事業者を公正に評価する。</p>
   </section>
   <section aria-label="ミッション">
     <h2>ミッション</h2>
@@ -242,7 +245,7 @@
   <section aria-label="運営者プロフィール">
     <h2>運営者: 大内 達也</h2>
     <p>T.C.HARTON 代表。IT エンジニア歴 15 年。Web フロントエンド・セキュリティ・AI を専門領域とし、Cloudflare / Anthropic / Google の公式仕様書を一次ソースとして実務に落とし込む方針で活動する。2021 年に静岡県沼津市へ移住し、地域中小事業者の WEB サイトの実態を一次調査する中で「ホームページが綺麗な店ほど、本当の商いが埋もれている」というパラドックスに気付いた。</p>
-    <p>専門分野: <a href="https://www.w3.org/WAI/standards-guidelines/wcag/" rel="nofollow noopener">WCAG 2.2 AA</a> アクセシビリティ / OWASP Top 10:2025 セキュリティ / GEO / LLMO / SPEC v3.4（2554 項目の独自規格）の策定。</p>
+    <p>専門分野: <a href="https://www.w3.org/WAI/standards-guidelines/wcag/" rel="nofollow noopener noreferrer" target="_blank">WCAG 2.2 AA</a> アクセシビリティ / OWASP Top 10:2025 セキュリティ / GEO / LLMO / SPEC v3.4（2554 項目の独自規格）の策定。</p>
     <p>主要実績: tcharton.com の SPEC v3.4 完全準拠 + scanner ★5（S クラス）達成（2026 年 4 月）。HARTON Certified の独立認定機関化を 2026 年に立ち上げ、Phase 0 沼津 30 件パイロットを 2026 年 4-5 月に実施する。</p>
   </section>
   <section aria-label="移住者ナラティブ">
@@ -260,7 +263,7 @@
     <ul>
       <li><a href="/methodology/">評価方法（4 軸の全公開）</a></li>
       <li><a href="/apply/">掲載申請（未掲載事業者向け）</a></li>
-      <li><a href="https://tcharton.com/" rel="noopener">親サイト tcharton.com</a></li>
+      <li><a href="https://tcharton.com/" rel="noopener noreferrer" target="_blank">親サイト tcharton.com</a></li>
     </ul>
   </section>
 </article>
@@ -279,7 +282,7 @@
       <li><a href="/opt-out/">掲載拒否権</a></li>
     </ul>
   </nav>
-  <p>&copy; 2026 T.C.HARTON / 大内 達也. All rights reserved.</p>
+  <p>&copy; 2026 T.C.HARTON. All rights reserved.</p>
 </footer>
 
 <noscript>

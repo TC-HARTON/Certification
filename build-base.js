@@ -92,7 +92,7 @@ const FAQ_TOP = {
     { '@type': 'Question', name: '掲載は有料か？', acceptedAnswer: { '@type': 'Answer', text: '無料である。HARTON Certified は完全中立・金銭非依存で運用し、課金で順位を買えるサービスではない。' } },
     { '@type': 'Question', name: '評価項目は公開されているか？', acceptedAnswer: { '@type': 'Answer', text: '評価項目・閾値・実施手順は /methodology/ ですべて公開している。再現性のある機械検証である。' } },
     { '@type': 'Question', name: '掲載を拒否したい場合は？', acceptedAnswer: { '@type': 'Answer', text: '/opt-out/ より理由不要で 24 時間以内に対応する。再掲載は事業者の明示申請がない限り行わない。' } },
-    { '@type': 'Question', name: 'タベログとは何が違うのか？', acceptedAnswer: { '@type': 'Answer', text: 'タベログは口コミで業務品質を評価する。HARTON Certified は機械検証で WEB 品質を評価する。評価軸が独立で、両立は補完関係である。' } },
+    { '@type': 'Question', name: '食べログとは何が違うのか？', acceptedAnswer: { '@type': 'Answer', text: '食べログは口コミで業務品質を評価する。HARTON Certified は機械検証で WEB 品質を評価する。評価軸が独立で、両立は補完関係である。' } },
   ],
 };
 
@@ -114,7 +114,7 @@ const PAGES = [];
 // ─── 1. TOP（full / marketing）─────────────────────
 PAGES.push({
   path: 'index.html',
-  variant: 'marketing',
+  variant: 'reading',
   navActive: '',
   title: 'HARTON Certified — 移住者の眼で地域の WEB 品質を測る、機械検証の独立認定機関',
   description: 'HARTON Certified は WEB 品質を機械検証で公正評価する地方発の独立認定機関。SPEC v3.4 の 2554 項目 + 4 軸スキャナーで地域の優良サイトを認定する。完全中立・金銭非依存、★3 以上のみ掲載のポジティブセレクション。',
@@ -125,7 +125,7 @@ PAGES.push({
   mainContent: `
 <article>
   <section aria-label="ヒーロー（Lead Evidence Block）">
-    <p>HARTON Certified は、<strong>2554 項目</strong>の機械検証で WEB 品質を公正に測る、地方発の独立認定機関である。沼津・三島から日本の地方 DX を底上げするため、4 軸の客観評価を 2026 年に開始した。出典: <a href="https://www.go.jp/" rel="nofollow noopener">日本政府・公的機関</a>（HSTS / WCAG / Core Web Vitals 等の公的基準に準拠）。</p>
+    <p>HARTON Certified は、<strong>2554 項目</strong>の機械検証で WEB 品質を公正に測る、地方発の独立認定機関である。沼津・三島から日本の地方 DX を底上げするため、4 軸の客観評価を 2026 年に開始した。出典: <a href="https://www.digital.go.jp/" rel="nofollow noopener noreferrer" target="_blank">日本政府・公的機関</a>（HSTS / WCAG / Core Web Vitals 等の公的基準に準拠）。</p>
     <blockquote cite="${DOMAIN}/methodology/">
       「機械検証で WEB 品質を公正に測る、地方発の認定機関」 — HARTON Certified ブランドナラティブ
     </blockquote>
@@ -181,7 +181,7 @@ PAGES.push({
   mainContent: `
 <article>
   <section aria-label="冒頭エビデンス">
-    <p>HARTON Certified は <strong>2026 年 4 月</strong>、静岡県沼津市で創設された独立認定機関である。創設者は IT エンジニア歴 <strong>15 年</strong>の大内達也、移住者として <strong>5 年</strong>地域を観察し、機械検証による地方 WEB 品質評価の必要性を確信して立ち上げた。出典: <a href="https://www.meti.go.jp/" rel="nofollow noopener">経済産業省（地方 DX の現状）</a>。</p>
+    <p>HARTON Certified は <strong>2026 年 4 月</strong>、静岡県沼津市で創設された独立認定機関である。創設者は IT エンジニア歴 <strong>15 年</strong>の大内達也、移住者として <strong>5 年</strong>地域を観察し、機械検証による地方 WEB 品質評価の必要性を確信して立ち上げた。出典: <a href="https://www.digital.go.jp/" rel="nofollow noopener noreferrer" target="_blank">経済産業省（地方 DX の現状）</a>。</p>
     <blockquote cite="${DOMAIN}/methodology/">
       「技術は、本物を見抜くために使える」 — 大内達也（HARTON Certified 創設者）
     </blockquote>
@@ -190,7 +190,7 @@ PAGES.push({
   </section>
   <section aria-label="ビジョン">
     <h2>ビジョン</h2>
-    <p>日本の中小事業者の WEB 水準を世界基準（S クラス）へ押し上げる。タベログが料理を、ホットペッパーが美容を評価するように、HARTON Certified は WEB 品質という新しい軸で地域の事業者を公正に評価する。</p>
+    <p>日本の中小事業者の WEB 水準を世界基準（S クラス）へ押し上げる。食べログが料理を、ホットペッパーが美容を評価するように、HARTON Certified は WEB 品質という新しい軸で地域の事業者を公正に評価する。</p>
   </section>
   <section aria-label="ミッション">
     <h2>ミッション</h2>
@@ -199,7 +199,7 @@ PAGES.push({
   <section aria-label="運営者プロフィール">
     <h2>運営者: 大内 達也</h2>
     <p>T.C.HARTON 代表。IT エンジニア歴 15 年。Web フロントエンド・セキュリティ・AI を専門領域とし、Cloudflare / Anthropic / Google の公式仕様書を一次ソースとして実務に落とし込む方針で活動する。2021 年に静岡県沼津市へ移住し、地域中小事業者の WEB サイトの実態を一次調査する中で「ホームページが綺麗な店ほど、本当の商いが埋もれている」というパラドックスに気付いた。</p>
-    <p>専門分野: <a href="https://www.w3.org/WAI/standards-guidelines/wcag/" rel="nofollow noopener">WCAG 2.2 AA</a> アクセシビリティ / OWASP Top 10:2025 セキュリティ / GEO / LLMO / SPEC v3.4（2554 項目の独自規格）の策定。</p>
+    <p>専門分野: <a href="https://www.w3.org/WAI/standards-guidelines/wcag/" rel="nofollow noopener noreferrer" target="_blank">WCAG 2.2 AA</a> アクセシビリティ / OWASP Top 10:2025 セキュリティ / GEO / LLMO / SPEC v3.4（2554 項目の独自規格）の策定。</p>
     <p>主要実績: tcharton.com の SPEC v3.4 完全準拠 + scanner ★5（S クラス）達成（2026 年 4 月）。HARTON Certified の独立認定機関化を 2026 年に立ち上げ、Phase 0 沼津 30 件パイロットを 2026 年 4-5 月に実施する。</p>
   </section>
   <section aria-label="移住者ナラティブ">
@@ -217,7 +217,7 @@ PAGES.push({
     <ul>
       <li><a href="/methodology/">評価方法（4 軸の全公開）</a></li>
       <li><a href="/apply/">掲載申請（未掲載事業者向け）</a></li>
-      <li><a href="https://tcharton.com/" rel="noopener">親サイト tcharton.com</a></li>
+      <li><a href="https://tcharton.com/" rel="noopener noreferrer" target="_blank">親サイト tcharton.com</a></li>
     </ul>
   </section>
 </article>`,
@@ -235,7 +235,7 @@ PAGES.push({
   mainContent: `
 <article>
   <section aria-label="冒頭エビデンス">
-    <p>HARTON Certified は WEB サイトを <strong>4 つ</strong>の観点で並列独立評価する。各観点は scanner.py で <strong>45</strong>+ 項目を機械検証し、合計 <strong>2554</strong> 項目の SPEC v3.4 と整合する。出典: <a href="https://web.dev/articles/vitals" rel="nofollow noopener">Google Web Vitals 公式</a> / <a href="https://www.w3.org/WAI/standards-guidelines/wcag/" rel="nofollow noopener">W3C WCAG 2.2</a>。</p>
+    <p>HARTON Certified は WEB サイトを <strong>4 つ</strong>の観点で並列独立評価する。各観点は scanner.py で <strong>45</strong>+ 項目を機械検証し、合計 <strong>2554</strong> 項目の SPEC v3.4 と整合する。出典: <a href="https://web.dev/articles/vitals" rel="nofollow noopener noreferrer" target="_blank">Google Web Vitals 公式</a> / <a href="https://www.w3.org/WAI/standards-guidelines/wcag/" rel="nofollow noopener noreferrer" target="_blank">W3C WCAG 2.2</a>。</p>
     <blockquote cite="${DOMAIN}/about/">
       「公正に測るとは、評価方法のすべてを公開することだ」 — HARTON Certified 評価原則
     </blockquote>
@@ -275,7 +275,7 @@ PAGES.push({
   <section aria-label="致命的 NG">
     <h2>致命的 NG（一発除外条件）</h2>
     <ul>
-      <li>HTTPS 非対応 — 出典: <a href="https://www.ipa.go.jp/security/vuln/websecurity/about.html" rel="nofollow noopener">IPA「安全なウェブサイトの作り方」</a></li>
+      <li>HTTPS 非対応 — 出典: <a href="https://www.ipa.go.jp/security/vuln/websecurity/about.html" rel="nofollow noopener noreferrer" target="_blank">IPA「安全なウェブサイトの作り方」</a></li>
       <li>SSL 証明書エラー（期限切れ・無効）</li>
       <li>WP 管理面露出（wp-login.php / readme.html / xmlrpc.php）</li>
       <li>CMS バージョン情報露出（generator meta タグ等）</li>
@@ -379,7 +379,7 @@ for (const a of AXIS_PAGES) {
     mainContent: `
 <article>
   <section aria-label="冒頭エビデンス">
-    <p>${a.label}は scanner.py で <strong>${a.metric}</strong>+ 項目を機械検証する。判定は項目別減点で 100 点満点に集約され、4 軸の合算が総合スコアとなる。出典: <a href="${a.src}" rel="nofollow noopener">${a.srcLabel}</a>（取得日 <strong>2026-04-27</strong>）。</p>
+    <p>${a.label}は scanner.py で <strong>${a.metric}</strong>+ 項目を機械検証する。判定は項目別減点で 100 点満点に集約され、4 軸の合算が総合スコアとなる。出典: <a href="${a.src}" rel="nofollow noopener noreferrer" target="_blank">${a.srcLabel}</a>（取得日 <strong>2026-04-27</strong>）。</p>
     <blockquote cite="${DOMAIN}/methodology/">
       「項目別の事実減点で評価し、軸間の重み比率は採用しない」 — MASTER-PLAN §3.2
     </blockquote>
@@ -409,7 +409,7 @@ for (const a of AXIS_PAGES) {
 // ─── 8. apply（subpage / marketing / C 向け最重要）──
 PAGES.push({
   path: 'apply/index.html',
-  variant: 'marketing',
+  variant: 'reading',
   navActive: 'apply',
   title: '掲載申請 — HARTON Certified ★ 認定を獲得する',
   description: 'HARTON Certified への掲載申請ページ。無料診断で自社サイトの ★ 区分を判定し、tcharton.com の改善サービスへ送客する。C 未掲載事業者向け最重要動線。完全中立・金銭非依存の機械検証。',
@@ -418,7 +418,7 @@ PAGES.push({
   mainContent: `
 <article>
   <section aria-label="冒頭エビデンス">
-    <p>HARTON Certified への掲載申請は <strong>無料</strong>である。掲載対象は ★3 以上（総合 <strong>70</strong> 点以上 + 致命的 NG <strong>0</strong> 件）を達成した事業者のみで、課金で順位を買えるサービスではない。出典: <a href="https://www.ppc.go.jp/" rel="nofollow noopener">個人情報保護委員会</a>（評価機関の中立性に関する公的指針）。</p>
+    <p>HARTON Certified への掲載申請は <strong>無料</strong>である。掲載対象は ★3 以上（総合 <strong>70</strong> 点以上 + 致命的 NG <strong>0</strong> 件）を達成した事業者のみで、課金で順位を買えるサービスではない。出典: <a href="https://www.ppc.go.jp/" rel="nofollow noopener noreferrer" target="_blank">個人情報保護委員会</a>（評価機関の中立性に関する公的指針）。</p>
     <blockquote cite="${DOMAIN}/methodology/">
       「掲載自体が認定である」 — HARTON Certified ★区分体系
     </blockquote>
@@ -437,18 +437,18 @@ PAGES.push({
   <section aria-label="無料診断">
     <h2>無料診断のお申込み</h2>
     <p>自社サイトの WEB 品質が現時点でどの ★ 区分に該当するか、無料で機械検証する。所要時間は <strong>5</strong> 分（自動）〜<strong>1</strong> 営業日（人的レビュー込み）である。</p>
-    <p><a href="https://tcharton.com/contact/" rel="noopener">無料診断のお申込みはこちら（tcharton.com 送客）</a></p>
+    <p><a href="https://tcharton.com/contact/" rel="noopener noreferrer" target="_blank">無料診断のお申込みはこちら</a></p>
   </section>
   <section aria-label="改善が必要な場合">
     <h2>改善が必要な場合</h2>
-    <p>初回診断で ★3 未達でも申請を続行できる。tcharton.com（親サイト）の有料サービスで改善した後、再評価を受けて ★ を取得する経路がある。詳細は <a href="https://tcharton.com/services/web/" rel="noopener">tcharton.com の WEB 構築サービス</a>を参照する。</p>
+    <p>初回診断で ★3 未達でも申請を続行できる。tcharton.com（親サイト）の有料サービスで改善した後、再評価を受けて ★ を取得する経路がある。詳細は <a href="https://tcharton.com/services/web/" rel="noopener noreferrer" target="_blank">tcharton.com の WEB 構築サービス</a>を参照する。</p>
   </section>
   <section aria-label="料金透明性">
     <h2>料金透明性</h2>
     <ul>
       <li>HARTON Certified への掲載: <strong>無料</strong></li>
       <li>無料診断: <strong>無料</strong></li>
-      <li>改善サービス（任意）: tcharton.com の有料サービス（料金は <a href="https://tcharton.com/pricing/" rel="noopener">tcharton.com/pricing/</a> 参照）</li>
+      <li>改善サービス（任意）: tcharton.com の有料サービス（料金は <a href="https://tcharton.com/pricing/" rel="noopener noreferrer" target="_blank">tcharton.com/pricing/</a> 参照）</li>
     </ul>
   </section>
   <section aria-label="関連">
@@ -474,7 +474,7 @@ PAGES.push({
   mainContent: `
 <article>
   <section aria-label="冒頭エビデンス">
-    <p>HARTON Certified の ★ 区分は scanner.py の機械検証で <strong>45</strong>+ 項目を計測し、総合 <strong>70</strong>/<strong>80</strong>/<strong>90</strong> 点の 3 段階で付与する。改善ヒントはすべて公的基準に整合する。出典: <a href="https://developers.google.com/search/docs" rel="nofollow noopener">Google Search Central</a> / <a href="https://www.ipa.go.jp/security/vuln/websecurity/about.html" rel="nofollow noopener">IPA</a>。</p>
+    <p>HARTON Certified の ★ 区分は scanner.py の機械検証で <strong>45</strong>+ 項目を計測し、総合 <strong>70</strong>/<strong>80</strong>/<strong>90</strong> 点の 3 段階で付与する。改善ヒントはすべて公的基準に整合する。出典: <a href="https://developers.google.com/search/docs" rel="nofollow noopener noreferrer" target="_blank">Google Search Central</a> / <a href="https://www.ipa.go.jp/security/vuln/websecurity/about.html" rel="nofollow noopener noreferrer" target="_blank">IPA</a>。</p>
     <blockquote cite="${DOMAIN}/methodology/">
       「評価項目は全公開、再現性のある機械検証である」 — HARTON Certified
     </blockquote>
@@ -493,7 +493,7 @@ PAGES.push({
   <section aria-label="GBP 作成">
     <h2>Google ビジネスプロフィール（GBP）作成手順</h2>
     <ol>
-      <li><a href="https://business.google.com" rel="nofollow noopener">business.google.com</a> でアカウント作成</li>
+      <li><a href="https://www.google.com/intl/ja_jp/business/" rel="nofollow noopener noreferrer" target="_blank">Google ビジネスプロフィール公式</a> でアカウント作成</li>
       <li>Service Area Business モード推奨（住所非公開可）</li>
       <li>NAP を JSON-LD と完全一致させる</li>
       <li>検証完了後、CID URL を取得し sameAs に追記</li>
@@ -529,7 +529,7 @@ PAGES.push({
   mainContent: `
 <article>
   <section aria-label="冒頭エビデンス">
-    <p>HARTON Certified は <strong>2026 年 4 月</strong>に立ち上がった独立認定機関で、Phase 0 沼津 <strong>30</strong> 件を 2026 年 5 月までに完了する。月次ランキング・ロゴ・代表写真をプレス向けに無償提供する。出典: <a href="https://www.go.jp/" rel="nofollow noopener">日本政府公的機関</a>（中小事業者の DX 状況）。</p>
+    <p>HARTON Certified は <strong>2026 年 4 月</strong>に立ち上がった独立認定機関で、Phase 0 沼津 <strong>30</strong> 件を 2026 年 5 月までに完了する。月次ランキング・ロゴ・代表写真をプレス向けに無償提供する。出典: <a href="https://www.digital.go.jp/" rel="nofollow noopener noreferrer" target="_blank">日本政府公的機関</a>（中小事業者の DX 状況）。</p>
     <blockquote cite="${DOMAIN}/methodology/">
       「機械検証で WEB 品質を公正に測る、地方発の認定機関」 — HARTON Certified ブランドナラティブ
     </blockquote>
@@ -596,14 +596,14 @@ PAGES.push({
   variant: 'reading',
   navActive: '',
   title: 'よくある質問 — HARTON Certified の評価・運営に関する Q&A',
-  description: 'HARTON Certified への質問集。評価方法 / 掲載基準 / 課金方針 / オプトアウト / タベログ等との違い / 弁護士相談済の法的整備状況などを Q&A 形式でまとめる。',
+  description: 'HARTON Certified への質問集。評価方法 / 掲載基準 / 課金方針 / オプトアウト / 食べログ等との違い / 弁護士相談済の法的整備状況などを Q&A 形式でまとめる。',
   canonicalPath: '/faq/',
   breadcrumbs: bcl([['トップ', '/'], ['よくある質問', '/faq/']]),
   additionalJsonLd: [FAQ_TOP],
   mainContent: `
 <article>
   <section aria-label="冒頭エビデンス">
-    <p>HARTON Certified によくある質問を <strong>5</strong> 項目に整理した。評価方法 / 掲載基準 / 課金方針の核心点を <strong>2026 年 4 月</strong>時点の運営方針で回答する。出典: <a href="https://www.ppc.go.jp/" rel="nofollow noopener">個人情報保護委員会</a>（中立評価機関の運用指針）。</p>
+    <p>HARTON Certified によくある質問を <strong>5</strong> 項目に整理した。評価方法 / 掲載基準 / 課金方針の核心点を <strong>2026 年 4 月</strong>時点の運営方針で回答する。出典: <a href="https://www.ppc.go.jp/" rel="nofollow noopener noreferrer" target="_blank">個人情報保護委員会</a>（中立評価機関の運用指針）。</p>
     <blockquote cite="${DOMAIN}/about/">
       「全評価項目を /methodology/ で公開し、再現性のある機械検証で運用する」
     </blockquote>
@@ -621,8 +621,8 @@ PAGES.push({
       <dd>評価項目・閾値・実施手順は <a href="/methodology/">/methodology/</a> ですべて公開している。再現性のある機械検証である。</dd>
       <dt>Q4: 掲載を拒否したい場合は？</dt>
       <dd><a href="/opt-out/">/opt-out/</a> より理由不要で 24 時間以内に対応する。再掲載は事業者の明示申請がない限り行わない。</dd>
-      <dt>Q5: タベログとは何が違うのか？</dt>
-      <dd>タベログは口コミで業務品質を評価する。HARTON Certified は機械検証で WEB 品質を評価する。評価軸が独立で、両立は補完関係である。</dd>
+      <dt>Q5: 食べログとは何が違うのか？</dt>
+      <dd>食べログは口コミで業務品質を評価する。HARTON Certified は機械検証で WEB 品質を評価する。評価軸が独立で、両立は補完関係である。</dd>
     </dl>
   </section>
 </article>`,
@@ -640,7 +640,7 @@ PAGES.push({
   mainContent: `
 <article>
   <section aria-label="冒頭エビデンス">
-    <p>HARTON Certified からのお知らせを時系列で公開する。<strong>2026 年 4 月 27 日</strong>に MASTER-PLAN v<strong>1.1.4</strong> 改訂と SPEC v<strong>3.4</strong> 連動を完了した。出典: <a href="https://www.go.jp/" rel="nofollow noopener">公的機関基準</a>。</p>
+    <p>HARTON Certified からのお知らせを時系列で公開する。<strong>2026 年 4 月 27 日</strong>に MASTER-PLAN v<strong>1.1.4</strong> 改訂と SPEC v<strong>3.4</strong> 連動を完了した。出典: <a href="https://www.digital.go.jp/" rel="nofollow noopener noreferrer" target="_blank">公的機関基準</a>。</p>
     <blockquote cite="${DOMAIN}/about/">
       「年次で基準を改訂、過去評価もアーカイブとして残す」 — HARTON Certified 進化原則
     </blockquote>
@@ -660,7 +660,7 @@ PAGES.push({
 // ─── 14. contact（subpage / marketing / form あり）──
 PAGES.push({
   path: 'contact/index.html',
-  variant: 'marketing',
+  variant: 'reading',
   navActive: '',
   title: 'お問合せ — HARTON Certified',
   description: 'HARTON Certified へのお問合せフォーム。掲載申請 / 取材依頼 / 掲載辞退 / その他のご質問を 1 営業日以内に対応する。Cloudflare Turnstile による非侵入型ボット防御を併用。',
@@ -669,7 +669,7 @@ PAGES.push({
   mainContent: `
 <article>
   <section aria-label="冒頭エビデンス">
-    <p>HARTON Certified へのお問合せは <strong>1</strong> 営業日以内に対応する。<strong>4</strong> カテゴリの問合せ種別を選択でき、月間処理件数は <strong>30</strong> 件規模を想定する。出典: <a href="https://www.cloudflare.com/products/turnstile/" rel="nofollow noopener">Cloudflare Turnstile</a>（非侵入型ボット防御）。</p>
+    <p>HARTON Certified へのお問合せは <strong>1</strong> 営業日以内に対応する。<strong>4</strong> カテゴリの問合せ種別を選択でき、月間処理件数は <strong>30</strong> 件規模を想定する。出典: <a href="https://www.cloudflare.com/products/turnstile/" rel="nofollow noopener noreferrer" target="_blank">Cloudflare Turnstile</a>（非侵入型ボット防御）。</p>
     <blockquote cite="${DOMAIN}/methodology/">
       「非侵入型ボット防御を必須とする」 — SPEC v3.4 §8.8
     </blockquote>
@@ -678,7 +678,12 @@ PAGES.push({
   </section>
   <section aria-label="お問合せフォーム">
     <h2>フォーム</h2>
-    <form action="/thanks.html" method="post">
+    <form action="https://api.web3forms.com/submit" method="POST" id="contactForm">
+      <input type="hidden" name="access_key" value="9fda1d98-e246-4730-a12c-2251a5ae35b0">
+      <input type="hidden" name="subject" value="HARTON Certified サイトからのお問い合わせ">
+      <input type="hidden" name="redirect" value="https://certification.tcharton.com/thanks.html">
+      <input type="hidden" name="from_name" value="HARTON Certified Contact Form">
+      <input type="checkbox" name="botcheck" class="hidden" style="display:none" tabindex="-1" autocomplete="off">
       <p><label for="name">お名前（必須）</label>
       <input type="text" id="name" name="name" required></p>
       <p><label for="email">メールアドレス（必須）</label>
@@ -696,7 +701,7 @@ PAGES.push({
       <textarea id="message" name="message" rows="6" required></textarea></p>
       <p><button type="submit" class="px-6 py-3">送信する</button></p>
     </form>
-    <p>本フォームは Cloudflare Turnstile による非侵入型ボット防御（裏側自動検証）を併用する。SPEC v3.4 §8.8 整合。</p>
+    <p>本フォームは Web3Forms 経由で受信する（送信先メールは代表アドレスに集約）。送信後は確認画面（thanks）へ自動遷移する。Cloudflare Turnstile による非侵入型ボット防御は CR-3 で別途実装予定（site key 受領待ち）。</p>
   </section>
   <section aria-label="プライバシー">
     <h2>送信内容の取扱い</h2>
@@ -780,6 +785,34 @@ PAGES.push({
       <li><a href="/methodology/">評価方法</a></li>
       <li><a href="/apply/">掲載申請</a></li>
       <li><a href="/contact/">お問合せ</a></li>
+    </ul>
+  </section>
+</article>`,
+});
+
+// ─── 18. thanks（minimal / reading / Web3Forms 送信完了）───
+PAGES.push({
+  path: 'thanks.html',
+  variant: 'reading',
+  navActive: '',
+  title: 'お問合せありがとうございます — HARTON Certified',
+  description: 'お問合せを受領した。1 営業日以内に代表より返信する。HARTON Certified 認定機関。',
+  canonicalPath: '/thanks.html',
+  robots: 'noindex, nofollow',
+  mainContent: `
+<article>
+  <h1>お問合せを受領した</h1>
+  <section aria-label="完了">
+    <p>お問合せを正常に受信した。1 営業日以内に代表（HARTON Certified 認定運用責任者 / 大内 達也）より、ご記入いただいたメールアドレス宛に返信する。</p>
+    <p>もし 3 営業日以内に返信が無い場合、迷惑メールフォルダの確認、または別経路での再送をご検討いただきたい。</p>
+  </section>
+  <section aria-label="関連リンク">
+    <h2>関連リンク</h2>
+    <ul>
+      <li><a href="/">トップページへ戻る</a></li>
+      <li><a href="/methodology/">評価方法</a></li>
+      <li><a href="/apply/">掲載申請</a></li>
+      <li><a href="/about/">サイトについて</a></li>
     </ul>
   </section>
 </article>`,

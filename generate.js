@@ -219,7 +219,7 @@ function generateBusinessPage(slug, b) {
     </header>
 
     <section aria-label="冒頭エビデンス">
-      <p>${escHTML(b.name)}（${escHTML(b.address.addressLocality)}・${escHTML(ind.label)}）は、当機関の機械検証で総合 <strong>${b.scan.score}</strong> 点（100 点満点）、必須条件 <strong>${escHTML(b.scan.must5)}</strong> 達成、致命的 NG <strong>${b.scan.critical_ng}</strong> 件で評価され、HARTON Certified ${escHTML(b.scan.rating)} と認定された。出典は <a href="https://www.go.jp/security/" rel="nofollow">公的セキュリティ基準</a>（HSTS / CSP / WCAG 2.2 AA）に整合する 4 軸の独立評価による。</p>
+      <p>${escHTML(b.name)}（${escHTML(b.address.addressLocality)}・${escHTML(ind.label)}）は、当機関の機械検証で総合 <strong>${b.scan.score}</strong> 点（100 点満点）、必須条件 <strong>${escHTML(b.scan.must5)}</strong> 達成、致命的 NG <strong>${b.scan.critical_ng}</strong> 件で評価され、HARTON Certified ${escHTML(b.scan.rating)} と認定された。出典は <a href="https://www.ipa.go.jp/" rel="nofollow noopener noreferrer" target="_blank">公的セキュリティ基準</a>（HSTS / CSP / WCAG 2.2 AA）に整合する 4 軸の独立評価による。</p>
       <blockquote cite="https://certification.tcharton.com/methodology/">「機械検証で WEB 品質を公正に測る、地方発の認定機関」 — HARTON Certified 評価方法</blockquote>
     </section>
 
@@ -289,7 +289,7 @@ function generateBadgePage(slug, b) {
 
   return applyLayout({
     pageType: 'badge',
-    variant: 'marketing',
+    variant: 'reading',
     title,
     description,
     canonicalPath,
@@ -330,7 +330,7 @@ function generateIndustryPage(industryKey, ind) {
   <article>
     <h1>${escHTML(ind.label)} 全国 TOP 10</h1>
     <section aria-label="冒頭エビデンス">
-      <p>HARTON Certified が機械検証で公正評価した、${escHTML(ind.label)} の優良サイト TOP <strong>${list.length}</strong> 件。総合 <strong>70 点</strong>以上 + 致命的 NG <strong>0 件</strong>を達成した事業者のみ掲載する（MASTER-PLAN §3.4）。出典は <a href="https://schema.org/${escHTML(ind.schema_type?.[0] || 'LocalBusiness')}" rel="nofollow">Schema.org ${escHTML(ind.schema_type?.[0] || 'LocalBusiness')}</a> および <a href="https://www.wikidata.org/wiki/${escHTML(ind.wikidata)}" rel="nofollow">Wikidata ${escHTML(ind.wikidata)}</a> に整合する。</p>
+      <p>HARTON Certified が機械検証で公正評価した、${escHTML(ind.label)} の優良サイト TOP <strong>${list.length}</strong> 件。総合 <strong>70 点</strong>以上 + 致命的 NG <strong>0 件</strong>を達成した事業者のみ掲載する（MASTER-PLAN §3.4）。出典は <a href="https://schema.org/${escHTML(ind.schema_type?.[0] || 'LocalBusiness')}" rel="nofollow noopener noreferrer" target="_blank">Schema.org ${escHTML(ind.schema_type?.[0] || 'LocalBusiness')}</a> および <a href="https://www.wikidata.org/wiki/${escHTML(ind.wikidata)}" rel="nofollow noopener noreferrer" target="_blank">Wikidata ${escHTML(ind.wikidata)}</a> に整合する。</p>
       <blockquote cite="/methodology/">「機械検証で WEB 品質を公正に測る、地方発の認定機関」</blockquote>
     </section>
 
@@ -352,7 +352,7 @@ function generateIndustryPage(industryKey, ind) {
 
   return applyLayout({
     pageType: 'industry',
-    variant: 'marketing',
+    variant: 'reading',
     title,
     description,
     canonicalPath,
@@ -416,7 +416,7 @@ function generateRegionPage(prefKey, cityKey) {
 
   return applyLayout({
     pageType: 'region',
-    variant: 'marketing',
+    variant: 'reading',
     title,
     description,
     canonicalPath,
@@ -444,7 +444,7 @@ function generateRegionIndustryPage(prefKey, cityKey, industryKey) {
   <article>
     <h1>${escHTML(city.label)} ${escHTML(ind.label)} TOP 10</h1>
     <section aria-label="冒頭エビデンス">
-      <p>${escHTML(city.label)} の${escHTML(ind.label)} 認定店舗 <strong>${list.length}</strong> 件。総合 <strong>70 点</strong>以上 + 致命的 NG <strong>0 件</strong>達成。出典: <a href="https://www.wikidata.org/wiki/${escHTML(ind.wikidata)}" rel="nofollow">Wikidata ${escHTML(ind.wikidata)}</a>。</p>
+      <p>${escHTML(city.label)} の${escHTML(ind.label)} 認定店舗 <strong>${list.length}</strong> 件。総合 <strong>70 点</strong>以上 + 致命的 NG <strong>0 件</strong>達成。出典: <a href="https://www.wikidata.org/wiki/${escHTML(ind.wikidata)}" rel="nofollow noopener noreferrer" target="_blank">Wikidata ${escHTML(ind.wikidata)}</a>。</p>
       <blockquote cite="/methodology/">「機械検証で WEB 品質を公正に測る」 — HARTON Certified</blockquote>
     </section>
     <section aria-label="認定店舗一覧">
@@ -457,7 +457,7 @@ function generateRegionIndustryPage(prefKey, cityKey, industryKey) {
 
   return applyLayout({
     pageType: 'region-industry',
-    variant: 'marketing',
+    variant: 'reading',
     title,
     description,
     canonicalPath,
@@ -490,7 +490,7 @@ function generateMonthlyRankingPage(year, month) {
     <h1>${year}年${month}月 月次 TOP 10</h1>
     <p><time datetime="${year}-${String(month).padStart(2, '0')}-01" itemprop="datePublished">${year}-${String(month).padStart(2, '0')}-01 公開</time></p>
     <section aria-label="冒頭エビデンス">
-      <p>${year}年${month}月時点の HARTON Certified 認定店舗 TOP <strong>${list.length}</strong> 件。総合 <strong>70 点</strong>以上 + 致命的 NG <strong>0 件</strong>を達成した事業者のみ。スキャナー実装は <a href="https://github.com/TC-HARTON/Scanner" rel="nofollow">GitHub TC-HARTON/Scanner</a> 公開。</p>
+      <p>${year}年${month}月時点の HARTON Certified 認定店舗 TOP <strong>${list.length}</strong> 件。総合 <strong>70 点</strong>以上 + 致命的 NG <strong>0 件</strong>を達成した事業者のみ。月次再スキャンは scanner.py（4 軸機械検証 / 45+ 項目）で実施する。出典: <a href="https://www.ipa.go.jp/security/vuln/websecurity/about.html" rel="nofollow noopener noreferrer" target="_blank">IPA「安全なウェブサイトの作り方」</a>。</p>
       <blockquote cite="/methodology/">「移住者の眼で、地域の真価を測る」</blockquote>
     </section>
     <section aria-label="ランキング">
@@ -593,7 +593,7 @@ function generateLLMsTxt() {
 - [評価方法 / セキュリティ](${DOMAIN}/methodology/security/) — B 軸
 - [評価方法 / AI 検索](${DOMAIN}/methodology/ai-search/) — C 軸
 - [評価方法 / 経営インパクト](${DOMAIN}/methodology/business-impact/) — D 軸
-- [掲載申請](${DOMAIN}/apply/) — C 未掲載事業者向け（tcharton.com 送客）
+- [掲載申請](${DOMAIN}/apply/) — 未掲載事業者向け
 - [改善ガイダンス](${DOMAIN}/improvement-guide/) — B+C 向け
 - [メディア向け](${DOMAIN}/press/) — D 取材依頼
 - [掲載拒否権](${DOMAIN}/opt-out/) — 即時対応・理由不要

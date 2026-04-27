@@ -17,7 +17,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>よくある質問 — HARTON Certified の評価・運営に関する Q&A</title>
-<meta name="description" content="HARTON Certified への質問集。評価方法 / 掲載基準 / 課金方針 / オプトアウト / タベログ等との違い / 弁護士相談済の法的整備状況などを Q&A 形式でまとめる。">
+<meta name="description" content="HARTON Certified への質問集。評価方法 / 掲載基準 / 課金方針 / オプトアウト / 食べログ等との違い / 弁護士相談済の法的整備状況などを Q&A 形式でまとめる。">
 <meta name="author" content="T.C.HARTON / 大内 達也">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
 <meta name="theme-color" content="#0F172A">
@@ -27,7 +27,7 @@
 <link rel="sitemap" type="application/xml" href="/sitemap.xml">
 
 <!-- CSP meta（HTTP _headers と二重防御 / spec-checker §11.6 整合 / SPEC §8.1.1 必須コア 6 + §8.1.2 推奨拡張 3） -->
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self' https://api.web3forms.com">
 
 <!-- favicon 3 種 -->
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
@@ -36,7 +36,7 @@
 
 <!-- OGP 7 項目（SPEC §11.2-ogp 準拠） -->
 <meta property="og:title" content="よくある質問 — HARTON Certified の評価・運営に関する Q&A">
-<meta property="og:description" content="HARTON Certified への質問集。評価方法 / 掲載基準 / 課金方針 / オプトアウト / タベログ等との違い / 弁護士相談済の法的整備状況などを Q&A 形式でまとめる。">
+<meta property="og:description" content="HARTON Certified への質問集。評価方法 / 掲載基準 / 課金方針 / オプトアウト / 食べログ等との違い / 弁護士相談済の法的整備状況などを Q&A 形式でまとめる。">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://certification.tcharton.com/faq/">
 <meta property="og:image" content="https://certification.tcharton.com/ogp.png">
@@ -46,14 +46,15 @@
 <!-- Twitter Card 4 項目 -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="よくある質問 — HARTON Certified の評価・運営に関する Q&A">
-<meta name="twitter:description" content="HARTON Certified への質問集。評価方法 / 掲載基準 / 課金方針 / オプトアウト / タベログ等との違い / 弁護士相談済の法的整備状況などを Q&A 形式でまとめる。">
+<meta name="twitter:description" content="HARTON Certified への質問集。評価方法 / 掲載基準 / 課金方針 / オプトアウト / 食べログ等との違い / 弁護士相談済の法的整備状況などを Q&A 形式でまとめる。">
 <meta name="twitter:image" content="https://certification.tcharton.com/ogp.png">
 
-<!-- フォント preconnect + preload + display=swap（SPEC §6.4） -->
+<!-- フォント preconnect + preload + display=swap（SPEC §6.4 / MASTER-PLAN §2.6） -->
+<!-- 見出し: Playfair Display + Cormorant Garamond（serif 500-600） / 本文: Inter + Noto Sans JP（sans 400-500）-->
 <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@500;600&display=swap">
 
 <!-- Tailwind ビルド成果物 -->
 <link rel="stylesheet" href="/dist/output.css">
@@ -95,7 +96,9 @@
     "@type": "PostalAddress",
     "addressCountry": "JP",
     "addressRegion": "静岡県",
-    "addressLocality": "沼津市"
+    "addressLocality": "沼津市",
+    "streetAddress": "大岡2690",
+    "postalCode": "410-0022"
   },
   "geo": {
     "@type": "GeoCoordinates",
@@ -200,10 +203,10 @@
     },
     {
       "@type": "Question",
-      "name": "タベログとは何が違うのか？",
+      "name": "食べログとは何が違うのか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "タベログは口コミで業務品質を評価する。HARTON Certified は機械検証で WEB 品質を評価する。評価軸が独立で、両立は補完関係である。"
+        "text": "食べログは口コミで業務品質を評価する。HARTON Certified は機械検証で WEB 品質を評価する。評価軸が独立で、両立は補完関係である。"
       }
     }
   ]
@@ -249,7 +252,7 @@
 
 <article>
   <section aria-label="冒頭エビデンス">
-    <p>HARTON Certified によくある質問を <strong>5</strong> 項目に整理した。評価方法 / 掲載基準 / 課金方針の核心点を <strong>2026 年 4 月</strong>時点の運営方針で回答する。出典: <a href="https://www.ppc.go.jp/" rel="nofollow noopener">個人情報保護委員会</a>（中立評価機関の運用指針）。</p>
+    <p>HARTON Certified によくある質問を <strong>5</strong> 項目に整理した。評価方法 / 掲載基準 / 課金方針の核心点を <strong>2026 年 4 月</strong>時点の運営方針で回答する。出典: <a href="https://www.ppc.go.jp/" rel="nofollow noopener noreferrer" target="_blank">個人情報保護委員会</a>（中立評価機関の運用指針）。</p>
     <blockquote cite="https://certification.tcharton.com/about/">
       「全評価項目を /methodology/ で公開し、再現性のある機械検証で運用する」
     </blockquote>
@@ -267,8 +270,8 @@
       <dd>評価項目・閾値・実施手順は <a href="/methodology/">/methodology/</a> ですべて公開している。再現性のある機械検証である。</dd>
       <dt>Q4: 掲載を拒否したい場合は？</dt>
       <dd><a href="/opt-out/">/opt-out/</a> より理由不要で 24 時間以内に対応する。再掲載は事業者の明示申請がない限り行わない。</dd>
-      <dt>Q5: タベログとは何が違うのか？</dt>
-      <dd>タベログは口コミで業務品質を評価する。HARTON Certified は機械検証で WEB 品質を評価する。評価軸が独立で、両立は補完関係である。</dd>
+      <dt>Q5: 食べログとは何が違うのか？</dt>
+      <dd>食べログは口コミで業務品質を評価する。HARTON Certified は機械検証で WEB 品質を評価する。評価軸が独立で、両立は補完関係である。</dd>
     </dl>
   </section>
 </article>
@@ -287,7 +290,7 @@
       <li><a href="/opt-out/">掲載拒否権</a></li>
     </ul>
   </nav>
-  <p>&copy; 2026 T.C.HARTON / 大内 達也. All rights reserved.</p>
+  <p>&copy; 2026 T.C.HARTON. All rights reserved.</p>
 </footer>
 
 <noscript>

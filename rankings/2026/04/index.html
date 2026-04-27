@@ -27,7 +27,7 @@
 <link rel="sitemap" type="application/xml" href="/sitemap.xml">
 
 <!-- CSP meta（HTTP _headers と二重防御 / spec-checker §11.6 整合 / SPEC §8.1.1 必須コア 6 + §8.1.2 推奨拡張 3） -->
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self' https://api.web3forms.com">
 
 <!-- favicon 3 種 -->
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
@@ -49,11 +49,12 @@
 <meta name="twitter:description" content="2026年4月の HARTON Certified 認定店舗 TOP 10（全業種・全地域横断）。機械検証で公正評価、月次再スキャン結果を反映。">
 <meta name="twitter:image" content="https://certification.tcharton.com/ogp.png">
 
-<!-- フォント preconnect + preload + display=swap（SPEC §6.4） -->
+<!-- フォント preconnect + preload + display=swap（SPEC §6.4 / MASTER-PLAN §2.6） -->
+<!-- 見出し: Playfair Display + Cormorant Garamond（serif 500-600） / 本文: Inter + Noto Sans JP（sans 400-500）-->
 <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@500;600&display=swap">
 
 <!-- Tailwind ビルド成果物 -->
 <link rel="stylesheet" href="/dist/output.css">
@@ -95,7 +96,9 @@
     "@type": "PostalAddress",
     "addressCountry": "JP",
     "addressRegion": "静岡県",
-    "addressLocality": "沼津市"
+    "addressLocality": "沼津市",
+    "streetAddress": "大岡2690",
+    "postalCode": "410-0022"
   },
   "geo": {
     "@type": "GeoCoordinates",
@@ -210,7 +213,7 @@
     <h1>2026年4月 月次 TOP 10</h1>
     <p><time datetime="2026-04-01" itemprop="datePublished">2026-04-01 公開</time></p>
     <section aria-label="冒頭エビデンス">
-      <p>2026年4月時点の HARTON Certified 認定店舗 TOP <strong>1</strong> 件。総合 <strong>70 点</strong>以上 + 致命的 NG <strong>0 件</strong>を達成した事業者のみ。スキャナー実装は <a href="https://github.com/TC-HARTON/Scanner" rel="nofollow">GitHub TC-HARTON/Scanner</a> 公開。</p>
+      <p>2026年4月時点の HARTON Certified 認定店舗 TOP <strong>1</strong> 件。総合 <strong>70 点</strong>以上 + 致命的 NG <strong>0 件</strong>を達成した事業者のみ。月次再スキャンは scanner.py（4 軸機械検証 / 45+ 項目）で実施する。出典: <a href="https://www.ipa.go.jp/security/vuln/websecurity/about.html" rel="nofollow noopener noreferrer" target="_blank">IPA「安全なウェブサイトの作り方」</a>。</p>
       <blockquote cite="/methodology/">「移住者の眼で、地域の真価を測る」</blockquote>
     </section>
     <section aria-label="ランキング">
@@ -233,7 +236,7 @@
       <li><a href="/opt-out/">掲載拒否権</a></li>
     </ul>
   </nav>
-  <p>&copy; 2026 T.C.HARTON / 大内 達也. All rights reserved.</p>
+  <p>&copy; 2026 T.C.HARTON. All rights reserved.</p>
 </footer>
 
 <noscript>

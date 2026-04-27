@@ -139,20 +139,9 @@ const THEME_VARIANTS = {
 // marketing: 訴求・コンバージョン用途（明色）
 // reading  : 集中閲覧・長文用途（暗色）
 function getVariant(relPath) {
-  // MASTER-PLAN §4.1 — certification.tcharton.com Variant マッピング
-  // marketing: TOP / 動線 / 検索エントリ / バッジ DL（訴求・コンバージョン用途）
-  // reading  : 信頼の核 / 個別事業者 / 必須情報（集中閲覧用途）
-  const MARKETING_STATIC = new Set([
-    'index.html',
-    'apply/index.html',
-    'contact/index.html',
-  ]);
-  if (MARKETING_STATIC.has(relPath)) return 'marketing';
-  // 動的（量産）ページの marketing 判定
-  if (/^regions\/[^/]+\/[^/]+\/index\.html$/.test(relPath)) return 'marketing';                          // 地域別ランキング
-  if (/^regions\/[^/]+\/[^/]+\/industries\/[^/]+\/index\.html$/.test(relPath)) return 'marketing';       // 地域 × 業種
-  if (/^industries\/[^/]+\/index\.html$/.test(relPath)) return 'marketing';                              // 業種別ランキング
-  if (/^businesses\/[^/]+\/badge\/index\.html$/.test(relPath)) return 'marketing';                       // バッジ DL
+  // MASTER-PLAN sec.4.1 (v1.1.5 / 2026-04-27 (1) B saiyou = subete reading touitsu)
+  // kyuu v1.1.4 dewa marketing/reading konzai dattaga, UX feedback wo uke,
+  // subete reading (Deep Navy + Cream / high-end shi-chou) ni touitsu shita.
   return 'reading';
 }
 

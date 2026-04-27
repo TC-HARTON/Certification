@@ -22,7 +22,7 @@
 - [評価方法 / セキュリティ](https://certification.tcharton.com/methodology/security/) — B 軸
 - [評価方法 / AI 検索](https://certification.tcharton.com/methodology/ai-search/) — C 軸
 - [評価方法 / 経営インパクト](https://certification.tcharton.com/methodology/business-impact/) — D 軸
-- [掲載申請](https://certification.tcharton.com/apply/) — C 未掲載事業者向け（tcharton.com 送客）
+- [掲載申請](https://certification.tcharton.com/apply/) — 未掲載事業者向け
 - [改善ガイダンス](https://certification.tcharton.com/improvement-guide/) — B+C 向け
 - [メディア向け](https://certification.tcharton.com/press/) — D 取材依頼
 - [掲載拒否権](https://certification.tcharton.com/opt-out/) — 即時対応・理由不要

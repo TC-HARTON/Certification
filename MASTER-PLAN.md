@@ -1,8 +1,8 @@
-# HARTON Certified マスタープラン v1.1.4
+# HARTON Certified マスタープラン v1.1.5
 
 **Document Title**: HARTON Certified Master Plan
-**Version**: **1.1.4**（2026-04-27 SPEC v3.4 連動反映 + §3.3 出典列拡張 + §3.6 認定対象事業者 JSON-LD 要件新設）
-**Issued Date**: 2026-04-26 → **2026-04-27（v1.1.4 改訂）**
+**Version**: **1.1.5**（2026-04-27 §4.1 全 reading 統一 / B 採用 / UX「ページカラーバラつき」フィードバック反映）
+**Issued Date**: 2026-04-26 → **2026-04-27（v1.1.5 改訂）**
 **Issuing Authority**: T.C.HARTON 代表 大内 達也
 **Conformance**: **SPEC v3.4** + GOOGLE-STANDARDS v2.0 + GEO-STANDARDS v2.1 完全準拠
 **SPEC §1.0 位置付け**: 「tcharton.com 派生サイト」絶対法規対象
@@ -58,7 +58,7 @@
 
 ### 0.3 3 つの差別化要素（最強の Moat）
 
-1. **機械検証 × WEB 品質**：競合（タベログ等）はユーザー口コミで業務品質を評価。HARTON は機械検証で WEB 品質を評価する独自軸
+1. **機械検証 × WEB 品質**：競合（食べログ等）はユーザー口コミで業務品質を評価。HARTON は機械検証で WEB 品質を評価する独自軸
 2. **完全中立 × ポジティブセレクション**：金銭非依存。★3 以上のみ掲載するミシュラン型希少性
 3. **AI 検索時代対応 × 改善導線**：GEO 最適化を評価軸に含み、HARTON 本体への送客循環を設計
 
@@ -136,13 +136,13 @@ SPEC v3.2 §1.0 は以下を絶対法規とする：
 > HARTON Certified は、SPEC v3.2 という独自規格と 4 軸スキャナーで、地域の優良 WEB サイトを公正に評価・認定する機関。沼津・三島から日本の地方 DX を底上げする。
 
 #### 200 字版
-> 口コミに頼らず、機械検証で WEB 品質を測る。タベログが料理を、ホットペッパーが美容を評価するように、HARTON Certified は「WEB 品質」という新しい軸で地域の事業者を公正に評価する。評価方法は完全公開・金銭非依存・移住者の客観性。ミシュランガイド型のポジティブセレクションで、★3 以上の優良サイトのみ掲載。沼津・三島から始め、全国へ拡大予定。
+> 口コミに頼らず、機械検証で WEB 品質を測る。食べログが料理を、ホットペッパーが美容を評価するように、HARTON Certified は「WEB 品質」という新しい軸で地域の事業者を公正に評価する。評価方法は完全公開・金銭非依存・移住者の客観性。ミシュランガイド型のポジティブセレクションで、★3 以上の優良サイトのみ掲載。沼津・三島から始め、全国へ拡大予定。
 
 ### 2.2 「私たちは○○ではない」NOT 定義
 
 | 項目 |
 |---|
-| ❌ タベログのような口コミサイト**ではない** |
+| ❌ 食べログのような口コミサイト**ではない** |
 | ❌ ホットペッパーのような加盟店ビジネス**ではない** |
 | ❌ iタウンページのような全業種カタログ**ではない** |
 | ❌ Webby Awards のような年 1 回のイベント**ではない** |
@@ -363,31 +363,41 @@ JSON-LD 要件の追加・変更は SPEC v3.x 改訂と完全連動する（SPEC
 
 ## 4. サイト構造（22 ページ設計）
 
-### 4.1 ページ一覧と Body Theme Variant
+### 4.1 ページ一覧と Body Theme Variant（v1.1.5 / 2026-04-27 ① B 採用 = 全 reading 統一）
+
+**改訂理由**: 旧 v1.1.4 は marketing(TOP / apply / contact) と reading の混在配色だったが、代表（① HARTON 総合責任者）から「ページカラーのバラつきで目が疲れる」UX フィードバックを受け、全 22 ページを reading（Deep Navy + Cream / ハイエンド誌調）に統一した。HARTON Certified の認定機関格調と整合する。
 
 | 階層 | URL | ページ名 | Variant |
 |---|---|---|---|
-| TOP | `/` | トップ | marketing |
+| TOP | `/` | トップ | reading |
 | 信頼の核 | `/about/` | サイトについて・HARTON 紹介 | reading |
 | 信頼の核 | `/methodology/` | 評価方法（メイン）| reading |
 | 信頼の核 | `/methodology/technical/` | A 軸 基礎・身だしなみ | reading |
 | 信頼の核 | `/methodology/security/` | B 軸 防御力・生存率 | reading |
 | 信頼の核 | `/methodology/ai-search/` | C 軸 AI 検索適応 | reading |
 | 信頼の核 | `/methodology/business-impact/` | D 軸 経営インパクト | reading |
-| 検索 | `/regions/<prefecture>/<city>/` | 地域別ランキング | marketing |
-| 検索 | `/industries/<industry>/` | 業種別ランキング | marketing |
+| 検索 | `/regions/<prefecture>/<city>/` | 地域別ランキング | reading |
+| 検索 | `/industries/<industry>/` | 業種別ランキング | reading |
 | 検索 | `/businesses/<slug>/` | 個別事業者ページ | reading |
-| バッジ | `/businesses/<slug>/badge/` | バッジダウンロード | marketing |
+| バッジ | `/businesses/<slug>/badge/` | バッジダウンロード | reading |
 | ランキング | `/rankings/<year>/<month>/` | 月次ランキング履歴 | reading |
-| 申請 | `/apply/` | 掲載申請（C 向け）| marketing |
+| 申請 | `/apply/` | 掲載申請（C 向け）| reading |
 | 改善 | `/improvement-guide/` | 改善ガイダンス（B+C 向け）| reading |
 | メディア | `/press/` | メディア向け（D 向け）| reading |
 | 退出 | `/opt-out/` | 掲載拒否権 | reading |
 | 必須 | `/faq/` | よくある質問 | reading |
 | 必須 | `/news/` | お知らせ | reading |
-| 必須 | `/contact/` | 問合せ | marketing |
+| 必須 | `/contact/` | 問合せ | reading |
 | 必須 | `/legal/` | 利用規約・特商法 | reading |
 | 必須 | `/privacy/` | プライバシーポリシー | reading |
+
+**実装連動**:
+- `templates/_layout.html` body class: `bg-dark-900 text-dark-300 font-sans antialiased`（全ページ）
+- `meta theme-color`: `#0F172A`（Deep Navy）
+- `meta color-scheme`: `dark`
+- `src/input.css` body.bg-dark-900 の CSS 変数: `--bg-page: #0F172A` / `--fg-body: #cbd5e1` / `--fg-heading: #FAF8F3`（Cream Base）
+- `spec-checker.js getVariant()`: `return 'reading'` 単純化
+- `build-base.js` / `generate.js` 全ページ `variant: 'reading'`
 
 ### 4.2 URL 構造（業種 × 地域）
 
@@ -507,7 +517,7 @@ TOP → /press/ → 取材依頼
 ### 6.1 5 階層競合マップ
 
 ```
-[Tier 1] 直接競合: タベログ / ぐるなび / ホットペッパー / エキテン /
+[Tier 1] 直接競合: 食べログ / ぐるなび / ホットペッパー / エキテン /
                   iタウンページ / Google ビジネスプロフィール
 [Tier 2] 間接競合: まいぷれ / Yahoo!ロコ / 地域経済誌 / 自治体観光サイト
 [Tier 3] 概念競合: Webby Awards / グッドデザイン賞 / 各種 ISO / 経産省認定
@@ -548,7 +558,7 @@ TOP → /press/ → 取材依頼
 | 競合 | 共生方法 |
 |---|---|
 | Google ビジネスプロフィール | 各事業者の Google 情報を本サイト内に埋込 → 補完関係 |
-| タベログ | 「タベログ★4.5 + HARTON Certified ★4」が最強 |
+| 食べログ | 「食べログ★4.5 + HARTON Certified ★4」が最強 |
 | エキテン | ユーザー口コミ × WEB 品質の二重評価 |
 | 静岡新聞・伊豆新聞 | 月次「HARTON Certified TOP10」連載 |
 | 沼津商工会議所 | 会員企業向け無料 WEB 診断の提供 |
@@ -558,7 +568,7 @@ TOP → /press/ → 取材依頼
 | リスク | 確率 | 影響 | 対応 |
 |---|---|---|---|
 | Google AI Overviews が中間サイト skip | 中 | 高 | GEO 最適化で AI に引用される設計 |
-| タベログ等が WEB 品質評価追加 | 低 | 中 | 専門特化で棲み分け |
+| 食べログ等が WEB 品質評価追加 | 低 | 中 | 専門特化で棲み分け |
 | 模倣サービス参入 | 中 | 中 | SPEC + scanner 独自性 + 先行優位 |
 | 掲載拒否クレーム | 中 | 中 | オプトアウト・倫理規範の事前完備 |
 | HARTON 代表のキャパ限界 | 高 | 中 | 自動化（scanner → サイト生成）|
@@ -602,7 +612,7 @@ TOP → /press/ → 取材依頼
 |---|---|---|
 | ★★★ HARTON Certified | クリーム背景 + 紺リング + 紺★ + 細金縁 | 控えめな認定 |
 | ★★★★ HARTON 優良 | 紺背景 + 金リング + 金★ + クリーム細線 | 誇り・上品 |
-| ★★★★★ HARTON S-Class | 紺グラデ + 金二重リング + 金★ + 細密装飾 + "S" モノグラム | 最高峰 |
+| ★★★★★ HARTON S-Class | 紺グラデ + 金二重リング + 金★ + 細密装飾 + "S" モノグラム | ブランド頂点 |
 
 ### 7.4 配布フォーマット
 
@@ -942,6 +952,7 @@ scanner ④ セッションが `scanner-tbd-confirmed.md`（277 行）として 
 | 1.1.2 | 2026-04-26 | scanner ④ Phase 9b 高優先 3 件（sitemap/robots/llms.txt + GEO 戦略 + WCAG 2.2）実装完了 → ルート①承認。§11.1.2 / §11.1.3 追加、関連 docs 連携反映 |
 | 1.1.3 | 2026-04-27 | SPEC v3.3 連動反映（§8.5 / §8.6 SPEC 本体正本化）+ 5 セッション役割名称確定 + ① への報告義務 mandatory 化 |
 | 1.1.4 | 2026-04-27 | **SPEC v3.4 連動反映**。ヘッダ Conformance を SPEC v3.4 化 / §3.3 表に scanner.py 実装関数 + SPEC v3.4 出典列を追加（v3.4 改訂サマリ §2.2 推奨内容を反映）/ §3.6 新設「認定対象事業者の JSON-LD 要件」（v3.4 §4.2 #1.0-#1.3 連動）。指示書: `INSTRUCTION-FROM-ROOT.md` #8 |
+| 1.1.5 | 2026-04-27 | **§4.1 全 22 ページ Variant を reading に統一**（旧 marketing: TOP / apply / contact / regions / industries / badge → reading）。代表 UX フィードバック「ページカラーのバラつきで目が疲れる」を受け、HARTON Certified の認定機関格調と整合する Deep Navy + Cream 単一基調へ統一。`spec-checker.js getVariant()` も `return 'reading'` 単純化。実装: `build-base.js` / `generate.js` の `variant: 'marketing'` → `'reading'` 一括置換。外部リンク捏造 URL 5 件（`www.go.jp` / `www.go.jp/security/` / `www.meti.go.jp` / `business.google.com` / `github.com/TC-HARTON/Scanner`）を実在 URL に差替（`www.digital.go.jp` / `www.ipa.go.jp` / `www.google.com/intl/ja_jp/business/`）+ 全外部リンクに `target="_blank" rel="noopener noreferrer"` 一括付与。「タベログ」誤表記 30+ 件を「食べログ」に修正。 |
 
 ---
 

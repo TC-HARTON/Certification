@@ -27,7 +27,7 @@
 <link rel="sitemap" type="application/xml" href="/sitemap.xml">
 
 <!-- CSP meta（HTTP _headers と二重防御 / spec-checker §11.6 整合 / SPEC §8.1.1 必須コア 6 + §8.1.2 推奨拡張 3） -->
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self' https://api.web3forms.com">
 
 <!-- favicon 3 種 -->
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
@@ -49,11 +49,12 @@
 <meta name="twitter:description" content="D 軸（経営インパクト）は OGP / SNS 連携 / モバイル最適化 / アクセシビリティ / SEO E-E-A-T を機械検証する。WCAG 2.2 AA + Google E-E-A-T 評価枠組みに整合。">
 <meta name="twitter:image" content="https://certification.tcharton.com/ogp.png">
 
-<!-- フォント preconnect + preload + display=swap（SPEC §6.4） -->
+<!-- フォント preconnect + preload + display=swap（SPEC §6.4 / MASTER-PLAN §2.6） -->
+<!-- 見出し: Playfair Display + Cormorant Garamond（serif 500-600） / 本文: Inter + Noto Sans JP（sans 400-500）-->
 <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@500;600&display=swap">
 
 <!-- Tailwind ビルド成果物 -->
 <link rel="stylesheet" href="/dist/output.css">
@@ -95,7 +96,9 @@
     "@type": "PostalAddress",
     "addressCountry": "JP",
     "addressRegion": "静岡県",
-    "addressLocality": "沼津市"
+    "addressLocality": "沼津市",
+    "streetAddress": "大岡2690",
+    "postalCode": "410-0022"
   },
   "geo": {
     "@type": "GeoCoordinates",
@@ -208,7 +211,7 @@
 
 <article>
   <section aria-label="冒頭エビデンス">
-    <p>D 軸 経営インパクトは scanner.py で <strong>18</strong>+ 項目を機械検証する。判定は項目別減点で 100 点満点に集約され、4 軸の合算が総合スコアとなる。出典: <a href="https://www.w3.org/WAI/standards-guidelines/wcag/" rel="nofollow noopener">W3C WCAG 2.2 公式</a>（取得日 <strong>2026-04-27</strong>）。</p>
+    <p>D 軸 経営インパクトは scanner.py で <strong>18</strong>+ 項目を機械検証する。判定は項目別減点で 100 点満点に集約され、4 軸の合算が総合スコアとなる。出典: <a href="https://www.w3.org/WAI/standards-guidelines/wcag/" rel="nofollow noopener noreferrer" target="_blank">W3C WCAG 2.2 公式</a>（取得日 <strong>2026-04-27</strong>）。</p>
     <blockquote cite="https://certification.tcharton.com/methodology/">
       「項目別の事実減点で評価し、軸間の重み比率は採用しない」 — MASTER-PLAN §3.2
     </blockquote>
@@ -247,7 +250,7 @@
       <li><a href="/opt-out/">掲載拒否権</a></li>
     </ul>
   </nav>
-  <p>&copy; 2026 T.C.HARTON / 大内 達也. All rights reserved.</p>
+  <p>&copy; 2026 T.C.HARTON. All rights reserved.</p>
 </footer>
 
 <noscript>

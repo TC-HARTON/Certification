@@ -113,7 +113,7 @@ HARTON CERTIFIED
 印象: 誇り、自信、上品
 ```
 
-### ★★★★★ HARTON S-Class Certified（最高峰）
+### ★★★★★ HARTON S-Class Certified（ブランド頂点）
 
 ```
 背景: 紺グラデーション（深い紺 → やや明るい紺）
@@ -122,7 +122,7 @@ HARTON CERTIFIED
 文字: 金の "HARTON S-CLASS CERTIFIED"
 認定 ID: クリーム色、装飾フレーム入り
 特別要素: 中央に "S" のモノグラム重ね
-印象: 最高峰、特別感、ガイドブックの最高位
+印象: ブランド頂点、特別等級、ガイドブックの最上位
 ```
 
 ---
