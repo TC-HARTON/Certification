@@ -96,17 +96,7 @@ const FAQ_TOP = {
   ],
 };
 
-const PERSON_FOUNDER = {
-  '@context': 'https://schema.org',
-  '@type': 'Person',
-  name: '大内 達也',
-  alternateName: 'Tatuya Ohuchi',
-  jobTitle: 'HARTON Certified 認定運用責任者 / T.C.HARTON 代表',
-  worksFor: { '@type': 'Organization', name: 'T.C.HARTON', url: 'https://tcharton.com/' },
-  url: `${DOMAIN}/about/`,
-  description: '15 年のエンジニア経験と移住者の客観性で、地域 WEB 品質の機械検証評価を確立した HARTON Certified 創設者。',
-  knowsAbout: ['Web Quality Certification', 'Machine Verification', 'GEO/LLMO', 'WCAG 2.2', 'Core Web Vitals'],
-};
+// PERSON_FOUNDER は個人前面廃止により削除 (代表 UX フィードバック「全体的に個人名不要」/ 2026-04-28)
 
 // ═══════════════════ ページ定義 ═══════════════════
 const PAGES = [];
@@ -121,7 +111,7 @@ PAGES.push({
   canonicalPath: '/',
   ogType: 'website',
   breadcrumbs: bcl([['HARTON Certified トップ', '/']]),
-  additionalJsonLd: [FAQ_TOP, PERSON_FOUNDER],
+  additionalJsonLd: [FAQ_TOP],
   mainContent: `
 <article>
   <section aria-label="ヒーロー（Lead Evidence Block）">
@@ -173,17 +163,16 @@ PAGES.push({
   path: 'about/index.html',
   variant: 'reading',
   navActive: 'about',
-  title: 'サイトについて — HARTON Certified の理念と運営者',
-  description: 'HARTON Certified の理念・運営者大内達也の略歴・移住者ナラティブ・運営体制を公開する。15 年のエンジニア経験と地域への一次情報に基づく独立認定機関の信頼基盤。',
+  title: 'サイトについて — HARTON Certified の理念と運営体制',
+  description: 'HARTON Certified（運営: T.C.HARTON）の理念・運営体制・専門領域を公開する。15 年の IT エンジニアリング知見と地域への一次情報に基づく独立認定機関の信頼基盤。',
   canonicalPath: '/about/',
   breadcrumbs: bcl([['トップ', '/'], ['サイトについて', '/about/']]),
-  additionalJsonLd: [PERSON_FOUNDER],
   mainContent: `
 <article>
   <section aria-label="冒頭エビデンス">
-    <p>HARTON Certified は <strong>2026 年 4 月</strong>、静岡県沼津市で創設された独立認定機関である。創設者は IT エンジニア歴 <strong>15 年</strong>の大内達也、移住者として <strong>5 年</strong>地域を観察し、機械検証による地方 WEB 品質評価の必要性を確信して立ち上げた。出典: <a href="https://www.digital.go.jp/" rel="nofollow noopener noreferrer" target="_blank">経済産業省（地方 DX の現状）</a>。</p>
+    <p>HARTON Certified は <strong>2026 年 4 月</strong>、静岡県沼津市で T.C.HARTON が立ち上げた独立認定機関である。<strong>15 年</strong>の IT エンジニアリング実務知見と、地域に <strong>5 年</strong>住み込んで一次調査した観察データを基盤として、機械検証による地方 WEB 品質公正評価を運用する。出典: <a href="https://www.digital.go.jp/" rel="nofollow noopener noreferrer" target="_blank">デジタル庁（地方 DX の現状）</a>。</p>
     <blockquote cite="${DOMAIN}/methodology/">
-      「技術は、本物を見抜くために使える」 — 大内達也（HARTON Certified 創設者）
+      「技術は、本物を見抜くために使える」 — HARTON Certified 運用思想
     </blockquote>
     <p><time datetime="2026-04-27" itemprop="datePublished">2026-04-27 公開</time></p>
     <h1>サイトについて</h1>
@@ -197,7 +186,7 @@ PAGES.push({
     <p>機械検証と移住者の客観性で、地域の優良 WEB サイトを公正に評価・認定し、デジタル時代の灯台となる事業者を世に証明する。情にも、規模にも、流行にも左右されない、4 軸の独立評価が中核である。</p>
   </section>
   <section aria-label="運営者プロフィール">
-    <h2>運営者: 大内 達也</h2>
+    <h2>運営事業者</h2>
     <p>T.C.HARTON 代表。IT エンジニア歴 15 年。Web フロントエンド・セキュリティ・AI を専門領域とし、Cloudflare / Anthropic / Google の公式仕様書を一次ソースとして実務に落とし込む方針で活動する。2021 年に静岡県沼津市へ移住し、地域中小事業者の WEB サイトの実態を一次調査する中で「ホームページが綺麗な店ほど、本当の商いが埋もれている」というパラドックスに気付いた。</p>
     <p>専門分野: <a href="https://www.w3.org/WAI/standards-guidelines/wcag/" rel="nofollow noopener noreferrer" target="_blank">WCAG 2.2 AA</a> アクセシビリティ / OWASP Top 10:2025 セキュリティ / GEO / LLMO / SPEC v3.4（2554 項目の独自規格）の策定。</p>
     <p>主要実績: tcharton.com の SPEC v3.4 完全準拠 + scanner ★5（S クラス）達成（2026 年 4 月）。HARTON Certified の独立認定機関化を 2026 年に立ち上げ、Phase 0 沼津 30 件パイロットを 2026 年 4-5 月に実施する。</p>
@@ -205,12 +194,12 @@ PAGES.push({
   <section aria-label="移住者ナラティブ">
     <h2>移住者の眼で測る</h2>
     <p>静岡県東部には本物の商いが息づいている。熟練の技、誠実な姿勢、地元への愛情。それは訪れた者にしか分からない地域の真価である。しかしデジタルの世界では別のルールが支配している。莫大な広告費を投じる大手と、見栄えだけのサイトに、真に価値ある店が埋もれていく。</p>
-    <p>移住者である運営者は、外からの眼で街の本当の強さを知った。そして 15 年のエンジニア経験で気付いた——技術は、本物を見抜くために使える。</p>
+    <p>外からの眼で街の本当の強さを知り、15 年の IT エンジニアリング経験で気付いた。技術は、本物を見抜くために使える。</p>
   </section>
   <section aria-label="運営体制">
     <h2>運営体制</h2>
-    <p>HARTON Certified は T.C.HARTON 代表大内達也の単独運営で 2026 年 4 月に立ち上げた。Phase 1（県東部 200 件）以降は弁護士・プロデザイナー・PR 会社との外部提携を予定する。商標登録は Phase 1 完了時に着手する。</p>
-    <p>運営拠点: 静岡県沼津市 / Cloudflare Workers Static Assets で配信 / scanner.py で自動月次再評価。</p>
+    <p>HARTON Certified は T.C.HARTON が 2026 年 4 月に立ち上げた。Phase 1（県東部 200 件）以降は弁護士・プロデザイナー・PR 会社との外部提携を予定する。商標登録は Phase 1 完了時に着手する。</p>
+    <p>運営拠点: 〒410-0022 静岡県沼津市大岡2690 / Cloudflare Workers Static Assets で配信 / scanner.py で自動月次再評価。</p>
   </section>
   <section aria-label="関連リンク">
     <h2>関連リンク</h2>
@@ -554,7 +543,7 @@ PAGES.push({
   </section>
   <section aria-label="取材依頼">
     <h2>取材依頼</h2>
-    <p><a href="/contact/">/contact/</a> から「メディア取材」を選択して送信する。代表大内達也へ直接届く運用である。</p>
+    <p><a href="/contact/">/contact/</a> から「メディア取材」を選択して送信する。T.C.HARTON 代表に直接届く運用である。</p>
   </section>
   <section aria-label="関連">
     <h2>関連</h2>
@@ -710,30 +699,50 @@ PAGES.push({
 </article>`,
 });
 
-// ─── 15. legal（minimal / reading）──────────────────
+// ─── 15. legal（minimal / reading / 特商法 11 条準拠）──────
 PAGES.push({
   path: 'legal/index.html',
   variant: 'reading',
   navActive: '',
   title: '利用規約・特定商取引法表記 — HARTON Certified',
-  description: 'HARTON Certified サイトの利用規約および特定商取引法に基づく表記。',
+  description: 'HARTON Certified サイトの利用規約および特定商取引法に基づく表記。事業者 T.C.HARTON / 〒410-0022 静岡県沼津市大岡2690。',
   canonicalPath: '/legal/',
   robots: 'index, follow',
   mainContent: `
 <article>
   <h1>利用規約・特定商取引法表記</h1>
-  <section aria-label="特商法">
-    <h2>事業者情報</h2>
-    <ul>
-      <li>販売事業者名: T.C.HARTON / 大内 達也</li>
-      <li>所在地: 静岡県沼津市（詳細は問合せ時に開示）</li>
-      <li>連絡先: <a href="/contact/">/contact/</a></li>
-      <li>運営サイト: <a href="${DOMAIN}/">${DOMAIN}/</a></li>
-    </ul>
+
+  <section aria-label="特定商取引法に基づく表記">
+    <h2>特定商取引法に基づく表記</h2>
+    <p>本表記は特定商取引法第 11 条（通信販売についての広告）に基づく事業者情報である。HARTON Certified は無料で運用される独立認定機関であり、課金を伴う物販・役務提供は本サイト経由で行わない。</p>
+
+    <table>
+      <caption>事業者情報（特商法第 11 条 準拠）</caption>
+      <tbody>
+        <tr><th scope="row">事業者名</th><td>T.C.HARTON</td></tr>
+        <tr><th scope="row">所在地</th><td>〒410-0022 静岡県沼津市大岡2690</td></tr>
+        <tr><th scope="row">運営事業</th><td>HARTON Certified（独立認定機関 / 機械検証による WEB 品質公正評価）</td></tr>
+        <tr><th scope="row">連絡先</th><td><a href="/contact/">/contact/</a> のお問合せフォームより受付。1 営業日以内に返信する。</td></tr>
+        <tr><th scope="row">運営サイト</th><td><a href="${DOMAIN}/">${DOMAIN}/</a></td></tr>
+        <tr><th scope="row">役務対価</th><td>無料。掲載料・認定料・更新料その他の課金は一切発生しない（完全中立 / 金銭非依存運用）。</td></tr>
+        <tr><th scope="row">役務提供時期</th><td>掲載申請受付後 1 営業日以内に scanner.py による機械検証を開始する。診断結果は 5 日以内に通知する。</td></tr>
+        <tr><th scope="row">支払方法</th><td>無料役務のため発生しない。</td></tr>
+        <tr><th scope="row">返品・キャンセル</th><td>事業者側からの掲載辞退は <a href="/opt-out/">/opt-out/</a> より随時受け付ける。理由不要、24 時間以内に対応する。</td></tr>
+      </tbody>
+    </table>
   </section>
+
   <section aria-label="利用規約">
     <h2>利用規約</h2>
-    <p>本サイトの利用規約は弁護士相談を経て確定する。Phase 0 完了時に正式版を公開する。それまでの暫定運用は <a href="/about/">about ページ</a>に記載する。</p>
+    <p>本サイトの完全な利用規約は弁護士確認を経て Phase 0 完了時に確定する。それまでは以下の暫定方針が適用される。</p>
+    <ul>
+      <li>本サイトの全コンテンツは T.C.HARTON に著作権が帰属する。</li>
+      <li>引用は出典明記（${DOMAIN}/methodology/）を条件として許可する。</li>
+      <li>掲載対象事業者の情報は公開情報のみを収集し、第三者提供は行わない（詳細は <a href="/privacy/">プライバシーポリシー</a>）。</li>
+      <li>掲載拒否権は <a href="/opt-out/">/opt-out/</a> より随時行使できる。</li>
+      <li>本サイトの月次再評価で ★ 区分が変動した場合、該当事業者へメール通知後に反映する。</li>
+    </ul>
+    <p>出典基準: <a href="https://www.no-trouble.caa.go.jp/" rel="nofollow noopener noreferrer" target="_blank">消費者庁「特定商取引法ガイド」</a>。</p>
   </section>
 </article>`,
 });

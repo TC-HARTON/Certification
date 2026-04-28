@@ -578,7 +578,7 @@ function generateLLMsTxt() {
 ## サイト概要
 
 - 公式名称: HARTON Certified
-- 運営: T.C.HARTON / 大内 達也（静岡県沼津市）
+- 運営: T.C.HARTON（〒410-0022 静岡県沼津市大岡2690）
 - 公式サイト: ${DOMAIN}/
 - 親サイト: https://tcharton.com/
 - 評価方法: 4 軸機械検証（A 基礎・B 防御・C AI 検索適応・D 経営インパクト）

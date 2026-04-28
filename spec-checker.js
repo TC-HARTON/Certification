@@ -86,7 +86,7 @@ const TARGET_FILES = [...STATIC_TARGETS, ...collectDynamicTargets()];
 // business: 個別事業者（LocalBusiness + ProfessionalService 配列 + additionalType + sameAs GBP）
 // minimal : 法務/オプトアウト/エラー
 const PAGE_TYPE = {
-  'index.html': 'full',
+  'index.html': 'hub',
 
   'about/index.html': 'subpage',
   'methodology/index.html': 'hub',

@@ -34,10 +34,9 @@ module.exports = {
         },
       },
       fontFamily: {
-        // MASTER-PLAN §2.6 — 見出し serif（Playfair Display / Cormorant Garamond）/ 本文 Inter + Noto Sans JP
+        // tcharton 親サイト整合: Inter + Noto Sans JP のみ (serif 撤去)
         sans:    ['"Noto Sans JP"', '"Inter"', 'sans-serif'],
-        serif:   ['"Playfair Display"', '"Cormorant Garamond"', '"Noto Serif JP"', '"Hiragino Mincho ProN"', 'serif'],
-        display: ['"Playfair Display"', '"Cormorant Garamond"', '"Noto Serif JP"', 'serif'],
+        display: ['"Inter"', '"Noto Sans JP"', 'sans-serif'],
       },
       fontVariantNumeric: {
         'tabular': 'tabular-nums',

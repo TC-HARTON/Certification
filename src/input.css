@@ -70,7 +70,7 @@
 
   /* ─── 見出し（§2.6: serif 500-600） ──────────────────── */
   h1, h2, h3, h4 {
-    font-family: "Playfair Display", "Cormorant Garamond", "Noto Serif JP", "Hiragino Mincho ProN", serif;
+    font-family: "Inter", "Noto Sans JP", -apple-system, BlinkMacSystemFont, sans-serif;
     font-weight: 600;
     color: var(--fg-heading);
     letter-spacing: 0.01em;
@@ -113,7 +113,7 @@
   p { margin: 0.85rem 0; font-variant-numeric: tabular-nums; }
   /* 強調（§2.6: gold + bold 控えめ） */
   strong { color: var(--fg-strong); font-weight: 600; }
-  em { font-style: italic; color: #D4AF37; font-weight: 500; }
+  em { /* font-style: italic; (tcharton 整合のため撤去) */ color: #D4AF37; font-weight: 500; }
   a {
     color: #D4AF37;
     text-decoration: underline;
@@ -167,8 +167,8 @@
     padding: 1.5rem 1.75rem;
     border-left: 3px solid #C9A961;
     background: var(--bg-soft);
-    font-style: italic;
-    font-family: "Playfair Display", "Cormorant Garamond", "Noto Serif JP", serif;
+    /* font-style: italic; (tcharton 整合のため撤去) */
+    font-family: "Inter", "Noto Sans JP", -apple-system, BlinkMacSystemFont, sans-serif;
     font-size: 1.125rem;
     line-height: 1.7;
     color: var(--fg-strong);
@@ -185,7 +185,7 @@
     color: #D4AF37;
     opacity: 0.2;
     line-height: 1;
-    font-family: "Playfair Display", "Cormorant Garamond", serif;
+    font-family: "Inter", "Noto Sans JP", -apple-system, BlinkMacSystemFont, sans-serif;
   }
 
   /* ─── 表（§2.6: tabular-nums） ───────────────────────── */
@@ -202,13 +202,13 @@
   caption {
     text-align: left;
     padding: 0.75rem 1rem;
-    font-style: italic;
+    /* font-style: italic; (tcharton 整合のため撤去) */
     font-size: 0.9rem;
     color: var(--fg-muted);
     background: var(--bg-soft);
     border-bottom: 1px solid var(--border-soft);
     caption-side: top;
-    font-family: "Playfair Display", "Cormorant Garamond", serif;
+    font-family: "Inter", "Noto Sans JP", -apple-system, BlinkMacSystemFont, sans-serif;
   }
   th, td {
     padding: 0.85rem 1rem;
@@ -219,7 +219,7 @@
     background: var(--bg-soft);
     font-weight: 600;
     color: var(--fg-strong);
-    font-family: "Playfair Display", "Cormorant Garamond", "Noto Serif JP", serif;
+    font-family: "Inter", "Noto Sans JP", -apple-system, BlinkMacSystemFont, sans-serif;
     letter-spacing: 0.02em;
   }
   tbody th {
@@ -227,7 +227,7 @@
     color: #D4AF37;
     width: 1%;
     white-space: nowrap;
-    font-family: "Playfair Display", "Cormorant Garamond", serif;
+    font-family: "Inter", "Noto Sans JP", -apple-system, BlinkMacSystemFont, sans-serif;
   }
   tbody tr:last-child td, tbody tr:last-child th { border-bottom: none; }
   tbody tr:hover { background: rgba(201, 169, 97, 0.05); }
@@ -274,7 +274,7 @@
   body > header > nav > a {
     color: var(--fg-strong);
     text-decoration: none;
-    font-family: "Playfair Display", "Cormorant Garamond", "Noto Serif JP", serif;
+    font-family: "Inter", "Noto Sans JP", -apple-system, BlinkMacSystemFont, sans-serif;
     font-size: 1.4rem;
     font-weight: 600;
     letter-spacing: 0.04em;
@@ -407,7 +407,7 @@
   body > header > #mobile-menu > nav > ul > li::before { content: none; }
   body > header > #mobile-menu > nav > ul > li > a {
     color: var(--fg-strong);
-    font-family: "Playfair Display", "Cormorant Garamond", serif;
+    font-family: "Inter", "Noto Sans JP", -apple-system, BlinkMacSystemFont, sans-serif;
     font-size: 1.5rem;
     text-decoration: none;
   }
@@ -452,7 +452,7 @@
     cursor: pointer;
     border-radius: 4px;
     transition: background .15s, color .15s;
-    font-family: "Playfair Display", "Cormorant Garamond", "Inter", sans-serif;
+    font-family: "Inter", "Noto Sans JP", -apple-system, BlinkMacSystemFont, sans-serif;
     letter-spacing: 0.05em;
   }
   button[type="submit"]:hover {
@@ -491,14 +491,14 @@
   body > main > article > section[aria-label*="ヒーロー"] > h1 {
     font-size: 2.5rem;
     margin: 1.5rem 0;
-    font-family: "Playfair Display", "Cormorant Garamond", "Noto Serif JP", serif;
+    font-family: "Inter", "Noto Sans JP", -apple-system, BlinkMacSystemFont, sans-serif;
     font-weight: 600;
   }
   @media (min-width: 768px) {
     body > main > article > section[aria-label*="ヒーロー"] > h1 { font-size: 3.5rem; }
   }
   body > main > article > section[aria-label*="ヒーロー"] > p:first-of-type::first-letter {
-    font-family: "Playfair Display", "Cormorant Garamond", serif;
+    font-family: "Inter", "Noto Sans JP", -apple-system, BlinkMacSystemFont, sans-serif;
     font-size: 3.75rem;
     float: left;
     line-height: 0.85;

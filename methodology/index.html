@@ -18,7 +18,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>評価方法 — HARTON Certified の 4 軸機械検証</title>
 <meta name="description" content="HARTON Certified の 4 軸機械検証（基礎・防御・AI 検索・経営インパクト）の概観と各軸詳細。評価項目・閾値・実施手順を完全公開する透明性の中核ページ。">
-<meta name="author" content="T.C.HARTON / 大内 達也">
+<meta name="author" content="T.C.HARTON">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
 <meta name="theme-color" content="#0F172A">
 <meta name="color-scheme" content="dark">
@@ -50,11 +50,11 @@
 <meta name="twitter:image" content="https://certification.tcharton.com/ogp.png">
 
 <!-- フォント preconnect + preload + display=swap（SPEC §6.4 / MASTER-PLAN §2.6） -->
-<!-- 見出し: Playfair Display + Cormorant Garamond（serif 500-600） / 本文: Inter + Noto Sans JP（sans 400-500）-->
+<!-- tcharton 親サイト整合: Inter + Noto Sans JP のみ (sans / 見出しも sans 統一) -->
 <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@500;600&display=swap">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@500;600&display=swap">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap">
 
 <!-- Tailwind ビルド成果物 -->
 <link rel="stylesheet" href="/dist/output.css">
@@ -104,10 +104,6 @@
     "@type": "GeoCoordinates",
     "latitude": 35.0959,
     "longitude": 138.8634
-  },
-  "founder": {
-    "@type": "Person",
-    "name": "大内 達也"
   },
   "foundingDate": "2026-04",
   "knowsAbout": ["Web Quality Certification", "Machine Verification", "GEO/LLMO", "WCAG 2.2", "Core Web Vitals"],

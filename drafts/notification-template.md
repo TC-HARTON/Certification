@@ -166,7 +166,7 @@ Google ビジネスプロフィールが未作成の場合、Service Area Busine
 ────────────────────────────────────
 
   名称   : HARTON Certified（ハートン認定）
-  運営   : T.C.HARTON / 大内 達也
+  運営   : T.C.HARTON
   所在   : 静岡県沼津市
   サイト : https://certification.tcharton.com/
   公式情報: https://certification.tcharton.com/about/
@@ -183,7 +183,7 @@ Google ビジネスプロフィールが未作成の場合、Service Area Busine
 
 ────────────────────────────────────
 HARTON Certified 認定運用責任者
-T.C.HARTON / 大内 達也
+T.C.HARTON
 {{連絡先}}
 ────────────────────────────────────
 ```
@@ -196,7 +196,7 @@ T.C.HARTON / 大内 達也
 |---|---|---|
 | `{{事業者名}}` | `data/businesses.json` の `name` | ○○税理士事務所 |
 | `{{宛先担当者}}` | 通知前の代表者調査 | 代表 / 店主 / 院長 など |
-| `{{担当者名}}` | 配信時固定（大内 達也） | 大内 達也 |
+| `{{担当者名}}` | 配信時固定（T.C.HARTON 代表） | T.C.HARTON 代表 |
 | `{{事業者URL}}` | `data/businesses.json` の `url` | https://example.com/ |
 | `{{業種}}` | `data/industries.json` の `label`（businesses.json の industry キー経由） | 税理士・会計士 |
 | `{{認定ID}}` | generate.js で発行（例: `HC-2026-0001`） | HC-2026-0001 |
