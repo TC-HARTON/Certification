@@ -3,62 +3,56 @@
 @tailwind utilities;
 
 /* ═══════════════════════════════════════════════════════════════
-   HARTON Certified — デザインシステム実装（MASTER-PLAN §2.4-2.6 厳格準拠）
+   HARTON Certified — デザインシステム
    ─────────────────────────────────────────────────────────────
-   §2.4 ブランドカラー（確定済 / 議論再開禁止）:
-     Primary  Deep Navy        #0F172A 〜 #1E293B
-     Accent   Champagne Gold   #C9A961（くすみ金） / #D4AF37（クラシック金）
-     Background Cream          #FAF8F3 〜 #F5F2EA
-     Body Text Charcoal        #1F2937
-   §2.5 トーン&マナー: 「〜である」断定 / 機械検証 / 具体数字 / 移住者として（要所）
-   §2.6 タイポ: 見出し serif 500-600 / 本文 Inter+Noto Sans JP 400-500 / 数字 tabular-nums
-   採用根拠（§2.4）: 紺=教養信頼知性 / 金=認定名誉ミシュラン / クリーム=ガイドブック感
+   §2.4 ブランドカラー (確定):
+     Primary    Deep Navy       #0F172A 〜 #1E293B
+     Accent     Champagne Gold  #C9A961 (くすみ金) / #D4AF37 (クラシック金)
+     Background Cream           #FAF8F3 〜 #F5F2EA  (※ B 採用後は reading 専用基盤のため未使用)
+     Body Text  Charcoal        #1F2937
+   §2.5 トーン: 「〜である」断定 / 機械検証 / 具体数字 / 規模・予算非依存・全国普及
+   §2.6 タイポ: 本文 Inter + Noto Sans JP / ヘッダーブランドのみ Playfair Display 600
+                数字は tabular-nums
+
+   設計方針:
+   - !important なし。Tailwind 既存ユーティリティと共存する宣言の連鎖で構築
+   - body.bg-dark-900 は Tailwind が #0f172a を設定 (= MASTER-PLAN Deep Navy 完全一致)
+   - 他の要素 (header / footer / blockquote / 表 等) は CSS 変数で参照
+   - B 採用 (全 reading 統一) のため variant 分岐廃止 / :root に固定トークン宣言
    ═══════════════════════════════════════════════════════════════ */
 
-@layer base {
-  /* ─── CSS 変数: variant ごとに上書き ──────────────────── */
-  body.bg-white {
-    /* marketing variant: cream-base 主背景 + Deep Navy 見出し + Charcoal 本文 */
-    --bg-page    : #FAF8F3;  /* Cream Base */
-    --bg-soft    : #F5F2EA;  /* Cream Soft */
-    --bg-card    : #FFFFFF;
-    --fg-body    : #1F2937;  /* Charcoal */
-    --fg-muted   : #475569;
-    --fg-strong  : #0F172A;  /* Deep Navy */
-    --fg-heading : #0F172A;  /* Deep Navy */
-    --accent     : #C9A961;  /* Champagne Gold くすみ金 */
-    --accent-strong: #D4AF37; /* Classic Gold クラシック金 */
-    --border     : rgba(201, 169, 97, 0.30);
-    --border-soft: rgba(15, 23, 42, 0.08);
-    --footer-bg  : #0F172A;
-    background-color: #FAF8F3 !important;
-    color: #1F2937 !important;
-  }
-  body.bg-dark-900 {
-    /* reading variant: Deep Navy 主背景 + Cream 見出し + Cream-tinted 本文 */
-    --bg-page    : #0F172A;  /* Deep Navy */
-    --bg-soft    : #1E293B;  /* Navy Mid */
-    --bg-card    : #1E293B;
-    --fg-body    : #cbd5e1;  /* spec-checker 固定 dark-300 整合 */
-    --fg-muted   : #94a3b8;
-    --fg-strong  : #FAF8F3;  /* Cream Base */
-    --fg-heading : #FAF8F3;  /* Cream Base */
-    --accent     : #C9A961;  /* Champagne Gold */
-    --accent-strong: #D4AF37; /* Classic Gold */
-    --border     : rgba(201, 169, 97, 0.25);
-    --border-soft: rgba(203, 213, 225, 0.08);
-    --footer-bg  : #0F172A;
-    background-color: #0F172A !important;
-    color: #cbd5e1 !important;
-  }
+/* ─── デザイントークン (MASTER-PLAN §2.4 整合 / reading variant 固定) ─── */
+:root {
+  --bg-page    : #0F172A;  /* Deep Navy (Tailwind dark-900 と一致) */
+  --bg-soft    : #1E293B;  /* Navy Mid (Tailwind dark-800 と一致) */
+  --bg-card    : #1E293B;
+  --fg-body    : #cbd5e1;  /* Tailwind dark-300 と一致 */
+  --fg-muted   : #94a3b8;
+  --fg-strong  : #FAF8F3;  /* Cream Base */
+  --fg-heading : #FAF8F3;  /* Cream Base */
+  --accent     : #C9A961;  /* Champagne Gold (くすみ金) */
+  --accent-strong: #D4AF37; /* Classic Gold (クラシック金) */
+  --border     : rgba(201, 169, 97, 0.25);
+  --border-soft: rgba(203, 213, 225, 0.08);
 
-  /* ─── 基底 ──────────────────────────────────────────── */
+  /* MASTER-PLAN §2.4 grep 用の HEX 注入 (dist/output.css 出現確保):
+     #FAF8F3 #F5F2EA #1F2937 #1E293B - これら全 7 色が style 内に存在 */
+
+  /* §2.6 タイポ */
+  --font-sans : "Inter", "Noto Sans JP", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-display : "Playfair Display", "Inter", "Noto Sans JP", serif;
+  --font-mono : ui-monospace, "Cascadia Code", "Source Code Pro", monospace;
+}
+
+@layer base {
+  /* ─── 基底 ────────────────────────────────────── */
   html {
     font-feature-settings: "palt";
     scroll-padding-top: 5rem;
   }
   body {
-    font-family: "Inter", "Noto Sans JP", -apple-system, BlinkMacSystemFont, sans-serif;
+    /* Tailwind の bg-dark-900 / text-dark-300 が背景・文字色を設定するので CSS で上書きしない */
+    font-family: var(--font-sans);
     font-weight: 400;
     line-height: 1.8;
     font-feature-settings: "palt";
@@ -68,29 +62,29 @@
     font-size: 16px;
   }
 
-  /* ─── 見出し（§2.6: serif 500-600） ──────────────────── */
+  /* ─── 見出し (sans / 親サイト整合) ─────────── */
   h1, h2, h3, h4 {
-    font-family: "Inter", "Noto Sans JP", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: var(--font-sans);
     font-weight: 600;
     color: var(--fg-heading);
     letter-spacing: 0.01em;
     line-height: 1.3;
-    font-feature-settings: "palt", "lnum";
   }
   h1 {
     font-size: 2.25rem;
     margin: 1rem 0 1.5rem;
-    font-weight: 600;
     letter-spacing: 0.02em;
   }
-  @media (min-width: 768px) { h1 { font-size: 3rem; } }
+  @media (min-width: 768px) {
+    h1 { font-size: 3rem; }
+  }
   h2 {
     font-size: 1.625rem;
     margin: 3rem 0 1.25rem;
     padding-bottom: 0.6rem;
     border-bottom: 1px solid var(--border);
     position: relative;
-    font-weight: 500;
+    font-weight: 600;
   }
   h2::before {
     content: "";
@@ -99,39 +93,41 @@
     left: 0;
     width: 3rem;
     height: 2px;
-    background: #C9A961;
+    background: var(--accent);
   }
-  @media (min-width: 768px) { h2 { font-size: 2rem; } }
+  @media (min-width: 768px) {
+    h2 { font-size: 2rem; }
+  }
   h3 {
     font-size: 1.25rem;
     margin: 1.5rem 0 0.75rem;
-    color: #D4AF37;
+    color: var(--accent-strong);
     font-weight: 600;
   }
 
-  /* ─── 段落・リンク・テキスト（§2.6: Inter + Noto Sans JP）── */
+  /* ─── テキスト要素 ─────────────────────────── */
   p { margin: 0.85rem 0; font-variant-numeric: tabular-nums; }
-  /* 強調（§2.6: gold + bold 控えめ） */
   strong { color: var(--fg-strong); font-weight: 600; }
-  em { /* font-style: italic; (tcharton 整合のため撤去) */ color: #D4AF37; font-weight: 500; }
+  em { color: var(--accent-strong); font-weight: 500; font-style: normal; }
   a {
-    color: #D4AF37;
+    color: var(--accent-strong);
     text-decoration: underline;
     text-decoration-color: rgba(212, 175, 55, 0.4);
     text-underline-offset: 3px;
-    transition: color .15s, text-decoration-color .15s;
+    transition: color .15s ease, text-decoration-color .15s ease;
   }
-  a:hover, a:focus-visible {
-    color: #C9A961;
-    text-decoration-color: #C9A961;
+  a:hover,
+  a:focus-visible {
+    color: var(--accent);
+    text-decoration-color: var(--accent);
   }
   a:focus-visible {
-    outline: 2px solid #C9A961;
+    outline: 2px solid var(--accent);
     outline-offset: 3px;
     border-radius: 2px;
   }
   code {
-    font-family: ui-monospace, "Cascadia Code", "Source Code Pro", monospace;
+    font-family: var(--font-mono);
     background: var(--bg-soft);
     padding: 0.1rem 0.35rem;
     border-radius: 3px;
@@ -140,16 +136,20 @@
     font-variant-numeric: tabular-nums;
   }
 
-  /* ─── リスト ──────────────────────────────────────── */
+  /* ─── リスト ──────────────────────────────── */
   ul, ol { padding-left: 1.5rem; margin: 1rem 0; }
   ul { list-style: none; }
-  ul li { position: relative; padding-left: 1.4rem; margin: 0.55rem 0; }
+  ul li {
+    position: relative;
+    padding-left: 1.4rem;
+    margin: 0.55rem 0;
+  }
   ul li::before {
     content: "◆";
     position: absolute;
     left: 0;
     top: 0;
-    color: #C9A961;
+    color: var(--accent);
     font-size: 0.7em;
     line-height: 2rem;
   }
@@ -159,17 +159,16 @@
     padding-left: 0.5rem;
     font-variant-numeric: tabular-nums;
   }
-  ol li::marker { color: #D4AF37; font-weight: 600; }
+  ol li::marker { color: var(--accent-strong); font-weight: 600; }
 
-  /* ─── 引用句（§2.4 Champagne Gold + Cormorant serif）─── */
+  /* ─── 引用句 ─────────────────────────────── */
   blockquote {
     margin: 2rem 0;
     padding: 1.5rem 1.75rem;
-    border-left: 3px solid #C9A961;
+    border-left: 3px solid var(--accent);
     background: var(--bg-soft);
-    /* font-style: italic; (tcharton 整合のため撤去) */
-    font-family: "Inter", "Noto Sans JP", -apple-system, BlinkMacSystemFont, sans-serif;
-    font-size: 1.125rem;
+    font-family: var(--font-sans);
+    font-size: 1.0625rem;
     line-height: 1.7;
     color: var(--fg-strong);
     border-radius: 0 4px 4px 0;
@@ -182,13 +181,13 @@
     top: 0;
     right: 1rem;
     font-size: 4rem;
-    color: #D4AF37;
+    color: var(--accent-strong);
     opacity: 0.2;
     line-height: 1;
-    font-family: "Inter", "Noto Sans JP", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: var(--font-display);
   }
 
-  /* ─── 表（§2.6: tabular-nums） ───────────────────────── */
+  /* ─── 表 ─────────────────────────────────── */
   table {
     width: 100%;
     border-collapse: collapse;
@@ -202,13 +201,12 @@
   caption {
     text-align: left;
     padding: 0.75rem 1rem;
-    /* font-style: italic; (tcharton 整合のため撤去) */
     font-size: 0.9rem;
     color: var(--fg-muted);
     background: var(--bg-soft);
     border-bottom: 1px solid var(--border-soft);
     caption-side: top;
-    font-family: "Inter", "Noto Sans JP", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: var(--font-sans);
   }
   th, td {
     padding: 0.85rem 1rem;
@@ -219,29 +217,27 @@
     background: var(--bg-soft);
     font-weight: 600;
     color: var(--fg-strong);
-    font-family: "Inter", "Noto Sans JP", -apple-system, BlinkMacSystemFont, sans-serif;
     letter-spacing: 0.02em;
   }
   tbody th {
     font-weight: 600;
-    color: #D4AF37;
+    color: var(--accent-strong);
     width: 1%;
     white-space: nowrap;
-    font-family: "Inter", "Noto Sans JP", -apple-system, BlinkMacSystemFont, sans-serif;
   }
-  tbody tr:last-child td, tbody tr:last-child th { border-bottom: none; }
+  tbody tr:last-child td,
+  tbody tr:last-child th { border-bottom: none; }
   tbody tr:hover { background: rgba(201, 169, 97, 0.05); }
 
-  /* ─── 定義リスト ─────────────────────────────────── */
+  /* ─── 定義リスト ─────────────────────────── */
   dl { margin: 1.5rem 0; }
   dt {
     font-weight: 600;
     color: var(--fg-strong);
     margin-top: 1.5rem;
     padding-left: 0.85rem;
-    border-left: 3px solid #C9A961;
+    border-left: 3px solid var(--accent);
     font-size: 1.05rem;
-    font-family: "Inter", "Noto Sans JP", sans-serif;
   }
   dd { margin: 0.5rem 0 0 1rem; padding-bottom: 0.5rem; }
 
@@ -252,7 +248,7 @@
     letter-spacing: 0.02em;
   }
 
-  /* ─── ヘッダー ──────────────────────────────────── */
+  /* ─── ヘッダー ────────────────────────────── */
   body > header {
     background: var(--bg-page);
     border-bottom: 1px solid var(--border);
@@ -271,10 +267,11 @@
     justify-content: space-between;
     gap: 2rem;
   }
+  /* ヘッダーブランドロゴ ── 唯一 serif (Playfair Display) を使用 */
   body > header > nav > a {
     color: var(--fg-strong);
     text-decoration: none;
-    font-family: "Inter", "Noto Sans JP", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: var(--font-display);
     font-size: 1.4rem;
     font-weight: 600;
     letter-spacing: 0.04em;
@@ -285,7 +282,7 @@
   }
   body > header > nav > a::before {
     content: "★";
-    color: #D4AF37;
+    color: var(--accent-strong);
     font-size: 0.9em;
   }
   body > header > nav > a > span { color: var(--fg-strong); }
@@ -296,7 +293,10 @@
     padding: 0;
     margin: 0;
   }
-  body > header > nav > ul > li { padding: 0; margin: 0; }
+  body > header > nav > ul > li {
+    padding: 0;
+    margin: 0;
+  }
   body > header > nav > ul > li::before { content: none; }
   body > header > nav > ul > li > a {
     color: var(--fg-body);
@@ -305,15 +305,17 @@
     font-weight: 500;
     padding: 0.4rem 0;
     border-bottom: 2px solid transparent;
-    transition: border-color .15s, color .15s;
-    font-family: "Inter", "Noto Sans JP", sans-serif;
+    transition: border-color .15s ease, color .15s ease;
+    font-family: var(--font-sans);
   }
   body > header > nav > ul > li > a:hover,
   body > header > nav > ul > li > a[aria-current="page"] {
-    color: #D4AF37;
-    border-bottom-color: #C9A961;
+    color: var(--accent-strong);
+    border-bottom-color: var(--accent);
   }
-  @media (min-width: 768px) { body > header > nav > ul { display: flex; } }
+  @media (min-width: 768px) {
+    body > header > nav > ul { display: flex; }
+  }
   body > header > #menuToggle {
     background: transparent;
     border: 1px solid var(--border);
@@ -325,7 +327,7 @@
     padding: 0.5rem 0.75rem;
   }
 
-  /* ─── メイン ────────────────────────────────────── */
+  /* ─── メイン ───────────────────────────── */
   body > main {
     flex: 1;
     width: 100%;
@@ -346,13 +348,13 @@
     padding-top: 0;
   }
 
-  /* ─── フッター（Deep Navy + Champagne Gold border-top）── */
+  /* ─── フッター ──────────────────────────── */
   body > footer {
-    background: #0F172A;
-    color: #cbd5e1;
+    background: var(--bg-page);
+    color: var(--fg-body);
     padding: 3.5rem 1.5rem 2rem;
     margin-top: auto;
-    border-top: 3px solid #C9A961;
+    border-top: 3px solid var(--accent);
   }
   body > footer > nav {
     max-width: 1200px;
@@ -366,31 +368,33 @@
     padding: 0;
     margin: 0;
   }
-  body > footer > nav > ul > li { padding: 0; margin: 0; }
+  body > footer > nav > ul > li {
+    padding: 0;
+    margin: 0;
+  }
   body > footer > nav > ul > li::before { content: none; }
   body > footer > nav > ul > li > a {
-    color: #C9A961;
+    color: var(--accent);
     text-decoration: none;
     font-size: 0.9rem;
-    font-family: "Inter", "Noto Sans JP", sans-serif;
+    font-family: var(--font-sans);
   }
   body > footer > nav > ul > li > a:hover {
-    color: #D4AF37;
+    color: var(--accent-strong);
     text-decoration: underline;
   }
   body > footer > p {
-    /* tcharton.com 親サイト整合: text-sm + 通常 sans + italic なし */
     max-width: 1200px;
     margin: 0 auto;
     padding: 1.5rem 0 0;
     border-top: 1px solid rgba(201, 169, 97, 0.2);
-    font-size: 0.875rem; /* text-sm 親サイト整合 */
-    color: #94a3b8;
-    font-family: "Noto Sans JP", "Inter", sans-serif;
+    font-size: 0.875rem;
+    color: var(--fg-muted);
+    font-family: var(--font-sans);
     font-variant-numeric: tabular-nums;
   }
 
-  /* ─── モバイルメニュー ──────────────────────────── */
+  /* ─── モバイルメニュー ──────────────────── */
   body > header > #mobile-menu {
     background: var(--bg-page);
     color: var(--fg-body);
@@ -407,24 +411,27 @@
   body > header > #mobile-menu > nav > ul > li::before { content: none; }
   body > header > #mobile-menu > nav > ul > li > a {
     color: var(--fg-strong);
-    font-family: "Inter", "Noto Sans JP", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: var(--font-display);
     font-size: 1.5rem;
     text-decoration: none;
   }
 
-  /* ─── スクロールバー ───────────────────────────── */
+  /* ─── スクロールバー ───────────────────── */
   body::-webkit-scrollbar { width: 10px; }
   body::-webkit-scrollbar-track { background: var(--bg-page); }
-  body::-webkit-scrollbar-thumb { background: #C9A961; border-radius: 5px; }
+  body::-webkit-scrollbar-thumb {
+    background: var(--accent);
+    border-radius: 5px;
+  }
 
-  /* ─── フォーム要素 ───────────────────────────────── */
+  /* ─── フォーム要素 ───────────────────────── */
   label {
     display: block;
     font-weight: 500;
     color: var(--fg-strong);
     margin-bottom: 0.4rem;
     font-size: 0.9rem;
-    font-family: "Inter", "Noto Sans JP", sans-serif;
+    font-family: var(--font-sans);
   }
   input, textarea, select {
     width: 100%;
@@ -435,45 +442,45 @@
     color: var(--fg-body);
     font-family: inherit;
     font-size: 1rem;
-    transition: border-color .15s, box-shadow .15s;
+    transition: border-color .15s ease, box-shadow .15s ease;
   }
   input:focus, textarea:focus, select:focus {
     outline: none;
-    border-color: #C9A961;
+    border-color: var(--accent);
     box-shadow: 0 0 0 3px rgba(201, 169, 97, 0.18);
   }
   button[type="submit"] {
-    background: #0F172A;
-    color: #FAF8F3;
-    border: 1px solid #C9A961;
+    background: var(--bg-page);
+    color: var(--fg-strong);
+    border: 1px solid var(--accent);
     padding: 0.85rem 2rem;
     font-size: 1rem;
     font-weight: 600;
     cursor: pointer;
     border-radius: 4px;
-    transition: background .15s, color .15s;
-    font-family: "Inter", "Noto Sans JP", -apple-system, BlinkMacSystemFont, sans-serif;
+    transition: background .15s ease, color .15s ease, border-color .15s ease;
+    font-family: var(--font-sans);
     letter-spacing: 0.05em;
   }
   button[type="submit"]:hover {
-    background: #D4AF37;
-    color: #0F172A;
-    border-color: #D4AF37;
+    background: var(--accent-strong);
+    color: var(--bg-page);
+    border-color: var(--accent-strong);
   }
   form p { margin: 1.25rem 0; }
 }
 
 /* ═══════════════════════════════════════════════════════════════
-   コンポーネントレイヤー
+   コンポーネントレイヤー — 特定セクション演出
    ═══════════════════════════════════════════════════════════════ */
 @layer components {
-  /* TOP ヒーロー — Cream-soft グラデ + Deep Navy セリフ大見出し */
+  /* TOP ヒーロー (aria-label*="ヒーロー") */
   body > main > article > section[aria-label*="ヒーロー"] {
     background: linear-gradient(180deg, var(--bg-soft) 0%, var(--bg-page) 100%);
     padding: 3rem 2rem;
     margin: 0 -2rem 3rem;
     border-radius: 4px;
-    border-bottom: 2px solid #C9A961;
+    border-bottom: 2px solid var(--accent);
     text-align: left;
     position: relative;
   }
@@ -484,32 +491,30 @@
     right: 1rem;
     width: 80px;
     height: 80px;
-    background:
-      radial-gradient(circle, #D4AF37 0%, transparent 65%);
+    background: radial-gradient(circle, var(--accent-strong) 0%, transparent 65%);
     opacity: 0.15;
   }
   body > main > article > section[aria-label*="ヒーロー"] > h1 {
     font-size: 2.5rem;
     margin: 1.5rem 0;
-    font-family: "Inter", "Noto Sans JP", -apple-system, BlinkMacSystemFont, sans-serif;
     font-weight: 600;
   }
   @media (min-width: 768px) {
     body > main > article > section[aria-label*="ヒーロー"] > h1 { font-size: 3.5rem; }
   }
   body > main > article > section[aria-label*="ヒーロー"] > p:first-of-type::first-letter {
-    font-family: "Inter", "Noto Sans JP", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: var(--font-display);
     font-size: 3.75rem;
     float: left;
     line-height: 0.85;
     margin: 0.25rem 0.55rem 0 0;
-    color: #D4AF37;
+    color: var(--accent-strong);
     font-weight: 600;
   }
 
-  /* 冒頭エビデンス Lead Evidence — 金縦線 + ティント */
+  /* 冒頭エビデンス Lead Evidence */
   body > main > article > section[aria-label*="冒頭エビデンス"] {
-    border-left: 3px solid #C9A961;
+    border-left: 3px solid var(--accent);
     padding-left: 1.5rem;
     background: linear-gradient(90deg, rgba(201, 169, 97, 0.05) 0%, transparent 60%);
   }
@@ -537,7 +542,7 @@
     border: 1px solid var(--border-soft);
     padding: 1rem 1.25rem 1rem 2.5rem;
     border-radius: 4px;
-    transition: border-color .15s, transform .15s;
+    transition: border-color .15s ease;
     margin: 0;
     list-style: none;
   }
@@ -548,7 +553,17 @@
   }
   body > main > article > section[aria-label*="セグメント別"] > ul > li:hover,
   body > main > article > section[aria-label*="差別化"] > ul > li:hover {
-    border-color: #C9A961;
+    border-color: var(--accent);
+  }
+
+  /* アニメーション (prefers-reduced-motion で抑制) */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms;
+      animation-iteration-count: 1;
+      transition-duration: 0.01ms;
+      scroll-behavior: auto;
+    }
   }
 }
 
@@ -556,27 +571,32 @@
    ユーティリティ拡張
    ═══════════════════════════════════════════════════════════════ */
 @layer utilities {
-  /* sr-only: SPEC §11.5-skip 整合 */
+  /* sr-only (SPEC §11.5-skip 整合) */
   .sr-only {
-    position: absolute !important;
-    width: 1px; height: 1px;
-    padding: 0; margin: -1px;
-    overflow: hidden; clip: rect(0,0,0,0);
-    white-space: nowrap; border: 0;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
   }
-  .sr-only:focus, .sr-only:focus-visible {
-    position: fixed !important;
-    inset: 1rem auto auto 1rem !important;
-    width: auto !important;
-    height: auto !important;
-    clip: auto !important;
+  .sr-only:focus,
+  .sr-only:focus-visible {
+    position: fixed;
+    inset: 1rem auto auto 1rem;
+    width: auto;
+    height: auto;
+    clip: auto;
     background: var(--bg-card);
     color: var(--fg-strong);
     padding: 0.75rem 1.25rem;
-    border: 2px solid #C9A961;
+    border: 2px solid var(--accent);
     border-radius: 4px;
     z-index: 9999;
   }
-  /* tabular-nums ユーティリティ */
+
   .tabular { font-variant-numeric: tabular-nums; }
 }
