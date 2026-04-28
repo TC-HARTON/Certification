@@ -62,9 +62,10 @@
     font-size: 16px;
   }
 
-  /* ─── 見出し (sans / 親サイト整合) ─────────── */
+  /* ─── 見出し (serif / MASTER-PLAN §2.6 元設計復帰) ────
+     ロゴ (Playfair Display) と階層一貫 / The Economist + Bloomberg 系の権威表現 */
   h1, h2, h3, h4 {
-    font-family: var(--font-sans);
+    font-family: var(--font-display);
     font-weight: 600;
     color: var(--fg-heading);
     letter-spacing: 0.01em;
@@ -161,19 +162,20 @@
   }
   ol li::marker { color: var(--accent-strong); font-weight: 600; }
 
-  /* ─── 引用句 ─────────────────────────────── */
+  /* ─── 引用句 (serif / 出典・名言の格調) ─── */
   blockquote {
     margin: 2rem 0;
     padding: 1.5rem 1.75rem;
     border-left: 3px solid var(--accent);
     background: var(--bg-soft);
-    font-family: var(--font-sans);
-    font-size: 1.0625rem;
+    font-family: var(--font-display);
+    font-size: 1.125rem;
     line-height: 1.7;
     color: var(--fg-strong);
     border-radius: 0 4px 4px 0;
     position: relative;
     font-weight: 500;
+    font-style: italic;
   }
   blockquote::before {
     content: "\201C";
