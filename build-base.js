@@ -106,8 +106,8 @@ PAGES.push({
   path: 'index.html',
   variant: 'reading',
   navActive: '',
-  title: 'HARTON Certified — 移住者の眼で地域の WEB 品質を測る、機械検証の独立認定機関',
-  description: 'HARTON Certified は WEB 品質を機械検証で公正評価する地方発の独立認定機関。SPEC v3.4 の 2554 項目 + 4 軸スキャナーで地域の優良サイトを認定する。完全中立・金銭非依存、★3 以上のみ掲載のポジティブセレクション。',
+  title: 'HARTON Certified — 機械検証で Sクラス WEB の普及を支える独立認定機関',
+  description: 'HARTON Certified は WEB 品質を機械検証で公正評価する独立認定機関。SPEC v3.4 の 2,554 項目 + 4 軸スキャナーで全国の優良サイトを認定し、Sクラス WEB の普及を支える。完全中立・金銭非依存、★3 以上のみ掲載のポジティブセレクション。',
   canonicalPath: '/',
   ogType: 'website',
   breadcrumbs: bcl([['HARTON Certified トップ', '/']]),
@@ -115,13 +115,13 @@ PAGES.push({
   mainContent: `
 <article>
   <section aria-label="ヒーロー（Lead Evidence Block）">
-    <p>HARTON Certified は、<strong>2554 項目</strong>の機械検証で WEB 品質を公正に測る、地方発の独立認定機関である。沼津・三島から日本の地方 DX を底上げするため、4 軸の客観評価を 2026 年に開始した。出典: <a href="https://www.digital.go.jp/" rel="nofollow noopener noreferrer" target="_blank">日本政府・公的機関</a>（HSTS / WCAG / Core Web Vitals 等の公的基準に準拠）。</p>
+    <p>HARTON Certified は、<strong>2,554 項目</strong>の機械検証で WEB 品質を公正に測る独立認定機関である。全国の事業者の Sクラス WEB 普及を支えるため、4 軸の客観評価を 2026 年に開始した。出典: <a href="https://www.digital.go.jp/" rel="nofollow noopener noreferrer" target="_blank">日本政府・公的機関</a>（HSTS / WCAG / Core Web Vitals 等の公的基準に準拠）。</p>
     <blockquote cite="${DOMAIN}/methodology/">
-      「機械検証で WEB 品質を公正に測る、地方発の認定機関」 — HARTON Certified ブランドナラティブ
+      「機械検証で、Sクラス WEB の普及を支える」 — HARTON Certified ブランドナラティブ
     </blockquote>
     <p><time datetime="2026-04-27" itemprop="datePublished">2026 年 4 月 27 日 公開</time></p>
-    <h1>移住者の眼で、地域の真価を測る</h1>
-    <p>静岡県東部 7 市町から始まり、全国 10000 件規模の優良 WEB サイト認定を 2027 年までに達成する独立認定機関。</p>
+    <h1>すべての事業者の WEB を、S クラスへ。</h1>
+    <p>機械検証による公正評価を通じて、地域から全国へ、Sクラス WEB サイトの普及を支える。Phase 0（沼津市 30 件 / 2026-04-05）から始まり、Phase 4（2027 年）で全国 10,000 件以上の認定を目標とする。</p>
   </section>
   <section aria-label="3 つの差別化要素">
     <h2>3 つの差別化要素</h2>
@@ -183,18 +183,18 @@ PAGES.push({
   </section>
   <section aria-label="ミッション">
     <h2>ミッション</h2>
-    <p>機械検証と移住者の客観性で、地域の優良 WEB サイトを公正に評価・認定し、デジタル時代の灯台となる事業者を世に証明する。情にも、規模にも、流行にも左右されない、4 軸の独立評価が中核である。</p>
+    <p>機械検証による客観性で、全国の優良 WEB サイトを公正に評価・認定し、Sクラス WEB の普及を支える。情にも、規模にも、流行にも左右されない、4 軸の独立評価を中核とする。</p>
   </section>
   <section aria-label="運営者プロフィール">
     <h2>運営事業者</h2>
-    <p>T.C.HARTON 代表。IT エンジニア歴 15 年。Web フロントエンド・セキュリティ・AI を専門領域とし、Cloudflare / Anthropic / Google の公式仕様書を一次ソースとして実務に落とし込む方針で活動する。2021 年に静岡県沼津市へ移住し、地域中小事業者の WEB サイトの実態を一次調査する中で「ホームページが綺麗な店ほど、本当の商いが埋もれている」というパラドックスに気付いた。</p>
+    <p>T.C.HARTON 代表。IT エンジニア歴 15 年。Web フロントエンド・セキュリティ・AI を専門領域とし、Cloudflare / Anthropic / Google の公式仕様書を一次ソースとして実務に落とし込む方針で活動する。静岡県沼津市を拠点に地域中小事業者の WEB サイトの実態を一次調査する中で「ホームページが綺麗な店ほど、本当の商いが埋もれている」というパラドックスに気付いた。</p>
     <p>専門分野: <a href="https://www.w3.org/WAI/standards-guidelines/wcag/" rel="nofollow noopener noreferrer" target="_blank">WCAG 2.2 AA</a> アクセシビリティ / OWASP Top 10:2025 セキュリティ / GEO / LLMO / SPEC v3.4（2554 項目の独自規格）の策定。</p>
     <p>主要実績: tcharton.com の SPEC v3.4 完全準拠 + scanner ★5（S クラス）達成（2026 年 4 月）。HARTON Certified の独立認定機関化を 2026 年に立ち上げ、Phase 0 沼津 30 件パイロットを 2026 年 4-5 月に実施する。</p>
   </section>
-  <section aria-label="移住者ナラティブ">
-    <h2>移住者の眼で測る</h2>
-    <p>静岡県東部には本物の商いが息づいている。熟練の技、誠実な姿勢、地元への愛情。それは訪れた者にしか分からない地域の真価である。しかしデジタルの世界では別のルールが支配している。莫大な広告費を投じる大手と、見栄えだけのサイトに、真に価値ある店が埋もれていく。</p>
-    <p>外からの眼で街の本当の強さを知り、15 年の IT エンジニアリング経験で気付いた。技術は、本物を見抜くために使える。</p>
+  <section aria-label="機械検証の哲学">
+    <h2>機械検証の哲学</h2>
+    <p>地域には本物の商いが息づいている。熟練の技、誠実な姿勢、地元への愛情。しかしデジタルの世界では別のルールが支配している。莫大な広告費を投じる大手と、見栄えだけのサイトに、真に価値ある事業者が埋もれていく。</p>
+    <p>HARTON Certified はこの構造を技術で公正化する。客観的な機械検証だけが、規模や予算に依存せずに WEB 品質を測れる。誰もが世界基準（Sクラス）の WEB を持てる時代を、機械検証の透明性で支える。これが本機関の哲学である。</p>
   </section>
   <section aria-label="運営体制">
     <h2>運営体制</h2>
@@ -520,7 +520,7 @@ PAGES.push({
   <section aria-label="冒頭エビデンス">
     <p>HARTON Certified は <strong>2026 年 4 月</strong>に立ち上がった独立認定機関で、Phase 0 沼津 <strong>30</strong> 件を 2026 年 5 月までに完了する。月次ランキング・ロゴ・代表写真をプレス向けに無償提供する。出典: <a href="https://www.digital.go.jp/" rel="nofollow noopener noreferrer" target="_blank">日本政府公的機関</a>（中小事業者の DX 状況）。</p>
     <blockquote cite="${DOMAIN}/methodology/">
-      「機械検証で WEB 品質を公正に測る、地方発の認定機関」 — HARTON Certified ブランドナラティブ
+      「機械検証で、Sクラス WEB の普及を支える」 — HARTON Certified ブランドナラティブ
     </blockquote>
     <p><time datetime="2026-04-27" itemprop="datePublished">2026-04-27 公開</time></p>
     <h1>メディア向け</h1>

@@ -398,7 +398,7 @@ function generateRegionPage(prefKey, cityKey) {
     <h1>${escHTML(city.label)} 認定店舗一覧</h1>
     <section aria-label="冒頭エビデンス">
       <p>${escHTML(city.label)}（${escHTML(pref.label)}）の HARTON Certified 認定店舗 <strong>${list.length}</strong> 件を業種横断で掲載する。総合 <strong>70 点</strong>以上 + 致命的 NG <strong>0 件</strong>を達成した事業者のみ。Phase ${city.phase || 0} 対象地域。緯度 ${city.geo?.latitude || ''} / 経度 ${city.geo?.longitude || ''}。</p>
-      <blockquote cite="/methodology/">「移住者の眼で、地域の真価を測る」 — HARTON Certified ブランドナラティブ</blockquote>
+      <blockquote cite="/methodology/">「機械検証で、Sクラス WEB の普及を支える」 — HARTON Certified ブランドナラティブ</blockquote>
     </section>
 
     <section aria-label="業種別">
@@ -491,7 +491,7 @@ function generateMonthlyRankingPage(year, month) {
     <p><time datetime="${year}-${String(month).padStart(2, '0')}-01" itemprop="datePublished">${year}-${String(month).padStart(2, '0')}-01 公開</time></p>
     <section aria-label="冒頭エビデンス">
       <p>${year}年${month}月時点の HARTON Certified 認定店舗 TOP <strong>${list.length}</strong> 件。総合 <strong>70 点</strong>以上 + 致命的 NG <strong>0 件</strong>を達成した事業者のみ。月次再スキャンは scanner.py（4 軸機械検証 / 45+ 項目）で実施する。出典: <a href="https://www.ipa.go.jp/security/vuln/websecurity/about.html" rel="nofollow noopener noreferrer" target="_blank">IPA「安全なウェブサイトの作り方」</a>。</p>
-      <blockquote cite="/methodology/">「移住者の眼で、地域の真価を測る」</blockquote>
+      <blockquote cite="/methodology/">「機械検証で、Sクラス WEB の普及を支える」</blockquote>
     </section>
     <section aria-label="ランキング">
       <h2>認定店舗 TOP ${list.length}</h2>
@@ -587,7 +587,7 @@ function generateLLMsTxt() {
 ## 主要ページ
 
 - [トップ](${DOMAIN}/) — 概要、4 セグメント別 CTA
-- [サイトについて](${DOMAIN}/about/) — HARTON 紹介、代表略歴、移住者ナラティブ
+- [サイトについて](${DOMAIN}/about/) — HARTON Certified の理念と運営体制
 - [評価方法](${DOMAIN}/methodology/) — 4 軸の概要 + 各軸詳細
 - [評価方法 / 基礎](${DOMAIN}/methodology/technical/) — A 軸
 - [評価方法 / セキュリティ](${DOMAIN}/methodology/security/) — B 軸

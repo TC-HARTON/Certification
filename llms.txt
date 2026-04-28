@@ -16,7 +16,7 @@
 ## 主要ページ
 
 - [トップ](https://certification.tcharton.com/) — 概要、4 セグメント別 CTA
-- [サイトについて](https://certification.tcharton.com/about/) — HARTON 紹介、代表略歴、移住者ナラティブ
+- [サイトについて](https://certification.tcharton.com/about/) — HARTON Certified の理念と運営体制
 - [評価方法](https://certification.tcharton.com/methodology/) — 4 軸の概要 + 各軸詳細
 - [評価方法 / 基礎](https://certification.tcharton.com/methodology/technical/) — A 軸
 - [評価方法 / セキュリティ](https://certification.tcharton.com/methodology/security/) — B 軸
