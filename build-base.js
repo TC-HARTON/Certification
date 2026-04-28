@@ -674,13 +674,13 @@ PAGES.push({
   variant: 'reading',
   navActive: '',
   title: 'お問合せ — HARTON Certified',
-  description: 'HARTON Certified へのお問合せフォーム。掲載申請 / 取材依頼 / 掲載辞退 / その他のご質問を 1 営業日以内に対応する。Cloudflare Turnstile による非侵入型ボット防御を併用。',
+  description: 'HARTON Certified へのお問合せフォーム。掲載申請 / 取材依頼 / 掲載辞退 / その他のご質問を 1 営業日以内に対応する。送信前に内容確認画面を表示し、Web3Forms 経由で受信する。',
   canonicalPath: '/contact/',
   breadcrumbs: bcl([['トップ', '/'], ['お問合せ', '/contact/']]),
   mainContent: `
 <article>
   <section aria-label="冒頭エビデンス">
-    <p>HARTON Certified へのお問合せは <strong>1</strong> 営業日以内に対応する。<strong>4</strong> カテゴリの問合せ種別を選択でき、月間処理件数は <strong>30</strong> 件規模を想定する。出典: <a href="https://www.cloudflare.com/products/turnstile/" rel="nofollow noopener noreferrer" target="_blank">Cloudflare Turnstile</a>（非侵入型ボット防御）。</p>
+    <p>HARTON Certified へのお問合せは <strong>1</strong> 営業日以内に対応する。<strong>4</strong> カテゴリの問合せ種別を選択でき、月間処理件数は <strong>30</strong> 件規模を想定する。送信前に確認画面で内容を再確認できる。非侵入型ボット防御（<a href="https://www.cloudflare.com/products/turnstile/" rel="nofollow noopener noreferrer" target="_blank">Cloudflare Turnstile</a>）は CR-3 で別途実装予定（site key 受領後）。</p>
     <blockquote cite="${DOMAIN}/methodology/">
       「非侵入型ボット防御を必須とする」 — SPEC v3.4 §8.8
     </blockquote>
@@ -689,11 +689,12 @@ PAGES.push({
   </section>
   <section aria-label="お問合せフォーム">
     <h2>フォーム</h2>
-    <form action="https://api.web3forms.com/submit" method="POST" id="contactForm">
+    <form action="https://api.web3forms.com/submit" method="POST" id="contactForm" novalidate>
       <input type="hidden" name="access_key" value="9fda1d98-e246-4730-a12c-2251a5ae35b0">
       <input type="hidden" name="subject" value="HARTON Certified サイトからのお問い合わせ">
-      <input type="hidden" name="redirect" value="https://certification.tcharton.com/thanks.html">
       <input type="hidden" name="from_name" value="HARTON Certified Contact Form">
+      <!-- JS 無効環境では Web3Forms が直接ここへリダイレクトする / JS 有効環境では fetch で hijack するため未参照 -->
+      <input type="hidden" name="redirect" value="https://certification.tcharton.com/thanks.html">
       <input type="checkbox" name="botcheck" class="hidden" style="display:none" tabindex="-1" autocomplete="off">
       <p><label for="name">お名前（必須）</label>
       <input type="text" id="name" name="name" required></p>
@@ -710,10 +711,28 @@ PAGES.push({
       </select></p>
       <p><label for="message">お問合せ内容（必須）</label>
       <textarea id="message" name="message" rows="6" required></textarea></p>
-      <p><button type="submit" class="px-6 py-3">送信する</button></p>
+      <p><button type="submit" id="confirmBtn" class="px-6 py-3">入力内容を確認する</button></p>
+      <p id="contactError" role="alert" tabindex="-1"></p>
+      <p id="contactStatus" role="status" aria-live="polite"></p>
     </form>
-    <p>本フォームは Web3Forms 経由で受信する（送信先メールは代表アドレスに集約）。送信後は確認画面（thanks）へ自動遷移する。Cloudflare Turnstile による非侵入型ボット防御は CR-3 で別途実装予定（site key 受領待ち）。</p>
+    <p>本フォームは Web3Forms 経由で受信する。JS 有効環境では送信前に確認画面で内容を確認でき、送信完了後は thanks 画面へ自動遷移する。JS 無効環境では確認画面を介さず直接 Web3Forms に送信する（progressive enhancement / SPEC §7.4 noscript fallback 整合）。非侵入型ボット防御（Cloudflare Turnstile）は CR-3 で別途実装予定（site key 受領後）。</p>
   </section>
+
+  <!-- 確認モーダル (送信前の最終確認画面 / JS で表示制御 / JS 無効時は表示されない) -->
+  <div id="confirmModal" class="confirm-modal" role="dialog" aria-modal="true" aria-labelledby="confirmTitle" hidden>
+    <div class="confirm-modal-card">
+      <button type="button" id="confirmClose" class="confirm-close" aria-label="閉じる"><span aria-hidden="true">×</span></button>
+      <h2 id="confirmTitle">入力内容の確認</h2>
+      <p>以下の内容で送信する。誤りがなければ「この内容で送信する」、修正したい場合は「戻って修正する」を選ぶ。</p>
+      <dl id="confirmList"></dl>
+      <div class="confirm-actions">
+        <button type="button" id="confirmSubmit" class="confirm-primary">この内容で送信する</button>
+        <button type="button" id="confirmBack" class="confirm-secondary">戻って修正する</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="/assets/js/contact.js" defer></script>
   <section aria-label="プライバシー">
     <h2>送信内容の取扱い</h2>
     <p>収集する情報: お名前 / メールアドレス / 事業者名 / 種別 / 内容のみ。第三者提供なし。詳細は <a href="/privacy/">プライバシーポリシー</a>を参照する。</p>

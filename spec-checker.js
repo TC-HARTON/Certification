@@ -52,6 +52,7 @@ const STATIC_TARGETS = [
 
   // 補助
   '404.html',
+  'thanks.html',
 ];
 
 // 動的ページの glob ルート（存在すれば自動列挙）
@@ -107,6 +108,7 @@ const PAGE_TYPE = {
   'privacy/index.html': 'minimal',
 
   '404.html': 'minimal',
+  'thanks.html': 'minimal',
 };
 
 // 動的ページの type は path から推定
@@ -151,6 +153,11 @@ const CUSTOM_CLASSES = new Set([
   'mobile-menu','open','float','pulse-line','gradient-text',
   'cat-tab','active','sr-only','fade-in-delay-1','fade-in-delay-2',
   'fade-in-delay-3','check-circle','check-ring',
+  // 確認モーダル（contact ページ送信前確認画面 / src/input.css §confirm-modal）
+  'confirm-modal','confirm-modal-card','confirm-close',
+  'confirm-actions','confirm-primary','confirm-secondary',
+  // thanks.html スタンドアロン CSS のカスタムクラス（dist/output.css 非依存）
+  'grid-2',
 ]);
 
 // ═══════════════════ 結果クラス ═══════════════════

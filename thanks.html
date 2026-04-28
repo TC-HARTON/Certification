@@ -27,7 +27,7 @@
 <!-- 10 秒後に自動でトップへ。CSP script-src 'self' 整合のため inline JS 不使用、meta refresh で実現 -->
 <meta http-equiv="refresh" content="10;url=/">
 
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self' https://api.web3forms.com">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self'; require-trusted-types-for 'script'; upgrade-insecure-requests">
 
 <link rel="canonical" href="https://certification.tcharton.com/thanks.html">
 
@@ -44,6 +44,8 @@
   "alternateName": "ハートン認定",
   "url": "https://certification.tcharton.com/",
   "logo": "https://certification.tcharton.com/assets/logo/logo.svg",
+  "telephone": "+81-80-1058-0538",
+  "email": "certification@tcharton.com",
   "address": {
     "@type": "PostalAddress",
     "addressCountry": "JP",
@@ -52,9 +54,15 @@
     "streetAddress": "大岡2690",
     "postalCode": "410-0022"
   },
+  "additionalType": [
+    "https://www.wikidata.org/wiki/Q11661",
+    "https://www.wikidata.org/wiki/Q189210"
+  ],
   "sameAs": [
     "https://tcharton.com/",
-    "https://note.com/tcharton"
+    "https://note.com/tcharton",
+    "https://www.google.com/maps/place/?cid=16606425942373165010",
+    "https://maps.google.com/?cid=16606425942373165010"
   ]
 }
 </script>
@@ -100,7 +108,7 @@
   }
 
   /* ─── アニメーション ─── */
-  .fade-in { opacity: 0; transform: translateY(20px); animation: fade-in 0.8s ease forwards; }
+  .fade-in { opacity: 0; transform: translateY(30px); animation: fade-in 0.8s ease forwards; }
   .fade-in-d1 { animation-delay: 0.15s; }
   .fade-in-d2 { animation-delay: 0.3s; }
   .fade-in-d3 { animation-delay: 0.45s; }
@@ -396,7 +404,7 @@
 
 <noscript><style>.fade-in { opacity: 1 !important; transform: none !important; } .check-circle-anim { opacity: 1; } .check-circle-anim svg path { stroke-dashoffset: 0; }</style></noscript>
 </head>
-<body>
+<body class="bg-dark-900 text-dark-300 font-sans antialiased">
 
 <a href="#main" class="sr-only">本文へスキップ</a>
 

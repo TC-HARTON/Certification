@@ -26,8 +26,8 @@
 <link rel="canonical" href="https://certification.tcharton.com/about/">
 <link rel="sitemap" type="application/xml" href="/sitemap.xml">
 
-<!-- CSP meta（HTTP _headers と二重防御 / spec-checker §11.6 整合 / SPEC §8.1.1 必須コア 6 + §8.1.2 推奨拡張 3） -->
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self' https://api.web3forms.com">
+<!-- CSP meta（HTTP _headers が正典 / meta は二重防御の補助。CSP Level 3 で meta では無視される frame-ancestors / sandbox / report-uri は HTTP _headers 側でのみ宣言する） -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://api.web3forms.com; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self' https://api.web3forms.com; require-trusted-types-for 'script'; upgrade-insecure-requests">
 
 <!-- favicon 3 種 -->
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
@@ -86,7 +86,7 @@
   "url": "https://certification.tcharton.com/",
   "logo": "https://certification.tcharton.com/assets/logo/logo.svg",
   "image": "https://certification.tcharton.com/ogp.png",
-  "telephone": "+81-55-XXX-XXXX",
+  "telephone": "+81-80-1058-0538",
   "email": "certification@tcharton.com",
   "additionalType": [
     "https://www.wikidata.org/wiki/Q11661",
@@ -115,7 +115,8 @@
   "sameAs": [
     "https://tcharton.com/",
     "https://note.com/tcharton",
-    "https://www.google.com/maps/place/?cid=PLACEHOLDER_GBP_CID"
+    "https://www.google.com/maps/place/?cid=16606425942373165010",
+    "https://maps.google.com/?cid=16606425942373165010"
   ]
 }
 </script>

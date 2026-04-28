@@ -590,6 +590,143 @@
     box-shadow: 0 0 0 1px var(--accent-strong), 0 8px 24px rgba(212, 175, 55, 0.15);
   }
 
+  /* ─── 確認モーダル (contact form 送信前確認) ─────────
+     CSP script-src 'self' 整合の外部 JS から表示制御。
+     Deep Navy + Champagne Gold + Cream で一貫性 */
+  .confirm-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    background: rgba(15, 23, 42, 0.85);
+    backdrop-filter: saturate(180%) blur(6px);
+    -webkit-backdrop-filter: saturate(180%) blur(6px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+  }
+  .confirm-modal[hidden] { display: none; }
+  .confirm-modal-card {
+    background: var(--bg-card);
+    border: 1px solid var(--accent);
+    border-radius: 8px;
+    padding: 2rem;
+    max-width: 560px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.45);
+  }
+  .confirm-modal-card > h2 {
+    margin: 0 0 1rem;
+    font-size: 1.5rem;
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+  .confirm-modal-card > h2::before { content: none; }
+  .confirm-modal-card > p {
+    color: var(--fg-muted);
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+  }
+  .confirm-close {
+    position: absolute;
+    top: 0.85rem;
+    right: 0.85rem;
+    width: 2rem;
+    height: 2rem;
+    background: transparent;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    color: var(--fg-strong);
+    font-size: 1.2rem;
+    line-height: 1;
+    cursor: pointer;
+  }
+  .confirm-close:hover { border-color: var(--accent); }
+  /* SPEC §7.1 / WCAG 2.2 SC 2.4.11 — フォーカスリングは不透明色で明示 */
+  .confirm-close:focus-visible,
+  .confirm-primary:focus-visible,
+  .confirm-secondary:focus-visible {
+    outline: 2px solid var(--accent-strong);
+    outline-offset: 2px;
+  }
+  /* エラー要素にフォーカスを移すための tabindex=-1 + outline 制御 */
+  #contactError:focus { outline: none; }
+  #contactError {
+    color: #fca5a5;
+    margin: 0.75rem 0 0;
+    font-size: 0.9rem;
+    min-height: 1.4em;
+  }
+  #contactError:empty { display: none; }
+
+  #confirmList {
+    margin: 0 0 1.5rem;
+    border-top: 1px solid var(--border-soft);
+  }
+  #confirmList dt {
+    font-size: 0.8rem;
+    color: var(--fg-muted);
+    margin-top: 0.85rem;
+    padding-left: 0;
+    border-left: none;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+  }
+  #confirmList dd {
+    margin: 0.25rem 0 0.85rem;
+    padding: 0;
+    color: var(--fg-strong);
+    font-size: 0.95rem;
+    white-space: pre-wrap;
+    word-break: break-word;
+    border-bottom: 1px solid var(--border-soft);
+    padding-bottom: 0.85rem;
+  }
+  #confirmList dd:last-child { border-bottom: none; }
+
+  .confirm-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+  }
+  .confirm-primary,
+  .confirm-secondary {
+    flex: 1 1 200px;
+    padding: 0.85rem 1.5rem;
+    border-radius: 4px;
+    font-weight: 600;
+    font-family: var(--font-sans);
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: background .15s ease, color .15s ease, border-color .15s ease;
+  }
+  .confirm-primary {
+    background: var(--accent);
+    color: var(--bg-page);
+    border: 1px solid var(--accent);
+  }
+  .confirm-primary:hover { background: var(--accent-strong); border-color: var(--accent-strong); }
+  .confirm-primary:disabled { opacity: 0.6; cursor: wait; }
+  .confirm-secondary {
+    background: transparent;
+    color: var(--fg-body);
+    border: 1px solid var(--border);
+  }
+  .confirm-secondary:hover { border-color: var(--accent); color: var(--fg-strong); }
+  .confirm-secondary:disabled { opacity: 0.6; cursor: wait; }
+
+  /* 送信状態メッセージ */
+  #contactStatus {
+    margin: 0.75rem 0 0;
+    font-size: 0.875rem;
+    min-height: 1.4em;
+  }
+  #contactStatus:empty { display: none; }
+
   /* セグメント別 / 差別化 / 運用方針 → カードグリッド */
   body > main > article > section[aria-label*="セグメント別"] > ul,
   body > main > article > section[aria-label*="差別化"] > ul,
@@ -627,13 +764,16 @@
     border-color: var(--accent);
   }
 
-  /* アニメーション (prefers-reduced-motion で抑制) */
+  /* SPEC §7.3 / WCAG 2.2 SC 2.3.3 — prefers-reduced-motion で全アニメーション抑制
+     !important は @layer components で書く CSS が @layer utilities の Tailwind
+     ユーティリティに上書きされないために必須。インライン <style> の reduced-motion
+     ブロックと完全一致させる。 */
   @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after {
-      animation-duration: 0.01ms;
-      animation-iteration-count: 1;
-      transition-duration: 0.01ms;
-      scroll-behavior: auto;
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
     }
   }
 }
