@@ -88,7 +88,7 @@ const FAQ_TOP = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
   mainEntity: [
-    { '@type': 'Question', name: 'HARTON Certified は何を評価するのか？', acceptedAnswer: { '@type': 'Answer', text: 'WEB サイトの品質を 4 軸（基礎・防御・AI 検索・経営インパクト）で機械検証し、総合 70 点以上 + 致命的 NG ゼロを満たす事業者を ★3 以上で認定する。' } },
+    { '@type': 'Question', name: 'HARTON Certified は何を評価するのか？', acceptedAnswer: { '@type': 'Answer', text: 'WEB サイトの品質を 4 軸（基礎・防御・AI 検索・経営インパクト）で機械検証し、総合 70 点以上 + 致命的 NG ゼロを満たす事業者を ★ 以上で認定する。' } },
     { '@type': 'Question', name: '掲載は有料か？', acceptedAnswer: { '@type': 'Answer', text: '無料である。HARTON Certified は完全中立・金銭非依存で運用し、課金で順位を買えるサービスではない。' } },
     { '@type': 'Question', name: '評価項目は公開されているか？', acceptedAnswer: { '@type': 'Answer', text: '評価項目・閾値・実施手順は /methodology/ ですべて公開している。再現性のある機械検証である。' } },
     { '@type': 'Question', name: '掲載を拒否したい場合は？', acceptedAnswer: { '@type': 'Answer', text: '/opt-out/ より理由不要で 24 時間以内に対応する。再掲載は事業者の明示申請がない限り行わない。' } },
@@ -107,7 +107,7 @@ PAGES.push({
   variant: 'reading',
   navActive: '',
   title: 'HARTON Certified — 機械検証で Sクラス WEB の普及を支える独立認定機関',
-  description: 'HARTON Certified は WEB 品質を機械検証で公正評価する独立認定機関。SPEC v3.4 の 2,554 項目 + 4 軸スキャナーで全国の優良サイトを認定し、Sクラス WEB の普及を支える。完全中立・金銭非依存、★3 以上のみ掲載のポジティブセレクション。',
+  description: 'HARTON Certified は WEB 品質を機械検証で公正評価する独立認定機関。SPEC v3.4 の 2,554 項目 + 4 軸スキャナーで全国の優良サイトを認定し、Sクラス WEB の普及を支える。完全中立・金銭非依存、★ 以上のみ掲載のポジティブセレクション。',
   canonicalPath: '/',
   ogType: 'website',
   breadcrumbs: bcl([['HARTON Certified トップ', '/']]),
@@ -127,7 +127,7 @@ PAGES.push({
     <h2>3 つの差別化要素</h2>
     <ul>
       <li>機械検証 × WEB 品質: 口コミではなく 4 軸の客観評価。</li>
-      <li>完全中立 × ポジティブセレクション: ★3 以上のみ掲載、低評価サイトは公開しない。</li>
+      <li>完全中立 × ポジティブセレクション: ★ 以上のみ掲載、★無しサイトは公開しない。</li>
       <li>AI 検索時代対応 × 改善導線: GEO / LLMO 最適化を評価軸に含む。</li>
     </ul>
   </section>
@@ -142,7 +142,7 @@ PAGES.push({
   </section>
   <section aria-label="認定基準サマリ">
     <h2>認定基準</h2>
-    <p>4 つの観点（A 基礎・B 防御・C AI 検索・D 経営）で独立評価し、各観点の項目別減点を合算する。総合 <strong>70</strong> 点以上 + 致命的 NG <strong>0</strong> 件で ★3 認定、<strong>80</strong> 点以上で ★4、<strong>90</strong> 点以上 + S 条件 5/5 で ★5 を付与する（MASTER-PLAN §3.4 準拠）。</p>
+    <p>4 つの観点（A 基礎・B 防御・C AI 検索・D 経営）で独立評価し、各観点の項目別減点を合算する。総合 <strong>70</strong> 点以上 + 致命的 NG <strong>0</strong> 件で <strong>★</strong>(HARTON Certified) を認定、<strong>80</strong> 点以上 + S 条件 4/5 で <strong>★★</strong>(HARTON 優良)、<strong>90</strong> 点以上 + S 条件 5/5 で <strong>★★★</strong>(HARTON S-Class / 最高位) を付与する（MASTER-PLAN §3.4 準拠）。</p>
     <p>評価方法の全公開ページ: <a href="/methodology/">/methodology/</a></p>
   </section>
   <section aria-label="運用方針">
@@ -150,7 +150,7 @@ PAGES.push({
     <ol>
       <li>透明性: 全評価項目を /methodology/ で公開</li>
       <li>客観性: 機械検証のみ（主観排除）</li>
-      <li>ポジティブセレクション: ★3 以上のみ掲載</li>
+      <li>ポジティブセレクション: ★ 以上のみ掲載</li>
       <li>公平性: HARTON との取引関係に依存しない</li>
       <li>進化: 年次基準改訂、過去評価はアーカイブ保持</li>
     </ol>
@@ -189,7 +189,7 @@ PAGES.push({
     <h2>運営事業者</h2>
     <p>T.C.HARTON 代表。IT エンジニア歴 15 年。Web フロントエンド・セキュリティ・AI を専門領域とし、Cloudflare / Anthropic / Google の公式仕様書を一次ソースとして実務に落とし込む方針で活動する。静岡県沼津市を拠点に地域中小事業者の WEB サイトの実態を一次調査する中で「ホームページが綺麗な店ほど、本当の商いが埋もれている」というパラドックスに気付いた。</p>
     <p>専門分野: <a href="https://www.w3.org/WAI/standards-guidelines/wcag/" rel="nofollow noopener noreferrer" target="_blank">WCAG 2.2 AA</a> アクセシビリティ / OWASP Top 10:2025 セキュリティ / GEO / LLMO / SPEC v3.4（2554 項目の独自規格）の策定。</p>
-    <p>主要実績: tcharton.com の SPEC v3.4 完全準拠 + scanner ★5（S クラス）達成（2026 年 4 月）。HARTON Certified の独立認定機関化を 2026 年に立ち上げ、Phase 0 沼津 30 件パイロットを 2026 年 4-5 月に実施する。</p>
+    <p>主要実績: tcharton.com の SPEC v3.4 完全準拠 + scanner ★★★（S クラス）達成（2026 年 4 月）。HARTON Certified の独立認定機関化を 2026 年に立ち上げ、Phase 0 沼津 30 件パイロットを 2026 年 4-5 月に実施する。</p>
   </section>
   <section aria-label="機械検証の哲学">
     <h2>機械検証の哲学</h2>
@@ -259,7 +259,29 @@ PAGES.push({
   </section>
   <section aria-label="★区分">
     <h2>★区分の閾値（MASTER-PLAN §3.4）</h2>
-    <p>★3（HARTON Certified）= 総合 70 点以上 + 致命的 NG 0 件。★4（HARTON 優良）= 総合 80 点以上 + S 条件 4/5。★5（HARTON S-Class）= 総合 90 点以上 + S 条件 5/5 + 致命的 NG 0 件。</p>
+    <ul class="star-tiers">
+      <li>
+        <span class="star star-1" aria-hidden="true">★</span>
+        <div>
+          <strong>HARTON Certified</strong>
+          <p>総合 <strong>70</strong> 点以上 + 致命的 NG <strong>0</strong> 件 + S 条件不問（控えめな認定 / 入口）</p>
+        </div>
+      </li>
+      <li>
+        <span class="star star-2" aria-hidden="true">★★</span>
+        <div>
+          <strong>HARTON 優良</strong>
+          <p>総合 <strong>80</strong> 点以上 + 致命的 NG <strong>0</strong> 件 + S 条件 <strong>4/5</strong> 達成（誇り・上品）</p>
+        </div>
+      </li>
+      <li>
+        <span class="star star-3" aria-hidden="true">★★★</span>
+        <div>
+          <strong>HARTON S-Class</strong>
+          <p>総合 <strong>90</strong> 点以上 + 致命的 NG <strong>0</strong> 件 + S 条件 <strong>5/5</strong> 完全達成（最高位）</p>
+        </div>
+      </li>
+    </ul>
   </section>
   <section aria-label="致命的 NG">
     <h2>致命的 NG（一発除外条件）</h2>
@@ -407,7 +429,7 @@ PAGES.push({
   mainContent: `
 <article>
   <section aria-label="冒頭エビデンス">
-    <p>HARTON Certified への掲載申請は <strong>無料</strong>である。掲載対象は ★3 以上（総合 <strong>70</strong> 点以上 + 致命的 NG <strong>0</strong> 件）を達成した事業者のみで、課金で順位を買えるサービスではない。出典: <a href="https://www.ppc.go.jp/" rel="nofollow noopener noreferrer" target="_blank">個人情報保護委員会</a>（評価機関の中立性に関する公的指針）。</p>
+    <p>HARTON Certified への掲載申請は <strong>無料</strong>である。掲載対象は ★ 以上（総合 <strong>70</strong> 点以上 + 致命的 NG <strong>0</strong> 件）を達成した事業者のみで、課金で順位を買えるサービスではない。出典: <a href="https://www.ppc.go.jp/" rel="nofollow noopener noreferrer" target="_blank">個人情報保護委員会</a>（評価機関の中立性に関する公的指針）。</p>
     <blockquote cite="${DOMAIN}/methodology/">
       「掲載自体が認定である」 — HARTON Certified ★区分体系
     </blockquote>
@@ -420,7 +442,7 @@ PAGES.push({
       <li>申請（本ページから問合せ）</li>
       <li>無料診断（scanner.py での 4 軸機械検証 / 45+ 項目）</li>
       <li>結果通知（★ 区分 + 改善ヒント）</li>
-      <li>★3 以上達成 → 掲載開始 / 未達 → 改善後再申請</li>
+      <li>★ 以上達成 → 掲載開始 / 未達 → 改善後再申請</li>
     </ol>
   </section>
   <section aria-label="無料診断">
@@ -430,7 +452,7 @@ PAGES.push({
   </section>
   <section aria-label="改善が必要な場合">
     <h2>改善が必要な場合</h2>
-    <p>初回診断で ★3 未達でも申請を続行できる。tcharton.com（親サイト）の有料サービスで改善した後、再評価を受けて ★ を取得する経路がある。詳細は <a href="https://tcharton.com/services/web/" rel="noopener noreferrer" target="_blank">tcharton.com の WEB 構築サービス</a>を参照する。</p>
+    <p>初回診断で ★ 未達でも申請を続行できる。tcharton.com（親サイト）の有料サービスで改善した後、再評価を受けて ★ を取得する経路がある。詳細は <a href="https://tcharton.com/services/web/" rel="noopener noreferrer" target="_blank">tcharton.com の WEB 構築サービス</a>を参照する。</p>
   </section>
   <section aria-label="料金透明性">
     <h2>料金透明性</h2>
@@ -603,7 +625,7 @@ PAGES.push({
     <h2>質問</h2>
     <dl>
       <dt>Q1: HARTON Certified は何を評価するのか？</dt>
-      <dd>WEB サイトの品質を 4 軸（基礎・防御・AI 検索・経営インパクト）で機械検証し、総合 70 点以上 + 致命的 NG ゼロを満たす事業者を ★3 以上で認定する。</dd>
+      <dd>WEB サイトの品質を 4 軸（基礎・防御・AI 検索・経営インパクト）で機械検証し、総合 70 点以上 + 致命的 NG ゼロを満たす事業者を ★ 以上で認定する。</dd>
       <dt>Q2: 掲載は有料か？</dt>
       <dd>無料である。完全中立・金銭非依存で運用し、課金で順位を買えるサービスではない。</dd>
       <dt>Q3: 評価項目は公開されているか？</dt>

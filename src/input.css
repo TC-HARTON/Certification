@@ -530,6 +530,66 @@
     background: linear-gradient(90deg, rgba(201, 169, 97, 0.05) 0%, transparent 60%);
   }
 
+  /* ─── ★区分階層 (MASTER-PLAN §3.4 / §7.3 バッジシステム整合) ───
+     色は「控えめ → 上品 → 頂点」の 3 段階で格調を可視化。
+     Pearl Silver は本機関独自の追加トークン (★3 用 / バッジ系のシルバー帯)。 */
+  ul.star-tiers {
+    list-style: none;
+    padding-left: 0;
+    margin: 1.5rem 0;
+  }
+  ul.star-tiers > li {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    padding: 1.25rem 1.5rem;
+    margin: 0.75rem 0;
+    background: var(--bg-card);
+    border: 1px solid var(--border-soft);
+    border-left: 4px solid currentColor;  /* ★ 色を継承 */
+    border-radius: 4px;
+    transition: border-color .15s ease;
+  }
+  ul.star-tiers > li::before { content: none; }
+  ul.star-tiers .star {
+    font-family: var(--font-logo);
+    font-size: 1.35rem;
+    letter-spacing: 0.08em;
+    flex-shrink: 0;
+    line-height: 1;
+    white-space: nowrap;
+  }
+  ul.star-tiers > li > div { flex: 1; min-width: 0; }
+  ul.star-tiers > li > div > strong {
+    display: block;
+    font-family: var(--font-heading);
+    font-size: 1.125rem;
+    color: var(--fg-strong);
+    margin-bottom: 0.25rem;
+    letter-spacing: 0.01em;
+  }
+  ul.star-tiers > li > div > p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--fg-body);
+    line-height: 1.6;
+  }
+
+  /* ★区分カラー (MASTER-PLAN §7.3 バッジ印象整合) */
+  ul.star-tiers .star-1 { color: #C8CCD0; }   /* Pearl Silver — 控えめな認定 */
+  ul.star-tiers .star-2 { color: var(--accent); }         /* Champagne Gold #C9A961 — 上品 */
+  ul.star-tiers .star-3 { color: var(--accent-strong); }  /* Classic Gold #D4AF37 — 頂点 */
+
+  /* 左境界線も ★ 色を継承 (currentColor 経由でなく直接指定) */
+  ul.star-tiers > li:nth-child(1) { border-left-color: #C8CCD0; }
+  ul.star-tiers > li:nth-child(2) { border-left-color: var(--accent); }
+  ul.star-tiers > li:nth-child(3) { border-left-color: var(--accent-strong); }
+
+  /* ★5 のみホバー時に金色光彩で頂点を演出 */
+  ul.star-tiers > li:nth-child(3):hover {
+    box-shadow: 0 0 0 1px var(--accent-strong), 0 8px 24px rgba(212, 175, 55, 0.15);
+  }
+
   /* セグメント別 / 差別化 / 運用方針 → カードグリッド */
   body > main > article > section[aria-label*="セグメント別"] > ul,
   body > main > article > section[aria-label*="差別化"] > ul,

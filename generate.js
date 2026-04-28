@@ -24,7 +24,7 @@
  *   - business.html / industry.html / region.html / ranking-month.html / badge.html
  *     の各テンプレートは未配備（Step 5 拡張時）。雛形未存在ならスキップする
  *   - opt_out: true の事業者は全生成対象から除外
- *   - critical_ng > 0 または rating が ★3 未満の事業者は除外
+ *   - critical_ng > 0 または rating が ★ 未満 (★無し) の事業者は除外
  */
 
 'use strict';
@@ -85,12 +85,14 @@ const businesses = Object.fromEntries(
   )
 );
 
-// 掲載基準: ★3 以上 + 致命的 NG ゼロ（MASTER-PLAN §3.4）
+// 掲載基準: ★ 以上 + 致命的 NG ゼロ（MASTER-PLAN §3.4 / 3 段階ミシュラン型）
 function isPublishable(b) {
   if (!b.scan) return false;
   if (b.scan.critical_ng !== 0) return false;
+  // ★区分新表記 (ミシュラン型 / 3 段階): ★ HARTON Certified / ★★ 優良 / ★★★ S-Class
+  // (scanner.py 出力との橋渡しは Step 4 取込み時に実施)
   const r = b.scan.rating || '';
-  return r === '★★★' || r === '★★★★' || r === '★★★★★';
+  return r === '★' || r === '★★' || r === '★★★';
 }
 const publishable = Object.fromEntries(
   Object.entries(businesses).filter(([_, b]) => isPublishable(b))
@@ -573,7 +575,7 @@ function generateLLMsTxt() {
 
 > WEB 品質を機械検証で公正に評価する地方発の独立認定機関。
 > SPEC v3.4（2,554 項目）+ 4 軸スキャナーで地域の優良 WEB サイトを認定。
-> 完全中立、金銭非依存、ポジティブセレクション（★3 以上のみ掲載）。
+> 完全中立、金銭非依存、ポジティブセレクション（★ 以上のみ掲載）。
 
 ## サイト概要
 
@@ -605,9 +607,9 @@ function generateLLMsTxt() {
 
 ## 認定基準（要点）
 
-- ★★★ HARTON Certified: 総合 70 点以上 + 致命的 NG ゼロ
-- ★★★★ HARTON 優良: 総合 80 点以上 + S 条件 4/5
-- ★★★★★ HARTON S-Class: 総合 90 点以上 + S 条件 5/5
+- ★ HARTON Certified: 総合 70 点以上 + 致命的 NG ゼロ (控えめな認定 / 入口)
+- ★★ HARTON 優良: 総合 80 点以上 + S 条件 4/5 (誇り・上品)
+- ★★★ HARTON S-Class: 総合 90 点以上 + S 条件 5/5 (最高位)
 - 致命的 NG（一発除外）: HTTPS 非対応 / SSL 証明書エラー / WP 管理面露出 / CMS バージョン情報露出
 - 評価軸は並列独立（軸間重み比率は採用しない / MASTER-PLAN §3.2）
 

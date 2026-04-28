@@ -18,7 +18,7 @@
       "gbp_cid": "Google ビジネスプロフィール CID（数値文字列）",
       "gbp_url_short": "https://maps.app.goo.gl/XXXXXXXX 形式",
       "scan": {
-        "rating": "★★★ / ★★★★ / ★★★★★",
+        "rating": "★ (Certified) / ★★ (優良) / ★★★ (S-Class)",
         "score": "総合スコア 0-100",
         "axes": "A/B/C/D 各 0-100（並列独立評価 §3.2）",
         "must5": "必須 5 条件達成数（例: 4/5）",
@@ -46,7 +46,7 @@
     "gbp_cid": "00000000000000000000",
     "gbp_url_short": "https://maps.app.goo.gl/PLACEHOLDER",
     "scan": {
-      "rating": "★★★★",
+      "rating": "★★",
       "score": 85,
       "axes": { "A": 90, "B": 80, "C": 85, "D": 88 },
       "must5": "4/5",
