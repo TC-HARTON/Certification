@@ -38,9 +38,16 @@
   /* MASTER-PLAN §2.4 grep 用の HEX 注入 (dist/output.css 出現確保):
      #FAF8F3 #F5F2EA #1F2937 #1E293B - これら全 7 色が style 内に存在 */
 
-  /* §2.6 タイポ */
+  /* §2.6 タイポ
+     - --font-sans   : 本文・データ系 (Inter + Noto Sans JP)
+     - --font-heading: 見出し・引用句系 — 明朝体先頭。和文を含む見出しで数字も
+                       Noto Serif JP の和文プロポーションに揃う (代表 UX FB
+                       「評価の 5 原則」の不揃い解消)
+     - --font-logo   : ヘッダーブランドロゴ専用 — 純英字「HARTON Certified」を
+                       Playfair Display で表現 (英字限定のため不揃い問題なし) */
   --font-sans : "Inter", "Noto Sans JP", -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-display : "Playfair Display", "Noto Serif JP", "Hiragino Mincho ProN", "Yu Mincho", "Noto Sans JP", serif;
+  --font-heading : "Noto Serif JP", "Hiragino Mincho ProN", "Yu Mincho", "Playfair Display", serif;
+  --font-logo : "Playfair Display", "Noto Serif JP", "Hiragino Mincho ProN", "Yu Mincho", serif;
   --font-mono : ui-monospace, "Cascadia Code", "Source Code Pro", monospace;
 }
 
@@ -63,9 +70,10 @@
   }
 
   /* ─── 見出し (serif / MASTER-PLAN §2.6 元設計復帰) ────
-     ロゴ (Playfair Display) と階層一貫 / The Economist + Bloomberg 系の権威表現 */
+     和文を含む見出しは Noto Serif JP 先頭で数字・英字も明朝体プロポーション統一
+     (代表 UX FB「評価の 5 原則」の不揃い解消) */
   h1, h2, h3, h4 {
-    font-family: var(--font-display);
+    font-family: var(--font-heading);
     font-weight: 600;
     color: var(--fg-heading);
     letter-spacing: 0.01em;
@@ -168,7 +176,7 @@
     padding: 1.5rem 1.75rem;
     border-left: 3px solid var(--accent);
     background: var(--bg-soft);
-    font-family: var(--font-display);
+    font-family: var(--font-heading);
     font-size: 1.125rem;
     line-height: 1.7;
     color: var(--fg-strong);
@@ -178,6 +186,7 @@
     font-style: italic;
   }
   blockquote::before {
+    /* 飾り U+201C は単一 Latin 文字なので Playfair Display 優先で elegant に */
     content: "\201C";
     position: absolute;
     top: 0;
@@ -186,7 +195,7 @@
     color: var(--accent-strong);
     opacity: 0.2;
     line-height: 1;
-    font-family: var(--font-display);
+    font-family: var(--font-logo);
   }
 
   /* ─── 表 ─────────────────────────────────── */
@@ -273,7 +282,7 @@
   body > header > nav > a {
     color: var(--fg-strong);
     text-decoration: none;
-    font-family: var(--font-display);
+    font-family: var(--font-logo);
     font-size: 1.4rem;
     font-weight: 600;
     letter-spacing: 0.04em;
@@ -413,7 +422,7 @@
   body > header > #mobile-menu > nav > ul > li::before { content: none; }
   body > header > #mobile-menu > nav > ul > li > a {
     color: var(--fg-strong);
-    font-family: var(--font-display);
+    font-family: var(--font-heading);
     font-size: 1.5rem;
     text-decoration: none;
   }
@@ -505,7 +514,7 @@
     body > main > article > section[aria-label*="ヒーロー"] > h1 { font-size: 3.5rem; }
   }
   body > main > article > section[aria-label*="ヒーロー"] > p:first-of-type::first-letter {
-    font-family: var(--font-display);
+    font-family: var(--font-logo);
     font-size: 3.75rem;
     float: left;
     line-height: 0.85;
