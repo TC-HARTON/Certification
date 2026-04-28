@@ -40,7 +40,7 @@
 
   /* §2.6 タイポ */
   --font-sans : "Inter", "Noto Sans JP", -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-display : "Playfair Display", "Inter", "Noto Sans JP", serif;
+  --font-display : "Playfair Display", "Noto Serif JP", "Hiragino Mincho ProN", "Yu Mincho", "Noto Sans JP", serif;
   --font-mono : ui-monospace, "Cascadia Code", "Source Code Pro", monospace;
 }
 
