@@ -2,26 +2,51 @@
   "shizuoka": {
     "label": "静岡県",
     "label_en": "Shizuoka",
-    "wikidata": "Q133928",
+    "wikidata": "Q131320",
     "phase": 0,
     "pref_facts": {
       "population": "約 357 万人",
-      "area_keywords": ["静岡県", "東海地方", "中部地方", "駿河湾", "富士山", "東海道", "新幹線"],
+      "area_keywords": [
+        "静岡県",
+        "東海地方",
+        "中部地方",
+        "駿河湾",
+        "富士山",
+        "東海道",
+        "新幹線"
+      ],
       "public_url": "https://www.pref.shizuoka.jp/",
       "public_source_label": "静岡県 公式サイト",
-      "phase1_preview_cities": ["三島市", "富士市", "富士宮市", "裾野市", "長泉町", "静岡市清水区"]
+      "phase1_preview_cities": [
+        "三島市",
+        "富士市",
+        "富士宮市",
+        "裾野市",
+        "長泉町",
+        "静岡市清水区"
+      ]
     },
     "cities": {
       "numazu": {
         "label": "沼津市",
         "label_en": "Numazu",
-        "wikidata": "Q486049",
+        "wikidata": "Q241037",
         "phase": 0,
-        "geo": { "latitude": 35.0959, "longitude": 138.8634 },
+        "geo": {
+          "latitude": 35.0959,
+          "longitude": 138.8634
+        },
         "city_facts": {
           "population": "約 19 万人",
           "station": "JR 沼津駅",
-          "area_keywords": ["沼津市", "静岡県東部", "駿河湾", "東海道", "新幹線三島駅", "千本松原"],
+          "area_keywords": [
+            "沼津市",
+            "静岡県東部",
+            "駿河湾",
+            "東海道",
+            "新幹線三島駅",
+            "千本松原"
+          ],
           "public_url": "https://www.city.numazu.shizuoka.jp/",
           "public_source_label": "沼津市 公式サイト"
         }
@@ -29,13 +54,22 @@
       "mishima": {
         "label": "三島市",
         "label_en": "Mishima",
-        "wikidata": "Q486060",
+        "wikidata": "Q653478",
         "phase": 1,
-        "geo": { "latitude": 35.1175, "longitude": 138.9189 },
+        "geo": {
+          "latitude": 35.1175,
+          "longitude": 138.9189
+        },
         "city_facts": {
           "population": "約 11 万人",
           "station": "JR 三島駅 (新幹線停車)",
-          "area_keywords": ["三島市", "静岡県東部", "三嶋大社", "源兵衛川", "新幹線三島駅"],
+          "area_keywords": [
+            "三島市",
+            "静岡県東部",
+            "三嶋大社",
+            "源兵衛川",
+            "新幹線三島駅"
+          ],
           "public_url": "https://www.city.mishima.shizuoka.jp/",
           "public_source_label": "三島市 公式サイト"
         }
@@ -43,13 +77,22 @@
       "fuji": {
         "label": "富士市",
         "label_en": "Fuji",
-        "wikidata": "Q486012",
+        "wikidata": "Q328613",
         "phase": 1,
-        "geo": { "latitude": 35.1614, "longitude": 138.6764 },
+        "geo": {
+          "latitude": 35.1614,
+          "longitude": 138.6764
+        },
         "city_facts": {
           "population": "約 24 万人",
           "station": "JR 富士駅",
-          "area_keywords": ["富士市", "静岡県東部", "富士山", "田子の浦", "東海道本線"],
+          "area_keywords": [
+            "富士市",
+            "静岡県東部",
+            "富士山",
+            "田子の浦",
+            "東海道本線"
+          ],
           "public_url": "https://www.city.fuji.shizuoka.jp/",
           "public_source_label": "富士市 公式サイト"
         }
@@ -57,13 +100,22 @@
       "fujinomiya": {
         "label": "富士宮市",
         "label_en": "Fujinomiya",
-        "wikidata": "Q486000",
+        "wikidata": "Q496072",
         "phase": 1,
-        "geo": { "latitude": 35.2222, "longitude": 138.6219 },
+        "geo": {
+          "latitude": 35.2222,
+          "longitude": 138.6219
+        },
         "city_facts": {
           "population": "約 13 万人",
           "station": "JR 富士宮駅",
-          "area_keywords": ["富士宮市", "静岡県東部", "富士山本宮浅間大社", "白糸の滝", "富士宮焼きそば"],
+          "area_keywords": [
+            "富士宮市",
+            "静岡県東部",
+            "富士山本宮浅間大社",
+            "白糸の滝",
+            "富士宮焼きそば"
+          ],
           "public_url": "https://www.city.fujinomiya.lg.jp/",
           "public_source_label": "富士宮市 公式サイト"
         }
@@ -71,13 +123,21 @@
       "susono": {
         "label": "裾野市",
         "label_en": "Susono",
-        "wikidata": "Q486125",
+        "wikidata": "Q847577",
         "phase": 1,
-        "geo": { "latitude": 35.1729, "longitude": 138.9075 },
+        "geo": {
+          "latitude": 35.1729,
+          "longitude": 138.9075
+        },
         "city_facts": {
           "population": "約 5 万人",
           "station": "JR 裾野駅",
-          "area_keywords": ["裾野市", "静岡県東部", "富士山麓", "Woven City"],
+          "area_keywords": [
+            "裾野市",
+            "静岡県東部",
+            "富士山麓",
+            "Woven City"
+          ],
           "public_url": "https://www.city.susono.shizuoka.jp/",
           "public_source_label": "裾野市 公式サイト"
         }
@@ -85,13 +145,21 @@
       "nagaizumi": {
         "label": "長泉町",
         "label_en": "Nagaizumi",
-        "wikidata": "Q1132923",
+        "wikidata": "Q1204459",
         "phase": 1,
-        "geo": { "latitude": 35.1422, "longitude": 138.9006 },
+        "geo": {
+          "latitude": 35.1422,
+          "longitude": 138.9006
+        },
         "city_facts": {
           "population": "約 4 万人",
           "station": "JR 下土狩駅",
-          "area_keywords": ["長泉町", "静岡県東部", "がんセンター", "ベルテックス"],
+          "area_keywords": [
+            "長泉町",
+            "静岡県東部",
+            "がんセンター",
+            "ベルテックス"
+          ],
           "public_url": "https://www.town.nagaizumi.lg.jp/",
           "public_source_label": "長泉町 公式サイト"
         }
@@ -99,13 +167,22 @@
       "shimizu": {
         "label": "静岡市清水区",
         "label_en": "Shimizu",
-        "wikidata": "Q486130",
+        "wikidata": "Q79385",
         "phase": 1,
-        "geo": { "latitude": 35.0156, "longitude": 138.4892 },
+        "geo": {
+          "latitude": 35.0156,
+          "longitude": 138.4892
+        },
         "city_facts": {
           "population": "約 23 万人",
           "station": "JR 清水駅",
-          "area_keywords": ["静岡市清水区", "清水港", "三保の松原", "駿河湾", "東海道本線"],
+          "area_keywords": [
+            "静岡市清水区",
+            "清水港",
+            "三保の松原",
+            "駿河湾",
+            "東海道本線"
+          ],
           "public_url": "https://www.city.shizuoka.lg.jp/",
           "public_source_label": "静岡市 公式サイト"
         }
