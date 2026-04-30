@@ -212,7 +212,7 @@ ${REGION_OPTIONS_HTML}
   </section>
   <section aria-label="注目認定 rail" class="featured-rail-section">
     <h2>注目認定 — 自己実証体 第 1 号 + Phase 0 沼津 83 件機械検証完了</h2>
-    <p class="featured-rail-lede">HARTON Certified の評価基準で <strong>★★★（HARTON S-Class）</strong> を実証取得した自社サイト + Phase 0 沼津パイロット <strong>${numazuSummary.n_total}</strong> 件の機械検証実測結果（業界中央値 <strong>${numazuSummary.score_stats.median}</strong> 点 vs 自己実証体 <strong>${numazuSummary.self_proof_marker.tcharton_score}</strong> 点 = <strong>${numazuSummary.self_proof_marker.quality_ratio}</strong> 倍ギャップ）を堂々と公開する。</p>
+    <p class="featured-rail-lede">HARTON Certified は機械検証 4 軸（基礎・防御・AI 検索・経営インパクト）で WEB 品質を客観評価する独立認定機関。Phase 0 沼津市 <strong>${numazuSummary.n_total}</strong> 件機械検証で <strong>★ 獲得率 0.0%</strong>（${numazuSummary.eligible_total}/${numazuSummary.n_total}）/ 業界最高点 <strong>${numazuSummary.score_stats.max}</strong> 点 / 致命的 NG <strong>${numazuSummary.ng_pct.toFixed(1)}%</strong>。Phase 1 で全国順次拡大予定。</p>
     <ul class="featured-rail" role="list">
       <li class="featured-card">
         <div class="featured-card-thumb">
@@ -277,7 +277,7 @@ ${REGION_OPTIONS_HTML}
           <svg class="star-svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L14.6 8.6L21.6 9.3L16.3 14L17.8 21L12 17.5L6.2 21L7.7 14L2.4 9.3L9.4 8.6L12 2Z" fill="currentColor"/></svg>
         </div>
         <h3 class="distinction-card-title">HARTON Certified</h3>
-        <p class="distinction-card-story">「同業種で確実に信頼できる」</p>
+        <p class="distinction-card-story">「AI 時代の信頼を体現する」</p>
         <dl class="distinction-card-criteria">
           <dt>総合スコア</dt><dd>70 点以上（B 以上）</dd>
           <dt>致命的 NG</dt><dd>0 件必須</dd>
@@ -290,7 +290,7 @@ ${REGION_OPTIONS_HTML}
           <svg class="star-svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L14.6 8.6L21.6 9.3L16.3 14L17.8 21L12 17.5L6.2 21L7.7 14L2.4 9.3L9.4 8.6L12 2Z" fill="currentColor"/></svg>
         </div>
         <h3 class="distinction-card-title">HARTON 優良</h3>
-        <p class="distinction-card-story">「他県からでも訪れる価値がある WEB 品質」</p>
+        <p class="distinction-card-story">「地域を代表する WEB 品質」</p>
         <dl class="distinction-card-criteria">
           <dt>総合スコア</dt><dd>80 点以上（A）</dd>
           <dt>致命的 NG</dt><dd>0 件必須</dd>
@@ -304,7 +304,7 @@ ${REGION_OPTIONS_HTML}
           <svg class="star-svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L14.6 8.6L21.6 9.3L16.3 14L17.8 21L12 17.5L6.2 21L7.7 14L2.4 9.3L9.4 8.6L12 2Z" fill="currentColor"/></svg>
         </div>
         <h3 class="distinction-card-title">HARTON S-Class Certified</h3>
-        <p class="distinction-card-story">「業界の方向性を定義する到達点」</p>
+        <p class="distinction-card-story">「業界の頂点に立つ WEB 品質」</p>
         <dl class="distinction-card-criteria">
           <dt>総合スコア</dt><dd>90 点以上（S）</dd>
           <dt>致命的 NG</dt><dd>0 件必須</dd>
@@ -367,7 +367,7 @@ PAGES.push({
     <h2>沼津起点と地方都市から再定義する WEB 品質の民主化</h2>
     <p>沼津は人口約 19 万人の静岡県東部の地方都市である。東京・大阪の制作会社が東京で ★★★ を取得しても「<strong>金と人手があれば当然</strong>」と見られる。沼津という地方都市で、tcharton.com が ★★★ を取得した事実こそ、AI 時代における <strong>「機械評価は資本に依存しない」</strong> ことの実証となる。</p>
     <p>本機関は東京中心の権威構造ではなく、<strong>地方都市から再定義</strong>する WEB 品質基準を運用する。沼津起点の実証を、Phase 1 で類似地方都市（倉敷・四日市・松本・盛岡 等）へ展開し、全国の地方事業者にとっての <strong>「届きうる頂点」</strong> という民主化メッセージを実装する（MASTER-PLAN §2.8 沼津起点の戦略的必然性）。</p>
-    <p>関連: <a href="/news/numazu-industry-report-2026-spring/">沼津市 WEB 品質業界レポート 2026 春</a>（実測 83 件 / 業界中央値 22 点 vs 自己実証体 90 点 = 4.09 倍ギャップ）</p>
+    <p>関連: <a href="/news/numazu-industry-report-2026-spring/">沼津市 WEB 品質業界レポート 2026 春</a>（沼津市 ★ 獲得率 0/83 = 0.0% / 業種別 ★ 獲得率 + 業界最高点 一覧）</p>
   </section>
   <section aria-label="運営体制">
     <h2>運営体制</h2>
@@ -454,21 +454,21 @@ PAGES.push({
         <span class="star star-1" role="img" aria-label="HARTON Certified ★（1 つ星）"><svg class="star-svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L14.6 8.6L21.6 9.3L16.3 14L17.8 21L12 17.5L6.2 21L7.7 14L2.4 9.3L9.4 8.6L12 2Z" fill="currentColor"/></svg></span>
         <div>
           <strong>HARTON Certified</strong>
-          <p>総合 <strong>70</strong> 点以上 + 致命的 NG <strong>0</strong> 件 + S 条件不問。物語: 「<strong>同業種で確実に信頼できる</strong>」</p>
+          <p>総合 <strong>70</strong> 点以上 + 致命的 NG <strong>0</strong> 件 + S 条件不問。物語: 「<strong>AI 時代の信頼を体現する</strong>」</p>
         </div>
       </li>
       <li>
         <span class="star star-2" role="img" aria-label="HARTON 優良 ★★（2 つ星）"><svg class="star-svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L14.6 8.6L21.6 9.3L16.3 14L17.8 21L12 17.5L6.2 21L7.7 14L2.4 9.3L9.4 8.6L12 2Z" fill="currentColor"/></svg><svg class="star-svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L14.6 8.6L21.6 9.3L16.3 14L17.8 21L12 17.5L6.2 21L7.7 14L2.4 9.3L9.4 8.6L12 2Z" fill="currentColor"/></svg></span>
         <div>
           <strong>HARTON 優良</strong>
-          <p>総合 <strong>80</strong> 点以上 + 致命的 NG <strong>0</strong> 件 + S 条件 <strong>4/5</strong> 達成。物語: 「<strong>他県からでも訪れる価値がある WEB 品質</strong>」</p>
+          <p>総合 <strong>80</strong> 点以上 + 致命的 NG <strong>0</strong> 件 + S 条件 <strong>4/5</strong> 達成。物語: 「<strong>地域を代表する WEB 品質</strong>」</p>
         </div>
       </li>
       <li>
         <span class="star star-3" role="img" aria-label="HARTON S-Class ★★★（3 つ星 / 最高位）"><svg class="star-svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L14.6 8.6L21.6 9.3L16.3 14L17.8 21L12 17.5L6.2 21L7.7 14L2.4 9.3L9.4 8.6L12 2Z" fill="currentColor"/></svg><svg class="star-svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L14.6 8.6L21.6 9.3L16.3 14L17.8 21L12 17.5L6.2 21L7.7 14L2.4 9.3L9.4 8.6L12 2Z" fill="currentColor"/></svg><svg class="star-svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L14.6 8.6L21.6 9.3L16.3 14L17.8 21L12 17.5L6.2 21L7.7 14L2.4 9.3L9.4 8.6L12 2Z" fill="currentColor"/></svg></span>
         <div>
           <strong>HARTON S-Class Certified</strong>
-          <p>総合 <strong>90</strong> 点以上 + 致命的 NG <strong>0</strong> 件 + S 条件 <strong>5/5</strong> 完全達成。物語: 「<strong>業界の方向性を定義する到達点</strong>」</p>
+          <p>総合 <strong>90</strong> 点以上 + 致命的 NG <strong>0</strong> 件 + S 条件 <strong>5/5</strong> 完全達成。物語: 「<strong>業界の頂点に立つ WEB 品質</strong>」</p>
         </div>
       </li>
     </ul>
@@ -613,7 +613,7 @@ PAGES.push({
   variant: 'reading',
   navActive: 'apply',
   title: '掲載申請 — HARTON Certified ★ 認定を獲得する',
-  description: 'HARTON Certified への掲載申請ページ。無料機械検証で自社サイトの ★ 区分を判定する。dogfooding 倫理に基づく完全中立・金銭非依存の認定機関。改善は自社実装または独立した制作会社相談（複数選択肢併記）の両論で支援する。C 未掲載事業者向け最重要動線。',
+  description: 'HARTON Certified への掲載申請ページ。無料機械検証で自社サイトの ★ 区分を判定する。dogfooding 倫理に基づく完全中立・金銭非依存の認定機関。改善は自社実装または外部コンサルタント・WEB 専門事業者への相談（複数選択肢併記）の両論で支援する。C 未掲載事業者向け最重要動線。',
   canonicalPath: '/apply/',
   breadcrumbs: bcl([['トップ', '/'], ['掲載申請', '/apply/']]),
   mainContent: `
@@ -873,7 +873,7 @@ PAGES.push({
   variant: 'reading',
   navActive: '',
   title: '沼津市 WEB 品質業界レポート 2026 春 — HARTON Certified',
-  description: `2026-04-30 機械検証実測: 沼津市 5 業種 ${numazuSummary.n_total} 件の WEB 品質を 4 軸で評価。業界別中央値 ${numazuSummary.score_stats.median} 点 / max ${numazuSummary.score_stats.max} 点 / ★ 以上認定 ${numazuSummary.eligible_total} 件 / 致命的 NG ${numazuSummary.ng_pct.toFixed(1)}%。tcharton.com (90 点) との品質ギャップ ${numazuSummary.self_proof_marker.quality_ratio} 倍を堂々と公開する透明性レポート。`,
+  description: `2026-04-30 機械検証実測: 沼津市 5 業種 ${numazuSummary.n_total} 件評価。沼津市 ★ 獲得率 ${numazuSummary.eligible_total}/${numazuSummary.n_total} = 0.0%。業種別 ★ 獲得率 + 業界最高点（税理士 40・弁護士 49・不動産 54・飲食 45・美容 44）/ 致命的 NG ${numazuSummary.ng_pct.toFixed(1)}%。業界品質改善のための透明性レポート。`,
   canonicalPath: '/news/numazu-industry-report-2026-spring/',
   ogType: 'article',
   breadcrumbs: bcl([['トップ', '/'], ['お知らせ', '/news/'], ['業界レポート 2026 春', '/news/numazu-industry-report-2026-spring/']]),
@@ -888,34 +888,40 @@ PAGES.push({
     <h1>沼津市 WEB 品質業界レポート 2026 春</h1>
   </section>
 
-  <section aria-label="認定 0 件ステートメント" class="zero-cert-statement">
-    <h2>★ 認定: <span class="zero-cert-count">${numazuSummary.eligible_total}</span> 件</h2>
-    <p class="zero-cert-text"><strong>2026-04-30 時点で、沼津市 5 業種 ${numazuSummary.n_total} 件中、HARTON Certified ★ 以上の認定基準を達成しているサイトは ${numazuSummary.eligible_total} 件である</strong>。本機関は実測結果を堂々と公開し、業界実態の透明性を確保する。「準備中」「Coming soon」等の婉曲表現は採用しない。</p>
-  </section>
-
-  <section aria-label="品質ギャップ視覚化" class="quality-gap-section">
-    <h2>業界中央値 vs 自己実証体 第 1 号</h2>
+  <section aria-label="沼津市 ★ 獲得率（統合）" class="quality-gap-section zero-cert-statement">
+    <h2>沼津市 ★ 獲得率</h2>
     <div class="report-stat-display">
-      <p class="report-stat-headline"><span class="report-stat-number">${numazuSummary.self_proof_marker.quality_ratio}</span><span class="report-stat-unit">倍</span></p>
-      <p class="report-stat-caption">沼津市 5 業界中央値 <strong>${numazuSummary.score_stats.median}</strong> 点 vs tcharton.com <strong>${numazuSummary.self_proof_marker.tcharton_score}</strong> 点（HARTON S-Class）</p>
-      <p class="report-stat-note">同じ沼津市内で機械検証可能な実測スコア。資本・規模ではなく、技術知識と実装の意志で到達できる差。</p>
+      <p class="report-stat-headline"><span class="report-stat-number">0.0</span><span class="report-stat-unit">%</span></p>
+      <p class="report-stat-caption"><strong>沼津市 ${numazuSummary.n_total} 件中、★ 認定達成 ${numazuSummary.eligible_total} 件 / 獲得率 0.0%</strong>（2026-04-30 時点）</p>
+      <p class="report-stat-note">機械検証 4 軸（A 基礎・B 防御・C AI 検索・D 経営インパクト）+ 致命的 NG 0 件 + 総合 70 点以上を全達成した事業者の割合。本レポートは業界の WEB 品質改善のために実測を公開するものであり、自社の集客を目的とするものではない。「準備中」「Coming soon」等の婉曲表現は採用しない。</p>
     </div>
   </section>
 
-  <section aria-label="業界別実測スコア" class="industry-section">
-    <h2>業界別実測スコア（5 業種）</h2>
-    <ul class="industry-cards" role="list">
-      ${numazuSummary.industries.map(ind => `<li class="industry-card">
-        <h3 class="industry-card-name">${ind.industry}</h3>
-        <dl class="industry-card-stats">
-          <dt>件数</dt><dd>${ind.n} 件</dd>
-          <dt>致命的 NG</dt><dd>${ind.ng} 件 (${ind.ng_pct.toFixed(1)}%)</dd>
-          <dt>中央値</dt><dd>${ind.median} 点</dd>
-          <dt>業界 max</dt><dd>${ind.max} 点</dd>
-          <dt>★ 認定</dt><dd>${ind.eligible} 件</dd>
-        </dl>
-      </li>`).join('\n      ')}
-    </ul>
+  <section aria-label="業種別 ★ 獲得率" class="industry-section">
+    <h2>業種別 ★ 獲得率 + 業界最高点</h2>
+    <table>
+      <caption>沼津市 5 業種 ${numazuSummary.n_total} 件 業種別 ★ 獲得率と業界最高点</caption>
+      <thead>
+        <tr><th scope="col">業種</th><th scope="col">対象 n</th><th scope="col">★ 獲得</th><th scope="col">獲得率</th><th scope="col">業界最高点</th></tr>
+      </thead>
+      <tbody>
+        ${(() => {
+          const indKeyMap = {};
+          for (const [k, v] of Object.entries(industriesData)) {
+            indKeyMap[v.label_short] = k;
+            indKeyMap[v.label] = k;
+          }
+          return numazuSummary.industries.map(s => {
+            const indKey = indKeyMap[s.industry] || '';
+            const indLabel = indKey && industriesData[indKey] ? industriesData[indKey].label : s.industry;
+            const rate = ((s.eligible / s.n) * 100).toFixed(1);
+            const linkOpen = indKey ? `<a href="/regions/shizuoka/numazu/industries/${indKey}/">` : '';
+            const linkClose = indKey ? '</a>' : '';
+            return `<tr><th scope="row">${linkOpen}${indLabel}${linkClose}</th><td>${s.n} 件</td><td>${s.eligible} 件</td><td>${rate}%</td><td>${s.max} 点</td></tr>`;
+          }).join('\n        ');
+        })()}
+      </tbody>
+    </table>
   </section>
 
   <section aria-label="致命的 NG 内訳" class="ng-table-section">
@@ -941,10 +947,9 @@ PAGES.push({
   <section aria-label="dogfooding 倫理開示">
     <h2>dogfooding 倫理：自己実証体としての透明性</h2>
     <blockquote cite="${DOMAIN}/about/">
-      「自分が達成できない基準で他者を測ることはしない」 — HARTON Certified 信頼根拠の核（MASTER-PLAN v1.1.7 §2.0.4）
+      「自分が ★★★ を取れない基準で、他者を測らない。」 — HARTON Certified 信頼根拠の核
     </blockquote>
-    <p>本機関の自己実証体 第 1 号 tcharton.com は、scanner.py により <strong>${numazuSummary.self_proof_marker.tcharton_score}</strong> 点（${numazuSummary.self_proof_marker.tcharton_class} / ${numazuSummary.self_proof_marker.tcharton_rating}）を取得し、月次再判定の対象となる（自己例外なし）。tcharton.com 自身に致命的 NG 検出時は即時非掲載状態に切替え、機械検証ログを verbatim 公開する。</p>
-    <p>沼津市 ${numazuSummary.n_total} 件の業界実測（中央値 ${numazuSummary.score_stats.median} 点）と自己実証体（${numazuSummary.self_proof_marker.tcharton_score} 点）の <strong>${numazuSummary.self_proof_marker.quality_ratio} 倍</strong>のギャップは、認定基準が「人間の主観や金銭、規模に依存しない」「思想の到達点」であることを業界実測で逆説的に証明する。</p>
+    <p>本機関の自己実証体 第 1 号は scanner.py により ★★★（HARTON S-Class）を取得し、月次再判定の対象となる（自己例外なし）。自己実証体 自身に致命的 NG 検出時は即時非掲載状態に切替え、機械検証ログを verbatim 公開する。沼津市 ${numazuSummary.n_total} 件の業界実測で 70 点以上を達成したサイトはゼロ件である。これは認定基準が「人間の主観や金銭、規模に依存しない」客観的な技術指標であることを業界実測で示している。</p>
   </section>
 
   <section aria-label="評価方法導線">
@@ -960,7 +965,7 @@ PAGES.push({
 
   <section aria-label="改善された場合の対応">
     <h2>改善された場合の対応 / 月次更新方針</h2>
-    <p>本レポートは月次（毎月最終週）に scanner.py で全件再判定する。改善により ★ 認定可能となった事業者は、月次再判定で自動的に <a href="/regions/shizuoka/numazu/">沼津市の認定店舗ページ</a>に掲載され、業界レポートにも昇格通知が記載される。月次再判定の運用は MASTER-PLAN v1.1.7 §12 失効・降格運用と完全整合する（事業者通知 + 14 日改善猶予 + 致命的 NG 即時切替）。</p>
+    <p>本レポートは月次（毎月最終週）に scanner.py で全件再判定する。改善により ★ 認定可能となった事業者は、月次再判定で自動的に <a href="/regions/shizuoka/numazu/">沼津市の認定店舗ページ</a>に掲載され、業界レポートにも昇格通知が記載される。月次再判定の運用は本機関の失効・降格運用（MASTER-PLAN §12）と完全整合する（事業者通知 + 14 日改善猶予 + 致命的 NG 即時切替）。</p>
     <ul>
       <li><strong>スキャン実施日</strong>: 2026-04-30</li>
       <li><strong>次回再判定予定</strong>: 2026-05-30（月次運用 / scanner.py 自動再判定）</li>

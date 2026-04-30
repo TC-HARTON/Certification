@@ -180,7 +180,156 @@
 }
 </script>
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "@id": "https://certification.tcharton.com/regions/shizuoka/nagaizumi/industries/beauty/#article",
+  "headline": "長泉町 美容院 認定店舗 — HARTON Certified",
+  "description": "長泉町（静岡県）の美容院 HARTON Certified 認定店舗 TOP 0 件。機械検証で公正評価、総合 70 点以上のみ掲載。",
+  "datePublished": "2026-04-30",
+  "dateModified": "2026-04-30",
+  "author": {
+    "@type": "Organization",
+    "@id": "https://certification.tcharton.com/#org",
+    "name": "HARTON Certified"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://certification.tcharton.com/#org",
+    "name": "T.C.HARTON",
+    "url": "https://tcharton.com/"
+  },
+  "inLanguage": "ja",
+  "about": {
+    "@type": "Thing",
+    "name": "美容院",
+    "sameAs": "https://www.wikidata.org/wiki/Q1257670"
+  },
+  "mentions": {
+    "@type": "AdministrativeArea",
+    "name": "長泉町",
+    "sameAs": "https://www.wikidata.org/wiki/Q1132923"
+  }
+}
+</script>
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "@id": "https://certification.tcharton.com/regions/shizuoka/nagaizumi/industries/beauty/#service",
+  "name": "長泉町 美容院 WEB 品質認定",
+  "serviceType": "WEB Quality Certification",
+  "provider": {
+    "@type": "Organization",
+    "@id": "https://certification.tcharton.com/#org",
+    "name": "HARTON Certified"
+  },
+  "areaServed": {
+    "@type": "AdministrativeArea",
+    "name": "長泉町",
+    "sameAs": "https://www.wikidata.org/wiki/Q1132923"
+  },
+  "url": "https://certification.tcharton.com/regions/shizuoka/nagaizumi/industries/beauty/",
+  "audience": {
+    "@type": "Audience",
+    "audienceType": "美容院事業者"
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "@id": "https://certification.tcharton.com/regions/shizuoka/nagaizumi/industries/beauty/#howto",
+  "name": "美容院サイトが HARTON Certified ★★★ を取得するための 5 Step",
+  "totalTime": "PT90D",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "position": 1,
+      "name": "HTTPS 常時 SSL 化",
+      "text": "Let's Encrypt + HSTS preload 登録で総合スコア +15 点 / 致命的 NG 解消。"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 2,
+      "name": "JSON-LD Schema.org 実装",
+      "text": "業種固有の Schema.org type を name + address + telephone + url の 4 項目以上で実装。スコア +12 点。"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 3,
+      "name": "Content Security Policy + Trusted Types 適用",
+      "text": "script-src self + require-trusted-types-for script 適用で致命的 NG 解消。"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 4,
+      "name": "AI 検索最適化（GEO/LLMO）",
+      "text": "llms.txt 配置 + FAQPage JSON-LD + 公的リンク 3 件以上で AI クローラー引用率を高める。スコア +10 点。"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 5,
+      "name": "Core Web Vitals 改善 + 静的生成（SSG）",
+      "text": "LCP < 2.5s / CLS < 0.1 / INP < 200ms 達成 + Jamstack/SSG 構成で総合スコア +8 点。"
+    }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": "https://certification.tcharton.com/regions/shizuoka/nagaizumi/industries/beauty/#faq",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "長泉町 の 美容院 で WEB 品質が高い店は？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "HARTON Certified は 4 軸機械検証で 美容院 サイトを評価する。長泉町 の認定状況は本ページ上部の獲得率で確認可能 (現在 0/19 件 / 2026-04-30 時点)。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "美容院 サイトで SNS 連携と Schema.org を両立するには？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Schema.org BeautySalon の sameAs 配列に Instagram / X / Facebook の公式 URL を記述する。CSP frame-src で SNS 埋込を許可し、Trusted Types policy で外部 JS の sink を制御する。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "BeautySalon の Schema.org 最低限の実装は？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "name + address + telephone + url の 4 項目が必須。さらに HairSalon を @type 配列に追加し、施術メニューを Service 子要素で構造化することで AI 検索引用率が向上する。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "美容院 サイトの予約フォームと CSP を両立するには？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "form-action 'self' https://api.web3forms.com 等の信頼バックエンドを CSP に明示し、Trusted Types policy で sink を制御する。外部予約 (ホットペッパー等) はリンクで連携し、iframe 埋込は frame-src 整合を確認する。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "美容院 サイトが ★ 認定を取得できない最多原因は？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "(1) HTTP 非 SSL (2) 予約フォーム外部 JS で CSP 違反 (3) WordPress 管理面露出 が 3 大要因。改善ガイダンスで詳細を公開している。"
+      }
+    }
+  ]
+}
+</script>
 </head>
 <body class="bg-dark-900 text-dark-300 font-sans antialiased">
 
@@ -221,17 +370,117 @@
 <main id="main">
 
   <article>
-    <h1>長泉町 美容院 認定店舗</h1>
+    <header>
+      <p><time datetime="2026-04-30" itemprop="datePublished">2026-04-30 公開</time> / <time datetime="2026-04-30" itemprop="dateModified">最終更新 2026-04-30</time></p>
+      <h1>長泉町 美容院 認定店舗</h1>
+    </header>
+
     <section aria-label="冒頭エビデンス">
-      <p>長泉町 の美容院 認定店舗 <strong>0</strong> 件。総合 <strong>70 点</strong>以上 + 致命的 NG <strong>0 件</strong>達成。出典: <a href="https://www.wikidata.org/wiki/Q1257670" rel="nofollow noopener noreferrer" target="_blank">Wikidata Q1257670</a>。</p>
-      <blockquote cite="/methodology/">「機械検証で WEB 品質を公正に測る」 — HARTON Certified</blockquote>
+      <p>長泉町（静岡県）の美容院 HARTON Certified 認定店舗 <strong>0</strong> 件。総合 <strong>70 点</strong>以上 + 致命的 NG <strong>0 件</strong>達成事業者のみ掲載する。出典: <a href="https://www.wikidata.org/wiki/Q1257670" rel="nofollow noopener noreferrer" target="_blank">Wikidata Q1257670</a> / <a href="https://schema.org/LocalBusiness" rel="nofollow noopener noreferrer" target="_blank">Schema.org LocalBusiness</a>。</p>
+      <blockquote cite="/methodology/">「機械検証で WEB 品質を公正に測る、地方発の認定機関」 — HARTON Certified 評価方法</blockquote>
     </section>
+
+    
+    <section aria-label="認定店舗を絞り込む" class="search-section">
+      <h2>認定店舗を絞り込む</h2>
+      <p class="search-lede">業種・地域・★区分で認定店舗を絞り込む。AI 時代の信頼を持つ事業者を、人より先に発見する。</p>
+      <form id="search-form" action="/regions/" method="GET" class="search-form" role="search">
+        <div class="search-field">
+          <label for="search-industry">業種</label>
+          <select id="search-industry" name="industry">
+            <option value="">すべての業種（5 業種）</option>
+            <option value="tax-accountant">税理士・会計士</option><option value="lawyer">弁護士</option><option value="real-estate">不動産仲介</option><option value="restaurant">飲食店</option><option value="beauty" selected>美容院</option>
+          </select>
+        </div>
+        <div class="search-field">
+          <label for="search-region">地域</label>
+          <select id="search-region" name="region">
+            <option value="">すべての地域</option>
+            <optgroup label="静岡県"><option value="shizuoka">静岡県 全域</option><option value="shizuoka/numazu">静岡県 沼津市</option><option value="shizuoka/mishima" disabled>静岡県 三島市（準備中）</option><option value="shizuoka/fuji" disabled>静岡県 富士市（準備中）</option><option value="shizuoka/fujinomiya" disabled>静岡県 富士宮市（準備中）</option><option value="shizuoka/susono" disabled>静岡県 裾野市（準備中）</option><option value="shizuoka/nagaizumi" selected disabled>静岡県 長泉町（準備中）</option><option value="shizuoka/shimizu" disabled>静岡県 静岡市清水区（準備中）</option></optgroup>
+          </select>
+        </div>
+        <div class="search-field">
+          <label for="search-rating">★区分</label>
+          <select id="search-rating" name="rating">
+            <option value="" selected>すべての認定（全件）</option>
+            <option value="3star">★★★ のみ（HARTON S-Class）</option><option value="2star">★★ 以上（HARTON 優良 + S-Class）</option><option value="1star">★ 以上（HARTON Certified 以上）</option>
+          </select>
+        </div>
+        <div class="search-field search-field-submit">
+          <button type="submit">絞り込む</button>
+        </div>
+      </form>
+      <script src="/assets/js/search.js" defer></script>
+    </section>
+
+    
+    <aside aria-label="長泉町 ★ 獲得率 + 信頼根拠" class="report-bridge">
+      <p><strong>長泉町 ★ 獲得率: 0 / 0 = 0.0%</strong>（Phase 0 機械検証 / 2026-04-30 時点）。業種別 ★ 獲得率と業界最高点は <a href="/news/numazu-industry-report-2026-spring/">沼津市 WEB 品質業界レポート 2026 春</a>に公開している。</p>
+      <p>評価方法は <a href="/methodology/">機械検証 4 軸（基礎・防御・AI 検索・経営インパクト）</a>で全公開する。<strong>「自分が ★★★ を取れない基準で、他者を測らない。」</strong>が本機関の信頼根拠の核である（運営元については <a href="/about/">サイトについて</a>を参照）。</p>
+    </aside>
+
+    
+    <section aria-label="地域特性と WEB 品質" class="region-narrative">
+      <h2>長泉町 の地域特性と WEB 品質</h2>
+      <p>長泉町は 静岡県に属する人口 <strong>約 4 万人</strong> の地方都市である。最寄り駅 <strong>JR 下土狩駅</strong>。地域キーワード: 長泉町・静岡県東部・がんセンター・ベルテックス。HARTON Certified は地方都市から AI 時代の WEB 品質を再定義する独立認定機関であり、長泉町の事業者サイトを 4 軸(基礎・防御・AI 検索適応・経営インパクト)で機械検証する。HTTPS / JSON-LD / Schema.org / Trusted Types / SSG / Core Web Vitals / WCAG 2.2 AA / GEO/LLMO 全項目を客観評価する。</p>
+    </section>
+
+    
+    <section aria-label="業種固有の評価ポイント" class="evaluation-points">
+      <h2>美容院 の WEB 品質評価ポイント</h2>
+      <ul><li>Schema.org BeautySalon + HairSalon の重ね合わせ実装</li><li>予約フォーム / 外部予約 (ホットペッパー等) の HTTPS 整合 + CSP</li><li>SNS (Instagram / X) sameAs 連携と CSP frame-src 整合</li><li>施術メニュー画像最適化 (LCP / fetchpriority=high)</li><li>GBP 連携 + Wikidata Q1257670 sameAs で地域 MEO 強化</li></ul>
+    </section>
+
+    
+    <section aria-label="業種別チェックリスト" class="checklist-section">
+      <h2>美容院 WEB 品質チェックリスト</h2>
+      <ol><li>HTTPS + HSTS preload 登録済 / SSL 期限切れなしか</li><li>Schema.org BeautySalon + HairSalon が両方記述されているか</li><li>予約フォームが SSL + CSP form-action で保護されているか</li><li>外部予約 (ホットペッパー / minimo 等) リンクに rel=&quot;noopener noreferrer&quot; 適用済か</li><li>SNS 連携 (Instagram / X) が sameAs URL で構造化されているか</li><li>施術メニュー画像に alt + width/height 適切か</li><li>openingHours が machine-readable で記述されているか</li><li>GBP 連携 + 写真 + 口コミが充実しているか</li></ol>
+    </section>
+
+    
+    <section aria-label="参照・出典" class="public-sources">
+      <h2>参照・出典(公的ソース)</h2>
+      <ul><li><a href="https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000201453.html" rel="noopener noreferrer" target="_blank">厚生労働省 生活衛生</a></li><li><a href="https://laws.e-gov.go.jp/law/322AC0000000163" rel="noopener noreferrer" target="_blank">美容師法 (e-Gov 法令検索)</a></li><li><a href="https://www.biyo.or.jp/" rel="noopener noreferrer" target="_blank">全日本美容業生活衛生同業組合連合会</a></li><li><a href="https://www.town.nagaizumi.lg.jp/" rel="noopener noreferrer" target="_blank">長泉町 公式サイト</a></li><li><a href="https://www.ipa.go.jp/security/vuln/websecurity/about.html" rel="noopener noreferrer" target="_blank">IPA「安全なウェブサイトの作り方」</a></li><li><a href="https://www.digital.go.jp/" rel="noopener noreferrer" target="_blank">デジタル庁</a></li></ul>
+    </section>
+
     <section aria-label="認定店舗一覧">
-      <h2>認定店舗（0件）</h2>
-      <p><strong>現時点で ★ 以上達成事業者: 0 件</strong>。Phase 0 沼津市 83 件機械検証の実測結果は <a href="/news/numazu-industry-report-2026-spring/">沼津市 WEB 品質業界レポート 2026 春</a>を参照。沼津以外の地域は Phase 1（類似地方都市: 倉敷・四日市・松本・盛岡 等）で順次拡大予定。</p>
+      <h2>長泉町 美容院 認定店舗（0件）</h2>
+      <p><strong>現時点で ★ 以上達成事業者: 0 件</strong>。実測結果は <a href="/news/numazu-industry-report-2026-spring/">沼津市 WEB 品質業界レポート 2026 春</a>を参照。Phase 1 で類似地方都市に順次拡大予定。</p>
+    </section>
+
+    
+    <section aria-label="よくある質問" class="faq-section">
+      <h2>よくある質問</h2>
+      <details><summary>長泉町 の 美容院 で WEB 品質が高い店は？</summary><div class="faq-answer"><p>HARTON Certified は 4 軸機械検証で 美容院 サイトを評価する。長泉町 の認定状況は本ページ上部の獲得率で確認可能 (現在 0/19 件 / 2026-04-30 時点)。</p></div></details><details><summary>美容院 サイトで SNS 連携と Schema.org を両立するには？</summary><div class="faq-answer"><p>Schema.org BeautySalon の sameAs 配列に Instagram / X / Facebook の公式 URL を記述する。CSP frame-src で SNS 埋込を許可し、Trusted Types policy で外部 JS の sink を制御する。</p></div></details><details><summary>BeautySalon の Schema.org 最低限の実装は？</summary><div class="faq-answer"><p>name + address + telephone + url の 4 項目が必須。さらに HairSalon を @type 配列に追加し、施術メニューを Service 子要素で構造化することで AI 検索引用率が向上する。</p></div></details><details><summary>美容院 サイトの予約フォームと CSP を両立するには？</summary><div class="faq-answer"><p>form-action &#39;self&#39; https://api.web3forms.com 等の信頼バックエンドを CSP に明示し、Trusted Types policy で sink を制御する。外部予約 (ホットペッパー等) はリンクで連携し、iframe 埋込は frame-src 整合を確認する。</p></div></details><details><summary>美容院 サイトが ★ 認定を取得できない最多原因は？</summary><div class="faq-answer"><p>(1) HTTP 非 SSL (2) 予約フォーム外部 JS で CSP 違反 (3) WordPress 管理面露出 が 3 大要因。改善ガイダンスで詳細を公開している。</p></div></details>
+    </section>
+
+    
+    <section aria-label="次のアクション" class="cta-section">
+      <h2>次のアクション</h2>
+      <ul>
+        <li><a href="/apply/"><strong>この業種で最初の ★ 認定を取得する</strong></a> — 掲載申請(無料 / Phase 0 沼津 + Phase 1 拡大予定地域)</li>
+        <li><a href="/improvement-guide/">改善ガイダンス</a> — ★ 認定取得までの 5 Step (HTTPS / JSON-LD / CSP / GEO/LLMO / SSG)</li>
+        <li><a href="/methodology/">評価方法</a> — 4 軸機械検証 + 必須 5 条件 + 致命的 NG 4 項目の詳細</li>
+        <li><a href="/contact/">お問合せ</a> — 現状診断レポート受付(CR-2/CR-3 実装後 順次開始)</li>
+      </ul>
+    </section>
+
+    
+    <section aria-label="★区分の物語" class="rating-narratives">
+      <h2>★区分の物語（期待値）</h2>
+      <ul>
+        <li id="rating-1star"><strong>★ HARTON Certified</strong> — 「AI 時代の信頼を体現する」（総合 70 点以上 + 致命的 NG 0 件）</li>
+        <li id="rating-2star"><strong>★★ HARTON 優良</strong> — 「地域を代表する WEB 品質」（総合 80 点以上 + 必須 5 条件 4/5 達成）</li>
+        <li id="rating-3star"><strong>★★★ HARTON S-Class</strong> — 「業界の頂点に立つ WEB 品質」（総合 90 点以上 + 必須 5 条件 5/5 達成）</li>
+      </ul>
+    </section>
+
+    
+    <section aria-label="月次更新方針" class="update-policy">
+      <h2>月次更新方針</h2>
+      <p><time datetime="2026-04-30" itemprop="dateModified">最終スキャン: 2026-04-30</time> / <time datetime="2026-05-30">次回再判定予定: 2026-05-30</time>。月次再判定で改善した事業者は自動的に認定店舗ページに掲載される(MASTER-PLAN §12 / 14 日改善猶予 + 致命的 NG 即時切替)。</p>
     </section>
   </article>
-  <script src="/assets/js/search.js" defer></script>
 </main>
 
 <footer>

@@ -5,7 +5,51 @@
     "wikidata": "Q41189",
     "wikidata_uri": "https://www.wikidata.org/wiki/Q41189",
     "schema_type": ["LocalBusiness", "ProfessionalService"],
-    "keywords": ["税理士", "会計士", "確定申告", "記帳代行", "決算"]
+    "keywords": ["税理士", "会計士", "確定申告", "記帳代行", "決算", "税務署", "青色申告", "相続税申告", "法人決算"],
+    "evaluation_points": [
+      "HTTPS 常時 SSL 化(機密性の高い財務情報を扱うため必須 / 致命的 NG 直結)",
+      "問合せフォームの Trusted Types + CSP 適用(顧客情報窃取リスク防止)",
+      "JSON-LD ProfessionalService + LocalBusiness の正確な実装(name/address/telephone/url 必須)",
+      "Schema.org による「確定申告」「記帳代行」「決算」サービス記述の構造化",
+      "Core Web Vitals (LCP/CLS/INP) Green 達成によるモバイル検索評価"
+    ],
+    "checklist": [
+      "HTTPS で配信され、HSTS preload 登録済か",
+      "wp-login.php / xmlrpc.php / readme.html が露出していないか",
+      "問合せフォームが SSL + CSP form-action self で保護されているか",
+      "JSON-LD で ProfessionalService + 住所 + 電話番号が正確に記述されているか",
+      "<meta name=\"description\"> が 70-160 字でサービス概要を含むか",
+      "Google ビジネスプロフィール (GBP) が連携されているか (sameAs URL)",
+      "営業時間が <time datetime> または Schema.org openingHours で機械可読か",
+      "AI 検索 (ChatGPT/Perplexity) で事務所名検索時に正しい URL が引用されるか"
+    ],
+    "public_sources": [
+      { "label": "国税庁 公式サイト", "url": "https://www.nta.go.jp/", "cite": "https://www.nta.go.jp/" },
+      { "label": "日本税理士会連合会", "url": "https://www.nichizeiren.or.jp/", "cite": "https://www.nichizeiren.or.jp/" },
+      { "label": "税理士法 (e-Gov 法令検索)", "url": "https://laws.e-gov.go.jp/law/326AC0000000237", "cite": "https://laws.e-gov.go.jp/law/326AC0000000237" }
+    ],
+    "faq_industry": [
+      {
+        "q": "{city} で信頼できる {industry} を探すには？",
+        "a": "HARTON Certified は {industry} サイトを 4 軸 (基礎・防御・AI 検索・経営インパクト) で機械検証し、総合 70 点以上 + 致命的 NG 0 件の事業者のみ掲載する。{city} の認定状況は本ページ上部の獲得率で確認可能。"
+      },
+      {
+        "q": "{city} の {industry} サイトで HARTON Certified ★ を取得しているのは何件か？",
+        "a": "Phase 0 沼津市 83 件機械検証で {industry} の ★ 認定は 0 件 (2026-04-30 時点)。業界最高点と詳細な実測結果は沼津市 WEB 品質業界レポート 2026 春に公開している。"
+      },
+      {
+        "q": "{industry} サイトの WEB 品質はどう評価されるか？",
+        "a": "scanner.py が 2,554 項目 + 4 軸並列独立評価で機械検証する。{industry} 固有の評価ポイントは確定申告・記帳代行・決算サービスの Schema.org 構造化、HTTPS/HSTS 対応、Core Web Vitals Green 達成を含む。"
+      },
+      {
+        "q": "{industry} サイトを ★ 認定水準に改善する方法は？",
+        "a": "改善ガイダンスで HTTPS → JSON-LD → CSP/Trusted Types → AI 検索最適化 (GEO/LLMO) → SSG/Core Web Vitals の 5 Step を公開している。目安は 90 日。"
+      },
+      {
+        "q": "次回の {industry} サイト再判定はいつか？",
+        "a": "月次再スキャンを原則とする (毎月最終週)。改善により ★ 認定可能となった事業者は月次再判定で自動的に認定店舗ページに掲載される。"
+      }
+    ]
   },
   "lawyer": {
     "label": "弁護士",
@@ -13,7 +57,51 @@
     "wikidata": "Q40348",
     "wikidata_uri": "https://www.wikidata.org/wiki/Q40348",
     "schema_type": ["LocalBusiness", "ProfessionalService", "LegalService"],
-    "keywords": ["弁護士", "法律相談", "顧問弁護士"]
+    "keywords": ["弁護士", "法律相談", "顧問弁護士", "弁護士事務所", "法律事務所", "民事訴訟", "刑事弁護"],
+    "evaluation_points": [
+      "Trusted Types CSP 適用(法律相談フォームの XSS 経路完全遮断)",
+      "プライバシーポリシー充実度(個人情報保護法準拠 / WCAG 2.2 AA フォーム)",
+      "JSON-LD LegalService + ProfessionalService の重ね合わせ実装",
+      "公式 SSL 証明書(EV または OV 推奨 / 期限切れ即致命的 NG)",
+      "AI 検索適応 (GEO §G-2 公的リンク 5+ 件 / 弁護士法 e-Gov 引用)"
+    ],
+    "checklist": [
+      "HTTPS + HSTS preload 登録済 / SSL 期限切れなしか",
+      "法律相談フォームが Trusted Types + CSP form-action で保護されているか",
+      "プライバシーポリシーが個人情報保護法 + 弁護士法に準拠しているか",
+      "JSON-LD で LegalService + ProfessionalService が両方記述されているか",
+      "WCAG 2.2 AA: フォーム input に label for 関連付け済か",
+      "<blockquote cite> で関連法令 (e-Gov 弁護士法) を引用しているか",
+      "顧問弁護士 / 民事訴訟 / 刑事弁護 等のサービスが Schema.org Service で構造化されているか",
+      "GBP 連携 + areaServed 記述で地域 SEO 強化されているか"
+    ],
+    "public_sources": [
+      { "label": "日本弁護士連合会", "url": "https://www.nichibenren.or.jp/", "cite": "https://www.nichibenren.or.jp/" },
+      { "label": "弁護士法 (e-Gov 法令検索)", "url": "https://laws.e-gov.go.jp/law/324AC0000000205", "cite": "https://laws.e-gov.go.jp/law/324AC0000000205" },
+      { "label": "法務省 公式サイト", "url": "https://www.moj.go.jp/", "cite": "https://www.moj.go.jp/" }
+    ],
+    "faq_industry": [
+      {
+        "q": "{city} で信頼できる {industry} 事務所のサイトを見分けるには？",
+        "a": "HARTON Certified は WEB 品質を 4 軸機械検証で客観評価し、LegalService Schema.org 適合 + HTTPS + Trusted Types CSP の 3 条件を必須とする。{city} の認定状況は本ページ上部で確認可能。"
+      },
+      {
+        "q": "{city} の {industry} サイトで HARTON Certified 認定件数は？",
+        "a": "Phase 0 沼津市 83 件機械検証で {industry} の ★ 認定は 0 件 (2026-04-30 時点)。詳細は沼津市 WEB 品質業界レポート 2026 春に公開。"
+      },
+      {
+        "q": "{industry} サイトで致命的 NG となる項目は？",
+        "a": "HTTPS 非対応 / SSL 証明書無効 / WordPress 管理面露出 (wp-login.php / xmlrpc.php) / CMS バージョン情報露出 の 4 項目が致命的 NG。一発除外条件。"
+      },
+      {
+        "q": "{industry} の Schema.org 推奨タイプは？",
+        "a": "LegalService + ProfessionalService の重ね合わせを推奨する。サービスとして「法律相談」「顧問弁護士」「民事訴訟」「刑事弁護」を Service 子要素で構造化することで AI 検索引用率が向上する。"
+      },
+      {
+        "q": "{industry} 事務所サイトが ★★★ を取得するための最重要改善は？",
+        "a": "(1) HTTPS + HSTS preload 登録 (2) JSON-LD LegalService 完全実装 (3) Trusted Types CSP の順で改善する。詳細は改善ガイダンスを参照。"
+      }
+    ]
   },
   "real-estate": {
     "label": "不動産仲介",
@@ -21,7 +109,51 @@
     "wikidata": "Q1473298",
     "wikidata_uri": "https://www.wikidata.org/wiki/Q1473298",
     "schema_type": ["LocalBusiness", "RealEstateAgent"],
-    "keywords": ["不動産", "仲介", "賃貸", "売買"]
+    "keywords": ["不動産", "仲介", "賃貸", "売買", "物件", "宅建", "不動産会社", "マンション", "戸建て"],
+    "evaluation_points": [
+      "物件ページの Schema.org RealEstateAgent + Place 構造化",
+      "地図埋込の HTTPS 対応 (Google Maps iframe / frame-src CSP 整合)",
+      "問合せフォームの SSL + Trusted Types (個人情報保護法準拠)",
+      "Core Web Vitals 達成 (物件画像最適化 / fetchpriority=high LCP 対応)",
+      "areaServed + addressLocality による地域 SEO + AI 検索適応"
+    ],
+    "checklist": [
+      "HTTPS 配信 + SSL 有効期限内か",
+      "物件画像に alt + width/height + fetchpriority 適切か (CLS 防止)",
+      "JSON-LD で RealEstateAgent + LocalBusiness 両方記述されているか",
+      "Google Maps 埋込が CSP frame-src 整合で表示されているか",
+      "問合せフォームが SSL + Trusted Types で保護されているか",
+      "宅建業免許番号が <meta> または HTML で機械可読か",
+      "<blockquote cite> で宅建業法 (e-Gov) を引用しているか",
+      "GBP 連携 + 営業時間 + areaServed 記述で地域検索強化されているか"
+    ],
+    "public_sources": [
+      { "label": "国土交通省 公式サイト", "url": "https://www.mlit.go.jp/", "cite": "https://www.mlit.go.jp/" },
+      { "label": "宅地建物取引業法 (e-Gov 法令検索)", "url": "https://laws.e-gov.go.jp/law/327AC0000000176", "cite": "https://laws.e-gov.go.jp/law/327AC0000000176" },
+      { "label": "不動産流通推進センター", "url": "https://www.retpc.jp/", "cite": "https://www.retpc.jp/" }
+    ],
+    "faq_industry": [
+      {
+        "q": "{city} で信頼できる {industry} 会社のサイトを判断するには？",
+        "a": "HARTON Certified は 4 軸機械検証で WEB 品質を客観評価する。{industry} 固有の評価軸は物件ページの Schema.org RealEstateAgent 適合、HTTPS + 地図埋込整合、Core Web Vitals 達成を含む。"
+      },
+      {
+        "q": "{city} の {industry} サイトで HARTON Certified 認定件数は？",
+        "a": "Phase 0 沼津市 83 件機械検証で {industry} の ★ 認定は 0 件 (2026-04-30 時点)。業界最高点は沼津市 WEB 品質業界レポート 2026 春で確認可能。"
+      },
+      {
+        "q": "{industry} サイトで機械検証スコアが低い主要因は？",
+        "a": "(1) HTTPS 非対応 / SSL 期限切れ (2) 物件画像の width/height/fetchpriority 未指定で CLS 悪化 (3) JSON-LD RealEstateAgent 未実装 / 構造化データ欠如 が 3 大要因。"
+      },
+      {
+        "q": "RealEstateAgent の Schema.org 必須項目は？",
+        "a": "areaServed (営業地域) + address (本店所在地) + telephone (連絡先) + url (公式 URL) の 4 項目が必須。物件ページには Place + RealEstateListing の追加が AI 検索引用率を向上させる。"
+      },
+      {
+        "q": "{industry} サイトで AI 検索に表示されるには？",
+        "a": "GEO/LLMO 対応 (llms.txt 配置 + FAQPage JSON-LD + 公的リンク 3+ 件) が必要。さらに <blockquote cite> で宅建業法を引用すると AI 引用率 +27.8% (KDD 2024)。"
+      }
+    ]
   },
   "restaurant": {
     "label": "飲食店",
@@ -29,7 +161,51 @@
     "wikidata": "Q11707",
     "wikidata_uri": "https://www.wikidata.org/wiki/Q11707",
     "schema_type": ["LocalBusiness", "Restaurant", "FoodEstablishment"],
-    "keywords": ["飲食店", "レストラン", "カフェ", "居酒屋", "ラーメン"]
+    "keywords": ["飲食店", "レストラン", "カフェ", "居酒屋", "ラーメン", "営業時間", "メニュー", "予約"],
+    "evaluation_points": [
+      "Schema.org Restaurant + servesCuisine + menu の構造化",
+      "営業時間の openingHours machine-readable 表記 (AI 検索引用必須)",
+      "メニュー画像の最適化 (LCP < 2.5s / fetchpriority=high)",
+      "予約フォーム / 外部予約 (食べログ等) の HTTPS 整合 + CSP form-action 制御",
+      "GBP 連携 + Wikidata Q11707 sameAs で地域 MEO 強化"
+    ],
+    "checklist": [
+      "HTTPS + HSTS preload 登録済 / SSL 期限切れなしか",
+      "Schema.org Restaurant + servesCuisine が記述されているか",
+      "openingHours が machine-readable で記述されているか",
+      "メニュー画像に alt + width/height + fetchpriority 適切か",
+      "予約フォームが SSL + CSP form-action で保護されているか",
+      "外部予約サービスへのリンクに rel=\"noopener noreferrer\" 適用されているか",
+      "GBP 連携 + 写真 + 口コミが充実しているか",
+      "AI 検索 (ChatGPT/Perplexity) で店名検索時に営業時間 + 住所が引用されるか"
+    ],
+    "public_sources": [
+      { "label": "厚生労働省 食品衛生", "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000167180.html", "cite": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000167180.html" },
+      { "label": "食品衛生法 (e-Gov 法令検索)", "url": "https://laws.e-gov.go.jp/law/322AC0000000233", "cite": "https://laws.e-gov.go.jp/law/322AC0000000233" },
+      { "label": "日本食品衛生協会", "url": "https://www.n-shokuei.jp/", "cite": "https://www.n-shokuei.jp/" }
+    ],
+    "faq_industry": [
+      {
+        "q": "{city} の {industry} で WEB 品質が高い店はどこか？",
+        "a": "HARTON Certified は 4 軸機械検証 (基礎・防御・AI 検索・経営) で {industry} サイトを評価する。{city} の認定店舗一覧は本ページに掲載する (現在 0 件 / 2026-04-30 時点)。"
+      },
+      {
+        "q": "{industry} サイトの Schema.org Restaurant に必要な項目は？",
+        "a": "name + address + telephone + servesCuisine + menu + openingHours + acceptsReservations の 7 項目を推奨。AI 検索 (ChatGPT/Perplexity) でメニュー検索時の引用率を最大化する。"
+      },
+      {
+        "q": "食べログと HARTON Certified の違いは？",
+        "a": "食べログは口コミでサービス品質を評価する。HARTON Certified は機械検証で WEB 品質を評価する独立認定機関であり、評価軸が異なる。両方を併用することで多角的に店舗を判断できる。"
+      },
+      {
+        "q": "{industry} サイトで致命的 NG になる項目は？",
+        "a": "HTTPS 非対応 / SSL 証明書無効 / WordPress 管理面露出 / CMS バージョン情報露出 の 4 項目が一発除外条件。予約フォームの CSP form-action 不整合も致命的 NG 候補。"
+      },
+      {
+        "q": "{industry} のサイトを ★ 認定水準に改善する期間は？",
+        "a": "目安 90 日。改善ガイダンスで HTTPS → Schema.org Restaurant → CSP/Trusted Types → GEO/LLMO → SSG/Core Web Vitals の 5 Step を公開している。"
+      }
+    ]
   },
   "beauty": {
     "label": "美容院",
@@ -37,6 +213,50 @@
     "wikidata": "Q1257670",
     "wikidata_uri": "https://www.wikidata.org/wiki/Q1257670",
     "schema_type": ["LocalBusiness", "BeautySalon", "HairSalon"],
-    "keywords": ["美容院", "美容室", "ヘアサロン", "カット", "カラー"]
+    "keywords": ["美容院", "美容室", "ヘアサロン", "カット", "カラー", "パーマ", "トリートメント", "予約"],
+    "evaluation_points": [
+      "Schema.org BeautySalon + HairSalon の重ね合わせ実装",
+      "予約フォーム / 外部予約 (ホットペッパー等) の HTTPS 整合 + CSP",
+      "SNS (Instagram / X) sameAs 連携と CSP frame-src 整合",
+      "施術メニュー画像最適化 (LCP / fetchpriority=high)",
+      "GBP 連携 + Wikidata Q1257670 sameAs で地域 MEO 強化"
+    ],
+    "checklist": [
+      "HTTPS + HSTS preload 登録済 / SSL 期限切れなしか",
+      "Schema.org BeautySalon + HairSalon が両方記述されているか",
+      "予約フォームが SSL + CSP form-action で保護されているか",
+      "外部予約 (ホットペッパー / minimo 等) リンクに rel=\"noopener noreferrer\" 適用済か",
+      "SNS 連携 (Instagram / X) が sameAs URL で構造化されているか",
+      "施術メニュー画像に alt + width/height 適切か",
+      "openingHours が machine-readable で記述されているか",
+      "GBP 連携 + 写真 + 口コミが充実しているか"
+    ],
+    "public_sources": [
+      { "label": "厚生労働省 生活衛生", "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000201453.html", "cite": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000201453.html" },
+      { "label": "美容師法 (e-Gov 法令検索)", "url": "https://laws.e-gov.go.jp/law/322AC0000000163", "cite": "https://laws.e-gov.go.jp/law/322AC0000000163" },
+      { "label": "全日本美容業生活衛生同業組合連合会", "url": "https://www.biyo.or.jp/", "cite": "https://www.biyo.or.jp/" }
+    ],
+    "faq_industry": [
+      {
+        "q": "{city} の {industry} で WEB 品質が高い店は？",
+        "a": "HARTON Certified は 4 軸機械検証で {industry} サイトを評価する。{city} の認定状況は本ページ上部の獲得率で確認可能 (現在 0/19 件 / 2026-04-30 時点)。"
+      },
+      {
+        "q": "{industry} サイトで SNS 連携と Schema.org を両立するには？",
+        "a": "Schema.org BeautySalon の sameAs 配列に Instagram / X / Facebook の公式 URL を記述する。CSP frame-src で SNS 埋込を許可し、Trusted Types policy で外部 JS の sink を制御する。"
+      },
+      {
+        "q": "BeautySalon の Schema.org 最低限の実装は？",
+        "a": "name + address + telephone + url の 4 項目が必須。さらに HairSalon を @type 配列に追加し、施術メニューを Service 子要素で構造化することで AI 検索引用率が向上する。"
+      },
+      {
+        "q": "{industry} サイトの予約フォームと CSP を両立するには？",
+        "a": "form-action 'self' https://api.web3forms.com 等の信頼バックエンドを CSP に明示し、Trusted Types policy で sink を制御する。外部予約 (ホットペッパー等) はリンクで連携し、iframe 埋込は frame-src 整合を確認する。"
+      },
+      {
+        "q": "{industry} サイトが ★ 認定を取得できない最多原因は？",
+        "a": "(1) HTTP 非 SSL (2) 予約フォーム外部 JS で CSP 違反 (3) WordPress 管理面露出 が 3 大要因。改善ガイダンスで詳細を公開している。"
+      }
+    ]
   }
 }
