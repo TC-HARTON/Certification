@@ -53,6 +53,8 @@ const STATIC_TARGETS = [
   // 補助
   '404.html',
   'thanks.html',
+  // 沼津業界レポート 2026 春 (INSTRUCTION v1.12.2 §(A))
+  'news/numazu-industry-report-2026-spring/index.html',
 ];
 
 // 動的ページの glob ルート（存在すれば自動列挙）
@@ -109,6 +111,7 @@ const PAGE_TYPE = {
 
   '404.html': 'minimal',
   'thanks.html': 'minimal',
+  'news/numazu-industry-report-2026-spring/index.html': 'subpage',
 };
 
 // 動的ページの type は path から推定
@@ -158,6 +161,35 @@ const CUSTOM_CLASSES = new Set([
   'confirm-actions','confirm-primary','confirm-secondary',
   // thanks.html スタンドアロン CSS のカスタムクラス（dist/output.css 非依存）
   'grid-2',
+  // ★ SVG コンポーネント（UX-UI-DIRECTIVE Phase A Item 2 / src/input.css §confirm-modal 後）
+  'star-svg','star-svg-logo',
+  // TOP HERO マニフェスト（UX-UI-DIRECTIVE Phase A Item 3 / MASTER-PLAN v1.1.7 §2.0 連動）
+  'hero-manifest','hero-eyebrow','hero-h1','hero-stars',
+  'hero-manifest-text','hero-cta-row','hero-cta-primary','hero-cta-secondary',
+  'lead-h',
+  // 注目認定 rail（UX-UI-DIRECTIVE Phase A Item 4 / ミシュラン公式 §1.1 Featured rail 学習）
+  'featured-rail-section','featured-rail-lede','featured-rail',
+  'featured-card','featured-card-placeholder',
+  'featured-card-thumb','featured-card-rating','featured-card-thumb-label',
+  'featured-card-body','featured-card-name','featured-card-meta',
+  'featured-card-note','featured-card-link',
+  // 検索バー（UX-UI-DIRECTIVE Phase A Item 5 / ミシュラン公式 §1.1 検索 3 軸 chip）
+  'search-section','search-lede','search-form',
+  'search-field','search-field-submit',
+  // ★区分の物語カード（UX-UI-DIRECTIVE Phase A Item 6 / MASTER-PLAN v1.1.7 §3.1 物語列）
+  'distinction-cards-section','distinction-lede','distinction-cards',
+  'distinction-card','distinction-1','distinction-2','distinction-3',
+  'distinction-card-rating','distinction-card-title','distinction-card-story',
+  'distinction-card-criteria','distinction-cards-footer',
+  // ブランドスローガン figure (Reviewer C HI-4 / B M-1 整合 / blockquote 誤帰属解消)
+  'brand-slogan-figure','brand-slogan',
+  // 沼津業界レポート 2026 春 (INSTRUCTION v1.12.2 §(A))
+  'zero-cert-statement','zero-cert-count','zero-cert-text',
+  'quality-gap-section','report-stat-display','report-stat-headline',
+  'report-stat-number','report-stat-unit','report-stat-caption','report-stat-note',
+  'industry-section','industry-cards','industry-card',
+  'industry-card-name','industry-card-stats',
+  'ng-table-section',
 ]);
 
 // ═══════════════════ 結果クラス ═══════════════════

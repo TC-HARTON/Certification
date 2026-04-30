@@ -65,6 +65,7 @@
   .fade-in { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
   .fade-in.visible { opacity: 1; transform: translateY(0); }
   .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+  .sr-only:focus, .sr-only:focus-visible { position: fixed; inset: 1rem auto auto 1rem; width: auto; height: auto; clip: auto; background: #1E293B; color: #FAF8F3; padding: 0.75rem 1.25rem; border: 2px solid #C9A961; border-radius: 4px; z-index: 9999; }
   @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after {
       animation-duration: 0.01ms !important;
@@ -171,6 +172,7 @@
 <header>
   <nav aria-label="メインナビゲーション">
     <a href="/" aria-label="HARTON Certified トップ">
+      <svg class="star-svg star-svg-logo" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L14.6 8.6L21.6 9.3L16.3 14L17.8 21L12 17.5L6.2 21L7.7 14L2.4 9.3L9.4 8.6L12 2Z" fill="currentColor"/></svg>
       <span>HARTON Certified</span>
     </a>
     <ul>
@@ -202,12 +204,27 @@
 
 <article>
   <section aria-label="冒頭エビデンス">
-    <p>HARTON Certified は WEB サイトを <strong>4 つ</strong>の観点で並列独立評価する。各観点は scanner.py で <strong>45</strong>+ 項目を機械検証し、合計 <strong>2554</strong> 項目の SPEC v3.4 と整合する。出典: <a href="https://web.dev/articles/vitals" rel="nofollow noopener noreferrer" target="_blank">Google Web Vitals 公式</a> / <a href="https://www.w3.org/WAI/standards-guidelines/wcag/" rel="nofollow noopener noreferrer" target="_blank">W3C WCAG 2.2</a>。</p>
+    <p>HARTON Certified は WEB サイトを <strong>4 つ</strong>の観点で並列独立評価する。各観点は scanner.py で <strong>45</strong>+ 項目を機械検証し、合計 <strong>2554</strong> 項目の SPEC v3.4.2 と整合する。本機関は dogfooding 倫理（自己実証体としての自社サイト ★★★ 取得）と地方都市から再定義する WEB 品質の民主化を運営方針とする。出典: <a href="https://web.dev/articles/vitals" rel="nofollow noopener noreferrer" target="_blank">Google Web Vitals 公式</a> / <a href="https://www.w3.org/WAI/standards-guidelines/wcag/" rel="nofollow noopener noreferrer" target="_blank">W3C WCAG 2.2</a>。</p>
     <blockquote cite="https://certification.tcharton.com/about/">
-      「公正に測るとは、評価方法のすべてを公開することだ」 — HARTON Certified 評価原則
+      「自分が達成できない基準で他者を測ることはしない」 — HARTON Certified 信頼根拠の核（MASTER-PLAN §2.0.4）
     </blockquote>
-    <p><time datetime="2026-04-27" itemprop="datePublished">2026-04-27 公開</time></p>
+    <p><time datetime="2026-04-27" itemprop="datePublished">2026-04-27 公開</time> ／ <time datetime="2026-04-30" itemprop="dateModified">2026-04-30 v1.1.7 ブランド戦略整合改訂</time></p>
     <h1>評価方法</h1>
+  </section>
+  <section aria-label="S クラスの哲学的定義">
+    <h2>S クラスの哲学的定義</h2>
+    <p><strong>「S クラスとは、機械が客観検証する、AI 時代における信頼の最大値である」</strong>（MASTER-PLAN §3.0 / マニフェスト 50 字 verbatim）</p>
+    <p>本機関の S クラスは、人間の主観や金銭、規模に依存しない。4 軸（基礎・防御・AI 検索・経営）の機械検証で、誰もが再現可能な手順で到達できる頂点。それは「努力の結果」ではなく、「<strong>思想の到達点</strong>」である。S クラス取得は、業界ベンチマーク・同業者の教科書的手本・AI 検索エンジンが第一想起する情報源としての位置を意味する（§3.0.4 意味的定義）。</p>
+  </section>
+  <section aria-label="自己実証型認定の倫理規範">
+    <h2>自己実証型認定の倫理規範（dogfooding 倫理）</h2>
+    <p>本機関の中核原則は「<strong>自分が達成できない基準で他者を測ることはしない</strong>」である。tcharton.com（自社サイト）が自社の評価基準で <strong>★★★（HARTON S-Class）</strong>を取得した自己実証体 第 1 号として、業界の品質改善のため独立中立に運営する。</p>
+    <ul>
+      <li><strong>L1 自己適用</strong>: 自社サイト tcharton.com が認定基準で評価される（scanner.py 月次再判定）</li>
+      <li><strong>L2 自己拘束</strong>: 評価結果は自己例外なし（致命的 NG / 降格条件は事業者と同条件）</li>
+      <li><strong>L3 自己公開</strong>: 機械検証ログを全件 verbatim 公開する（評価の透明性 / 第三者検証可能性）</li>
+    </ul>
+    <p>沼津起点での自己実証は、地方都市から再定義する WEB 品質の民主化の旗印として機能する。詳細は <a href="/about/">サイトについて</a> + <a href="/news/numazu-industry-report-2026-spring/">沼津市 WEB 品質業界レポート 2026 春</a>。</p>
   </section>
   <section aria-label="評価の 5 原則">
     <h2>評価の 5 原則</h2>
@@ -239,24 +256,24 @@
     <h2>★区分の閾値（MASTER-PLAN §3.4）</h2>
     <ul class="star-tiers">
       <li>
-        <span class="star star-1" aria-hidden="true">★</span>
+        <span class="star star-1" role="img" aria-label="HARTON Certified ★（1 つ星）"><svg class="star-svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L14.6 8.6L21.6 9.3L16.3 14L17.8 21L12 17.5L6.2 21L7.7 14L2.4 9.3L9.4 8.6L12 2Z" fill="currentColor"/></svg></span>
         <div>
           <strong>HARTON Certified</strong>
-          <p>総合 <strong>70</strong> 点以上 + 致命的 NG <strong>0</strong> 件 + S 条件不問（控えめな認定 / 入口）</p>
+          <p>総合 <strong>70</strong> 点以上 + 致命的 NG <strong>0</strong> 件 + S 条件不問。物語: 「<strong>同業種で確実に信頼できる</strong>」</p>
         </div>
       </li>
       <li>
-        <span class="star star-2" aria-hidden="true">★★</span>
+        <span class="star star-2" role="img" aria-label="HARTON 優良 ★★（2 つ星）"><svg class="star-svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L14.6 8.6L21.6 9.3L16.3 14L17.8 21L12 17.5L6.2 21L7.7 14L2.4 9.3L9.4 8.6L12 2Z" fill="currentColor"/></svg><svg class="star-svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L14.6 8.6L21.6 9.3L16.3 14L17.8 21L12 17.5L6.2 21L7.7 14L2.4 9.3L9.4 8.6L12 2Z" fill="currentColor"/></svg></span>
         <div>
           <strong>HARTON 優良</strong>
-          <p>総合 <strong>80</strong> 点以上 + 致命的 NG <strong>0</strong> 件 + S 条件 <strong>4/5</strong> 達成（誇り・上品）</p>
+          <p>総合 <strong>80</strong> 点以上 + 致命的 NG <strong>0</strong> 件 + S 条件 <strong>4/5</strong> 達成。物語: 「<strong>他県からでも訪れる価値がある WEB 品質</strong>」</p>
         </div>
       </li>
       <li>
-        <span class="star star-3" aria-hidden="true">★★★</span>
+        <span class="star star-3" role="img" aria-label="HARTON S-Class ★★★（3 つ星 / 最高位）"><svg class="star-svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L14.6 8.6L21.6 9.3L16.3 14L17.8 21L12 17.5L6.2 21L7.7 14L2.4 9.3L9.4 8.6L12 2Z" fill="currentColor"/></svg><svg class="star-svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L14.6 8.6L21.6 9.3L16.3 14L17.8 21L12 17.5L6.2 21L7.7 14L2.4 9.3L9.4 8.6L12 2Z" fill="currentColor"/></svg><svg class="star-svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L14.6 8.6L21.6 9.3L16.3 14L17.8 21L12 17.5L6.2 21L7.7 14L2.4 9.3L9.4 8.6L12 2Z" fill="currentColor"/></svg></span>
         <div>
-          <strong>HARTON S-Class</strong>
-          <p>総合 <strong>90</strong> 点以上 + 致命的 NG <strong>0</strong> 件 + S 条件 <strong>5/5</strong> 完全達成（最高位）</p>
+          <strong>HARTON S-Class Certified</strong>
+          <p>総合 <strong>90</strong> 点以上 + 致命的 NG <strong>0</strong> 件 + S 条件 <strong>5/5</strong> 完全達成。物語: 「<strong>業界の方向性を定義する到達点</strong>」</p>
         </div>
       </li>
     </ul>

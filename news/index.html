@@ -65,6 +65,7 @@
   .fade-in { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
   .fade-in.visible { opacity: 1; transform: translateY(0); }
   .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+  .sr-only:focus, .sr-only:focus-visible { position: fixed; inset: 1rem auto auto 1rem; width: auto; height: auto; clip: auto; background: #1E293B; color: #FAF8F3; padding: 0.75rem 1.25rem; border: 2px solid #C9A961; border-radius: 4px; z-index: 9999; }
   @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after {
       animation-duration: 0.01ms !important;
@@ -171,6 +172,7 @@
 <header>
   <nav aria-label="メインナビゲーション">
     <a href="/" aria-label="HARTON Certified トップ">
+      <svg class="star-svg star-svg-logo" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L14.6 8.6L21.6 9.3L16.3 14L17.8 21L12 17.5L6.2 21L7.7 14L2.4 9.3L9.4 8.6L12 2Z" fill="currentColor"/></svg>
       <span>HARTON Certified</span>
     </a>
     <ul>
@@ -212,6 +214,7 @@
   <section aria-label="お知らせ一覧">
     <h2>2026 年</h2>
     <ul>
+      <li><time datetime="2026-04-30">2026-04-30</time>: <a href="/news/numazu-industry-report-2026-spring/">沼津市 WEB 品質業界レポート 2026 春</a> 公開（5 業種 83 件機械検証 / ★ 認定 0 件 / 致命的 NG 28.9%）</li>
       <li><time datetime="2026-04-27">2026-04-27</time>: MASTER-PLAN v1.1.4 改訂（SPEC v3.4 連動完了）</li>
       <li><time datetime="2026-04-26">2026-04-26</time>: HARTON Certified 創設発表 / Phase 0 沼津 30 件パイロット開始</li>
     </ul>

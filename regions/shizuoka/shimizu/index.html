@@ -65,6 +65,7 @@
   .fade-in { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
   .fade-in.visible { opacity: 1; transform: translateY(0); }
   .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+  .sr-only:focus, .sr-only:focus-visible { position: fixed; inset: 1rem auto auto 1rem; width: auto; height: auto; clip: auto; background: #1E293B; color: #FAF8F3; padding: 0.75rem 1.25rem; border: 2px solid #C9A961; border-radius: 4px; z-index: 9999; }
   @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after {
       animation-duration: 0.01ms !important;
@@ -183,6 +184,7 @@
 <header>
   <nav aria-label="メインナビゲーション">
     <a href="/" aria-label="HARTON Certified トップ">
+      <svg class="star-svg star-svg-logo" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L14.6 8.6L21.6 9.3L16.3 14L17.8 21L12 17.5L6.2 21L7.7 14L2.4 9.3L9.4 8.6L12 2Z" fill="currentColor"/></svg>
       <span>HARTON Certified</span>
     </a>
     <ul>
@@ -221,14 +223,15 @@
 
     <section aria-label="業種別">
       <h2>業種別検索</h2>
-      <ul><li>準備中</li></ul>
+      <ul><li>業種別認定は Phase 1 以降で順次拡大予定</li></ul>
     </section>
 
     <section aria-label="認定店舗一覧">
       <h2>全認定店舗（0件）</h2>
-      <p>この地域の認定店舗は現在準備中。</p>
+      <p><strong>現時点で ★ 以上達成事業者: 0 件</strong>。Phase 0 沼津市 83 件機械検証の業界実態は <a href="/news/numazu-industry-report-2026-spring/">沼津市 WEB 品質業界レポート 2026 春</a>で堂々と公開している（業界中央値 22 点 vs 自己実証体 90 点 = 4.09 倍ギャップ）。沼津以外の地域は Phase 1（類似地方都市・地方都市から再定義）で順次拡大予定。</p>
     </section>
   </article>
+  <script src="/assets/js/search.js" defer></script>
 </main>
 
 <footer>

@@ -65,6 +65,7 @@
   .fade-in { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
   .fade-in.visible { opacity: 1; transform: translateY(0); }
   .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+  .sr-only:focus, .sr-only:focus-visible { position: fixed; inset: 1rem auto auto 1rem; width: auto; height: auto; clip: auto; background: #1E293B; color: #FAF8F3; padding: 0.75rem 1.25rem; border: 2px solid #C9A961; border-radius: 4px; z-index: 9999; }
   @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after {
       animation-duration: 0.01ms !important;
@@ -177,6 +178,7 @@
 <header>
   <nav aria-label="メインナビゲーション">
     <a href="/" aria-label="HARTON Certified トップ">
+      <svg class="star-svg star-svg-logo" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L14.6 8.6L21.6 9.3L16.3 14L17.8 21L12 17.5L6.2 21L7.7 14L2.4 9.3L9.4 8.6L12 2Z" fill="currentColor"/></svg>
       <span>HARTON Certified</span>
     </a>
     <ul>
@@ -210,12 +212,12 @@
     <h1>2026年4月 月次 TOP 10</h1>
     <p><time datetime="2026-04-01" itemprop="datePublished">2026-04-01 公開</time></p>
     <section aria-label="冒頭エビデンス">
-      <p>2026年4月時点の HARTON Certified 認定店舗 TOP <strong>1</strong> 件。総合 <strong>70 点</strong>以上 + 致命的 NG <strong>0 件</strong>を達成した事業者のみ。月次再スキャンは scanner.py（4 軸機械検証 / 45+ 項目）で実施する。出典: <a href="https://www.ipa.go.jp/security/vuln/websecurity/about.html" rel="nofollow noopener noreferrer" target="_blank">IPA「安全なウェブサイトの作り方」</a>。</p>
+      <p>2026年4月時点の HARTON Certified 認定店舗 TOP <strong>0</strong> 件。総合 <strong>70 点</strong>以上 + 致命的 NG <strong>0 件</strong>を達成した事業者のみ。月次再スキャンは scanner.py（4 軸機械検証 / 45+ 項目）で実施する。出典: <a href="https://www.ipa.go.jp/security/vuln/websecurity/about.html" rel="nofollow noopener noreferrer" target="_blank">IPA「安全なウェブサイトの作り方」</a>。</p>
       <blockquote cite="/methodology/">「機械検証で、Sクラス WEB の普及を支える」</blockquote>
     </section>
     <section aria-label="ランキング">
-      <h2>認定店舗 TOP 1</h2>
-      <ol><li><a href="/businesses/numazu-example-tax/">○○税理士事務所（雛形・実データ未投入）</a> — ★★ / 85点 / 税理士・会計士 / 沼津市</li></ol>
+      <h2>認定店舗 TOP 0</h2>
+      <p>この月の集計データは月次再判定後に更新する。Phase 0 沼津市の業界実態は <a href="/news/numazu-industry-report-2026-spring/">沼津市 WEB 品質業界レポート 2026 春</a>で公開中。</p>
     </section>
   </article>
 </main>

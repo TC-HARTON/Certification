@@ -6,3 +6,9 @@ yarn-error.log*
 .env.local
 *.log
 .claude/
+
+# Phase 0+ スキャンデータ（実存事業者の社名・電話・URL・GBP CID 等の PII を含む）
+# Reviewer B HIGH-1 (2026-04-30): 公開リポジトリへの誤 push 防止
+data/*.csv
+data/phase-*.csv
+data/results-*.csv

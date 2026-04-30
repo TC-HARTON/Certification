@@ -56,6 +56,7 @@
     },
     "approved_at": null,
     "approved_by": null,
-    "opt_out": false
+    "opt_out": true,
+    "_note": "Phase 0 沼津 83 件機械検証で ★ 以上達成事業者は 0 件のため、雛形は opt_out:true で掲載対象外に変更（HSCEL §6.1 redo / 2026-04-30）。INSTRUCTION v1.12.2 §(C)『現時点で ★ 以上達成事業者: 0 件を堂々と表示』整合"
   }
 }

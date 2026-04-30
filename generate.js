@@ -77,6 +77,10 @@ function substitute(template, ctx, esc = false) {
 const industries = readJSON('data/industries.json');
 const regions = readJSON('data/regions.json');
 const businessesRaw = readJSON('data/businesses.json');
+// Phase 0 沼津 83 件実測サマリ（業界レポート + 全ハブの verbatim 数値出典）
+const phase0Summary = (function () {
+  try { return readJSON('data/phase-0-numazu-summary.json'); } catch (_) { return null; }
+})();
 
 // _schema 等のメタキーを除外
 const businesses = Object.fromEntries(
@@ -86,11 +90,11 @@ const businesses = Object.fromEntries(
 );
 
 // 掲載基準: ★ 以上 + 致命的 NG ゼロ（MASTER-PLAN §3.4 / 3 段階ミシュラン型）
+// scanner.py `calculate_rating()` の `rating` フィールド（公開表示 ★★★/★★/★/""）を直接参照。
+// 旧 5 段階体系→3 段階体系への橋渡しマッピング層は v1.1.6.1（2026-04-30 / scanner ④ commit 959fc96 連動）で撤去済。
 function isPublishable(b) {
   if (!b.scan) return false;
   if (b.scan.critical_ng !== 0) return false;
-  // ★区分新表記 (ミシュラン型 / 3 段階): ★ HARTON Certified / ★★ 優良 / ★★★ S-Class
-  // (scanner.py 出力との橋渡しは Step 4 取込み時に実施)
   const r = b.scan.rating || '';
   return r === '★' || r === '★★' || r === '★★★';
 }
@@ -307,13 +311,13 @@ function generateIndustryPage(industryKey, ind) {
     .sort((a, b) => b[1].scan.score - a[1].scan.score)
     .slice(0, 10);
 
-  const title = `${ind.label} 全国 TOP 10 — HARTON Certified 認定店舗`;
-  const description = `HARTON Certified が機械検証で公正評価した、全国の${ind.label}優良サイト TOP 10。総合スコア順に掲載中（${list.length}件）。評価方法は全公開、金銭非依存、ポジティブセレクション。`;
+  const title = `${ind.label} 認定店舗一覧 — HARTON Certified`;
+  const description = `HARTON Certified が機械検証で公正評価した${ind.label} 認定店舗一覧。Phase 0 沼津市 83 件機械検証で ★ 以上達成 ${list.length} 件、Phase 1 で全国順次拡大予定。評価方法は全公開、金銭非依存、ポジティブセレクション。`;
   const canonicalPath = `/industries/${industryKey}/`;
 
   const breadcrumbs = [
     { name: 'トップ', path: '/' },
-    { name: '業種別検索', path: '/industries/' },
+    { name: '業種から探す', path: '/industries/' },
     { name: ind.label, path: canonicalPath },
   ];
 
@@ -330,24 +334,29 @@ function generateIndustryPage(industryKey, ind) {
 
   const mainContent = `
   <article>
-    <h1>${escHTML(ind.label)} 全国 TOP 10</h1>
+    <h1>${escHTML(ind.label)} 認定店舗一覧</h1>
     <section aria-label="冒頭エビデンス">
-      <p>HARTON Certified が機械検証で公正評価した、${escHTML(ind.label)} の優良サイト TOP <strong>${list.length}</strong> 件。総合 <strong>70 点</strong>以上 + 致命的 NG <strong>0 件</strong>を達成した事業者のみ掲載する（MASTER-PLAN §3.4）。出典は <a href="https://schema.org/${escHTML(ind.schema_type?.[0] || 'LocalBusiness')}" rel="nofollow noopener noreferrer" target="_blank">Schema.org ${escHTML(ind.schema_type?.[0] || 'LocalBusiness')}</a> および <a href="https://www.wikidata.org/wiki/${escHTML(ind.wikidata)}" rel="nofollow noopener noreferrer" target="_blank">Wikidata ${escHTML(ind.wikidata)}</a> に整合する。</p>
+      <p>HARTON Certified が機械検証で公正評価する${escHTML(ind.label)} 認定店舗一覧。総合 <strong>70 点</strong>以上 + 致命的 NG <strong>0 件</strong>を達成した事業者のみ掲載する。Phase 0 は沼津市 <strong>83</strong> 件のスキャンで ★ 以上達成 <strong>${list.length}</strong> 件、Phase 1 で全国順次拡大予定。出典は <a href="https://schema.org/${escHTML(ind.schema_type?.[0] || 'LocalBusiness')}" rel="nofollow noopener noreferrer" target="_blank">Schema.org ${escHTML(ind.schema_type?.[0] || 'LocalBusiness')}</a> および <a href="https://www.wikidata.org/wiki/${escHTML(ind.wikidata)}" rel="nofollow noopener noreferrer" target="_blank">Wikidata ${escHTML(ind.wikidata)}</a> に整合する。</p>
       <blockquote cite="/methodology/">「機械検証で WEB 品質を公正に測る、地方発の認定機関」</blockquote>
     </section>
+
+    ${renderReportBridge()}
 
     <section aria-label="ランキング">
       <h2>認定店舗一覧（${list.length}件）</h2>
       ${list.length === 0
-        ? '<p>このカテゴリの認定店舗は現在準備中。</p>'
+        ? '<p><strong>現時点で ★ 以上達成事業者: 0 件</strong>。Phase 0 沼津市 83 件機械検証の実測結果は <a href="/news/numazu-industry-report-2026-spring/">沼津市 WEB 品質業界レポート 2026 春</a>を参照。沼津以外の地域は Phase 1（類似地方都市: 倉敷・四日市・松本・盛岡 等）で順次拡大予定。</p>'
         : `<ol>${list.map(([slug, b]) => `<li><a href="/businesses/${slug}/">${escHTML(b.name)}</a> — ${escHTML(b.scan.rating)} / ${b.scan.score}点 / ${escHTML(b.address.addressLocality)}</li>`).join('')}</ol>`}
     </section>
-  </article>`;
+
+    ${renderRatingNarratives()}
+  </article>
+  ${renderSearchScript()}`;
 
   const additionalJsonLd = [{
     '@context': 'https://schema.org',
     '@type': 'ItemList',
-    name: `${ind.label} 全国 TOP 10 — HARTON Certified`,
+    name: `${ind.label} 認定店舗一覧 — HARTON Certified`,
     numberOfItems: list.length,
     itemListElement: itemList,
   }];
@@ -405,16 +414,17 @@ function generateRegionPage(prefKey, cityKey) {
 
     <section aria-label="業種別">
       <h2>業種別検索</h2>
-      <ul>${industryLinks || '<li>準備中</li>'}</ul>
+      <ul>${industryLinks || '<li>業種別認定は Phase 1 以降で順次拡大予定</li>'}</ul>
     </section>
 
     <section aria-label="認定店舗一覧">
       <h2>全認定店舗（${list.length}件）</h2>
       ${list.length === 0
-        ? '<p>この地域の認定店舗は現在準備中。</p>'
+        ? '<p><strong>現時点で ★ 以上達成事業者: 0 件</strong>。Phase 0 沼津市 83 件機械検証の業界実態は <a href="/news/numazu-industry-report-2026-spring/">沼津市 WEB 品質業界レポート 2026 春</a>で堂々と公開している（業界中央値 22 点 vs 自己実証体 90 点 = 4.09 倍ギャップ）。沼津以外の地域は Phase 1（類似地方都市・地方都市から再定義）で順次拡大予定。</p>'
         : `<ol>${list.map(([slug, b]) => `<li><a href="/businesses/${slug}/">${escHTML(b.name)}</a> — ${escHTML(industries[b.industry]?.label || b.industry)} / ${escHTML(b.scan.rating)} / ${b.scan.score}点</li>`).join('')}</ol>`}
     </section>
-  </article>`;
+  </article>
+  ${renderSearchScript()}`;
 
   return applyLayout({
     pageType: 'region',
@@ -438,13 +448,13 @@ function generateRegionIndustryPage(prefKey, cityKey, industryKey) {
     .filter(([_, b]) => b.region === `${prefKey}/${cityKey}` && b.industry === industryKey)
     .sort((a, b) => b[1].scan.score - a[1].scan.score);
 
-  const title = `${city.label} ${ind.label} TOP 10 — HARTON Certified`;
+  const title = `${city.label} ${ind.label} 認定店舗 — HARTON Certified`;
   const description = `${city.label}（${pref.label}）の${ind.label} HARTON Certified 認定店舗 TOP ${list.length} 件。機械検証で公正評価、総合 70 点以上のみ掲載。`;
   const canonicalPath = `/regions/${prefKey}/${cityKey}/industries/${industryKey}/`;
 
   const mainContent = `
   <article>
-    <h1>${escHTML(city.label)} ${escHTML(ind.label)} TOP 10</h1>
+    <h1>${escHTML(city.label)} ${escHTML(ind.label)} 認定店舗</h1>
     <section aria-label="冒頭エビデンス">
       <p>${escHTML(city.label)} の${escHTML(ind.label)} 認定店舗 <strong>${list.length}</strong> 件。総合 <strong>70 点</strong>以上 + 致命的 NG <strong>0 件</strong>達成。出典: <a href="https://www.wikidata.org/wiki/${escHTML(ind.wikidata)}" rel="nofollow noopener noreferrer" target="_blank">Wikidata ${escHTML(ind.wikidata)}</a>。</p>
       <blockquote cite="/methodology/">「機械検証で WEB 品質を公正に測る」 — HARTON Certified</blockquote>
@@ -452,10 +462,11 @@ function generateRegionIndustryPage(prefKey, cityKey, industryKey) {
     <section aria-label="認定店舗一覧">
       <h2>認定店舗（${list.length}件）</h2>
       ${list.length === 0
-        ? '<p>このカテゴリの認定店舗は現在準備中。</p>'
+        ? '<p><strong>現時点で ★ 以上達成事業者: 0 件</strong>。Phase 0 沼津市 83 件機械検証の実測結果は <a href="/news/numazu-industry-report-2026-spring/">沼津市 WEB 品質業界レポート 2026 春</a>を参照。沼津以外の地域は Phase 1（類似地方都市: 倉敷・四日市・松本・盛岡 等）で順次拡大予定。</p>'
         : `<ol>${list.map(([slug, b]) => `<li><a href="/businesses/${slug}/">${escHTML(b.name)}</a> — ${escHTML(b.scan.rating)} / ${b.scan.score}点</li>`).join('')}</ol>`}
     </section>
-  </article>`;
+  </article>
+  ${renderSearchScript()}`;
 
   return applyLayout({
     pageType: 'region-industry',
@@ -466,10 +477,371 @@ function generateRegionIndustryPage(prefKey, cityKey, industryKey) {
     mainContent,
     breadcrumbs: [
       { name: 'トップ', path: '/' },
+      { name: '地域から探す', path: '/regions/' },
       { name: pref.label, path: `/regions/${prefKey}/` },
       { name: city.label, path: `/regions/${prefKey}/${cityKey}/` },
       { name: ind.label, path: canonicalPath },
     ],
+  });
+}
+
+// ═══════════════════ 共通: ★区分物語 verbatim (INSTRUCTION-FROM-ROOT v1.1.14 / MASTER-PLAN §3.1) ═══════════════════
+// MASTER-PLAN v1.1.6 公式版に整合。GEO §G-1 (引用句) + §G-3 (数値) + §G-6 (Lead Evidence) 連動。
+function renderRatingNarratives() {
+  return `
+    <section aria-label="★区分の物語" class="rating-narratives">
+      <h2>★区分の物語（期待値）</h2>
+      <ul>
+        <li id="rating-1star"><strong>★ HARTON Certified</strong> — 「同業種で確実に信頼できる」（総合 70 点以上 + 致命的 NG 0 件）</li>
+        <li id="rating-2star"><strong>★★ HARTON 優良</strong> — 「他県からでも訪れる価値がある」（総合 80 点以上 + 必須 5 条件 4/5 達成）</li>
+        <li id="rating-3star"><strong>★★★ HARTON S-Class</strong> — 「業界の方向性を定義する到達点」（総合 90 点以上 + 必須 5 条件 5/5 達成）</li>
+      </ul>
+    </section>`;
+}
+
+// 共通: 業界レポート bridge ブロック (全ハブで GEO §G-6 Lead Evidence 担保)
+function renderReportBridge() {
+  return `
+    <aside aria-label="業界レポート bridge" class="report-bridge">
+      <p>Phase 0 沼津市 83 件機械検証で <strong>★ 以上達成 0 件</strong>。業界中央値 <strong>22</strong> 点 / 業界 max <strong>54</strong> 点 / 致命的 NG <strong>28.9%</strong>（24 事業者）。詳細は <a href="/news/numazu-industry-report-2026-spring/">沼津市 WEB 品質業界レポート 2026 春</a>を参照。</p>
+      <p>本機関は自己実証体 第 1 号で ★★★ を取得した後に他者の評価に用いている（<a href="/methodology/">評価方法</a>を参照）。<strong>「自分が ★★★ を取れない基準で、他者を測らない。」</strong>が本機関の信頼根拠の核である。</p>
+    </aside>`;
+}
+
+// 共通: search.js script タグ
+function renderSearchScript() {
+  return `<script src="/assets/js/search.js" defer></script>`;
+}
+
+// ═══════════════════ /regions/ 都道府県別ハブ ═══════════════════
+function generateRegionsIndexPage() {
+  const prefList = Object.entries(regions);
+  const title = `地域から探す — HARTON Certified 認定店舗`;
+  const description = `HARTON Certified 認定店舗を地域から探す。Phase 0 静岡県（沼津市 83 件機械検証 / ★ 認定 0 件 / 業界中央値 22 点）。Phase 1 で全国 47 都道府県へ順次拡大予定。`;
+  const canonicalPath = `/regions/`;
+
+  const breadcrumbs = [
+    { name: 'トップ', path: '/' },
+    { name: '地域から探す', path: canonicalPath },
+  ];
+
+  const itemList = prefList.map(([key, p], i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    item: {
+      '@type': 'AdministrativeArea',
+      '@id': DOMAIN + `/regions/${key}/`,
+      name: p.label,
+      sameAs: p.wikidata ? `https://www.wikidata.org/wiki/${p.wikidata}` : undefined,
+    },
+  }));
+
+  const prefCards = prefList.map(([key, p]) => {
+    const cityCount = Object.keys(p.cities || {}).length;
+    const phase0Cities = Object.values(p.cities || {}).filter(c => (c.phase ?? 0) === 0).length;
+    return `<li><a href="/regions/${key}/"><strong>${escHTML(p.label)}</strong></a> — 対応 ${cityCount} 市町（Phase 0 active: ${phase0Cities} 市）</li>`;
+  }).join('');
+
+  const mainContent = `
+  <article>
+    <header>
+      <p><time datetime="2026-04-30" itemprop="datePublished">2026-04-30 公開</time></p>
+      <h1>地域から探す</h1>
+    </header>
+
+    <section aria-label="冒頭エビデンス">
+      <p>HARTON Certified 認定店舗を都道府県・市町村から探す。Phase 0 起点は <strong>静岡県沼津市</strong>（83 件機械検証 / ★ 認定 <strong>0</strong> 件 / 致命的 NG <strong>28.9%</strong>）。出典は <a href="https://www.ipa.go.jp/security/vuln/websecurity/about.html" rel="nofollow noopener noreferrer" target="_blank">IPA「安全なウェブサイトの作り方」</a>に整合する 4 軸機械検証による。</p>
+      <blockquote cite="/methodology/">「機械検証で WEB 品質を公正に測る、地方発の認定機関」 — HARTON Certified 評価方法</blockquote>
+    </section>
+
+    ${renderReportBridge()}
+
+    <section aria-label="対応都道府県一覧">
+      <h2>対応都道府県（${prefList.length} 都道府県）</h2>
+      <ul>${prefCards}</ul>
+      <p>Phase 1 で全国 <strong>47</strong> 都道府県・<strong>10,000+</strong> 件への拡大を予定（類似地方都市優先: 倉敷・四日市・松本・盛岡 等 / 人口 15-25 万人規模）。</p>
+    </section>
+
+    ${renderRatingNarratives()}
+  </article>
+  ${renderSearchScript()}`;
+
+  const additionalJsonLd = [{
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: 'HARTON Certified 対応都道府県一覧',
+    numberOfItems: prefList.length,
+    itemListElement: itemList,
+  }];
+
+  return applyLayout({
+    pageType: 'search',
+    variant: 'reading',
+    title,
+    description,
+    canonicalPath,
+    mainContent,
+    breadcrumbs,
+    additionalJsonLd,
+  });
+}
+
+// ═══════════════════ /regions/{pref}/ 市町村別ハブ ═══════════════════
+function generatePrefIndexPage(prefKey) {
+  const pref = regions[prefKey];
+  if (!pref) return null;
+
+  const cityList = Object.entries(pref.cities || {});
+  const title = `${pref.label} 市町村別 — HARTON Certified 認定店舗`;
+  const description = `${pref.label}の HARTON Certified 認定店舗を市町村から探す。Phase 0 active ${cityList.filter(([, c]) => (c.phase ?? 0) === 0).length} 市 / 全 ${cityList.length} 市町。機械検証で総合 70 点以上 + 致命的 NG ゼロのみ掲載。`;
+  const canonicalPath = `/regions/${prefKey}/`;
+
+  const breadcrumbs = [
+    { name: 'トップ', path: '/' },
+    { name: '地域から探す', path: '/regions/' },
+    { name: pref.label, path: canonicalPath },
+  ];
+
+  const itemList = cityList.map(([key, c], i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    item: {
+      '@type': 'AdministrativeArea',
+      '@id': DOMAIN + `/regions/${prefKey}/${key}/`,
+      name: c.label,
+      sameAs: c.wikidata ? `https://www.wikidata.org/wiki/${c.wikidata}` : undefined,
+    },
+  }));
+
+  const cityCards = cityList.map(([key, c]) => {
+    const phase = c.phase ?? 0;
+    if (phase === 0) {
+      return `<li><a href="/regions/${prefKey}/${key}/"><strong>${escHTML(c.label)}</strong></a> — Phase 0 active（緯度 ${c.geo?.latitude || ''} / 経度 ${c.geo?.longitude || ''}）</li>`;
+    }
+    return `<li><strong>${escHTML(c.label)}</strong> — Phase ${phase} 拡大予定（緯度 ${c.geo?.latitude || ''} / 経度 ${c.geo?.longitude || ''}）</li>`;
+  }).join('');
+
+  const phase0Active = cityList.filter(([, c]) => (c.phase ?? 0) === 0).map(([k]) => k);
+  const phase0Sample = phase0Active[0];
+
+  const mainContent = `
+  <article>
+    <header>
+      <p><time datetime="2026-04-30" itemprop="datePublished">2026-04-30 公開</time></p>
+      <h1>${escHTML(pref.label)} 市町村別</h1>
+    </header>
+
+    <section aria-label="冒頭エビデンス">
+      <p>${escHTML(pref.label)}の HARTON Certified 認定店舗を市町村から探す。Phase 0 active <strong>${phase0Active.length}</strong> 市 / 全 <strong>${cityList.length}</strong> 市町。出典: <a href="https://www.wikidata.org/wiki/${escHTML(pref.wikidata || '')}" rel="nofollow noopener noreferrer" target="_blank">Wikidata ${escHTML(pref.wikidata || '')}</a>。</p>
+      <blockquote cite="/methodology/">「機械検証で WEB 品質を公正に測る、地方発の認定機関」</blockquote>
+    </section>
+
+    ${renderReportBridge()}
+
+    <section aria-label="市町村一覧">
+      <h2>${escHTML(pref.label)} 市町村（${cityList.length} 市町）</h2>
+      <ul>${cityCards}</ul>
+      ${phase0Sample ? `<p>Phase 0 active 市町の認定状況は <a href="/regions/${prefKey}/${phase0Sample}/">${escHTML(pref.cities[phase0Sample].label)}</a> で確認可能。Phase 1 拡大予定の市町は順次対応開始する。</p>` : ''}
+    </section>
+
+    ${renderRatingNarratives()}
+  </article>
+  ${renderSearchScript()}`;
+
+  const additionalJsonLd = [{
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: `${pref.label} HARTON Certified 認定対応市町村一覧`,
+    numberOfItems: cityList.length,
+    itemListElement: itemList,
+  }];
+
+  return applyLayout({
+    pageType: 'search',
+    variant: 'reading',
+    title,
+    description,
+    canonicalPath,
+    mainContent,
+    breadcrumbs,
+    additionalJsonLd,
+  });
+}
+
+// ═══════════════════ /industries/ 業種別ハブ ═══════════════════
+function generateIndustriesIndexPage() {
+  const indList = Object.entries(industries);
+  const title = `業種から探す — HARTON Certified 認定店舗`;
+  const description = `HARTON Certified 認定店舗を業種から探す。5 業種（税理士・会計士 / 弁護士 / 不動産仲介 / 飲食店 / 美容院）対応。Phase 0 沼津市 83 件機械検証で ★ 以上達成 0 件、Phase 1 で全国順次拡大予定。`;
+  const canonicalPath = `/industries/`;
+
+  const breadcrumbs = [
+    { name: 'トップ', path: '/' },
+    { name: '業種から探す', path: canonicalPath },
+  ];
+
+  const summaryByIndustry = {};
+  if (phase0Summary && Array.isArray(phase0Summary.industries)) {
+    // industries.json key と summary の業種ラベルの対応 (label_short で照合)
+    for (const s of phase0Summary.industries) {
+      for (const [key, ind] of indList) {
+        if (s.industry === ind.label_short || s.industry === ind.label) {
+          summaryByIndustry[key] = s;
+          break;
+        }
+      }
+    }
+  }
+
+  const itemList = indList.map(([key, ind], i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    item: {
+      '@type': ind.schema_type || ['LocalBusiness', 'ProfessionalService'],
+      '@id': DOMAIN + `/industries/${key}/`,
+      name: ind.label,
+      additionalType: ind.wikidata_uri,
+      knowsAbout: ind.keywords,
+    },
+  }));
+
+  const indCards = indList.map(([key, ind]) => {
+    const s = summaryByIndustry[key];
+    const stats = s
+      ? `沼津 ${s.n} 件 / 致命的 NG ${s.ng} 件（${s.ng_pct.toFixed(1)}%）/ 中央値 ${s.median} 点 / 業界 max ${s.max} 点 / ★ 認定 ${s.eligible} 件`
+      : `Phase 0 実測待機`;
+    return `<li><a href="/industries/${key}/"><strong>${escHTML(ind.label)}</strong></a> — ${stats}</li>`;
+  }).join('');
+
+  const mainContent = `
+  <article>
+    <header>
+      <p><time datetime="2026-04-30" itemprop="datePublished">2026-04-30 公開</time></p>
+      <h1>業種から探す</h1>
+    </header>
+
+    <section aria-label="冒頭エビデンス">
+      <p>HARTON Certified 認定店舗を業種から探す。<strong>${indList.length}</strong> 業種対応。Phase 0 沼津市 <strong>83</strong> 件機械検証で ★ 以上達成 <strong>0</strong> 件。出典は <a href="https://schema.org/LocalBusiness" rel="nofollow noopener noreferrer" target="_blank">Schema.org LocalBusiness</a> および <a href="https://www.wikidata.org/" rel="nofollow noopener noreferrer" target="_blank">Wikidata</a> に整合する。</p>
+      <blockquote cite="/methodology/">「機械検証で WEB 品質を公正に測る、地方発の認定機関」</blockquote>
+    </section>
+
+    ${renderReportBridge()}
+
+    <section aria-label="業種一覧">
+      <h2>対応業種（${indList.length} 業種）</h2>
+      <ul>${indCards}</ul>
+      <p>Phase 1 で業種拡大を予定。各業種の Wikidata URI は AI 検索エンジンの引用最適化に整合する。</p>
+    </section>
+
+    ${renderRatingNarratives()}
+  </article>
+  ${renderSearchScript()}`;
+
+  const additionalJsonLd = [{
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: 'HARTON Certified 対応業種一覧',
+    numberOfItems: indList.length,
+    itemListElement: itemList,
+  }];
+
+  return applyLayout({
+    pageType: 'search',
+    variant: 'reading',
+    title,
+    description,
+    canonicalPath,
+    mainContent,
+    breadcrumbs,
+    additionalJsonLd,
+  });
+}
+
+// ═══════════════════ /regions/{pref}/industries/{industry}/ 県×業種マトリックス ═══════════════════
+function generatePrefIndustryHubPage(prefKey, industryKey) {
+  const pref = regions[prefKey];
+  const ind = industries[industryKey];
+  if (!pref || !ind) return null;
+
+  // 県内全市町横断で当該業種の publishable を集計
+  const list = Object.entries(publishable)
+    .filter(([_, b]) => b.region.startsWith(`${prefKey}/`) && b.industry === industryKey)
+    .sort((a, b) => b[1].scan.score - a[1].scan.score);
+
+  // summary から該当業種の沼津実測 (Phase 0)
+  let stats = null;
+  if (phase0Summary && Array.isArray(phase0Summary.industries)) {
+    for (const s of phase0Summary.industries) {
+      if (s.industry === ind.label_short || s.industry === ind.label) { stats = s; break; }
+    }
+  }
+
+  const title = `${pref.label} ${ind.label} 認定店舗 — HARTON Certified`;
+  const description = `${pref.label}の${ind.label} HARTON Certified 認定店舗（市町村横断）。Phase 0 沼津 ${stats ? stats.n : 0} 件機械検証で ★ 以上達成 ${list.length} 件。Phase 1 で県内他市町村へ拡大予定。`;
+  const canonicalPath = `/regions/${prefKey}/industries/${industryKey}/`;
+
+  const breadcrumbs = [
+    { name: 'トップ', path: '/' },
+    { name: '地域から探す', path: '/regions/' },
+    { name: pref.label, path: `/regions/${prefKey}/` },
+    { name: ind.label, path: canonicalPath },
+  ];
+
+  const phase0SampleCity = Object.entries(pref.cities || {}).find(([, c]) => (c.phase ?? 0) === 0);
+
+  const mainContent = `
+  <article>
+    <header>
+      <p><time datetime="2026-04-30" itemprop="datePublished">2026-04-30 公開</time></p>
+      <h1>${escHTML(pref.label)} ${escHTML(ind.label)} 認定店舗</h1>
+    </header>
+
+    <section aria-label="冒頭エビデンス">
+      <p>${escHTML(pref.label)}の${escHTML(ind.label)} HARTON Certified 認定店舗（市町村横断）<strong>${list.length}</strong> 件。${stats ? `Phase 0 沼津 <strong>${stats.n}</strong> 件機械検証で 致命的 NG <strong>${stats.ng}</strong> 件（${stats.ng_pct.toFixed(1)}%）/ 中央値 <strong>${stats.median}</strong> 点 / 業界 max <strong>${stats.max}</strong> 点 / ★ 認定 <strong>${stats.eligible}</strong> 件。` : ''}出典: <a href="https://www.wikidata.org/wiki/${escHTML(ind.wikidata)}" rel="nofollow noopener noreferrer" target="_blank">Wikidata ${escHTML(ind.wikidata)}</a>。</p>
+      <blockquote cite="/methodology/">「機械検証で WEB 品質を公正に測る、地方発の認定機関」</blockquote>
+    </section>
+
+    ${renderReportBridge()}
+
+    <section aria-label="認定店舗一覧">
+      <h2>${escHTML(pref.label)} ${escHTML(ind.label)} 認定店舗（${list.length} 件）</h2>
+      ${list.length === 0
+        ? `<p><strong>現時点で ★ 以上達成事業者: 0 件</strong>。${phase0SampleCity ? `Phase 0 active 市町は <a href="/regions/${prefKey}/${phase0SampleCity[0]}/industries/${industryKey}/">${escHTML(phase0SampleCity[1].label)} ${escHTML(ind.label)}</a> を参照。` : ''}Phase 1 で県内他市町村へ順次拡大予定。</p>`
+        : `<ol>${list.map(([slug, b]) => `<li><a href="/businesses/${slug}/">${escHTML(b.name)}</a> — ${escHTML(b.scan.rating)} / ${b.scan.score}点 / ${escHTML(b.address.addressLocality)}</li>`).join('')}</ol>`}
+    </section>
+
+    ${renderRatingNarratives()}
+  </article>
+  ${renderSearchScript()}`;
+
+  const itemList = list.map(([slug, b], i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    item: {
+      '@type': ind.schema_type || ['LocalBusiness', 'ProfessionalService'],
+      '@id': DOMAIN + `/businesses/${slug}/`,
+      name: b.name,
+      url: b.url,
+    },
+  }));
+
+  const additionalJsonLd = [{
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: `${pref.label} ${ind.label} HARTON Certified 認定店舗`,
+    numberOfItems: list.length,
+    itemListElement: itemList,
+  }];
+
+  return applyLayout({
+    pageType: 'search',
+    variant: 'reading',
+    title,
+    description,
+    canonicalPath,
+    mainContent,
+    breadcrumbs,
+    additionalJsonLd,
   });
 }
 
@@ -498,7 +870,7 @@ function generateMonthlyRankingPage(year, month) {
     <section aria-label="ランキング">
       <h2>認定店舗 TOP ${list.length}</h2>
       ${list.length === 0
-        ? '<p>この月の集計データは現在準備中。</p>'
+        ? '<p>この月の集計データは月次再判定後に更新する。Phase 0 沼津市の業界実態は <a href="/news/numazu-industry-report-2026-spring/">沼津市 WEB 品質業界レポート 2026 春</a>で公開中。</p>'
         : `<ol>${list.map(([slug, b]) => `<li><a href="/businesses/${slug}/">${escHTML(b.name)}</a> — ${escHTML(b.scan.rating)} / ${b.scan.score}点 / ${escHTML(industries[b.industry]?.label || '')} / ${escHTML(b.address.addressLocality)}</li>`).join('')}</ol>`}
     </section>
   </article>`;
@@ -570,6 +942,87 @@ Sitemap: ${DOMAIN}/sitemap.xml
 `;
 }
 
+// ═══════════════════ assets/js/search.js (whitelist data 駆動生成) ═══════════════════
+function generateSearchJs() {
+  const industryKeys = Object.keys(industries);
+  // region keys: pref + pref/city (全 phase / disabled は HTML 側で表示制御)
+  const regionKeys = [];
+  for (const [prefKey, pref] of Object.entries(regions)) {
+    regionKeys.push(prefKey);
+    for (const cityKey of Object.keys(pref.cities || {})) {
+      regionKeys.push(`${prefKey}/${cityKey}`);
+    }
+  }
+  const ratingKeys = ['1star', '2star', '3star'];
+
+  return `/**
+ * HARTON Certified — 検索フォーム ルーター (generate.js 自動生成 / 手動編集禁止)
+ * ─────────────────────────────────────────
+ * SPEC v3.4 §1.0 / §8.1 (CSP script-src 'self') 準拠
+ * GEO-STANDARDS §G-3 §G-6 (位置最適化 / Lead Evidence) 連動
+ * MASTER-PLAN ★区分物語 連動 (rating hash で着地ページに期待値表示)
+ *
+ * 動作:
+ *   業種 × 地域 × ★区分 select の組合せから、
+ *   既存の静的ページ URL を whitelist 方式で組立てて遷移する。
+ *   未知 key / disabled option は遷移不可 (open redirect 防止)。
+ *   Trusted Types 制約下で innerHTML 等の DOM 書換えは一切使用しない。
+ *
+ * Phase 1 拡大時:
+ *   data/regions.json + data/industries.json に追加 → node generate.js で自動再生成。
+ */
+(function () {
+  'use strict';
+
+  var form = document.getElementById('search-form');
+  if (!form) return;
+
+  var INDUSTRY_KEYS = ${JSON.stringify(industryKeys)};
+  var REGION_KEYS = ${JSON.stringify(regionKeys)};
+  var RATING_KEYS = ${JSON.stringify(ratingKeys)};
+
+  function isAllowed(value, list) {
+    if (!value) return true;
+    for (var i = 0; i < list.length; i++) {
+      if (list[i] === value) return true;
+    }
+    return false;
+  }
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    var industryEl = document.getElementById('search-industry');
+    var regionEl = document.getElementById('search-region');
+    var ratingEl = document.getElementById('search-rating');
+
+    var industry = industryEl ? industryEl.value : '';
+    var region = regionEl ? regionEl.value : '';
+    var rating = ratingEl ? ratingEl.value : '';
+
+    if (!isAllowed(industry, INDUSTRY_KEYS)) industry = '';
+    if (!isAllowed(region, REGION_KEYS)) region = '';
+    if (!isAllowed(rating, RATING_KEYS)) rating = '';
+
+    var path;
+    if (region && industry) {
+      path = '/regions/' + region + '/industries/' + industry + '/';
+    } else if (region) {
+      path = '/regions/' + region + '/';
+    } else if (industry) {
+      path = '/industries/' + industry + '/';
+    } else {
+      path = '/regions/';
+    }
+
+    if (rating) path += '#' + rating;
+
+    window.location.assign(path);
+  });
+})();
+`;
+}
+
 function generateLLMsTxt() {
   return `# HARTON Certified
 
@@ -604,6 +1057,30 @@ function generateLLMsTxt() {
 - [問合せ](${DOMAIN}/contact/)
 - [利用規約・特商法](${DOMAIN}/legal/)
 - [プライバシーポリシー](${DOMAIN}/privacy/)
+
+## 検索ハブ（業種・地域・★区分の絞り込みエントリポイント / data 駆動生成）
+
+- [地域から探す](${DOMAIN}/regions/) — 都道府県別ハブ
+${Object.entries(regions).map(([prefKey, pref]) => {
+  const phase0Cities = Object.entries(pref.cities || {}).filter(([, c]) => (c.phase ?? 0) === 0);
+  const lines = [`- [${pref.label} 市町村別](${DOMAIN}/regions/${prefKey}/) — 全 ${Object.keys(pref.cities || {}).length} 市町`];
+  for (const [cityKey, city] of phase0Cities) {
+    lines.push(`- [${city.label} 認定店舗](${DOMAIN}/regions/${prefKey}/${cityKey}/) — Phase ${city.phase ?? 0}`);
+    for (const [indKey, ind] of Object.entries(industries)) {
+      lines.push(`- [${city.label} ${ind.label}](${DOMAIN}/regions/${prefKey}/${cityKey}/industries/${indKey}/)`);
+    }
+  }
+  for (const [indKey, ind] of Object.entries(industries)) {
+    lines.push(`- [${pref.label} ${ind.label}](${DOMAIN}/regions/${prefKey}/industries/${indKey}/)`);
+  }
+  return lines.join('\n');
+}).join('\n')}
+- [業種から探す](${DOMAIN}/industries/) — ${Object.keys(industries).length} 業種ハブ
+${Object.entries(industries).map(([k, ind]) => `- [${ind.label}](${DOMAIN}/industries/${k}/)`).join('\n')}
+
+## 沼津業界レポート 2026 春
+
+- [沼津市 WEB 品質業界レポート 2026 春](${DOMAIN}/news/numazu-industry-report-2026-spring/) — Phase 0 沼津市 83 件機械検証 / ★ 認定 0 件 / 致命的 NG 28.9% / 業界中央値 22 点 vs 自己実証体 90 点 = 4.09 倍ギャップ
 
 ## 認定基準（要点）
 
@@ -661,7 +1138,12 @@ function main() {
     return;
   }
 
-  // 2. industry ページ
+  // 2a. /industries/ 業種別ハブ
+  writeFile('industries/index.html', generateIndustriesIndexPage());
+  allPaths.push('/industries/');
+  written++;
+
+  // 2b. industry ページ
   for (const [k, v] of Object.entries(industries)) {
     const html = generateIndustryPage(k, v);
     writeFile(`industries/${k}/index.html`, html);
@@ -669,8 +1151,27 @@ function main() {
     written++;
   }
 
-  // 3. region ページ + region × industry ページ
+  // 3a. /regions/ 都道府県別ハブ
+  writeFile('regions/index.html', generateRegionsIndexPage());
+  allPaths.push('/regions/');
+  written++;
+
+  // 3b. /regions/{pref}/ 市町村別ハブ + /regions/{pref}/industries/{industry}/ 県×業種マトリックス
   for (const [prefKey, pref] of Object.entries(regions)) {
+    const prefHub = generatePrefIndexPage(prefKey);
+    if (prefHub) {
+      writeFile(`regions/${prefKey}/index.html`, prefHub);
+      allPaths.push(`/regions/${prefKey}/`);
+      written++;
+    }
+    for (const indKey of Object.keys(industries)) {
+      const ph = generatePrefIndustryHubPage(prefKey, indKey);
+      if (ph) {
+        writeFile(`regions/${prefKey}/industries/${indKey}/index.html`, ph);
+        allPaths.push(`/regions/${prefKey}/industries/${indKey}/`);
+        written++;
+      }
+    }
     for (const [cityKey, city] of Object.entries(pref.cities || {})) {
       const html = generateRegionPage(prefKey, cityKey);
       if (html) {
@@ -696,11 +1197,12 @@ function main() {
   allPaths.push(ranking.path);
   written++;
 
-  // 5. sitemap / robots / llms.txt
+  // 5. sitemap / robots / llms.txt / search.js (data 駆動再生成)
   writeFile('sitemap.xml', generateSitemap(allPaths));
   writeFile('robots.txt', generateRobots());
   writeFile('llms.txt', generateLLMsTxt());
-  written += 3;
+  writeFile('assets/js/search.js', generateSearchJs());
+  written += 4;
 
   console.log('  ' + '='.repeat(64));
   console.log('  HARTON Certified サイト生成完了');

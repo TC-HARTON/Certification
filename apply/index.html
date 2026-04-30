@@ -17,7 +17,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>掲載申請 — HARTON Certified ★ 認定を獲得する</title>
-<meta name="description" content="HARTON Certified への掲載申請ページ。無料診断で自社サイトの ★ 区分を判定し、tcharton.com の改善サービスへ送客する。C 未掲載事業者向け最重要動線。完全中立・金銭非依存の機械検証。">
+<meta name="description" content="HARTON Certified への掲載申請ページ。無料機械検証で自社サイトの ★ 区分を判定する。dogfooding 倫理に基づく完全中立・金銭非依存の認定機関。改善は自社実装または独立した制作会社相談（複数選択肢併記）の両論で支援する。C 未掲載事業者向け最重要動線。">
 <meta name="author" content="T.C.HARTON">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
 <meta name="theme-color" content="#0F172A">
@@ -36,7 +36,7 @@
 
 <!-- OGP 7 項目（SPEC §11.2-ogp 準拠） -->
 <meta property="og:title" content="掲載申請 — HARTON Certified ★ 認定を獲得する">
-<meta property="og:description" content="HARTON Certified への掲載申請ページ。無料診断で自社サイトの ★ 区分を判定し、tcharton.com の改善サービスへ送客する。C 未掲載事業者向け最重要動線。完全中立・金銭非依存の機械検証。">
+<meta property="og:description" content="HARTON Certified への掲載申請ページ。無料機械検証で自社サイトの ★ 区分を判定する。dogfooding 倫理に基づく完全中立・金銭非依存の認定機関。改善は自社実装または独立した制作会社相談（複数選択肢併記）の両論で支援する。C 未掲載事業者向け最重要動線。">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://certification.tcharton.com/apply/">
 <meta property="og:image" content="https://certification.tcharton.com/ogp.png">
@@ -46,7 +46,7 @@
 <!-- Twitter Card 4 項目 -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="掲載申請 — HARTON Certified ★ 認定を獲得する">
-<meta name="twitter:description" content="HARTON Certified への掲載申請ページ。無料診断で自社サイトの ★ 区分を判定し、tcharton.com の改善サービスへ送客する。C 未掲載事業者向け最重要動線。完全中立・金銭非依存の機械検証。">
+<meta name="twitter:description" content="HARTON Certified への掲載申請ページ。無料機械検証で自社サイトの ★ 区分を判定する。dogfooding 倫理に基づく完全中立・金銭非依存の認定機関。改善は自社実装または独立した制作会社相談（複数選択肢併記）の両論で支援する。C 未掲載事業者向け最重要動線。">
 <meta name="twitter:image" content="https://certification.tcharton.com/ogp.png">
 
 <!-- フォント preconnect + preload + display=swap（SPEC §6.4 / MASTER-PLAN §2.6） -->
@@ -65,6 +65,7 @@
   .fade-in { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
   .fade-in.visible { opacity: 1; transform: translateY(0); }
   .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+  .sr-only:focus, .sr-only:focus-visible { position: fixed; inset: 1rem auto auto 1rem; width: auto; height: auto; clip: auto; background: #1E293B; color: #FAF8F3; padding: 0.75rem 1.25rem; border: 2px solid #C9A961; border-radius: 4px; z-index: 9999; }
   @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after {
       animation-duration: 0.01ms !important;
@@ -171,6 +172,7 @@
 <header>
   <nav aria-label="メインナビゲーション">
     <a href="/" aria-label="HARTON Certified トップ">
+      <svg class="star-svg star-svg-logo" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L14.6 8.6L21.6 9.3L16.3 14L17.8 21L12 17.5L6.2 21L7.7 14L2.4 9.3L9.4 8.6L12 2Z" fill="currentColor"/></svg>
       <span>HARTON Certified</span>
     </a>
     <ul>
@@ -202,43 +204,51 @@
 
 <article>
   <section aria-label="冒頭エビデンス">
-    <p>HARTON Certified への掲載申請は <strong>無料</strong>である。掲載対象は ★ 以上（総合 <strong>70</strong> 点以上 + 致命的 NG <strong>0</strong> 件）を達成した事業者のみで、課金で順位を買えるサービスではない。出典: <a href="https://www.ppc.go.jp/" rel="nofollow noopener noreferrer" target="_blank">個人情報保護委員会</a>（評価機関の中立性に関する公的指針）。</p>
+    <p>HARTON Certified への掲載申請は <strong>無料</strong>である。掲載対象は ★ 以上（総合 <strong>70</strong> 点以上 + 致命的 NG <strong>0</strong> 件）を達成した事業者のみで、課金で順位を買えるサービスではない。本機関は dogfooding 倫理（自分が達成できない基準で他者を測らない）に基づき、業界の品質改善のため独立中立に運営する。出典: <a href="https://www.ppc.go.jp/" rel="nofollow noopener noreferrer" target="_blank">個人情報保護委員会</a>（評価機関の中立性に関する公的指針）。</p>
     <blockquote cite="https://certification.tcharton.com/methodology/">
-      「掲載自体が認定である」 — HARTON Certified ★区分体系
+      「自分が達成できない基準で他者を測らない」 — HARTON Certified 信頼根拠の核（MASTER-PLAN §2.0.4）
     </blockquote>
-    <p><time datetime="2026-04-27" itemprop="datePublished">2026-04-27 公開</time></p>
+    <p><time datetime="2026-04-27" itemprop="datePublished">2026-04-27 公開</time> ／ <time datetime="2026-04-30" itemprop="dateModified">2026-04-30 中立性整合改訂</time></p>
     <h1>掲載申請</h1>
   </section>
   <section aria-label="申請プロセス">
     <h2>申請プロセス（4 ステップ）</h2>
     <ol>
-      <li>申請（本ページから問合せ）</li>
+      <li>申請（本ページの<a href="/contact/">お問合せフォーム</a>から）</li>
       <li>無料診断（scanner.py での 4 軸機械検証 / 45+ 項目）</li>
-      <li>結果通知（★ 区分 + 改善ヒント）</li>
+      <li>結果通知（★ 区分 + 改善ヒント / 機械検証ログ verbatim）</li>
       <li>★ 以上達成 → 掲載開始 / 未達 → 改善後再申請</li>
     </ol>
   </section>
   <section aria-label="無料診断">
     <h2>無料診断のお申込み</h2>
-    <p>自社サイトの WEB 品質が現時点でどの ★ 区分に該当するか、無料で機械検証する。所要時間は <strong>5</strong> 分（自動）〜<strong>1</strong> 営業日（人的レビュー込み）である。</p>
-    <p><a href="https://tcharton.com/contact/" rel="noopener noreferrer" target="_blank">無料診断のお申込みはこちら</a></p>
+    <p>自社サイトの WEB 品質が現時点でどの ★ 区分に該当するか、無料で機械検証する。所要時間は <strong>5</strong> 分（自動）〜<strong>1</strong> 営業日（人的レビュー込み）である。Cloudflare Turnstile による非侵入型ボット防御は CR-3 で別途実装予定（site key 受領後）。</p>
+    <p><a href="/contact/">お問合せフォームから無料診断を申込む →</a></p>
   </section>
-  <section aria-label="改善が必要な場合">
+  <section aria-label="改善が必要な場合 / 中立性表現原則">
     <h2>改善が必要な場合</h2>
-    <p>初回診断で ★ 未達でも申請を続行できる。tcharton.com（親サイト）の有料サービスで改善した後、再評価を受けて ★ を取得する経路がある。詳細は <a href="https://tcharton.com/services/web/" rel="noopener noreferrer" target="_blank">tcharton.com の WEB 構築サービス</a>を参照する。</p>
+    <p>初回診断で ★ 未達でも申請を続行できる。改善経路は事業者の判断で以下から選択する（HARTON Certified は<strong>業界の品質改善のため</strong>独立中立に運営し、特定の制作会社の推奨はしない）:</p>
+    <ol>
+      <li><strong>自社実装</strong>: <a href="/methodology/">評価方法ページ</a>と <a href="/improvement-guide/">改善ガイダンス</a>を参考に、社内で SPEC 整合の改善を実装する。機械検証で項目別の不適合が示されるため、再現可能な手順で対応できる</li>
+      <li><strong>制作会社相談</strong>: 独立した WEB 制作会社・コンサルタントに改善を依頼する。相談先候補は事業者の判断で選定する（地元商工会議所・IT 関連協会の紹介、複数社相見積もりが推奨される一般的な調達手順）</li>
+    </ol>
+    <p>改善後は再度本ページから無料診断を申込むことで、★ 区分の再判定を受けられる。月次再判定で ★ 区分が更新される運用は MASTER-PLAN §12 失効・降格運用と整合する。</p>
   </section>
   <section aria-label="料金透明性">
     <h2>料金透明性</h2>
     <ul>
       <li>HARTON Certified への掲載: <strong>無料</strong></li>
-      <li>無料診断: <strong>無料</strong></li>
-      <li>改善サービス（任意）: tcharton.com の有料サービス（料金は <a href="https://tcharton.com/pricing/" rel="noopener noreferrer" target="_blank">tcharton.com/pricing/</a> 参照）</li>
+      <li>無料機械検証診断: <strong>無料</strong></li>
+      <li>改善サービス（任意）: 事業者の選択する制作会社・コンサルタントの料金体系に従う（本機関は仲介・推奨しない）</li>
     </ul>
+    <p>本機関の中立性は dogfooding 倫理（自社サイトも月次再判定対象 / 自己例外なし）と「自社の集客のためではなく、業界の品質改善のため」の運営方針で担保される（MASTER-PLAN §3.0.5 自己実証型認定の倫理規範）。</p>
   </section>
   <section aria-label="関連">
     <h2>関連</h2>
     <ul>
       <li><a href="/methodology/">評価方法（4 軸の全公開）</a></li>
+      <li><a href="/improvement-guide/">改善ガイダンス（★ 区分昇格の実践手順）</a></li>
+      <li><a href="/news/numazu-industry-report-2026-spring/">沼津市 WEB 品質業界レポート 2026 春（地方都市から再定義の実例）</a></li>
       <li><a href="/contact/">お問合せ</a></li>
       <li><a href="/opt-out/">掲載拒否権</a></li>
     </ul>

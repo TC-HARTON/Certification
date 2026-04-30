@@ -1,0 +1,82 @@
+{
+  "phase": 0,
+  "region": "沼津市",
+  "n_total": 83,
+  "rating_distribution": {
+    "非掲載": 83
+  },
+  "ng_breakdown": {
+    "HTTPS非対応": 5,
+    "SSL証明書": 4,
+    "WP管理面露出": 19,
+    "readme.html露出": 6,
+    "xmlrpc.php有効": 14,
+    "CMSバージョン情報露出": 1
+  },
+  "ng_total_companies": 24,
+  "ng_pct": 28.915662650602407,
+  "score_stats": {
+    "min": 0,
+    "max": 54,
+    "median": 22,
+    "mean": 20.53012048192771,
+    "stdev": 14.300210939428004
+  },
+  "industries": [
+    {
+      "industry": "税理士",
+      "n": 18,
+      "ng": 5,
+      "ng_pct": 27.77777777777778,
+      "median": 17.5,
+      "max": 40,
+      "eligible": 0
+    },
+    {
+      "industry": "弁護士",
+      "n": 10,
+      "ng": 2,
+      "ng_pct": 20.0,
+      "median": 11.5,
+      "max": 49,
+      "eligible": 0
+    },
+    {
+      "industry": "不動産",
+      "n": 18,
+      "ng": 1,
+      "ng_pct": 5.555555555555555,
+      "median": 22.5,
+      "max": 54,
+      "eligible": 0
+    },
+    {
+      "industry": "飲食店",
+      "n": 18,
+      "ng": 7,
+      "ng_pct": 38.88888888888889,
+      "median": 22.5,
+      "max": 45,
+      "eligible": 0
+    },
+    {
+      "industry": "美容院",
+      "n": 19,
+      "ng": 9,
+      "ng_pct": 47.368421052631575,
+      "median": 29,
+      "max": 44,
+      "eligible": 0
+    }
+  ],
+  "self_proof_marker": {
+    "tcharton_score": 90,
+    "tcharton_rating": "★★★",
+    "tcharton_class": "HARTON S-Class",
+    "tcharton_location": "沼津",
+    "industry_max_score": 54,
+    "gap_to_tcharton": 36,
+    "quality_ratio": 4.09
+  },
+  "eligible_total": 0
+}

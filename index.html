@@ -65,6 +65,7 @@
   .fade-in { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
   .fade-in.visible { opacity: 1; transform: translateY(0); }
   .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+  .sr-only:focus, .sr-only:focus-visible { position: fixed; inset: 1rem auto auto 1rem; width: auto; height: auto; clip: auto; background: #1E293B; color: #FAF8F3; padding: 0.75rem 1.25rem; border: 2px solid #C9A961; border-radius: 4px; z-index: 9999; }
   @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after {
       animation-duration: 0.01ms !important;
@@ -212,6 +213,7 @@
 <header>
   <nav aria-label="メインナビゲーション">
     <a href="/" aria-label="HARTON Certified トップ">
+      <svg class="star-svg star-svg-logo" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L14.6 8.6L21.6 9.3L16.3 14L17.8 21L12 17.5L6.2 21L7.7 14L2.4 9.3L9.4 8.6L12 2Z" fill="currentColor"/></svg>
       <span>HARTON Certified</span>
     </a>
     <ul>
@@ -242,14 +244,105 @@
 <main id="main">
 
 <article>
-  <section aria-label="ヒーロー（Lead Evidence Block）">
-    <p>HARTON Certified は、<strong>2,554 項目</strong>の機械検証で WEB 品質を公正に測る独立認定機関である。全国の事業者の Sクラス WEB 普及を支えるため、4 軸の客観評価を 2026 年に開始した。出典: <a href="https://www.digital.go.jp/" rel="nofollow noopener noreferrer" target="_blank">日本政府・公的機関</a>（HSTS / WCAG / Core Web Vitals 等の公的基準に準拠）。</p>
-    <blockquote cite="https://certification.tcharton.com/methodology/">
-      「機械検証で、Sクラス WEB の普及を支える」 — HARTON Certified ブランドナラティブ
-    </blockquote>
-    <p><time datetime="2026-04-27" itemprop="datePublished">2026 年 4 月 27 日 公開</time></p>
-    <h1>すべての事業者の WEB を、S クラスへ。</h1>
-    <p>機械検証による公正評価を通じて、地域から全国へ、Sクラス WEB サイトの普及を支える。Phase 0（沼津市 30 件 / 2026-04-05）から始まり、Phase 4（2027 年）で全国 10,000 件以上の認定を目標とする。</p>
+  <section aria-label="マニフェスト" class="hero-manifest">
+    <p class="hero-eyebrow">HARTON Certified — 自己実証型認定機関 / dogfooding 倫理</p>
+    <h1 class="hero-h1">「自分が <span class="hero-stars" role="img" aria-label="3 つ星 / S-Class"><svg class="star-svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L14.6 8.6L21.6 9.3L16.3 14L17.8 21L12 17.5L6.2 21L7.7 14L2.4 9.3L9.4 8.6L12 2Z" fill="currentColor"/></svg><svg class="star-svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L14.6 8.6L21.6 9.3L16.3 14L17.8 21L12 17.5L6.2 21L7.7 14L2.4 9.3L9.4 8.6L12 2Z" fill="currentColor"/></svg><svg class="star-svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L14.6 8.6L21.6 9.3L16.3 14L17.8 21L12 17.5L6.2 21L7.7 14L2.4 9.3L9.4 8.6L12 2Z" fill="currentColor"/></svg></span> を取れない基準で、他者を測らない。」</h1>
+    <p class="hero-manifest-text">「S クラスとは、機械が客観検証する、AI 時代における信頼の最大値である」</p>
+    <div class="hero-cta-row">
+      <a href="/methodology/" class="hero-cta-primary">評価方法を見る</a>
+      <a href="/apply/" class="hero-cta-secondary">掲載申請（無料）</a>
+    </div>
+  </section>
+  <section aria-label="冒頭エビデンス（Lead Evidence Block）">
+    <p>HARTON Certified は、<strong>2,554 項目</strong>の機械検証で WEB 品質を公正に測る独立認定機関である。全国の事業者の Sクラス WEB 普及を支えるため、4 軸の客観評価を 2026 年に開始した。沼津起点での自己実証（自社サイト ★★★ 取得）を基盤とし、地方都市から再定義する WEB 品質の民主化を推進する。出典: <a href="https://www.digital.go.jp/" rel="nofollow noopener noreferrer" target="_blank">日本政府・公的機関</a>（HSTS / WCAG / Core Web Vitals 等の公的基準に準拠）。</p>
+    <p><time datetime="2026-04-27" itemprop="datePublished">2026 年 4 月 27 日 公開</time> ／ <time datetime="2026-04-30" itemprop="dateModified">2026-04-30 v1.1.7 ブランド戦略整合改訂</time></p>
+    <p>機械検証による公正評価を通じて、地域から全国へ、Sクラス WEB サイトの普及を支える。Phase 0（沼津市 83 件機械検証完了 / 2026-04-30）から始まり、Phase 4（2027 年）で全 47 都道府県 10,000 件以上の認定を目標とする。</p>
+  </section>
+  <section aria-label="認定店舗を絞り込む" class="search-section">
+    <h2>認定店舗を絞り込む</h2>
+    <p class="search-lede"><strong>機械が客観検証で選んだ</strong>優良サイトを、業種・地域・★区分で絞り込む。AI 時代の信頼を持つ事業者を、人より先に発見する。現在 <strong>5</strong> 業種 / <strong>1</strong> 都道府県 <strong>7</strong> 市町村に対応（MASTER-PLAN §0.5 ロードマップ目標: Phase 4 で全 47 都道府県・全国 10,000+ 件展開予定）。</p>
+    <form id="search-form" action="/regions/" method="GET" class="search-form" role="search">
+      <div class="search-field">
+        <label for="search-industry">業種</label>
+        <select id="search-industry" name="industry">
+          <option value="">すべての業種（5 業種）</option>
+          <option value="tax-accountant">税理士・会計士</option>
+          <option value="lawyer">弁護士</option>
+          <option value="real-estate">不動産仲介</option>
+          <option value="restaurant">飲食店</option>
+          <option value="beauty">美容院</option>
+        </select>
+      </div>
+      <div class="search-field">
+        <label for="search-region">地域</label>
+        <select id="search-region" name="region">
+          <option value="">すべての地域（1 都道府県 / 7 市町村）</option>
+          <optgroup label="静岡県">
+          <option value="shizuoka">静岡県 全域</option>
+            <option value="shizuoka/numazu">静岡県 沼津市</option>
+            <option value="shizuoka/mishima" disabled>静岡県 三島市（準備中）</option>
+            <option value="shizuoka/fuji" disabled>静岡県 富士市（準備中）</option>
+            <option value="shizuoka/fujinomiya" disabled>静岡県 富士宮市（準備中）</option>
+            <option value="shizuoka/susono" disabled>静岡県 裾野市（準備中）</option>
+            <option value="shizuoka/nagaizumi" disabled>静岡県 長泉町（準備中）</option>
+            <option value="shizuoka/shimizu" disabled>静岡県 静岡市清水区（準備中）</option>
+          </optgroup>
+        </select>
+      </div>
+      <div class="search-field">
+        <label for="search-rating">★区分</label>
+        <select id="search-rating" name="rating">
+          <option value="">すべての認定（全件）</option>
+          <option value="3star">★★★ のみ（HARTON S-Class）</option>
+          <option value="2star">★★ 以上（HARTON 優良 + S-Class）</option>
+          <option value="1star">★ 以上（HARTON Certified 以上）</option>
+        </select>
+      </div>
+      <div class="search-field search-field-submit">
+        <button type="submit">絞り込む</button>
+      </div>
+    </form>
+    <script src="/assets/js/search.js" defer></script>
+  </section>
+  <section aria-label="注目認定 rail" class="featured-rail-section">
+    <h2>注目認定 — 自己実証体 第 1 号</h2>
+    <p class="featured-rail-lede">HARTON Certified の評価基準で <strong>★★★（HARTON S-Class）</strong> を実証取得した認定機関の自社サイト。Phase 0 沼津市 83 件機械検証で ★ 以上達成 0 件、Phase 1 で全国順次拡大予定。</p>
+    <ul class="featured-rail" role="list">
+      <li class="featured-card">
+        <div class="featured-card-thumb">
+          <span class="featured-card-rating" role="img" aria-label="★★★ HARTON S-Class Certified"><svg class="star-svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L14.6 8.6L21.6 9.3L16.3 14L17.8 21L12 17.5L6.2 21L7.7 14L2.4 9.3L9.4 8.6L12 2Z" fill="currentColor"/></svg><svg class="star-svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L14.6 8.6L21.6 9.3L16.3 14L17.8 21L12 17.5L6.2 21L7.7 14L2.4 9.3L9.4 8.6L12 2Z" fill="currentColor"/></svg><svg class="star-svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L14.6 8.6L21.6 9.3L16.3 14L17.8 21L12 17.5L6.2 21L7.7 14L2.4 9.3L9.4 8.6L12 2Z" fill="currentColor"/></svg></span>
+          <span class="featured-card-thumb-label" aria-hidden="true">tcharton.com</span>
+        </div>
+        <div class="featured-card-body">
+          <h3 class="featured-card-name">tcharton.com</h3>
+          <p class="featured-card-meta">IT・WEB 制作 ／ 静岡県沼津市</p>
+          <p class="featured-card-note">scanner 実機判定で <strong>総合 90 点 / 必須 4/4 + 1 保留 / 致命的 NG 0 / NAP 100</strong> を達成。HARTON Certified の評価ロジックを<strong>自己実証</strong>した第 1 号サイト。</p>
+          <a href="https://tcharton.com/" rel="noopener noreferrer" target="_blank" class="featured-card-link">公式サイトを開く →</a>
+        </div>
+      </li>
+      <li class="featured-card featured-card-placeholder">
+        <div class="featured-card-thumb">
+          <span class="featured-card-thumb-label" aria-hidden="true">Phase 0 実測公開</span>
+        </div>
+        <div class="featured-card-body">
+          <h3 class="featured-card-name">Phase 0 沼津市 83 件 実測公開</h3>
+          <p class="featured-card-meta">2026-04-30 機械検証実測 ／ 静岡県沼津市</p>
+          <p class="featured-card-note">沼津市 5 業種 <strong>83 件</strong>を <strong>scanner.py</strong> で実測。★ 以上達成 <strong>0 件</strong> / 致命的 NG <strong>28.9%</strong> を業界レポートで堂々公開（婉曲表現は採用しない）。</p>
+          <a href="/news/numazu-industry-report-2026-spring/" class="featured-card-link">業界レポートを見る →</a>
+        </div>
+      </li>
+      <li class="featured-card featured-card-placeholder">
+        <div class="featured-card-thumb">
+          <span class="featured-card-thumb-label" aria-hidden="true">展開予定</span>
+        </div>
+        <div class="featured-card-body">
+          <h3 class="featured-card-name">Phase 1 類似地方都市展開</h3>
+          <p class="featured-card-meta">〜2026-09 ／ 倉敷・四日市・松本・盛岡 等（人口 15-25 万人規模）</p>
+          <p class="featured-card-note">隣接市ではなく <strong>類似地方都市</strong>を優先展開（MASTER-PLAN §2.8.3）。沼津起点での実証を全国の地方事業者にとっての「届きうる頂点」へ拡張し、<strong>WEB 品質の民主化</strong>を実装する。</p>
+          <a href="/methodology/" class="featured-card-link">評価方法を見る →</a>
+        </div>
+      </li>
+    </ul>
   </section>
   <section aria-label="3 つの差別化要素">
     <h2>3 つの差別化要素</h2>
@@ -262,16 +355,57 @@
   <section aria-label="4 セグメント別 CTA">
     <h2>あなたへの導線</h2>
     <ul>
-      <li><a href="/regions/shizuoka/numazu/">A: 認定店舗を探す（消費者）</a> — 地域・業種から優良サイトを発見。</li>
-      <li><a href="/improvement-guide/">B: バッジ取得・改善（既掲載事業者）</a> — ★区分昇格のヒント。</li>
-      <li><a href="/apply/">C: 掲載申請（未掲載事業者）</a> — 自社サイトの認定獲得を目指す。</li>
-      <li><a href="/press/">D: 取材依頼（メディア）</a> — 引用素材・月次ランキング提供。</li>
+      <li><a href="/regions/shizuoka/numazu/">A: 認定店舗を探す（消費者）</a> —「<strong>AI が推薦する店を、人より先に見つけられる</strong>」</li>
+      <li><a href="/improvement-guide/">B: バッジ取得・改善（既掲載事業者）</a> —「<strong>掲載が、最高の営業ツールになる</strong>」</li>
+      <li><a href="/apply/">C: 掲載申請（未掲載事業者）</a> —「<strong>自分も S クラスへ</strong>」</li>
+      <li><a href="/press/">D: 取材依頼（メディア）</a> —「<strong>機械が選んだ、地方の至宝</strong>」</li>
     </ul>
   </section>
-  <section aria-label="認定基準サマリ">
-    <h2>認定基準</h2>
-    <p>4 つの観点（A 基礎・B 防御・C AI 検索・D 経営）で独立評価し、各観点の項目別減点を合算する。総合 <strong>70</strong> 点以上 + 致命的 NG <strong>0</strong> 件で <strong>★</strong>(HARTON Certified) を認定、<strong>80</strong> 点以上 + S 条件 4/5 で <strong>★★</strong>(HARTON 優良)、<strong>90</strong> 点以上 + S 条件 5/5 で <strong>★★★</strong>(HARTON S-Class / 最高位) を付与する（MASTER-PLAN §3.4 準拠）。</p>
-    <p>評価方法の全公開ページ: <a href="/methodology/">/methodology/</a></p>
+  <section aria-label="★区分の物語" class="distinction-cards-section">
+    <h2>★区分の物語</h2>
+    <p class="distinction-lede">4 つの観点（A 基礎・B 防御・C AI 検索・D 経営）で並列独立評価し、各観点の項目別減点を合算する（MASTER-PLAN §3.2）。各 ★区分は、機械検証スコアと S 条件達成度に応じて、固有の<strong>物語</strong>を持つ。</p>
+    <ul class="distinction-cards" role="list">
+      <li class="distinction-card distinction-1">
+        <div class="distinction-card-rating" role="img" aria-label="HARTON Certified ★（1 つ星）">
+          <svg class="star-svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L14.6 8.6L21.6 9.3L16.3 14L17.8 21L12 17.5L6.2 21L7.7 14L2.4 9.3L9.4 8.6L12 2Z" fill="currentColor"/></svg>
+        </div>
+        <h3 class="distinction-card-title">HARTON Certified</h3>
+        <p class="distinction-card-story">「同業種で確実に信頼できる」</p>
+        <dl class="distinction-card-criteria">
+          <dt>総合スコア</dt><dd>70 点以上（B 以上）</dd>
+          <dt>致命的 NG</dt><dd>0 件必須</dd>
+          <dt>S 条件</dt><dd>不問（控えめな認定 / 入口）</dd>
+        </dl>
+      </li>
+      <li class="distinction-card distinction-2">
+        <div class="distinction-card-rating" role="img" aria-label="HARTON 優良 ★★（2 つ星）">
+          <svg class="star-svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L14.6 8.6L21.6 9.3L16.3 14L17.8 21L12 17.5L6.2 21L7.7 14L2.4 9.3L9.4 8.6L12 2Z" fill="currentColor"/></svg>
+          <svg class="star-svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L14.6 8.6L21.6 9.3L16.3 14L17.8 21L12 17.5L6.2 21L7.7 14L2.4 9.3L9.4 8.6L12 2Z" fill="currentColor"/></svg>
+        </div>
+        <h3 class="distinction-card-title">HARTON 優良</h3>
+        <p class="distinction-card-story">「他県からでも訪れる価値がある WEB 品質」</p>
+        <dl class="distinction-card-criteria">
+          <dt>総合スコア</dt><dd>80 点以上（A）</dd>
+          <dt>致命的 NG</dt><dd>0 件必須</dd>
+          <dt>S 条件</dt><dd>4 件以上達成（誇り・上品）</dd>
+        </dl>
+      </li>
+      <li class="distinction-card distinction-3">
+        <div class="distinction-card-rating" role="img" aria-label="HARTON S-Class Certified ★★★（3 つ星 / 最高位）">
+          <svg class="star-svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L14.6 8.6L21.6 9.3L16.3 14L17.8 21L12 17.5L6.2 21L7.7 14L2.4 9.3L9.4 8.6L12 2Z" fill="currentColor"/></svg>
+          <svg class="star-svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L14.6 8.6L21.6 9.3L16.3 14L17.8 21L12 17.5L6.2 21L7.7 14L2.4 9.3L9.4 8.6L12 2Z" fill="currentColor"/></svg>
+          <svg class="star-svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L14.6 8.6L21.6 9.3L16.3 14L17.8 21L12 17.5L6.2 21L7.7 14L2.4 9.3L9.4 8.6L12 2Z" fill="currentColor"/></svg>
+        </div>
+        <h3 class="distinction-card-title">HARTON S-Class Certified</h3>
+        <p class="distinction-card-story">「業界の方向性を定義する到達点」</p>
+        <dl class="distinction-card-criteria">
+          <dt>総合スコア</dt><dd>90 点以上（S）</dd>
+          <dt>致命的 NG</dt><dd>0 件必須</dd>
+          <dt>S 条件</dt><dd>5/5 完全達成（業界ベンチマーク）</dd>
+        </dl>
+      </li>
+    </ul>
+    <p class="distinction-cards-footer">出典: <a href="/methodology/">評価方法（4 軸機械検証 全公開）</a> / 物語文言: ① 確定（CRITICAL-ISSUES-REPORT v1.1.14 §21.1.4）</p>
   </section>
   <section aria-label="運用方針">
     <h2>運用方針（5 原則）</h2>

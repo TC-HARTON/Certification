@@ -1,0 +1,363 @@
+<!--
+  HARTON Certified サイト共通レイアウトテンプレート
+  ────────────────────────────────────────
+  生成元: certification/build-base.js（17 基盤） + certification/generate.js（動的ページ）
+  準拠: SPEC v3.4 §1.0 / §4.2 #1 / §8.1 / §8.5-§8.9 / MASTER-PLAN v1.1.4 §4.1 / §10
+  Variant: marketing（明色）/ reading（暗色）— SPEC §10.6.1 準拠
+
+  プレースホルダ仕様: lang / title / description / canonical_path / robots / og_type /
+    og_image_path / theme_color / color_scheme / body_class / breadcrumbs_jsonld /
+    additional_jsonld / main_content / nav_active_search / nav_active_methodology /
+    nav_active_apply / nav_active_about / nav_active_press
+  詳細は build-base.js / generate.js の applyLayout() コメントを参照。
+-->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>沼津市 WEB 品質業界レポート 2026 春 — HARTON Certified</title>
+<meta name="description" content="2026-04-30 機械検証実測: 沼津市 5 業種 83 件の WEB 品質を 4 軸で評価。業界別中央値 22 点 / max 54 点 / ★ 以上認定 0 件 / 致命的 NG 28.9%。自己実証体 第 1 号 (90 点) との品質ギャップ 4.09 倍を堂々と公開する業界品質改善のための透明性レポート。">
+<meta name="author" content="T.C.HARTON">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta name="theme-color" content="#0F172A">
+<meta name="color-scheme" content="dark">
+
+<link rel="canonical" href="https://certification.tcharton.com/news/numazu-industry-report-2026-spring/">
+<link rel="sitemap" type="application/xml" href="/sitemap.xml">
+
+<!-- CSP meta（HTTP _headers が正典 / meta は二重防御の補助。CSP Level 3 で meta では無視される frame-ancestors / sandbox / report-uri は HTTP _headers 側でのみ宣言する） -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://api.web3forms.com; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self' https://api.web3forms.com; require-trusted-types-for 'script'; upgrade-insecure-requests">
+
+<!-- favicon 3 種 -->
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+<!-- OGP 7 項目（SPEC §11.2-ogp 準拠） -->
+<meta property="og:title" content="沼津市 WEB 品質業界レポート 2026 春 — HARTON Certified">
+<meta property="og:description" content="2026-04-30 機械検証実測: 沼津市 5 業種 83 件の WEB 品質を 4 軸で評価。業界別中央値 22 点 / max 54 点 / ★ 以上認定 0 件 / 致命的 NG 28.9%。自己実証体 第 1 号 (90 点) との品質ギャップ 4.09 倍を堂々と公開する業界品質改善のための透明性レポート。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://certification.tcharton.com/news/numazu-industry-report-2026-spring/">
+<meta property="og:image" content="https://certification.tcharton.com/ogp.png">
+<meta property="og:site_name" content="HARTON Certified">
+<meta property="og:locale" content="ja_JP">
+
+<!-- Twitter Card 4 項目 -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="沼津市 WEB 品質業界レポート 2026 春 — HARTON Certified">
+<meta name="twitter:description" content="2026-04-30 機械検証実測: 沼津市 5 業種 83 件の WEB 品質を 4 軸で評価。業界別中央値 22 点 / max 54 点 / ★ 以上認定 0 件 / 致命的 NG 28.9%。自己実証体 第 1 号 (90 点) との品質ギャップ 4.09 倍を堂々と公開する業界品質改善のための透明性レポート。">
+<meta name="twitter:image" content="https://certification.tcharton.com/ogp.png">
+
+<!-- フォント preconnect + preload + display=swap（SPEC §6.4 / MASTER-PLAN §2.6） -->
+<!-- 見出し serif (Playfair Display + Noto Serif JP 明朝) / 本文 sans (Inter + Noto Sans JP) -->
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@500;600;700&display=swap">
+
+<!-- Tailwind ビルド成果物 -->
+<link rel="stylesheet" href="/dist/output.css">
+
+<!-- カスタム CSS（SPEC §9 / §11.5 prefers-reduced-motion 必須） -->
+<style>
+  html { scroll-behavior: smooth; }
+  .fade-in { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+  .fade-in.visible { opacity: 1; transform: translateY(0); }
+  .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+  .sr-only:focus, .sr-only:focus-visible { position: fixed; inset: 1rem auto auto 1rem; width: auto; height: auto; clip: auto; background: #1E293B; color: #FAF8F3; padding: 0.75rem 1.25rem; border: 2px solid #C9A961; border-radius: 4px; z-index: 9999; }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+</style>
+
+<!-- SPEC v3.4 §4.2 #1 JSON-LD（@type 配列必須・additionalType + sameAs GBP） -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": ["Organization", "ProfessionalService", "LocalBusiness"],
+  "name": "HARTON Certified",
+  "alternateName": "ハートン認定",
+  "description": "WEB 品質を機械検証で公正に評価する地方発の認定機関。SPEC v3.x 2,554 項目 + 4 軸スキャナーで地域の優良サイトを認定。",
+  "url": "https://certification.tcharton.com/",
+  "logo": "https://certification.tcharton.com/assets/logo/logo.svg",
+  "image": "https://certification.tcharton.com/ogp.png",
+  "telephone": "+81-80-1058-0538",
+  "email": "certification@tcharton.com",
+  "additionalType": [
+    "https://www.wikidata.org/wiki/Q11661",
+    "https://www.wikidata.org/wiki/Q189210"
+  ],
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "JP",
+    "addressRegion": "静岡県",
+    "addressLocality": "沼津市",
+    "streetAddress": "大岡2690",
+    "postalCode": "410-0022"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 35.0959,
+    "longitude": 138.8634
+  },
+  "foundingDate": "2026-04",
+  "knowsAbout": ["Web Quality Certification", "Machine Verification", "GEO/LLMO", "WCAG 2.2", "Core Web Vitals"],
+  "areaServed": [
+    { "@type": "AdministrativeArea", "name": "静岡県" },
+    { "@type": "Country", "name": "Japan" }
+  ],
+  "slogan": "機械検証で、Sクラス WEB の普及を支える",
+  "sameAs": [
+    "https://tcharton.com/",
+    "https://note.com/tcharton",
+    "https://www.google.com/maps/place/?cid=16606425942373165010",
+    "https://maps.google.com/?cid=16606425942373165010"
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "HARTON Certified",
+  "alternateName": "ハートン認定",
+  "url": "https://certification.tcharton.com/",
+  "inLanguage": "ja",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://certification.tcharton.com/regions/?q={search_term_string}"
+    },
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "トップ",
+      "item": "https://certification.tcharton.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "お知らせ",
+      "item": "https://certification.tcharton.com/news/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "業界レポート 2026 春",
+      "item": "https://certification.tcharton.com/news/numazu-industry-report-2026-spring/"
+    }
+  ]
+}
+</script>
+
+
+</head>
+<body class="bg-dark-900 text-dark-300 font-sans antialiased">
+
+<!-- スキップリンク（SPEC §11.5-skip） -->
+<a href="#main" class="sr-only">本文へスキップ</a>
+
+<header>
+  <nav aria-label="メインナビゲーション">
+    <a href="/" aria-label="HARTON Certified トップ">
+      <svg class="star-svg star-svg-logo" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L14.6 8.6L21.6 9.3L16.3 14L17.8 21L12 17.5L6.2 21L7.7 14L2.4 9.3L9.4 8.6L12 2Z" fill="currentColor"/></svg>
+      <span>HARTON Certified</span>
+    </a>
+    <ul>
+      <li><a href="/regions/" >検索</a></li>
+      <li><a href="/methodology/" >評価方法</a></li>
+      <li><a href="/apply/" >掲載申請</a></li>
+      <li><a href="/about/" >サイトについて</a></li>
+      <li><a href="/press/" >メディア</a></li>
+    </ul>
+  </nav>
+  <button id="menuToggle" aria-label="モバイルメニューを開く" aria-expanded="false" aria-controls="mobile-menu" class="md:hidden p-3">
+    <span aria-hidden="true">≡</span>
+  </button>
+  <div id="mobile-menu" class="fixed inset-0 bg-white z-50 hidden">
+    <nav aria-label="モバイルナビゲーション">
+      <ul>
+        <li><a href="/">トップ</a></li>
+        <li><a href="/regions/">検索</a></li>
+        <li><a href="/methodology/">評価方法</a></li>
+        <li><a href="/apply/">掲載申請</a></li>
+        <li><a href="/about/">サイトについて</a></li>
+        <li><a href="/press/">メディア</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<article>
+  <section aria-label="冒頭エビデンス">
+    <p><strong>2026 年 4 月 30 日</strong>、沼津市 5 業種（税理士・弁護士・不動産仲介・飲食店・美容院）<strong>83</strong> 件の公開 WEB サイトを 4 軸機械検証した。業界中央値は <strong>22</strong> 点（業界 max <strong>54</strong> 点）であり、★ 以上認定可能なサイトは <strong>0</strong> 件、致命的 NG 発生率は <strong>28.9%</strong> であった。出典: <a href="https://web.dev/articles/vitals" rel="nofollow noopener noreferrer" target="_blank">Google Web Vitals 公式</a> / <a href="https://www.w3.org/WAI/standards-guidelines/wcag/" rel="nofollow noopener noreferrer" target="_blank">W3C WCAG 2.2</a> / <a href="https://www.ipa.go.jp/security/vuln/websecurity/about.html" rel="nofollow noopener noreferrer" target="_blank">IPA 安全なウェブサイトの作り方</a>。</p>
+    <blockquote cite="https://certification.tcharton.com/methodology/">
+      「公正に測るとは、評価方法のすべてを公開することだ」 — HARTON Certified 評価原則
+    </blockquote>
+    <p><time datetime="2026-04-30" itemprop="datePublished">2026-04-30 スキャン実施・公開</time> ／ <time datetime="2026-05-30" itemprop="dateModified">次回更新予定: 2026-05-30</time></p>
+    <h1>沼津市 WEB 品質業界レポート 2026 春</h1>
+  </section>
+
+  <section aria-label="認定 0 件ステートメント" class="zero-cert-statement">
+    <h2>★ 認定: <span class="zero-cert-count">0</span> 件</h2>
+    <p class="zero-cert-text"><strong>2026-04-30 時点で、沼津市 5 業種 83 件中、HARTON Certified ★ 以上の認定基準を達成しているサイトは 0 件である</strong>。本機関は実測結果を堂々と公開し、業界実態の透明性を確保する。「準備中」「Coming soon」等の婉曲表現は採用しない。本レポートは業界の WEB 品質改善のために実測を公開するものであり、自社の集客を目的とするものではない。</p>
+  </section>
+
+  <section aria-label="品質ギャップ視覚化" class="quality-gap-section">
+    <h2>業界中央値 vs 自己実証体 第 1 号</h2>
+    <div class="report-stat-display">
+      <p class="report-stat-headline"><span class="report-stat-number">4.09</span><span class="report-stat-unit">倍</span></p>
+      <p class="report-stat-caption">沼津市 5 業界中央値 <strong>22</strong> 点 vs 自己実証体 第 1 号 <strong>90</strong> 点（HARTON S-Class）</p>
+      <p class="report-stat-note">同じ沼津市内で機械検証可能な実測スコア。資本・規模ではなく、技術知識と実装の意志で到達できる差。</p>
+    </div>
+  </section>
+
+  <section aria-label="業界別実測スコア" class="industry-section">
+    <h2>業界別実測スコア（5 業種）</h2>
+    <ul class="industry-cards" role="list">
+      <li class="industry-card">
+        <h3 class="industry-card-name">税理士</h3>
+        <dl class="industry-card-stats">
+          <dt>件数</dt><dd>18 件</dd>
+          <dt>致命的 NG</dt><dd>5 件 (27.8%)</dd>
+          <dt>中央値</dt><dd>17.5 点</dd>
+          <dt>業界 max</dt><dd>40 点</dd>
+          <dt>★ 認定</dt><dd>0 件</dd>
+        </dl>
+      </li>
+      <li class="industry-card">
+        <h3 class="industry-card-name">弁護士</h3>
+        <dl class="industry-card-stats">
+          <dt>件数</dt><dd>10 件</dd>
+          <dt>致命的 NG</dt><dd>2 件 (20.0%)</dd>
+          <dt>中央値</dt><dd>11.5 点</dd>
+          <dt>業界 max</dt><dd>49 点</dd>
+          <dt>★ 認定</dt><dd>0 件</dd>
+        </dl>
+      </li>
+      <li class="industry-card">
+        <h3 class="industry-card-name">不動産</h3>
+        <dl class="industry-card-stats">
+          <dt>件数</dt><dd>18 件</dd>
+          <dt>致命的 NG</dt><dd>1 件 (5.6%)</dd>
+          <dt>中央値</dt><dd>22.5 点</dd>
+          <dt>業界 max</dt><dd>54 点</dd>
+          <dt>★ 認定</dt><dd>0 件</dd>
+        </dl>
+      </li>
+      <li class="industry-card">
+        <h3 class="industry-card-name">飲食店</h3>
+        <dl class="industry-card-stats">
+          <dt>件数</dt><dd>18 件</dd>
+          <dt>致命的 NG</dt><dd>7 件 (38.9%)</dd>
+          <dt>中央値</dt><dd>22.5 点</dd>
+          <dt>業界 max</dt><dd>45 点</dd>
+          <dt>★ 認定</dt><dd>0 件</dd>
+        </dl>
+      </li>
+      <li class="industry-card">
+        <h3 class="industry-card-name">美容院</h3>
+        <dl class="industry-card-stats">
+          <dt>件数</dt><dd>19 件</dd>
+          <dt>致命的 NG</dt><dd>9 件 (47.4%)</dd>
+          <dt>中央値</dt><dd>29 点</dd>
+          <dt>業界 max</dt><dd>44 点</dd>
+          <dt>★ 認定</dt><dd>0 件</dd>
+        </dl>
+      </li>
+    </ul>
+  </section>
+
+  <section aria-label="致命的 NG 内訳" class="ng-table-section">
+    <h2>致命的 NG 内訳（業界横断 / 24 件 ／ 28.9%）</h2>
+    <table>
+      <caption>沼津市 83 件中の致命的 NG 検出件数（複数 NG 重複事業者あり）</caption>
+      <thead>
+        <tr><th scope="col">致命的 NG 種類</th><th scope="col">件数</th><th scope="col">説明</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">HTTPS非対応</th><td>5 件</td><td>HTTPS で配信されておらず、現代ブラウザでは安全でない接続として表示される。検索評価上も不利となる</td></tr>
+        <tr><th scope="row">SSL証明書</th><td>4 件</td><td>SSL/TLS 証明書が期限切れ・無効・自己署名のため、ブラウザによる警告表示が発生する</td></tr>
+        <tr><th scope="row">WP管理面露出</th><td>19 件</td><td>WordPress 管理画面（wp-login.php / xmlrpc.php 等）が公開状態にあり、認証ボット試行の対象となりうる</td></tr>
+        <tr><th scope="row">readme.html露出</th><td>6 件</td><td>WordPress 同梱の readme.html が公開状態にあり、稼働バージョンが第三者から特定可能となる</td></tr>
+        <tr><th scope="row">xmlrpc.php有効</th><td>14 件</td><td>XML-RPC エンドポイントが有効化されており、リフレクション攻撃に利用される可能性がある</td></tr>
+        <tr><th scope="row">CMSバージョン情報露出</th><td>1 件</td><td>&lt;meta name=&quot;generator&quot;&gt; 等で CMS のバージョン情報が露出しており、既知脆弱性の特定が容易な状態にある</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section aria-label="dogfooding 倫理開示">
+    <h2>dogfooding 倫理：自己実証体としての透明性</h2>
+    <blockquote cite="https://certification.tcharton.com/about/">
+      「自分が ★★★ を取れない基準で、他者を測らない。」 — HARTON Certified 信頼根拠の核
+    </blockquote>
+    <p>本機関の自己実証体 第 1 号は、scanner.py により <strong>90</strong> 点（HARTON S-Class / ★★★）を取得し、月次再判定の対象となる（自己例外なし）。自己実証体 自身に致命的 NG 検出時は即時非掲載状態に切替え、機械検証ログを verbatim 公開する。</p>
+    <p>沼津市 83 件の業界実測（中央値 22 点）と自己実証体（90 点）の <strong>4.09 倍</strong>のギャップは、認定基準が「人間の主観や金銭、規模に依存しない」「思想の到達点」であることを業界実測で逆説的に証明する。</p>
+  </section>
+
+  <section aria-label="評価方法導線">
+    <h2>評価方法と現状診断</h2>
+    <ul>
+      <li><a href="/methodology/">評価方法（4 軸機械検証 全公開）</a> — A 基礎 / B 防御 / C AI 検索 / D 経営の 4 軸独立評価とその閾値</li>
+      <li><a href="/methodology/security/">B 軸 防御力・生存率</a> — 致命的 NG 4 項目の詳細と検出根拠</li>
+      <li><a href="/improvement-guide/">改善ガイダンス</a> — ★区分昇格のための具体 Step（既掲載事業者向け）</li>
+      <li><a href="/apply/">掲載申請</a> — 自社サイトの認定獲得を目指す事業者向け</li>
+    </ul>
+    <p><strong>現状診断レポート</strong>（自社サイトの 4 軸スコア + 致命的 NG 警告 + ★ 取得までの改善 Step）は CR-3 Cloudflare Turnstile 実装後に <a href="/contact/">お問合せ</a>経由で受付開始予定。</p>
+  </section>
+
+  <section aria-label="改善された場合の対応">
+    <h2>改善された場合の対応 / 月次更新方針</h2>
+    <p>本レポートは月次（毎月最終週）に scanner.py で全件再判定する。改善により ★ 認定可能となった事業者は、月次再判定で自動的に <a href="/regions/shizuoka/numazu/">沼津市の認定店舗ページ</a>に掲載され、業界レポートにも昇格通知が記載される。月次再判定は本機関の失効・降格運用（事業者通知 + 14 日改善猶予 + 致命的 NG 即時切替）と完全整合する。</p>
+    <ul>
+      <li><strong>スキャン実施日</strong>: 2026-04-30</li>
+      <li><strong>次回再判定予定</strong>: 2026-05-30（月次運用 / scanner.py 自動再判定）</li>
+      <li><strong>レポート更新</strong>: 月次再判定後、本ページの数値を更新する</li>
+      <li><strong>新規認定通知</strong>: 改善により ★ 認定可能となった事業者は本ページ「新規認定（改善後）」枠に追記し、認定店舗ページに掲載する</li>
+    </ul>
+  </section>
+</article>
+</main>
+
+<footer>
+  <nav aria-label="フッターナビゲーション">
+    <ul>
+      <li><a href="/about/">サイトについて</a></li>
+      <li><a href="/methodology/">評価方法</a></li>
+      <li><a href="/faq/">よくある質問</a></li>
+      <li><a href="/contact/">お問合せ</a></li>
+      <li><a href="/news/">お知らせ</a></li>
+      <li><a href="/legal/">利用規約・特商法</a></li>
+      <li><a href="/privacy/">プライバシーポリシー</a></li>
+      <li><a href="/opt-out/">掲載拒否権</a></li>
+    </ul>
+  </nav>
+  <p>&copy; 2026 T.C.HARTON. All rights reserved.</p>
+</footer>
+
+<noscript>
+  <style>.fade-in { opacity: 1; transform: none; }</style>
+</noscript>
+
+</body>
+</html>
