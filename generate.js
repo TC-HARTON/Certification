@@ -820,7 +820,7 @@ function renderFaqSection(ind, cityLabel = '沼津市') {
   const items = ind.faq_industry.map(qa => {
     const q = escHTML(qa.q.replace(/\{city\}/g, cityLabel).replace(/\{industry\}/g, ind.label));
     const a = escHTML(qa.a.replace(/\{city\}/g, cityLabel).replace(/\{industry\}/g, ind.label));
-    return `<details><summary>${q}</summary><div class="faq-answer"><p>${a}</p></div></details>`;
+    return `<details open><summary>${q}</summary><div class="faq-answer"><p>${a}</p></div></details>`;
   }).join('');
   return `
     <section aria-label="よくある質問" class="faq-section">
