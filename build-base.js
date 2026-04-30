@@ -235,7 +235,7 @@ ${REGION_OPTIONS_HTML}
           <h3 class="featured-card-name">沼津 ${numazuSummary.n_total} 件機械検証実測 (8 業種)</h3>
           <p class="featured-card-meta">2026-04-30 スキャン完了 ／ 8 業種（税理士・弁護士・不動産・飲食店・美容院・歯科医院・病院・ホテル）</p>
           <p class="featured-card-note"><strong>★ 認定 0 件</strong> ／ 致命的 NG <strong>${numazuSummary.ng_pct.toFixed(1)}%</strong>（${numazuSummary.ng_total_companies}件）／ 業界中央値 <strong>${numazuSummary.score_stats.median}</strong> 点 ／ 業界 max <strong>${numazuSummary.score_stats.max}</strong> 点。実態は隠さず堂々と公開する透明性の証明。</p>
-          <a href="/news/numazu-industry-report-2026-spring/" class="featured-card-link">業界レポート 2026 春を見る →</a>
+          <a href="/news/numazu-industry-report-2026-05/" class="featured-card-link">業界レポート 2026 春を見る →</a>
         </div>
       </li>
       <li class="featured-card featured-card-placeholder">
@@ -367,7 +367,7 @@ PAGES.push({
     <h2>沼津起点と地方都市から再定義する WEB 品質の民主化</h2>
     <p>沼津は人口約 19 万人の静岡県東部の地方都市である。東京・大阪の制作会社が東京で ★★★ を取得しても「<strong>金と人手があれば当然</strong>」と見られる。沼津という地方都市で、tcharton.com が ★★★ を取得した事実こそ、AI 時代における <strong>「機械評価は資本に依存しない」</strong> ことの実証となる。</p>
     <p>本機関は東京中心の権威構造ではなく、<strong>地方都市から再定義</strong>する WEB 品質基準を運用する。沼津起点の実証を、Phase 1 で類似地方都市（倉敷・四日市・松本・盛岡 等）へ展開し、全国の地方事業者にとっての <strong>「届きうる頂点」</strong> という民主化メッセージを実装する（MASTER-PLAN §2.8 沼津起点の戦略的必然性）。</p>
-    <p>関連: <a href="/news/numazu-industry-report-2026-spring/">沼津市 WEB 品質業界レポート 2026 春</a>（沼津市 ★ 獲得率 0/83 = 0.0% / 業種別 ★ 獲得率 + 業界最高点 一覧）</p>
+    <p>関連: <a href="/news/numazu-industry-report-2026-05/">沼津市 WEB 品質業界レポート 2026-05 月次号</a>（沼津市 ★ 獲得率 0/83 = 0.0% / 業種別 ★ 獲得率 + 業界最高点 一覧）</p>
   </section>
   <section aria-label="運営体制">
     <h2>運営体制</h2>
@@ -379,7 +379,7 @@ PAGES.push({
     <h2>関連リンク</h2>
     <ul>
       <li><a href="/methodology/">評価方法（4 軸の全公開 + S クラス哲学的定義 + dogfooding 倫理）</a></li>
-      <li><a href="/news/numazu-industry-report-2026-spring/">沼津市 WEB 品質業界レポート 2026 春（業界実測の透明公開）</a></li>
+      <li><a href="/news/numazu-industry-report-2026-05/">沼津市 WEB 品質業界レポート 2026-05 月次号（業界実測の透明公開）</a></li>
       <li><a href="/apply/">掲載申請（未掲載事業者向け / 中立性整合）</a></li>
       <li><a href="/improvement-guide/">改善ガイダンス（★ 区分昇格の実践手順）</a></li>
     </ul>
@@ -419,7 +419,7 @@ PAGES.push({
       <li><strong>L2 自己拘束</strong>: 評価結果は自己例外なし（致命的 NG / 降格条件は事業者と同条件）</li>
       <li><strong>L3 自己公開</strong>: 機械検証ログを全件 verbatim 公開する（評価の透明性 / 第三者検証可能性）</li>
     </ul>
-    <p>沼津起点での自己実証は、地方都市から再定義する WEB 品質の民主化の旗印として機能する。詳細は <a href="/about/">サイトについて</a> + <a href="/news/numazu-industry-report-2026-spring/">沼津市 WEB 品質業界レポート 2026 春</a>。</p>
+    <p>沼津起点での自己実証は、地方都市から再定義する WEB 品質の民主化の旗印として機能する。詳細は <a href="/about/">サイトについて</a> + <a href="/news/numazu-industry-report-2026-05/">沼津市 WEB 品質業界レポート 2026-05 月次号</a>。</p>
   </section>
   <section aria-label="評価の 5 原則">
     <h2>評価の 5 原則</h2>
@@ -663,7 +663,7 @@ PAGES.push({
     <ul>
       <li><a href="/methodology/">評価方法（4 軸の全公開）</a></li>
       <li><a href="/improvement-guide/">改善ガイダンス（★ 区分昇格の実践手順）</a></li>
-      <li><a href="/news/numazu-industry-report-2026-spring/">沼津市 WEB 品質業界レポート 2026 春（地方都市から再定義の実例）</a></li>
+      <li><a href="/news/numazu-industry-report-2026-05/">沼津市 WEB 品質業界レポート 2026-05 月次号（地方都市から再定義の実例）</a></li>
       <li><a href="/contact/">お問合せ</a></li>
       <li><a href="/opt-out/">掲載拒否権</a></li>
     </ul>
@@ -859,7 +859,7 @@ PAGES.push({
   <section aria-label="お知らせ一覧">
     <h2>2026 年</h2>
     <ul>
-      <li><time datetime="2026-04-30">2026-04-30</time>: <a href="/news/numazu-industry-report-2026-spring/">沼津市 WEB 品質業界レポート 2026 春</a> 公開（8 業種 ${numazuSummary.n_total} 件機械検証 / ★ 認定 ${numazuSummary.eligible_total} 件 / 致命的 NG ${numazuSummary.ng_pct.toFixed(1)}%）</li>
+      <li><time datetime="2026-04-30">2026-04-30</time>: <a href="/news/numazu-industry-report-2026-05/">沼津市 WEB 品質業界レポート 2026-05 月次号</a> 公開（8 業種 ${numazuSummary.n_total} 件機械検証 / ★ 認定 ${numazuSummary.eligible_total} 件 / 致命的 NG ${numazuSummary.ng_pct.toFixed(1)}%）</li>
       <li><time datetime="2026-04-27">2026-04-27</time>: MASTER-PLAN v1.1.4 改訂（SPEC v3.4 連動完了）</li>
       <li><time datetime="2026-04-26">2026-04-26</time>: HARTON Certified 創設発表 / Phase 0 沼津 30 件パイロット開始</li>
     </ul>
@@ -869,14 +869,14 @@ PAGES.push({
 
 // ─── 13b. 沼津業界レポート 2026 春（subpage / reading / INSTRUCTION v1.12.2 §(A) 連動）
 PAGES.push({
-  path: 'news/numazu-industry-report-2026-spring/index.html',
+  path: 'news/numazu-industry-report-2026-05/index.html',
   variant: 'reading',
   navActive: '',
-  title: '沼津市 WEB 品質業界レポート 2026 春 — HARTON Certified',
+  title: '沼津市 WEB 品質業界レポート 2026-05 月次号 — HARTON Certified',
   description: `沼津市 8 業種 ${numazuSummary.n_total} 件機械検証実測。★ 獲得率 ${numazuSummary.eligible_total}/${numazuSummary.n_total}=0.0%。業界最高点（税理士40・弁護士49・不動産54・飲食45・美容44・歯科47・病院41・ホテル37）／NG ${numazuSummary.ng_pct.toFixed(1)}%。`,
-  canonicalPath: '/news/numazu-industry-report-2026-spring/',
+  canonicalPath: '/news/numazu-industry-report-2026-05/',
   ogType: 'article',
-  breadcrumbs: bcl([['トップ', '/'], ['お知らせ', '/news/'], ['業界レポート 2026 春', '/news/numazu-industry-report-2026-spring/']]),
+  breadcrumbs: bcl([['トップ', '/'], ['お知らせ', '/news/'], ['業界レポート 2026 春', '/news/numazu-industry-report-2026-05/']]),
   mainContent: `
 <article>
   <section aria-label="冒頭エビデンス">
@@ -885,7 +885,7 @@ PAGES.push({
       「公正に測るとは、評価方法のすべてを公開することだ」 — HARTON Certified 評価原則
     </blockquote>
     <p><time datetime="2026-04-30" itemprop="datePublished">2026-04-30 スキャン実施・公開</time> ／ <time datetime="2026-05-30" itemprop="dateModified">次回更新予定: 2026-05-30</time></p>
-    <h1>沼津市 WEB 品質業界レポート 2026 春</h1>
+    <h1>沼津市 WEB 品質業界レポート 2026-05 月次号</h1>
   </section>
 
   <section aria-label="沼津市 ★ 獲得率（統合）" class="quality-gap-section zero-cert-statement">
