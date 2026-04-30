@@ -56,7 +56,7 @@
 
 ## 沼津業界レポート 2026 春
 
-- [沼津市 WEB 品質業界レポート 2026 春](https://certification.tcharton.com/news/numazu-industry-report-2026-spring/) — Phase 0 沼津市 83 件機械検証 / ★ 認定 0 件 / 致命的 NG 28.9% / 業界中央値 22 点 vs 自己実証体 90 点 = 4.09 倍ギャップ
+- [沼津市 WEB 品質業界レポート 2026 春](https://certification.tcharton.com/news/numazu-industry-report-2026-spring/) — Phase 0 沼津市 ★ 獲得率 0/83 = 0.0% / 業種別 ★ 獲得率 + 業界最高点 一覧
 
 ## 認定基準（要点）
 

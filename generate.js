@@ -420,7 +420,7 @@ function generateRegionPage(prefKey, cityKey) {
     <section aria-label="認定店舗一覧">
       <h2>全認定店舗（${list.length}件）</h2>
       ${list.length === 0
-        ? '<p><strong>現時点で ★ 以上達成事業者: 0 件</strong>。Phase 0 沼津市 83 件機械検証の業界実態は <a href="/news/numazu-industry-report-2026-spring/">沼津市 WEB 品質業界レポート 2026 春</a>で堂々と公開している（業界中央値 22 点 vs 自己実証体 90 点 = 4.09 倍ギャップ）。沼津以外の地域は Phase 1（類似地方都市・地方都市から再定義）で順次拡大予定。</p>'
+        ? '<p><strong>沼津市 ★ 獲得率: 0 / 83 = 0.0%</strong>（Phase 0 機械検証）。詳細は <a href="/news/numazu-industry-report-2026-spring/">沼津市 WEB 品質業界レポート 2026 春</a>を参照。沼津以外の地域は Phase 1（類似地方都市・地方都市から再定義）で順次拡大予定。</p>'
         : `<ol>${list.map(([slug, b]) => `<li><a href="/businesses/${slug}/">${escHTML(b.name)}</a> — ${escHTML(industries[b.industry]?.label || b.industry)} / ${escHTML(b.scan.rating)} / ${b.scan.score}点</li>`).join('')}</ol>`}
     </section>
   </article>
@@ -503,8 +503,8 @@ function renderRatingNarratives() {
 function renderReportBridge() {
   return `
     <aside aria-label="業界レポート bridge" class="report-bridge">
-      <p>Phase 0 沼津市 83 件機械検証で <strong>★ 以上達成 0 件</strong>。業界中央値 <strong>22</strong> 点 / 業界 max <strong>54</strong> 点 / 致命的 NG <strong>28.9%</strong>（24 事業者）。詳細は <a href="/news/numazu-industry-report-2026-spring/">沼津市 WEB 品質業界レポート 2026 春</a>を参照。</p>
-      <p>本機関は自己実証体 第 1 号で ★★★ を取得した後に他者の評価に用いている（<a href="/methodology/">評価方法</a>を参照）。<strong>「自分が ★★★ を取れない基準で、他者を測らない。」</strong>が本機関の信頼根拠の核である。</p>
+      <p><strong>沼津市 ★ 獲得率: 0 / 83 = 0.0%</strong>（Phase 0 機械検証結果 / 2026-04-30 時点）。詳細は <a href="/news/numazu-industry-report-2026-spring/">沼津市 WEB 品質業界レポート 2026 春</a>を参照。</p>
+      <p>評価方法は <a href="/methodology/">機械検証 4 軸</a>で全公開。<strong>「自分が ★★★ を取れない基準で、他者を測らない。」</strong>が本機関の信頼根拠の核である（運営元については <a href="/about/">サイトについて</a>を参照）。</p>
     </aside>`;
 }
 
@@ -1080,7 +1080,7 @@ ${Object.entries(industries).map(([k, ind]) => `- [${ind.label}](${DOMAIN}/indus
 
 ## 沼津業界レポート 2026 春
 
-- [沼津市 WEB 品質業界レポート 2026 春](${DOMAIN}/news/numazu-industry-report-2026-spring/) — Phase 0 沼津市 83 件機械検証 / ★ 認定 0 件 / 致命的 NG 28.9% / 業界中央値 22 点 vs 自己実証体 90 点 = 4.09 倍ギャップ
+- [沼津市 WEB 品質業界レポート 2026 春](${DOMAIN}/news/numazu-industry-report-2026-spring/) — Phase 0 沼津市 ★ 獲得率 0/83 = 0.0% / 業種別 ★ 獲得率 + 業界最高点 一覧
 
 ## 認定基準（要点）
 
