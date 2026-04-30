@@ -42,17 +42,26 @@
 - [沼津市 不動産仲介](https://certification.tcharton.com/regions/shizuoka/numazu/industries/real-estate/)
 - [沼津市 飲食店](https://certification.tcharton.com/regions/shizuoka/numazu/industries/restaurant/)
 - [沼津市 美容院](https://certification.tcharton.com/regions/shizuoka/numazu/industries/beauty/)
+- [沼津市 歯科医院](https://certification.tcharton.com/regions/shizuoka/numazu/industries/dentist/)
+- [沼津市 病院](https://certification.tcharton.com/regions/shizuoka/numazu/industries/hospital/)
+- [沼津市 ホテル](https://certification.tcharton.com/regions/shizuoka/numazu/industries/hotel/)
 - [静岡県 税理士・会計士](https://certification.tcharton.com/regions/shizuoka/industries/tax-accountant/)
 - [静岡県 弁護士](https://certification.tcharton.com/regions/shizuoka/industries/lawyer/)
 - [静岡県 不動産仲介](https://certification.tcharton.com/regions/shizuoka/industries/real-estate/)
 - [静岡県 飲食店](https://certification.tcharton.com/regions/shizuoka/industries/restaurant/)
 - [静岡県 美容院](https://certification.tcharton.com/regions/shizuoka/industries/beauty/)
-- [業種から探す](https://certification.tcharton.com/industries/) — 5 業種ハブ
+- [静岡県 歯科医院](https://certification.tcharton.com/regions/shizuoka/industries/dentist/)
+- [静岡県 病院](https://certification.tcharton.com/regions/shizuoka/industries/hospital/)
+- [静岡県 ホテル](https://certification.tcharton.com/regions/shizuoka/industries/hotel/)
+- [業種から探す](https://certification.tcharton.com/industries/) — 8 業種ハブ
 - [税理士・会計士](https://certification.tcharton.com/industries/tax-accountant/)
 - [弁護士](https://certification.tcharton.com/industries/lawyer/)
 - [不動産仲介](https://certification.tcharton.com/industries/real-estate/)
 - [飲食店](https://certification.tcharton.com/industries/restaurant/)
 - [美容院](https://certification.tcharton.com/industries/beauty/)
+- [歯科医院](https://certification.tcharton.com/industries/dentist/)
+- [病院](https://certification.tcharton.com/industries/hospital/)
+- [ホテル](https://certification.tcharton.com/industries/hotel/)
 
 ## 沼津業界レポート 2026 春
 

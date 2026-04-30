@@ -74,6 +74,16 @@
       scroll-behavior: auto !important;
     }
   }
+  /* FAQ: 質問 = 金色 + 太字 / 回答 = 本文色 + 軽インデント / 視覚分離 */
+  .faq-section details { margin: 0.75rem 0; padding: 0.75rem 1rem; background: rgba(201,169,97,0.06); border-left: 3px solid #C9A961; border-radius: 4px; }
+  .faq-section details[open] { background: rgba(201,169,97,0.10); }
+  .faq-section summary { color: #D4AF37; font-weight: 700; cursor: pointer; padding: 0.25rem 0; list-style: none; }
+  .faq-section summary::-webkit-details-marker { display: none; }
+  .faq-section summary::before { content: "Q. "; color: #C9A961; font-weight: 800; margin-right: 0.25rem; }
+  .faq-section details[open] summary::before { content: "Q. "; }
+  .faq-section .faq-answer { margin-top: 0.5rem; padding: 0.75rem 0 0.25rem 1.5rem; border-top: 1px solid rgba(201,169,97,0.20); color: #FAF8F3; }
+  .faq-section .faq-answer::before { content: "A. "; color: #C9A961; font-weight: 800; margin-right: 0.25rem; }
+  .faq-section .faq-answer p { display: inline; color: #FAF8F3; }
 </style>
 
 <!-- SPEC v3.4 §4.2 #1 JSON-LD（@type 配列必須・additionalType + sameAs GBP） -->

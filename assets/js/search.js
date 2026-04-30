@@ -20,7 +20,7 @@
   var form = document.getElementById('search-form');
   if (!form) return;
 
-  var INDUSTRY_KEYS = ["tax-accountant","lawyer","real-estate","restaurant","beauty"];
+  var INDUSTRY_KEYS = ["tax-accountant","lawyer","real-estate","restaurant","beauty","dentist","hospital","hotel"];
   var REGION_KEYS = ["shizuoka","shizuoka/numazu","shizuoka/mishima","shizuoka/fuji","shizuoka/fujinomiya","shizuoka/susono","shizuoka/nagaizumi","shizuoka/shimizu"];
   var RATING_KEYS = ["1star","2star","3star"];
 

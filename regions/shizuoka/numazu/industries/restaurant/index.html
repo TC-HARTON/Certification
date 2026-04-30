@@ -74,6 +74,16 @@
       scroll-behavior: auto !important;
     }
   }
+  /* FAQ: 質問 = 金色 + 太字 / 回答 = 本文色 + 軽インデント / 視覚分離 */
+  .faq-section details { margin: 0.75rem 0; padding: 0.75rem 1rem; background: rgba(201,169,97,0.06); border-left: 3px solid #C9A961; border-radius: 4px; }
+  .faq-section details[open] { background: rgba(201,169,97,0.10); }
+  .faq-section summary { color: #D4AF37; font-weight: 700; cursor: pointer; padding: 0.25rem 0; list-style: none; }
+  .faq-section summary::-webkit-details-marker { display: none; }
+  .faq-section summary::before { content: "Q. "; color: #C9A961; font-weight: 800; margin-right: 0.25rem; }
+  .faq-section details[open] summary::before { content: "Q. "; }
+  .faq-section .faq-answer { margin-top: 0.5rem; padding: 0.75rem 0 0.25rem 1.5rem; border-top: 1px solid rgba(201,169,97,0.20); color: #FAF8F3; }
+  .faq-section .faq-answer::before { content: "A. "; color: #C9A961; font-weight: 800; margin-right: 0.25rem; }
+  .faq-section .faq-answer p { display: inline; color: #FAF8F3; }
 </style>
 
 <!-- SPEC v3.4 §4.2 #1 JSON-LD（@type 配列必須・additionalType + sameAs GBP） -->
@@ -292,7 +302,7 @@
       "name": "沼津市 の 飲食店 で WEB 品質が高い店はどこか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "HARTON Certified は 4 軸機械検証 (基礎・防御・AI 検索・経営) で 飲食店 サイトを評価する。沼津市 の認定店舗一覧は本ページに掲載する (現在 0 件 / 2026-04-30 時点)。"
+        "text": "HARTON Certified は 4 軸機械検証（基礎・防御・AI 検索・経営）で 飲食店 サイトを評価する。Phase 0 沼津市の 飲食店 サイトを 18 件機械検証し、★ 認定 0 件 / 業界最高点 45 点 / 致命的 NG 7 件（38.9%）（2026-04-30 時点）。沼津市 の認定状況は本ページ上部の獲得率で確認可能。"
       }
     },
     {
@@ -388,8 +398,8 @@
         <div class="search-field">
           <label for="search-industry">業種</label>
           <select id="search-industry" name="industry">
-            <option value="">すべての業種（5 業種）</option>
-            <option value="tax-accountant">税理士・会計士</option><option value="lawyer">弁護士</option><option value="real-estate">不動産仲介</option><option value="restaurant" selected>飲食店</option><option value="beauty">美容院</option>
+            <option value="">すべての業種（8 業種）</option>
+            <option value="tax-accountant">税理士・会計士</option><option value="lawyer">弁護士</option><option value="real-estate">不動産仲介</option><option value="restaurant" selected>飲食店</option><option value="beauty">美容院</option><option value="dentist">歯科医院</option><option value="hospital">病院</option><option value="hotel">ホテル</option>
           </select>
         </div>
         <div class="search-field">
@@ -451,7 +461,7 @@
     
     <section aria-label="よくある質問" class="faq-section">
       <h2>よくある質問</h2>
-      <details open><summary>沼津市 の 飲食店 で WEB 品質が高い店はどこか？</summary><div class="faq-answer"><p>HARTON Certified は 4 軸機械検証 (基礎・防御・AI 検索・経営) で 飲食店 サイトを評価する。沼津市 の認定店舗一覧は本ページに掲載する (現在 0 件 / 2026-04-30 時点)。</p></div></details><details open><summary>飲食店 サイトの Schema.org Restaurant に必要な項目は？</summary><div class="faq-answer"><p>name + address + telephone + servesCuisine + menu + openingHours + acceptsReservations の 7 項目を推奨。AI 検索 (ChatGPT/Perplexity) でメニュー検索時の引用率を最大化する。</p></div></details><details open><summary>食べログと HARTON Certified の違いは？</summary><div class="faq-answer"><p>食べログは口コミでサービス品質を評価する。HARTON Certified は機械検証で WEB 品質を評価する独立認定機関であり、評価軸が異なる。両方を併用することで多角的に店舗を判断できる。</p></div></details><details open><summary>飲食店 サイトで致命的 NG になる項目は？</summary><div class="faq-answer"><p>HTTPS 非対応 / SSL 証明書無効 / WordPress 管理面露出 / CMS バージョン情報露出 の 4 項目が一発除外条件。予約フォームの CSP form-action 不整合も致命的 NG 候補。</p></div></details><details open><summary>飲食店 のサイトを ★ 認定水準に改善する期間は？</summary><div class="faq-answer"><p>目安 90 日。改善ガイダンスで HTTPS → Schema.org Restaurant → CSP/Trusted Types → GEO/LLMO → SSG/Core Web Vitals の 5 Step を公開している。</p></div></details>
+      <details open><summary>沼津市 の 飲食店 で WEB 品質が高い店はどこか？</summary><div class="faq-answer"><p>HARTON Certified は 4 軸機械検証（基礎・防御・AI 検索・経営）で 飲食店 サイトを評価する。Phase 0 沼津市の 飲食店 サイトを 18 件機械検証し、★ 認定 0 件 / 業界最高点 45 点 / 致命的 NG 7 件（38.9%）（2026-04-30 時点）。沼津市 の認定状況は本ページ上部の獲得率で確認可能。</p></div></details><details open><summary>飲食店 サイトの Schema.org Restaurant に必要な項目は？</summary><div class="faq-answer"><p>name + address + telephone + servesCuisine + menu + openingHours + acceptsReservations の 7 項目を推奨。AI 検索 (ChatGPT/Perplexity) でメニュー検索時の引用率を最大化する。</p></div></details><details open><summary>食べログと HARTON Certified の違いは？</summary><div class="faq-answer"><p>食べログは口コミでサービス品質を評価する。HARTON Certified は機械検証で WEB 品質を評価する独立認定機関であり、評価軸が異なる。両方を併用することで多角的に店舗を判断できる。</p></div></details><details open><summary>飲食店 サイトで致命的 NG になる項目は？</summary><div class="faq-answer"><p>HTTPS 非対応 / SSL 証明書無効 / WordPress 管理面露出 / CMS バージョン情報露出 の 4 項目が一発除外条件。予約フォームの CSP form-action 不整合も致命的 NG 候補。</p></div></details><details open><summary>飲食店 のサイトを ★ 認定水準に改善する期間は？</summary><div class="faq-answer"><p>目安 90 日。改善ガイダンスで HTTPS → Schema.org Restaurant → CSP/Trusted Types → GEO/LLMO → SSG/Core Web Vitals の 5 Step を公開している。</p></div></details>
     </section>
 
     

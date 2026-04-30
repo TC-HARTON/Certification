@@ -2,10 +2,11 @@
   "tax-accountant": {
     "label": "税理士・会計士",
     "label_short": "税理士",
-    "wikidata": "Q41189",
-    "wikidata_uri": "https://www.wikidata.org/wiki/Q41189",
+    "wikidata": "Q688576",
+    "wikidata_uri": "https://www.wikidata.org/wiki/Q688576",
+    "wikidata_secondary": ["https://www.wikidata.org/wiki/Q11392214"],
     "schema_type": ["LocalBusiness", "ProfessionalService"],
-    "keywords": ["税理士", "会計士", "確定申告", "記帳代行", "決算", "税務署", "青色申告", "相続税申告", "法人決算"],
+    "keywords": ["税理士", "会計士", "公認会計士", "確定申告", "記帳代行", "決算", "税務署", "青色申告", "相続税申告", "法人決算"],
     "evaluation_points": [
       "HTTPS 常時 SSL 化(機密性の高い財務情報を扱うため必須 / 致命的 NG 直結)",
       "問合せフォームの Trusted Types + CSP 適用(顧客情報窃取リスク防止)",
@@ -26,6 +27,7 @@
     "public_sources": [
       { "label": "国税庁 公式サイト", "url": "https://www.nta.go.jp/", "cite": "https://www.nta.go.jp/" },
       { "label": "日本税理士会連合会", "url": "https://www.nichizeiren.or.jp/", "cite": "https://www.nichizeiren.or.jp/" },
+      { "label": "日本公認会計士協会", "url": "https://jicpa.or.jp/", "cite": "https://jicpa.or.jp/" },
       { "label": "税理士法 (e-Gov 法令検索)", "url": "https://laws.e-gov.go.jp/law/326AC0000000237", "cite": "https://laws.e-gov.go.jp/law/326AC0000000237" }
     ],
     "faq_industry": [
@@ -35,7 +37,7 @@
       },
       {
         "q": "{city} の {industry} サイトで HARTON Certified ★ を取得しているのは何件か？",
-        "a": "Phase 0 沼津市 83 件機械検証で {industry} の ★ 認定は 0 件 (2026-04-30 時点)。業界最高点と詳細な実測結果は沼津市 WEB 品質業界レポート 2026 春に公開している。"
+        "a": "Phase 0 沼津市の {industry} サイトを {n} 件機械検証し、★ 認定 {eligible} 件 / 業界最高点 {max} 点 / 致命的 NG {ng} 件（{ng_pct}）/ 中央値 {median} 点（2026-04-30 時点）。詳細な実測結果は沼津市 WEB 品質業界レポート 2026 春に公開している。"
       },
       {
         "q": "{industry} サイトの WEB 品質はどう評価されるか？",
@@ -56,6 +58,7 @@
     "label_short": "弁護士",
     "wikidata": "Q40348",
     "wikidata_uri": "https://www.wikidata.org/wiki/Q40348",
+    "wikidata_secondary": ["https://www.wikidata.org/wiki/Q613142"],
     "schema_type": ["LocalBusiness", "ProfessionalService", "LegalService"],
     "keywords": ["弁護士", "法律相談", "顧問弁護士", "弁護士事務所", "法律事務所", "民事訴訟", "刑事弁護"],
     "evaluation_points": [
@@ -87,7 +90,7 @@
       },
       {
         "q": "{city} の {industry} サイトで HARTON Certified 認定件数は？",
-        "a": "Phase 0 沼津市 83 件機械検証で {industry} の ★ 認定は 0 件 (2026-04-30 時点)。詳細は沼津市 WEB 品質業界レポート 2026 春に公開。"
+        "a": "Phase 0 沼津市の {industry} サイトを {n} 件機械検証し、★ 認定 {eligible} 件 / 業界最高点 {max} 点 / 致命的 NG {ng} 件（{ng_pct}）（2026-04-30 時点）。詳細は沼津市 WEB 品質業界レポート 2026 春に公開。"
       },
       {
         "q": "{industry} サイトで致命的 NG となる項目は？",
@@ -106,8 +109,9 @@
   "real-estate": {
     "label": "不動産仲介",
     "label_short": "不動産",
-    "wikidata": "Q1473298",
-    "wikidata_uri": "https://www.wikidata.org/wiki/Q1473298",
+    "wikidata": "Q519076",
+    "wikidata_uri": "https://www.wikidata.org/wiki/Q519076",
+    "wikidata_secondary": ["https://www.wikidata.org/wiki/Q1660104"],
     "schema_type": ["LocalBusiness", "RealEstateAgent"],
     "keywords": ["不動産", "仲介", "賃貸", "売買", "物件", "宅建", "不動産会社", "マンション", "戸建て"],
     "evaluation_points": [
@@ -139,7 +143,7 @@
       },
       {
         "q": "{city} の {industry} サイトで HARTON Certified 認定件数は？",
-        "a": "Phase 0 沼津市 83 件機械検証で {industry} の ★ 認定は 0 件 (2026-04-30 時点)。業界最高点は沼津市 WEB 品質業界レポート 2026 春で確認可能。"
+        "a": "Phase 0 沼津市の {industry} サイトを {n} 件機械検証し、★ 認定 {eligible} 件 / 業界最高点 {max} 点 / 致命的 NG {ng} 件（{ng_pct}）（2026-04-30 時点）。詳細は沼津市 WEB 品質業界レポート 2026 春に公開。"
       },
       {
         "q": "{industry} サイトで機械検証スコアが低い主要因は？",
@@ -160,6 +164,7 @@
     "label_short": "飲食",
     "wikidata": "Q11707",
     "wikidata_uri": "https://www.wikidata.org/wiki/Q11707",
+    "wikidata_secondary": ["https://www.wikidata.org/wiki/Q11666766"],
     "schema_type": ["LocalBusiness", "Restaurant", "FoodEstablishment"],
     "keywords": ["飲食店", "レストラン", "カフェ", "居酒屋", "ラーメン", "営業時間", "メニュー", "予約"],
     "evaluation_points": [
@@ -187,7 +192,7 @@
     "faq_industry": [
       {
         "q": "{city} の {industry} で WEB 品質が高い店はどこか？",
-        "a": "HARTON Certified は 4 軸機械検証 (基礎・防御・AI 検索・経営) で {industry} サイトを評価する。{city} の認定店舗一覧は本ページに掲載する (現在 0 件 / 2026-04-30 時点)。"
+        "a": "HARTON Certified は 4 軸機械検証（基礎・防御・AI 検索・経営）で {industry} サイトを評価する。Phase 0 沼津市の {industry} サイトを {n} 件機械検証し、★ 認定 {eligible} 件 / 業界最高点 {max} 点 / 致命的 NG {ng} 件（{ng_pct}）（2026-04-30 時点）。{city} の認定状況は本ページ上部の獲得率で確認可能。"
       },
       {
         "q": "{industry} サイトの Schema.org Restaurant に必要な項目は？",
@@ -210,8 +215,9 @@
   "beauty": {
     "label": "美容院",
     "label_short": "美容",
-    "wikidata": "Q1257670",
-    "wikidata_uri": "https://www.wikidata.org/wiki/Q1257670",
+    "wikidata": "Q1195245",
+    "wikidata_uri": "https://www.wikidata.org/wiki/Q1195245",
+    "wikidata_secondary": ["https://www.wikidata.org/wiki/Q11265853"],
     "schema_type": ["LocalBusiness", "BeautySalon", "HairSalon"],
     "keywords": ["美容院", "美容室", "ヘアサロン", "カット", "カラー", "パーマ", "トリートメント", "予約"],
     "evaluation_points": [
@@ -219,7 +225,7 @@
       "予約フォーム / 外部予約 (ホットペッパー等) の HTTPS 整合 + CSP",
       "SNS (Instagram / X) sameAs 連携と CSP frame-src 整合",
       "施術メニュー画像最適化 (LCP / fetchpriority=high)",
-      "GBP 連携 + Wikidata Q1257670 sameAs で地域 MEO 強化"
+      "GBP 連携 + Wikidata Q1195245 sameAs で地域 MEO 強化"
     ],
     "checklist": [
       "HTTPS + HSTS preload 登録済 / SSL 期限切れなしか",
@@ -239,7 +245,7 @@
     "faq_industry": [
       {
         "q": "{city} の {industry} で WEB 品質が高い店は？",
-        "a": "HARTON Certified は 4 軸機械検証で {industry} サイトを評価する。{city} の認定状況は本ページ上部の獲得率で確認可能 (現在 0/19 件 / 2026-04-30 時点)。"
+        "a": "HARTON Certified は 4 軸機械検証で {industry} サイトを評価する。{city} の認定状況は本ページ上部の獲得率で確認可能（現在 {eligible}/{n} 件 / 2026-04-30 時点）。"
       },
       {
         "q": "{industry} サイトで SNS 連携と Schema.org を両立するには？",
@@ -256,6 +262,166 @@
       {
         "q": "{industry} サイトが ★ 認定を取得できない最多原因は？",
         "a": "(1) HTTP 非 SSL (2) 予約フォーム外部 JS で CSP 違反 (3) WordPress 管理面露出 が 3 大要因。改善ガイダンスで詳細を公開している。"
+      }
+    ]
+  },
+  "dentist": {
+    "label": "歯科医院",
+    "label_short": "歯科",
+    "wikidata": "Q2979300",
+    "wikidata_uri": "https://www.wikidata.org/wiki/Q2979300",
+    "wikidata_secondary": ["https://www.wikidata.org/wiki/Q27349"],
+    "schema_type": ["LocalBusiness", "MedicalBusiness", "Dentist"],
+    "keywords": ["歯科", "歯科医院", "歯科医師", "虫歯治療", "予防歯科", "矯正歯科", "インプラント", "小児歯科", "歯周病", "ホワイトニング"],
+    "evaluation_points": [
+      "患者情報フォームの HTTPS + Trusted Types CSP 適用(個人医療情報漏洩防止 / 致命的 NG 直結)",
+      "Schema.org Dentist + MedicalBusiness + openingHoursSpecification の完全実装",
+      "診療科目・治療メニューの Schema.org MedicalTherapy または Service 子要素による構造化",
+      "診療予約フォーム SSL 保護 + form-action self CSP 制御",
+      "GBP 連携 + 写真ギャラリー alt 充足 + Wikidata Q2979300 sameAs"
+    ],
+    "checklist": [
+      "HTTPS 配信 + HSTS preload 登録済 / SSL 期限切れなしか",
+      "診療申込フォームが Trusted Types + CSP form-action self で保護されているか",
+      "JSON-LD で Dentist + MedicalBusiness + address + telephone が正確に記述されているか",
+      "openingHours が machine-readable（Schema.org 形式）で記述されているか",
+      "診療科目（矯正・小児歯科等）が Schema.org Service または MedicalTherapy で構造化されているか",
+      "wp-login.php / xmlrpc.php / readme.html が露出していないか（致命的 NG）",
+      "歯科医師法 (e-Gov) を <blockquote cite> で引用しているか",
+      "施術写真・院内写真に alt + width/height 適切か",
+      "GBP 連携 + sameAs URL が JSON-LD に記述されているか"
+    ],
+    "public_sources": [
+      { "label": "厚生労働省 歯科保健", "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/iryou/shika/", "cite": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/iryou/shika/" },
+      { "label": "歯科医師法 (e-Gov 法令検索)", "url": "https://laws.e-gov.go.jp/law/323AC0000000202", "cite": "https://laws.e-gov.go.jp/law/323AC0000000202" },
+      { "label": "日本歯科医師会", "url": "https://www.jda.or.jp/", "cite": "https://www.jda.or.jp/" }
+    ],
+    "faq_industry": [
+      {
+        "q": "{city} で信頼できる {industry} のサイトを見分けるには？",
+        "a": "HARTON Certified は {industry} サイトを 4 軸（基礎・防御・AI 検索・経営）で機械検証し、Dentist Schema.org 適合 + HTTPS + Trusted Types CSP の 3 条件を必須とする。{city} の認定状況は本ページ上部で確認可能。"
+      },
+      {
+        "q": "{city} の {industry} サイトで HARTON Certified 認定件数は？",
+        "a": "Phase 0 沼津市の {industry} サイトを {n} 件機械検証し、★ 認定 {eligible} 件 / 業界最高点 {max} 点 / 致命的 NG {ng} 件（{ng_pct}）（2026-04-30 時点）。詳細は沼津市 WEB 品質業界レポート 2026 春に公開。"
+      },
+      {
+        "q": "{industry} サイトで致命的 NG となる項目は？",
+        "a": "HTTPS 非対応 / SSL 証明書無効 / WordPress 管理面露出 / 診療申込フォームの CSP 未設定 の 4 項目が一発除外条件。患者個人情報保護の観点から特に重要。"
+      },
+      {
+        "q": "{industry} の Schema.org 推奨タイプは？",
+        "a": "Dentist + MedicalBusiness + LocalBusiness の 3 層構造を推奨する。openingHoursSpecification で診療時間を構造化し、MedicalTherapy 子要素で矯正・インプラント等の治療メニューを記述することで AI 検索引用率が向上する。"
+      },
+      {
+        "q": "{industry} サイトが ★ 認定を取得できない最多原因は？",
+        "a": "(1) HTTP 非 SSL (2) 診療申込フォームの CSP 未設定 (3) Schema.org Dentist 未実装 が 3 大要因。改善ガイダンスで HTTPS → JSON-LD → CSP → GEO/LLMO の 4 Step を公開している。"
+      }
+    ]
+  },
+  "hospital": {
+    "label": "病院",
+    "label_short": "病院",
+    "wikidata": "Q16917",
+    "wikidata_uri": "https://www.wikidata.org/wiki/Q16917",
+    "wikidata_secondary": ["https://www.wikidata.org/wiki/Q103103"],
+    "schema_type": ["LocalBusiness", "MedicalOrganization", "Hospital"],
+    "keywords": ["病院", "クリニック", "内科", "外科", "小児科", "診療予約", "診療科目", "受診", "救急", "外来"],
+    "evaluation_points": [
+      "診療予約フォームの HTTPS + Trusted Types CSP 適用(医療個人情報 / 致命的 NG 直結)",
+      "Schema.org Hospital + MedicalOrganization + medicalSpecialty 構造化(診療科目の AI 検索引用)",
+      "診療科目ページの Schema.org MedicalSpecialty 値設定(Cardiology / Pediatrics 等)",
+      "緊急時連絡先(救急・夜間対応)の視認性 + Schema.org EmergencyService 対応",
+      "アクセシビリティ WCAG 2.2 AA 準拠(医療機関は患者の多様性が高く特に重要)"
+    ],
+    "checklist": [
+      "HTTPS 配信 + HSTS preload 登録済 / SSL 期限切れなしか",
+      "診療予約フォームが Trusted Types + CSP form-action self で保護されているか",
+      "JSON-LD で Hospital + MedicalOrganization + medicalSpecialty が記述されているか",
+      "診療科目（内科・外科・小児科等）が Schema.org MedicalSpecialty で machine-readable か",
+      "緊急時連絡先・夜間対応電話番号がページ上部に視認しやすく配置されているか",
+      "WCAG 2.2 AA: フォーム input の label 関連付け・コントラスト比 4.5:1 以上か",
+      "医療法 (e-Gov) を <blockquote cite> で引用しているか",
+      "GBP 連携 + availableService + openingHours が構造化されているか"
+    ],
+    "public_sources": [
+      { "label": "厚生労働省 医療政策", "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/iryou/", "cite": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/iryou/" },
+      { "label": "医療法 (e-Gov 法令検索)", "url": "https://laws.e-gov.go.jp/law/323AC0000000205", "cite": "https://laws.e-gov.go.jp/law/323AC0000000205" },
+      { "label": "日本病院会", "url": "https://www.ajha.or.jp/", "cite": "https://www.ajha.or.jp/" }
+    ],
+    "faq_industry": [
+      {
+        "q": "{city} で信頼できる {industry} のサイトを見分けるには？",
+        "a": "HARTON Certified は {industry} サイトを 4 軸（基礎・防御・AI 検索・経営）で機械検証し、Hospital Schema.org 適合 + HTTPS + Trusted Types CSP の 3 条件を必須とする。{city} の認定状況は本ページ上部で確認可能。"
+      },
+      {
+        "q": "{city} の {industry} サイトで HARTON Certified 認定件数は？",
+        "a": "Phase 0 沼津市の {industry} サイトを {n} 件機械検証し、★ 認定 {eligible} 件 / 業界最高点 {max} 点 / 致命的 NG {ng} 件（{ng_pct}）（2026-04-30 時点）。詳細は沼津市 WEB 品質業界レポート 2026 春に公開。"
+      },
+      {
+        "q": "{industry} サイトの Schema.org 推奨タイプは？",
+        "a": "Hospital + MedicalOrganization + LocalBusiness の 3 層を推奨。diagnosticTest や availableService で対応診療科目を構造化し、MedicalSpecialty（内科・外科・小児科等）を JSON-LD に記述することで AI 検索での診療科目引用率が向上する。"
+      },
+      {
+        "q": "{industry} サイトで致命的 NG となる項目は？",
+        "a": "HTTPS 非対応 / SSL 証明書無効 / 診療予約フォームの CSP 未設定 / CMS バージョン情報露出 の 4 項目が一発除外条件。医療個人情報を扱う機関として特に致命的。"
+      },
+      {
+        "q": "{industry} サイトのアクセシビリティ対応は必要か？",
+        "a": "患者の多様性（高齢者・障害者等）から WCAG 2.2 AA 準拠が強く推奨される。フォームの label 関連付け・コントラスト比 4.5:1 以上・キーボード操作対応・緊急連絡先の視認性確保が評価対象。"
+      }
+    ]
+  },
+  "hotel": {
+    "label": "ホテル",
+    "label_short": "ホテル",
+    "wikidata": "Q27686",
+    "wikidata_uri": "https://www.wikidata.org/wiki/Q27686",
+    "wikidata_secondary": ["https://www.wikidata.org/wiki/Q562930"],
+    "schema_type": ["LocalBusiness", "LodgingBusiness", "Hotel"],
+    "keywords": ["ホテル", "旅館", "宿泊", "温泉", "チェックイン", "宿泊予約", "客室", "民宿", "素泊まり", "観光"],
+    "evaluation_points": [
+      "予約フォーム / 外部予約(じゃらん・楽天トラベル等)の HTTPS 整合 + CSP form-action 制御",
+      "Schema.org Hotel + LodgingBusiness + checkinTime / checkoutTime / amenityFeature 実装",
+      "客室画像の LCP 最適化(fetchpriority=high / WebP 変換 / width・height 必須)",
+      "多言語対応(hreflang ja/en/zh 設定 / 訪日外国人ターゲット)",
+      "GBP 連携 + starRating + priceRange + Wikidata Q27686 sameAs"
+    ],
+    "checklist": [
+      "HTTPS 配信 + HSTS preload 登録済 / SSL 期限切れなしか",
+      "予約フォームが SSL + Trusted Types + CSP form-action で保護されているか",
+      "JSON-LD で Hotel + LodgingBusiness + checkinTime + checkoutTime が記述されているか",
+      "客室画像に alt + width/height + fetchpriority 適切か（CLS 防止）",
+      "hreflang ja/en（最低 2 言語）が設定されているか",
+      "GBP 連携 + starRating + priceRange が構造化されているか",
+      "amenityFeature（温泉・朝食・駐車場等）が Schema.org StructuredValue で機械可読か",
+      "AI 検索（ChatGPT/Perplexity）で宿泊名検索時に料金・チェックイン時間が引用されるか"
+    ],
+    "public_sources": [
+      { "label": "観光庁 公式サイト", "url": "https://www.mlit.go.jp/kankocho/", "cite": "https://www.mlit.go.jp/kankocho/" },
+      { "label": "旅館業法 (e-Gov 法令検索)", "url": "https://laws.e-gov.go.jp/law/323AC0000000138", "cite": "https://laws.e-gov.go.jp/law/323AC0000000138" },
+      { "label": "日本旅館協会", "url": "https://www.ryokan.or.jp/", "cite": "https://www.ryokan.or.jp/" }
+    ],
+    "faq_industry": [
+      {
+        "q": "{city} で信頼できる {industry} のサイトを判断するには？",
+        "a": "HARTON Certified は {industry} サイトを 4 軸（基礎・防御・AI 検索・経営）で機械検証し、Hotel Schema.org 適合 + HTTPS + CSP の 3 条件を必須とする。{city} の認定状況は本ページ上部で確認可能。"
+      },
+      {
+        "q": "{city} の {industry} サイトで HARTON Certified 認定件数は？",
+        "a": "Phase 0 沼津市の {industry} サイトを {n} 件機械検証し、★ 認定 {eligible} 件 / 業界最高点 {max} 点 / 致命的 NG {ng} 件（{ng_pct}）（2026-04-30 時点）。詳細は沼津市 WEB 品質業界レポート 2026 春に公開。"
+      },
+      {
+        "q": "{industry} サイトで機械検証スコアが低い主要因は？",
+        "a": "(1) 客室画像の width/height/fetchpriority 未指定で CLS 悪化（2）予約フォームの CSP 未設定（3）JSON-LD Hotel 未実装 / checkinTime 欠如 が 3 大要因。"
+      },
+      {
+        "q": "Hotel の Schema.org 必須項目は？",
+        "a": "name + address + telephone + url + checkinTime + checkoutTime + starRating の 7 項目を推奨。amenityFeature で設備（温泉・朝食）を構造化することで AI 検索の引用率が向上する。"
+      },
+      {
+        "q": "{industry} サイトを ★ 認定水準に改善する期間は？",
+        "a": "目安 90 日。改善ガイダンスで HTTPS → JSON-LD Hotel → CSP/Trusted Types → hreflang 多言語 → Core Web Vitals の 5 Step を公開している。"
       }
     ]
   }

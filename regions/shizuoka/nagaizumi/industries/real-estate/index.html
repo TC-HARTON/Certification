@@ -74,6 +74,16 @@
       scroll-behavior: auto !important;
     }
   }
+  /* FAQ: 質問 = 金色 + 太字 / 回答 = 本文色 + 軽インデント / 視覚分離 */
+  .faq-section details { margin: 0.75rem 0; padding: 0.75rem 1rem; background: rgba(201,169,97,0.06); border-left: 3px solid #C9A961; border-radius: 4px; }
+  .faq-section details[open] { background: rgba(201,169,97,0.10); }
+  .faq-section summary { color: #D4AF37; font-weight: 700; cursor: pointer; padding: 0.25rem 0; list-style: none; }
+  .faq-section summary::-webkit-details-marker { display: none; }
+  .faq-section summary::before { content: "Q. "; color: #C9A961; font-weight: 800; margin-right: 0.25rem; }
+  .faq-section details[open] summary::before { content: "Q. "; }
+  .faq-section .faq-answer { margin-top: 0.5rem; padding: 0.75rem 0 0.25rem 1.5rem; border-top: 1px solid rgba(201,169,97,0.20); color: #FAF8F3; }
+  .faq-section .faq-answer::before { content: "A. "; color: #C9A961; font-weight: 800; margin-right: 0.25rem; }
+  .faq-section .faq-answer p { display: inline; color: #FAF8F3; }
 </style>
 
 <!-- SPEC v3.4 §4.2 #1 JSON-LD（@type 配列必須・additionalType + sameAs GBP） -->
@@ -204,7 +214,7 @@
   "about": {
     "@type": "Thing",
     "name": "不動産仲介",
-    "sameAs": "https://www.wikidata.org/wiki/Q1473298"
+    "sameAs": "https://www.wikidata.org/wiki/Q519076"
   },
   "mentions": {
     "@type": "AdministrativeArea",
@@ -300,7 +310,7 @@
       "name": "長泉町 の 不動産仲介 サイトで HARTON Certified 認定件数は？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Phase 0 沼津市 83 件機械検証で 不動産仲介 の ★ 認定は 0 件 (2026-04-30 時点)。業界最高点は沼津市 WEB 品質業界レポート 2026 春で確認可能。"
+        "text": "Phase 0 沼津市の 不動産仲介 サイトを 18 件機械検証し、★ 認定 0 件 / 業界最高点 54 点 / 致命的 NG 1 件（5.6%）（2026-04-30 時点）。詳細は沼津市 WEB 品質業界レポート 2026 春に公開。"
       }
     },
     {
@@ -376,7 +386,7 @@
     </header>
 
     <section aria-label="冒頭エビデンス">
-      <p>長泉町（静岡県）の不動産仲介 HARTON Certified 認定店舗 <strong>0</strong> 件。総合 <strong>70 点</strong>以上 + 致命的 NG <strong>0 件</strong>達成事業者のみ掲載する。出典: <a href="https://www.wikidata.org/wiki/Q1473298" rel="nofollow noopener noreferrer" target="_blank">Wikidata Q1473298</a> / <a href="https://schema.org/LocalBusiness" rel="nofollow noopener noreferrer" target="_blank">Schema.org LocalBusiness</a>。</p>
+      <p>長泉町（静岡県）の不動産仲介 HARTON Certified 認定店舗 <strong>0</strong> 件。総合 <strong>70 点</strong>以上 + 致命的 NG <strong>0 件</strong>達成事業者のみ掲載する。Phase 0 機械検証で <strong>18</strong> 件評価し、★ 獲得率 <strong>0.0%</strong>、業界最高点 <strong>54</strong> 点。出典: <a href="https://www.wikidata.org/wiki/Q519076" rel="nofollow noopener noreferrer" target="_blank">Wikidata Q519076</a> / <a href="https://schema.org/LocalBusiness" rel="nofollow noopener noreferrer" target="_blank">Schema.org LocalBusiness</a>。</p>
       <blockquote cite="/methodology/">「機械検証で WEB 品質を公正に測る、地方発の認定機関」 — HARTON Certified 評価方法</blockquote>
     </section>
 
@@ -388,8 +398,8 @@
         <div class="search-field">
           <label for="search-industry">業種</label>
           <select id="search-industry" name="industry">
-            <option value="">すべての業種（5 業種）</option>
-            <option value="tax-accountant">税理士・会計士</option><option value="lawyer">弁護士</option><option value="real-estate" selected>不動産仲介</option><option value="restaurant">飲食店</option><option value="beauty">美容院</option>
+            <option value="">すべての業種（8 業種）</option>
+            <option value="tax-accountant">税理士・会計士</option><option value="lawyer">弁護士</option><option value="real-estate" selected>不動産仲介</option><option value="restaurant">飲食店</option><option value="beauty">美容院</option><option value="dentist">歯科医院</option><option value="hospital">病院</option><option value="hotel">ホテル</option>
           </select>
         </div>
         <div class="search-field">
@@ -415,7 +425,7 @@
 
     
     <aside aria-label="長泉町 ★ 獲得率 + 信頼根拠" class="report-bridge">
-      <p><strong>長泉町 ★ 獲得率: 0 / 0 = 0.0%</strong>（Phase 0 機械検証 / 2026-04-30 時点）。業種別 ★ 獲得率と業界最高点は <a href="/news/numazu-industry-report-2026-spring/">沼津市 WEB 品質業界レポート 2026 春</a>に公開している。</p>
+      <p><strong>長泉町 ★ 獲得率: 0 / 18 = 0.0%</strong>（Phase 0 機械検証 / 2026-04-30 時点）。業種別 ★ 獲得率と業界最高点は <a href="/news/numazu-industry-report-2026-spring/">沼津市 WEB 品質業界レポート 2026 春</a>に公開している。</p>
       <p>評価方法は <a href="/methodology/">機械検証 4 軸（基礎・防御・AI 検索・経営インパクト）</a>で全公開する。<strong>「自分が ★★★ を取れない基準で、他者を測らない。」</strong>が本機関の信頼根拠の核である（運営元については <a href="/about/">サイトについて</a>を参照）。</p>
     </aside>
 
@@ -445,13 +455,13 @@
 
     <section aria-label="認定店舗一覧">
       <h2>長泉町 不動産仲介 認定店舗（0件）</h2>
-      <p><strong>現時点で ★ 以上達成事業者: 0 件</strong>。実測結果は <a href="/news/numazu-industry-report-2026-spring/">沼津市 WEB 品質業界レポート 2026 春</a>を参照。Phase 1 で類似地方都市に順次拡大予定。</p>
+      <p><strong>現時点で ★ 以上達成事業者: 0 件</strong>。Phase 0 長泉町 18 件機械検証で業界最高点 54 点。実測結果は <a href="/news/numazu-industry-report-2026-spring/">沼津市 WEB 品質業界レポート 2026 春</a>を参照。Phase 1 で類似地方都市に順次拡大予定。</p>
     </section>
 
     
     <section aria-label="よくある質問" class="faq-section">
       <h2>よくある質問</h2>
-      <details open><summary>長泉町 で信頼できる 不動産仲介 会社のサイトを判断するには？</summary><div class="faq-answer"><p>HARTON Certified は 4 軸機械検証で WEB 品質を客観評価する。不動産仲介 固有の評価軸は物件ページの Schema.org RealEstateAgent 適合、HTTPS + 地図埋込整合、Core Web Vitals 達成を含む。</p></div></details><details open><summary>長泉町 の 不動産仲介 サイトで HARTON Certified 認定件数は？</summary><div class="faq-answer"><p>Phase 0 沼津市 83 件機械検証で 不動産仲介 の ★ 認定は 0 件 (2026-04-30 時点)。業界最高点は沼津市 WEB 品質業界レポート 2026 春で確認可能。</p></div></details><details open><summary>不動産仲介 サイトで機械検証スコアが低い主要因は？</summary><div class="faq-answer"><p>(1) HTTPS 非対応 / SSL 期限切れ (2) 物件画像の width/height/fetchpriority 未指定で CLS 悪化 (3) JSON-LD RealEstateAgent 未実装 / 構造化データ欠如 が 3 大要因。</p></div></details><details open><summary>RealEstateAgent の Schema.org 必須項目は？</summary><div class="faq-answer"><p>areaServed (営業地域) + address (本店所在地) + telephone (連絡先) + url (公式 URL) の 4 項目が必須。物件ページには Place + RealEstateListing の追加が AI 検索引用率を向上させる。</p></div></details><details open><summary>不動産仲介 サイトで AI 検索に表示されるには？</summary><div class="faq-answer"><p>GEO/LLMO 対応 (llms.txt 配置 + FAQPage JSON-LD + 公的リンク 3+ 件) が必要。さらに &lt;blockquote cite&gt; で宅建業法を引用すると AI 引用率 +27.8% (KDD 2024)。</p></div></details>
+      <details open><summary>長泉町 で信頼できる 不動産仲介 会社のサイトを判断するには？</summary><div class="faq-answer"><p>HARTON Certified は 4 軸機械検証で WEB 品質を客観評価する。不動産仲介 固有の評価軸は物件ページの Schema.org RealEstateAgent 適合、HTTPS + 地図埋込整合、Core Web Vitals 達成を含む。</p></div></details><details open><summary>長泉町 の 不動産仲介 サイトで HARTON Certified 認定件数は？</summary><div class="faq-answer"><p>Phase 0 沼津市の 不動産仲介 サイトを 18 件機械検証し、★ 認定 0 件 / 業界最高点 54 点 / 致命的 NG 1 件（5.6%）（2026-04-30 時点）。詳細は沼津市 WEB 品質業界レポート 2026 春に公開。</p></div></details><details open><summary>不動産仲介 サイトで機械検証スコアが低い主要因は？</summary><div class="faq-answer"><p>(1) HTTPS 非対応 / SSL 期限切れ (2) 物件画像の width/height/fetchpriority 未指定で CLS 悪化 (3) JSON-LD RealEstateAgent 未実装 / 構造化データ欠如 が 3 大要因。</p></div></details><details open><summary>RealEstateAgent の Schema.org 必須項目は？</summary><div class="faq-answer"><p>areaServed (営業地域) + address (本店所在地) + telephone (連絡先) + url (公式 URL) の 4 項目が必須。物件ページには Place + RealEstateListing の追加が AI 検索引用率を向上させる。</p></div></details><details open><summary>不動産仲介 サイトで AI 検索に表示されるには？</summary><div class="faq-answer"><p>GEO/LLMO 対応 (llms.txt 配置 + FAQPage JSON-LD + 公的リンク 3+ 件) が必要。さらに &lt;blockquote cite&gt; で宅建業法を引用すると AI 引用率 +27.8% (KDD 2024)。</p></div></details>
     </section>
 
     

@@ -163,7 +163,8 @@ function buildBusinessJsonLd(slug, b) {
   const ind = industries[b.industry];
   if (!ind) throw new Error(`unknown industry: ${b.industry} (slug=${slug})`);
 
-  const additionalType = [ind.wikidata_uri].filter(Boolean);
+  // additionalType: 主 wikidata_uri + secondary 配列 (例: 税理士 Q688576 + 公認会計士 Q11392214)
+  const additionalType = [ind.wikidata_uri, ...(ind.wikidata_secondary || [])].filter(Boolean);
 
   const sameAs = [];
   if (b.gbp_cid && b.gbp_cid !== '00000000000000000000') {
@@ -311,8 +312,16 @@ function generateIndustryPage(industryKey, ind) {
     .sort((a, b) => b[1].scan.score - a[1].scan.score)
     .slice(0, 10);
 
+  // Phase 0 沼津 該当業種実測を description より先に取得 (description で summary.n 利用するため)
+  let summary = null;
+  if (phase0Summary && Array.isArray(phase0Summary.industries)) {
+    summary = phase0Summary.industries.find(s => s.industry === ind.label_short || s.industry === ind.label) || null;
+  }
+  const indN = summary ? summary.n : 83;
+  const indMax = summary ? summary.max : '-';
+
   const title = `${ind.label} 認定店舗一覧 — HARTON Certified`;
-  const description = `HARTON Certified が機械検証で公正評価した${ind.label} 認定店舗一覧。Phase 0 沼津市 83 件機械検証で ★ 以上達成 ${list.length} 件、Phase 1 で全国順次拡大予定。評価方法は全公開、金銭非依存、ポジティブセレクション。`;
+  const description = `HARTON Certified が機械検証で公正評価した${ind.label} 認定店舗一覧。Phase 0 沼津市の${ind.label}サイト ${indN} 件機械検証で ★ 以上達成 ${list.length} 件 / 業界最高点 ${indMax} 点、Phase 1 で全国順次拡大予定。評価方法は全公開、金銭非依存、ポジティブセレクション。`;
   const canonicalPath = `/industries/${industryKey}/`;
 
   const breadcrumbs = [
@@ -331,12 +340,6 @@ function generateIndustryPage(industryKey, ind) {
       url: b.url,
     },
   }));
-
-  // Phase 0 沼津 該当業種実測 (data/phase-0-numazu-summary.json)
-  let summary = null;
-  if (phase0Summary && Array.isArray(phase0Summary.industries)) {
-    summary = phase0Summary.industries.find(s => s.industry === ind.label_short || s.industry === ind.label) || null;
-  }
 
   const mainContent = `
   <article>
@@ -367,7 +370,7 @@ function generateIndustryPage(industryKey, ind) {
         : `<ol>${list.map(([slug, b]) => `<li><a href="/businesses/${slug}/">${escHTML(b.name)}</a> — ${escHTML(b.scan.rating)} / ${b.scan.score}点 / ${escHTML(b.address.addressLocality)}</li>`).join('')}</ol>`}
     </section>
 
-    ${renderFaqSection(ind, 'Phase 0 沼津市')}
+    ${renderFaqSection(ind, 'Phase 0 沼津市', summary)}
 
     ${renderCtaSection(ind)}
 
@@ -395,7 +398,7 @@ function generateIndustryPage(industryKey, ind) {
     buildServiceJsonLd({ canonicalPath, ind, cityLabel: 'Phase 0 沼津市', cityWikidata: 'Q486049' }),
     buildHowToJsonLd({ canonicalPath, ind }),
   ];
-  const faq = buildFAQPageJsonLd({ canonicalPath, ind, cityLabel: 'Phase 0 沼津市' });
+  const faq = buildFAQPageJsonLd({ canonicalPath, ind, cityLabel: 'Phase 0 沼津市', summary });
   if (faq) additionalJsonLd.push(faq);
 
   return applyLayout({
@@ -524,8 +527,11 @@ function generateRegionIndustryPage(prefKey, cityKey, industryKey) {
   const canonicalPath = `/regions/${prefKey}/${cityKey}/industries/${industryKey}/`;
 
   // Phase 0 沼津 該当業種実測
+  // 注: ガード `cityKey === 'numazu'` は撤去 — FAQ テンプレートが「Phase 0 沼津市の {industry} サイト〜」
+  // という沼津データ verbatim 引用構造のため、非沼津都市ページでも沼津 Phase 0 数値を注入する。
+  // 各都市ページは LeadEvidence で都市別 cityN/cityEligible (list.length) を表示し、FAQ では沼津データを参照する設計。
   let summary = null;
-  if (cityKey === 'numazu' && phase0Summary && Array.isArray(phase0Summary.industries)) {
+  if (phase0Summary && Array.isArray(phase0Summary.industries)) {
     summary = phase0Summary.industries.find(s => s.industry === ind.label_short || s.industry === ind.label) || null;
   }
   const cityN = summary ? summary.n : list.length;
@@ -562,7 +568,7 @@ function generateRegionIndustryPage(prefKey, cityKey, industryKey) {
         : `<ol>${list.map(([slug, b]) => `<li><a href="/businesses/${slug}/">${escHTML(b.name)}</a> — ${escHTML(b.scan.rating)} / ${b.scan.score}点</li>`).join('')}</ol>`}
     </section>
 
-    ${renderFaqSection(ind, city.label)}
+    ${renderFaqSection(ind, city.label, summary)}
 
     ${renderCtaSection(ind)}
 
@@ -582,7 +588,7 @@ function generateRegionIndustryPage(prefKey, cityKey, industryKey) {
     buildServiceJsonLd({ canonicalPath, ind, cityLabel: city.label, cityWikidata: city.wikidata }),
     buildHowToJsonLd({ canonicalPath, ind }),
   ];
-  const faq = buildFAQPageJsonLd({ canonicalPath, ind, cityLabel: city.label });
+  const faq = buildFAQPageJsonLd({ canonicalPath, ind, cityLabel: city.label, summary });
   if (faq) additionalJsonLd.push(faq);
 
   return applyLayout({
@@ -721,15 +727,33 @@ function buildArticleJsonLd({ canonicalPath, headline, description, about, menti
   return obj;
 }
 
-function buildFAQPageJsonLd({ canonicalPath, ind, cityLabel = '沼津市' }) {
+// FAQ プレースホルダ展開: {city}/{industry}/{n}/{eligible}/{max}/{ng}/{ng_pct}/{median} を summary から注入
+// summary = phase0Summary.industries[該当業種] (例: { n:18, eligible:0, max:40, ng:5, ng_pct:27.78, median:17.5 })
+// 安全性: ng_pct は Number() coerce で文字列型エラー防止 / summary=null 時は fallback で `-` 置換し未展開残存を防ぐ
+function expandFaqPlaceholders(text, ind, cityLabel, summary) {
+  let s = text.replace(/\{city\}/g, cityLabel).replace(/\{industry\}/g, ind.label);
+  if (summary) {
+    s = s.replace(/\{n\}/g, summary.n)
+      .replace(/\{eligible\}/g, summary.eligible)
+      .replace(/\{max\}/g, summary.max)
+      .replace(/\{ng\}/g, summary.ng)
+      .replace(/\{ng_pct\}/g, `${Number(summary.ng_pct).toFixed(1)}%`)
+      .replace(/\{median\}/g, summary.median);
+  }
+  // 防御層: summary 不在 or 個別 key 欠落時の未展開プレースホルダを `-` で置換 (HTML/JSON-LD に {} が露出するのを防ぐ)
+  s = s.replace(/\{(n|eligible|max|ng|ng_pct|median)\}/g, '-');
+  return s;
+}
+
+function buildFAQPageJsonLd({ canonicalPath, ind, cityLabel = '沼津市', summary = null }) {
   if (!ind || !Array.isArray(ind.faq_industry)) return null;
   const pageId = DOMAIN + canonicalPath;
   const mainEntity = ind.faq_industry.map(qa => ({
     '@type': 'Question',
-    name: qa.q.replace(/\{city\}/g, cityLabel).replace(/\{industry\}/g, ind.label),
+    name: expandFaqPlaceholders(qa.q, ind, cityLabel, summary),
     acceptedAnswer: {
       '@type': 'Answer',
-      text: qa.a.replace(/\{city\}/g, cityLabel).replace(/\{industry\}/g, ind.label),
+      text: expandFaqPlaceholders(qa.a, ind, cityLabel, summary),
     },
   }));
   return {
@@ -815,11 +839,11 @@ function renderPublicSources(ind, city) {
     </section>`;
 }
 
-function renderFaqSection(ind, cityLabel = '沼津市') {
+function renderFaqSection(ind, cityLabel = '沼津市', summary = null) {
   if (!ind || !Array.isArray(ind.faq_industry)) return '';
   const items = ind.faq_industry.map(qa => {
-    const q = escHTML(qa.q.replace(/\{city\}/g, cityLabel).replace(/\{industry\}/g, ind.label));
-    const a = escHTML(qa.a.replace(/\{city\}/g, cityLabel).replace(/\{industry\}/g, ind.label));
+    const q = escHTML(expandFaqPlaceholders(qa.q, ind, cityLabel, summary));
+    const a = escHTML(expandFaqPlaceholders(qa.a, ind, cityLabel, summary));
     return `<details open><summary>${q}</summary><div class="faq-answer"><p>${a}</p></div></details>`;
   }).join('');
   return `
@@ -1057,7 +1081,10 @@ function generatePrefIndexPage(prefKey) {
 function generateIndustriesIndexPage() {
   const indList = Object.entries(industries);
   const title = `業種から探す — HARTON Certified 認定店舗`;
-  const description = `HARTON Certified 認定店舗を業種から探す。5 業種（税理士・会計士 / 弁護士 / 不動産仲介 / 飲食店 / 美容院）対応。Phase 0 沼津市 83 件機械検証で ★ 以上達成 0 件、Phase 1 で全国順次拡大予定。`;
+  // description は data 駆動: 業種数 + 業種ラベル列を industries.json から動的生成
+  const indCount = Object.keys(industries).length;
+  const indLabels = Object.values(industries).map(v => v.label).join(' / ');
+  const description = `HARTON Certified 認定店舗を業種から探す。${indCount} 業種（${indLabels}）対応。Phase 0 沼津市 83 件機械検証で ★ 以上達成 0 件、Phase 1 で全国順次拡大予定。`;
   const canonicalPath = `/industries/`;
 
   const breadcrumbs = [
@@ -1208,7 +1235,7 @@ function generatePrefIndustryHubPage(prefKey, industryKey) {
         : `<ol>${list.map(([slug, b]) => `<li><a href="/businesses/${slug}/">${escHTML(b.name)}</a> — ${escHTML(b.scan.rating)} / ${b.scan.score}点 / ${escHTML(b.address.addressLocality)}</li>`).join('')}</ol>`}
     </section>
 
-    ${renderFaqSection(ind, '沼津市')}
+    ${renderFaqSection(ind, '沼津市', stats)}
 
     ${renderCtaSection(ind)}
 
@@ -1247,7 +1274,7 @@ function generatePrefIndustryHubPage(prefKey, industryKey) {
     buildServiceJsonLd({ canonicalPath, ind, cityLabel: pref.label, cityWikidata: pref.wikidata }),
     buildHowToJsonLd({ canonicalPath, ind }),
   ];
-  const faq = buildFAQPageJsonLd({ canonicalPath, ind, cityLabel: pref.label });
+  const faq = buildFAQPageJsonLd({ canonicalPath, ind, cityLabel: pref.label, summary: stats });
   if (faq) additionalJsonLd.push(faq);
 
   return applyLayout({

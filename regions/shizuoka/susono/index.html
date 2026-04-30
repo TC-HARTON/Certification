@@ -74,6 +74,16 @@
       scroll-behavior: auto !important;
     }
   }
+  /* FAQ: 質問 = 金色 + 太字 / 回答 = 本文色 + 軽インデント / 視覚分離 */
+  .faq-section details { margin: 0.75rem 0; padding: 0.75rem 1rem; background: rgba(201,169,97,0.06); border-left: 3px solid #C9A961; border-radius: 4px; }
+  .faq-section details[open] { background: rgba(201,169,97,0.10); }
+  .faq-section summary { color: #D4AF37; font-weight: 700; cursor: pointer; padding: 0.25rem 0; list-style: none; }
+  .faq-section summary::-webkit-details-marker { display: none; }
+  .faq-section summary::before { content: "Q. "; color: #C9A961; font-weight: 800; margin-right: 0.25rem; }
+  .faq-section details[open] summary::before { content: "Q. "; }
+  .faq-section .faq-answer { margin-top: 0.5rem; padding: 0.75rem 0 0.25rem 1.5rem; border-top: 1px solid rgba(201,169,97,0.20); color: #FAF8F3; }
+  .faq-section .faq-answer::before { content: "A. "; color: #C9A961; font-weight: 800; margin-right: 0.25rem; }
+  .faq-section .faq-answer p { display: inline; color: #FAF8F3; }
 </style>
 
 <!-- SPEC v3.4 §4.2 #1 JSON-LD（@type 配列必須・additionalType + sameAs GBP） -->
@@ -281,8 +291,8 @@
         <div class="search-field">
           <label for="search-industry">業種</label>
           <select id="search-industry" name="industry">
-            <option value="" selected>すべての業種（5 業種）</option>
-            <option value="tax-accountant">税理士・会計士</option><option value="lawyer">弁護士</option><option value="real-estate">不動産仲介</option><option value="restaurant">飲食店</option><option value="beauty">美容院</option>
+            <option value="" selected>すべての業種（8 業種）</option>
+            <option value="tax-accountant">税理士・会計士</option><option value="lawyer">弁護士</option><option value="real-estate">不動産仲介</option><option value="restaurant">飲食店</option><option value="beauty">美容院</option><option value="dentist">歯科医院</option><option value="hospital">病院</option><option value="hotel">ホテル</option>
           </select>
         </div>
         <div class="search-field">
@@ -326,7 +336,7 @@
 
     <section aria-label="業種別">
       <h2>裾野市 業種別検索</h2>
-      <ul><li>業種別認定は Phase 1 以降で順次拡大予定（対応業種: 税理士・会計士・弁護士・不動産仲介・飲食店・美容院）</li></ul>
+      <ul><li>業種別認定は Phase 1 以降で順次拡大予定（対応業種: 税理士・会計士・弁護士・不動産仲介・飲食店・美容院・歯科医院・病院・ホテル）</li></ul>
       <p>裾野市の事業者で HARTON Certified 認定取得を目指す方は <a href="/apply/">掲載申請</a>から登録可能。AI 時代の信頼を体現する WEB 品質を機械検証で公正評価する。</p>
     </section>
 
