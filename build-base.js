@@ -175,7 +175,7 @@ PAGES.push({
   <section aria-label="冒頭エビデンス（Lead Evidence Block）">
     <p>HARTON Certified は、<strong>2,554 項目</strong>の機械検証で WEB 品質を公正に測る独立認定機関である。全国の事業者の Sクラス WEB 普及を支えるため、4 軸の客観評価を 2026 年に開始した。沼津起点での自己実証（自社サイト ★★★ 取得）を基盤とし、地方都市から再定義する WEB 品質の民主化を推進する。出典: <a href="https://www.digital.go.jp/" rel="nofollow noopener noreferrer" target="_blank">日本政府・公的機関</a>（HSTS / WCAG / Core Web Vitals 等の公的基準に準拠）。</p>
     <p><time datetime="2026-04-27" itemprop="datePublished">2026 年 4 月 27 日 公開</time> ／ <time datetime="2026-04-30" itemprop="dateModified">2026-04-30 v1.1.7 ブランド戦略整合改訂</time></p>
-    <p>機械検証による公正評価を通じて、地域から全国へ、Sクラス WEB サイトの普及を支える。Phase 0（沼津市 83 件機械検証完了 / 2026-04-30）から始まり、Phase 4（2027 年）で全 47 都道府県 10,000 件以上の認定を目標とする。</p>
+    <p>機械検証による公正評価を通じて、地域から全国へ、Sクラス WEB サイトの普及を支える。Phase 0（沼津市 ${numazuSummary.n_total} 件機械検証実測 / 8 業種 / 2026-04-30）から始まり、Phase 4（2027 年）で全 47 都道府県 10,000 件以上の認定を目標とする。</p>
   </section>
   <section aria-label="認定店舗を絞り込む" class="search-section">
     <h2>認定店舗を絞り込む</h2>
@@ -211,7 +211,7 @@ ${REGION_OPTIONS_HTML}
     <script src="/assets/js/search.js" defer></script>
   </section>
   <section aria-label="注目認定 rail" class="featured-rail-section">
-    <h2>注目認定 — 自己実証体 第 1 号 + Phase 0 沼津 83 件機械検証完了</h2>
+    <h2>Phase 0 機械検証実測の公開</h2>
     <p class="featured-rail-lede">HARTON Certified は機械検証 4 軸（基礎・防御・AI 検索・経営インパクト）で WEB 品質を客観評価する独立認定機関。Phase 0 沼津市 <strong>${numazuSummary.n_total}</strong> 件機械検証で <strong>★ 獲得率 0.0%</strong>（${numazuSummary.eligible_total}/${numazuSummary.n_total}）/ 業界最高点 <strong>${numazuSummary.score_stats.max}</strong> 点 / 致命的 NG <strong>${numazuSummary.ng_pct.toFixed(1)}%</strong>。Phase 1 で全国順次拡大予定。</p>
     <ul class="featured-rail" role="list">
       <li class="featured-card">
@@ -228,12 +228,12 @@ ${REGION_OPTIONS_HTML}
       </li>
       <li class="featured-card">
         <div class="featured-card-thumb">
-          <span class="featured-card-rating" role="img" aria-label="Phase 0 沼津 83 件機械検証完了 / ★ 認定 0 件"><svg class="star-svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false" style="opacity:0.4"><path d="M12 2L14.6 8.6L21.6 9.3L16.3 14L17.8 21L12 17.5L6.2 21L7.7 14L2.4 9.3L9.4 8.6L12 2Z" fill="currentColor"/></svg></span>
+          <span class="featured-card-rating" role="img" aria-label="Phase 0 沼津 83 件機械検証実測 / ★ 認定 0 件"><svg class="star-svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false" style="opacity:0.4"><path d="M12 2L14.6 8.6L21.6 9.3L16.3 14L17.8 21L12 17.5L6.2 21L7.7 14L2.4 9.3L9.4 8.6L12 2Z" fill="currentColor"/></svg></span>
           <span class="featured-card-thumb-label" aria-hidden="true">Phase 0 完了</span>
         </div>
         <div class="featured-card-body">
-          <h3 class="featured-card-name">沼津 ${numazuSummary.n_total} 件機械検証完了</h3>
-          <p class="featured-card-meta">2026-04-30 スキャン完了 ／ 5 業種（税理士・弁護士・不動産・飲食店・美容院）</p>
+          <h3 class="featured-card-name">沼津 ${numazuSummary.n_total} 件機械検証実測 (8 業種)</h3>
+          <p class="featured-card-meta">2026-04-30 スキャン完了 ／ 8 業種（税理士・弁護士・不動産・飲食店・美容院・歯科医院・病院・ホテル）</p>
           <p class="featured-card-note"><strong>★ 認定 0 件</strong> ／ 致命的 NG <strong>${numazuSummary.ng_pct.toFixed(1)}%</strong>（${numazuSummary.ng_total_companies}件）／ 業界中央値 <strong>${numazuSummary.score_stats.median}</strong> 点 ／ 業界 max <strong>${numazuSummary.score_stats.max}</strong> 点。実態は隠さず堂々と公開する透明性の証明。</p>
           <a href="/news/numazu-industry-report-2026-spring/" class="featured-card-link">業界レポート 2026 春を見る →</a>
         </div>
@@ -859,7 +859,7 @@ PAGES.push({
   <section aria-label="お知らせ一覧">
     <h2>2026 年</h2>
     <ul>
-      <li><time datetime="2026-04-30">2026-04-30</time>: <a href="/news/numazu-industry-report-2026-spring/">沼津市 WEB 品質業界レポート 2026 春</a> 公開（5 業種 83 件機械検証 / ★ 認定 0 件 / 致命的 NG 28.9%）</li>
+      <li><time datetime="2026-04-30">2026-04-30</time>: <a href="/news/numazu-industry-report-2026-spring/">沼津市 WEB 品質業界レポート 2026 春</a> 公開（8 業種 ${numazuSummary.n_total} 件機械検証 / ★ 認定 ${numazuSummary.eligible_total} 件 / 致命的 NG ${numazuSummary.ng_pct.toFixed(1)}%）</li>
       <li><time datetime="2026-04-27">2026-04-27</time>: MASTER-PLAN v1.1.4 改訂（SPEC v3.4 連動完了）</li>
       <li><time datetime="2026-04-26">2026-04-26</time>: HARTON Certified 創設発表 / Phase 0 沼津 30 件パイロット開始</li>
     </ul>
@@ -873,14 +873,14 @@ PAGES.push({
   variant: 'reading',
   navActive: '',
   title: '沼津市 WEB 品質業界レポート 2026 春 — HARTON Certified',
-  description: `2026-04-30 機械検証実測: 沼津市 5 業種 ${numazuSummary.n_total} 件評価。沼津市 ★ 獲得率 ${numazuSummary.eligible_total}/${numazuSummary.n_total} = 0.0%。業種別 ★ 獲得率 + 業界最高点（税理士 40・弁護士 49・不動産 54・飲食 45・美容 44）/ 致命的 NG ${numazuSummary.ng_pct.toFixed(1)}%。業界品質改善のための透明性レポート。`,
+  description: `沼津市 8 業種 ${numazuSummary.n_total} 件機械検証実測。★ 獲得率 ${numazuSummary.eligible_total}/${numazuSummary.n_total}=0.0%。業界最高点（税理士40・弁護士49・不動産54・飲食45・美容44・歯科47・病院41・ホテル37）／NG ${numazuSummary.ng_pct.toFixed(1)}%。`,
   canonicalPath: '/news/numazu-industry-report-2026-spring/',
   ogType: 'article',
   breadcrumbs: bcl([['トップ', '/'], ['お知らせ', '/news/'], ['業界レポート 2026 春', '/news/numazu-industry-report-2026-spring/']]),
   mainContent: `
 <article>
   <section aria-label="冒頭エビデンス">
-    <p><strong>2026 年 4 月 30 日</strong>、沼津市 5 業種（税理士・弁護士・不動産仲介・飲食店・美容院）<strong>${numazuSummary.n_total}</strong> 件の公開 WEB サイトを 4 軸機械検証した。業界中央値は <strong>${numazuSummary.score_stats.median}</strong> 点（業界 max <strong>${numazuSummary.score_stats.max}</strong> 点）であり、★ 以上認定可能なサイトは <strong>${numazuSummary.eligible_total}</strong> 件、致命的 NG 発生率は <strong>${numazuSummary.ng_pct.toFixed(1)}%</strong> であった。出典: <a href="https://web.dev/articles/vitals" rel="nofollow noopener noreferrer" target="_blank">Google Web Vitals 公式</a> / <a href="https://www.w3.org/WAI/standards-guidelines/wcag/" rel="nofollow noopener noreferrer" target="_blank">W3C WCAG 2.2</a> / <a href="https://www.ipa.go.jp/security/vuln/websecurity/about.html" rel="nofollow noopener noreferrer" target="_blank">IPA 安全なウェブサイトの作り方</a>。</p>
+    <p><strong>2026 年 4 月 30 日</strong>、沼津市 8 業種（税理士・弁護士・不動産仲介・飲食店・美容院・歯科医院・病院・ホテル）<strong>${numazuSummary.n_total}</strong> 件の公開 WEB サイトを 4 軸機械検証した。業界中央値は <strong>${numazuSummary.score_stats.median}</strong> 点（業界 max <strong>${numazuSummary.score_stats.max}</strong> 点）であり、★ 以上認定可能なサイトは <strong>${numazuSummary.eligible_total}</strong> 件、致命的 NG 発生率は <strong>${numazuSummary.ng_pct.toFixed(1)}%</strong> であった。出典: <a href="https://web.dev/articles/vitals" rel="nofollow noopener noreferrer" target="_blank">Google Web Vitals 公式</a> / <a href="https://www.w3.org/WAI/standards-guidelines/wcag/" rel="nofollow noopener noreferrer" target="_blank">W3C WCAG 2.2</a> / <a href="https://www.ipa.go.jp/security/vuln/websecurity/about.html" rel="nofollow noopener noreferrer" target="_blank">IPA 安全なウェブサイトの作り方</a>。</p>
     <blockquote cite="${DOMAIN}/methodology/">
       「公正に測るとは、評価方法のすべてを公開することだ」 — HARTON Certified 評価原則
     </blockquote>
@@ -900,7 +900,7 @@ PAGES.push({
   <section aria-label="業種別 ★ 獲得率" class="industry-section">
     <h2>業種別 ★ 獲得率 + 業界最高点</h2>
     <table>
-      <caption>沼津市 5 業種 ${numazuSummary.n_total} 件 業種別 ★ 獲得率と業界最高点</caption>
+      <caption>沼津市 8 業種 ${numazuSummary.n_total} 件 業種別 ★ 獲得率と業界最高点</caption>
       <thead>
         <tr><th scope="col">業種</th><th scope="col">対象 n</th><th scope="col">★ 獲得</th><th scope="col">獲得率</th><th scope="col">業界最高点</th></tr>
       </thead>

@@ -1,26 +1,27 @@
 {
   "phase": 0,
   "region": "沼津市",
-  "n_total": 83,
+  "n_total": 134,
   "rating_distribution": {
-    "非掲載": 83
+    "★★★": 0,
+    "★★": 0,
+    "★": 0,
+    "非掲載": 134
   },
   "ng_breakdown": {
-    "HTTPS非対応": 5,
-    "SSL証明書": 4,
-    "WP管理面露出": 19,
-    "readme.html露出": 6,
-    "xmlrpc.php有効": 14,
-    "CMSバージョン情報露出": 1
+    "HTTPS非対応": 10,
+    "SSL証明書": 9,
+    "WP管理面露出": 31,
+    "CMSバージョン情報露出": 2
   },
-  "ng_total_companies": 24,
-  "ng_pct": 28.915662650602407,
+  "ng_total_companies": 42,
+  "ng_pct": 31.343283582089555,
   "score_stats": {
     "min": 0,
     "max": 54,
-    "median": 22,
-    "mean": 20.53012048192771,
-    "stdev": 14.300210939428004
+    "median": 23.0,
+    "mean": 21.425373134328357,
+    "stdev": 13.596426369090514
   },
   "industries": [
     {
@@ -67,6 +68,33 @@
       "median": 29,
       "max": 44,
       "eligible": 0
+    },
+    {
+      "industry": "ホテル",
+      "n": 14,
+      "ng": 3,
+      "ng_pct": 21.428571428571427,
+      "median": 26.0,
+      "max": 37,
+      "eligible": 0
+    },
+    {
+      "industry": "歯科医院",
+      "n": 19,
+      "ng": 8,
+      "ng_pct": 42.10526315789473,
+      "median": 24,
+      "max": 47,
+      "eligible": 0
+    },
+    {
+      "industry": "病院",
+      "n": 18,
+      "ng": 7,
+      "ng_pct": 38.88888888888889,
+      "median": 24.0,
+      "max": 41,
+      "eligible": 0
     }
   ],
   "self_proof_marker": {
@@ -76,7 +104,7 @@
     "tcharton_location": "沼津",
     "industry_max_score": 54,
     "gap_to_tcharton": 36,
-    "quality_ratio": 4.09
+    "quality_ratio": 3.91
   },
   "eligible_total": 0
 }
