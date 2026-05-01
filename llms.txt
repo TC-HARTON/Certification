@@ -11,7 +11,7 @@
 - 公式サイト: https://certification.tcharton.com/
 - 親サイト: https://tcharton.com/
 - 評価方法: 4 軸機械検証（A 基礎・B 防御・C AI 検索適応・D 経営インパクト）
-- 評価サイクル: 月次再スキャン / 四半期レビュー / 年次基準改訂
+- 評価サイクル: 四半期再スキャン / 四半期レビュー / 年次基準改訂
 
 ## 主要ページ
 
@@ -65,7 +65,7 @@
 
 ## 沼津業界レポート 2026 春
 
-- [沼津市 WEB 品質業界レポート 2026-05 月次号](https://certification.tcharton.com/news/numazu-industry-report-2026-05/) — Phase 0 沼津市 ★ 獲得率 0/83 = 0.0% / 業種別 ★ 獲得率 + 業界最高点 一覧
+- [沼津市 WEB 品質業界レポート 2026 Q2 (4-6 月号)](https://certification.tcharton.com/news/numazu-industry-report-2026-q2/) — Phase 0 沼津市 ★ 獲得率 0/83 = 0.0% / 業種別 ★ 獲得率 + 業界最高点 一覧
 
 ## 認定基準（要点）
 

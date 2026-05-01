@@ -262,7 +262,7 @@ function generateBusinessPage(slug, b) {
     <section aria-label="評価方法">
       <h2>評価方法</h2>
       <p>本評価は <a href="/methodology/">/methodology/</a> で全公開している 4 軸スキャナーで実施した。スキャン項目・閾値・実施手順は機械検証可能で、再現性がある。</p>
-      <p>本認定は ${escHTML(b.scan.scanned_at)} 時点の評価であり、月次再スキャンで変動する可能性がある（MASTER-PLAN §3.5）。</p>
+      <p>本認定は ${escHTML(b.scan.scanned_at)} 時点の評価であり、四半期再スキャンで変動する可能性がある（MASTER-PLAN §3.5）。</p>
     </section>
   </article>`;
 
@@ -366,7 +366,7 @@ function generateIndustryPage(industryKey, ind) {
     <section aria-label="認定店舗一覧">
       <h2>認定店舗一覧（${list.length}件）</h2>
       ${list.length === 0
-        ? `<p><strong>現時点で ★ 以上達成事業者: 0 件</strong>。Phase 0 沼津市 ${summary ? summary.n : 83} 件機械検証の実測結果は <a href="/news/numazu-industry-report-2026-05/">沼津市 WEB 品質業界レポート 2026-05 月次号</a>を参照。沼津以外の地域は Phase 1（類似地方都市: 倉敷・四日市・松本・盛岡 等）で順次拡大予定。</p>`
+        ? `<p><strong>現時点で ★ 以上達成事業者: 0 件</strong>。Phase 0 沼津市 ${summary ? summary.n : 83} 件機械検証の実測結果は <a href="/news/numazu-industry-report-2026-q2/">沼津市 WEB 品質業界レポート 2026 Q2 (4-6 月号)</a>を参照。沼津以外の地域は Phase 1（類似地方都市: 倉敷・四日市・松本・盛岡 等）で順次拡大予定。</p>`
         : `<ol>${list.map(([slug, b]) => `<li><a href="/businesses/${slug}/">${escHTML(b.name)}</a> — ${escHTML(b.scan.rating)} / ${b.scan.score}点 / ${escHTML(b.address.addressLocality)}</li>`).join('')}</ol>`}
     </section>
 
@@ -478,7 +478,7 @@ function generateRegionPage(prefKey, cityKey) {
     <section aria-label="認定店舗一覧">
       <h2>全認定店舗（${list.length}件）</h2>
       ${list.length === 0
-        ? `<p><strong>現時点で ★ 以上達成事業者: 0 件</strong>。${isNumazu ? `Phase 0 沼津市 ${cityN} 件機械検証の業界実態は <a href="/news/numazu-industry-report-2026-05/">沼津市 WEB 品質業界レポート 2026-05 月次号</a>で堂々と公開している。` : `Phase 1 で対応開始予定。`}沼津以外の地域は Phase 1（類似地方都市: 倉敷・四日市・松本・盛岡 等）で順次拡大予定。</p>`
+        ? `<p><strong>現時点で ★ 以上達成事業者: 0 件</strong>。${isNumazu ? `Phase 0 沼津市 ${cityN} 件機械検証の業界実態は <a href="/news/numazu-industry-report-2026-q2/">沼津市 WEB 品質業界レポート 2026 Q2 (4-6 月号)</a>で堂々と公開している。` : `Phase 1 で対応開始予定。`}沼津以外の地域は Phase 1（類似地方都市: 倉敷・四日市・松本・盛岡 等）で順次拡大予定。</p>`
         : `<ol>${list.map(([slug, b]) => `<li><a href="/businesses/${slug}/">${escHTML(b.name)}</a> — ${escHTML(industries[b.industry]?.label || b.industry)} / ${escHTML(b.scan.rating)} / ${b.scan.score}点</li>`).join('')}</ol>`}
     </section>
 
@@ -564,7 +564,7 @@ function generateRegionIndustryPage(prefKey, cityKey, industryKey) {
     <section aria-label="認定店舗一覧">
       <h2>${escHTML(city.label)} ${escHTML(ind.label)} 認定店舗（${list.length}件）</h2>
       ${list.length === 0
-        ? `<p><strong>現時点で ★ 以上達成事業者: 0 件</strong>。${summary ? `Phase 0 ${escHTML(city.label)} ${summary.n} 件機械検証で業界最高点 ${summary.max} 点。` : ''}実測結果は <a href="/news/numazu-industry-report-2026-05/">沼津市 WEB 品質業界レポート 2026-05 月次号</a>を参照。Phase 1 で類似地方都市に順次拡大予定。</p>`
+        ? `<p><strong>現時点で ★ 以上達成事業者: 0 件</strong>。${summary ? `Phase 0 ${escHTML(city.label)} ${summary.n} 件機械検証で業界最高点 ${summary.max} 点。` : ''}実測結果は <a href="/news/numazu-industry-report-2026-q2/">沼津市 WEB 品質業界レポート 2026 Q2 (4-6 月号)</a>を参照。Phase 1 で類似地方都市に順次拡大予定。</p>`
         : `<ol>${list.map(([slug, b]) => `<li><a href="/businesses/${slug}/">${escHTML(b.name)}</a> — ${escHTML(b.scan.rating)} / ${b.scan.score}点</li>`).join('')}</ol>`}
     </section>
 
@@ -691,7 +691,7 @@ function renderLeadEvidenceSection({ cityLabel = '沼津市', n = 83, eligible =
   const rate = n > 0 ? ((eligible / n) * 100).toFixed(1) : '0.0';
   return `
     <aside aria-label="${cityLabel} ★ 獲得率 + 信頼根拠" class="report-bridge">
-      <p><strong>${cityLabel} ★ 獲得率: ${eligible} / ${n} = ${rate}%</strong>（Phase 0 機械検証 / 2026-04-30 時点）。業種別 ★ 獲得率と業界最高点は <a href="/news/numazu-industry-report-2026-05/">沼津市 WEB 品質業界レポート 2026-05 月次号</a>に公開している。</p>
+      <p><strong>${cityLabel} ★ 獲得率: ${eligible} / ${n} = ${rate}%</strong>（Phase 0 機械検証 / 2026-04-30 時点）。業種別 ★ 獲得率と業界最高点は <a href="/news/numazu-industry-report-2026-q2/">沼津市 WEB 品質業界レポート 2026 Q2 (4-6 月号)</a>に公開している。</p>
       <p>評価方法は <a href="/methodology/">機械検証 4 軸（基礎・防御・AI 検索・経営インパクト）</a>で全公開する。<strong>「自分が ★★★ を取れない基準で、他者を測らない。」</strong>が本機関の信頼根拠の核である（運営元については <a href="/about/">サイトについて</a>を参照）。</p>
     </aside>`;
 }
@@ -869,9 +869,9 @@ function renderCtaSection(ind) {
 
 function renderUpdatePolicySection() {
   return `
-    <section aria-label="月次更新方針" class="update-policy">
-      <h2>月次更新方針</h2>
-      <p><time datetime="2026-04-30" itemprop="dateModified">最終スキャン: 2026-04-30</time> / <time datetime="2026-05-30">次回再判定予定: 2026-05-30</time>。月次再判定で改善した事業者は自動的に認定店舗ページに掲載される(MASTER-PLAN §12 / 14 日改善猶予 + 致命的 NG 即時切替)。</p>
+    <section aria-label="四半期更新方針" class="update-policy">
+      <h2>四半期更新方針</h2>
+      <p><time datetime="2026-04-30" itemprop="dateModified">最終スキャン: 2026-04-30</time> / <time datetime="2026-05-30">次回再判定予定: 2026-05-30</time>。四半期再判定で改善した事業者は自動的に認定店舗ページに掲載される(MASTER-PLAN §12 / 14 日改善猶予 + 致命的 NG 即時切替)。</p>
     </section>`;
 }
 
@@ -1301,14 +1301,14 @@ function generateMonthlyRankingPage(year, month) {
 
   const ymPath = `/rankings/${year}/${String(month).padStart(2, '0')}/`;
   const title = `${year}年${month}月 HARTON Certified 月次 TOP 10`;
-  const description = `${year}年${month}月の HARTON Certified 認定店舗 TOP 10（全業種・全地域横断）。機械検証で公正評価、月次再スキャン結果を反映。`;
+  const description = `${year}年${month}月の HARTON Certified 認定店舗 TOP 10（全業種・全地域横断）。機械検証で公正評価、四半期再スキャン結果を反映。`;
 
   const mainContent = `
   <article>
     <h1>${year}年${month}月 月次 TOP 10</h1>
     <p><time datetime="${year}-${String(month).padStart(2, '0')}-01" itemprop="datePublished">${year}-${String(month).padStart(2, '0')}-01 公開</time></p>
     <section aria-label="冒頭エビデンス">
-      <p>${year}年${month}月時点の HARTON Certified 認定店舗 TOP <strong>${list.length}</strong> 件。総合 <strong>70 点</strong>以上 + 致命的 NG <strong>0 件</strong>を達成した事業者のみ。月次再スキャンは scanner.py（4 軸機械検証 / 45+ 項目）で実施する。出典: <a href="https://www.ipa.go.jp/security/vuln/websecurity/about.html" rel="nofollow noopener noreferrer" target="_blank">IPA「安全なウェブサイトの作り方」</a>。</p>
+      <p>${year}年${month}月時点の HARTON Certified 認定店舗 TOP <strong>${list.length}</strong> 件。総合 <strong>70 点</strong>以上 + 致命的 NG <strong>0 件</strong>を達成した事業者のみ。四半期再スキャンは scanner.py（4 軸機械検証 / 45+ 項目）で実施する。出典: <a href="https://www.ipa.go.jp/security/vuln/websecurity/about.html" rel="nofollow noopener noreferrer" target="_blank">IPA「安全なウェブサイトの作り方」</a>。</p>
       <blockquote cite="/methodology/">「機械検証で、Sクラス WEB の普及を支える」</blockquote>
     </section>
     ${renderSearchForm()}
@@ -1318,7 +1318,7 @@ function generateMonthlyRankingPage(year, month) {
     <section aria-label="ランキング">
       <h2>認定店舗 TOP ${list.length}</h2>
       ${list.length === 0
-        ? '<p>この月の集計データは月次再判定後に更新する。Phase 0 沼津市の業界実態は <a href="/news/numazu-industry-report-2026-05/">沼津市 WEB 品質業界レポート 2026-05 月次号</a>で公開中。</p>'
+        ? '<p>この月の集計データは四半期再判定後に更新する。Phase 0 沼津市の業界実態は <a href="/news/numazu-industry-report-2026-q2/">沼津市 WEB 品質業界レポート 2026 Q2 (4-6 月号)</a>で公開中。</p>'
         : `<ol>${list.map(([slug, b]) => `<li><a href="/businesses/${slug}/">${escHTML(b.name)}</a> — ${escHTML(b.scan.rating)} / ${b.scan.score}点 / ${escHTML(industries[b.industry]?.label || '')} / ${escHTML(b.address.addressLocality)}</li>`).join('')}</ol>`}
     </section>
 
@@ -1489,7 +1489,7 @@ function generateLLMsTxt() {
 - 公式サイト: ${DOMAIN}/
 - 親サイト: https://tcharton.com/
 - 評価方法: 4 軸機械検証（A 基礎・B 防御・C AI 検索適応・D 経営インパクト）
-- 評価サイクル: 月次再スキャン / 四半期レビュー / 年次基準改訂
+- 評価サイクル: 四半期再スキャン / 四半期レビュー / 年次基準改訂
 
 ## 主要ページ
 
@@ -1532,7 +1532,7 @@ ${Object.entries(industries).map(([k, ind]) => `- [${ind.label}](${DOMAIN}/indus
 
 ## 沼津業界レポート 2026 春
 
-- [沼津市 WEB 品質業界レポート 2026-05 月次号](${DOMAIN}/news/numazu-industry-report-2026-05/) — Phase 0 沼津市 ★ 獲得率 0/83 = 0.0% / 業種別 ★ 獲得率 + 業界最高点 一覧
+- [沼津市 WEB 品質業界レポート 2026 Q2 (4-6 月号)](${DOMAIN}/news/numazu-industry-report-2026-q2/) — Phase 0 沼津市 ★ 獲得率 0/83 = 0.0% / 業種別 ★ 獲得率 + 業界最高点 一覧
 
 ## 認定基準（要点）
 

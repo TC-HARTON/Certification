@@ -54,7 +54,7 @@ const STATIC_TARGETS = [
   '404.html',
   'thanks.html',
   // 沼津業界レポート 2026 春 (INSTRUCTION v1.12.2 §(A))
-  'news/numazu-industry-report-2026-05/index.html',
+  'news/numazu-industry-report-2026-q2/index.html',
 ];
 
 // 動的ページの glob ルート（存在すれば自動列挙）
@@ -111,7 +111,7 @@ const PAGE_TYPE = {
 
   '404.html': 'minimal',
   'thanks.html': 'minimal',
-  'news/numazu-industry-report-2026-05/index.html': 'subpage',
+  'news/numazu-industry-report-2026-q2/index.html': 'subpage',
 };
 
 // 動的ページの type は path から推定

@@ -1,7 +1,9 @@
-# HARTON WEBサイト構築・アプリ開発仕様書 v3.4.2
+# HARTON WEBサイト構築・アプリ開発仕様書 v3.4.3
 
 > 本仕様書は HARTON 自社サイト tcharton.com（**spec-checker.js 2554 項目 S-RANK 達成済**）を共通基準とする。**※ ここで言う「S-RANK」は本仕様書の構造・コンテンツ・コーディング基準（§11 納品前チェックリスト 2554 項目）の完全達成を指し、scanner.py が判定する「HARTON Certified S クラス」（§8.5 必須 5 条件）とは別概念である**（v3.3 §0.0.1 narrow-scope claim 一般化防止のため明文化、§1.0 / §8.5 参照）。
 >
+> **v3.4.3 改訂概要**（2026-05-01）: HSCEL v1.1 §3.3「事実確認 mandatory」追加に整合。⑤ certification v2.1 自己申告（Wikidata Q 番号 12 件誤り + scanner 連動 虚偽断定）を契機に、§0.0.11 HSCEL 参照範囲を v1 → v1.1 に更新。「主観・記憶・推測 ID」の使用禁止、物理確認・API verbatim 検証を §3 mandatory Skill 完遂条件に組込。詳細は `HARTON/ENFORCEMENT-LAW-V1.md` v1.1 全文参照。
+
 > **v3.4.2 改訂概要**（2026-04-30）: HARTON 代表激怒指示（⑤ certification v1.1.7 草案 4 Skill 不遵守違反 2026-04-30 検出）に基づき、§0.0.11 **HSCEL 強制法規**（HARTON Skill Compliance Enforcement Law）を新設。「mandatory」だけでは自律 LLM に強制力を持たないという実証的失敗を踏まえ、**機械的不承認 + 出力強制差戻し**を最高位ペナルティとして制定。同時に §0.0.10 判定基準厳格化原則を SPEC §0.0 系に正本化。詳細は `HARTON/ENFORCEMENT-LAW-V1.md` 全文参照。
 >
 > **v3.4.1 改訂概要**（2026-04-30）: ⑤ certification v1.5 並列レビュー検出の規範↔実装乖離（CRITICAL-1: §8.5.2 「3 件以上」 vs scanner.py `passed_count >= 4`）を解消する整合化リリース。(1) §8.5.2 ★★ S 条件「3 件以上」→「4 件以上」厳格化（v1.1.15 §22 / 2026-04-30 ① 確定）+ ★ / ★★ / ★★★ 表記正本化、(2) §8.5/§8.6/§8.9 の旧 ★3〜★5 / S/A/B/C/D 表記を ★ / ★★ / ★★★（公開）+ S/A/B/NONE（内部 ID retro-compat）に統一、(3) 改訂原則「判定基準は厳格化のみ可、緩和不可」（§0.0.10 議題化）を §8.5.2 に組込、(4) tcharton.com の自己実証体ブランド戦略（v1.1.7）を §1.0 関連節に反映予定（次版 v3.5）。
@@ -188,7 +190,9 @@ Claude Code の自動メモリ機能（`.claude/projects/*/memory/MEMORY.md` お
 | §6.4 Tier 4 ペナルティ | 同 § を 3 回以上違反 → 担当変更（① 権限）|
 | §7 ① 自己拘束 | 本条は ① 自身にも適用。代表 = 最終最高権限が ① 出力を不承認可能 |
 
-**位置付け**: SPEC §0.0 規範群より上位。「草案」「ドラフト」「α 版」など**いかなる呼称も例外とならない**。詳細は `HARTON/ENFORCEMENT-LAW-V1.md`（HSCEL v1 全文）参照。
+| §3.3 事実確認 mandatory（v1.1 / 2026-05-01 追加）| 他セッションの実装状況は `ls` / `git log` で物理確認 / 外部識別子（Wikidata Q 番号 / Schema.org URI / 公式 API）は 1 件ずつ verbatim 検証 / 数値・日付・URL は一次ソースから取得 — **主観・記憶・推測コピペ禁止**（⑤ Wikidata 12 件誤り + scanner 連動 虚偽断定 2026-05-01 を契機）|
+
+**位置付け**: SPEC §0.0 規範群より上位。「草案」「ドラフト」「α 版」など**いかなる呼称も例外とならない**。詳細は `HARTON/ENFORCEMENT-LAW-V1.md`（HSCEL v1.1 全文）参照。
 
 **改訂原則（v1.1.15 §22 / §0.0.10 連動）**: §3 必須 Skill の **緩和 / 削除 / 例外条項拡大は禁止**。厳格化方向のみ可。
 
