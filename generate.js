@@ -1530,7 +1530,7 @@ ${Object.entries(regions).map(([prefKey, pref]) => {
 - [業種から探す](${DOMAIN}/industries/) — ${Object.keys(industries).length} 業種ハブ
 ${Object.entries(industries).map(([k, ind]) => `- [${ind.label}](${DOMAIN}/industries/${k}/)`).join('\n')}
 
-## 沼津業界レポート 2026 春
+## 沼津業界レポート 2026 Q2 (4-6 月号)
 
 - [沼津市 WEB 品質業界レポート 2026 Q2 (4-6 月号)](${DOMAIN}/news/numazu-industry-report-2026-q2/) — Phase 0 沼津市 ★ 獲得率 0/83 = 0.0% / 業種別 ★ 獲得率 + 業界最高点 一覧
 

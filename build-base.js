@@ -28,7 +28,7 @@ const DOMAIN = 'https://certification.tcharton.com';
 const industriesData = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'industries.json'), 'utf-8'));
 const regionsData = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'regions.json'), 'utf-8'));
 
-// Phase 0 沼津パイロット結果集計 (④ scanner 出力 / ⑤ で業界レポート 2026 春に展開)
+// Phase 0 沼津パイロット結果集計 (④ scanner 出力 / ⑤ で業界レポート 2026 Q2 (4-6 月号)に展開)
 // INSTRUCTION-FROM-ROOT.md v1.12.2 §(A) 連動
 const numazuSummary = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'phase-0-numazu-summary.json'), 'utf-8'));
 
@@ -235,7 +235,7 @@ ${REGION_OPTIONS_HTML}
           <h3 class="featured-card-name">沼津 ${numazuSummary.n_total} 件機械検証実測 (8 業種)</h3>
           <p class="featured-card-meta">2026-04-30 スキャン完了 ／ 8 業種（税理士・弁護士・不動産・飲食店・美容院・歯科医院・病院・ホテル）</p>
           <p class="featured-card-note"><strong>★ 認定 0 件</strong> ／ 致命的 NG <strong>${numazuSummary.ng_pct.toFixed(1)}%</strong>（${numazuSummary.ng_total_companies}件）／ 業界中央値 <strong>${numazuSummary.score_stats.median}</strong> 点 ／ 業界 max <strong>${numazuSummary.score_stats.max}</strong> 点。実態は隠さず堂々と公開する透明性の証明。</p>
-          <a href="/news/numazu-industry-report-2026-q2/" class="featured-card-link">業界レポート 2026 春を見る →</a>
+          <a href="/news/numazu-industry-report-2026-q2/" class="featured-card-link">業界レポート 2026 Q2 (4-6 月号)を見る →</a>
         </div>
       </li>
       <li class="featured-card featured-card-placeholder">
@@ -372,7 +372,7 @@ PAGES.push({
   <section aria-label="運営体制">
     <h2>運営体制</h2>
     <p>HARTON Certified は T.C.HARTON が 2026 年 4 月に立ち上げた独立認定機関である。Phase 1（類似地方都市 200 件）以降は弁護士・プロデザイナー・PR 会社との外部提携を予定する。商標登録は Phase 1 完了時に着手する。</p>
-    <p>運営拠点: 〒410-0022 静岡県沼津市大岡2690 / Cloudflare Workers Static Assets で配信 / scanner.py で自動月次再評価。</p>
+    <p>運営拠点: 〒410-0022 静岡県沼津市大岡2690 / Cloudflare Workers Static Assets で配信 / scanner.py で四半期再評価 (Q1/Q2/Q3/Q4 各四半期末スキャン)。</p>
     <p>運営方針: 「業界の WEB 品質改善のため」が動機であり、「自社の集客のため」ではない（中立性表現原則）。</p>
   </section>
   <section aria-label="関連リンク">
@@ -867,7 +867,7 @@ PAGES.push({
 </article>`,
 });
 
-// ─── 13b. 沼津業界レポート 2026 春（subpage / reading / INSTRUCTION v1.12.2 §(A) 連動）
+// ─── 13b. 沼津業界レポート 2026 Q2 (4-6 月号)（subpage / reading / INSTRUCTION v1.12.2 §(A) 連動）
 PAGES.push({
   path: 'news/numazu-industry-report-2026-q2/index.html',
   variant: 'reading',
@@ -876,7 +876,7 @@ PAGES.push({
   description: `沼津市 8 業種 ${numazuSummary.n_total} 件機械検証実測。★ 獲得率 ${numazuSummary.eligible_total}/${numazuSummary.n_total}=0.0%。業界最高点（税理士40・弁護士49・不動産54・飲食45・美容44・歯科47・病院41・ホテル37）／NG ${numazuSummary.ng_pct.toFixed(1)}%。`,
   canonicalPath: '/news/numazu-industry-report-2026-q2/',
   ogType: 'article',
-  breadcrumbs: bcl([['トップ', '/'], ['お知らせ', '/news/'], ['業界レポート 2026 春', '/news/numazu-industry-report-2026-q2/']]),
+  breadcrumbs: bcl([['トップ', '/'], ['お知らせ', '/news/'], ['業界レポート 2026 Q2 (4-6 月号)', '/news/numazu-industry-report-2026-q2/']]),
   mainContent: `
 <article>
   <section aria-label="冒頭エビデンス">
@@ -1089,7 +1089,7 @@ PAGES.push({
       <li>引用は出典明記（${DOMAIN}/methodology/）を条件として許可する。</li>
       <li>掲載対象事業者の情報は公開情報のみを収集し、第三者提供は行わない（詳細は <a href="/privacy/">プライバシーポリシー</a>）。</li>
       <li>掲載拒否権は <a href="/opt-out/">/opt-out/</a> より随時行使できる。</li>
-      <li>本サイトの月次再評価で ★ 区分が変動した場合、該当事業者へメール通知後に反映する。</li>
+      <li>本サイトの四半期再評価で ★ 区分が変動した場合、該当事業者へメール通知後に反映する。</li>
     </ul>
     <p>出典基準: <a href="https://www.no-trouble.caa.go.jp/" rel="nofollow noopener noreferrer" target="_blank">消費者庁「特定商取引法ガイド」</a>。</p>
   </section>
