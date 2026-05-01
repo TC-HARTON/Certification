@@ -115,6 +115,18 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://certification.tcharton.com/industries/judicial-scrivener/</loc>
+    <lastmod>2026-05-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://certification.tcharton.com/industries/administrative-scrivener/</loc>
+    <lastmod>2026-05-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://certification.tcharton.com/industries/real-estate/</loc>
     <lastmod>2026-05-01</lastmod>
     <changefreq>weekly</changefreq>
@@ -133,19 +145,25 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://certification.tcharton.com/industries/dentist/</loc>
+    <loc>https://certification.tcharton.com/industries/cosmetic-clinic/</loc>
     <lastmod>2026-05-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://certification.tcharton.com/industries/hospital/</loc>
+    <loc>https://certification.tcharton.com/industries/lodging/</loc>
     <lastmod>2026-05-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://certification.tcharton.com/industries/hotel/</loc>
+    <loc>https://certification.tcharton.com/industries/clinic/</loc>
+    <lastmod>2026-05-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://certification.tcharton.com/industries/cram-school/</loc>
     <lastmod>2026-05-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -175,6 +193,18 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://certification.tcharton.com/regions/shizuoka/industries/judicial-scrivener/</loc>
+    <lastmod>2026-05-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://certification.tcharton.com/regions/shizuoka/industries/administrative-scrivener/</loc>
+    <lastmod>2026-05-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://certification.tcharton.com/regions/shizuoka/industries/real-estate/</loc>
     <lastmod>2026-05-01</lastmod>
     <changefreq>weekly</changefreq>
@@ -193,19 +223,25 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://certification.tcharton.com/regions/shizuoka/industries/dentist/</loc>
+    <loc>https://certification.tcharton.com/regions/shizuoka/industries/cosmetic-clinic/</loc>
     <lastmod>2026-05-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://certification.tcharton.com/regions/shizuoka/industries/hospital/</loc>
+    <loc>https://certification.tcharton.com/regions/shizuoka/industries/lodging/</loc>
     <lastmod>2026-05-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://certification.tcharton.com/regions/shizuoka/industries/hotel/</loc>
+    <loc>https://certification.tcharton.com/regions/shizuoka/industries/clinic/</loc>
+    <lastmod>2026-05-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://certification.tcharton.com/regions/shizuoka/industries/cram-school/</loc>
     <lastmod>2026-05-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -229,6 +265,18 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://certification.tcharton.com/regions/shizuoka/numazu/industries/judicial-scrivener/</loc>
+    <lastmod>2026-05-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://certification.tcharton.com/regions/shizuoka/numazu/industries/administrative-scrivener/</loc>
+    <lastmod>2026-05-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://certification.tcharton.com/regions/shizuoka/numazu/industries/real-estate/</loc>
     <lastmod>2026-05-01</lastmod>
     <changefreq>weekly</changefreq>
@@ -247,19 +295,25 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://certification.tcharton.com/regions/shizuoka/numazu/industries/dentist/</loc>
+    <loc>https://certification.tcharton.com/regions/shizuoka/numazu/industries/cosmetic-clinic/</loc>
     <lastmod>2026-05-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://certification.tcharton.com/regions/shizuoka/numazu/industries/hospital/</loc>
+    <loc>https://certification.tcharton.com/regions/shizuoka/numazu/industries/lodging/</loc>
     <lastmod>2026-05-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://certification.tcharton.com/regions/shizuoka/numazu/industries/hotel/</loc>
+    <loc>https://certification.tcharton.com/regions/shizuoka/numazu/industries/clinic/</loc>
+    <lastmod>2026-05-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://certification.tcharton.com/regions/shizuoka/numazu/industries/cram-school/</loc>
     <lastmod>2026-05-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -283,6 +337,18 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://certification.tcharton.com/regions/shizuoka/mishima/industries/judicial-scrivener/</loc>
+    <lastmod>2026-05-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://certification.tcharton.com/regions/shizuoka/mishima/industries/administrative-scrivener/</loc>
+    <lastmod>2026-05-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://certification.tcharton.com/regions/shizuoka/mishima/industries/real-estate/</loc>
     <lastmod>2026-05-01</lastmod>
     <changefreq>weekly</changefreq>
@@ -301,19 +367,25 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://certification.tcharton.com/regions/shizuoka/mishima/industries/dentist/</loc>
+    <loc>https://certification.tcharton.com/regions/shizuoka/mishima/industries/cosmetic-clinic/</loc>
     <lastmod>2026-05-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://certification.tcharton.com/regions/shizuoka/mishima/industries/hospital/</loc>
+    <loc>https://certification.tcharton.com/regions/shizuoka/mishima/industries/lodging/</loc>
     <lastmod>2026-05-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://certification.tcharton.com/regions/shizuoka/mishima/industries/hotel/</loc>
+    <loc>https://certification.tcharton.com/regions/shizuoka/mishima/industries/clinic/</loc>
+    <lastmod>2026-05-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://certification.tcharton.com/regions/shizuoka/mishima/industries/cram-school/</loc>
     <lastmod>2026-05-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -337,6 +409,18 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://certification.tcharton.com/regions/shizuoka/fuji/industries/judicial-scrivener/</loc>
+    <lastmod>2026-05-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://certification.tcharton.com/regions/shizuoka/fuji/industries/administrative-scrivener/</loc>
+    <lastmod>2026-05-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://certification.tcharton.com/regions/shizuoka/fuji/industries/real-estate/</loc>
     <lastmod>2026-05-01</lastmod>
     <changefreq>weekly</changefreq>
@@ -355,235 +439,169 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://certification.tcharton.com/regions/shizuoka/fuji/industries/dentist/</loc>
+    <loc>https://certification.tcharton.com/regions/shizuoka/fuji/industries/cosmetic-clinic/</loc>
     <lastmod>2026-05-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://certification.tcharton.com/regions/shizuoka/fuji/industries/hospital/</loc>
+    <loc>https://certification.tcharton.com/regions/shizuoka/fuji/industries/lodging/</loc>
     <lastmod>2026-05-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://certification.tcharton.com/regions/shizuoka/fuji/industries/hotel/</loc>
+    <loc>https://certification.tcharton.com/regions/shizuoka/fuji/industries/clinic/</loc>
     <lastmod>2026-05-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://certification.tcharton.com/regions/shizuoka/fujinomiya/</loc>
+    <loc>https://certification.tcharton.com/regions/shizuoka/fuji/industries/cram-school/</loc>
     <lastmod>2026-05-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://certification.tcharton.com/regions/shizuoka/fujinomiya/industries/tax-accountant/</loc>
+    <loc>https://certification.tcharton.com/regions/shizuoka/shizuoka/</loc>
     <lastmod>2026-05-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://certification.tcharton.com/regions/shizuoka/fujinomiya/industries/lawyer/</loc>
+    <loc>https://certification.tcharton.com/regions/shizuoka/shizuoka/industries/tax-accountant/</loc>
     <lastmod>2026-05-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://certification.tcharton.com/regions/shizuoka/fujinomiya/industries/real-estate/</loc>
+    <loc>https://certification.tcharton.com/regions/shizuoka/shizuoka/industries/lawyer/</loc>
     <lastmod>2026-05-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://certification.tcharton.com/regions/shizuoka/fujinomiya/industries/restaurant/</loc>
+    <loc>https://certification.tcharton.com/regions/shizuoka/shizuoka/industries/judicial-scrivener/</loc>
     <lastmod>2026-05-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://certification.tcharton.com/regions/shizuoka/fujinomiya/industries/beauty/</loc>
+    <loc>https://certification.tcharton.com/regions/shizuoka/shizuoka/industries/administrative-scrivener/</loc>
     <lastmod>2026-05-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://certification.tcharton.com/regions/shizuoka/fujinomiya/industries/dentist/</loc>
+    <loc>https://certification.tcharton.com/regions/shizuoka/shizuoka/industries/real-estate/</loc>
     <lastmod>2026-05-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://certification.tcharton.com/regions/shizuoka/fujinomiya/industries/hospital/</loc>
+    <loc>https://certification.tcharton.com/regions/shizuoka/shizuoka/industries/restaurant/</loc>
     <lastmod>2026-05-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://certification.tcharton.com/regions/shizuoka/fujinomiya/industries/hotel/</loc>
+    <loc>https://certification.tcharton.com/regions/shizuoka/shizuoka/industries/beauty/</loc>
     <lastmod>2026-05-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://certification.tcharton.com/regions/shizuoka/susono/</loc>
+    <loc>https://certification.tcharton.com/regions/shizuoka/shizuoka/industries/cosmetic-clinic/</loc>
     <lastmod>2026-05-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://certification.tcharton.com/regions/shizuoka/susono/industries/tax-accountant/</loc>
+    <loc>https://certification.tcharton.com/regions/shizuoka/shizuoka/industries/lodging/</loc>
     <lastmod>2026-05-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://certification.tcharton.com/regions/shizuoka/susono/industries/lawyer/</loc>
+    <loc>https://certification.tcharton.com/regions/shizuoka/shizuoka/industries/clinic/</loc>
     <lastmod>2026-05-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://certification.tcharton.com/regions/shizuoka/susono/industries/real-estate/</loc>
+    <loc>https://certification.tcharton.com/regions/shizuoka/shizuoka/industries/cram-school/</loc>
     <lastmod>2026-05-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://certification.tcharton.com/regions/shizuoka/susono/industries/restaurant/</loc>
+    <loc>https://certification.tcharton.com/regions/shizuoka/hamamatsu/</loc>
     <lastmod>2026-05-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://certification.tcharton.com/regions/shizuoka/susono/industries/beauty/</loc>
+    <loc>https://certification.tcharton.com/regions/shizuoka/hamamatsu/industries/tax-accountant/</loc>
     <lastmod>2026-05-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://certification.tcharton.com/regions/shizuoka/susono/industries/dentist/</loc>
+    <loc>https://certification.tcharton.com/regions/shizuoka/hamamatsu/industries/lawyer/</loc>
     <lastmod>2026-05-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://certification.tcharton.com/regions/shizuoka/susono/industries/hospital/</loc>
+    <loc>https://certification.tcharton.com/regions/shizuoka/hamamatsu/industries/judicial-scrivener/</loc>
     <lastmod>2026-05-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://certification.tcharton.com/regions/shizuoka/susono/industries/hotel/</loc>
+    <loc>https://certification.tcharton.com/regions/shizuoka/hamamatsu/industries/administrative-scrivener/</loc>
     <lastmod>2026-05-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://certification.tcharton.com/regions/shizuoka/nagaizumi/</loc>
+    <loc>https://certification.tcharton.com/regions/shizuoka/hamamatsu/industries/real-estate/</loc>
     <lastmod>2026-05-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://certification.tcharton.com/regions/shizuoka/nagaizumi/industries/tax-accountant/</loc>
+    <loc>https://certification.tcharton.com/regions/shizuoka/hamamatsu/industries/restaurant/</loc>
     <lastmod>2026-05-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://certification.tcharton.com/regions/shizuoka/nagaizumi/industries/lawyer/</loc>
+    <loc>https://certification.tcharton.com/regions/shizuoka/hamamatsu/industries/beauty/</loc>
     <lastmod>2026-05-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://certification.tcharton.com/regions/shizuoka/nagaizumi/industries/real-estate/</loc>
+    <loc>https://certification.tcharton.com/regions/shizuoka/hamamatsu/industries/cosmetic-clinic/</loc>
     <lastmod>2026-05-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://certification.tcharton.com/regions/shizuoka/nagaizumi/industries/restaurant/</loc>
+    <loc>https://certification.tcharton.com/regions/shizuoka/hamamatsu/industries/lodging/</loc>
     <lastmod>2026-05-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://certification.tcharton.com/regions/shizuoka/nagaizumi/industries/beauty/</loc>
+    <loc>https://certification.tcharton.com/regions/shizuoka/hamamatsu/industries/clinic/</loc>
     <lastmod>2026-05-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://certification.tcharton.com/regions/shizuoka/nagaizumi/industries/dentist/</loc>
-    <lastmod>2026-05-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://certification.tcharton.com/regions/shizuoka/nagaizumi/industries/hospital/</loc>
-    <lastmod>2026-05-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://certification.tcharton.com/regions/shizuoka/nagaizumi/industries/hotel/</loc>
-    <lastmod>2026-05-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://certification.tcharton.com/regions/shizuoka/shimizu/</loc>
-    <lastmod>2026-05-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://certification.tcharton.com/regions/shizuoka/shimizu/industries/tax-accountant/</loc>
-    <lastmod>2026-05-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://certification.tcharton.com/regions/shizuoka/shimizu/industries/lawyer/</loc>
-    <lastmod>2026-05-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://certification.tcharton.com/regions/shizuoka/shimizu/industries/real-estate/</loc>
-    <lastmod>2026-05-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://certification.tcharton.com/regions/shizuoka/shimizu/industries/restaurant/</loc>
-    <lastmod>2026-05-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://certification.tcharton.com/regions/shizuoka/shimizu/industries/beauty/</loc>
-    <lastmod>2026-05-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://certification.tcharton.com/regions/shizuoka/shimizu/industries/dentist/</loc>
-    <lastmod>2026-05-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://certification.tcharton.com/regions/shizuoka/shimizu/industries/hospital/</loc>
-    <lastmod>2026-05-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://certification.tcharton.com/regions/shizuoka/shimizu/industries/hotel/</loc>
+    <loc>https://certification.tcharton.com/regions/shizuoka/hamamatsu/industries/cram-school/</loc>
     <lastmod>2026-05-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>

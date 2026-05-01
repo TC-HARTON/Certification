@@ -704,3 +704,176 @@ MASTER-PLAN.md は現在 disk 上で v1.1.7 表示だが、**公式版は v1.1.6
 4. v1.12.2 (B) 現状診断ページ（CR-2/CR-3 解消後）
 5. v1.12.2 (C) ランキング 0 件掲載開始
 6. Phase 0.5 完了後に比較ページ実装
+
+---
+
+## 【追記 2026-05-01 / v1.14】v2.2 議題 Q-2.2-1〜4 全件 ① 回答 + MASTER-PLAN v1.2.0 改訂承認
+
+### Q-2.2-1: Phase 1 主要 20 都市発注 → ✅ 承認 + 都市選定 ① 調整
+
+⑤ 案 25 件相当 → ① 確定 **20 都市**（東京 4 区 → 2 区縮小 / 北九州・高松・松山 → Phase 3 類似地方都市枠へ移動）
+
+詳細は `scanner/INSTRUCTION-FROM-ROOT.md` v1.14 §「Phase 1 = 20 都市 × 10 業種」参照。
+
+### Q-2.2-2: 業種拡張 → ✅ Phase 1 = 10 業種（士業セット完成）/ Phase 2 = 13 業種
+
+| Phase | 業種追加 | 理由 |
+|---|---|---|
+| **Phase 1** | 既存 8 + **司法書士 + 行政書士** = **10 業種** | 税理士・弁護士の同類士業 / カテゴリ整合性高 / Phase 1 で士業セット完成 |
+| Phase 2 | +**整体・動物病院**（学習塾は Phase 1 候補繰上検討）= 13 業種 | 個人事業主層 / Phase 1 都市網羅後の業種焦点化 |
+
+学習塾は ⑤ で Phase 1 導入是非を判断し、判断時に ① 即時エスカレーション可。
+
+### Q-2.2-3: Wikidata Q 番号 HSCEL §3.3 検証 → ✅ 承認 + 全件 API verbatim 検証 mandatory
+
+⑤ で以下 AND 完遂後に ① 承認 → ④ 発注:
+
+1. **Phase 1 都市 20 件 全件**の Wikidata Q 番号 公式 API verbatim 検証
+2. **業種拡張 2 件**（司法書士・行政書士）の Wikidata Q + Schema.org type + 公的ソース URL verbatim 検証
+3. REPORT-TO-ROOT-FROM-CERTIFICATION.md §HSCEL-V1 §3 セクションに **「事実確認証跡」全件併記**
+4. **commit せず** disk artifact + REPORT のみ提示で ① 承認待ち（HSCEL §5 順序遵守）
+
+⑤ の Wikidata 12 件誤り教訓を踏まえ、**HSCEL §3.3 違反検出時は §6.1 Tier 1 確実適用** を改めて通告。
+
+### Q-2.2-4: MASTER-PLAN v1.2.0 正式改訂 → ✅ 議題承認 / v1.1.7 redo と並行可
+
+| 改訂版 | スコープ | 着手時期 |
+|---|---|---|
+| **v1.1.7**（ブランド戦略 / dogfooding / 沼津起点）| **最優先 / redo 命令継続**（HSCEL §6.1 Tier 1 未解消）| 即時 |
+| **v1.2.0**（§0.5 ロードマップ Phase 1-3 段階展開 + 業種拡張）| 議題承認 | **Phase 0.5 完了後**（実測データ整備で説得力強化）|
+
+統合方式（v1.2.0 が v1.1.7 を包含する形で一括 commit）も可。⑤ 判断委任。
+
+### v2.2 議題 評価コメント
+
+- **20 都市 + 業種拡張の論理性**は妥当 → ⑤ の戦略思考力を高評価
+- ただし「東京 4 区を 1 都市カウント」は誤り（都市 20 件と申告したが実質 25 件相当）→ HSCEL §3.3 物理確認の対象（⑤ で件数 grep 検証義務）
+- ブランド戦略「地方民主化」と政令市集中の矛盾を ⑤ が指摘していない → ① で先回り修正（Phase 3 類似地方都市枠へ移動）
+- 業種拡張 5 件を Phase 1 一括は過大負荷 → ① で 2 件のみ Phase 1 / 残 3 件 Phase 2 へ分離
+
+### ⑤ 次セッション着手優先順（v1.13 §「次セッション着手優先順」更新）
+
+1. **MASTER-PLAN v1.1.7 草案 redo**（HSCEL Tier 1 解消最優先）
+2. UX/UI Phase A（★ SVG / スクリーンショット自動取得 / カードレイアウト）
+3. v1.12.2 (A) 沼津業界レポート 2026-05 月次号 完成
+4. **Phase 1 都市 20 件 + 業種 +2 の Wikidata Q verbatim 検証** ← v2.2 連動 / 新規追加
+5. v1.12.2 (B) 現状診断ページ（CR-2/CR-3 解消後）
+6. v1.12.2 (C) ランキング 0 件掲載開始
+7. Phase 0.5 完了後に比較ページ実装 → MASTER-PLAN v1.2.0 改訂着手
+
+---
+
+## 【追記 2026-05-01 / v1.15】11 業種一律化 + Phase 0.5 都市 5 件確定 連動
+
+### 概要
+
+代表確定（2026-05-01）+ ④ v1.7 賛同を ① 承認。詳細は `scanner/INSTRUCTION-FROM-ROOT.md` v1.15 §「11 業種一律化」参照。
+
+### ⑤ への連動指示
+
+#### 1. data/industries.json 拡張
+
+11 業種一律化に整合させる。新規 3 業種（美容クリニック / 学習塾 / 司法書士・行政書士）を追加 / 歯科医院は「クリニック・診療所」へ集約済。
+
+#### 2. Wikidata Q 番号 verbatim 検証（HSCEL §3.3 mandatory）
+
+新規 4 業種（司法書士・行政書士・美容クリニック・学習塾）の Wikidata Q + Schema.org type + 公的ソース URL verbatim 検証を ④ Step 0 と並行実施。`certification/data/industries-verification-v1.15.csv` 出力 → ① 報告。
+
+#### 3. Phase 0.5 都市 5 件への対応
+
+業界レポート / ランキング初期投入で **5 都市 × 11 業種 = 約 275-550 件**の構造に修正。
+
+旧 7 市町構造ファイル（regions-summary.json 等）は**月次運用整合性**のため削除せず、メタデータに「v1.14 旧 7 市町構造（2026-05-01 v1.15 で 5 都市縮小）」と注記。
+
+#### 4. 比較ページ設計（Phase 0.5 完了後）
+
+5 都市の cross-tab で「沼津 vs 三島 vs 富士 vs 静岡 vs 浜松」の県内 5 都市比較ページを実装。
+
+#### 5. v1.1.7 草案 redo + v1.2.0 改訂と並行
+
+- v1.1.7 redo（最優先 / HSCEL Tier 1 解消）+ v1.2.0 §0.5 改訂（11 業種一律化 + Phase 0.5 5 都市反映）を統合 commit 可
+- 着手順序: `/feature-dev:feature-dev` + `/requesting-code-review` 並列 3 reviewer + `/receiving-code-review` + REPORT §HSCEL-V1 §3 + ① 承認 → commit
+
+---
+
+## 【追記 2026-05-01 / v1.15.1】役割分担明示: Wikidata Q 番号 API 取得 ⑤ 専担
+
+代表 2026-05-01 指示で **Wikidata Q 番号 公式 API verbatim 検証**は ⑤ certification 専担に確定（④ は厳格スキャンに徹する）。
+
+### ⑤ 出力ファイル（mandatory）
+
+| ファイル | 内容 | 提出先 |
+|---|---|---|
+| `certification/data/industries-verification-v1.15.csv` | 11 業種（既存 7 + 新規 4: 司法書士・行政書士・美容クリニック・学習塾）の Q 番号 / Schema.org type / Place API primary type / 公式 API URL / 確認日時 | ④ scanner |
+| `certification/data/regions-verification-v1.15.csv` | Phase 0.5 都市 5 件 + Phase 1 都市 20 件 の Q 番号 / Wikidata URL / 確認日時 | ④ scanner |
+
+### 着手前提（HSCEL §3.3 mandatory）
+
+- 1 件ずつ wikidata.org REST API verbatim 検索（推測コピペ禁止 / v2.1 Wikidata 12 件誤り教訓）
+- Schema.org URI は schema.org 公式仕様 verbatim 確認
+- Place API primary type は Google Places API (New) 公式 type list verbatim
+- 全件検証完了 → REPORT §HSCEL-V1 §3 「事実確認証跡」に併記 → ① 承認 → ④ へ CSV 共有
+
+### 役割分担サマリ
+
+| 領域 | 担当 |
+|---|---|
+| Wikidata Q 番号 API 取得 / Schema.org / Place API type 検証 | **⑤ 専担** |
+| scanner.py 設定反映 + Place API クエリ実装 + スキャン実行 | ④ 専担 |
+| 認定サイト構築 / ランキング / 業界レポート / 比較ページ | ⑤ 専担 |
+| 機械検証エンジン正本化 / S クラス基準保持 | ④ 専担 |
+
+---
+
+## 【追記 2026-05-01 / v1.16】Phase 0.5 完了 + 業界レポート拡張指示
+
+### Phase 0.5 完了データ受領
+
+④ から `certification/data/phase-0.5-results.csv`（902 行 / 5 都市 × 11 業種）受領済。
+
+### ⑤ への展開指示
+
+#### 1. 「沼津業界レポート 2026-05」→「静岡県業界レポート 2026-05」拡張
+
+v1.12.2 (A) で発令済の業界レポート URL `/news/numazu-industry-report-2026-05/` を **静岡県全体（5 都市 902 件）** に拡張:
+
+- 新 URL: `/news/shizuoka-industry-report-2026-05/`
+- 旧 URL `/news/numazu-industry-report-2026-05/` → 301 redirect 維持（過去号アーカイブ）
+- 記載必須要素:
+  - 5 都市別実測サマリ（沼津 / 三島 / 富士 / 静岡 / 浜松 各 n / NG% / 中央値 / max）
+  - 11 業種別実測サマリ（行政書士 48.6% / 美容クリニック 46.5% 等）
+  - 致命的 NG 内訳（WP 管理面露出 25.7% を圧倒的多数として強調）
+  - 自己実証体マーカー（業界中央値 24 vs tcharton 90 = **3.8 倍ギャップ**）
+  - 「902 件中 ★ 認定 0 件」を堂々と明示（隠蔽は §0.0.1 sycophancy）
+
+#### 2. 比較ページ実装着手承認
+
+5 都市 cross-tab 比較ページ実装:
+- `/comparison/regions/shizuoka/` — 県内 5 都市並列比較
+- `/comparison/regions/shizuoka/{都市}/` — 各都市詳細
+- Dataset JSON-LD + DataDownload + ItemList + FAQPage（v2.1 §3 設計を採用）
+
+#### 3. data/regions-summary.json 更新
+
+- 5 都市 × 11 業種 cross-tab を JSON 化
+- 月次再判定（2026-06-01 起点）連動構造
+
+#### 4. v1.1.7 草案 redo + v1.2.0 改訂 統合
+
+Phase 0.5 完了で実測データ整備完了 → v1.2.0 §0.5 ロードマップ改訂着手可（v1.1.7 redo と統合 commit 推奨）。
+
+### Wikidata Q 取得タスク（v1.15.1 役割分担）
+
+⑤ 専担で残タスク:
+- **Phase 1 都市 20 件の Wikidata Q verbatim 検証**（北海道〜九州沖縄 20 都市 + 静岡市 Q174691 / 浜松市 Q185125 既検証済）
+- 出力: `certification/data/regions-verification-v1.15.csv` → ④ 共有 → Phase 1 着手前提
+
+### HSCEL §5 順序遵守
+
+Phase 0.5 業界レポート + 比較ページ実装は **新規大規模実装** → HSCEL §3.1 4 Skill 全件適用必須:
+1. `/feature-dev:feature-dev` Phase 1-7
+2. `/requesting-code-review` 並列 3 reviewer
+3. `/receiving-code-review`
+4. `/gstack` 本番実機
+5. REPORT に §HSCEL-V1 §3 セクション完全記載
+6. **commit せず** disk artifact + REPORT で ① 承認待ち

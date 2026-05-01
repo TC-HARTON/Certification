@@ -20,8 +20,8 @@
   var form = document.getElementById('search-form');
   if (!form) return;
 
-  var INDUSTRY_KEYS = ["tax-accountant","lawyer","real-estate","restaurant","beauty","dentist","hospital","hotel"];
-  var REGION_KEYS = ["shizuoka","shizuoka/numazu","shizuoka/mishima","shizuoka/fuji","shizuoka/fujinomiya","shizuoka/susono","shizuoka/nagaizumi","shizuoka/shimizu"];
+  var INDUSTRY_KEYS = ["tax-accountant","lawyer","judicial-scrivener","administrative-scrivener","real-estate","restaurant","beauty","cosmetic-clinic","lodging","clinic","cram-school"];
+  var REGION_KEYS = ["shizuoka","shizuoka/numazu","shizuoka/mishima","shizuoka/fuji","shizuoka/shizuoka","shizuoka/hamamatsu"];
   var RATING_KEYS = ["1star","2star","3star"];
 
   function isAllowed(value, list) {

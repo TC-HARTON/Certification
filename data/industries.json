@@ -4,9 +4,25 @@
     "label_short": "税理士",
     "wikidata": "Q688576",
     "wikidata_uri": "https://www.wikidata.org/wiki/Q688576",
-    "wikidata_secondary": ["https://www.wikidata.org/wiki/Q11392214"],
-    "schema_type": ["LocalBusiness", "ProfessionalService"],
-    "keywords": ["税理士", "会計士", "公認会計士", "確定申告", "記帳代行", "決算", "税務署", "青色申告", "相続税申告", "法人決算"],
+    "wikidata_secondary": [
+      "https://www.wikidata.org/wiki/Q11392214"
+    ],
+    "schema_type": [
+      "LocalBusiness",
+      "ProfessionalService"
+    ],
+    "keywords": [
+      "税理士",
+      "会計士",
+      "公認会計士",
+      "確定申告",
+      "記帳代行",
+      "決算",
+      "税務署",
+      "青色申告",
+      "相続税申告",
+      "法人決算"
+    ],
     "evaluation_points": [
       "HTTPS 常時 SSL 化(機密性の高い財務情報を扱うため必須 / 致命的 NG 直結)",
       "問合せフォームの Trusted Types + CSP 適用(顧客情報窃取リスク防止)",
@@ -25,10 +41,26 @@
       "AI 検索 (ChatGPT/Perplexity) で事務所名検索時に正しい URL が引用されるか"
     ],
     "public_sources": [
-      { "label": "国税庁 公式サイト", "url": "https://www.nta.go.jp/", "cite": "https://www.nta.go.jp/" },
-      { "label": "日本税理士会連合会", "url": "https://www.nichizeiren.or.jp/", "cite": "https://www.nichizeiren.or.jp/" },
-      { "label": "日本公認会計士協会", "url": "https://jicpa.or.jp/", "cite": "https://jicpa.or.jp/" },
-      { "label": "税理士法 (e-Gov 法令検索)", "url": "https://laws.e-gov.go.jp/law/326AC0000000237", "cite": "https://laws.e-gov.go.jp/law/326AC0000000237" }
+      {
+        "label": "国税庁 公式サイト",
+        "url": "https://www.nta.go.jp/",
+        "cite": "https://www.nta.go.jp/"
+      },
+      {
+        "label": "日本税理士会連合会",
+        "url": "https://www.nichizeiren.or.jp/",
+        "cite": "https://www.nichizeiren.or.jp/"
+      },
+      {
+        "label": "日本公認会計士協会",
+        "url": "https://jicpa.or.jp/",
+        "cite": "https://jicpa.or.jp/"
+      },
+      {
+        "label": "税理士法 (e-Gov 法令検索)",
+        "url": "https://laws.e-gov.go.jp/law/326AC0000000237",
+        "cite": "https://laws.e-gov.go.jp/law/326AC0000000237"
+      }
     ],
     "faq_industry": [
       {
@@ -58,9 +90,23 @@
     "label_short": "弁護士",
     "wikidata": "Q40348",
     "wikidata_uri": "https://www.wikidata.org/wiki/Q40348",
-    "wikidata_secondary": ["https://www.wikidata.org/wiki/Q613142"],
-    "schema_type": ["LocalBusiness", "ProfessionalService", "LegalService"],
-    "keywords": ["弁護士", "法律相談", "顧問弁護士", "弁護士事務所", "法律事務所", "民事訴訟", "刑事弁護"],
+    "wikidata_secondary": [
+      "https://www.wikidata.org/wiki/Q613142"
+    ],
+    "schema_type": [
+      "LocalBusiness",
+      "ProfessionalService",
+      "LegalService"
+    ],
+    "keywords": [
+      "弁護士",
+      "法律相談",
+      "顧問弁護士",
+      "弁護士事務所",
+      "法律事務所",
+      "民事訴訟",
+      "刑事弁護"
+    ],
     "evaluation_points": [
       "Trusted Types CSP 適用(法律相談フォームの XSS 経路完全遮断)",
       "プライバシーポリシー充実度(個人情報保護法準拠 / WCAG 2.2 AA フォーム)",
@@ -79,9 +125,21 @@
       "GBP 連携 + areaServed 記述で地域 SEO 強化されているか"
     ],
     "public_sources": [
-      { "label": "日本弁護士連合会", "url": "https://www.nichibenren.or.jp/", "cite": "https://www.nichibenren.or.jp/" },
-      { "label": "弁護士法 (e-Gov 法令検索)", "url": "https://laws.e-gov.go.jp/law/324AC0000000205", "cite": "https://laws.e-gov.go.jp/law/324AC0000000205" },
-      { "label": "法務省 公式サイト", "url": "https://www.moj.go.jp/", "cite": "https://www.moj.go.jp/" }
+      {
+        "label": "日本弁護士連合会",
+        "url": "https://www.nichibenren.or.jp/",
+        "cite": "https://www.nichibenren.or.jp/"
+      },
+      {
+        "label": "弁護士法 (e-Gov 法令検索)",
+        "url": "https://laws.e-gov.go.jp/law/324AC0000000205",
+        "cite": "https://laws.e-gov.go.jp/law/324AC0000000205"
+      },
+      {
+        "label": "法務省 公式サイト",
+        "url": "https://www.moj.go.jp/",
+        "cite": "https://www.moj.go.jp/"
+      }
     ],
     "faq_industry": [
       {
@@ -106,14 +164,188 @@
       }
     ]
   },
+  "judicial-scrivener": {
+    "label": "司法書士",
+    "label_short": "司法書士",
+    "wikidata": "Q4390235",
+    "wikidata_uri": "https://www.wikidata.org/wiki/Q4390235",
+    "wikidata_secondary": [
+      "https://www.wikidata.org/wiki/Q11412262"
+    ],
+    "schema_type": [
+      "LocalBusiness",
+      "ProfessionalService",
+      "LegalService"
+    ],
+    "keywords": [
+      "司法書士",
+      "登記",
+      "相続登記",
+      "不動産登記",
+      "商業登記",
+      "成年後見",
+      "債務整理",
+      "国家資格"
+    ],
+    "evaluation_points": [
+      "Trusted Types CSP 適用（個人情報窃取リスク防止 / 致命的 NG 直結）",
+      "相続・登記相談フォームの SSL + form-action self CSP 制御",
+      "JSON-LD LegalService + ProfessionalService の重ね合わせ実装",
+      "司法書士法 (e-Gov) 引用 + 公的リンク 5+ 件 (HSCEL §G-2)",
+      "国家資格者 (司法書士登録番号) の Schema.org Person + hasOccupation 記述"
+    ],
+    "checklist": [
+      "HTTPS + HSTS preload 登録済 / SSL 期限切れなしか",
+      "相談フォームが Trusted Types + CSP form-action で保護されているか",
+      "JSON-LD で LegalService + ProfessionalService が両方記述されているか",
+      "司法書士登録番号 + 所属司法書士会が HTML で機械可読か",
+      "<blockquote cite> で司法書士法 (e-Gov) を引用しているか",
+      "相続登記 / 不動産登記 / 商業登記 等のサービスが Schema.org Service で構造化されているか",
+      "GBP 連携 + areaServed 記述で地域 SEO 強化されているか",
+      "WCAG 2.2 AA: フォーム input に label for 関連付け済か"
+    ],
+    "public_sources": [
+      {
+        "label": "日本司法書士会連合会",
+        "url": "https://www.shiho-shoshi.or.jp/",
+        "cite": "https://www.shiho-shoshi.or.jp/"
+      },
+      {
+        "label": "司法書士法 (e-Gov 法令検索)",
+        "url": "https://laws.e-gov.go.jp/law/325AC0000000197",
+        "cite": "https://laws.e-gov.go.jp/law/325AC0000000197"
+      },
+      {
+        "label": "法務省 公式サイト",
+        "url": "https://www.moj.go.jp/",
+        "cite": "https://www.moj.go.jp/"
+      }
+    ],
+    "faq_industry": [
+      {
+        "q": "{city} で信頼できる {industry} 事務所のサイトを見分けるには？",
+        "a": "HARTON Certified は WEB 品質を 4 軸機械検証で客観評価し、LegalService Schema.org 適合 + HTTPS + Trusted Types CSP の 3 条件を必須とする。{city} の認定状況は本ページ上部で確認可能。"
+      },
+      {
+        "q": "{city} の {industry} サイトで HARTON Certified 認定件数は？",
+        "a": "Phase 0.5 静岡県 5 都市の {industry} サイトを {n} 件機械検証し、★ 認定 {eligible} 件 / 業界最高点 {max} 点 / 致命的 NG {ng} 件（{ng_pct}）（2026-04-30 時点）。詳細は静岡県 WEB 品質業界レポート 2026 Q3 (7-9 月号)に公開。"
+      },
+      {
+        "q": "{industry} サイトで致命的 NG となる項目は？",
+        "a": "HTTPS 非対応 / SSL 証明書無効 / 個人情報フォーム CSP 未設定 / CMS バージョン情報露出 の 4 項目が一発除外条件。司法書士は個人情報・登記情報を扱うため特に致命的。"
+      },
+      {
+        "q": "{industry} の Schema.org 推奨タイプは？",
+        "a": "LegalService + ProfessionalService の重ね合わせを推奨する。サービスとして「相続登記」「不動産登記」「商業登記」「成年後見」を Service 子要素で構造化することで AI 検索引用率が向上する。"
+      },
+      {
+        "q": "{industry} 事務所サイトが ★★★ を取得するための最重要改善は？",
+        "a": "(1) HTTPS + HSTS preload 登録 (2) JSON-LD LegalService 完全実装 + 司法書士登録番号機械可読化 (3) Trusted Types CSP の順で改善する。"
+      }
+    ]
+  },
+  "administrative-scrivener": {
+    "label": "行政書士",
+    "label_short": "行政書士",
+    "wikidata": "Q869212",
+    "wikidata_uri": "https://www.wikidata.org/wiki/Q869212",
+    "wikidata_secondary": [
+      "https://www.wikidata.org/wiki/Q11626106"
+    ],
+    "schema_type": [
+      "LocalBusiness",
+      "ProfessionalService",
+      "LegalService"
+    ],
+    "keywords": [
+      "行政書士",
+      "許認可",
+      "建設業許可",
+      "飲食店営業許可",
+      "遺言相続",
+      "在留資格",
+      "国家資格"
+    ],
+    "evaluation_points": [
+      "Trusted Types CSP 適用（個人情報窃取リスク防止 / 致命的 NG 直結）",
+      "許認可申請フォームの SSL + form-action self CSP 制御",
+      "JSON-LD LegalService + ProfessionalService の重ね合わせ実装",
+      "行政書士法 (e-Gov) 引用 + 公的リンク 5+ 件 (HSCEL §G-2)",
+      "国家資格者 (行政書士登録番号) の Schema.org Person + hasOccupation 記述"
+    ],
+    "checklist": [
+      "HTTPS + HSTS preload 登録済 / SSL 期限切れなしか",
+      "相談フォームが Trusted Types + CSP form-action で保護されているか",
+      "JSON-LD で LegalService + ProfessionalService が両方記述されているか",
+      "行政書士登録番号 + 所属行政書士会が HTML で機械可読か",
+      "<blockquote cite> で行政書士法 (e-Gov) を引用しているか",
+      "許認可 / 遺言相続 / 在留資格 等のサービスが Schema.org Service で構造化されているか",
+      "GBP 連携 + areaServed 記述で地域 SEO 強化されているか",
+      "WCAG 2.2 AA: フォーム input に label for 関連付け済か"
+    ],
+    "public_sources": [
+      {
+        "label": "日本行政書士会連合会",
+        "url": "https://www.gyosei.or.jp/",
+        "cite": "https://www.gyosei.or.jp/"
+      },
+      {
+        "label": "行政書士法 (e-Gov 法令検索)",
+        "url": "https://laws.e-gov.go.jp/law/326AC0000000004",
+        "cite": "https://laws.e-gov.go.jp/law/326AC0000000004"
+      },
+      {
+        "label": "総務省 公式サイト",
+        "url": "https://www.soumu.go.jp/",
+        "cite": "https://www.soumu.go.jp/"
+      }
+    ],
+    "faq_industry": [
+      {
+        "q": "{city} で信頼できる {industry} 事務所のサイトを見分けるには？",
+        "a": "HARTON Certified は WEB 品質を 4 軸機械検証で客観評価し、LegalService Schema.org 適合 + HTTPS + Trusted Types CSP の 3 条件を必須とする。{city} の認定状況は本ページ上部で確認可能。"
+      },
+      {
+        "q": "{city} の {industry} サイトで HARTON Certified 認定件数は？",
+        "a": "Phase 0.5 静岡県 5 都市の {industry} サイトを {n} 件機械検証し、★ 認定 {eligible} 件 / 業界最高点 {max} 点 / 致命的 NG {ng} 件（{ng_pct}）（2026-04-30 時点）。詳細は静岡県 WEB 品質業界レポート 2026 Q3 (7-9 月号)に公開。"
+      },
+      {
+        "q": "{industry} サイトで致命的 NG となる項目は？",
+        "a": "HTTPS 非対応 / SSL 証明書無効 / 個人情報フォーム CSP 未設定 / CMS バージョン情報露出 の 4 項目が一発除外条件。"
+      },
+      {
+        "q": "{industry} の Schema.org 推奨タイプは？",
+        "a": "LegalService + ProfessionalService の重ね合わせを推奨する。サービスとして「建設業許可」「飲食店営業許可」「遺言相続」「在留資格」を Service 子要素で構造化することで AI 検索引用率が向上する。"
+      },
+      {
+        "q": "{industry} 事務所サイトが ★★★ を取得するための最重要改善は？",
+        "a": "(1) HTTPS + HSTS preload 登録 (2) JSON-LD LegalService 完全実装 + 行政書士登録番号機械可読化 (3) Trusted Types CSP の順で改善する。"
+      }
+    ]
+  },
   "real-estate": {
     "label": "不動産仲介",
     "label_short": "不動産",
     "wikidata": "Q519076",
     "wikidata_uri": "https://www.wikidata.org/wiki/Q519076",
-    "wikidata_secondary": ["https://www.wikidata.org/wiki/Q1660104"],
-    "schema_type": ["LocalBusiness", "RealEstateAgent"],
-    "keywords": ["不動産", "仲介", "賃貸", "売買", "物件", "宅建", "不動産会社", "マンション", "戸建て"],
+    "wikidata_secondary": [
+      "https://www.wikidata.org/wiki/Q1660104"
+    ],
+    "schema_type": [
+      "LocalBusiness",
+      "RealEstateAgent"
+    ],
+    "keywords": [
+      "不動産",
+      "仲介",
+      "賃貸",
+      "売買",
+      "物件",
+      "宅建",
+      "不動産会社",
+      "マンション",
+      "戸建て"
+    ],
     "evaluation_points": [
       "物件ページの Schema.org RealEstateAgent + Place 構造化",
       "地図埋込の HTTPS 対応 (Google Maps iframe / frame-src CSP 整合)",
@@ -132,9 +364,21 @@
       "GBP 連携 + 営業時間 + areaServed 記述で地域検索強化されているか"
     ],
     "public_sources": [
-      { "label": "国土交通省 公式サイト", "url": "https://www.mlit.go.jp/", "cite": "https://www.mlit.go.jp/" },
-      { "label": "宅地建物取引業法 (e-Gov 法令検索)", "url": "https://laws.e-gov.go.jp/law/327AC0000000176", "cite": "https://laws.e-gov.go.jp/law/327AC0000000176" },
-      { "label": "不動産流通推進センター", "url": "https://www.retpc.jp/", "cite": "https://www.retpc.jp/" }
+      {
+        "label": "国土交通省 公式サイト",
+        "url": "https://www.mlit.go.jp/",
+        "cite": "https://www.mlit.go.jp/"
+      },
+      {
+        "label": "宅地建物取引業法 (e-Gov 法令検索)",
+        "url": "https://laws.e-gov.go.jp/law/327AC0000000176",
+        "cite": "https://laws.e-gov.go.jp/law/327AC0000000176"
+      },
+      {
+        "label": "不動産流通推進センター",
+        "url": "https://www.retpc.jp/",
+        "cite": "https://www.retpc.jp/"
+      }
     ],
     "faq_industry": [
       {
@@ -164,9 +408,24 @@
     "label_short": "飲食",
     "wikidata": "Q11707",
     "wikidata_uri": "https://www.wikidata.org/wiki/Q11707",
-    "wikidata_secondary": ["https://www.wikidata.org/wiki/Q11666766"],
-    "schema_type": ["LocalBusiness", "Restaurant", "FoodEstablishment"],
-    "keywords": ["飲食店", "レストラン", "カフェ", "居酒屋", "ラーメン", "営業時間", "メニュー", "予約"],
+    "wikidata_secondary": [
+      "https://www.wikidata.org/wiki/Q11666766"
+    ],
+    "schema_type": [
+      "LocalBusiness",
+      "Restaurant",
+      "FoodEstablishment"
+    ],
+    "keywords": [
+      "飲食店",
+      "レストラン",
+      "カフェ",
+      "居酒屋",
+      "ラーメン",
+      "営業時間",
+      "メニュー",
+      "予約"
+    ],
     "evaluation_points": [
       "Schema.org Restaurant + servesCuisine + menu の構造化",
       "営業時間の openingHours machine-readable 表記 (AI 検索引用必須)",
@@ -185,9 +444,21 @@
       "AI 検索 (ChatGPT/Perplexity) で店名検索時に営業時間 + 住所が引用されるか"
     ],
     "public_sources": [
-      { "label": "厚生労働省 食品衛生", "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000167180.html", "cite": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000167180.html" },
-      { "label": "食品衛生法 (e-Gov 法令検索)", "url": "https://laws.e-gov.go.jp/law/322AC0000000233", "cite": "https://laws.e-gov.go.jp/law/322AC0000000233" },
-      { "label": "日本食品衛生協会", "url": "https://www.n-shokuei.jp/", "cite": "https://www.n-shokuei.jp/" }
+      {
+        "label": "厚生労働省 食品衛生",
+        "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000167180.html",
+        "cite": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000167180.html"
+      },
+      {
+        "label": "食品衛生法 (e-Gov 法令検索)",
+        "url": "https://laws.e-gov.go.jp/law/322AC0000000233",
+        "cite": "https://laws.e-gov.go.jp/law/322AC0000000233"
+      },
+      {
+        "label": "日本食品衛生協会",
+        "url": "https://www.n-shokuei.jp/",
+        "cite": "https://www.n-shokuei.jp/"
+      }
     ],
     "faq_industry": [
       {
@@ -217,9 +488,24 @@
     "label_short": "美容",
     "wikidata": "Q1195245",
     "wikidata_uri": "https://www.wikidata.org/wiki/Q1195245",
-    "wikidata_secondary": ["https://www.wikidata.org/wiki/Q11265853"],
-    "schema_type": ["LocalBusiness", "BeautySalon", "HairSalon"],
-    "keywords": ["美容院", "美容室", "ヘアサロン", "カット", "カラー", "パーマ", "トリートメント", "予約"],
+    "wikidata_secondary": [
+      "https://www.wikidata.org/wiki/Q11265853"
+    ],
+    "schema_type": [
+      "LocalBusiness",
+      "BeautySalon",
+      "HairSalon"
+    ],
+    "keywords": [
+      "美容院",
+      "美容室",
+      "ヘアサロン",
+      "カット",
+      "カラー",
+      "パーマ",
+      "トリートメント",
+      "予約"
+    ],
     "evaluation_points": [
       "Schema.org BeautySalon + HairSalon の重ね合わせ実装",
       "予約フォーム / 外部予約 (ホットペッパー等) の HTTPS 整合 + CSP",
@@ -238,9 +524,21 @@
       "GBP 連携 + 写真 + 口コミが充実しているか"
     ],
     "public_sources": [
-      { "label": "厚生労働省 生活衛生", "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000201453.html", "cite": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000201453.html" },
-      { "label": "美容師法 (e-Gov 法令検索)", "url": "https://laws.e-gov.go.jp/law/322AC0000000163", "cite": "https://laws.e-gov.go.jp/law/322AC0000000163" },
-      { "label": "全日本美容業生活衛生同業組合連合会", "url": "https://www.biyo.or.jp/", "cite": "https://www.biyo.or.jp/" }
+      {
+        "label": "厚生労働省 生活衛生",
+        "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000201453.html",
+        "cite": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000201453.html"
+      },
+      {
+        "label": "美容師法 (e-Gov 法令検索)",
+        "url": "https://laws.e-gov.go.jp/law/322AC0000000163",
+        "cite": "https://laws.e-gov.go.jp/law/322AC0000000163"
+      },
+      {
+        "label": "全日本美容業生活衛生同業組合連合会",
+        "url": "https://www.biyo.or.jp/",
+        "cite": "https://www.biyo.or.jp/"
+      }
     ],
     "faq_industry": [
       {
@@ -265,121 +563,112 @@
       }
     ]
   },
-  "dentist": {
-    "label": "歯科医院",
-    "label_short": "歯科",
-    "wikidata": "Q2979300",
-    "wikidata_uri": "https://www.wikidata.org/wiki/Q2979300",
-    "wikidata_secondary": ["https://www.wikidata.org/wiki/Q27349"],
-    "schema_type": ["LocalBusiness", "MedicalBusiness", "Dentist"],
-    "keywords": ["歯科", "歯科医院", "歯科医師", "虫歯治療", "予防歯科", "矯正歯科", "インプラント", "小児歯科", "歯周病", "ホワイトニング"],
+  "cosmetic-clinic": {
+    "label": "美容クリニック",
+    "label_short": "美容クリニック",
+    "wikidata": "Q15724722",
+    "wikidata_uri": "https://www.wikidata.org/wiki/Q15724722",
+    "wikidata_secondary": [
+      "https://www.wikidata.org/wiki/Q11608953",
+      "https://www.wikidata.org/wiki/Q3675172"
+    ],
+    "schema_type": [
+      "LocalBusiness",
+      "MedicalBusiness",
+      "MedicalClinic"
+    ],
+    "keywords": [
+      "美容クリニック",
+      "美容皮膚科",
+      "美容外科",
+      "レーザー脱毛",
+      "シミ取り",
+      "ボトックス",
+      "ヒアルロン酸",
+      "自由診療"
+    ],
     "evaluation_points": [
-      "患者情報フォームの HTTPS + Trusted Types CSP 適用(個人医療情報漏洩防止 / 致命的 NG 直結)",
-      "Schema.org Dentist + MedicalBusiness + openingHoursSpecification の完全実装",
-      "診療科目・治療メニューの Schema.org MedicalTherapy または Service 子要素による構造化",
-      "診療予約フォーム SSL 保護 + form-action self CSP 制御",
-      "GBP 連携 + 写真ギャラリー alt 充足 + Wikidata Q2979300 sameAs"
+      "カウンセリング予約フォームの HTTPS + Trusted Types CSP 適用 (個人情報・施術情報保護 / 致命的 NG 直結)",
+      "Schema.org MedicalClinic + MedicalBusiness + medicalSpecialty (DermatologyOrPlasticSurgery) 構造化",
+      "施術メニュー + 料金体系の Schema.org Service + Offer による透明な記述",
+      "症例写真の alt + plastic-surgery 該当時の患者同意明記",
+      "WCAG 2.2 AA + 高解像度施術画像の Core Web Vitals 最適化"
     ],
     "checklist": [
-      "HTTPS 配信 + HSTS preload 登録済 / SSL 期限切れなしか",
-      "診療申込フォームが Trusted Types + CSP form-action self で保護されているか",
-      "JSON-LD で Dentist + MedicalBusiness + address + telephone が正確に記述されているか",
-      "openingHours が machine-readable（Schema.org 形式）で記述されているか",
-      "診療科目（矯正・小児歯科等）が Schema.org Service または MedicalTherapy で構造化されているか",
-      "wp-login.php / xmlrpc.php / readme.html が露出していないか（致命的 NG）",
-      "歯科医師法 (e-Gov) を <blockquote cite> で引用しているか",
-      "施術写真・院内写真に alt + width/height 適切か",
-      "GBP 連携 + sameAs URL が JSON-LD に記述されているか"
+      "HTTPS + HSTS preload 登録済 / SSL 期限切れなしか",
+      "カウンセリング予約フォームが Trusted Types + CSP form-action で保護されているか",
+      "JSON-LD で MedicalClinic + medicalSpecialty が記述されているか",
+      "施術メニュー + 料金が Schema.org Service + Offer で構造化されているか",
+      "症例写真に alt + 患者同意明記がされているか",
+      "医療広告ガイドライン (厚労省) 遵守の表現か (誇大広告排除)",
+      "<blockquote cite> で医療法 (e-Gov) を引用しているか",
+      "WCAG 2.2 AA: 高解像度画像の LCP 対応が適切か"
     ],
     "public_sources": [
-      { "label": "厚生労働省 歯科保健", "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/iryou/shika/", "cite": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/iryou/shika/" },
-      { "label": "歯科医師法 (e-Gov 法令検索)", "url": "https://laws.e-gov.go.jp/law/323AC0000000202", "cite": "https://laws.e-gov.go.jp/law/323AC0000000202" },
-      { "label": "日本歯科医師会", "url": "https://www.jda.or.jp/", "cite": "https://www.jda.or.jp/" }
+      {
+        "label": "厚生労働省 医療広告ガイドライン",
+        "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/iryou/kokoku/",
+        "cite": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/iryou/kokoku/"
+      },
+      {
+        "label": "医療法 (e-Gov 法令検索)",
+        "url": "https://laws.e-gov.go.jp/law/323AC0000000205",
+        "cite": "https://laws.e-gov.go.jp/law/323AC0000000205"
+      },
+      {
+        "label": "日本美容皮膚科学会",
+        "url": "https://www.jsacd.org/",
+        "cite": "https://www.jsacd.org/"
+      }
     ],
     "faq_industry": [
       {
         "q": "{city} で信頼できる {industry} のサイトを見分けるには？",
-        "a": "HARTON Certified は {industry} サイトを 4 軸（基礎・防御・AI 検索・経営）で機械検証し、Dentist Schema.org 適合 + HTTPS + Trusted Types CSP の 3 条件を必須とする。{city} の認定状況は本ページ上部で確認可能。"
+        "a": "HARTON Certified は {industry} サイトを 4 軸（基礎・防御・AI 検索・経営）で機械検証し、MedicalClinic Schema.org 適合 + HTTPS + Trusted Types CSP の 3 条件を必須とする。医療広告ガイドライン遵守も評価軸。"
       },
       {
         "q": "{city} の {industry} サイトで HARTON Certified 認定件数は？",
-        "a": "Phase 0 沼津市の {industry} サイトを {n} 件機械検証し、★ 認定 {eligible} 件 / 業界最高点 {max} 点 / 致命的 NG {ng} 件（{ng_pct}）（2026-04-30 時点）。詳細は沼津市 WEB 品質業界レポート 2026 Q2 (4-6 月号)に公開。"
+        "a": "Phase 0.5 静岡県 5 都市の {industry} サイトを {n} 件機械検証し、★ 認定 {eligible} 件 / 業界最高点 {max} 点 / 致命的 NG {ng} 件（{ng_pct}）（2026-04-30 時点）。詳細は静岡県 WEB 品質業界レポート 2026 Q3 (7-9 月号)に公開。"
       },
       {
         "q": "{industry} サイトで致命的 NG となる項目は？",
-        "a": "HTTPS 非対応 / SSL 証明書無効 / WordPress 管理面露出 / 診療申込フォームの CSP 未設定 の 4 項目が一発除外条件。患者個人情報保護の観点から特に重要。"
+        "a": "HTTPS 非対応 / SSL 証明書無効 / 予約フォーム CSP 未設定 / 医療広告ガイドライン違反 (誇大広告) の 4 項目が一発除外条件。"
       },
       {
         "q": "{industry} の Schema.org 推奨タイプは？",
-        "a": "Dentist + MedicalBusiness + LocalBusiness の 3 層構造を推奨する。openingHoursSpecification で診療時間を構造化し、MedicalTherapy 子要素で矯正・インプラント等の治療メニューを記述することで AI 検索引用率が向上する。"
+        "a": "MedicalClinic + MedicalBusiness + LocalBusiness の 3 層を推奨する。施術メニューを Service + Offer で構造化し、料金体系を透明に記述することで AI 検索引用率が向上する。"
       },
       {
-        "q": "{industry} サイトが ★ 認定を取得できない最多原因は？",
-        "a": "(1) HTTP 非 SSL (2) 診療申込フォームの CSP 未設定 (3) Schema.org Dentist 未実装 が 3 大要因。改善ガイダンスで HTTPS → JSON-LD → CSP → GEO/LLMO の 4 Step を公開している。"
+        "q": "{industry} サイトの医療広告ガイドライン遵守とは？",
+        "a": "厚労省ガイドラインで「誇大広告」「ビフォアアフター無条件掲載」「比較広告」が禁止されている。症例写真は患者同意明記 + リスク併記が必須。本機関は機械検証では構造化データの整合性を主に評価し、表現内容は別途 ガイドライン参照を推奨。"
       }
     ]
   },
-  "hospital": {
-    "label": "病院",
-    "label_short": "病院",
-    "wikidata": "Q16917",
-    "wikidata_uri": "https://www.wikidata.org/wiki/Q16917",
-    "wikidata_secondary": ["https://www.wikidata.org/wiki/Q103103"],
-    "schema_type": ["LocalBusiness", "MedicalOrganization", "Hospital"],
-    "keywords": ["病院", "クリニック", "内科", "外科", "小児科", "診療予約", "診療科目", "受診", "救急", "外来"],
-    "evaluation_points": [
-      "診療予約フォームの HTTPS + Trusted Types CSP 適用(医療個人情報 / 致命的 NG 直結)",
-      "Schema.org Hospital + MedicalOrganization + medicalSpecialty 構造化(診療科目の AI 検索引用)",
-      "診療科目ページの Schema.org MedicalSpecialty 値設定(Cardiology / Pediatrics 等)",
-      "緊急時連絡先(救急・夜間対応)の視認性 + Schema.org EmergencyService 対応",
-      "アクセシビリティ WCAG 2.2 AA 準拠(医療機関は患者の多様性が高く特に重要)"
-    ],
-    "checklist": [
-      "HTTPS 配信 + HSTS preload 登録済 / SSL 期限切れなしか",
-      "診療予約フォームが Trusted Types + CSP form-action self で保護されているか",
-      "JSON-LD で Hospital + MedicalOrganization + medicalSpecialty が記述されているか",
-      "診療科目（内科・外科・小児科等）が Schema.org MedicalSpecialty で machine-readable か",
-      "緊急時連絡先・夜間対応電話番号がページ上部に視認しやすく配置されているか",
-      "WCAG 2.2 AA: フォーム input の label 関連付け・コントラスト比 4.5:1 以上か",
-      "医療法 (e-Gov) を <blockquote cite> で引用しているか",
-      "GBP 連携 + availableService + openingHours が構造化されているか"
-    ],
-    "public_sources": [
-      { "label": "厚生労働省 医療政策", "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/iryou/", "cite": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/iryou/" },
-      { "label": "医療法 (e-Gov 法令検索)", "url": "https://laws.e-gov.go.jp/law/323AC0000000205", "cite": "https://laws.e-gov.go.jp/law/323AC0000000205" },
-      { "label": "日本病院会", "url": "https://www.ajha.or.jp/", "cite": "https://www.ajha.or.jp/" }
-    ],
-    "faq_industry": [
-      {
-        "q": "{city} で信頼できる {industry} のサイトを見分けるには？",
-        "a": "HARTON Certified は {industry} サイトを 4 軸（基礎・防御・AI 検索・経営）で機械検証し、Hospital Schema.org 適合 + HTTPS + Trusted Types CSP の 3 条件を必須とする。{city} の認定状況は本ページ上部で確認可能。"
-      },
-      {
-        "q": "{city} の {industry} サイトで HARTON Certified 認定件数は？",
-        "a": "Phase 0 沼津市の {industry} サイトを {n} 件機械検証し、★ 認定 {eligible} 件 / 業界最高点 {max} 点 / 致命的 NG {ng} 件（{ng_pct}）（2026-04-30 時点）。詳細は沼津市 WEB 品質業界レポート 2026 Q2 (4-6 月号)に公開。"
-      },
-      {
-        "q": "{industry} サイトの Schema.org 推奨タイプは？",
-        "a": "Hospital + MedicalOrganization + LocalBusiness の 3 層を推奨。diagnosticTest や availableService で対応診療科目を構造化し、MedicalSpecialty（内科・外科・小児科等）を JSON-LD に記述することで AI 検索での診療科目引用率が向上する。"
-      },
-      {
-        "q": "{industry} サイトで致命的 NG となる項目は？",
-        "a": "HTTPS 非対応 / SSL 証明書無効 / 診療予約フォームの CSP 未設定 / CMS バージョン情報露出 の 4 項目が一発除外条件。医療個人情報を扱う機関として特に致命的。"
-      },
-      {
-        "q": "{industry} サイトのアクセシビリティ対応は必要か？",
-        "a": "患者の多様性（高齢者・障害者等）から WCAG 2.2 AA 準拠が強く推奨される。フォームの label 関連付け・コントラスト比 4.5:1 以上・キーボード操作対応・緊急連絡先の視認性確保が評価対象。"
-      }
-    ]
-  },
-  "hotel": {
-    "label": "ホテル",
-    "label_short": "ホテル",
+  "lodging": {
+    "label": "宿泊施設",
+    "label_short": "宿泊施設",
     "wikidata": "Q27686",
     "wikidata_uri": "https://www.wikidata.org/wiki/Q27686",
-    "wikidata_secondary": ["https://www.wikidata.org/wiki/Q562930"],
-    "schema_type": ["LocalBusiness", "LodgingBusiness", "Hotel"],
-    "keywords": ["ホテル", "旅館", "宿泊", "温泉", "チェックイン", "宿泊予約", "客室", "民宿", "素泊まり", "観光"],
+    "wikidata_secondary": [
+      "https://www.wikidata.org/wiki/Q562930"
+    ],
+    "schema_type": [
+      "LocalBusiness",
+      "LodgingBusiness",
+      "Hotel"
+    ],
+    "keywords": [
+      "ホテル",
+      "旅館",
+      "宿泊",
+      "温泉",
+      "チェックイン",
+      "宿泊予約",
+      "客室",
+      "民宿",
+      "素泊まり",
+      "観光"
+    ],
     "evaluation_points": [
       "予約フォーム / 外部予約(じゃらん・楽天トラベル等)の HTTPS 整合 + CSP form-action 制御",
       "Schema.org Hotel + LodgingBusiness + checkinTime / checkoutTime / amenityFeature 実装",
@@ -398,9 +687,21 @@
       "AI 検索（ChatGPT/Perplexity）で宿泊名検索時に料金・チェックイン時間が引用されるか"
     ],
     "public_sources": [
-      { "label": "観光庁 公式サイト", "url": "https://www.mlit.go.jp/kankocho/", "cite": "https://www.mlit.go.jp/kankocho/" },
-      { "label": "旅館業法 (e-Gov 法令検索)", "url": "https://laws.e-gov.go.jp/law/323AC0000000138", "cite": "https://laws.e-gov.go.jp/law/323AC0000000138" },
-      { "label": "日本旅館協会", "url": "https://www.ryokan.or.jp/", "cite": "https://www.ryokan.or.jp/" }
+      {
+        "label": "観光庁 公式サイト",
+        "url": "https://www.mlit.go.jp/kankocho/",
+        "cite": "https://www.mlit.go.jp/kankocho/"
+      },
+      {
+        "label": "旅館業法 (e-Gov 法令検索)",
+        "url": "https://laws.e-gov.go.jp/law/323AC0000000138",
+        "cite": "https://laws.e-gov.go.jp/law/323AC0000000138"
+      },
+      {
+        "label": "日本旅館協会",
+        "url": "https://www.ryokan.or.jp/",
+        "cite": "https://www.ryokan.or.jp/"
+      }
     ],
     "faq_industry": [
       {
@@ -422,6 +723,169 @@
       {
         "q": "{industry} サイトを ★ 認定水準に改善する期間は？",
         "a": "目安 90 日。改善ガイダンスで HTTPS → JSON-LD Hotel → CSP/Trusted Types → hreflang 多言語 → Core Web Vitals の 5 Step を公開している。"
+      }
+    ]
+  },
+  "clinic": {
+    "label": "クリニック・診療所",
+    "label_short": "クリニック・診療所",
+    "wikidata": "Q16917",
+    "wikidata_uri": "https://www.wikidata.org/wiki/Q16917",
+    "wikidata_secondary": [
+      "https://www.wikidata.org/wiki/Q103103",
+      "https://www.wikidata.org/wiki/Q2979300"
+    ],
+    "schema_type": [
+      "LocalBusiness",
+      "MedicalBusiness",
+      "MedicalClinic"
+    ],
+    "keywords": [
+      "クリニック",
+      "診療所",
+      "内科",
+      "外科",
+      "小児科",
+      "歯科",
+      "耳鼻咽喉科",
+      "皮膚科",
+      "眼科",
+      "診療予約",
+      "保険診療"
+    ],
+    "evaluation_points": [
+      "診療予約フォームの HTTPS + Trusted Types CSP 適用(医療個人情報 / 致命的 NG 直結)",
+      "Schema.org MedicalClinic + MedicalBusiness + medicalSpecialty 構造化",
+      "診療科目ページの Schema.org MedicalSpecialty 値設定 (Pediatrics / Dermatology 等)",
+      "診療時間 openingHoursSpecification の machine-readable 表記",
+      "WCAG 2.2 AA 準拠 (患者多様性対応)"
+    ],
+    "checklist": [
+      "HTTPS + HSTS preload 登録済 / SSL 期限切れなしか",
+      "診療予約フォームが Trusted Types + CSP form-action self で保護されているか",
+      "JSON-LD で MedicalClinic + medicalSpecialty が記述されているか",
+      "診療科目が Schema.org MedicalSpecialty で machine-readable か",
+      "緊急時連絡先が視認しやすく配置されているか",
+      "WCAG 2.2 AA: フォーム input の label 関連付け・コントラスト比 4.5:1 以上か",
+      "医療法 (e-Gov) を <blockquote cite> で引用しているか",
+      "GBP 連携 + availableService + openingHours が構造化されているか"
+    ],
+    "public_sources": [
+      {
+        "label": "厚生労働省 医療政策",
+        "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/iryou/",
+        "cite": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/iryou/"
+      },
+      {
+        "label": "医療法 (e-Gov 法令検索)",
+        "url": "https://laws.e-gov.go.jp/law/323AC0000000205",
+        "cite": "https://laws.e-gov.go.jp/law/323AC0000000205"
+      },
+      {
+        "label": "日本医師会",
+        "url": "https://www.med.or.jp/",
+        "cite": "https://www.med.or.jp/"
+      }
+    ],
+    "faq_industry": [
+      {
+        "q": "{city} で信頼できる {industry} のサイトを見分けるには？",
+        "a": "HARTON Certified は {industry} サイトを 4 軸（基礎・防御・AI 検索・経営）で機械検証し、MedicalClinic Schema.org 適合 + HTTPS + Trusted Types CSP の 3 条件を必須とする。{city} の認定状況は本ページ上部で確認可能。"
+      },
+      {
+        "q": "{city} の {industry} サイトで HARTON Certified 認定件数は？",
+        "a": "Phase 0.5 静岡県 5 都市の {industry} サイトを {n} 件機械検証し、★ 認定 {eligible} 件 / 業界最高点 {max} 点 / 致命的 NG {ng} 件（{ng_pct}）（2026-04-30 時点）。詳細は静岡県 WEB 品質業界レポート 2026 Q3 (7-9 月号)に公開。"
+      },
+      {
+        "q": "{industry} サイトの Schema.org 推奨タイプは？",
+        "a": "MedicalClinic + MedicalBusiness + LocalBusiness の 3 層を推奨する。診療科目を MedicalSpecialty で構造化し、availableService に保険診療内容を記述することで AI 検索引用率が向上する。"
+      },
+      {
+        "q": "{industry} サイトで致命的 NG となる項目は？",
+        "a": "HTTPS 非対応 / SSL 証明書無効 / 診療予約フォームの CSP 未設定 / CMS バージョン情報露出 の 4 項目が一発除外条件。医療個人情報を扱う機関として特に致命的。"
+      },
+      {
+        "q": "{industry} サイトのアクセシビリティ対応は必要か？",
+        "a": "患者の多様性（高齢者・障害者等）から WCAG 2.2 AA 準拠が強く推奨される。フォーム label 関連付け・コントラスト比 4.5:1 以上・キーボード操作対応・緊急連絡先の視認性確保が評価対象。"
+      }
+    ]
+  },
+  "cram-school": {
+    "label": "学習塾",
+    "label_short": "学習塾",
+    "wikidata": "Q118547",
+    "wikidata_uri": "https://www.wikidata.org/wiki/Q118547",
+    "wikidata_secondary": [
+      "https://www.wikidata.org/wiki/Q647856"
+    ],
+    "schema_type": [
+      "LocalBusiness",
+      "EducationalOrganization"
+    ],
+    "keywords": [
+      "学習塾",
+      "個別指導",
+      "集団授業",
+      "受験対策",
+      "中学受験",
+      "高校受験",
+      "大学受験",
+      "進学塾"
+    ],
+    "evaluation_points": [
+      "入塾申込フォームの HTTPS + Trusted Types CSP 適用 (生徒個人情報保護 / 致命的 NG 直結)",
+      "Schema.org EducationalOrganization + Course (講座) 構造化",
+      "料金体系 + 開講時間の透明な記述 + Schema.org Offer",
+      "実績 / 合格実績の verbatim 出典明記 (誇大広告排除)",
+      "WCAG 2.2 AA + 保護者向け視認性確保 (高齢層対応)"
+    ],
+    "checklist": [
+      "HTTPS + HSTS preload 登録済 / SSL 期限切れなしか",
+      "入塾申込フォームが Trusted Types + CSP form-action で保護されているか",
+      "JSON-LD で EducationalOrganization + Course が記述されているか",
+      "料金 + 時間割が Schema.org Service + Offer で構造化されているか",
+      "合格実績に出典 (年度・人数) 明記があるか",
+      "GBP 連携 + 営業時間 + 個別指導 / 集団授業の区別が記述されているか",
+      "保護者向け FAQ 充実 (誇大広告排除)",
+      "WCAG 2.2 AA: 高齢保護者向けコントラスト + フォーム label 関連付け"
+    ],
+    "public_sources": [
+      {
+        "label": "文部科学省 公式サイト",
+        "url": "https://www.mext.go.jp/",
+        "cite": "https://www.mext.go.jp/"
+      },
+      {
+        "label": "学校教育法 (e-Gov 法令検索)",
+        "url": "https://laws.e-gov.go.jp/law/322AC0000000026",
+        "cite": "https://laws.e-gov.go.jp/law/322AC0000000026"
+      },
+      {
+        "label": "全国学習塾協会",
+        "url": "https://jja.or.jp/",
+        "cite": "https://jja.or.jp/"
+      }
+    ],
+    "faq_industry": [
+      {
+        "q": "{city} で信頼できる {industry} を見分けるには？",
+        "a": "HARTON Certified は {industry} サイトを 4 軸（基礎・防御・AI 検索・経営）で機械検証し、EducationalOrganization Schema.org 適合 + HTTPS + Trusted Types CSP の 3 条件を必須とする。料金透明性 + 合格実績出典明記も評価軸。"
+      },
+      {
+        "q": "{city} の {industry} サイトで HARTON Certified 認定件数は？",
+        "a": "Phase 0.5 静岡県 5 都市の {industry} サイトを {n} 件機械検証し、★ 認定 {eligible} 件 / 業界最高点 {max} 点 / 致命的 NG {ng} 件（{ng_pct}）（2026-04-30 時点）。詳細は静岡県 WEB 品質業界レポート 2026 Q3 (7-9 月号)に公開。"
+      },
+      {
+        "q": "{industry} サイトで致命的 NG となる項目は？",
+        "a": "HTTPS 非対応 / SSL 証明書無効 / 入塾申込フォーム CSP 未設定 / CMS バージョン情報露出 の 4 項目が一発除外条件。生徒個人情報を扱うため特に重要。"
+      },
+      {
+        "q": "{industry} の Schema.org 推奨タイプは？",
+        "a": "EducationalOrganization + LocalBusiness の重ね合わせを推奨する。Course (講座) + Offer (料金) で構造化し、合格実績は出典 (年度・人数) 明記が評価対象。"
+      },
+      {
+        "q": "{industry} サイトの誇大広告排除とは？",
+        "a": "「全員合格」「絶対合格」等の表現は機械検証で誇大広告として記録される。合格実績は「2025年度 静岡市 公立高校 ○名合格」等の verbatim 数値 + 出典が信頼性評価対象。"
       }
     ]
   }

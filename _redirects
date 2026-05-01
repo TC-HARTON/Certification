@@ -3,3 +3,26 @@
 /news/numazu-industry-report-2026-spring  /news/numazu-industry-report-2026-q2/  301
 /news/numazu-industry-report-2026-05/  /news/numazu-industry-report-2026-q2/  301
 /news/numazu-industry-report-2026-05  /news/numazu-industry-report-2026-q2/  301
+
+# v2.3 Phase 0.5 — 旧 4 都市削除 (Phase 1 から外され / Phase 0.5 = 静岡市・浜松市新規)
+/regions/shizuoka/fujinomiya/*  /regions/shizuoka/  301
+/regions/shizuoka/susono/*  /regions/shizuoka/  301
+/regions/shizuoka/nagaizumi/*  /regions/shizuoka/  301
+/regions/shizuoka/shimizu/*  /regions/shizuoka/  301
+
+# v2.3 業種 key リネーム (hotel→lodging / dentist+hospital→clinic 集約 / 11 業種一律化)
+/industries/hotel/  /industries/lodging/  301
+/industries/dentist/  /industries/clinic/  301
+/industries/hospital/  /industries/clinic/  301
+/regions/shizuoka/industries/hotel/  /regions/shizuoka/industries/lodging/  301
+/regions/shizuoka/industries/dentist/  /regions/shizuoka/industries/clinic/  301
+/regions/shizuoka/industries/hospital/  /regions/shizuoka/industries/clinic/  301
+/regions/shizuoka/numazu/industries/hotel/  /regions/shizuoka/numazu/industries/lodging/  301
+/regions/shizuoka/numazu/industries/dentist/  /regions/shizuoka/numazu/industries/clinic/  301
+/regions/shizuoka/numazu/industries/hospital/  /regions/shizuoka/numazu/industries/clinic/  301
+/regions/shizuoka/mishima/industries/hotel/  /regions/shizuoka/mishima/industries/lodging/  301
+/regions/shizuoka/mishima/industries/dentist/  /regions/shizuoka/mishima/industries/clinic/  301
+/regions/shizuoka/mishima/industries/hospital/  /regions/shizuoka/mishima/industries/clinic/  301
+/regions/shizuoka/fuji/industries/hotel/  /regions/shizuoka/fuji/industries/lodging/  301
+/regions/shizuoka/fuji/industries/dentist/  /regions/shizuoka/fuji/industries/clinic/  301
+/regions/shizuoka/fuji/industries/hospital/  /regions/shizuoka/fuji/industries/clinic/  301
