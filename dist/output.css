@@ -1534,7 +1534,7 @@ body > main > article > section.region-section .region-section-lede,
   body > main > article > section.region-section .region-section-note,
   body > main > article > section.industry-section .industry-section-lede {
   font-size: 0.95rem;
-  color: var(--fg-default);
+  color: var(--fg-body);
   margin: 0.5rem 0 1rem;
   line-height: 1.7;
 }
@@ -1575,7 +1575,7 @@ body > main > article > section.report-faq-section details .faq-answer {
   margin-top: 0.75rem;
   padding-top: 0.75rem;
   border-top: 1px solid var(--border-soft);
-  color: var(--fg-default);
+  color: var(--fg-body);
 }
 
 /* 7 列表 mobile overflow wrapper (reviewer 信頼 92)

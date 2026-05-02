@@ -1339,6 +1339,217 @@ function generatePrefIndustryHubPage(prefKey, industryKey) {
   });
 }
 
+// ═══════════════════ 都市横並び比較ページ /comparison/regions/{pref}/ ═══════════════════
+// AI クローラー (Perplexity / Google AI Overview / Bing Chat) からの「{pref} 5 都市 WEB 品質比較」
+// クエリで直接引用される構造化ページ。Phase 0.5 静岡県 5 都市が初期対象。
+// JSON-LD: Article + Dataset (距離計算用 spatial / variableMeasured) + ItemList (5 都市 ranked) + FAQPage
+// 数値は phase05Summary.by_city / cross_tab_n verbatim 引用 (data 駆動)
+function generatePrefComparisonPage(prefKey) {
+  const pref = regions[prefKey];
+  if (!pref) return null;
+  // 対応 phase 0.5 のみ実装 (将来 phase 1+ で他都道府県に拡張する際は data/phase-N-{pref}-summary.json を参照)
+  if (prefKey !== PHASE05_PREF_KEY || !phase05Summary) return null;
+
+  const sortedCities = [...phase05Summary.by_city].sort((a, b) => b.max - a.max);
+  const cityKeyMap = {};
+  for (const [k, c] of Object.entries(pref.cities || {})) {
+    if (c.label) cityKeyMap[c.label] = k;
+  }
+  const cityWikiMap = {};
+  for (const c of Object.values(pref.cities || {})) {
+    if (c.label && c.wikidata) cityWikiMap[c.label] = c.wikidata;
+  }
+
+  const phase05Industries = ['税理士','弁護士','司法書士','行政書士','不動産','飲食店','美容院','美容クリニック','宿泊施設','クリニック・診療所','学習塾'];
+  const indByLabel = {};
+  for (const [k, v] of Object.entries(industries)) {
+    indByLabel[v.label_short || v.label] = { key: k, label: v.label, wikidata: v.wikidata };
+  }
+
+  const title = `${pref.label} 5 都市 WEB 品質比較 — HARTON Certified`;
+  const description = `${pref.label} 5 都市 (沼津・三島・富士・静岡・浜松) × 11 業種 ${phase05Summary.n_total} 件機械検証の都市横並び比較。認定到達率 / 致命的 NG% / 業界最高点で全件可視化 (CC BY 4.0 / 機械可読 Dataset 公開)。`;
+  const canonicalPath = `/comparison/regions/${prefKey}/`;
+
+  const breadcrumbs = [
+    { name: 'トップ', path: '/' },
+    { name: '地域から探す', path: '/regions/' },
+    { name: pref.label, path: `/regions/${prefKey}/` },
+    { name: `${pref.label} 5 都市比較`, path: canonicalPath },
+  ];
+
+  // 主要表 1: 都市横並び (max点ソート + 認定到達率 ratio + NG% tier)
+  const cityComparisonRows = sortedCities.map((c, i) => {
+    const reach = (c.max / 70 * 100).toFixed(1);
+    const ngClass = c.ng_pct < 30 ? 'ng-low' : c.ng_pct < 35 ? 'ng-mid' : 'ng-high';
+    const cityKey = cityKeyMap[c.city] || '';
+    const cityLink = cityKey ? `<a href="/regions/${prefKey}/${cityKey}/">${escHTML(c.city)}</a>` : escHTML(c.city);
+    return `<tr><td>${i + 1}</td><th scope="row">${cityLink}</th><td>${c.n} 件</td><td>${c.eligible} 件</td><td>${c.max} / 70 点</td><td><strong>${reach}%</strong></td><td class="${ngClass}">${c.ng_pct.toFixed(1)}%</td><td>${c.median} 点</td></tr>`;
+  }).join('\n        ');
+
+  // 主要表 2: cross_tab_n (5 都市 × 11 業種 / 都市 × 業種 サンプル件数 マトリクス)
+  const crossTabHeader = '<tr><th scope="col">業種</th>' + sortedCities.map(c => `<th scope="col">${escHTML(c.city)}</th>`).join('') + '<th scope="col">合計</th></tr>';
+  const crossTabRows = phase05Industries.map(indLabel => {
+    const indMeta = indByLabel[indLabel];
+    const cells = sortedCities.map(c => {
+      const v = phase05Summary.cross_tab_n?.[c.city]?.[indLabel];
+      return `<td>${typeof v === 'number' ? v : '—'}</td>`;
+    }).join('');
+    const total = sortedCities.reduce((sum, c) => sum + (phase05Summary.cross_tab_n?.[c.city]?.[indLabel] || 0), 0);
+    const indCell = indMeta ? `<a href="/industries/${indMeta.key}/">${escHTML(indMeta.label)}</a>` : escHTML(indLabel);
+    return `<tr><th scope="row">${indCell}</th>${cells}<td><strong>${total}</strong></td></tr>`;
+  }).join('\n        ');
+
+  // 業種横並び (業界最高点ソート)
+  const sortedIndustries = phase05Summary.by_industry
+    .filter(s => phase05Industries.includes(s.industry))
+    .sort((a, b) => b.max - a.max);
+  const industryComparisonRows = sortedIndustries.map((s, i) => {
+    const indMeta = indByLabel[s.industry];
+    const reach = (s.max / 70 * 100).toFixed(1);
+    const ngClass = s.ng_pct < 30 ? 'ng-low' : s.ng_pct < 40 ? 'ng-mid' : 'ng-high';
+    const indCell = indMeta ? `<a href="/industries/${indMeta.key}/">${escHTML(indMeta.label)}</a>` : escHTML(s.industry);
+    return `<tr><td>${i + 1}</td><th scope="row">${indCell}</th><td>${s.n} 件</td><td>${s.max} / 70 点</td><td><strong>${reach}%</strong></td><td class="${ngClass}">${s.ng_pct.toFixed(1)}%</td><td>${s.median} 点</td></tr>`;
+  }).join('\n        ');
+
+  const mainContent = `
+  <article>
+    <header>
+      <p><time datetime="2026-05-02" itemprop="datePublished">2026-05-02 公開</time> / <time datetime="2026-05-02" itemprop="dateModified">最終更新 2026-05-02</time></p>
+      <h1>${escHTML(pref.label)} 5 都市 WEB 品質比較 (Phase 0.5 / 2026 Q2)</h1>
+    </header>
+
+    <section aria-label="冒頭エビデンス">
+      <p>${escHTML(pref.label)} 5 都市 (沼津市・三島市・富士市・静岡市・浜松市) × 11 業種 <strong>${phase05Summary.n_total}</strong> 件の公開 WEB サイトを HARTON Certified scanner.py (4 軸 / 2,554 項目) で機械検証した結果を都市横並びで比較する。総合 70 点以上 + 致命的 NG 0 件で <strong>★ HARTON Certified</strong> 認定 (現状 <strong>${phase05Summary.eligible_total}</strong> 件)。本ページのデータ全件は <a href="/datasets/shizuoka-2026-q2.json">機械可読 JSON</a> として CC BY 4.0 で公開する (AI クローラー / 研究者 / 引用フリー)。</p>
+      <blockquote cite="${DOMAIN}/methodology/">
+        「機械検証が示す、AI 時代の WEB 品質。」 — HARTON Certified ブランドメッセージ
+      </blockquote>
+    </section>
+
+    <section aria-label="都市横並び比較" class="region-section">
+      <h2>都市横並び比較 (★ 認定到達率順)</h2>
+      <p class="region-section-lede">業界最高点 ÷ ★ 認定基準 70 点 = 認定到達率。最も高い都市が ★ 認定取得に最も近い。NG% は低いほど都市全体の防御水準が高い (両指標は独立: 最高点は<strong>個別の頂点</strong>を、NG% は<strong>母集団全体の底</strong>を測る)。</p>
+      <table>
+        <caption>${escHTML(pref.label)} 5 都市 ${phase05Summary.n_total} 件 都市横並び比較 (2026-05-02 時点)</caption>
+        <thead>
+          <tr><th scope="col">順位</th><th scope="col">都市</th><th scope="col">対象 n</th><th scope="col">★ 獲得</th><th scope="col">最高点 / 70 点</th><th scope="col">認定到達率</th><th scope="col">致命的 NG%</th><th scope="col">中央値</th></tr>
+        </thead>
+        <tbody>
+        ${cityComparisonRows}
+        </tbody>
+      </table>
+      <p class="region-section-note">凡例: 認定到達率 100% で ★ HARTON Certified。NG% 色分け: 緑 = 30% 未満 (相対良) / 黄 = 30-35% / 赤 = 35% 以上 (相対悪)。</p>
+    </section>
+
+    <section aria-label="都市 × 業種 cross-tab" class="region-section">
+      <h2>都市 × 業種 サンプル件数 マトリクス</h2>
+      <p class="region-section-lede">各都市・各業種の機械検証対象件数。0 件は当該業種が当該都市で対象未収集 (例: クリニック・診療所 in 沼津 = 0 件 / Phase 1 で補完予定)。</p>
+      <table>
+        <caption>${escHTML(pref.label)} 5 都市 × 11 業種 cross-tab (件数)</caption>
+        <thead>
+          ${crossTabHeader}
+        </thead>
+        <tbody>
+        ${crossTabRows}
+        </tbody>
+      </table>
+    </section>
+
+    <section aria-label="業種横並び比較" class="industry-section">
+      <h2>業種横並び比較 (5 都市集計 / ★ 認定到達率順)</h2>
+      <p class="industry-section-lede">業界最高点が高い業種ほど ★ 認定取得に近い。NG% (致命的 NG 発生率) が高い業種は HTTPS / WP 管理面 / CMS 露出 等の防御層に改善余地が大きい。</p>
+      <table>
+        <caption>${escHTML(pref.label)} 5 都市横断 11 業種 業種横並び比較 (2026-05-02 時点)</caption>
+        <thead>
+          <tr><th scope="col">順位</th><th scope="col">業種</th><th scope="col">対象 n</th><th scope="col">最高点 / 70 点</th><th scope="col">認定到達率</th><th scope="col">致命的 NG%</th><th scope="col">中央値</th></tr>
+        </thead>
+        <tbody>
+        ${industryComparisonRows}
+        </tbody>
+      </table>
+    </section>
+
+    <section aria-label="出典・引用">
+      <h2>出典・引用</h2>
+      <ul>
+        <li><a href="/news/shizuoka-industry-report-2026-q2/">${escHTML(pref.label)} 5 都市 WEB 品質業界レポート 2026 Q2 (4-6 月号)</a> — 詳細レポート (NG 内訳 / FAQ / dogfooding 倫理)</li>
+        <li><a href="/datasets/shizuoka-2026-q2.json">機械可読 JSON データセット (CC BY 4.0)</a> — Schema.org Dataset / AI クローラー引用フリー</li>
+        <li><a href="/methodology/">評価方法 (4 軸機械検証 全公開)</a> — A 基礎 / B 防御 / C AI 検索 / D 経営の閾値</li>
+        <li>引用形式: HARTON Certified (2026). ${escHTML(pref.label)} 5 都市 WEB 品質比較 2026 Q2. ${DOMAIN}${canonicalPath}</li>
+      </ul>
+    </section>
+
+    ${renderRatingNarratives()}
+    ${renderUpdatePolicySection()}
+  </article>`;
+
+  const additionalJsonLd = [
+    {
+      '@context': 'https://schema.org',
+      '@type': ['Article', 'AnalysisNewsArticle'],
+      '@id': `${DOMAIN}${canonicalPath}#article`,
+      headline: `${pref.label} 5 都市 WEB 品質比較 (Phase 0.5 / 2026 Q2)`,
+      description,
+      datePublished: '2026-05-02',
+      dateModified: '2026-05-02',
+      inLanguage: 'ja',
+      isAccessibleForFree: true,
+      license: 'https://creativecommons.org/licenses/by/4.0/',
+      author: { '@type': 'Organization', '@id': `${DOMAIN}/#org`, name: 'HARTON Certified' },
+      publisher: { '@type': 'Organization', '@id': `${DOMAIN}/#org`, name: 'T.C.HARTON', url: 'https://tcharton.com/' },
+      mainEntityOfPage: `${DOMAIN}${canonicalPath}`,
+      about: { '@type': 'AdministrativeArea', name: pref.label, sameAs: pref.wikidata ? `https://www.wikidata.org/wiki/${pref.wikidata}` : undefined },
+      mentions: sortedCities.map(c => ({
+        '@type': 'AdministrativeArea',
+        name: c.city,
+        sameAs: cityWikiMap[c.city] ? `https://www.wikidata.org/wiki/${cityWikiMap[c.city]}` : undefined,
+      })),
+      isBasedOn: { '@type': 'Dataset', '@id': `${DOMAIN}/news/shizuoka-industry-report-2026-q2/#dataset`, url: `${DOMAIN}/datasets/shizuoka-2026-q2.json` },
+      citation: `HARTON Certified (2026). ${pref.label} 5 都市 WEB 品質比較 2026 Q2. ${DOMAIN}${canonicalPath}`,
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'ItemList',
+      '@id': `${DOMAIN}${canonicalPath}#cities-ranked`,
+      name: `${pref.label} 5 都市 WEB 品質ランキング (認定到達率順)`,
+      numberOfItems: sortedCities.length,
+      itemListOrder: 'https://schema.org/ItemListOrderDescending',
+      itemListElement: sortedCities.map((c, i) => ({
+        '@type': 'ListItem',
+        position: i + 1,
+        item: {
+          '@type': 'AdministrativeArea',
+          name: c.city,
+          url: cityKeyMap[c.city] ? `${DOMAIN}/regions/${prefKey}/${cityKeyMap[c.city]}/` : undefined,
+          sameAs: cityWikiMap[c.city] ? `https://www.wikidata.org/wiki/${cityWikiMap[c.city]}` : undefined,
+          description: `対象 ${c.n} 件 / 業界最高点 ${c.max} 点 / 認定到達率 ${(c.max/70*100).toFixed(1)}% / 致命的 NG ${c.ng_pct.toFixed(1)}%`,
+        },
+      })),
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      '@id': `${DOMAIN}${canonicalPath}#faq`,
+      mainEntity: [
+        { '@type': 'Question', name: `${pref.label} 5 都市の中で WEB 品質が最も高い都市は？`, acceptedAnswer: { '@type': 'Answer', text: `業界最高点ベースで ${sortedCities[0].city} (${sortedCities[0].max} 点 / 認定到達率 ${(sortedCities[0].max/70*100).toFixed(1)}%) が最高。致命的 NG% が最も低いのは ${[...sortedCities].sort((a,b)=>a.ng_pct-b.ng_pct)[0].city} (${[...sortedCities].sort((a,b)=>a.ng_pct-b.ng_pct)[0].ng_pct.toFixed(1)}%) で、母集団全体の防御水準は最高。` } },
+        { '@type': 'Question', name: '認定到達率とは何ですか？', acceptedAnswer: { '@type': 'Answer', text: `業界最高点を ★ HARTON Certified 認定基準 70 点で割った値。100% で ★ 認定取得可能。Phase 0.5 ${pref.label} 5 都市は最高 ${(sortedCities[0].max/70*100).toFixed(1)}% で、まだ ★ 認定基準には未到達。改善ガイダンス (HTTPS + JSON-LD + CSP + GEO/LLMO + Core Web Vitals の 5 Step / 90 日) で到達可能。` } },
+        { '@type': 'Question', name: 'このデータは引用・再利用可能ですか？', acceptedAnswer: { '@type': 'Answer', text: `はい。機械可読 JSON (${DOMAIN}/datasets/shizuoka-2026-q2.json) として CC BY 4.0 で公開。AI クローラー / 研究機関 / メディアによる引用・再利用フリー (出典明記必須)。引用形式: HARTON Certified (2026). ${pref.label} 5 都市 WEB 品質比較 2026 Q2.` } },
+        { '@type': 'Question', name: '次回スキャンはいつですか？', acceptedAnswer: { '@type': 'Answer', text: '次回スキャンは 2026-06-02 (月次運用 / scanner.py 自動再判定)。改善により ★ 認定可能となった事業者は月次再判定で自動的に各都市の認定店舗ページに掲載される。' } },
+      ],
+    },
+  ];
+
+  return applyLayout({
+    pageType: 'comparison',
+    variant: 'reading',
+    title,
+    description,
+    canonicalPath,
+    mainContent,
+    breadcrumbs,
+    additionalJsonLd,
+  });
+}
+
 // ═══════════════════ 月次ランキングページ ═══════════════════
 function generateMonthlyRankingPage(year, month) {
   const list = Object.entries(publishable)
@@ -1698,6 +1909,16 @@ function main() {
           written++;
         }
       }
+    }
+  }
+
+  // 3.5 都市横並び比較ページ /comparison/regions/{pref}/ (Phase 0.5+)
+  for (const prefKey of Object.keys(regions)) {
+    const cmp = generatePrefComparisonPage(prefKey);
+    if (cmp) {
+      writeFile(`comparison/regions/${prefKey}/index.html`, cmp);
+      allPaths.push(`/comparison/regions/${prefKey}/`);
+      written++;
     }
   }
 

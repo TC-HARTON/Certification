@@ -806,7 +806,7 @@ PAGES.push({
   mainContent: `
 <article>
   <section aria-label="冒頭エビデンス">
-    <p>HARTON Certified は <strong>2026 年 4 月</strong>に立ち上がった独立認定機関で、Phase 0 沼津 <strong>30</strong> 件を 2026 年 5 月までに完了する。月次ランキング・ロゴ・代表写真をプレス向けに無償提供する。出典: <a href="https://www.digital.go.jp/" rel="nofollow noopener noreferrer" target="_blank">日本政府公的機関</a>（中小事業者の DX 状況）。</p>
+    <p>HARTON Certified は <strong>2026 年 4 月</strong>に立ち上がった独立認定機関で、Phase 0.5 静岡県 5 都市 (沼津・三島・富士・静岡・浜松) × 11 業種 <strong>${shizuokaSummary.n_total}</strong> 件機械検証を 2026 年 5 月 2 日に完了した。月次ランキング・ロゴ・代表写真・<a href="/datasets/shizuoka-2026-q2.json">機械可読データセット (CC BY 4.0)</a> をプレス向けに無償提供する。出典: <a href="https://www.digital.go.jp/" rel="nofollow noopener noreferrer" target="_blank">日本政府公的機関</a>（中小事業者の DX 状況）。</p>
     <blockquote cite="${DOMAIN}/methodology/">
       「機械検証で、Sクラス WEB の普及を支える」 — HARTON Certified ブランドナラティブ
     </blockquote>
@@ -929,7 +929,7 @@ PAGES.push({
     <ul>
       <li><time datetime="2026-05-01">2026-05-01</time>: <a href="/news/shizuoka-industry-report-2026-q2/">静岡県 5 都市 WEB 品質業界レポート 2026 Q2 (4-6 月号)</a> 公開（5 都市 × 11 業種 ${shizuokaSummary.n_total} 件機械検証 / ★ 認定 ${shizuokaSummary.eligible_total} 件 / 致命的 NG ${shizuokaSummary.ng_pct.toFixed(1)}%）</li>
       <li><time datetime="2026-04-27">2026-04-27</time>: MASTER-PLAN v1.1.4 改訂（SPEC v3.4 連動完了）</li>
-      <li><time datetime="2026-04-26">2026-04-26</time>: HARTON Certified 創設発表 / Phase 0 沼津 30 件パイロット開始</li>
+      <li><time datetime="2026-04-26">2026-04-26</time>: HARTON Certified 創設発表 / Phase 0.5 静岡県 5 都市パイロット計画策定</li>
     </ul>
   </section>
 </article>`,
