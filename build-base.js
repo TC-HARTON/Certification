@@ -240,6 +240,17 @@ ${REGION_OPTIONS_HTML}
           <a href="/news/shizuoka-industry-report-2026-q2/" class="featured-card-link">静岡 5 都市レポート Q2 を見る →</a>
         </div>
       </li>
+      <li class="featured-card">
+        <div class="featured-card-thumb">
+          <span class="featured-card-thumb-label" aria-hidden="true">5 都市比較</span>
+        </div>
+        <div class="featured-card-body">
+          <h3 class="featured-card-name">静岡県 5 都市 WEB 品質比較</h3>
+          <p class="featured-card-meta">${shizuokaSummary.n_total} 件 / 11 業種横断 ／ 認定到達率順</p>
+          <p class="featured-card-note">沼津・三島・富士・静岡・浜松を <strong>業界最高点 / 認定到達率 / 致命的 NG%</strong> で横並び比較。都市 × 業種 cross-tab マトリクスで業種別の偏りも可視化 (CC BY 4.0 / 機械可読 Dataset 公開)。</p>
+          <a href="/comparison/regions/shizuoka/" class="featured-card-link">5 都市比較を見る →</a>
+        </div>
+      </li>
       <li class="featured-card featured-card-placeholder">
         <div class="featured-card-thumb">
           <span class="featured-card-thumb-label" aria-hidden="true">展開予定</span>
@@ -1053,9 +1064,11 @@ PAGES.push({
     <p>本機関の自己実証体 第 1 号は scanner.py により ★★★（HARTON S-Class）を取得し、四半期再判定の対象となる（自己例外なし）。自己実証体 自身に致命的 NG 検出時は即時非掲載状態に切替え、機械検証ログを verbatim 公開する。静岡県 5 都市 ${shizuokaSummary.n_total} 件の業界実測で 70 点以上を達成したサイトはゼロ件である。これは認定基準が「人間の主観や金銭、規模に依存しない」客観的な技術指標であることを業界実測で示している。</p>
   </section>
 
-  <section aria-label="評価方法導線">
-    <h2>評価方法と現状診断</h2>
+  <section aria-label="関連ページ">
+    <h2>関連ページ</h2>
     <ul>
+      <li><a href="/comparison/regions/shizuoka/"><strong>静岡県 5 都市 WEB 品質比較</strong></a> — 5 都市横並び + 都市 × 業種 cross-tab + 業種横並びの 3 表で詳細比較</li>
+      <li><a href="/datasets/shizuoka-2026-q2.json">機械可読 JSON データセット (CC BY 4.0)</a> — Schema.org Dataset / AI クローラー引用フリー</li>
       <li><a href="/methodology/">評価方法（4 軸機械検証 全公開）</a> — A 基礎 / B 防御 / C AI 検索 / D 経営の 4 軸独立評価とその閾値</li>
       <li><a href="/methodology/security/">B 軸 防御力・生存率</a> — 致命的 NG 4 項目の詳細と検出根拠</li>
       <li><a href="/improvement-guide/">改善ガイダンス</a> — ★区分昇格のための具体 Step（既掲載事業者向け）</li>

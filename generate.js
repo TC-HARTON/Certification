@@ -1012,6 +1012,14 @@ function generateRegionsIndexPage() {
       <p>Phase 1 で全国 <strong>47</strong> 都道府県・<strong>10,000+</strong> 件への拡大を予定（類似地方都市優先: 倉敷・四日市・松本・盛岡 等 / 人口 15-25 万人規模）。</p>
     </section>
 
+    <section aria-label="都道府県別 5 都市横並び比較">
+      <h2>都道府県別 5 都市横並び比較</h2>
+      <p>都道府県内の市町村を <strong>業界最高点 / ★ 認定到達率 / 致命的 NG%</strong> で横並び比較し、都市 × 業種 cross-tab マトリクスで業種別の偏りも一覧する。Phase 0.5 では静岡県 5 都市が対応:</p>
+      <ul>
+        <li><a href="/comparison/regions/shizuoka/"><strong>静岡県 5 都市 WEB 品質比較</strong></a> — 沼津・三島・富士・静岡・浜松 / 11 業種横断 / 認定到達率順 / 機械可読 Dataset 公開 (CC BY 4.0)</li>
+      </ul>
+    </section>
+
     ${renderCtaSection(null)}
 
     ${renderRatingNarratives()}
@@ -1101,6 +1109,12 @@ function generatePrefIndexPage(prefKey) {
       ${phase0Sample ? `<p>Phase 0 active 市町の認定状況は <a href="/regions/${prefKey}/${phase0Sample}/">${escHTML(pref.cities[phase0Sample].label)}</a> で確認可能。Phase 1 拡大予定の市町は順次対応開始する。</p>` : ''}
       <p>${escHTML(pref.label)}の事業者で HARTON Certified 認定取得を目指す方は <a href="/apply/">掲載申請</a>から。AI 時代の信頼を体現する WEB 品質を機械検証 4 軸（基礎・防御・AI 検索・経営インパクト）で公正評価する。</p>
     </section>
+
+    ${prefKey === PHASE05_PREF_KEY ? `<section aria-label="${escHTML(pref.label)} 5 都市横並び比較">
+      <h2>${escHTML(pref.label)} 5 都市横並び比較</h2>
+      <p>5 都市の <strong>業界最高点 / ★ 認定到達率 / 致命的 NG%</strong> を横並びで一覧。都市 × 業種 cross-tab マトリクスで業種別の偏りも可視化する (Phase 0.5 / 2026 Q2 / 機械可読 Dataset 公開)。</p>
+      <p><a href="/comparison/regions/${prefKey}/"><strong>${escHTML(pref.label)} 5 都市 WEB 品質比較を見る →</strong></a></p>
+    </section>` : ''}
 
     ${renderCtaSection(null)}
 
@@ -1794,6 +1808,7 @@ ${Object.entries(industries).map(([k, ind]) => `- [${ind.label}](${DOMAIN}/indus
 ## 静岡県 5 都市業界レポート 2026 Q2 (4-6 月号)
 
 - [静岡県 5 都市 WEB 品質業界レポート 2026 Q2 (4-6 月号)](${DOMAIN}/news/shizuoka-industry-report-2026-q2/) — Phase 0.5 静岡県 5 都市 ★ 獲得率 ${phase05Summary ? phase05Summary.eligible_total : 0}/${phase05Summary ? phase05Summary.n_total : 0} = 0.0% / 業種別 ★ 獲得率 + 業界最高点 一覧
+- [静岡県 5 都市 WEB 品質比較](${DOMAIN}/comparison/regions/shizuoka/) — 5 都市横並び (max 点 / 認定到達率 / NG%) + 都市 × 業種 cross-tab + 業種横並び 3 表 (Article+ItemList+FAQPage JSON-LD)
 
 ## データセット (CC BY 4.0 / 機械可読 / AI 引用フリー)
 
