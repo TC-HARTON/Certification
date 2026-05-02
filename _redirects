@@ -1,8 +1,11 @@
 /opt-out-immediate  /opt-out/  302
-/news/numazu-industry-report-2026-spring/  /news/numazu-industry-report-2026-q2/  301
-/news/numazu-industry-report-2026-spring  /news/numazu-industry-report-2026-q2/  301
-/news/numazu-industry-report-2026-05/  /news/numazu-industry-report-2026-q2/  301
-/news/numazu-industry-report-2026-05  /news/numazu-industry-report-2026-q2/  301
+# v2.3 業界レポート URL 統一: 沼津単独 → 静岡県 5 都市 (Phase 0.5)
+/news/numazu-industry-report-2026-q2/  /news/shizuoka-industry-report-2026-q2/  301
+/news/numazu-industry-report-2026-q2  /news/shizuoka-industry-report-2026-q2/  301
+/news/numazu-industry-report-2026-spring/  /news/shizuoka-industry-report-2026-q2/  301
+/news/numazu-industry-report-2026-spring  /news/shizuoka-industry-report-2026-q2/  301
+/news/numazu-industry-report-2026-05/  /news/shizuoka-industry-report-2026-q2/  301
+/news/numazu-industry-report-2026-05  /news/shizuoka-industry-report-2026-q2/  301
 
 # v2.3 Phase 0.5 — 旧 4 都市削除 (Phase 1 から外され / Phase 0.5 = 静岡市・浜松市新規)
 /regions/shizuoka/fujinomiya/*  /regions/shizuoka/  301

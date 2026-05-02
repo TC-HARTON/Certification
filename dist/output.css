@@ -1,1 +1,2573 @@
-*,:after,:before{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgba(59,130,246,.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgba(59,130,246,.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/*! tailwindcss v3.4.19 | MIT License | https://tailwindcss.com*/*,:after,:before{box-sizing:border-box;border:0 solid #e5e7eb}:after,:before{--tw-content:""}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;-o-tab-size:4;tab-size:4;font-family:Noto Sans JP,Inter,sans-serif;font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0}fieldset,legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::-moz-placeholder,textarea::-moz-placeholder{opacity:1;color:#9ca3af}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}html{font-feature-settings:"palt";scroll-padding-top:5rem}body{font-family:var(--font-sans);font-weight:400;line-height:1.8;font-feature-settings:"palt";display:flex;flex-direction:column;min-height:100vh;font-size:16px}h1,h2,h3,h4{font-family:var(--font-heading);font-weight:600;color:var(--fg-heading);letter-spacing:.01em;line-height:1.3}h1{font-size:2.25rem;margin:1rem 0 1.5rem;letter-spacing:.02em}@media (min-width:768px){h1{font-size:3rem}}h2{font-size:1.625rem;margin:3rem 0 1.25rem;padding-bottom:.6rem;border-bottom:1px solid var(--border);position:relative;font-weight:600}h2:before{content:"";position:absolute;bottom:-1px;left:0;width:3rem;height:2px;background:var(--accent)}@media (min-width:768px){h2{font-size:2rem}}h3{font-size:1.25rem;margin:1.5rem 0 .75rem;color:var(--accent-strong);font-weight:600}p{margin:.85rem 0;font-variant-numeric:tabular-nums}strong{color:var(--fg-strong);font-weight:600}em{font-weight:500;font-style:normal}a,em{color:var(--accent-strong)}a{text-decoration:underline;text-decoration-color:rgba(212,175,55,.4);text-underline-offset:3px;transition:color .15s ease,text-decoration-color .15s ease}a:focus-visible,a:hover{color:var(--accent);text-decoration-color:var(--accent)}a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}code{font-family:var(--font-mono);background:var(--bg-soft);padding:.1rem .35rem;border-radius:3px;font-size:.9em;border:1px solid var(--border-soft);font-variant-numeric:tabular-nums}ol,ul{padding-left:1.5rem;margin:1rem 0}ul{list-style:none}ul li{position:relative;padding-left:1.4rem;margin:.55rem 0}ul li:before{content:"◆";position:absolute;left:0;top:0;color:var(--accent);font-size:.7em;line-height:2rem}ol{list-style:decimal;padding-left:2rem}ol li{margin:.55rem 0;padding-left:.5rem;font-variant-numeric:tabular-nums}ol li::marker{color:var(--accent-strong);font-weight:600}blockquote{margin:2rem 0;padding:1.5rem 1.75rem;border-left:3px solid var(--accent);background:var(--bg-soft);font-family:var(--font-heading);font-size:1.125rem;line-height:1.7;color:var(--fg-strong);border-radius:0 4px 4px 0;position:relative;font-weight:500;font-style:italic}blockquote:before{content:"\201C";position:absolute;top:0;right:1rem;font-size:4rem;color:var(--accent-strong);opacity:.2;line-height:1;font-family:var(--font-logo)}table{width:100%;border-collapse:collapse;margin:1.5rem 0;background:var(--bg-card);border:1px solid var(--border-soft);border-radius:4px;overflow:hidden;font-variant-numeric:tabular-nums}caption{padding:.75rem 1rem;font-size:.9rem;color:var(--fg-muted);background:var(--bg-soft);caption-side:top;font-family:var(--font-sans)}caption,td,th{text-align:left;border-bottom:1px solid var(--border-soft)}td,th{padding:.85rem 1rem}thead th{background:var(--bg-soft);font-weight:600;color:var(--fg-strong);letter-spacing:.02em}tbody th{font-weight:600;color:var(--accent-strong);width:1%;white-space:nowrap}tbody tr:last-child td,tbody tr:last-child th{border-bottom:none}tbody tr:hover{background:rgba(201,169,97,.05)}dl{margin:1.5rem 0}dt{font-weight:600;color:var(--fg-strong);margin-top:1.5rem;padding-left:.85rem;border-left:3px solid var(--accent);font-size:1.05rem}dd{margin:.5rem 0 0 1rem;padding-bottom:.5rem}time{font-variant-numeric:tabular-nums;color:var(--fg-muted);font-size:.9rem;letter-spacing:.02em}body>header{background:var(--bg-page);border-bottom:1px solid var(--border);padding:1rem 1.5rem;position:sticky;top:0;z-index:40;backdrop-filter:saturate(180%) blur(8px);-webkit-backdrop-filter:saturate(180%) blur(8px)}body>header>nav{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:2rem}body>header>nav>a{color:var(--fg-strong);text-decoration:none;font-family:var(--font-logo);font-size:1.4rem;font-weight:600;letter-spacing:.04em;flex-shrink:0;display:inline-flex;align-items:center;gap:.55rem}body>header>nav>a>.star-svg-logo{color:var(--accent-strong);width:1em;height:1em}body>header>nav>a>span{color:var(--fg-strong)}body>header>nav>ul{display:none;gap:1.75rem;list-style:none;padding:0;margin:0}body>header>nav>ul>li{padding:0;margin:0}body>header>nav>ul>li:before{content:none}body>header>nav>ul>li>a{color:var(--fg-body);text-decoration:none;font-size:.95rem;font-weight:500;padding:.4rem 0;border-bottom:2px solid transparent;transition:border-color .15s ease,color .15s ease;font-family:var(--font-sans)}body>header>nav>ul>li>a:hover,body>header>nav>ul>li>a[aria-current=page]{color:var(--accent-strong);border-bottom-color:var(--accent)}@media (min-width:768px){body>header>nav>ul{display:flex}}body>header>#menuToggle{background:transparent;border:1px solid var(--border);border-radius:4px;color:var(--fg-strong);font-size:1.5rem;line-height:1;cursor:pointer;padding:.5rem .75rem}body>main{flex:1;width:100%;max-width:1200px;margin:0 auto;padding:3rem 1.5rem 5rem}body>main>article{max-width:1100px;margin:0 auto}body>main>article>section>p{max-width:70ch}body>main>article>section{margin:3rem 0;padding:2rem 0 0}body>main>article>section:first-child{margin-top:0;padding-top:0}body>footer{background:var(--bg-page);color:var(--fg-body);padding:3.5rem 1.5rem 2rem;margin-top:auto;border-top:3px solid var(--accent)}body>footer>nav{max-width:1200px;margin:0 auto 2rem}body>footer>nav>ul{display:flex;flex-wrap:wrap;gap:.75rem 2rem;list-style:none;padding:0;margin:0}body>footer>nav>ul>li{padding:0;margin:0}body>footer>nav>ul>li:before{content:none}body>footer>nav>ul>li>a{color:var(--accent);text-decoration:none;font-size:.9rem;font-family:var(--font-sans)}body>footer>nav>ul>li>a:hover{color:var(--accent-strong);text-decoration:underline}body>footer>p{max-width:1200px;margin:0 auto;padding:1.5rem 0 0;border-top:1px solid rgba(201,169,97,.2);font-size:.875rem;color:var(--fg-muted);font-family:var(--font-sans);font-variant-numeric:tabular-nums}body>header>#mobile-menu{background:var(--bg-page);color:var(--fg-body);padding:5rem 2rem 2rem}body>header>#mobile-menu>nav>ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:1rem}body>header>#mobile-menu>nav>ul>li:before{content:none}body>header>#mobile-menu>nav>ul>li>a{color:var(--fg-strong);font-family:var(--font-heading);font-size:1.5rem;text-decoration:none}body::-webkit-scrollbar{width:10px}body::-webkit-scrollbar-track{background:var(--bg-page)}body::-webkit-scrollbar-thumb{background:var(--accent);border-radius:5px}label{display:block;font-weight:500;color:var(--fg-strong);margin-bottom:.4rem;font-size:.9rem;font-family:var(--font-sans)}input,select,textarea{width:100%;padding:.7rem 1rem;border:1px solid var(--border);border-radius:4px;background:var(--bg-card);color:var(--fg-body);font-family:inherit;font-size:1rem;transition:border-color .15s ease,box-shadow .15s ease}input:focus,select:focus,textarea:focus{outline:2px solid var(--accent);outline-offset:2px;border-color:var(--accent)}input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid var(--accent-strong);outline-offset:2px}button[type=submit]{background:var(--bg-page);color:var(--fg-strong);border:1px solid var(--accent);padding:.85rem 2rem;font-size:1rem;font-weight:600;cursor:pointer;border-radius:4px;transition:background .15s ease,color .15s ease,border-color .15s ease;font-family:var(--font-sans);letter-spacing:.05em}button[type=submit]:hover{background:var(--accent-strong);color:var(--bg-page);border-color:var(--accent-strong)}form p{margin:1.25rem 0}.container{width:100%}@media (min-width:640px){.container{max-width:640px}}@media (min-width:768px){.container{max-width:768px}}@media (min-width:1024px){.container{max-width:1024px}}@media (min-width:1280px){.container{max-width:1280px}}@media (min-width:1536px){.container{max-width:1536px}}body>main>article>section[aria-label*=\5192\982D\30A8\30D3\30C7\30F3\30B9]{background:linear-gradient(180deg,var(--bg-soft) 0,var(--bg-page) 100%);padding:3rem 2rem;margin:0 -2rem 3rem;border-radius:4px;border-bottom:2px solid var(--accent);text-align:left;position:relative}body>main>article>section[aria-label*=\5192\982D\30A8\30D3\30C7\30F3\30B9]:before{content:"";position:absolute;top:1rem;right:1rem;width:80px;height:80px;background:radial-gradient(circle,var(--accent-strong) 0,transparent 65%);opacity:.15}body>main>article>section[aria-label*=\5192\982D\30A8\30D3\30C7\30F3\30B9]>h1{font-size:2.5rem;margin:1.5rem 0;font-weight:600}@media (min-width:768px){body>main>article>section[aria-label*=\5192\982D\30A8\30D3\30C7\30F3\30B9]>h1{font-size:3.5rem}}body>main>article>section[aria-label*=\5192\982D\30A8\30D3\30C7\30F3\30B9]>p:first-of-type:first-letter{font-family:var(--font-logo);font-size:3.75rem;float:left;line-height:.85;margin:.25rem .55rem 0 0;color:var(--accent-strong);font-weight:600}body>main>article>section[aria-label*=\5192\982D\30A8\30D3\30C7\30F3\30B9]{border-left:3px solid var(--accent);padding-left:1.5rem;background:linear-gradient(90deg,rgba(201,169,97,.05),transparent 60%)}ul.star-tiers{list-style:none;padding-left:0;margin:1.5rem 0}ul.star-tiers>li{display:flex;align-items:center;gap:1.25rem;padding:1.25rem 1.5rem;margin:.75rem 0;background:var(--bg-card);border:1px solid var(--border-soft);border-left:4px solid;border-radius:4px;transition:border-color .15s ease}ul.star-tiers>li:before{content:none}ul.star-tiers .star{font-family:var(--font-logo);font-size:1.35rem;letter-spacing:.08em;flex-shrink:0;line-height:1;white-space:nowrap;display:inline-flex;gap:.1em;align-items:center}.star-svg{width:1em;height:1em;display:inline-block;vertical-align:-.1em;fill:currentColor}body>main>article>section.hero-manifest{position:relative;margin:0 0 4rem;padding:5rem 2rem 4.5rem;background:radial-gradient(circle at 85% 20%,rgba(212,175,55,.08) 0,transparent 50%),radial-gradient(circle at 15% 80%,rgba(201,169,97,.06) 0,transparent 60%),linear-gradient(180deg,var(--bg-page) 0,rgba(30,41,59,.6) 100%);border-bottom:2px solid var(--accent);border-radius:4px;overflow:hidden;text-align:center}body>main>article>section.hero-manifest>p{max-width:38ch;margin-left:auto;margin-right:auto}body>main>article>section.hero-manifest .hero-eyebrow{color:var(--accent-strong);font-family:var(--font-sans);font-size:.85rem;letter-spacing:.08em;text-transform:uppercase;margin:0 0 1.5rem;font-weight:500}body>main>article>section.hero-manifest .hero-h1{font-family:var(--font-heading);font-weight:600;color:var(--fg-strong);font-size:clamp(1.75rem,4.5vw,3rem);line-height:1.35;letter-spacing:.02em;margin:0 0 1.75rem;border:none;padding:0}body>main>article>section.hero-manifest .hero-h1:before{content:none}body>main>article>section.hero-manifest .hero-stars{display:inline-flex;gap:.05em;color:var(--accent-strong);vertical-align:-.05em;margin:0 .05em}body>main>article>section.hero-manifest .hero-stars .star-svg{width:.95em;height:.95em}body>main>article>section.hero-manifest .hero-manifest-text{font-family:var(--font-heading);font-size:clamp(1rem,1.6vw,1.2rem);line-height:1.7;color:var(--fg-body);max-width:38ch;margin:0 auto 2.5rem;font-style:italic;font-weight:500}body>main>article>section.hero-manifest .hero-cta-row{display:inline-flex;flex-wrap:wrap;gap:.85rem;justify-content:center;margin:0 auto}body>main>article>section.hero-manifest .hero-cta-primary,body>main>article>section.hero-manifest .hero-cta-secondary{display:inline-flex;align-items:center;padding:.85rem 1.75rem;border-radius:4px;font-family:var(--font-sans);font-size:.95rem;font-weight:600;letter-spacing:.04em;text-decoration:none;transition:background .15s ease,color .15s ease,border-color .15s ease}body>main>article>section.hero-manifest .hero-cta-primary{background:var(--accent);color:var(--bg-page);border:1px solid var(--accent)}body>main>article>section.hero-manifest .hero-cta-primary:hover{background:var(--accent-strong);border-color:var(--accent-strong);color:var(--bg-page)}body>main>article>section.hero-manifest .hero-cta-primary:focus-visible{outline:3px solid var(--bg-page);outline-offset:2px;box-shadow:0 0 0 5px var(--accent-strong)}body>main>article>section.hero-manifest .hero-cta-secondary:focus-visible{outline:2px solid var(--accent-strong);outline-offset:3px}.featured-card-link:focus-visible{outline:2px solid var(--accent-strong);outline-offset:3px;border-radius:2px}body>main>article>section.hero-manifest .hero-cta-secondary{background:transparent;color:var(--fg-strong);border:1px solid var(--border)}body>main>article>section.hero-manifest .hero-cta-secondary:hover{border-color:var(--accent);color:var(--accent-strong)}body>main>article>section.zero-cert-statement{text-align:center;background:linear-gradient(135deg,var(--bg-soft) 0,var(--bg-card) 100%);border:1px solid var(--border);border-left:4px solid var(--accent-strong);border-radius:6px;padding:2rem 1.5rem;margin:2rem 0}body>main>article>section.zero-cert-statement>h2{border:none;padding:0;margin:0 0 1rem;font-size:clamp(1.5rem,3vw,2rem)}body>main>article>section.zero-cert-statement>h2:before{content:none}.zero-cert-count{display:inline-block;color:var(--accent-strong);font-family:var(--font-logo);font-size:clamp(2rem,5vw,3.5rem);font-weight:700;letter-spacing:.05em;margin:0 .25em;vertical-align:-.05em}.zero-cert-text{color:var(--fg-body);max-width:60ch;margin:0 auto;line-height:1.75}body>main>article>section.quality-gap-section .report-stat-display{text-align:center;background:var(--bg-card);border:1px solid var(--border-soft);border-top:4px solid var(--accent-strong);border-radius:6px;padding:2.5rem 1.5rem;margin:1.5rem 0}.report-stat-headline{font-family:var(--font-logo);font-weight:700;color:var(--accent-strong);margin:0 0 1rem;line-height:1;letter-spacing:.02em}.report-stat-number{font-size:clamp(3rem,8vw,6rem);display:inline-block}.report-stat-unit{font-size:clamp(1.5rem,3vw,2.5rem);margin-left:.15em;font-weight:600;color:var(--accent)}.report-stat-caption{color:var(--fg-strong);font-size:1.05rem;margin:0 auto .75rem;max-width:50ch;line-height:1.7}.report-stat-note{color:var(--fg-muted);font-size:.875rem;margin:0 auto;max-width:50ch;line-height:1.7}ul.industry-cards{list-style:none;padding:0;margin:1.5rem 0;display:grid;grid-template-columns:1fr;gap:1rem}@media (min-width:640px){ul.industry-cards{grid-template-columns:repeat(2,1fr)}}@media (min-width:960px){ul.industry-cards{grid-template-columns:repeat(3,1fr)}}ul.industry-cards>li.industry-card{background:var(--bg-card);border:1px solid var(--border-soft);border-top:3px solid var(--accent);border-radius:4px;padding:1.5rem 1.25rem;margin:0;list-style:none;transition:border-color .18s ease,box-shadow .18s ease}ul.industry-cards>li.industry-card:before{content:none}ul.industry-cards>li.industry-card:hover{border-color:var(--accent-strong);box-shadow:0 4px 16px rgba(0,0,0,.18)}.industry-card-name{font-family:var(--font-heading);font-size:1.1rem;color:var(--fg-strong);margin:0 0 .85rem;padding-bottom:.5rem;border-bottom:1px solid var(--border-soft);letter-spacing:.02em}.industry-card-stats{margin:0;display:grid;grid-template-columns:1fr auto;gap:.4rem 1rem}.industry-card-stats>dt{font-size:.8rem;color:var(--fg-muted);margin:0;padding:0;border:none;letter-spacing:.04em;text-transform:uppercase;align-self:center}.industry-card-stats>dd{margin:0;padding:0;color:var(--fg-strong);font-size:.95rem;font-weight:500;text-align:right;font-variant-numeric:tabular-nums}body>main>article>section.ng-table-section>table{margin:1.5rem 0}body>main>article>section.ng-table-section td:nth-child(2){color:var(--accent-strong);font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap}body>main>article>section.distinction-cards-section>.distinction-lede{color:var(--fg-body);margin:0 0 1.75rem;max-width:70ch}ul.distinction-cards{list-style:none;padding:0;margin:1.75rem 0 1.5rem;display:grid;grid-template-columns:1fr;gap:1.25rem}@media (min-width:768px){ul.distinction-cards{grid-template-columns:repeat(3,1fr)}}ul.distinction-cards>li.distinction-card{background:var(--bg-card);border:1px solid var(--border-soft);border-top:4px solid;border-radius:4px;padding:2rem 1.75rem 1.75rem;margin:0;list-style:none;transition:border-color .18s ease,transform .18s ease,box-shadow .18s ease;display:flex;flex-direction:column}ul.distinction-cards>li.distinction-card:before{content:none}ul.distinction-cards>li.distinction-card:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.25)}ul.distinction-cards>li.distinction-1{color:#c8ccd0}ul.distinction-cards>li.distinction-2{color:var(--accent)}ul.distinction-cards>li.distinction-3{color:var(--accent-strong)}ul.distinction-cards>li.distinction-3:hover{box-shadow:0 0 0 1px var(--accent-strong),0 8px 24px rgba(212,175,55,.18)}.distinction-card-rating{display:inline-flex;gap:.1em;font-size:1.85rem;line-height:1;margin:0 0 1rem}.distinction-card-title{font-family:var(--font-heading);font-size:1.15rem;color:var(--fg-strong);margin:0 0 .65rem;letter-spacing:.02em}.distinction-card-title:after{content:"";display:block;width:2.5rem;height:2px;margin-top:.5rem;opacity:.95}ul.distinction-cards>li.distinction-1 .distinction-card-title:after{background:#c8ccd0}ul.distinction-cards>li.distinction-2 .distinction-card-title:after{background:var(--accent)}ul.distinction-cards>li.distinction-3 .distinction-card-title:after{background:var(--accent-strong)}.distinction-card-story{font-family:var(--font-heading);font-style:italic;font-size:1rem;color:var(--fg-strong);line-height:1.55;margin:0 0 1.25rem;padding:.85rem 0 1rem;border-bottom:1px solid var(--border-soft);font-weight:500}.distinction-card-criteria{margin:0;font-size:.85rem;color:var(--fg-body)}.distinction-card-criteria dt{color:var(--fg-muted);font-size:.75rem;letter-spacing:.06em;text-transform:uppercase;margin-top:.55rem;padding-left:0;border-left:none;font-weight:500}.distinction-card-criteria dt:first-child{margin-top:0}.distinction-card-criteria dd{color:var(--fg-strong);margin:.15rem 0 0;padding:0;font-size:.9rem;font-weight:500}.distinction-cards-footer{color:var(--fg-muted);font-size:.82rem;margin:0;text-align:right}body>main>article>section.search-section>.search-lede{color:var(--fg-body);margin:0 0 1.25rem;max-width:70ch}form.search-form{display:grid;grid-template-columns:1fr;gap:1rem;background:var(--bg-card);border:1px solid var(--border-soft);border-radius:6px;padding:1.5rem;margin:0}@media (min-width:768px){form.search-form{grid-template-columns:1.2fr 1.2fr 1.4fr auto;align-items:end;gap:1.25rem}}form.search-form .search-field{display:flex;flex-direction:column;gap:.4rem;margin:0}form.search-form .search-field>label{font-size:.78rem;color:var(--fg-muted);letter-spacing:.06em;text-transform:uppercase;font-weight:500;margin:0}form.search-form .search-field>select{padding:.7rem .85rem;background:var(--bg-page);border:1px solid var(--border);color:var(--fg-strong);font-family:var(--font-sans);font-size:.95rem;border-radius:4px;cursor:pointer}form.search-form .search-field>select:focus{outline:2px solid var(--accent-strong);outline-offset:2px;border-color:var(--accent)}form.search-form .search-field-submit>button{padding:.85rem 1.5rem;background:var(--accent);color:var(--bg-page);border:1px solid var(--accent);border-radius:4px;font-family:var(--font-sans);font-size:.95rem;font-weight:600;letter-spacing:.04em;cursor:pointer;transition:background .15s ease,border-color .15s ease;width:100%}form.search-form .search-field-submit>button:hover{background:var(--accent-strong);border-color:var(--accent-strong)}body>main>article>section.featured-rail-section>.featured-rail-lede{color:var(--fg-body);margin:0 0 1.5rem;max-width:70ch}ul.featured-rail{list-style:none;margin:1.5rem -1.5rem 0;display:flex;gap:1.25rem;overflow-x:auto;overflow-y:visible;scroll-snap-type:x mandatory;scroll-padding:1.5rem;-webkit-overflow-scrolling:touch;padding:0 1.5rem .75rem}ul.featured-rail::-webkit-scrollbar{height:8px}ul.featured-rail::-webkit-scrollbar-thumb{background:var(--accent);border-radius:4px}ul.featured-rail::-webkit-scrollbar-track{background:var(--bg-soft)}ul.featured-rail>li.featured-card{background:var(--bg-card);border:1px solid var(--border-soft);border-radius:6px;overflow:hidden;margin:0;padding:0;list-style:none;transition:border-color .18s ease,transform .18s ease,box-shadow .18s ease;display:flex;flex-direction:column;flex:0 0 auto;width:clamp(280px,80vw,340px);scroll-snap-align:start}@media (min-width:768px){ul.featured-rail>li.featured-card{width:clamp(300px,30%,360px)}}ul.featured-rail>li.featured-card:before{content:none}ul.featured-rail>li.featured-card:hover{border-color:var(--accent);transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.25)}ul.featured-rail>li.featured-card-placeholder{opacity:.85}ul.featured-rail>li.featured-card-placeholder:hover{opacity:1}.featured-card-thumb{position:relative;aspect-ratio:16/9;background:radial-gradient(circle at 30% 40%,rgba(212,175,55,.12) 0,transparent 55%),linear-gradient(135deg,var(--bg-page) 0,var(--bg-soft) 100%);display:flex;align-items:flex-end;justify-content:flex-start;padding:.85rem;border-bottom:1px solid var(--border-soft)}.featured-card-rating{position:absolute;top:.75rem;left:.75rem;display:inline-flex;gap:.1em;color:var(--accent-strong);font-size:1.15rem;background:rgba(15,23,42,.65);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);padding:.35rem .55rem;border-radius:3px;border:1px solid rgba(212,175,55,.35)}.featured-card-thumb-label{color:var(--fg-muted);font-family:var(--font-mono);font-size:.78rem;letter-spacing:.04em}.featured-card-body{padding:1.1rem 1.25rem 1.25rem;display:flex;flex-direction:column;gap:.45rem;flex:1}.featured-card-name{font-family:var(--font-heading);font-size:1.1rem;color:var(--fg-strong);margin:0;letter-spacing:.01em}.featured-card-meta{color:var(--fg-muted);font-size:.82rem;margin:0;letter-spacing:.02em}.featured-card-note{color:var(--fg-body);font-size:.875rem;line-height:1.65;margin:.4rem 0 0;flex:1}.featured-card-link{display:inline-block;margin-top:.5rem;color:var(--accent-strong);font-size:.875rem;text-decoration:none;font-weight:500;letter-spacing:.02em}.featured-card-link:hover{text-decoration:underline}ul.star-tiers>li>div{flex:1;min-width:0}ul.star-tiers>li>div>strong{display:block;font-family:var(--font-heading);font-size:1.125rem;color:var(--fg-strong);margin-bottom:.25rem;letter-spacing:.01em}ul.star-tiers>li>div>p{margin:0;font-size:.9rem;color:var(--fg-body);line-height:1.6}ul.star-tiers .star-1{color:#c8ccd0}ul.star-tiers .star-2{color:var(--accent)}ul.star-tiers .star-3{color:var(--accent-strong)}ul.star-tiers>li:first-child{border-left-color:#c8ccd0}ul.star-tiers>li:nth-child(2){border-left-color:var(--accent)}ul.star-tiers>li:nth-child(3){border-left-color:var(--accent-strong)}ul.star-tiers>li:nth-child(3):hover{box-shadow:0 0 0 1px var(--accent-strong),0 8px 24px rgba(212,175,55,.15)}.confirm-modal{position:fixed;inset:0;z-index:1000;background:rgba(15,23,42,.85);backdrop-filter:saturate(180%) blur(6px);-webkit-backdrop-filter:saturate(180%) blur(6px);display:flex;align-items:center;justify-content:center;padding:1.5rem}.confirm-modal[hidden]{display:none}.confirm-modal-card{background:var(--bg-card);border:1px solid var(--accent);border-radius:8px;padding:2rem;max-width:560px;width:100%;max-height:90vh;overflow-y:auto;position:relative;box-shadow:0 16px 48px rgba(0,0,0,.45)}.confirm-modal-card>h2{margin:0 0 1rem;font-size:1.5rem;border-bottom:none;padding-bottom:0}.confirm-modal-card>h2:before{content:none}.confirm-modal-card>p{color:var(--fg-muted);font-size:.9rem;margin-bottom:1.5rem}.confirm-close{position:absolute;top:.85rem;right:.85rem;width:2rem;height:2rem;background:transparent;border:1px solid var(--border);border-radius:4px;color:var(--fg-strong);font-size:1.2rem;line-height:1;cursor:pointer}.confirm-close:hover{border-color:var(--accent)}.confirm-close:focus-visible,.confirm-primary:focus-visible,.confirm-secondary:focus-visible{outline:2px solid var(--accent-strong);outline-offset:2px}#contactError:focus{outline:none}#contactError{color:#fca5a5;margin:.75rem 0 0;font-size:.9rem;min-height:1.4em}#contactError:empty{display:none}#confirmList{margin:0 0 1.5rem;border-top:1px solid var(--border-soft)}#confirmList dt{font-size:.8rem;color:var(--fg-muted);margin-top:.85rem;padding-left:0;border-left:none;font-weight:500;letter-spacing:.04em}#confirmList dd{margin:.25rem 0 .85rem;color:var(--fg-strong);font-size:.95rem;white-space:pre-wrap;word-break:break-word;border-bottom:1px solid var(--border-soft);padding:0 0 .85rem}#confirmList dd:last-child{border-bottom:none}.confirm-actions{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.5rem}.confirm-primary,.confirm-secondary{flex:1 1 200px;padding:.85rem 1.5rem;border-radius:4px;font-weight:600;font-family:var(--font-sans);font-size:.95rem;cursor:pointer;transition:background .15s ease,color .15s ease,border-color .15s ease}.confirm-primary{background:var(--accent);color:var(--bg-page);border:1px solid var(--accent)}.confirm-primary:hover{background:var(--accent-strong);border-color:var(--accent-strong)}.confirm-primary:disabled{opacity:.6;cursor:wait}.confirm-secondary{background:transparent;color:var(--fg-body);border:1px solid var(--border)}.confirm-secondary:hover{border-color:var(--accent);color:var(--fg-strong)}.confirm-secondary:disabled{opacity:.6;cursor:wait}#contactStatus{margin:.75rem 0 0;font-size:.875rem;min-height:1.4em}#contactStatus:empty{display:none}body>main>article>section[aria-label*=\30BB\30B0\30E1\30F3\30C8\5225]>ul,body>main>article>section[aria-label*=\5DEE\5225\5316]>ul,body>main>article>section[aria-label*=\904B\7528\65B9\91DD]>ol{display:grid;grid-template-columns:1fr;gap:.85rem;padding:0;list-style:none}@media (min-width:768px){body>main>article>section[aria-label*=\30BB\30B0\30E1\30F3\30C8\5225]>ul,body>main>article>section[aria-label*=\5DEE\5225\5316]>ul{grid-template-columns:1fr 1fr}}body>main>article>section[aria-label*=\30BB\30B0\30E1\30F3\30C8\5225]>ul>li,body>main>article>section[aria-label*=\5DEE\5225\5316]>ul>li,body>main>article>section[aria-label*=\904B\7528\65B9\91DD]>ol>li{background:var(--bg-card);border:1px solid var(--border-soft);padding:1rem 1.25rem 1rem 2.5rem;border-radius:4px;transition:border-color .15s ease;margin:0;list-style:none}body>main>article>section[aria-label*=\30BB\30B0\30E1\30F3\30C8\5225]>ul>li:before,body>main>article>section[aria-label*=\5DEE\5225\5316]>ul>li:before{left:1rem;line-height:2.4rem}body>main>article>section[aria-label*=\30BB\30B0\30E1\30F3\30C8\5225]>ul>li:hover,body>main>article>section[aria-label*=\5DEE\5225\5316]>ul>li:hover{border-color:var(--accent)}@media (prefers-reduced-motion:reduce){*,:after,:before{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border-width:0}.visible{visibility:visible}.fixed{position:fixed}.absolute{position:absolute}.relative{position:relative}.inset-0{inset:0}.z-50{z-index:50}.block{display:block}.inline{display:inline}.flex{display:flex}.table{display:table}.grid{display:grid}.hidden{display:none}.flex-shrink{flex-shrink:1}.transform{transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.flex-wrap{flex-wrap:wrap}.border{border-width:1px}.bg-dark-900{--tw-bg-opacity:1;background-color:rgb(15 23 42/var(--tw-bg-opacity,1))}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255/var(--tw-bg-opacity,1))}.p-3{padding:.75rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.py-3{padding-top:.75rem;padding-bottom:.75rem}.font-sans{font-family:Noto Sans JP,Inter,sans-serif}.text-dark-300{--tw-text-opacity:1;color:rgb(203 213 225/var(--tw-text-opacity,1))}.underline{text-decoration-line:underline}.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.outline{outline-style:solid}.blur{--tw-blur:blur(8px)}.blur,.filter{filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.backdrop-filter{-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.transition{transition-property:color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,-webkit-backdrop-filter;transition-property:color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;transition-property:color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter,-webkit-backdrop-filter;transition-timing-function:cubic-bezier(.4,0,.2,1);transition-duration:.15s}.ease-in-out{transition-timing-function:cubic-bezier(.4,0,.2,1)}.ease-out{transition-timing-function:cubic-bezier(0,0,.2,1)}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}.sr-only:focus,.sr-only:focus-visible{position:fixed;inset:1rem auto auto 1rem;width:auto;height:auto;clip:auto;background:var(--bg-card);color:var(--fg-strong);padding:.75rem 1.25rem;border:2px solid var(--accent);border-radius:4px;z-index:9999}:root{--bg-page:#0f172a;--bg-soft:#1e293b;--bg-card:#1e293b;--fg-body:#cbd5e1;--fg-muted:#94a3b8;--fg-strong:#faf8f3;--fg-heading:#faf8f3;--accent:#c9a961;--accent-strong:#d4af37;--border:rgba(201,169,97,.25);--border-soft:rgba(203,213,225,.08);--font-sans:"Inter","Noto Sans JP",-apple-system,BlinkMacSystemFont,sans-serif;--font-heading:"Noto Serif JP","Hiragino Mincho ProN","Yu Mincho","Playfair Display",serif;--font-logo:"Playfair Display","Noto Serif JP","Hiragino Mincho ProN","Yu Mincho",serif;--font-mono:ui-monospace,"Cascadia Code","Source Code Pro",monospace}@media (min-width:768px){.md\:hidden{display:none}}
+*, ::before, ::after {
+  --tw-border-spacing-x: 0;
+  --tw-border-spacing-y: 0;
+  --tw-translate-x: 0;
+  --tw-translate-y: 0;
+  --tw-rotate: 0;
+  --tw-skew-x: 0;
+  --tw-skew-y: 0;
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+  --tw-pan-x:  ;
+  --tw-pan-y:  ;
+  --tw-pinch-zoom:  ;
+  --tw-scroll-snap-strictness: proximity;
+  --tw-gradient-from-position:  ;
+  --tw-gradient-via-position:  ;
+  --tw-gradient-to-position:  ;
+  --tw-ordinal:  ;
+  --tw-slashed-zero:  ;
+  --tw-numeric-figure:  ;
+  --tw-numeric-spacing:  ;
+  --tw-numeric-fraction:  ;
+  --tw-ring-inset:  ;
+  --tw-ring-offset-width: 0px;
+  --tw-ring-offset-color: #fff;
+  --tw-ring-color: rgb(59 130 246 / 0.5);
+  --tw-ring-offset-shadow: 0 0 #0000;
+  --tw-ring-shadow: 0 0 #0000;
+  --tw-shadow: 0 0 #0000;
+  --tw-shadow-colored: 0 0 #0000;
+  --tw-blur:  ;
+  --tw-brightness:  ;
+  --tw-contrast:  ;
+  --tw-grayscale:  ;
+  --tw-hue-rotate:  ;
+  --tw-invert:  ;
+  --tw-saturate:  ;
+  --tw-sepia:  ;
+  --tw-drop-shadow:  ;
+  --tw-backdrop-blur:  ;
+  --tw-backdrop-brightness:  ;
+  --tw-backdrop-contrast:  ;
+  --tw-backdrop-grayscale:  ;
+  --tw-backdrop-hue-rotate:  ;
+  --tw-backdrop-invert:  ;
+  --tw-backdrop-opacity:  ;
+  --tw-backdrop-saturate:  ;
+  --tw-backdrop-sepia:  ;
+  --tw-contain-size:  ;
+  --tw-contain-layout:  ;
+  --tw-contain-paint:  ;
+  --tw-contain-style:  ;
+}
+
+::backdrop {
+  --tw-border-spacing-x: 0;
+  --tw-border-spacing-y: 0;
+  --tw-translate-x: 0;
+  --tw-translate-y: 0;
+  --tw-rotate: 0;
+  --tw-skew-x: 0;
+  --tw-skew-y: 0;
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+  --tw-pan-x:  ;
+  --tw-pan-y:  ;
+  --tw-pinch-zoom:  ;
+  --tw-scroll-snap-strictness: proximity;
+  --tw-gradient-from-position:  ;
+  --tw-gradient-via-position:  ;
+  --tw-gradient-to-position:  ;
+  --tw-ordinal:  ;
+  --tw-slashed-zero:  ;
+  --tw-numeric-figure:  ;
+  --tw-numeric-spacing:  ;
+  --tw-numeric-fraction:  ;
+  --tw-ring-inset:  ;
+  --tw-ring-offset-width: 0px;
+  --tw-ring-offset-color: #fff;
+  --tw-ring-color: rgb(59 130 246 / 0.5);
+  --tw-ring-offset-shadow: 0 0 #0000;
+  --tw-ring-shadow: 0 0 #0000;
+  --tw-shadow: 0 0 #0000;
+  --tw-shadow-colored: 0 0 #0000;
+  --tw-blur:  ;
+  --tw-brightness:  ;
+  --tw-contrast:  ;
+  --tw-grayscale:  ;
+  --tw-hue-rotate:  ;
+  --tw-invert:  ;
+  --tw-saturate:  ;
+  --tw-sepia:  ;
+  --tw-drop-shadow:  ;
+  --tw-backdrop-blur:  ;
+  --tw-backdrop-brightness:  ;
+  --tw-backdrop-contrast:  ;
+  --tw-backdrop-grayscale:  ;
+  --tw-backdrop-hue-rotate:  ;
+  --tw-backdrop-invert:  ;
+  --tw-backdrop-opacity:  ;
+  --tw-backdrop-saturate:  ;
+  --tw-backdrop-sepia:  ;
+  --tw-contain-size:  ;
+  --tw-contain-layout:  ;
+  --tw-contain-paint:  ;
+  --tw-contain-style:  ;
+}
+
+/*
+! tailwindcss v3.4.19 | MIT License | https://tailwindcss.com
+*/
+
+/*
+1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
+2. Allow adding a border to an element by just adding a border-width. (https://github.com/tailwindcss/tailwindcss/pull/116)
+*/
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  /* 1 */
+  border-width: 0;
+  /* 2 */
+  border-style: solid;
+  /* 2 */
+  border-color: #e5e7eb;
+  /* 2 */
+}
+
+::before,
+::after {
+  --tw-content: '';
+}
+
+/*
+1. Use a consistent sensible line-height in all browsers.
+2. Prevent adjustments of font size after orientation changes in iOS.
+3. Use a more readable tab size.
+4. Use the user's configured `sans` font-family by default.
+5. Use the user's configured `sans` font-feature-settings by default.
+6. Use the user's configured `sans` font-variation-settings by default.
+7. Disable tap highlights on iOS
+*/
+
+html,
+:host {
+  line-height: 1.5;
+  /* 1 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+  -moz-tab-size: 4;
+  /* 3 */
+  -o-tab-size: 4;
+     tab-size: 4;
+  /* 3 */
+  font-family: "Noto Sans JP", "Inter", sans-serif;
+  /* 4 */
+  font-feature-settings: normal;
+  /* 5 */
+  font-variation-settings: normal;
+  /* 6 */
+  -webkit-tap-highlight-color: transparent;
+  /* 7 */
+}
+
+/*
+1. Remove the margin in all browsers.
+2. Inherit line-height from `html` so users can set them as a class directly on the `html` element.
+*/
+
+body {
+  margin: 0;
+  /* 1 */
+  line-height: inherit;
+  /* 2 */
+}
+
+/*
+1. Add the correct height in Firefox.
+2. Correct the inheritance of border color in Firefox. (https://bugzilla.mozilla.org/show_bug.cgi?id=190655)
+3. Ensure horizontal rules are visible by default.
+*/
+
+hr {
+  height: 0;
+  /* 1 */
+  color: inherit;
+  /* 2 */
+  border-top-width: 1px;
+  /* 3 */
+}
+
+/*
+Add the correct text decoration in Chrome, Edge, and Safari.
+*/
+
+abbr:where([title]) {
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted;
+}
+
+/*
+Remove the default font size and weight for headings.
+*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+/*
+Reset links to optimize for opt-in styling instead of opt-out.
+*/
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+/*
+Add the correct font weight in Edge and Safari.
+*/
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+/*
+1. Use the user's configured `mono` font-family by default.
+2. Use the user's configured `mono` font-feature-settings by default.
+3. Use the user's configured `mono` font-variation-settings by default.
+4. Correct the odd `em` font sizing in all browsers.
+*/
+
+code,
+kbd,
+samp,
+pre {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  /* 1 */
+  font-feature-settings: normal;
+  /* 2 */
+  font-variation-settings: normal;
+  /* 3 */
+  font-size: 1em;
+  /* 4 */
+}
+
+/*
+Add the correct font size in all browsers.
+*/
+
+small {
+  font-size: 80%;
+}
+
+/*
+Prevent `sub` and `sup` elements from affecting the line height in all browsers.
+*/
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/*
+1. Remove text indentation from table contents in Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=999088, https://bugs.webkit.org/show_bug.cgi?id=201297)
+2. Correct table border color inheritance in all Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=935729, https://bugs.webkit.org/show_bug.cgi?id=195016)
+3. Remove gaps between table borders by default.
+*/
+
+table {
+  text-indent: 0;
+  /* 1 */
+  border-color: inherit;
+  /* 2 */
+  border-collapse: collapse;
+  /* 3 */
+}
+
+/*
+1. Change the font styles in all browsers.
+2. Remove the margin in Firefox and Safari.
+3. Remove default padding in all browsers.
+*/
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  /* 1 */
+  font-feature-settings: inherit;
+  /* 1 */
+  font-variation-settings: inherit;
+  /* 1 */
+  font-size: 100%;
+  /* 1 */
+  font-weight: inherit;
+  /* 1 */
+  line-height: inherit;
+  /* 1 */
+  letter-spacing: inherit;
+  /* 1 */
+  color: inherit;
+  /* 1 */
+  margin: 0;
+  /* 2 */
+  padding: 0;
+  /* 3 */
+}
+
+/*
+Remove the inheritance of text transform in Edge and Firefox.
+*/
+
+button,
+select {
+  text-transform: none;
+}
+
+/*
+1. Correct the inability to style clickable types in iOS and Safari.
+2. Remove default button styles.
+*/
+
+button,
+input:where([type='button']),
+input:where([type='reset']),
+input:where([type='submit']) {
+  -webkit-appearance: button;
+  /* 1 */
+  background-color: transparent;
+  /* 2 */
+  background-image: none;
+  /* 2 */
+}
+
+/*
+Use the modern Firefox focus style for all focusable elements.
+*/
+
+:-moz-focusring {
+  outline: auto;
+}
+
+/*
+Remove the additional `:invalid` styles in Firefox. (https://github.com/mozilla/gecko-dev/blob/2f9eacd9d3d995c937b4251a5557d95d494c9be1/layout/style/res/forms.css#L728-L737)
+*/
+
+:-moz-ui-invalid {
+  box-shadow: none;
+}
+
+/*
+Add the correct vertical alignment in Chrome and Firefox.
+*/
+
+progress {
+  vertical-align: baseline;
+}
+
+/*
+Correct the cursor style of increment and decrement buttons in Safari.
+*/
+
+::-webkit-inner-spin-button,
+::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/*
+1. Correct the odd appearance in Chrome and Safari.
+2. Correct the outline style in Safari.
+*/
+
+[type='search'] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  outline-offset: -2px;
+  /* 2 */
+}
+
+/*
+Remove the inner padding in Chrome and Safari on macOS.
+*/
+
+::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/*
+1. Correct the inability to style clickable types in iOS and Safari.
+2. Change font properties to `inherit` in Safari.
+*/
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  /* 1 */
+  font: inherit;
+  /* 2 */
+}
+
+/*
+Add the correct display in Chrome and Safari.
+*/
+
+summary {
+  display: list-item;
+}
+
+/*
+Removes the default spacing and border for appropriate elements.
+*/
+
+blockquote,
+dl,
+dd,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+figure,
+p,
+pre {
+  margin: 0;
+}
+
+fieldset {
+  margin: 0;
+  padding: 0;
+}
+
+legend {
+  padding: 0;
+}
+
+ol,
+ul,
+menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/*
+Reset default styling for dialogs.
+*/
+
+dialog {
+  padding: 0;
+}
+
+/*
+Prevent resizing textareas horizontally by default.
+*/
+
+textarea {
+  resize: vertical;
+}
+
+/*
+1. Reset the default placeholder opacity in Firefox. (https://github.com/tailwindlabs/tailwindcss/issues/3300)
+2. Set the default placeholder color to the user's configured gray 400 color.
+*/
+
+input::-moz-placeholder, textarea::-moz-placeholder {
+  opacity: 1;
+  /* 1 */
+  color: #9ca3af;
+  /* 2 */
+}
+
+input::placeholder,
+textarea::placeholder {
+  opacity: 1;
+  /* 1 */
+  color: #9ca3af;
+  /* 2 */
+}
+
+/*
+Set the default cursor for buttons.
+*/
+
+button,
+[role="button"] {
+  cursor: pointer;
+}
+
+/*
+Make sure disabled buttons don't get the pointer cursor.
+*/
+
+:disabled {
+  cursor: default;
+}
+
+/*
+1. Make replaced elements `display: block` by default. (https://github.com/mozdevs/cssremedy/issues/14)
+2. Add `vertical-align: middle` to align replaced elements more sensibly by default. (https://github.com/jensimmons/cssremedy/issues/14#issuecomment-634934210)
+   This can trigger a poorly considered lint error in some tools but is included by design.
+*/
+
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
+  display: block;
+  /* 1 */
+  vertical-align: middle;
+  /* 2 */
+}
+
+/*
+Constrain images and videos to the parent width and preserve their intrinsic aspect ratio. (https://github.com/mozdevs/cssremedy/issues/14)
+*/
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Make elements with the HTML hidden attribute stay hidden by default */
+
+[hidden]:where(:not([hidden="until-found"])) {
+  display: none;
+}
+
+/* ─── 基底 ────────────────────────────────────── */
+
+html {
+  font-feature-settings: "palt";
+  scroll-padding-top: 5rem;
+}
+
+body {
+  /* Tailwind の bg-dark-900 / text-dark-300 が背景・文字色を設定するので CSS で上書きしない */
+  font-family: var(--font-sans);
+  font-weight: 400;
+  line-height: 1.8;
+  font-feature-settings: "palt";
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-size: 16px;
+}
+
+/* ─── 見出し (serif / MASTER-PLAN §2.6 元設計復帰) ────
+     和文を含む見出しは Noto Serif JP 先頭で数字・英字も明朝体プロポーション統一
+     (代表 UX FB「評価の 5 原則」の不揃い解消) */
+
+h1, h2, h3, h4 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  color: var(--fg-heading);
+  letter-spacing: 0.01em;
+  line-height: 1.3;
+}
+
+h1 {
+  font-size: 2.25rem;
+  margin: 1rem 0 1.5rem;
+  letter-spacing: 0.02em;
+}
+
+@media (min-width: 768px) {
+  h1 {
+    font-size: 3rem;
+  }
+}
+
+h2 {
+  font-size: 1.625rem;
+  margin: 3rem 0 1.25rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid var(--border);
+  position: relative;
+  font-weight: 600;
+}
+
+h2::before {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 3rem;
+  height: 2px;
+  background: var(--accent);
+}
+
+@media (min-width: 768px) {
+  h2 {
+    font-size: 2rem;
+  }
+}
+
+h3 {
+  font-size: 1.25rem;
+  margin: 1.5rem 0 0.75rem;
+  color: var(--accent-strong);
+  font-weight: 600;
+}
+
+/* ─── テキスト要素 ─────────────────────────── */
+
+p {
+  margin: 0.85rem 0;
+  font-variant-numeric: tabular-nums;
+}
+
+strong {
+  color: var(--fg-strong);
+  font-weight: 600;
+}
+
+em {
+  color: var(--accent-strong);
+  font-weight: 500;
+  font-style: normal;
+}
+
+a {
+  color: var(--accent-strong);
+  text-decoration: underline;
+  text-decoration-color: rgba(212, 175, 55, 0.4);
+  text-underline-offset: 3px;
+  transition: color .15s ease, text-decoration-color .15s ease;
+}
+
+a:hover,
+  a:focus-visible {
+  color: var(--accent);
+  text-decoration-color: var(--accent);
+}
+
+a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+code {
+  font-family: var(--font-mono);
+  background: var(--bg-soft);
+  padding: 0.1rem 0.35rem;
+  border-radius: 3px;
+  font-size: 0.9em;
+  border: 1px solid var(--border-soft);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ─── リスト ──────────────────────────────── */
+
+ul, ol {
+  padding-left: 1.5rem;
+  margin: 1rem 0;
+}
+
+ul {
+  list-style: none;
+}
+
+ul li {
+  position: relative;
+  padding-left: 1.4rem;
+  margin: 0.55rem 0;
+}
+
+ul li::before {
+  content: "◆";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--accent);
+  font-size: 0.7em;
+  line-height: 2rem;
+}
+
+ol {
+  list-style: decimal;
+  padding-left: 2rem;
+}
+
+ol li {
+  margin: 0.55rem 0;
+  padding-left: 0.5rem;
+  font-variant-numeric: tabular-nums;
+}
+
+ol li::marker {
+  color: var(--accent-strong);
+  font-weight: 600;
+}
+
+/* ─── 引用句 (serif / 出典・名言の格調) ─── */
+
+blockquote {
+  margin: 2rem 0;
+  padding: 1.5rem 1.75rem;
+  border-left: 3px solid var(--accent);
+  background: var(--bg-soft);
+  font-family: var(--font-heading);
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: var(--fg-strong);
+  border-radius: 0 4px 4px 0;
+  position: relative;
+  font-weight: 500;
+  font-style: italic;
+}
+
+blockquote::before {
+  /* 飾り U+201C は単一 Latin 文字なので Playfair Display 優先で elegant に */
+  content: "\201C";
+  position: absolute;
+  top: 0;
+  right: 1rem;
+  font-size: 4rem;
+  color: var(--accent-strong);
+  opacity: 0.2;
+  line-height: 1;
+  font-family: var(--font-logo);
+}
+
+/* ─── 表 ─────────────────────────────────── */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  background: var(--bg-card);
+  border: 1px solid var(--border-soft);
+  border-radius: 4px;
+  overflow: hidden;
+  font-variant-numeric: tabular-nums;
+}
+
+caption {
+  text-align: left;
+  padding: 0.75rem 1rem;
+  font-size: 0.9rem;
+  color: var(--fg-muted);
+  background: var(--bg-soft);
+  border-bottom: 1px solid var(--border-soft);
+  caption-side: top;
+  font-family: var(--font-sans);
+}
+
+th, td {
+  padding: 0.85rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid var(--border-soft);
+}
+
+thead th {
+  background: var(--bg-soft);
+  font-weight: 600;
+  color: var(--fg-strong);
+  letter-spacing: 0.02em;
+}
+
+tbody th {
+  font-weight: 600;
+  color: var(--accent-strong);
+  width: 1%;
+  white-space: nowrap;
+}
+
+tbody tr:last-child td,
+  tbody tr:last-child th {
+  border-bottom: none;
+}
+
+tbody tr:hover {
+  background: rgba(201, 169, 97, 0.05);
+}
+
+/* ─── 定義リスト ─────────────────────────── */
+
+dl {
+  margin: 1.5rem 0;
+}
+
+dt {
+  font-weight: 600;
+  color: var(--fg-strong);
+  margin-top: 1.5rem;
+  padding-left: 0.85rem;
+  border-left: 3px solid var(--accent);
+  font-size: 1.05rem;
+}
+
+dd {
+  margin: 0.5rem 0 0 1rem;
+  padding-bottom: 0.5rem;
+}
+
+time {
+  font-variant-numeric: tabular-nums;
+  color: var(--fg-muted);
+  font-size: 0.9rem;
+  letter-spacing: 0.02em;
+}
+
+/* ─── ヘッダー ────────────────────────────── */
+
+body > header {
+  background: var(--bg-page);
+  border-bottom: 1px solid var(--border);
+  padding: 1rem 1.5rem;
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  backdrop-filter: saturate(180%) blur(8px);
+  -webkit-backdrop-filter: saturate(180%) blur(8px);
+}
+
+body > header > nav {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+/* ヘッダーブランドロゴ ── 唯一 serif (Playfair Display) を使用 */
+
+body > header > nav > a {
+  color: var(--fg-strong);
+  text-decoration: none;
+  font-family: var(--font-logo);
+  font-size: 1.4rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+/* ヘッダロゴ ★: SVG コンポーネント化済 (UX-UI-DIRECTIVE Phase A Item 2)
+     旧 `::before { content: "★" }` は SVG (.star-svg-logo) に置換 */
+
+body > header > nav > a > .star-svg-logo {
+  color: var(--accent-strong);
+  width: 1em;
+  height: 1em;
+}
+
+body > header > nav > a > span {
+  color: var(--fg-strong);
+}
+
+body > header > nav > ul {
+  display: none;
+  gap: 1.75rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+body > header > nav > ul > li {
+  padding: 0;
+  margin: 0;
+}
+
+body > header > nav > ul > li::before {
+  content: none;
+}
+
+body > header > nav > ul > li > a {
+  color: var(--fg-body);
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 0.4rem 0;
+  border-bottom: 2px solid transparent;
+  transition: border-color .15s ease, color .15s ease;
+  font-family: var(--font-sans);
+}
+
+body > header > nav > ul > li > a:hover,
+  body > header > nav > ul > li > a[aria-current="page"] {
+  color: var(--accent-strong);
+  border-bottom-color: var(--accent);
+}
+
+@media (min-width: 768px) {
+  body > header > nav > ul {
+    display: flex;
+  }
+}
+
+body > header > #menuToggle {
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  color: var(--fg-strong);
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0.5rem 0.75rem;
+}
+
+/* ─── メイン ───────────────────────────── */
+
+body > main {
+  flex: 1;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem 5rem;
+}
+
+/* article: ミシュラン公式モデル整合 (UX-UI-DIRECTIVE v1)
+     - TOP / 一覧 / 詳細ページ: 1100px 幅でカード・グリッド表示を最適化
+     - リーディング系セクション (Lead Evidence / 段落本文) は内側の p 要素で line-length 制御 */
+
+body > main > article {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* 段落のリーディング適正幅 (line-length 60-75ch / WCAG SC 1.4.8) */
+
+body > main > article > section > p {
+  max-width: 70ch;
+}
+
+body > main > article > section {
+  margin: 3rem 0;
+  padding: 2rem 0 0;
+}
+
+body > main > article > section:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+/* ─── フッター ──────────────────────────── */
+
+body > footer {
+  background: var(--bg-page);
+  color: var(--fg-body);
+  padding: 3.5rem 1.5rem 2rem;
+  margin-top: auto;
+  border-top: 3px solid var(--accent);
+}
+
+body > footer > nav {
+  max-width: 1200px;
+  margin: 0 auto 2rem;
+}
+
+body > footer > nav > ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 2rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+body > footer > nav > ul > li {
+  padding: 0;
+  margin: 0;
+}
+
+body > footer > nav > ul > li::before {
+  content: none;
+}
+
+body > footer > nav > ul > li > a {
+  color: var(--accent);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-family: var(--font-sans);
+}
+
+body > footer > nav > ul > li > a:hover {
+  color: var(--accent-strong);
+  text-decoration: underline;
+}
+
+body > footer > p {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.5rem 0 0;
+  border-top: 1px solid rgba(201, 169, 97, 0.2);
+  font-size: 0.875rem;
+  color: var(--fg-muted);
+  font-family: var(--font-sans);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ─── モバイルメニュー ──────────────────── */
+
+body > header > #mobile-menu {
+  background: var(--bg-page);
+  color: var(--fg-body);
+  padding: 5rem 2rem 2rem;
+}
+
+body > header > #mobile-menu > nav > ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+body > header > #mobile-menu > nav > ul > li::before {
+  content: none;
+}
+
+body > header > #mobile-menu > nav > ul > li > a {
+  color: var(--fg-strong);
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  text-decoration: none;
+}
+
+/* ─── スクロールバー ───────────────────── */
+
+body::-webkit-scrollbar {
+  width: 10px;
+}
+
+body::-webkit-scrollbar-track {
+  background: var(--bg-page);
+}
+
+body::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border-radius: 5px;
+}
+
+/* ─── フォーム要素 ───────────────────────── */
+
+label {
+  display: block;
+  font-weight: 500;
+  color: var(--fg-strong);
+  margin-bottom: 0.4rem;
+  font-size: 0.9rem;
+  font-family: var(--font-sans);
+}
+
+input, textarea, select {
+  width: 100%;
+  padding: 0.7rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background: var(--bg-card);
+  color: var(--fg-body);
+  font-family: inherit;
+  font-size: 1rem;
+  transition: border-color .15s ease, box-shadow .15s ease;
+}
+
+/* SPEC §7.1 / WCAG 2.4.7 / 2.4.11 — フォーカスリングは不透明色で必ず明示 */
+
+input:focus, textarea:focus, select:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-color: var(--accent);
+}
+
+input:focus-visible, textarea:focus-visible, select:focus-visible {
+  outline: 2px solid var(--accent-strong);
+  outline-offset: 2px;
+}
+
+button[type="submit"] {
+  background: var(--bg-page);
+  color: var(--fg-strong);
+  border: 1px solid var(--accent);
+  padding: 0.85rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background .15s ease, color .15s ease, border-color .15s ease;
+  font-family: var(--font-sans);
+  letter-spacing: 0.05em;
+}
+
+button[type="submit"]:hover {
+  background: var(--accent-strong);
+  color: var(--bg-page);
+  border-color: var(--accent-strong);
+}
+
+form p {
+  margin: 1.25rem 0;
+}
+
+.container {
+  width: 100%;
+}
+
+@media (min-width: 640px) {
+  .container {
+    max-width: 640px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1024px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1280px;
+  }
+}
+
+@media (min-width: 1536px) {
+  .container {
+    max-width: 1536px;
+  }
+}
+
+/* 冒頭エビデンス (Lead Evidence Block / SPEC §4.13) — aria-label*="冒頭エビデンス" でマッチ */
+
+body > main > article > section[aria-label*="冒頭エビデンス"] {
+  background: linear-gradient(180deg, var(--bg-soft) 0%, var(--bg-page) 100%);
+  padding: 3rem 2rem;
+  margin: 0 -2rem 3rem;
+  border-radius: 4px;
+  border-bottom: 2px solid var(--accent);
+  text-align: left;
+  position: relative;
+}
+
+body > main > article > section[aria-label*="冒頭エビデンス"]::before {
+  content: "";
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 80px;
+  height: 80px;
+  background: radial-gradient(circle, var(--accent-strong) 0%, transparent 65%);
+  opacity: 0.15;
+}
+
+body > main > article > section[aria-label*="冒頭エビデンス"] > h1 {
+  font-size: 2.5rem;
+  margin: 1.5rem 0;
+  font-weight: 600;
+}
+
+@media (min-width: 768px) {
+  body > main > article > section[aria-label*="冒頭エビデンス"] > h1 {
+    font-size: 3.5rem;
+  }
+}
+
+body > main > article > section[aria-label*="冒頭エビデンス"] > p:first-of-type::first-letter {
+  font-family: var(--font-logo);
+  font-size: 3.75rem;
+  float: left;
+  line-height: 0.85;
+  margin: 0.25rem 0.55rem 0 0;
+  color: var(--accent-strong);
+  font-weight: 600;
+}
+
+/* 冒頭エビデンス Lead Evidence */
+
+body > main > article > section[aria-label*="冒頭エビデンス"] {
+  border-left: 3px solid var(--accent);
+  padding-left: 1.5rem;
+  background: linear-gradient(90deg, rgba(201, 169, 97, 0.05) 0%, transparent 60%);
+}
+
+/* ─── ★区分階層 (MASTER-PLAN §3.4 / §7.3 バッジシステム整合) ───
+     色は「控えめ → 上品 → 頂点」の 3 段階で格調を可視化。
+     Pearl Silver は本機関独自の追加トークン (★ HARTON Certified 用 / バッジ系のシルバー帯)。 */
+
+ul.star-tiers {
+  list-style: none;
+  padding-left: 0;
+  margin: 1.5rem 0;
+}
+
+ul.star-tiers > li {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 1.25rem 1.5rem;
+  margin: 0.75rem 0;
+  background: var(--bg-card);
+  border: 1px solid var(--border-soft);
+  border-left: 4px solid currentColor;
+  /* ★ 色を継承 */
+  border-radius: 4px;
+  transition: border-color .15s ease;
+}
+
+ul.star-tiers > li::before {
+  content: none;
+}
+
+ul.star-tiers .star {
+  font-family: var(--font-logo);
+  font-size: 1.35rem;
+  letter-spacing: 0.08em;
+  flex-shrink: 0;
+  line-height: 1;
+  white-space: nowrap;
+  display: inline-flex;
+  gap: 0.1em;
+  align-items: center;
+}
+
+/* SVG ★ コンポーネント (UX-UI-DIRECTIVE Phase A Item 2 / a11y 対応)
+     - 親要素の color に追従 (currentColor で fill)
+     - サイズは em ベースで親要素の font-size に追従 */
+
+.star-svg {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  vertical-align: -0.1em;
+  fill: currentColor;
+}
+
+/* ───────────────────────────────────────────────
+     TOP HERO マニフェスト (UX-UI-DIRECTIVE Phase A Item 3)
+     MASTER-PLAN v1.1.7 §0.1 / §2.0.1 / §3.0 連動
+     ミシュランガイド公式 §1.1 ホーム/ディスカバリー層 構造的学習
+     ─────────────────────────────────────────────── */
+
+body > main > article > section.hero-manifest {
+  position: relative;
+  margin: 0 0 4rem;
+  padding: 5rem 2rem 4.5rem;
+  background:
+      radial-gradient(circle at 85% 20%, rgba(212, 175, 55, 0.08) 0%, transparent 50%),
+      radial-gradient(circle at 15% 80%, rgba(201, 169, 97, 0.06) 0%, transparent 60%),
+      linear-gradient(180deg, var(--bg-page) 0%, rgba(30, 41, 59, 0.6) 100%);
+  border-bottom: 2px solid var(--accent);
+  border-radius: 4px;
+  overflow: hidden;
+  text-align: center;
+}
+
+/* hero 内段落のリーディング幅は中央寄せで明示制御 */
+
+body > main > article > section.hero-manifest > p {
+  max-width: 38ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* eyebrow: text-transform: uppercase は ASCII にしか効かないため、letter-spacing を控えめにし
+     日本語混在テキストの可読性を確保（Reviewer C HI-1 / WCAG 1.4.4 整合）*/
+
+body > main > article > section.hero-manifest .hero-eyebrow {
+  color: var(--accent-strong);
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin: 0 0 1.5rem;
+  font-weight: 500;
+}
+
+body > main > article > section.hero-manifest .hero-h1 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  color: var(--fg-strong);
+  font-size: clamp(1.75rem, 4.5vw, 3rem);
+  line-height: 1.35;
+  letter-spacing: 0.02em;
+  margin: 0 0 1.75rem;
+  border: none;
+  padding: 0;
+}
+
+body > main > article > section.hero-manifest .hero-h1::before {
+  content: none;
+}
+
+/* hero 内 ★ は本文より大きく、accent-strong (Classic Gold) で表現 */
+
+body > main > article > section.hero-manifest .hero-stars {
+  display: inline-flex;
+  gap: 0.05em;
+  color: var(--accent-strong);
+  vertical-align: -0.05em;
+  margin: 0 0.05em;
+}
+
+body > main > article > section.hero-manifest .hero-stars .star-svg {
+  width: 0.95em;
+  height: 0.95em;
+}
+
+body > main > article > section.hero-manifest .hero-manifest-text {
+  font-family: var(--font-heading);
+  font-size: clamp(1rem, 1.6vw, 1.2rem);
+  line-height: 1.7;
+  color: var(--fg-body);
+  max-width: 38ch;
+  margin: 0 auto 2.5rem;
+  font-style: italic;
+  font-weight: 500;
+}
+
+body > main > article > section.hero-manifest .hero-cta-row {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+body > main > article > section.hero-manifest .hero-cta-primary,
+  body > main > article > section.hero-manifest .hero-cta-secondary {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.85rem 1.75rem;
+  border-radius: 4px;
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  transition: background .15s ease, color .15s ease, border-color .15s ease;
+}
+
+body > main > article > section.hero-manifest .hero-cta-primary {
+  background: var(--accent);
+  color: var(--bg-page);
+  border: 1px solid var(--accent);
+}
+
+body > main > article > section.hero-manifest .hero-cta-primary:hover {
+  background: var(--accent-strong);
+  border-color: var(--accent-strong);
+  color: var(--bg-page);
+}
+
+/* WCAG 2.4.11: Gold on Gold 同色フォーカスリング回避 (Reviewer C HI-5)
+     CTA primary の bg は accent (gold) なので outline は bg-page (Deep Navy) で 3:1 以上確保 */
+
+body > main > article > section.hero-manifest .hero-cta-primary:focus-visible {
+  outline: 3px solid var(--bg-page);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 5px var(--accent-strong);
+}
+
+body > main > article > section.hero-manifest .hero-cta-secondary:focus-visible {
+  outline: 2px solid var(--accent-strong);
+  outline-offset: 3px;
+}
+
+/* featured-card-link focus-visible 明示 (Reviewer C HI-6) */
+
+.featured-card-link:focus-visible {
+  outline: 2px solid var(--accent-strong);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+body > main > article > section.hero-manifest .hero-cta-secondary {
+  background: transparent;
+  color: var(--fg-strong);
+  border: 1px solid var(--border);
+}
+
+body > main > article > section.hero-manifest .hero-cta-secondary:hover {
+  border-color: var(--accent);
+  color: var(--accent-strong);
+}
+
+/* ブランドスローガン (figure / figcaption) — Reviewer C HI-4 / B M-1 整合
+     blockquote 誤帰属を回避し、自社スローガンを figure 構造で表現 */
+
+/* ───────────────────────────────────────────────
+     沼津業界レポート 2026 春 (INSTRUCTION v1.12.2 §(A))
+     ─ 認定 0 件ステートメント / 4.09 倍ギャップ大数値 / 業種別 5 カード / NG 内訳テーブル
+     ─────────────────────────────────────────────── */
+
+body > main > article > section.zero-cert-statement {
+  text-align: center;
+  background: linear-gradient(135deg, var(--bg-soft) 0%, var(--bg-card) 100%);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--accent-strong);
+  border-radius: 6px;
+  padding: 2rem 1.5rem;
+  margin: 2rem 0;
+}
+
+body > main > article > section.zero-cert-statement > h2 {
+  border: none;
+  padding: 0;
+  margin: 0 0 1rem;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+}
+
+body > main > article > section.zero-cert-statement > h2::before {
+  content: none;
+}
+
+body > main > article > section.quality-gap-section .report-stat-display {
+  text-align: center;
+  background: var(--bg-card);
+  border: 1px solid var(--border-soft);
+  border-top: 4px solid var(--accent-strong);
+  border-radius: 6px;
+  padding: 2.5rem 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.report-stat-headline {
+  font-family: var(--font-logo);
+  font-weight: 700;
+  color: var(--accent-strong);
+  margin: 0 0 1rem;
+  line-height: 1;
+  letter-spacing: 0.02em;
+}
+
+.report-stat-number {
+  font-size: clamp(3rem, 8vw, 6rem);
+  display: inline-block;
+}
+
+.report-stat-unit {
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  margin-left: 0.15em;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.report-stat-caption {
+  color: var(--fg-strong);
+  font-size: 1.05rem;
+  margin: 0 auto 0.75rem;
+  max-width: 50ch;
+  line-height: 1.7;
+}
+
+.report-stat-note {
+  color: var(--fg-muted);
+  font-size: 0.875rem;
+  margin: 0 auto;
+  max-width: 50ch;
+  line-height: 1.7;
+}
+
+/* 業種別 5 カード (distinction-cards 派生 / モバイル 1列 / タブレット 2列 / デスクトップ 3 列) */
+
+/* NG 内訳テーブル ラッパー */
+
+body > main > article > section.ng-table-section > table {
+  margin: 1.5rem 0;
+}
+
+body > main > article > section.ng-table-section td:nth-child(2) {
+  color: var(--accent-strong);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+/* 都市別 / 業種別ランキング表 NG% 色分け (Phase 0.5 v2.5 / AI 視点 UX 推奨)
+     dark 背景 (#1E293B) 用に Tailwind *-400 shade を採用 (WCAG AA 4.5:1+ 担保)
+     reviewer 検出 (信頼 95): emerald-700 等は light 背景前提で dark 上では 2.8:1 = AA fail */
+
+body > main > article > section.region-section td.ng-low,
+  body > main > article > section.industry-section td.ng-low {
+  color: #34d399;
+  /* emerald-400 / dark 背景 4.5:1+ */
+  font-weight: 600;
+}
+
+body > main > article > section.region-section td.ng-mid,
+  body > main > article > section.industry-section td.ng-mid {
+  color: #fbbf24;
+  /* amber-400 / dark 背景 9.5:1 */
+  font-weight: 600;
+}
+
+body > main > article > section.region-section td.ng-high,
+  body > main > article > section.industry-section td.ng-high {
+  color: #f87171;
+  /* red-400 / dark 背景 5.4:1 */
+  font-weight: 700;
+}
+
+body > main > article > section.region-section .region-section-lede,
+  body > main > article > section.region-section .region-section-note,
+  body > main > article > section.industry-section .industry-section-lede {
+  font-size: 0.95rem;
+  color: var(--fg-default);
+  margin: 0.5rem 0 1rem;
+  line-height: 1.7;
+}
+
+body > main > article > section.region-section .region-section-note {
+  font-size: 0.85rem;
+  color: var(--fg-muted);
+  margin-top: 0.75rem;
+}
+
+/* レポート FAQ section (AI Overview / Featured Snippet 引用最適化)
+     reviewer 検出 (信頼 100): 旧版は --border-default / --bg-elevated / --border-subtle 未定義
+     → 既存 design tokens (--border-soft / --bg-card) に統一 + .faq-section との視覚整合を優先 */
+
+body > main > article > section.report-faq-section {
+  margin: 2rem 0;
+}
+
+body > main > article > section.report-faq-section details {
+  border: 1px solid var(--border-soft);
+  border-left: 3px solid #C9A961;
+  /* faq-section と同系統のゴールド左ボーダーで全サイト FAQ 視覚統一 */
+  border-radius: 0.5rem;
+  padding: 1rem 1.25rem;
+  margin: 0.75rem 0;
+  background: var(--bg-card);
+}
+
+body > main > article > section.report-faq-section details summary {
+  font-weight: 600;
+  color: #D4AF37;
+  /* faq-section と同 gold で統一 */
+  cursor: pointer;
+  font-size: 1.05rem;
+}
+
+body > main > article > section.report-faq-section details .faq-answer {
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--border-soft);
+  color: var(--fg-default);
+}
+
+/* 7 列表 mobile overflow wrapper (reviewer 信頼 92)
+     都市別 / 業種別ランキング表が 7 列に拡張され mobile (<480px) で body 横スクロールが発生するため、
+     <table> を直接配置せず親 section 内で table-scroll wrapper として扱う */
+
+body > main > article > section.region-section,
+  body > main > article > section.industry-section {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+body > main > article > section.region-section table,
+  body > main > article > section.industry-section table {
+  min-width: 560px;
+}
+
+/* lead-h: 既存 H1「すべての事業者の WEB を、S クラスへ。」を H2 にダウングレード後の意匠維持 */
+
+/* ───────────────────────────────────────────────
+     ★区分の物語カード (UX-UI-DIRECTIVE Phase A Item 6)
+     MASTER-PLAN v1.1.7 §3.1 物語列 (① 確定文言 / CRITICAL-ISSUES-REPORT v1.1.14 §21.1.4) 連動
+     既存 ul.star-tiers と異なり、TOP の認定基準サマリ位置に配置する 3 列カードグリッド版。
+     ─────────────────────────────────────────────── */
+
+body > main > article > section.distinction-cards-section > .distinction-lede {
+  color: var(--fg-body);
+  margin: 0 0 1.75rem;
+  max-width: 70ch;
+}
+
+ul.distinction-cards {
+  list-style: none;
+  padding: 0;
+  margin: 1.75rem 0 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+
+@media (min-width: 768px) {
+  ul.distinction-cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+ul.distinction-cards > li.distinction-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-soft);
+  border-top: 4px solid currentColor;
+  border-radius: 4px;
+  padding: 2rem 1.75rem 1.75rem;
+  margin: 0;
+  list-style: none;
+  transition: border-color .18s ease, transform .18s ease, box-shadow .18s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+ul.distinction-cards > li.distinction-card::before {
+  content: none;
+}
+
+ul.distinction-cards > li.distinction-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+/* 階層別カラー (currentColor で border-top 上端 + ★ アイコン両方を駆動) */
+
+ul.distinction-cards > li.distinction-1 {
+  color: #C8CCD0;
+}
+
+/* Pearl Silver */
+
+ul.distinction-cards > li.distinction-2 {
+  color: var(--accent);
+}
+
+/* Champagne Gold */
+
+ul.distinction-cards > li.distinction-3 {
+  color: var(--accent-strong);
+}
+
+/* Classic Gold */
+
+/* 最高位 ★★★ にはホバー時に強い光彩 */
+
+ul.distinction-cards > li.distinction-3:hover {
+  box-shadow: 0 0 0 1px var(--accent-strong), 0 8px 24px rgba(212, 175, 55, 0.18);
+}
+
+.distinction-card-rating {
+  display: inline-flex;
+  gap: 0.1em;
+  font-size: 1.85rem;
+  line-height: 1;
+  margin: 0 0 1rem;
+}
+
+.distinction-card-title {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  color: var(--fg-strong);
+  margin: 0 0 0.65rem;
+  letter-spacing: 0.02em;
+}
+
+/* 階層別カラーをタイトル下のアクセント線で表現 (Reviewer A H-2: ★ 階層と title の継承断絶解消) */
+
+.distinction-card-title::after {
+  content: "";
+  display: block;
+  width: 2.5rem;
+  height: 2px;
+  margin-top: 0.5rem;
+  opacity: 0.95;
+}
+
+ul.distinction-cards > li.distinction-1 .distinction-card-title::after {
+  background: #C8CCD0;
+}
+
+ul.distinction-cards > li.distinction-2 .distinction-card-title::after {
+  background: var(--accent);
+}
+
+ul.distinction-cards > li.distinction-3 .distinction-card-title::after {
+  background: var(--accent-strong);
+}
+
+.distinction-card-story {
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-size: 1rem;
+  color: var(--fg-strong);
+  line-height: 1.55;
+  margin: 0 0 1.25rem;
+  padding: 0.85rem 0 1rem;
+  border-bottom: 1px solid var(--border-soft);
+  font-weight: 500;
+}
+
+.distinction-card-criteria {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--fg-body);
+}
+
+.distinction-card-criteria dt {
+  color: var(--fg-muted);
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-top: 0.55rem;
+  padding-left: 0;
+  border-left: none;
+  font-weight: 500;
+}
+
+.distinction-card-criteria dt:first-child {
+  margin-top: 0;
+}
+
+.distinction-card-criteria dd {
+  color: var(--fg-strong);
+  margin: 0.15rem 0 0;
+  padding: 0;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.distinction-cards-footer {
+  color: var(--fg-muted);
+  font-size: 0.82rem;
+  margin: 0;
+  text-align: right;
+}
+
+/* ───────────────────────────────────────────────
+     検索バー (UX-UI-DIRECTIVE Phase A Item 5)
+     ミシュラン公式 §1.1「Restaurant, city, cuisine」3 軸 chip 構造の学習。
+     Phase C で URL クエリパラメータ連動 + クライアントサイドフィルタを実装予定。
+     ─────────────────────────────────────────────── */
+
+body > main > article > section.search-section > .search-lede {
+  color: var(--fg-body);
+  margin: 0 0 1.25rem;
+  max-width: 70ch;
+}
+
+form.search-form {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border-soft);
+  border-radius: 6px;
+  padding: 1.5rem;
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  form.search-form {
+    grid-template-columns: 1.2fr 1.2fr 1.4fr auto;
+    align-items: end;
+    gap: 1.25rem;
+  }
+}
+
+form.search-form .search-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin: 0;
+}
+
+form.search-form .search-field > label {
+  font-size: 0.78rem;
+  color: var(--fg-muted);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-weight: 500;
+  margin: 0;
+}
+
+form.search-form .search-field > select {
+  padding: 0.7rem 0.85rem;
+  background: var(--bg-page);
+  border: 1px solid var(--border);
+  color: var(--fg-strong);
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+form.search-form .search-field > select:focus {
+  outline: 2px solid var(--accent-strong);
+  outline-offset: 2px;
+  border-color: var(--accent);
+}
+
+form.search-form .search-field-submit > button {
+  padding: 0.85rem 1.5rem;
+  background: var(--accent);
+  color: var(--bg-page);
+  border: 1px solid var(--accent);
+  border-radius: 4px;
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition: background .15s ease, border-color .15s ease;
+  width: 100%;
+}
+
+form.search-form .search-field-submit > button:hover {
+  background: var(--accent-strong);
+  border-color: var(--accent-strong);
+}
+
+/* ───────────────────────────────────────────────
+     注目認定 rail (UX-UI-DIRECTIVE Phase A Item 4)
+     ミシュラン公式 §1.1「Featured / By distinction」横スクロール構造の学習。
+     Phase 0 沼津 30 件投入後に generate.js が動的データで rail を生成する設計
+     との互換を保つため、card クラスは将来拡張対応。
+     ─────────────────────────────────────────────── */
+
+body > main > article > section.featured-rail-section > .featured-rail-lede {
+  color: var(--fg-body);
+  margin: 0 0 1.5rem;
+  max-width: 70ch;
+}
+
+/* 横スクロール rail (UX-UI-DIRECTIVE §1.1 Featured 横スクロール構造)
+     scroll-snap-type で「スライドしながら新規発見を促すパターン」を実現。
+     モバイルは 1.2 枚見切り / デスクトップは 3 枚 + 続きが見切れるグリッド。 */
+
+ul.featured-rail {
+  list-style: none;
+  padding: 0 0 0.75rem;
+  margin: 1.5rem -1.5rem 0;
+  display: flex;
+  gap: 1.25rem;
+  overflow-x: auto;
+  overflow-y: visible;
+  scroll-snap-type: x mandatory;
+  scroll-padding: 1.5rem;
+  -webkit-overflow-scrolling: touch;
+  /* 左右に padding を確保しつつ要素は overflow させる */
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+ul.featured-rail::-webkit-scrollbar {
+  height: 8px;
+}
+
+ul.featured-rail::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border-radius: 4px;
+}
+
+ul.featured-rail::-webkit-scrollbar-track {
+  background: var(--bg-soft);
+}
+
+ul.featured-rail > li.featured-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-soft);
+  border-radius: 6px;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  transition: border-color .18s ease, transform .18s ease, box-shadow .18s ease;
+  display: flex;
+  flex-direction: column;
+  /* 横スクロール用の固定幅 + snap */
+  flex: 0 0 auto;
+  width: clamp(280px, 80vw, 340px);
+  scroll-snap-align: start;
+}
+
+@media (min-width: 768px) {
+  ul.featured-rail > li.featured-card {
+    width: clamp(300px, 30%, 360px);
+  }
+}
+
+ul.featured-rail > li.featured-card::before {
+  content: none;
+}
+
+ul.featured-rail > li.featured-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+/* placeholder card は dimmed 表示で「準備中」感を出す
+     opacity 0.85 で WCAG 1.4.3 (4.5:1) を維持 (Reviewer C ME-2) */
+
+ul.featured-rail > li.featured-card-placeholder {
+  opacity: 0.85;
+}
+
+ul.featured-rail > li.featured-card-placeholder:hover {
+  opacity: 1;
+}
+
+/* スクリーンショット領域 (Phase 0 完了後に <img> に置換) */
+
+.featured-card-thumb {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  background:
+      radial-gradient(circle at 30% 40%, rgba(212, 175, 55, 0.12) 0%, transparent 55%),
+      linear-gradient(135deg, var(--bg-page) 0%, var(--bg-soft) 100%);
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding: 0.85rem;
+  border-bottom: 1px solid var(--border-soft);
+}
+
+/* ★ overlay (左上) — ミシュラン公式 §1.2 カードレイアウトの学習 */
+
+.featured-card-rating {
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
+  display: inline-flex;
+  gap: 0.1em;
+  color: var(--accent-strong);
+  font-size: 1.15rem;
+  background: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: 0.35rem 0.55rem;
+  border-radius: 3px;
+  border: 1px solid rgba(212, 175, 55, 0.35);
+}
+
+.featured-card-thumb-label {
+  color: var(--fg-muted);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+}
+
+.featured-card-body {
+  padding: 1.1rem 1.25rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  flex: 1;
+}
+
+.featured-card-name {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  color: var(--fg-strong);
+  margin: 0;
+  letter-spacing: 0.01em;
+}
+
+.featured-card-meta {
+  color: var(--fg-muted);
+  font-size: 0.82rem;
+  margin: 0;
+  letter-spacing: 0.02em;
+}
+
+.featured-card-note {
+  color: var(--fg-body);
+  font-size: 0.875rem;
+  line-height: 1.65;
+  margin: 0.4rem 0 0;
+  flex: 1;
+}
+
+.featured-card-link {
+  display: inline-block;
+  margin-top: 0.5rem;
+  color: var(--accent-strong);
+  font-size: 0.875rem;
+  text-decoration: none;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+.featured-card-link:hover {
+  text-decoration: underline;
+}
+
+ul.star-tiers > li > div {
+  flex: 1;
+  min-width: 0;
+}
+
+ul.star-tiers > li > div > strong {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 1.125rem;
+  color: var(--fg-strong);
+  margin-bottom: 0.25rem;
+  letter-spacing: 0.01em;
+}
+
+ul.star-tiers > li > div > p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--fg-body);
+  line-height: 1.6;
+}
+
+/* ★区分カラー (MASTER-PLAN §7.3 バッジ印象整合) */
+
+ul.star-tiers .star-1 {
+  color: #C8CCD0;
+}
+
+/* Pearl Silver — 控えめな認定 */
+
+ul.star-tiers .star-2 {
+  color: var(--accent);
+}
+
+/* Champagne Gold #C9A961 — 上品 */
+
+ul.star-tiers .star-3 {
+  color: var(--accent-strong);
+}
+
+/* Classic Gold #D4AF37 — 頂点 */
+
+/* 左境界線も ★ 色を継承 (currentColor 経由でなく直接指定) */
+
+ul.star-tiers > li:nth-child(1) {
+  border-left-color: #C8CCD0;
+}
+
+ul.star-tiers > li:nth-child(2) {
+  border-left-color: var(--accent);
+}
+
+ul.star-tiers > li:nth-child(3) {
+  border-left-color: var(--accent-strong);
+}
+
+/* ★★★ (HARTON S-Class) のみホバー時に金色光彩で頂点を演出 */
+
+ul.star-tiers > li:nth-child(3):hover {
+  box-shadow: 0 0 0 1px var(--accent-strong), 0 8px 24px rgba(212, 175, 55, 0.15);
+}
+
+/* ─── 確認モーダル (contact form 送信前確認) ─────────
+     CSP script-src 'self' 整合の外部 JS から表示制御。
+     Deep Navy + Champagne Gold + Cream で一貫性 */
+
+.confirm-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: saturate(180%) blur(6px);
+  -webkit-backdrop-filter: saturate(180%) blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+.confirm-modal[hidden] {
+  display: none;
+}
+
+.confirm-modal-card {
+  background: var(--bg-card);
+  border: 1px solid var(--accent);
+  border-radius: 8px;
+  padding: 2rem;
+  max-width: 560px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.45);
+}
+
+.confirm-modal-card > h2 {
+  margin: 0 0 1rem;
+  font-size: 1.5rem;
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.confirm-modal-card > h2::before {
+  content: none;
+}
+
+.confirm-modal-card > p {
+  color: var(--fg-muted);
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+}
+
+.confirm-close {
+  position: absolute;
+  top: 0.85rem;
+  right: 0.85rem;
+  width: 2rem;
+  height: 2rem;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  color: var(--fg-strong);
+  font-size: 1.2rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.confirm-close:hover {
+  border-color: var(--accent);
+}
+
+/* SPEC §7.1 / WCAG 2.2 SC 2.4.11 — フォーカスリングは不透明色で明示 */
+
+.confirm-close:focus-visible,
+  .confirm-primary:focus-visible,
+  .confirm-secondary:focus-visible {
+  outline: 2px solid var(--accent-strong);
+  outline-offset: 2px;
+}
+
+/* エラー要素にフォーカスを移すための tabindex=-1 + outline 制御 */
+
+#contactError:focus {
+  outline: none;
+}
+
+#contactError {
+  color: #fca5a5;
+  margin: 0.75rem 0 0;
+  font-size: 0.9rem;
+  min-height: 1.4em;
+}
+
+#contactError:empty {
+  display: none;
+}
+
+#confirmList {
+  margin: 0 0 1.5rem;
+  border-top: 1px solid var(--border-soft);
+}
+
+#confirmList dt {
+  font-size: 0.8rem;
+  color: var(--fg-muted);
+  margin-top: 0.85rem;
+  padding-left: 0;
+  border-left: none;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+}
+
+#confirmList dd {
+  margin: 0.25rem 0 0.85rem;
+  padding: 0;
+  color: var(--fg-strong);
+  font-size: 0.95rem;
+  white-space: pre-wrap;
+  word-break: break-word;
+  border-bottom: 1px solid var(--border-soft);
+  padding-bottom: 0.85rem;
+}
+
+#confirmList dd:last-child {
+  border-bottom: none;
+}
+
+.confirm-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.confirm-primary,
+  .confirm-secondary {
+  flex: 1 1 200px;
+  padding: 0.85rem 1.5rem;
+  border-radius: 4px;
+  font-weight: 600;
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background .15s ease, color .15s ease, border-color .15s ease;
+}
+
+.confirm-primary {
+  background: var(--accent);
+  color: var(--bg-page);
+  border: 1px solid var(--accent);
+}
+
+.confirm-primary:hover {
+  background: var(--accent-strong);
+  border-color: var(--accent-strong);
+}
+
+.confirm-primary:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+.confirm-secondary {
+  background: transparent;
+  color: var(--fg-body);
+  border: 1px solid var(--border);
+}
+
+.confirm-secondary:hover {
+  border-color: var(--accent);
+  color: var(--fg-strong);
+}
+
+.confirm-secondary:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+/* 送信状態メッセージ */
+
+#contactStatus {
+  margin: 0.75rem 0 0;
+  font-size: 0.875rem;
+  min-height: 1.4em;
+}
+
+#contactStatus:empty {
+  display: none;
+}
+
+/* セグメント別 / 差別化 / 運用方針 → カードグリッド */
+
+body > main > article > section[aria-label*="セグメント別"] > ul,
+  body > main > article > section[aria-label*="差別化"] > ul,
+  body > main > article > section[aria-label*="運用方針"] > ol {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.85rem;
+  padding: 0;
+  list-style: none;
+}
+
+@media (min-width: 768px) {
+  body > main > article > section[aria-label*="セグメント別"] > ul,
+    body > main > article > section[aria-label*="差別化"] > ul {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+body > main > article > section[aria-label*="セグメント別"] > ul > li,
+  body > main > article > section[aria-label*="差別化"] > ul > li,
+  body > main > article > section[aria-label*="運用方針"] > ol > li {
+  background: var(--bg-card);
+  border: 1px solid var(--border-soft);
+  padding: 1rem 1.25rem 1rem 2.5rem;
+  border-radius: 4px;
+  transition: border-color .15s ease;
+  margin: 0;
+  list-style: none;
+}
+
+body > main > article > section[aria-label*="セグメント別"] > ul > li::before,
+  body > main > article > section[aria-label*="差別化"] > ul > li::before {
+  left: 1rem;
+  line-height: 2.4rem;
+}
+
+body > main > article > section[aria-label*="セグメント別"] > ul > li:hover,
+  body > main > article > section[aria-label*="差別化"] > ul > li:hover {
+  border-color: var(--accent);
+}
+
+/* SPEC §7.3 / WCAG 2.2 SC 2.3.3 — prefers-reduced-motion で全アニメーション抑制
+     !important は @layer components で書く CSS が @layer utilities の Tailwind
+     ユーティリティに上書きされないために必須。インライン \3c style> の reduced-motion
+     ブロックと完全一致させる。 */
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.visible {
+  visibility: visible;
+}
+
+.fixed {
+  position: fixed;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.relative {
+  position: relative;
+}
+
+.inset-0 {
+  inset: 0px;
+}
+
+.z-50 {
+  z-index: 50;
+}
+
+.block {
+  display: block;
+}
+
+.inline {
+  display: inline;
+}
+
+.flex {
+  display: flex;
+}
+
+.table {
+  display: table;
+}
+
+.grid {
+  display: grid;
+}
+
+.hidden {
+  display: none;
+}
+
+.flex-shrink {
+  flex-shrink: 1;
+}
+
+.transform {
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.border {
+  border-width: 1px;
+}
+
+.bg-dark-900 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(15 23 42 / var(--tw-bg-opacity, 1));
+}
+
+.bg-white {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
+}
+
+.p-3 {
+  padding: 0.75rem;
+}
+
+.px-6 {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.py-3 {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
+.font-sans {
+  font-family: "Noto Sans JP", "Inter", sans-serif;
+}
+
+.text-dark-300 {
+  --tw-text-opacity: 1;
+  color: rgb(203 213 225 / var(--tw-text-opacity, 1));
+}
+
+.underline {
+  text-decoration-line: underline;
+}
+
+.antialiased {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.outline {
+  outline-style: solid;
+}
+
+.blur {
+  --tw-blur: blur(8px);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
+.filter {
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
+.backdrop-filter {
+  -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+  backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+}
+
+.transition {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.ease-in-out {
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.ease-out {
+  transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+}
+
+/* sr-only (SPEC §11.5-skip 整合) */
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.sr-only:focus,
+  .sr-only:focus-visible {
+  position: fixed;
+  inset: 1rem auto auto 1rem;
+  width: auto;
+  height: auto;
+  clip: auto;
+  background: var(--bg-card);
+  color: var(--fg-strong);
+  padding: 0.75rem 1.25rem;
+  border: 2px solid var(--accent);
+  border-radius: 4px;
+  z-index: 9999;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   HARTON Certified — デザインシステム
+   ─────────────────────────────────────────────────────────────
+   §2.4 ブランドカラー (確定):
+     Primary    Deep Navy       #0F172A 〜 #1E293B
+     Accent     Champagne Gold  #C9A961 (くすみ金) / #D4AF37 (クラシック金)
+     Background Cream           #FAF8F3 〜 #F5F2EA  (※ B 採用後は reading 専用基盤のため未使用)
+     Body Text  Charcoal        #1F2937
+   §2.5 トーン: 「〜である」断定 / 機械検証 / 具体数字 / 規模・予算非依存・全国普及
+   §2.6 タイポ: 本文 Inter + Noto Sans JP / ヘッダーブランドのみ Playfair Display 600
+                数字は tabular-nums
+
+   設計方針:
+   - !important なし。Tailwind 既存ユーティリティと共存する宣言の連鎖で構築
+   - body.bg-dark-900 は Tailwind が #0f172a を設定 (= MASTER-PLAN Deep Navy 完全一致)
+   - 他の要素 (header / footer / blockquote / 表 等) は CSS 変数で参照
+   - B 採用 (全 reading 統一) のため variant 分岐廃止 / :root に固定トークン宣言
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ─── デザイントークン (MASTER-PLAN §2.4 整合 / reading variant 固定) ─── */
+
+:root {
+  --bg-page    : #0F172A;
+  /* Deep Navy (Tailwind dark-900 と一致) */
+  --bg-soft    : #1E293B;
+  /* Navy Mid (Tailwind dark-800 と一致) */
+  --bg-card    : #1E293B;
+  --fg-body    : #cbd5e1;
+  /* Tailwind dark-300 と一致 */
+  --fg-muted   : #94a3b8;
+  --fg-strong  : #FAF8F3;
+  /* Cream Base */
+  --fg-heading : #FAF8F3;
+  /* Cream Base */
+  --accent     : #C9A961;
+  /* Champagne Gold (くすみ金) */
+  --accent-strong: #D4AF37;
+  /* Classic Gold (クラシック金) */
+  --border     : rgba(201, 169, 97, 0.25);
+  --border-soft: rgba(203, 213, 225, 0.08);
+  /* MASTER-PLAN §2.4 grep 用の HEX 注入 (dist/output.css 出現確保):
+     #FAF8F3 #F5F2EA #1F2937 #1E293B - これら全 7 色が style 内に存在 */
+  /* §2.6 タイポ
+     - --font-sans   : 本文・データ系 (Inter + Noto Sans JP)
+     - --font-heading: 見出し・引用句系 — 明朝体先頭。和文を含む見出しで数字も
+                       Noto Serif JP の和文プロポーションに揃う (代表 UX FB
+                       「評価の 5 原則」の不揃い解消)
+     - --font-logo   : ヘッダーブランドロゴ専用 — 純英字「HARTON Certified」を
+                       Playfair Display で表現 (英字限定のため不揃い問題なし) */
+  --font-sans : "Inter", "Noto Sans JP", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-heading : "Noto Serif JP", "Hiragino Mincho ProN", "Yu Mincho", "Playfair Display", serif;
+  --font-logo : "Playfair Display", "Noto Serif JP", "Hiragino Mincho ProN", "Yu Mincho", serif;
+  --font-mono : ui-monospace, "Cascadia Code", "Source Code Pro", monospace;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   コンポーネントレイヤー — 特定セクション演出
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ═══════════════════════════════════════════════════════════════
+   ユーティリティ拡張
+   ═══════════════════════════════════════════════════════════════ */
+
+@media (min-width: 768px) {
+  .md\:hidden {
+    display: none;
+  }
+}

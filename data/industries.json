@@ -69,7 +69,7 @@
       },
       {
         "q": "{city} の {industry} サイトで HARTON Certified ★ を取得しているのは何件か？",
-        "a": "Phase 0 沼津市の {industry} サイトを {n} 件機械検証し、★ 認定 {eligible} 件 / 業界最高点 {max} 点 / 致命的 NG {ng} 件（{ng_pct}）/ 中央値 {median} 点（2026-04-30 時点）。詳細な実測結果は沼津市 WEB 品質業界レポート 2026 Q2 (4-6 月号)に公開している。"
+        "a": "{city}の {industry} サイト {n} 件中、★ 認定 {eligible} 件。業界全体 (静岡県 5 都市横断) では業界最高点 {max_pref} 点 / 致命的 NG {ng_pct_pref} / 中央値 {median_pref} 点 (2026-05-02 時点)。詳細な実測結果は静岡県 5 都市 WEB 品質業界レポート 2026 Q2 (4-6 月号)に公開している。"
       },
       {
         "q": "{industry} サイトの WEB 品質はどう評価されるか？",
@@ -148,7 +148,7 @@
       },
       {
         "q": "{city} の {industry} サイトで HARTON Certified 認定件数は？",
-        "a": "Phase 0 沼津市の {industry} サイトを {n} 件機械検証し、★ 認定 {eligible} 件 / 業界最高点 {max} 点 / 致命的 NG {ng} 件（{ng_pct}）（2026-04-30 時点）。詳細は沼津市 WEB 品質業界レポート 2026 Q2 (4-6 月号)に公開。"
+        "a": "{city}の {industry} サイト {n} 件中、★ 認定 {eligible} 件。業界全体 (静岡県 5 都市横断) では業界最高点 {max_pref} 点 / 致命的 NG {ng_pct_pref} (2026-05-02 時点)。詳細は静岡県 5 都市 WEB 品質業界レポート 2026 Q2 (4-6 月号)に公開。"
       },
       {
         "q": "{industry} サイトで致命的 NG となる項目は？",
@@ -228,7 +228,7 @@
       },
       {
         "q": "{city} の {industry} サイトで HARTON Certified 認定件数は？",
-        "a": "Phase 0.5 静岡県 5 都市の {industry} サイトを {n} 件機械検証し、★ 認定 {eligible} 件 / 業界最高点 {max} 点 / 致命的 NG {ng} 件（{ng_pct}）（2026-04-30 時点）。詳細は静岡県 WEB 品質業界レポート 2026 Q3 (7-9 月号)に公開。"
+        "a": "Phase 0.5 静岡県 5 都市の {industry} サイトを {n} 件機械検証 (5 都市集計) し、★ 認定 {eligible} 件 / 業界最高点 {max_pref} 点 / 致命的 NG {ng_pct_pref} (2026-05-02 時点)。詳細は静岡県 WEB 品質業界レポート 2026 Q2 (4-6 月号)に公開。"
       },
       {
         "q": "{industry} サイトで致命的 NG となる項目は？",
@@ -307,7 +307,7 @@
       },
       {
         "q": "{city} の {industry} サイトで HARTON Certified 認定件数は？",
-        "a": "Phase 0.5 静岡県 5 都市の {industry} サイトを {n} 件機械検証し、★ 認定 {eligible} 件 / 業界最高点 {max} 点 / 致命的 NG {ng} 件（{ng_pct}）（2026-04-30 時点）。詳細は静岡県 WEB 品質業界レポート 2026 Q3 (7-9 月号)に公開。"
+        "a": "Phase 0.5 静岡県 5 都市の {industry} サイトを {n} 件機械検証 (5 都市集計) し、★ 認定 {eligible} 件 / 業界最高点 {max_pref} 点 / 致命的 NG {ng_pct_pref} (2026-05-02 時点)。詳細は静岡県 WEB 品質業界レポート 2026 Q2 (4-6 月号)に公開。"
       },
       {
         "q": "{industry} サイトで致命的 NG となる項目は？",
@@ -387,7 +387,7 @@
       },
       {
         "q": "{city} の {industry} サイトで HARTON Certified 認定件数は？",
-        "a": "Phase 0 沼津市の {industry} サイトを {n} 件機械検証し、★ 認定 {eligible} 件 / 業界最高点 {max} 点 / 致命的 NG {ng} 件（{ng_pct}）（2026-04-30 時点）。詳細は沼津市 WEB 品質業界レポート 2026 Q2 (4-6 月号)に公開。"
+        "a": "{city}の {industry} サイト {n} 件中、★ 認定 {eligible} 件。業界全体 (静岡県 5 都市横断) では業界最高点 {max_pref} 点 / 致命的 NG {ng_pct_pref} (2026-05-02 時点)。詳細は静岡県 5 都市 WEB 品質業界レポート 2026 Q2 (4-6 月号)に公開。"
       },
       {
         "q": "{industry} サイトで機械検証スコアが低い主要因は？",
@@ -463,7 +463,7 @@
     "faq_industry": [
       {
         "q": "{city} の {industry} で WEB 品質が高い店はどこか？",
-        "a": "HARTON Certified は 4 軸機械検証（基礎・防御・AI 検索・経営）で {industry} サイトを評価する。Phase 0 沼津市の {industry} サイトを {n} 件機械検証し、★ 認定 {eligible} 件 / 業界最高点 {max} 点 / 致命的 NG {ng} 件（{ng_pct}）（2026-04-30 時点）。{city} の認定状況は本ページ上部の獲得率で確認可能。"
+        "a": "HARTON Certified は 4 軸機械検証（基礎・防御・AI 検索・経営）で {industry} サイトを評価する。{city}の {industry} サイト {n} 件中、★ 認定 {eligible} 件。業界全体 (静岡県 5 都市横断) では業界最高点 {max_pref} 点 / 致命的 NG {ng_pct_pref} (2026-05-02 時点)。{city} の認定状況は本ページ上部の獲得率で確認可能。"
       },
       {
         "q": "{industry} サイトの Schema.org Restaurant に必要な項目は？",
@@ -543,7 +543,7 @@
     "faq_industry": [
       {
         "q": "{city} の {industry} で WEB 品質が高い店は？",
-        "a": "HARTON Certified は 4 軸機械検証で {industry} サイトを評価する。{city} の認定状況は本ページ上部の獲得率で確認可能（現在 {eligible}/{n} 件 / 2026-04-30 時点）。"
+        "a": "HARTON Certified は 4 軸機械検証で {industry} サイトを評価する。{city} の認定状況は本ページ上部の獲得率で確認可能（現在 {eligible}/{n} 件 / 2026-05-02 時点）。"
       },
       {
         "q": "{industry} サイトで SNS 連携と Schema.org を両立するには？",
@@ -628,7 +628,7 @@
       },
       {
         "q": "{city} の {industry} サイトで HARTON Certified 認定件数は？",
-        "a": "Phase 0.5 静岡県 5 都市の {industry} サイトを {n} 件機械検証し、★ 認定 {eligible} 件 / 業界最高点 {max} 点 / 致命的 NG {ng} 件（{ng_pct}）（2026-04-30 時点）。詳細は静岡県 WEB 品質業界レポート 2026 Q3 (7-9 月号)に公開。"
+        "a": "Phase 0.5 静岡県 5 都市の {industry} サイトを {n} 件機械検証 (5 都市集計) し、★ 認定 {eligible} 件 / 業界最高点 {max_pref} 点 / 致命的 NG {ng_pct_pref} (2026-05-02 時点)。詳細は静岡県 WEB 品質業界レポート 2026 Q2 (4-6 月号)に公開。"
       },
       {
         "q": "{industry} サイトで致命的 NG となる項目は？",
@@ -710,7 +710,7 @@
       },
       {
         "q": "{city} の {industry} サイトで HARTON Certified 認定件数は？",
-        "a": "Phase 0 沼津市の {industry} サイトを {n} 件機械検証し、★ 認定 {eligible} 件 / 業界最高点 {max} 点 / 致命的 NG {ng} 件（{ng_pct}）（2026-04-30 時点）。詳細は沼津市 WEB 品質業界レポート 2026 Q2 (4-6 月号)に公開。"
+        "a": "{city}の {industry} サイト {n} 件中、★ 認定 {eligible} 件。業界全体 (静岡県 5 都市横断) では業界最高点 {max_pref} 点 / 致命的 NG {ng_pct_pref} (2026-05-02 時点)。詳細は静岡県 5 都市 WEB 品質業界レポート 2026 Q2 (4-6 月号)に公開。"
       },
       {
         "q": "{industry} サイトで機械検証スコアが低い主要因は？",
@@ -794,7 +794,7 @@
       },
       {
         "q": "{city} の {industry} サイトで HARTON Certified 認定件数は？",
-        "a": "Phase 0.5 静岡県 5 都市の {industry} サイトを {n} 件機械検証し、★ 認定 {eligible} 件 / 業界最高点 {max} 点 / 致命的 NG {ng} 件（{ng_pct}）（2026-04-30 時点）。詳細は静岡県 WEB 品質業界レポート 2026 Q3 (7-9 月号)に公開。"
+        "a": "Phase 0.5 静岡県 5 都市の {industry} サイトを {n} 件機械検証 (5 都市集計) し、★ 認定 {eligible} 件 / 業界最高点 {max_pref} 点 / 致命的 NG {ng_pct_pref} (2026-05-02 時点)。詳細は静岡県 WEB 品質業界レポート 2026 Q2 (4-6 月号)に公開。"
       },
       {
         "q": "{industry} サイトの Schema.org 推奨タイプは？",
@@ -873,7 +873,7 @@
       },
       {
         "q": "{city} の {industry} サイトで HARTON Certified 認定件数は？",
-        "a": "Phase 0.5 静岡県 5 都市の {industry} サイトを {n} 件機械検証し、★ 認定 {eligible} 件 / 業界最高点 {max} 点 / 致命的 NG {ng} 件（{ng_pct}）（2026-04-30 時点）。詳細は静岡県 WEB 品質業界レポート 2026 Q3 (7-9 月号)に公開。"
+        "a": "Phase 0.5 静岡県 5 都市の {industry} サイトを {n} 件機械検証 (5 都市集計) し、★ 認定 {eligible} 件 / 業界最高点 {max_pref} 点 / 致命的 NG {ng_pct_pref} (2026-05-02 時点)。詳細は静岡県 WEB 品質業界レポート 2026 Q2 (4-6 月号)に公開。"
       },
       {
         "q": "{industry} サイトで致命的 NG となる項目は？",

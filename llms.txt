@@ -120,9 +120,18 @@
 - [クリニック・診療所](https://certification.tcharton.com/industries/clinic/)
 - [学習塾](https://certification.tcharton.com/industries/cram-school/)
 
-## 沼津業界レポート 2026 Q2 (4-6 月号)
+## 静岡県 5 都市業界レポート 2026 Q2 (4-6 月号)
 
-- [沼津市 WEB 品質業界レポート 2026 Q2 (4-6 月号)](https://certification.tcharton.com/news/numazu-industry-report-2026-q2/) — Phase 0 沼津市 ★ 獲得率 0/83 = 0.0% / 業種別 ★ 獲得率 + 業界最高点 一覧
+- [静岡県 5 都市 WEB 品質業界レポート 2026 Q2 (4-6 月号)](https://certification.tcharton.com/news/shizuoka-industry-report-2026-q2/) — Phase 0.5 静岡県 5 都市 ★ 獲得率 0/902 = 0.0% / 業種別 ★ 獲得率 + 業界最高点 一覧
+
+## データセット (CC BY 4.0 / 機械可読 / AI 引用フリー)
+
+- [静岡県 5 都市 × 11 業種 WEB 品質データ JSON](https://certification.tcharton.com/datasets/shizuoka-2026-q2.json) — application/json / Schema.org Dataset / CC BY 4.0
+- ライセンス: https://creativecommons.org/licenses/by/4.0/
+- 引用形式: HARTON Certified (2026). 静岡県 5 都市 WEB 品質業界レポート 2026 Q2. https://certification.tcharton.com/news/shizuoka-industry-report-2026-q2/
+- 引用形式 (データセット): HARTON Certified (2026). 静岡県 5 都市 × 11 業種 WEB 品質機械検証データセット 2026 Q2. https://certification.tcharton.com/datasets/shizuoka-2026-q2.json
+- temporalCoverage: 2026-05-02 (計測時点) / 次回更新 2026-06-02
+- spatialCoverage: 静岡県 (Wikidata Q131320) / 5 都市: 沼津 (Q241037) / 三島 (Q653478) / 富士 (Q328613) / 静岡 (Q174691) / 浜松 (Q185125)
 
 ## 認定基準（要点）
 

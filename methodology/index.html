@@ -172,7 +172,128 @@
 }
 </script>
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": [
+    "Article",
+    "TechArticle"
+  ],
+  "@id": "https://certification.tcharton.com/methodology/#article",
+  "headline": "HARTON Certified 4 軸機械検証 評価方法",
+  "description": "HARTON Certified の 4 軸機械検証 (A 基礎・B 防御・C AI 検索・D 経営インパクト) の評価項目・閾値・実施手順を完全公開。SPEC v3.4.2 の 2,554 項目と整合。scanner.py による自動計測。",
+  "datePublished": "2026-04-27",
+  "dateModified": "2026-05-02",
+  "inLanguage": "ja",
+  "isAccessibleForFree": true,
+  "author": {
+    "@type": "Organization",
+    "@id": "https://certification.tcharton.com/#org",
+    "name": "HARTON Certified"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://certification.tcharton.com/#org",
+    "name": "T.C.HARTON"
+  },
+  "mainEntityOfPage": "https://certification.tcharton.com/methodology/",
+  "proficiencyLevel": "Expert"
+}
+</script>
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DefinedTermSet",
+  "@id": "https://certification.tcharton.com/methodology/#axes",
+  "name": "HARTON Certified 4 軸機械検証 用語集",
+  "hasDefinedTerm": [
+    {
+      "@type": "DefinedTerm",
+      "@id": "https://certification.tcharton.com/methodology/technical/#term",
+      "name": "A 軸 基礎・身だしなみ",
+      "description": "HTTPS / SSL / Core Web Vitals (LCP 2.5s / CLS 0.1 / INP 200ms) / モバイル対応 / 画像最適化を機械検証する評価軸。",
+      "url": "https://certification.tcharton.com/methodology/technical/",
+      "inDefinedTermSet": "https://certification.tcharton.com/methodology/#axes"
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "https://certification.tcharton.com/methodology/security/#term",
+      "name": "B 軸 防御力・生存率",
+      "description": "CSP / Trusted Types / HSTS / WP 管理面非露出 / CMS バージョン非露出など脆弱性・WAF・防御層を機械検証する評価軸。",
+      "url": "https://certification.tcharton.com/methodology/security/",
+      "inDefinedTermSet": "https://certification.tcharton.com/methodology/#axes"
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "https://certification.tcharton.com/methodology/ai-search/#term",
+      "name": "C 軸 AI 検索適応 (GEO/LLMO)",
+      "description": "JSON-LD Schema.org / FAQPage / HowTo / Article / Dataset / llms.txt / セマンティック構造を機械検証する AI 検索エンジン引用最適化評価軸。",
+      "url": "https://certification.tcharton.com/methodology/ai-search/",
+      "inDefinedTermSet": "https://certification.tcharton.com/methodology/#axes"
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "https://certification.tcharton.com/methodology/business-impact/#term",
+      "name": "D 軸 経営インパクト",
+      "description": "OGP / Twitter Cards / モバイル UX / WCAG 2.2 AA アクセシビリティ / NAP 整合性など事業 KPI 直結項目を機械検証する評価軸。",
+      "url": "https://certification.tcharton.com/methodology/business-impact/",
+      "inDefinedTermSet": "https://certification.tcharton.com/methodology/#axes"
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "https://certification.tcharton.com/methodology/#fatal-ng",
+      "name": "致命的 NG (Fatal NG)",
+      "description": "HTTPS 非対応 / SSL 証明書エラー / WP 管理面露出 (wp-login.php / xmlrpc.php) / CMS バージョン情報露出のいずれかが検出された状態。★ 区分問わず一発除外条件 (MASTER-PLAN §3.4)。",
+      "inDefinedTermSet": "https://certification.tcharton.com/methodology/#axes"
+    }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "@id": "https://certification.tcharton.com/methodology/#howto-sclass",
+  "name": "HARTON ★★★ S-Class WEB 品質を取得する 5 Step (90 日)",
+  "description": "HARTON Certified ★★★ HARTON S-Class (総合 90 点以上 + 致命的 NG 0 件 + S 条件 5/5) を 90 日で取得するための機械検証ベースの実践 5 Step。",
+  "totalTime": "PT90D",
+  "inLanguage": "ja",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "position": 1,
+      "name": "HTTPS 常時 SSL 化 + HSTS preload",
+      "text": "Let's Encrypt + Cloudflare で常時 HTTPS 化、HSTS max-age 31536000 / includeSubDomains / preload を Strict-Transport-Security ヘッダで設定し hstspreload.org に登録。総合スコア +15 点 / 致命的 NG「HTTPS 非対応」「SSL 証明書」を解消。"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 2,
+      "name": "JSON-LD Schema.org 実装",
+      "text": "業種固有の Schema.org type (LegalService / MedicalBusiness / RealEstateAgent / Restaurant 等) を name + address + telephone + url + openingHours + sameAs (Wikidata) の 6 項目以上で実装。BreadcrumbList + Article + FAQPage + Service の構造化データを全頁配置。スコア +12 点。"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 3,
+      "name": "CSP + Trusted Types 適用",
+      "text": "Content-Security-Policy: default-src 'self'; script-src 'self'; require-trusted-types-for 'script'; を _headers / .htaccess / nginx.conf で設定。インラインスクリプトを排除し JS は外部化。XSS / CSRF 攻撃面を最小化。致命的 NG 解消 + B 軸 +10 点。"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 4,
+      "name": "GEO/LLMO 最適化 (AI 検索適応)",
+      "text": "/llms.txt 配置 (300+ 行 / 全 URL カタログ + 用語集) + FAQPage JSON-LD (5+ 質問) + 公的リンク 5+ 件 (IPA / 政府機関 / Wikidata / Schema.org) + canonical URL 統一。AI クローラー (Perplexity / Google AI Overview / Bing Chat) 引用率向上。C 軸 +10 点。"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 5,
+      "name": "Core Web Vitals + SSG / Jamstack",
+      "text": "LCP < 2.5s / CLS < 0.1 / INP < 200ms 達成。Astro / Next.js SSG / Eleventy で静的生成、Cloudflare Pages / Netlify / Vercel に配信。WCAG 2.2 AA アクセシビリティ達成 (フォーカス可視 / コントラスト比 4.5:1 / キーボード操作完備)。A 軸 +8 点 / D 軸 +10 点。"
+    }
+  ]
+}
+</script>
 </head>
 <body class="bg-dark-900 text-dark-300 font-sans antialiased">
 
@@ -216,7 +337,7 @@
   <section aria-label="冒頭エビデンス">
     <p>HARTON Certified は WEB サイトを <strong>4 つ</strong>の観点で並列独立評価する。各観点は scanner.py で <strong>45</strong>+ 項目を機械検証し、合計 <strong>2554</strong> 項目の SPEC v3.4.2 と整合する。本機関は dogfooding 倫理（自己実証体としての自社サイト ★★★ 取得）と地方都市から再定義する WEB 品質の民主化を運営方針とする。出典: <a href="https://web.dev/articles/vitals" rel="nofollow noopener noreferrer" target="_blank">Google Web Vitals 公式</a> / <a href="https://www.w3.org/WAI/standards-guidelines/wcag/" rel="nofollow noopener noreferrer" target="_blank">W3C WCAG 2.2</a>。</p>
     <blockquote cite="https://certification.tcharton.com/about/">
-      「自分が達成できない基準で他者を測ることはしない」 — HARTON Certified 信頼根拠の核（MASTER-PLAN §2.0.4）
+      「機械検証が示す、AI 時代の WEB 品質。」 — HARTON Certified 信頼根拠の核（MASTER-PLAN §2.0.4）
     </blockquote>
     <p><time datetime="2026-04-27" itemprop="datePublished">2026-04-27 公開</time> ／ <time datetime="2026-04-30" itemprop="dateModified">2026-04-30 v1.1.7 ブランド戦略整合改訂</time></p>
     <h1>評価方法</h1>
@@ -228,13 +349,13 @@
   </section>
   <section aria-label="自己実証型認定の倫理規範">
     <h2>自己実証型認定の倫理規範（dogfooding 倫理）</h2>
-    <p>本機関の中核原則は「<strong>自分が達成できない基準で他者を測ることはしない</strong>」である。tcharton.com（自社サイト）が自社の評価基準で <strong>★★★（HARTON S-Class）</strong>を取得した自己実証体 第 1 号として、業界の品質改善のため独立中立に運営する。</p>
+    <p>本機関の中核原則は「<strong>機械検証が示す、AI 時代の WEB 品質。</strong>」である (dogfooding 倫理: 自社評価基準を自社サイトに先に適用する)。tcharton.com（自社サイト）が自社の評価基準で <strong>★★★（HARTON S-Class）</strong>を取得した自己実証体 第 1 号として、業界の品質改善のため独立中立に運営する。</p>
     <ul>
       <li><strong>L1 自己適用</strong>: 自社サイト tcharton.com が認定基準で評価される（scanner.py 四半期再判定）</li>
       <li><strong>L2 自己拘束</strong>: 評価結果は自己例外なし（致命的 NG / 降格条件は事業者と同条件）</li>
       <li><strong>L3 自己公開</strong>: 機械検証ログを全件 verbatim 公開する（評価の透明性 / 第三者検証可能性）</li>
     </ul>
-    <p>沼津起点での自己実証は、地方都市から再定義する WEB 品質の民主化の旗印として機能する。詳細は <a href="/about/">サイトについて</a> + <a href="/news/numazu-industry-report-2026-q2/">沼津市 WEB 品質業界レポート 2026 Q2 (4-6 月号)</a>。</p>
+    <p>沼津起点での自己実証は、地方都市から再定義する WEB 品質の民主化の旗印として機能する。詳細は <a href="/about/">サイトについて</a> + <a href="/news/shizuoka-industry-report-2026-q2/">静岡県 5 都市 WEB 品質業界レポート 2026 Q2 (4-6 月号)</a>。</p>
   </section>
   <section aria-label="評価の 5 原則">
     <h2>評価の 5 原則</h2>

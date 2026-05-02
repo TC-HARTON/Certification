@@ -896,6 +896,78 @@
     white-space: nowrap;
   }
 
+  /* 都市別 / 業種別ランキング表 NG% 色分け (Phase 0.5 v2.5 / AI 視点 UX 推奨)
+     dark 背景 (#1E293B) 用に Tailwind *-400 shade を採用 (WCAG AA 4.5:1+ 担保)
+     reviewer 検出 (信頼 95): emerald-700 等は light 背景前提で dark 上では 2.8:1 = AA fail */
+  body > main > article > section.region-section td.ng-low,
+  body > main > article > section.industry-section td.ng-low {
+    color: #34d399; /* emerald-400 / dark 背景 4.5:1+ */
+    font-weight: 600;
+  }
+  body > main > article > section.region-section td.ng-mid,
+  body > main > article > section.industry-section td.ng-mid {
+    color: #fbbf24; /* amber-400 / dark 背景 9.5:1 */
+    font-weight: 600;
+  }
+  body > main > article > section.region-section td.ng-high,
+  body > main > article > section.industry-section td.ng-high {
+    color: #f87171; /* red-400 / dark 背景 5.4:1 */
+    font-weight: 700;
+  }
+  body > main > article > section.region-section .region-section-lede,
+  body > main > article > section.region-section .region-section-note,
+  body > main > article > section.industry-section .industry-section-lede {
+    font-size: 0.95rem;
+    color: var(--fg-default);
+    margin: 0.5rem 0 1rem;
+    line-height: 1.7;
+  }
+  body > main > article > section.region-section .region-section-note {
+    font-size: 0.85rem;
+    color: var(--fg-muted);
+    margin-top: 0.75rem;
+  }
+
+  /* レポート FAQ section (AI Overview / Featured Snippet 引用最適化)
+     reviewer 検出 (信頼 100): 旧版は --border-default / --bg-elevated / --border-subtle 未定義
+     → 既存 design tokens (--border-soft / --bg-card) に統一 + .faq-section との視覚整合を優先 */
+  body > main > article > section.report-faq-section {
+    margin: 2rem 0;
+  }
+  body > main > article > section.report-faq-section details {
+    border: 1px solid var(--border-soft);
+    border-left: 3px solid #C9A961; /* faq-section と同系統のゴールド左ボーダーで全サイト FAQ 視覚統一 */
+    border-radius: 0.5rem;
+    padding: 1rem 1.25rem;
+    margin: 0.75rem 0;
+    background: var(--bg-card);
+  }
+  body > main > article > section.report-faq-section details summary {
+    font-weight: 600;
+    color: #D4AF37; /* faq-section と同 gold で統一 */
+    cursor: pointer;
+    font-size: 1.05rem;
+  }
+  body > main > article > section.report-faq-section details .faq-answer {
+    margin-top: 0.75rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid var(--border-soft);
+    color: var(--fg-default);
+  }
+
+  /* 7 列表 mobile overflow wrapper (reviewer 信頼 92)
+     都市別 / 業種別ランキング表が 7 列に拡張され mobile (<480px) で body 横スクロールが発生するため、
+     <table> を直接配置せず親 section 内で table-scroll wrapper として扱う */
+  body > main > article > section.region-section,
+  body > main > article > section.industry-section {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  body > main > article > section.region-section table,
+  body > main > article > section.industry-section table {
+    min-width: 560px;
+  }
+
   /* lead-h: 既存 H1「すべての事業者の WEB を、S クラスへ。」を H2 にダウングレード後の意匠維持 */
   body > main > article .lead-h {
     font-family: var(--font-heading);
