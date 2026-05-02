@@ -203,6 +203,36 @@ function checkReportJsonLd() {
   }
 }
 
+// ═══════════════════ Check 8a: 不完全外部リンク検出 (公的機関のルート URL は深いガイダンス先必須) ═══════════════════
+// 過去のミス: <a href="https://www.digital.go.jp/">デジタル庁（地方 DX の現状）</a> ← ラベルは深い、URL はルート
+// AI クローラー / 読者が「実体不在」を引いてしまう。指定ラベル時は深い URL を強制。
+function checkIncompleteExternalLinks() {
+  // ラベル → 深い URL の整合 (build-base.js / generate.js source 内のリンクに対する規約)
+  // 規約違反した場合 fail。新規追加は本 const に記載するだけで全件強制。
+  const REQUIRED_DEEP_URLS = [
+    {
+      labelPattern: /地方\s*DX|中小事業者の\s*DX|デジタル庁\s*[（(]\s*地方/,
+      forbiddenUrl: 'https://www.digital.go.jp/',
+      requiredPrefix: 'https://www.digital.go.jp/resources/',
+      hint: 'デジタル庁ルート URL は実体不在。地方 DX 文脈は https://www.digital.go.jp/resources/govdashboard/local-government-dx を参照',
+    },
+  ];
+  const sources = ['build-base.js', 'generate.js'];
+  for (const f of sources) {
+    if (!fs.existsSync(path.join(ROOT, f))) continue;
+    const content = fs.readFileSync(path.join(ROOT, f), 'utf-8');
+    // <a href="URL" ...>LABEL</a> パターン抽出
+    for (const m of content.matchAll(/<a\s+href="([^"]+)"[^>]*>([^<]+)<\/a>/g)) {
+      const [, url, label] = m;
+      for (const rule of REQUIRED_DEEP_URLS) {
+        if (rule.labelPattern.test(label) && url === rule.forbiddenUrl) {
+          fail('incomplete-external-link', f, `「${label}」に対し ${url} は実体不在 / ${rule.hint}`);
+        }
+      }
+    }
+  }
+}
+
 // ═══════════════════ Check 8: dataset endpoint 存在確認 ═══════════════════
 function checkDatasetEndpoint() {
   const dpath = path.join(ROOT, 'datasets/shizuoka-2026-q2.json');
@@ -228,9 +258,10 @@ function run() {
   checkCssVariables();
   checkReportJsonLd();
   checkDatasetEndpoint();
+  checkIncompleteExternalLinks();
 
   if (failures.length === 0) {
-    console.log('  ✅ PASS — 全 8 検証 / semantic invariants 整合');
+    console.log('  ✅ PASS — 全 9 検証 / semantic invariants 整合');
     console.log('  ' + '='.repeat(64));
     process.exit(0);
   }

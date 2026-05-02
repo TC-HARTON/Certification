@@ -175,7 +175,7 @@ PAGES.push({
     </div>
   </section>
   <section aria-label="冒頭エビデンス（Lead Evidence Block）">
-    <p>HARTON Certified は、<strong>2,554 項目</strong>の機械検証で WEB 品質を公正に測る独立認定機関である。全国の事業者の Sクラス WEB 普及を支えるため、4 軸の客観評価を 2026 年に開始した。沼津起点での自己実証（自社サイト ★★★ 取得）を基盤とし、地方都市から再定義する WEB 品質の民主化を推進する。出典: <a href="https://www.digital.go.jp/" rel="nofollow noopener noreferrer" target="_blank">日本政府・公的機関</a>（HSTS / WCAG / Core Web Vitals 等の公的基準に準拠）。</p>
+    <p>HARTON Certified は、<strong>2,554 項目</strong>の機械検証で WEB 品質を公正に測る独立認定機関である。全国の事業者の Sクラス WEB 普及を支えるため、4 軸の客観評価を 2026 年に開始した。沼津起点での自己実証（自社サイト ★★★ 取得）を基盤とし、地方都市から再定義する WEB 品質の民主化を推進する。出典: <a href="https://www.digital.go.jp/resources/govdashboard/local-government-dx#guidance2" rel="nofollow noopener noreferrer" target="_blank">日本政府・公的機関</a>（HSTS / WCAG / Core Web Vitals 等の公的基準に準拠）。</p>
     <p><time datetime="2026-04-27" itemprop="datePublished">2026 年 4 月 27 日 公開</time> ／ <time datetime="2026-04-30" itemprop="dateModified">2026-04-30 v1.1.7 ブランド戦略整合改訂</time></p>
     <p>機械検証による公正評価を通じて、地域から全国へ、Sクラス WEB サイトの普及を支える。Phase 0.5（静岡県 5 都市 ${shizuokaSummary.n_total} 件機械検証実測 / 11 業種 / 2026-05-01）から始まり、Phase 4（2027 年）で全 47 都道府県 10,000 件以上の認定を目標とする。</p>
   </section>
@@ -341,7 +341,7 @@ PAGES.push({
   mainContent: `
 <article>
   <section aria-label="冒頭エビデンス">
-    <p>HARTON Certified は <strong>2026 年 4 月</strong>、静岡県沼津市で T.C.HARTON が立ち上げた独立認定機関である。沼津起点で自社サイト tcharton.com を機械検証し ★★★（HARTON S-Class）を取得した自己実証体 第 1 号として、業界の WEB 品質改善のため独立中立に運営する。出典: <a href="https://www.digital.go.jp/" rel="nofollow noopener noreferrer" target="_blank">デジタル庁（地方 DX の現状）</a>。</p>
+    <p>HARTON Certified は <strong>2026 年 4 月</strong>、静岡県沼津市で T.C.HARTON が立ち上げた独立認定機関である。沼津起点で自社サイト tcharton.com を機械検証し ★★★（HARTON S-Class）を取得した自己実証体 第 1 号として、業界の WEB 品質改善のため独立中立に運営する。出典: <a href="https://www.digital.go.jp/resources/govdashboard/local-government-dx#guidance2" rel="nofollow noopener noreferrer" target="_blank">デジタル庁（地方 DX の現状）</a>。</p>
     <blockquote cite="${DOMAIN}/methodology/">
       「機械検証が示す、AI 時代の WEB 品質。」 — HARTON Certified 信頼根拠の核（MASTER-PLAN §2.0.4）
     </blockquote>
@@ -806,7 +806,7 @@ PAGES.push({
   mainContent: `
 <article>
   <section aria-label="冒頭エビデンス">
-    <p>HARTON Certified は <strong>2026 年 4 月</strong>に立ち上がった独立認定機関で、Phase 0.5 静岡県 5 都市 (沼津・三島・富士・静岡・浜松) × 11 業種 <strong>${shizuokaSummary.n_total}</strong> 件機械検証を 2026 年 5 月 2 日に完了した。月次ランキング・ロゴ・代表写真・<a href="/datasets/shizuoka-2026-q2.json">機械可読データセット (CC BY 4.0)</a> をプレス向けに無償提供する。出典: <a href="https://www.digital.go.jp/" rel="nofollow noopener noreferrer" target="_blank">日本政府公的機関</a>（中小事業者の DX 状況）。</p>
+    <p>HARTON Certified は <strong>2026 年 4 月</strong>に立ち上がった独立認定機関で、Phase 0.5 静岡県 5 都市 (沼津・三島・富士・静岡・浜松) × 11 業種 <strong>${shizuokaSummary.n_total}</strong> 件機械検証を 2026 年 5 月 2 日に完了した。月次ランキング・ロゴ・代表写真・<a href="/datasets/shizuoka-2026-q2.json">機械可読データセット (CC BY 4.0)</a> をプレス向けに無償提供する。出典: <a href="https://www.digital.go.jp/resources/govdashboard/local-government-dx#guidance2" rel="nofollow noopener noreferrer" target="_blank">日本政府公的機関</a>（中小事業者の DX 状況）。</p>
     <blockquote cite="${DOMAIN}/methodology/">
       「機械検証で、Sクラス WEB の普及を支える」 — HARTON Certified ブランドナラティブ
     </blockquote>
@@ -917,7 +917,7 @@ PAGES.push({
   mainContent: `
 <article>
   <section aria-label="冒頭エビデンス">
-    <p>HARTON Certified からのお知らせを時系列で公開する。<strong>2026 年 4 月 27 日</strong>に MASTER-PLAN v<strong>1.1.4</strong> 改訂と SPEC v<strong>3.4</strong> 連動を完了した。出典: <a href="https://www.digital.go.jp/" rel="nofollow noopener noreferrer" target="_blank">公的機関基準</a>。</p>
+    <p>HARTON Certified からのお知らせを時系列で公開する。<strong>2026 年 4 月 27 日</strong>に MASTER-PLAN v<strong>1.1.4</strong> 改訂と SPEC v<strong>3.4</strong> 連動を完了した。出典: <a href="https://www.digital.go.jp/resources/govdashboard/local-government-dx#guidance2" rel="nofollow noopener noreferrer" target="_blank">公的機関基準</a>。</p>
     <blockquote cite="${DOMAIN}/about/">
       「年次で基準を改訂、過去評価もアーカイブとして残す」 — HARTON Certified 進化原則
     </blockquote>

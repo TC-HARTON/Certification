@@ -873,7 +873,7 @@ function renderPublicSources(ind, city) {
   }
   // 共通公的ソース (常時)
   items.push(`<li><a href="https://www.ipa.go.jp/security/vuln/websecurity/about.html" rel="noopener noreferrer" target="_blank">IPA「安全なウェブサイトの作り方」</a></li>`);
-  items.push(`<li><a href="https://www.digital.go.jp/" rel="noopener noreferrer" target="_blank">デジタル庁</a></li>`);
+  items.push(`<li><a href="https://www.digital.go.jp/resources/govdashboard/local-government-dx#guidance2" rel="noopener noreferrer" target="_blank">デジタル庁</a></li>`);
   // ind なし時の fallback (GEO §G-2 5+ 件保証)
   if (!ind) {
     items.push(`<li><a href="https://laws.e-gov.go.jp/" rel="noopener noreferrer" target="_blank">e-Gov 法令検索</a></li>`);
