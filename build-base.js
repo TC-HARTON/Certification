@@ -157,8 +157,8 @@ PAGES.push({
   path: 'index.html',
   variant: 'reading',
   navActive: '',
-  title: 'HARTON Certified — 機械検証で Sクラス WEB の普及を支える独立認定機関',
-  description: 'HARTON Certified は WEB 品質を機械検証で公正評価する独立認定機関。SPEC v3.4 の 2,554 項目 + 4 軸スキャナーで全国の優良サイトを認定し、Sクラス WEB の普及を支える。完全中立・金銭非依存、★ 以上のみ掲載のポジティブセレクション。',
+  title: 'HARTON Certified — 機械検証 WEB 品質認定機関',
+  description: 'HARTON Certified は WEB 品質を機械検証 (2,554 項目 / 4 軸) で公正評価する金銭非依存・評価基準全公開型の独立認定機関。Sクラス WEB の普及を支える。完全中立・金銭非依存、★ 以上のみ掲載のポジティブセレクション。',
   canonicalPath: '/',
   ogType: 'website',
   breadcrumbs: bcl([['HARTON Certified トップ', '/']]),
@@ -175,7 +175,7 @@ PAGES.push({
     </div>
   </section>
   <section aria-label="冒頭エビデンス（Lead Evidence Block）">
-    <p>HARTON Certified は、<strong>2,554 項目</strong>の機械検証で WEB 品質を公正に測る独立認定機関である。全国の事業者の Sクラス WEB 普及を支えるため、4 軸の客観評価を 2026 年に開始した。沼津起点での自己実証（自社サイト ★★★ 取得）を基盤とし、地方都市から再定義する WEB 品質の民主化を推進する。出典: <a href="https://www.digital.go.jp/resources/govdashboard/local-government-dx#guidance2" rel="nofollow noopener noreferrer" target="_blank">日本政府・公的機関</a>（HSTS / WCAG / Core Web Vitals 等の公的基準に準拠）。</p>
+    <p>HARTON Certified は、<strong>2,554 項目</strong>の機械検証で WEB 品質を公正に測る、<strong>金銭非依存・評価基準全公開型の独立認定機関</strong>である。掲載料・認定料・広告料を一切徴収せず、評価項目・閾値・実施手順は <a href="/methodology/">methodology</a> で全て開示する。全国の事業者の Sクラス WEB 普及を支えるため、4 軸の客観評価を 2026 年に開始した。沼津起点での自己実証（自社サイト ★★★ 取得 / dogfooding 倫理）を基盤とし、地方都市から再定義する WEB 品質の民主化を推進する。出典: <a href="https://www.digital.go.jp/resources/govdashboard/local-government-dx#guidance2" rel="nofollow noopener noreferrer" target="_blank">日本政府・公的機関</a>（HSTS / WCAG / Core Web Vitals 等の公的基準に準拠）。</p>
     <p><time datetime="2026-04-27" itemprop="datePublished">2026 年 4 月 27 日 公開</time> ／ <time datetime="2026-04-30" itemprop="dateModified">2026-04-30 v1.1.7 ブランド戦略整合改訂</time></p>
     <p>機械検証による公正評価を通じて、地域から全国へ、Sクラス WEB サイトの普及を支える。Phase 0.5（静岡県 5 都市 ${shizuokaSummary.n_total} 件機械検証実測 / 11 業種 / 2026-05-01）から始まり、Phase 4（2027 年）で全 47 都道府県 10,000 件以上の認定を目標とする。</p>
   </section>
@@ -352,7 +352,7 @@ PAGES.push({
   mainContent: `
 <article>
   <section aria-label="冒頭エビデンス">
-    <p>HARTON Certified は <strong>2026 年 4 月</strong>、静岡県沼津市で T.C.HARTON が立ち上げた独立認定機関である。沼津起点で自社サイト tcharton.com を機械検証し ★★★（HARTON S-Class）を取得した自己実証体 第 1 号として、業界の WEB 品質改善のため独立中立に運営する。出典: <a href="https://www.digital.go.jp/resources/govdashboard/local-government-dx#guidance2" rel="nofollow noopener noreferrer" target="_blank">デジタル庁（地方 DX の現状）</a>。</p>
+    <p>HARTON Certified は <strong>2026 年 4 月</strong>、静岡県沼津市で T.C.HARTON が立ち上げた、<strong>金銭非依存・評価基準全公開型</strong>の独立認定機関である。掲載料・認定料・広告料を一切徴収せず、評価項目・閾値・実施手順は <a href="/methodology/">methodology</a> で全て開示する。沼津起点で自社サイト tcharton.com を機械検証し ★★★（HARTON S-Class）を取得した自己実証体 第 1 号として、業界の WEB 品質改善のため運営する (dogfooding 倫理)。出典: <a href="https://www.digital.go.jp/resources/govdashboard/local-government-dx#guidance2" rel="nofollow noopener noreferrer" target="_blank">デジタル庁（地方 DX の現状）</a>。</p>
     <blockquote cite="${DOMAIN}/methodology/">
       「機械検証が示す、AI 時代の WEB 品質。」 — HARTON Certified 信頼根拠の核（MASTER-PLAN §2.0.4）
     </blockquote>
@@ -370,7 +370,7 @@ PAGES.push({
     <p><strong>「機械検証が示す、AI 時代の WEB 品質。」</strong>――それが、HARTON Certified の唯一無二の信頼根拠である（MASTER-PLAN §2.0.4 信頼根拠の核 300 字 verbatim）。</p>
     <p>本機関は dogfooding 倫理（自社製品＝評価基準を自社で適用する倫理規範）を 3 階層で運用する:</p>
     <ul>
-      <li><strong>L1 自己適用</strong>: 自社サイト tcharton.com が認定基準で評価される（scanner.py で四半期再判定）</li>
+      <li><strong>L1 自己適用</strong>: 自社サイト tcharton.com が認定基準で評価される（scanner.py 月次再判定 (四半期末レポート集計)）</li>
       <li><strong>L2 自己拘束</strong>: 評価結果は<strong>自己例外なし</strong>で適用される（致命的 NG / 降格条件は事業者と同条件 / tcharton.com 自身の致命的 NG 検出時は即時非掲載状態に切替）</li>
       <li><strong>L3 自己公開</strong>: 機械検証ログを全件 verbatim 公開する（評価の透明性 / 第三者検証可能性）</li>
     </ul>
@@ -385,7 +385,7 @@ PAGES.push({
   <section aria-label="運営体制">
     <h2>運営体制</h2>
     <p>HARTON Certified は T.C.HARTON が 2026 年 4 月に立ち上げた独立認定機関である。Phase 1（類似地方都市 200 件）以降は弁護士・プロデザイナー・PR 会社との外部提携を予定する。商標登録は Phase 1 完了時に着手する。</p>
-    <p>運営拠点: 〒410-0022 静岡県沼津市大岡2690 / Cloudflare Workers Static Assets で配信 / scanner.py で四半期再評価 (Q1/Q2/Q3/Q4 各四半期末スキャン)。</p>
+    <p>運営拠点: 〒410-0022 静岡県沼津市大岡2690 / Cloudflare Workers Static Assets で配信 / scanner.py 月次再判定 + 四半期末レポート公開 (Q1/Q2/Q3/Q4)。</p>
     <p>運営方針: 「業界の WEB 品質改善のため」が動機であり、「自社の集客のため」ではない（中立性表現原則）。</p>
   </section>
   <section aria-label="関連リンク">
@@ -445,7 +445,7 @@ PAGES.push({
     <h2>自己実証型認定の倫理規範（dogfooding 倫理）</h2>
     <p>本機関の中核原則は「<strong>機械検証が示す、AI 時代の WEB 品質。</strong>」である (dogfooding 倫理: 自社評価基準を自社サイトに先に適用する)。tcharton.com（自社サイト）が自社の評価基準で <strong>★★★（HARTON S-Class）</strong>を取得した自己実証体 第 1 号として、業界の品質改善のため独立中立に運営する。</p>
     <ul>
-      <li><strong>L1 自己適用</strong>: 自社サイト tcharton.com が認定基準で評価される（scanner.py 四半期再判定）</li>
+      <li><strong>L1 自己適用</strong>: 自社サイト tcharton.com が認定基準で評価される（scanner.py 月次再判定 (四半期末レポート集計)）</li>
       <li><strong>L2 自己拘束</strong>: 評価結果は自己例外なし（致命的 NG / 降格条件は事業者と同条件）</li>
       <li><strong>L3 自己公開</strong>: 機械検証ログを全件 verbatim 公開する（評価の透明性 / 第三者検証可能性）</li>
     </ul>
@@ -514,13 +514,14 @@ PAGES.push({
     <p>★区分問わず一発除外する。scanner.py Phase 9d で機械検出を実装済（2026-04-26）。</p>
   </section>
   <section aria-label="評価サイクル">
-    <h2>評価サイクル</h2>
+    <h2>評価サイクル (canonical / 全ページ統一)</h2>
     <ul>
-      <li>月次: 全掲載事業者を再スキャン、★区分変動を反映</li>
-      <li>四半期: ★区分変動の傾向分析、改善ガイダンス更新</li>
-      <li>年次: 4 軸・S 条件の見直し、SPEC v3.x との整合確認</li>
-      <li>即時: 重大脆弱性発見時は 24 時間以内に掲載一時停止判断</li>
+      <li><strong>月次スキャン</strong>: 全掲載対象事業者 + 業界レポート対象母集団を毎月初に scanner.py で全件再判定。★ 区分変動を月次反映。</li>
+      <li><strong>四半期レポート</strong>: 月次データを四半期末 (Q1: 1-3月 / Q2: 4-6月 / Q3: 7-9月 / Q4: 10-12月) に集計し、業界レポート + 比較ページを公開。</li>
+      <li><strong>年次基準改訂</strong>: 4 軸・S 条件・閾値を年次で見直し、SPEC v3.x と整合確認。</li>
+      <li><strong>即時対応</strong>: 重大脆弱性発見時は 24 時間以内に掲載一時停止判断。</li>
     </ul>
+    <p>自己実証体 tcharton.com も例外なく月次スキャン + 四半期レポート対象として運用される (dogfooding 倫理 / 自己例外なし)。</p>
   </section>
 </article>`,
   additionalJsonLd: [
@@ -726,7 +727,7 @@ PAGES.push({
       <li><strong>自社実装</strong>: <a href="/methodology/">評価方法ページ</a>と <a href="/improvement-guide/">改善ガイダンス</a>を参考に、社内で SPEC 整合の改善を実装する。機械検証で項目別の不適合が示されるため、再現可能な手順で対応できる</li>
       <li><strong>制作会社相談</strong>: 独立した WEB 制作会社・コンサルタントに改善を依頼する。相談先候補は事業者の判断で選定する（地元商工会議所・IT 関連協会の紹介、複数社相見積もりが推奨される一般的な調達手順）</li>
     </ol>
-    <p>改善後は再度本ページから無料診断を申込むことで、★ 区分の再判定を受けられる。四半期再判定で ★ 区分が更新される運用は MASTER-PLAN §12 失効・降格運用と整合する。</p>
+    <p>改善後は再度本ページから無料診断を申込むことで、★ 区分の再判定を受けられる。月次再判定で ★ 区分が更新される運用は MASTER-PLAN §12 失効・降格運用と整合する。</p>
   </section>
   <section aria-label="料金透明性">
     <h2>料金透明性</h2>
@@ -735,7 +736,7 @@ PAGES.push({
       <li>無料機械検証診断: <strong>無料</strong></li>
       <li>改善サービス（任意）: 事業者の選択する制作会社・コンサルタントの料金体系に従う（本機関は仲介・推奨しない）</li>
     </ul>
-    <p>本機関の中立性は dogfooding 倫理（自社サイトも四半期再判定対象 / 自己例外なし）と「自社の集客のためではなく、業界の品質改善のため」の運営方針で担保される（MASTER-PLAN §3.0.5 自己実証型認定の倫理規範）。</p>
+    <p>本機関の中立性は dogfooding 倫理（自社サイトも月次再判定対象 / 自己例外なし）と「自社の集客のためではなく、業界の品質改善のため」の運営方針で担保される（MASTER-PLAN §3.0.5 自己実証型認定の倫理規範）。</p>
   </section>
   <section aria-label="関連">
     <h2>関連</h2>
@@ -803,6 +804,25 @@ PAGES.push({
     </ul>
   </section>
 </article>`,
+  additionalJsonLd: [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'HowTo',
+      '@id': `${DOMAIN}/improvement-guide/#howto`,
+      name: 'HARTON ★ HARTON Certified 認定取得の改善 5 Step (90 日)',
+      description: 'HARTON Certified ★ 認定 (総合 70 点以上 + 致命的 NG 0 件) を 90 日で取得するための機械検証ベースの実践 5 Step。事業者が自社で実装可能な手順を全公開。',
+      totalTime: 'PT90D',
+      inLanguage: 'ja',
+      author: { '@type': 'Organization', '@id': `${DOMAIN}/#org` },
+      step: [
+        { '@type': 'HowToStep', position: 1, name: 'HTTPS 常時 SSL 化 + HSTS preload 登録', text: "Let's Encrypt + Cloudflare で常時 HTTPS 化、HSTS max-age 31536000 / includeSubDomains / preload を Strict-Transport-Security ヘッダで設定し https://hstspreload.org/ に登録。致命的 NG「HTTPS 非対応」「SSL 証明書」を解消し総合スコア +15 点。", url: `${DOMAIN}/improvement-guide/#step-https` },
+        { '@type': 'HowToStep', position: 2, name: 'Google ビジネスプロフィール (GBP) + JSON-LD Schema.org 実装', text: 'GBP で NAP (Name/Address/Phone) を整備、JSON-LD で業種固有 Schema.org type (LegalService / MedicalBusiness / RealEstateAgent / Restaurant 等) を name + address + telephone + url + openingHours + sameAs (Wikidata + GBP CID) の 6 項目以上で実装。BreadcrumbList + Article + FAQPage + Service の構造化データを全頁配置。スコア +12 点。', url: `${DOMAIN}/improvement-guide/#step-jsonld` },
+        { '@type': 'HowToStep', position: 3, name: 'CSP + Trusted Types + セキュリティヘッダ', text: "Content-Security-Policy: default-src 'self'; script-src 'self'; require-trusted-types-for 'script'; を _headers / .htaccess / nginx.conf で設定。インラインスクリプトを排除し JS は外部化。frame-ancestors 'none' / X-Content-Type-Options nosniff / Referrer-Policy strict-origin-when-cross-origin を併設。XSS / Clickjacking / CSRF 攻撃面を最小化。致命的 NG「WP 管理面露出」「CMS バージョン情報露出」を解消し B 軸 +10 点。", url: `${DOMAIN}/improvement-guide/#step-csp` },
+        { '@type': 'HowToStep', position: 4, name: 'GEO/LLMO 最適化 (AI 検索適応)', text: '/llms.txt 配置 (300+ 行 / 全 URL カタログ + 用語集) + FAQPage JSON-LD (5+ 質問) + 公的リンク 5+ 件 (IPA / 政府機関 / Wikidata / Schema.org / W3C) + canonical URL 統一 + sitemap.xml priority 適切。AI クローラー (Perplexity / Google AI Overview / Bing Chat / ChatGPT Search) 引用率向上。C 軸 +10 点。', url: `${DOMAIN}/improvement-guide/#step-geo` },
+        { '@type': 'HowToStep', position: 5, name: 'Core Web Vitals + SSG/Jamstack + WCAG 2.2 AA', text: 'LCP < 2.5s / CLS < 0.1 / INP < 200ms 達成。Astro / Next.js SSG / Eleventy で静的生成、Cloudflare Pages / Netlify / Vercel に配信。WCAG 2.2 AA 達成 (フォーカス可視 / コントラスト比 4.5:1 / キーボード操作完備 / アクセシブルランドマーク)。OGP / Twitter Cards 完備。A 軸 +8 点 / D 軸 +10 点。', url: `${DOMAIN}/improvement-guide/#step-cwv` },
+      ],
+    },
+  ],
 });
 
 // ─── 10. press（subpage / reading）──────────────────
@@ -958,13 +978,19 @@ PAGES.push({
   breadcrumbs: bcl([['トップ', '/'], ['お知らせ', '/news/'], ['業界レポート 2026 Q2 (4-6 月号)', '/news/shizuoka-industry-report-2026-q2/']]),
   mainContent: `
 <article>
+  <header>
+    <h1>静岡県 5 都市 WEB 品質業界レポート 2026 Q2 (4-6 月号)</h1>
+    <p><time datetime="2026-05-02" itemprop="datePublished">2026-05-02 スキャン実施・公開</time> ／ <time datetime="2026-06-02" itemprop="dateModified">次回更新予定: 2026-06-02</time></p>
+  </header>
   <section aria-label="冒頭エビデンス">
     <p><strong>2026 年 5 月 2 日</strong>、静岡県 5 都市（沼津市・三島市・富士市・静岡市・浜松市）× 11 業種（税理士・弁護士・司法書士・行政書士・不動産仲介・飲食店・美容院・美容クリニック・宿泊施設・クリニック / 診療所・学習塾）<strong>${shizuokaSummary.n_total}</strong> 件の公開 WEB サイトを 4 軸機械検証した。業界中央値は <strong>${shizuokaSummary.score_stats.median}</strong> 点（業界 max <strong>${shizuokaSummary.score_stats.max}</strong> 点）であり、★ 以上認定可能なサイトは <strong>${shizuokaSummary.eligible_total}</strong> 件、致命的 NG 発生率は <strong>${shizuokaSummary.ng_pct.toFixed(1)}%</strong> であった。本レポートのデータ全件は <a href="/datasets/shizuoka-2026-q2.json" type="application/json">機械可読 JSON</a> として CC BY 4.0 で公開する (AI クローラー / 研究者 / 引用フリー)。出典: <a href="https://web.dev/articles/vitals" rel="noopener noreferrer" target="_blank">Google Web Vitals 公式</a> / <a href="https://www.w3.org/WAI/standards-guidelines/wcag/" rel="noopener noreferrer" target="_blank">W3C WCAG 2.2</a> / <a href="https://www.ipa.go.jp/security/vuln/websecurity/about.html" rel="noopener noreferrer" target="_blank">IPA 安全なウェブサイトの作り方</a>。</p>
     <blockquote cite="${DOMAIN}/methodology/">
       「公正に測るとは、評価方法のすべてを公開することだ」 — HARTON Certified 評価原則
     </blockquote>
-    <p><time datetime="2026-05-02" itemprop="datePublished">2026-05-02 スキャン実施・公開</time> ／ <time datetime="2026-06-02" itemprop="dateModified">次回更新予定: 2026-06-02</time></p>
-    <h1>静岡県 5 都市 WEB 品質業界レポート 2026 Q2 (4-6 月号)</h1>
+  </section>
+
+  <section aria-label="評価結果の取扱いに関する注意" class="report-disclaimer-section">
+    <p><strong>本レポートの取扱いについて</strong>: 本レポートに記載される「致命的 NG」(HTTPS 非対応 / SSL 証明書 / WP 管理面露出 / CMS バージョン情報露出) の表記は SPEC v3.4 で定義された<strong>具体的技術項目の検出</strong>を意味し、対象事業者の事業品質や信用度に対する評価ではない。評価結果はスキャン実施時点 (2026-05-02) のスナップショットであり、対象 WEB サイトの現在状態を保証するものではない。検出結果に異議がある事業者は <a href="/contact/">scanner 結果訂正請求</a> または <a href="/opt-out/">/opt-out/</a> より速やかに申立て可能である。詳細は <a href="/legal/">利用規約 第 3 条 (機械検証の限界と免責)</a>を参照。</p>
   </section>
 
   <section aria-label="静岡県 5 都市 ★ 獲得率（統合）" class="quality-gap-section zero-cert-statement">
@@ -1061,7 +1087,7 @@ PAGES.push({
     <blockquote cite="${DOMAIN}/about/">
       「機械検証が示す、AI 時代の WEB 品質。」 — HARTON Certified 信頼根拠の核
     </blockquote>
-    <p>本機関の自己実証体 第 1 号は scanner.py により ★★★（HARTON S-Class）を取得し、四半期再判定の対象となる（自己例外なし）。自己実証体 自身に致命的 NG 検出時は即時非掲載状態に切替え、機械検証ログを verbatim 公開する。静岡県 5 都市 ${shizuokaSummary.n_total} 件の業界実測で 70 点以上を達成したサイトはゼロ件である。これは認定基準が「人間の主観や金銭、規模に依存しない」客観的な技術指標であることを業界実測で示している。</p>
+    <p>本機関の自己実証体 第 1 号は scanner.py により ★★★（HARTON S-Class）を取得し、月次再判定の対象となる（自己例外なし）。自己実証体 自身に致命的 NG 検出時は即時非掲載状態に切替え、機械検証ログを verbatim 公開する。静岡県 5 都市 ${shizuokaSummary.n_total} 件の業界実測で 70 点以上を達成したサイトはゼロ件である。これは認定基準が「人間の主観や金銭、規模に依存しない」客観的な技術指標であることを業界実測で示している。</p>
   </section>
 
   <section aria-label="関連ページ">
@@ -1339,15 +1365,49 @@ PAGES.push({
 
   <section aria-label="利用規約">
     <h2>利用規約</h2>
-    <p>本サイトの完全な利用規約は弁護士確認を経て Phase 0 完了時に確定する。それまでは以下の暫定方針が適用される。</p>
+    <p>本利用規約 (以下「本規約」) は、HARTON Certified (以下「本サービス」) の利用条件を定めるものである。本サービスを利用する全ての利用者 (掲載事業者・閲覧者・データ利用者) は本規約に同意したものとみなす。</p>
+
+    <h3>第 1 条 (本サービスの目的)</h3>
+    <p>本サービスは、機械検証 (scanner.py / SPEC v3.4 / 2,554 項目 / 4 軸) による WEB サイト品質の客観評価を通じ、AI 検索時代における信頼ある WEB の普及を支援することを目的とする。本サービスは特定の事業者を不利益に取扱う意図を一切有しない。</p>
+
+    <h3>第 2 条 (掲載基準と中立性)</h3>
+    <p>本サービスは以下の運営方針により公正性を担保する:</p>
     <ul>
-      <li>本サイトの全コンテンツは T.C.HARTON に著作権が帰属する。</li>
-      <li>引用は出典明記（${DOMAIN}/methodology/）を条件として許可する。</li>
-      <li>掲載対象事業者の情報は公開情報のみを収集し、第三者提供は行わない（詳細は <a href="/privacy/">プライバシーポリシー</a>）。</li>
-      <li>掲載拒否権は <a href="/opt-out/">/opt-out/</a> より随時行使できる。</li>
-      <li>本サイトの四半期再評価で ★ 区分が変動した場合、該当事業者へメール通知後に反映する。</li>
+      <li>金銭非依存運用: 掲載料・認定料・更新料・広告料その他の対価を一切徴収しない (本ページ上部「特商法表記」参照)。</li>
+      <li>評価基準全公開: 評価項目・閾値・実施手順は <a href="/methodology/">/methodology/</a> で全て開示する。</li>
+      <li>scanner.py による機械的判定: 評価結果は人為的判断を排し、自動計測のみで生成する。</li>
+      <li>自己実証体としての適用: 運営主体 T.C.HARTON の自社サイト tcharton.com も本サービスの評価基準を自社で適用しており、★★★ HARTON S-Class を取得している (dogfooding 倫理 / 詳細は <a href="/about/">/about/</a>)。</li>
+      <li>ポジティブセレクション: ★ 以上達成事業者のみ掲載対象とし、未達事業者の個別公開は行わない (業種別集計データのみ統計値として公開)。</li>
     </ul>
-    <p>出典基準: <a href="https://www.no-trouble.caa.go.jp/" rel="nofollow noopener noreferrer" target="_blank">消費者庁「特定商取引法ガイド」</a>。</p>
+
+    <h3>第 3 条 (機械検証の限界と免責)</h3>
+    <p>scanner.py による機械検証は以下の前提で運用される。利用者はこれを理解した上で本サービスのデータを利用するものとする:</p>
+    <ul>
+      <li>評価結果は<strong>機械検証実施時点</strong>のスナップショットであり、対象 WEB サイトの現在状態を保証するものではない。</li>
+      <li>「致命的 NG」の表記は SPEC v3.4 で定義された<strong>具体的技術項目</strong> (HTTPS 非対応 / SSL 証明書 / WP 管理面露出 / CMS バージョン情報露出) の検出を意味し、対象事業者の事業品質や信用度に対する評価ではない。</li>
+      <li>scanner.py は機械的検出ツールである以上、設定・構成によっては誤検出 (false positive) が発生し得る。検出結果に異議がある事業者は <a href="/contact/">/contact/</a> より「scanner 結果訂正請求」として申立てが可能であり、本機関は速やかに再検証する。</li>
+      <li>本サービスは合理的努力で正確性を期するが、検証結果の絶対的正確性 / 完全性 / 特定目的適合性を保証しない。利用者の判断・行動に起因する損害について、本機関は法令で許容される最大限において責任を負わない。</li>
+    </ul>
+
+    <h3>第 4 条 (掲載拒否権 / opt-out)</h3>
+    <p>掲載対象事業者は <a href="/opt-out/">/opt-out/</a> より掲載辞退申立てが可能。理由は不要であり、24 時間以内に該当事業者を本サービス全体から除外する。再掲載は事業者の明示申請がない限り行わない。</p>
+
+    <h3>第 5 条 (著作権 / コンテンツのライセンス)</h3>
+    <p>本サイトのコンテンツに対する著作権は次の通り運用する:</p>
+    <ul>
+      <li><strong>サイトデザイン / レイアウト / コピーライティング / ロゴ / バッジ素材 / ブランド要素</strong>: T.C.HARTON に帰属。無断複製・転用を禁ずる。</li>
+      <li><strong>機械検証統計データ (業界レポート / 比較ページ / Dataset endpoint)</strong>: <strong>Creative Commons Attribution 4.0 International (CC BY 4.0)</strong> ライセンスで公開。出典明記の上、AI クローラー・研究機関・メディア・教育機関による引用・再利用フリー (license URL: <a href="https://creativecommons.org/licenses/by/4.0/" rel="noopener noreferrer" target="_blank">https://creativecommons.org/licenses/by/4.0/</a>)。</li>
+      <li>引用形式: 「HARTON Certified (2026). [レポート名]. ${DOMAIN}/[ページ URL]」</li>
+      <li>機械可読 Dataset endpoint: <a href="/datasets/shizuoka-2026-q2.json">/datasets/shizuoka-2026-q2.json</a> 他、Phase 1+ で順次拡張</li>
+    </ul>
+
+    <h3>第 6 条 (準拠法 / 管轄)</h3>
+    <p>本規約の解釈および本サービスに関する一切の紛争には日本法を適用する。本サービスに関連する紛争については、<strong>静岡地方裁判所沼津支部</strong>を第一審の専属的合意管轄裁判所とする。</p>
+
+    <h3>第 7 条 (本規約の改訂)</h3>
+    <p>本規約は事業環境・法令改正・運用知見の変化に応じ改訂することがある。重要改訂時は <a href="/news/">/news/</a> で公表後 14 日間の周知期間を設けた上で発効する。</p>
+
+    <p><time datetime="2026-05-02" itemprop="dateModified">2026-05-02 公開・最終更新</time> ／ 出典基準: <a href="https://www.no-trouble.caa.go.jp/" rel="nofollow noopener noreferrer" target="_blank">消費者庁「特定商取引法ガイド」</a> / <a href="https://creativecommons.org/licenses/by/4.0/" rel="nofollow noopener noreferrer" target="_blank">Creative Commons CC BY 4.0</a></p>
   </section>
 </article>`,
 });
@@ -1364,18 +1424,113 @@ PAGES.push({
   mainContent: `
 <article>
   <h1>プライバシーポリシー</h1>
-  <section aria-label="基本方針">
-    <h2>基本方針</h2>
+  <p><time datetime="2026-05-02" itemprop="datePublished">2026-05-02 制定・公開</time> ／ <time datetime="2026-05-02" itemprop="dateModified">最終更新 2026-05-02</time> ／ 個人情報保護法 (2022 年改正) + GDPR 第 13 条 + Cookie 規制 (ePrivacy) 整合</p>
+
+  <section aria-label="運営主体">
+    <h2>1. 運営主体 (個人情報取扱事業者)</h2>
+    <table>
+      <caption>個人情報保護法 第 32 条 第 1 項 第 1 号 準拠</caption>
+      <tbody>
+        <tr><th scope="row">事業者名</th><td>T.C.HARTON</td></tr>
+        <tr><th scope="row">所在地</th><td>〒410-0022 静岡県沼津市大岡2690</td></tr>
+        <tr><th scope="row">代表者</th><td>大内 達也</td></tr>
+        <tr><th scope="row">運営サービス</th><td>HARTON Certified (${DOMAIN}/)</td></tr>
+        <tr><th scope="row">個人情報保護管理責任者</th><td>大内 達也 (代表者兼任)</td></tr>
+        <tr><th scope="row">問合せ窓口</th><td><a href="/contact/">/contact/</a> (1 営業日以内に返信)</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section aria-label="収集する個人情報">
+    <h2>2. 収集する個人情報の項目と利用目的</h2>
+    <p>本サービスは以下の個人情報のみを、明示された利用目的の範囲内で収集する。</p>
+    <table>
+      <caption>個人情報項目と利用目的 (個人情報保護法 第 17 条 / GDPR 第 13 条 第 1 項 c 号 準拠)</caption>
+      <thead><tr><th scope="col">情報項目</th><th scope="col">取得経路</th><th scope="col">利用目的</th><th scope="col">法的根拠</th></tr></thead>
+      <tbody>
+        <tr><td>氏名</td><td>/contact/ お問合せフォーム入力</td><td>お問合せへの回答 / 取材対応 / 掲載申請対応 / 掲載辞退対応</td><td>本人同意 (フォーム送信時)</td></tr>
+        <tr><td>メールアドレス</td><td>/contact/ お問合せフォーム入力</td><td>同上 (返信先として)</td><td>本人同意</td></tr>
+        <tr><td>事業者名 (任意)</td><td>/contact/ お問合せフォーム入力</td><td>事業者単位での問合せ管理</td><td>本人同意</td></tr>
+        <tr><td>お問合せ種別</td><td>/contact/ お問合せフォーム選択</td><td>適切な対応経路への振分け</td><td>本人同意</td></tr>
+        <tr><td>お問合せ内容</td><td>/contact/ お問合せフォーム入力</td><td>具体的問合せへの回答</td><td>本人同意</td></tr>
+        <tr><td>IP アドレス / User-Agent</td><td>HTTP リクエストヘッダ (自動収集)</td><td>不正アクセス防止 / アクセスログ調査</td><td>正当な利益 (Cloudflare ログ)</td></tr>
+      </tbody>
+    </table>
+    <p>本サービスは「要配慮個人情報」(個人情報保護法 第 2 条 第 3 項) を一切取得しない。Cookie・ローカルストレージ等のトラッキング技術は<strong>使用しない</strong> (アクセス解析 / 広告配信 / 行動追跡なし)。</p>
+  </section>
+
+  <section aria-label="第三者処理者">
+    <h2>3. 個人情報の処理を委託する第三者 (sub-processor)</h2>
+    <p>本サービスは以下の第三者処理者を利用する。各社は適切なデータ保護措置を講じている (個人情報保護法 第 25 条 / GDPR 第 28 条 / PIPA 第 24 条 越境転送準拠)。</p>
+    <table>
+      <caption>個人情報処理の委託先一覧</caption>
+      <thead><tr><th scope="col">委託先</th><th scope="col">委託業務</th><th scope="col">所在国</th><th scope="col">プライバシーポリシー</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Web3Forms</strong> (運営: Surbiton Labs LLP)</td><td>お問合せフォーム送信処理 (フォームデータの代理受信 → 本機関メールへの転送)</td><td>米国</td><td><a href="https://web3forms.com/privacy" rel="noopener noreferrer" target="_blank">https://web3forms.com/privacy</a></td></tr>
+        <tr><td><strong>Cloudflare, Inc.</strong></td><td>サイトホスティング (Cloudflare Pages) / CDN / DDoS 防御 / SSL 終端</td><td>米国 (PoP は EU・日本含む全世界)</td><td><a href="https://www.cloudflare.com/privacypolicy/" rel="noopener noreferrer" target="_blank">https://www.cloudflare.com/privacypolicy/</a></td></tr>
+      </tbody>
+    </table>
+    <p><strong>越境移転に関する同意</strong>: お問合せフォーム送信は Web3Forms (米国) 経由で処理される。サイト閲覧時のアクセスログは Cloudflare の世界各地の PoP を経由する。これらは個人情報の越境移転に該当する (PIPA 第 24 条)。フォーム送信を以て本越境移転に同意したものとみなす。同意しない場合はメール (詳細は §6) でのお問合せをご利用いただきたい。</p>
+  </section>
+
+  <section aria-label="保管期間">
+    <h2>4. 個人情報の保管期間</h2>
     <ul>
-      <li>収集対象: 法人情報・公開連絡先のみ。個人事業主は屋号レベルのみ。</li>
-      <li>保管: HARTON ローカルのみ。第三者提供なし。</li>
-      <li>準拠法: 個人情報保護法 2022 改正対応 / GDPR 対応。</li>
-      <li>削除請求: <a href="/contact/">/contact/</a> よりいつでも対応。</li>
+      <li><strong>お問合せフォーム経由の個人情報</strong>: 問合せ対応完了後 <strong>6 ヶ月</strong>以内に削除する。但し以下の例外あり:
+        <ul>
+          <li>掲載申請受理 → 認定取得した事業者の連絡先: 認定有効期間中 (★ 取消・降格・opt-out まで) 保管</li>
+          <li>法令上の保管義務がある場合 (税法・特定商取引法等): 当該法令所定の期間</li>
+        </ul>
+      </li>
+      <li><strong>アクセスログ (IP / User-Agent)</strong>: Cloudflare 標準保持期間 (通常 7 日間 / 不正アクセス調査時は 30 日まで延長可能)</li>
+      <li><strong>Web3Forms 側保管</strong>: Web3Forms 規約に準拠 (詳細は同社プライバシーポリシー参照)</li>
     </ul>
   </section>
-  <section aria-label="お問合せ">
-    <h2>お問合せ・削除請求</h2>
-    <p>個人情報の開示・訂正・削除等の請求は <a href="/contact/">/contact/</a> より受付する。本人確認後、合理的な期間内に対応する。</p>
+
+  <section aria-label="第三者提供">
+    <h2>5. 第三者提供の禁止</h2>
+    <p>本機関は本人同意なく個人情報を第三者へ提供しない (個人情報保護法 第 27 条)。例外は以下のみ:</p>
+    <ul>
+      <li>法令に基づく場合 (裁判所・捜査機関からの正式な開示命令等)</li>
+      <li>人の生命・身体・財産の保護のため緊急に必要な場合</li>
+      <li>本人同意があり、その範囲内での提供</li>
+      <li>個人を特定できない統計的データへの加工後の公開 (業界レポート等 / CC BY 4.0)</li>
+    </ul>
+  </section>
+
+  <section aria-label="本人の権利">
+    <h2>6. 本人の権利 (開示・訂正・削除・停止請求)</h2>
+    <p>本人は自己の個人情報について以下の権利を行使できる (個人情報保護法 第 33-39 条 / GDPR 第 15-22 条):</p>
+    <ul>
+      <li>開示請求 (どのような情報が保管されているか)</li>
+      <li>訂正・追加・削除請求 (誤り / 古い情報の修正)</li>
+      <li>利用停止請求 / 第三者提供停止請求</li>
+      <li>データポータビリティ (構造化データ形式での移転)</li>
+      <li>異議申立て (処理に対する反対表明)</li>
+    </ul>
+    <p><strong>請求方法</strong>: 以下のいずれかで受付。本人確認後、原則 2 週間以内 (法定上限 30 日) に対応する。手数料は無料。</p>
+    <ul>
+      <li>お問合せフォーム: <a href="/contact/">/contact/</a> (種別「その他」で個人情報請求と明記)</li>
+      <li>メール直接送付: <strong>certification@tcharton.com</strong></li>
+      <li>書面: 〒410-0022 静岡県沼津市大岡2690 T.C.HARTON 個人情報保護管理責任者 宛</li>
+    </ul>
+    <p>掲載対象事業者の掲載辞退については、より迅速な専用窓口 <a href="/opt-out/">/opt-out/</a> をご利用いただきたい (24 時間以内対応)。</p>
+  </section>
+
+  <section aria-label="掲載対象事業者の取扱い">
+    <h2>7. 機械検証対象事業者の情報の取扱い</h2>
+    <p>HARTON Certified は公開 WEB サイトを scanner.py で機械検証する独立認定機関である。検証対象となる事業者情報の取扱いは以下の通り:</p>
+    <ul>
+      <li><strong>収集情報</strong>: 公開 WEB サイトの URL / 公開メタデータ (Schema.org / OGP / robots.txt 等) / HTTP レスポンスヘッダのみ。事業者の非公開情報は一切収集しない。</li>
+      <li><strong>個別公開条件</strong>: ★ 以上 (総合 70 点 + 致命的 NG 0 件) を達成した事業者のみ。未達事業者の個別情報は公開しない (業種別集計値のみ統計データとして公開)。</li>
+      <li><strong>opt-out</strong>: <a href="/opt-out/">/opt-out/</a> より理由不要・24 時間以内に該当事業者を本サービス全体から除外。</li>
+      <li><strong>異議・訂正</strong>: scanner 検出結果への異議申立ては <a href="/contact/">/contact/</a> より受付。</li>
+    </ul>
+  </section>
+
+  <section aria-label="改定">
+    <h2>8. 本ポリシーの改定</h2>
+    <p>本ポリシーは法令改正・運用知見・第三者処理者変更等に応じ改定することがある。重要な改定時は <a href="/news/">/news/</a> で公表後 14 日間の周知期間を設けた上で発効する。</p>
   </section>
 </article>`,
 });

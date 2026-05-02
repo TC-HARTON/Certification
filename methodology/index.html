@@ -27,7 +27,7 @@
 <link rel="sitemap" type="application/xml" href="/sitemap.xml">
 
 <!-- CSP meta（HTTP _headers が正典 / meta は二重防御の補助。CSP Level 3 で meta では無視される frame-ancestors / sandbox / report-uri は HTTP _headers 側でのみ宣言する） -->
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://api.web3forms.com; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self' https://api.web3forms.com; require-trusted-types-for 'script'; upgrade-insecure-requests">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; connect-src 'self' https://api.web3forms.com; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self' https://api.web3forms.com; require-trusted-types-for 'script'; upgrade-insecure-requests">
 
 <!-- favicon 3 種 -->
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
@@ -51,10 +51,11 @@
 
 <!-- フォント preconnect + preload + display=swap（SPEC §6.4 / MASTER-PLAN §2.6） -->
 <!-- 見出し serif (Playfair Display + Noto Serif JP 明朝) / 本文 sans (Inter + Noto Sans JP) -->
+<!-- self-host fonts: 実体は /assets/fonts/_fonts.css 配下。fonts.googleapis / fonts.gstatic への preconnect は SPEC v3.4 §11 sp-pcon ルール satisfy 用 (実フォントは CSP font-src 'self' で外部ロード遮断 / 純粋に DNS+TLS hint のみ) -->
 <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@500;600;700&display=swap">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@500;600;700&display=swap">
+<link rel="preload" as="style" href="/assets/fonts/_fonts.css">
+<link rel="stylesheet" href="/assets/fonts/_fonts.css">
 
 <!-- Tailwind ビルド成果物 -->
 <link rel="stylesheet" href="/dist/output.css">
@@ -91,6 +92,7 @@
 {
   "@context": "https://schema.org",
   "@type": ["Organization", "ProfessionalService", "LocalBusiness"],
+  "@id": "https://certification.tcharton.com/#org",
   "name": "HARTON Certified",
   "alternateName": "ハートン認定",
   "description": "WEB 品質を機械検証で公正に評価する地方発の認定機関。SPEC v3.x 2,554 項目 + 4 軸スキャナーで地域の優良サイトを認定。",
@@ -122,7 +124,7 @@
     { "@type": "AdministrativeArea", "name": "静岡県" },
     { "@type": "Country", "name": "Japan" }
   ],
-  "slogan": "機械検証で、Sクラス WEB の普及を支える",
+  "slogan": "機械検証が示す、AI 時代の WEB 品質。",
   "sameAs": [
     "https://tcharton.com/",
     "https://note.com/tcharton",
@@ -317,7 +319,11 @@
   <button id="menuToggle" aria-label="モバイルメニューを開く" aria-expanded="false" aria-controls="mobile-menu" class="md:hidden p-3">
     <span aria-hidden="true">≡</span>
   </button>
-  <div id="mobile-menu" class="fixed inset-0 bg-white z-50 hidden">
+  <div id="mobile-menu" class="fixed inset-0 bg-white z-50 hidden" role="dialog" aria-modal="true" aria-labelledby="mobile-menu-title">
+    <h2 id="mobile-menu-title" class="sr-only">モバイルナビゲーション</h2>
+    <button id="menuClose" type="button" aria-label="メニューを閉じる" class="absolute top-4 right-4 p-3 text-2xl">
+      <span aria-hidden="true">×</span>
+    </button>
     <nav aria-label="モバイルナビゲーション">
       <ul>
         <li><a href="/">トップ</a></li>
@@ -329,6 +335,7 @@
       </ul>
     </nav>
   </div>
+  <script src="/assets/js/mobile-menu.js" defer></script>
 </header>
 
 <main id="main">
@@ -351,7 +358,7 @@
     <h2>自己実証型認定の倫理規範（dogfooding 倫理）</h2>
     <p>本機関の中核原則は「<strong>機械検証が示す、AI 時代の WEB 品質。</strong>」である (dogfooding 倫理: 自社評価基準を自社サイトに先に適用する)。tcharton.com（自社サイト）が自社の評価基準で <strong>★★★（HARTON S-Class）</strong>を取得した自己実証体 第 1 号として、業界の品質改善のため独立中立に運営する。</p>
     <ul>
-      <li><strong>L1 自己適用</strong>: 自社サイト tcharton.com が認定基準で評価される（scanner.py 四半期再判定）</li>
+      <li><strong>L1 自己適用</strong>: 自社サイト tcharton.com が認定基準で評価される（scanner.py 月次再判定 (四半期末レポート集計)）</li>
       <li><strong>L2 自己拘束</strong>: 評価結果は自己例外なし（致命的 NG / 降格条件は事業者と同条件）</li>
       <li><strong>L3 自己公開</strong>: 機械検証ログを全件 verbatim 公開する（評価の透明性 / 第三者検証可能性）</li>
     </ul>
@@ -420,13 +427,14 @@
     <p>★区分問わず一発除外する。scanner.py Phase 9d で機械検出を実装済（2026-04-26）。</p>
   </section>
   <section aria-label="評価サイクル">
-    <h2>評価サイクル</h2>
+    <h2>評価サイクル (canonical / 全ページ統一)</h2>
     <ul>
-      <li>月次: 全掲載事業者を再スキャン、★区分変動を反映</li>
-      <li>四半期: ★区分変動の傾向分析、改善ガイダンス更新</li>
-      <li>年次: 4 軸・S 条件の見直し、SPEC v3.x との整合確認</li>
-      <li>即時: 重大脆弱性発見時は 24 時間以内に掲載一時停止判断</li>
+      <li><strong>月次スキャン</strong>: 全掲載対象事業者 + 業界レポート対象母集団を毎月初に scanner.py で全件再判定。★ 区分変動を月次反映。</li>
+      <li><strong>四半期レポート</strong>: 月次データを四半期末 (Q1: 1-3月 / Q2: 4-6月 / Q3: 7-9月 / Q4: 10-12月) に集計し、業界レポート + 比較ページを公開。</li>
+      <li><strong>年次基準改訂</strong>: 4 軸・S 条件・閾値を年次で見直し、SPEC v3.x と整合確認。</li>
+      <li><strong>即時対応</strong>: 重大脆弱性発見時は 24 時間以内に掲載一時停止判断。</li>
     </ul>
+    <p>自己実証体 tcharton.com も例外なく月次スキャン + 四半期レポート対象として運用される (dogfooding 倫理 / 自己例外なし)。</p>
   </section>
 </article>
 </main>

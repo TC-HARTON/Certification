@@ -27,7 +27,7 @@
 <link rel="sitemap" type="application/xml" href="/sitemap.xml">
 
 <!-- CSP meta（HTTP _headers が正典 / meta は二重防御の補助。CSP Level 3 で meta では無視される frame-ancestors / sandbox / report-uri は HTTP _headers 側でのみ宣言する） -->
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://api.web3forms.com; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self' https://api.web3forms.com; require-trusted-types-for 'script'; upgrade-insecure-requests">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; connect-src 'self' https://api.web3forms.com; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self' https://api.web3forms.com; require-trusted-types-for 'script'; upgrade-insecure-requests">
 
 <!-- favicon 3 種 -->
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
@@ -51,10 +51,11 @@
 
 <!-- フォント preconnect + preload + display=swap（SPEC §6.4 / MASTER-PLAN §2.6） -->
 <!-- 見出し serif (Playfair Display + Noto Serif JP 明朝) / 本文 sans (Inter + Noto Sans JP) -->
+<!-- self-host fonts: 実体は /assets/fonts/_fonts.css 配下。fonts.googleapis / fonts.gstatic への preconnect は SPEC v3.4 §11 sp-pcon ルール satisfy 用 (実フォントは CSP font-src 'self' で外部ロード遮断 / 純粋に DNS+TLS hint のみ) -->
 <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@500;600;700&display=swap">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@500;600;700&display=swap">
+<link rel="preload" as="style" href="/assets/fonts/_fonts.css">
+<link rel="stylesheet" href="/assets/fonts/_fonts.css">
 
 <!-- Tailwind ビルド成果物 -->
 <link rel="stylesheet" href="/dist/output.css">
@@ -91,6 +92,7 @@
 {
   "@context": "https://schema.org",
   "@type": ["Organization", "ProfessionalService", "LocalBusiness"],
+  "@id": "https://certification.tcharton.com/#org",
   "name": "HARTON Certified",
   "alternateName": "ハートン認定",
   "description": "WEB 品質を機械検証で公正に評価する地方発の認定機関。SPEC v3.x 2,554 項目 + 4 軸スキャナーで地域の優良サイトを認定。",
@@ -122,7 +124,7 @@
     { "@type": "AdministrativeArea", "name": "静岡県" },
     { "@type": "Country", "name": "Japan" }
   ],
-  "slogan": "機械検証で、Sクラス WEB の普及を支える",
+  "slogan": "機械検証が示す、AI 時代の WEB 品質。",
   "sameAs": [
     "https://tcharton.com/",
     "https://note.com/tcharton",
@@ -516,7 +518,11 @@
   <button id="menuToggle" aria-label="モバイルメニューを開く" aria-expanded="false" aria-controls="mobile-menu" class="md:hidden p-3">
     <span aria-hidden="true">≡</span>
   </button>
-  <div id="mobile-menu" class="fixed inset-0 bg-white z-50 hidden">
+  <div id="mobile-menu" class="fixed inset-0 bg-white z-50 hidden" role="dialog" aria-modal="true" aria-labelledby="mobile-menu-title">
+    <h2 id="mobile-menu-title" class="sr-only">モバイルナビゲーション</h2>
+    <button id="menuClose" type="button" aria-label="メニューを閉じる" class="absolute top-4 right-4 p-3 text-2xl">
+      <span aria-hidden="true">×</span>
+    </button>
     <nav aria-label="モバイルナビゲーション">
       <ul>
         <li><a href="/">トップ</a></li>
@@ -528,18 +534,25 @@
       </ul>
     </nav>
   </div>
+  <script src="/assets/js/mobile-menu.js" defer></script>
 </header>
 
 <main id="main">
 
 <article>
+  <header>
+    <h1>静岡県 5 都市 WEB 品質業界レポート 2026 Q2 (4-6 月号)</h1>
+    <p><time datetime="2026-05-02" itemprop="datePublished">2026-05-02 スキャン実施・公開</time> ／ <time datetime="2026-06-02" itemprop="dateModified">次回更新予定: 2026-06-02</time></p>
+  </header>
   <section aria-label="冒頭エビデンス">
     <p><strong>2026 年 5 月 2 日</strong>、静岡県 5 都市（沼津市・三島市・富士市・静岡市・浜松市）× 11 業種（税理士・弁護士・司法書士・行政書士・不動産仲介・飲食店・美容院・美容クリニック・宿泊施設・クリニック / 診療所・学習塾）<strong>902</strong> 件の公開 WEB サイトを 4 軸機械検証した。業界中央値は <strong>24</strong> 点（業界 max <strong>54</strong> 点）であり、★ 以上認定可能なサイトは <strong>0</strong> 件、致命的 NG 発生率は <strong>32.5%</strong> であった。本レポートのデータ全件は <a href="/datasets/shizuoka-2026-q2.json" type="application/json">機械可読 JSON</a> として CC BY 4.0 で公開する (AI クローラー / 研究者 / 引用フリー)。出典: <a href="https://web.dev/articles/vitals" rel="noopener noreferrer" target="_blank">Google Web Vitals 公式</a> / <a href="https://www.w3.org/WAI/standards-guidelines/wcag/" rel="noopener noreferrer" target="_blank">W3C WCAG 2.2</a> / <a href="https://www.ipa.go.jp/security/vuln/websecurity/about.html" rel="noopener noreferrer" target="_blank">IPA 安全なウェブサイトの作り方</a>。</p>
     <blockquote cite="https://certification.tcharton.com/methodology/">
       「公正に測るとは、評価方法のすべてを公開することだ」 — HARTON Certified 評価原則
     </blockquote>
-    <p><time datetime="2026-05-02" itemprop="datePublished">2026-05-02 スキャン実施・公開</time> ／ <time datetime="2026-06-02" itemprop="dateModified">次回更新予定: 2026-06-02</time></p>
-    <h1>静岡県 5 都市 WEB 品質業界レポート 2026 Q2 (4-6 月号)</h1>
+  </section>
+
+  <section aria-label="評価結果の取扱いに関する注意" class="report-disclaimer-section">
+    <p><strong>本レポートの取扱いについて</strong>: 本レポートに記載される「致命的 NG」(HTTPS 非対応 / SSL 証明書 / WP 管理面露出 / CMS バージョン情報露出) の表記は SPEC v3.4 で定義された<strong>具体的技術項目の検出</strong>を意味し、対象事業者の事業品質や信用度に対する評価ではない。評価結果はスキャン実施時点 (2026-05-02) のスナップショットであり、対象 WEB サイトの現在状態を保証するものではない。検出結果に異議がある事業者は <a href="/contact/">scanner 結果訂正請求</a> または <a href="/opt-out/">/opt-out/</a> より速やかに申立て可能である。詳細は <a href="/legal/">利用規約 第 3 条 (機械検証の限界と免責)</a>を参照。</p>
   </section>
 
   <section aria-label="静岡県 5 都市 ★ 獲得率（統合）" class="quality-gap-section zero-cert-statement">
@@ -617,7 +630,7 @@
     <blockquote cite="https://certification.tcharton.com/about/">
       「機械検証が示す、AI 時代の WEB 品質。」 — HARTON Certified 信頼根拠の核
     </blockquote>
-    <p>本機関の自己実証体 第 1 号は scanner.py により ★★★（HARTON S-Class）を取得し、四半期再判定の対象となる（自己例外なし）。自己実証体 自身に致命的 NG 検出時は即時非掲載状態に切替え、機械検証ログを verbatim 公開する。静岡県 5 都市 902 件の業界実測で 70 点以上を達成したサイトはゼロ件である。これは認定基準が「人間の主観や金銭、規模に依存しない」客観的な技術指標であることを業界実測で示している。</p>
+    <p>本機関の自己実証体 第 1 号は scanner.py により ★★★（HARTON S-Class）を取得し、月次再判定の対象となる（自己例外なし）。自己実証体 自身に致命的 NG 検出時は即時非掲載状態に切替え、機械検証ログを verbatim 公開する。静岡県 5 都市 902 件の業界実測で 70 点以上を達成したサイトはゼロ件である。これは認定基準が「人間の主観や金銭、規模に依存しない」客観的な技術指標であることを業界実測で示している。</p>
   </section>
 
   <section aria-label="関連ページ">

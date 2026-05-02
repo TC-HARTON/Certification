@@ -27,7 +27,7 @@
 <link rel="sitemap" type="application/xml" href="/sitemap.xml">
 
 <!-- CSP meta（HTTP _headers が正典 / meta は二重防御の補助。CSP Level 3 で meta では無視される frame-ancestors / sandbox / report-uri は HTTP _headers 側でのみ宣言する） -->
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://api.web3forms.com; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self' https://api.web3forms.com; require-trusted-types-for 'script'; upgrade-insecure-requests">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; connect-src 'self' https://api.web3forms.com; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self' https://api.web3forms.com; require-trusted-types-for 'script'; upgrade-insecure-requests">
 
 <!-- favicon 3 種 -->
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
@@ -51,10 +51,11 @@
 
 <!-- フォント preconnect + preload + display=swap（SPEC §6.4 / MASTER-PLAN §2.6） -->
 <!-- 見出し serif (Playfair Display + Noto Serif JP 明朝) / 本文 sans (Inter + Noto Sans JP) -->
+<!-- self-host fonts: 実体は /assets/fonts/_fonts.css 配下。fonts.googleapis / fonts.gstatic への preconnect は SPEC v3.4 §11 sp-pcon ルール satisfy 用 (実フォントは CSP font-src 'self' で外部ロード遮断 / 純粋に DNS+TLS hint のみ) -->
 <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@500;600;700&display=swap">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@500;600;700&display=swap">
+<link rel="preload" as="style" href="/assets/fonts/_fonts.css">
+<link rel="stylesheet" href="/assets/fonts/_fonts.css">
 
 <!-- Tailwind ビルド成果物 -->
 <link rel="stylesheet" href="/dist/output.css">
@@ -91,6 +92,7 @@
 {
   "@context": "https://schema.org",
   "@type": ["Organization", "ProfessionalService", "LocalBusiness"],
+  "@id": "https://certification.tcharton.com/#org",
   "name": "HARTON Certified",
   "alternateName": "ハートン認定",
   "description": "WEB 品質を機械検証で公正に評価する地方発の認定機関。SPEC v3.x 2,554 項目 + 4 軸スキャナーで地域の優良サイトを認定。",
@@ -122,7 +124,7 @@
     { "@type": "AdministrativeArea", "name": "静岡県" },
     { "@type": "Country", "name": "Japan" }
   ],
-  "slogan": "機械検証で、Sクラス WEB の普及を支える",
+  "slogan": "機械検証が示す、AI 時代の WEB 品質。",
   "sameAs": [
     "https://tcharton.com/",
     "https://note.com/tcharton",
@@ -177,7 +179,11 @@
   <button id="menuToggle" aria-label="モバイルメニューを開く" aria-expanded="false" aria-controls="mobile-menu" class="md:hidden p-3">
     <span aria-hidden="true">≡</span>
   </button>
-  <div id="mobile-menu" class="fixed inset-0 bg-white z-50 hidden">
+  <div id="mobile-menu" class="fixed inset-0 bg-white z-50 hidden" role="dialog" aria-modal="true" aria-labelledby="mobile-menu-title">
+    <h2 id="mobile-menu-title" class="sr-only">モバイルナビゲーション</h2>
+    <button id="menuClose" type="button" aria-label="メニューを閉じる" class="absolute top-4 right-4 p-3 text-2xl">
+      <span aria-hidden="true">×</span>
+    </button>
     <nav aria-label="モバイルナビゲーション">
       <ul>
         <li><a href="/">トップ</a></li>
@@ -189,6 +195,7 @@
       </ul>
     </nav>
   </div>
+  <script src="/assets/js/mobile-menu.js" defer></script>
 </header>
 
 <main id="main">
@@ -218,15 +225,49 @@
 
   <section aria-label="利用規約">
     <h2>利用規約</h2>
-    <p>本サイトの完全な利用規約は弁護士確認を経て Phase 0 完了時に確定する。それまでは以下の暫定方針が適用される。</p>
+    <p>本利用規約 (以下「本規約」) は、HARTON Certified (以下「本サービス」) の利用条件を定めるものである。本サービスを利用する全ての利用者 (掲載事業者・閲覧者・データ利用者) は本規約に同意したものとみなす。</p>
+
+    <h3>第 1 条 (本サービスの目的)</h3>
+    <p>本サービスは、機械検証 (scanner.py / SPEC v3.4 / 2,554 項目 / 4 軸) による WEB サイト品質の客観評価を通じ、AI 検索時代における信頼ある WEB の普及を支援することを目的とする。本サービスは特定の事業者を不利益に取扱う意図を一切有しない。</p>
+
+    <h3>第 2 条 (掲載基準と中立性)</h3>
+    <p>本サービスは以下の運営方針により公正性を担保する:</p>
     <ul>
-      <li>本サイトの全コンテンツは T.C.HARTON に著作権が帰属する。</li>
-      <li>引用は出典明記（https://certification.tcharton.com/methodology/）を条件として許可する。</li>
-      <li>掲載対象事業者の情報は公開情報のみを収集し、第三者提供は行わない（詳細は <a href="/privacy/">プライバシーポリシー</a>）。</li>
-      <li>掲載拒否権は <a href="/opt-out/">/opt-out/</a> より随時行使できる。</li>
-      <li>本サイトの四半期再評価で ★ 区分が変動した場合、該当事業者へメール通知後に反映する。</li>
+      <li>金銭非依存運用: 掲載料・認定料・更新料・広告料その他の対価を一切徴収しない (本ページ上部「特商法表記」参照)。</li>
+      <li>評価基準全公開: 評価項目・閾値・実施手順は <a href="/methodology/">/methodology/</a> で全て開示する。</li>
+      <li>scanner.py による機械的判定: 評価結果は人為的判断を排し、自動計測のみで生成する。</li>
+      <li>自己実証体としての適用: 運営主体 T.C.HARTON の自社サイト tcharton.com も本サービスの評価基準を自社で適用しており、★★★ HARTON S-Class を取得している (dogfooding 倫理 / 詳細は <a href="/about/">/about/</a>)。</li>
+      <li>ポジティブセレクション: ★ 以上達成事業者のみ掲載対象とし、未達事業者の個別公開は行わない (業種別集計データのみ統計値として公開)。</li>
     </ul>
-    <p>出典基準: <a href="https://www.no-trouble.caa.go.jp/" rel="nofollow noopener noreferrer" target="_blank">消費者庁「特定商取引法ガイド」</a>。</p>
+
+    <h3>第 3 条 (機械検証の限界と免責)</h3>
+    <p>scanner.py による機械検証は以下の前提で運用される。利用者はこれを理解した上で本サービスのデータを利用するものとする:</p>
+    <ul>
+      <li>評価結果は<strong>機械検証実施時点</strong>のスナップショットであり、対象 WEB サイトの現在状態を保証するものではない。</li>
+      <li>「致命的 NG」の表記は SPEC v3.4 で定義された<strong>具体的技術項目</strong> (HTTPS 非対応 / SSL 証明書 / WP 管理面露出 / CMS バージョン情報露出) の検出を意味し、対象事業者の事業品質や信用度に対する評価ではない。</li>
+      <li>scanner.py は機械的検出ツールである以上、設定・構成によっては誤検出 (false positive) が発生し得る。検出結果に異議がある事業者は <a href="/contact/">/contact/</a> より「scanner 結果訂正請求」として申立てが可能であり、本機関は速やかに再検証する。</li>
+      <li>本サービスは合理的努力で正確性を期するが、検証結果の絶対的正確性 / 完全性 / 特定目的適合性を保証しない。利用者の判断・行動に起因する損害について、本機関は法令で許容される最大限において責任を負わない。</li>
+    </ul>
+
+    <h3>第 4 条 (掲載拒否権 / opt-out)</h3>
+    <p>掲載対象事業者は <a href="/opt-out/">/opt-out/</a> より掲載辞退申立てが可能。理由は不要であり、24 時間以内に該当事業者を本サービス全体から除外する。再掲載は事業者の明示申請がない限り行わない。</p>
+
+    <h3>第 5 条 (著作権 / コンテンツのライセンス)</h3>
+    <p>本サイトのコンテンツに対する著作権は次の通り運用する:</p>
+    <ul>
+      <li><strong>サイトデザイン / レイアウト / コピーライティング / ロゴ / バッジ素材 / ブランド要素</strong>: T.C.HARTON に帰属。無断複製・転用を禁ずる。</li>
+      <li><strong>機械検証統計データ (業界レポート / 比較ページ / Dataset endpoint)</strong>: <strong>Creative Commons Attribution 4.0 International (CC BY 4.0)</strong> ライセンスで公開。出典明記の上、AI クローラー・研究機関・メディア・教育機関による引用・再利用フリー (license URL: <a href="https://creativecommons.org/licenses/by/4.0/" rel="noopener noreferrer" target="_blank">https://creativecommons.org/licenses/by/4.0/</a>)。</li>
+      <li>引用形式: 「HARTON Certified (2026). [レポート名]. https://certification.tcharton.com/[ページ URL]」</li>
+      <li>機械可読 Dataset endpoint: <a href="/datasets/shizuoka-2026-q2.json">/datasets/shizuoka-2026-q2.json</a> 他、Phase 1+ で順次拡張</li>
+    </ul>
+
+    <h3>第 6 条 (準拠法 / 管轄)</h3>
+    <p>本規約の解釈および本サービスに関する一切の紛争には日本法を適用する。本サービスに関連する紛争については、<strong>静岡地方裁判所沼津支部</strong>を第一審の専属的合意管轄裁判所とする。</p>
+
+    <h3>第 7 条 (本規約の改訂)</h3>
+    <p>本規約は事業環境・法令改正・運用知見の変化に応じ改訂することがある。重要改訂時は <a href="/news/">/news/</a> で公表後 14 日間の周知期間を設けた上で発効する。</p>
+
+    <p><time datetime="2026-05-02" itemprop="dateModified">2026-05-02 公開・最終更新</time> ／ 出典基準: <a href="https://www.no-trouble.caa.go.jp/" rel="nofollow noopener noreferrer" target="_blank">消費者庁「特定商取引法ガイド」</a> / <a href="https://creativecommons.org/licenses/by/4.0/" rel="nofollow noopener noreferrer" target="_blank">Creative Commons CC BY 4.0</a></p>
   </section>
 </article>
 </main>

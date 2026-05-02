@@ -947,6 +947,26 @@
     color: #D4AF37; /* faq-section と同 gold で統一 */
     cursor: pointer;
     font-size: 1.05rem;
+    list-style: none;
+    position: relative;
+    padding-right: 1.5rem;
+  }
+  body > main > article > section.report-faq-section details summary::-webkit-details-marker {
+    display: none;
+  }
+  /* M19: 開閉インジケーター ▶ / ▼ (WCAG 4.1.2 / 視覚的アフォーダンス回復) */
+  body > main > article > section.report-faq-section details summary::after {
+    content: "▶";
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.75em;
+    color: #C9A961;
+    transition: transform 0.2s ease;
+  }
+  body > main > article > section.report-faq-section details[open] summary::after {
+    content: "▼";
   }
   body > main > article > section.report-faq-section details .faq-answer {
     margin-top: 0.75rem;

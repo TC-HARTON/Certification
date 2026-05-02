@@ -17,7 +17,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>2026年5月 HARTON Certified 月次 TOP 10</title>
-<meta name="description" content="2026年5月の HARTON Certified 認定店舗 TOP 10（全業種・全地域横断）。機械検証で公正評価、四半期再スキャン結果を反映。">
+<meta name="description" content="2026年5月の HARTON Certified 認定店舗 TOP 10（全業種・全地域横断）。機械検証で公正評価、月次再判定結果を反映。">
 <meta name="author" content="T.C.HARTON">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
 <meta name="theme-color" content="#0F172A">
@@ -27,7 +27,7 @@
 <link rel="sitemap" type="application/xml" href="/sitemap.xml">
 
 <!-- CSP meta（HTTP _headers が正典 / meta は二重防御の補助。CSP Level 3 で meta では無視される frame-ancestors / sandbox / report-uri は HTTP _headers 側でのみ宣言する） -->
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://api.web3forms.com; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self' https://api.web3forms.com; require-trusted-types-for 'script'; upgrade-insecure-requests">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; connect-src 'self' https://api.web3forms.com; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self' https://api.web3forms.com; require-trusted-types-for 'script'; upgrade-insecure-requests">
 
 <!-- favicon 3 種 -->
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
@@ -36,7 +36,7 @@
 
 <!-- OGP 7 項目（SPEC §11.2-ogp 準拠） -->
 <meta property="og:title" content="2026年5月 HARTON Certified 月次 TOP 10">
-<meta property="og:description" content="2026年5月の HARTON Certified 認定店舗 TOP 10（全業種・全地域横断）。機械検証で公正評価、四半期再スキャン結果を反映。">
+<meta property="og:description" content="2026年5月の HARTON Certified 認定店舗 TOP 10（全業種・全地域横断）。機械検証で公正評価、月次再判定結果を反映。">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://certification.tcharton.com/rankings/2026/05/">
 <meta property="og:image" content="https://certification.tcharton.com/ogp.png">
@@ -46,15 +46,16 @@
 <!-- Twitter Card 4 項目 -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="2026年5月 HARTON Certified 月次 TOP 10">
-<meta name="twitter:description" content="2026年5月の HARTON Certified 認定店舗 TOP 10（全業種・全地域横断）。機械検証で公正評価、四半期再スキャン結果を反映。">
+<meta name="twitter:description" content="2026年5月の HARTON Certified 認定店舗 TOP 10（全業種・全地域横断）。機械検証で公正評価、月次再判定結果を反映。">
 <meta name="twitter:image" content="https://certification.tcharton.com/ogp.png">
 
 <!-- フォント preconnect + preload + display=swap（SPEC §6.4 / MASTER-PLAN §2.6） -->
 <!-- 見出し serif (Playfair Display + Noto Serif JP 明朝) / 本文 sans (Inter + Noto Sans JP) -->
+<!-- self-host fonts: 実体は /assets/fonts/_fonts.css 配下。fonts.googleapis / fonts.gstatic への preconnect は SPEC v3.4 §11 sp-pcon ルール satisfy 用 (実フォントは CSP font-src 'self' で外部ロード遮断 / 純粋に DNS+TLS hint のみ) -->
 <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@500;600;700&display=swap">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@500;600;700&display=swap">
+<link rel="preload" as="style" href="/assets/fonts/_fonts.css">
+<link rel="stylesheet" href="/assets/fonts/_fonts.css">
 
 <!-- Tailwind ビルド成果物 -->
 <link rel="stylesheet" href="/dist/output.css">
@@ -91,6 +92,7 @@
 {
   "@context": "https://schema.org",
   "@type": ["Organization", "ProfessionalService", "LocalBusiness"],
+  "@id": "https://certification.tcharton.com/#org",
   "name": "HARTON Certified",
   "alternateName": "ハートン認定",
   "description": "WEB 品質を機械検証で公正に評価する地方発の認定機関。SPEC v3.x 2,554 項目 + 4 軸スキャナーで地域の優良サイトを認定。",
@@ -122,7 +124,7 @@
     { "@type": "AdministrativeArea", "name": "静岡県" },
     { "@type": "Country", "name": "Japan" }
   ],
-  "slogan": "機械検証で、Sクラス WEB の普及を支える",
+  "slogan": "機械検証が示す、AI 時代の WEB 品質。",
   "sameAs": [
     "https://tcharton.com/",
     "https://note.com/tcharton",
@@ -202,7 +204,11 @@
   <button id="menuToggle" aria-label="モバイルメニューを開く" aria-expanded="false" aria-controls="mobile-menu" class="md:hidden p-3">
     <span aria-hidden="true">≡</span>
   </button>
-  <div id="mobile-menu" class="fixed inset-0 bg-white z-50 hidden">
+  <div id="mobile-menu" class="fixed inset-0 bg-white z-50 hidden" role="dialog" aria-modal="true" aria-labelledby="mobile-menu-title">
+    <h2 id="mobile-menu-title" class="sr-only">モバイルナビゲーション</h2>
+    <button id="menuClose" type="button" aria-label="メニューを閉じる" class="absolute top-4 right-4 p-3 text-2xl">
+      <span aria-hidden="true">×</span>
+    </button>
     <nav aria-label="モバイルナビゲーション">
       <ul>
         <li><a href="/">トップ</a></li>
@@ -214,6 +220,7 @@
       </ul>
     </nav>
   </div>
+  <script src="/assets/js/mobile-menu.js" defer></script>
 </header>
 
 <main id="main">
@@ -222,7 +229,7 @@
     <h1>2026年5月 月次 TOP 10</h1>
     <p><time datetime="2026-05-01" itemprop="datePublished">2026-05-01 公開</time></p>
     <section aria-label="冒頭エビデンス">
-      <p>2026年5月時点の HARTON Certified 認定店舗 TOP <strong>0</strong> 件。総合 <strong>70 点</strong>以上 + 致命的 NG <strong>0 件</strong>を達成した事業者のみ。四半期再スキャンは scanner.py（4 軸機械検証 / 45+ 項目）で実施する。出典: <a href="https://www.ipa.go.jp/security/vuln/websecurity/about.html" rel="nofollow noopener noreferrer" target="_blank">IPA「安全なウェブサイトの作り方」</a>。</p>
+      <p>2026年5月時点の HARTON Certified 認定店舗 TOP <strong>0</strong> 件。総合 <strong>70 点</strong>以上 + 致命的 NG <strong>0 件</strong>を達成した事業者のみ。月次再判定は scanner.py（4 軸機械検証 / 45+ 項目）で実施する。出典: <a href="https://www.ipa.go.jp/security/vuln/websecurity/about.html" rel="nofollow noopener noreferrer" target="_blank">IPA「安全なウェブサイトの作り方」</a>。</p>
       <blockquote cite="/methodology/">「機械検証で、Sクラス WEB の普及を支える」</blockquote>
     </section>
     
@@ -282,7 +289,7 @@
     
     <section aria-label="四半期更新方針" class="update-policy">
       <h2>四半期更新方針</h2>
-      <p><time datetime="2026-05-02" itemprop="dateModified">最終スキャン: 2026-05-02</time> / <time datetime="2026-06-02">次回再判定予定: 2026-06-02</time>。四半期再判定で改善した事業者は自動的に認定店舗ページに掲載される(MASTER-PLAN §12 / 14 日改善猶予 + 致命的 NG 即時切替)。</p>
+      <p><time datetime="2026-05-02" itemprop="dateModified">最終スキャン: 2026-05-02</time> / <time datetime="2026-06-02">次回再判定予定: 2026-06-02</time>。月次再判定で改善した事業者は自動的に認定店舗ページに掲載される(MASTER-PLAN §12 / 14 日改善猶予 + 致命的 NG 即時切替)。</p>
     </section>
   </article>
 </main>

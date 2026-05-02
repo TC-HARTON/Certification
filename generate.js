@@ -279,7 +279,7 @@ function generateBusinessPage(slug, b) {
     <section aria-label="評価方法">
       <h2>評価方法</h2>
       <p>本評価は <a href="/methodology/">/methodology/</a> で全公開している 4 軸スキャナーで実施した。スキャン項目・閾値・実施手順は機械検証可能で、再現性がある。</p>
-      <p>本認定は ${escHTML(b.scan.scanned_at)} 時点の評価であり、四半期再スキャンで変動する可能性がある（MASTER-PLAN §3.5）。</p>
+      <p>本認定は ${escHTML(b.scan.scanned_at)} 時点の評価であり、月次再判定で変動する可能性がある（MASTER-PLAN §3.5）。</p>
     </section>
   </article>`;
 
@@ -923,7 +923,7 @@ function renderUpdatePolicySection() {
   return `
     <section aria-label="四半期更新方針" class="update-policy">
       <h2>四半期更新方針</h2>
-      <p><time datetime="2026-05-02" itemprop="dateModified">最終スキャン: 2026-05-02</time> / <time datetime="2026-06-02">次回再判定予定: 2026-06-02</time>。四半期再判定で改善した事業者は自動的に認定店舗ページに掲載される(MASTER-PLAN §12 / 14 日改善猶予 + 致命的 NG 即時切替)。</p>
+      <p><time datetime="2026-05-02" itemprop="dateModified">最終スキャン: 2026-05-02</time> / <time datetime="2026-06-02">次回再判定予定: 2026-06-02</time>。月次再判定で改善した事業者は自動的に認定店舗ページに掲載される(MASTER-PLAN §12 / 14 日改善猶予 + 致命的 NG 即時切替)。</p>
     </section>`;
 }
 
@@ -1377,7 +1377,10 @@ function generatePrefComparisonPage(prefKey) {
   const phase05Industries = ['税理士','弁護士','司法書士','行政書士','不動産','飲食店','美容院','美容クリニック','宿泊施設','クリニック・診療所','学習塾'];
   const indByLabel = {};
   for (const [k, v] of Object.entries(industries)) {
-    indByLabel[v.label_short || v.label] = { key: k, label: v.label, wikidata: v.wikidata };
+    // label_short と label の両方をキーに登録 (cross-tab マトリクスは「飲食店」「美容院」で引くため)
+    const meta = { key: k, label: v.label, wikidata: v.wikidata };
+    if (v.label_short) indByLabel[v.label_short] = meta;
+    if (v.label) indByLabel[v.label] = meta;
   }
 
   const title = `${pref.label} 5 都市 WEB 品質比較 — HARTON Certified`;
@@ -1395,9 +1398,11 @@ function generatePrefComparisonPage(prefKey) {
   const cityComparisonRows = sortedCities.map((c, i) => {
     const certRate = c.n > 0 ? (c.eligible / c.n * 100).toFixed(1) : '0.0';
     const ngClass = c.ng_pct < 30 ? 'ng-low' : c.ng_pct < 35 ? 'ng-mid' : 'ng-high';
+    const ngLabel = c.ng_pct < 30 ? '低リスク' : c.ng_pct < 35 ? '中リスク' : '高リスク';
+    const ngPrefix = c.ng_pct < 30 ? '▽' : c.ng_pct < 35 ? '→' : '▲';
     const cityKey = cityKeyMap[c.city] || '';
     const cityLink = cityKey ? `<a href="/regions/${prefKey}/${cityKey}/">${escHTML(c.city)}</a>` : escHTML(c.city);
-    return `<tr><td>${i + 1}</td><th scope="row">${cityLink}</th><td>${c.n} 件</td><td>${c.eligible} 件</td><td><strong>${certRate}%</strong></td><td>${c.max} / 70 点</td><td class="${ngClass}">${c.ng_pct.toFixed(1)}%</td><td>${c.median} 点</td></tr>`;
+    return `<tr><td>${i + 1}</td><th scope="row">${cityLink}</th><td>${c.n} 件</td><td>${c.eligible} 件</td><td><strong>${certRate}%</strong></td><td>${c.max} / 70 点</td><td class="${ngClass}" aria-label="${ngLabel}: ${c.ng_pct.toFixed(1)}%"><span aria-hidden="true">${ngPrefix} </span>${c.ng_pct.toFixed(1)}%</td><td>${c.median} 点</td></tr>`;
   }).join('\n        ');
 
   // 主要表 2: cross_tab_n (5 都市 × 11 業種 / 都市 × 業種 サンプル件数 マトリクス)
@@ -1421,8 +1426,10 @@ function generatePrefComparisonPage(prefKey) {
     const indMeta = indByLabel[s.industry];
     const certRate = s.n > 0 ? (s.eligible / s.n * 100).toFixed(1) : '0.0';
     const ngClass = s.ng_pct < 30 ? 'ng-low' : s.ng_pct < 40 ? 'ng-mid' : 'ng-high';
+    const ngLabel = s.ng_pct < 30 ? '低リスク' : s.ng_pct < 40 ? '中リスク' : '高リスク';
+    const ngPrefix = s.ng_pct < 30 ? '▽' : s.ng_pct < 40 ? '→' : '▲';
     const indCell = indMeta ? `<a href="/industries/${indMeta.key}/">${escHTML(indMeta.label)}</a>` : escHTML(s.industry);
-    return `<tr><td>${i + 1}</td><th scope="row">${indCell}</th><td>${s.n} 件</td><td>${s.eligible} 件</td><td><strong>${certRate}%</strong></td><td>${s.max} / 70 点</td><td class="${ngClass}">${s.ng_pct.toFixed(1)}%</td><td>${s.median} 点</td></tr>`;
+    return `<tr><td>${i + 1}</td><th scope="row">${indCell}</th><td>${s.n} 件</td><td>${s.eligible} 件</td><td><strong>${certRate}%</strong></td><td>${s.max} / 70 点</td><td class="${ngClass}" aria-label="${ngLabel}: ${s.ng_pct.toFixed(1)}%"><span aria-hidden="true">${ngPrefix} </span>${s.ng_pct.toFixed(1)}%</td><td>${s.median} 点</td></tr>`;
   }).join('\n        ');
 
   const mainContent = `
@@ -1576,14 +1583,14 @@ function generateMonthlyRankingPage(year, month) {
 
   const ymPath = `/rankings/${year}/${String(month).padStart(2, '0')}/`;
   const title = `${year}年${month}月 HARTON Certified 月次 TOP 10`;
-  const description = `${year}年${month}月の HARTON Certified 認定店舗 TOP 10（全業種・全地域横断）。機械検証で公正評価、四半期再スキャン結果を反映。`;
+  const description = `${year}年${month}月の HARTON Certified 認定店舗 TOP 10（全業種・全地域横断）。機械検証で公正評価、月次再判定結果を反映。`;
 
   const mainContent = `
   <article>
     <h1>${year}年${month}月 月次 TOP 10</h1>
     <p><time datetime="${year}-${String(month).padStart(2, '0')}-01" itemprop="datePublished">${year}-${String(month).padStart(2, '0')}-01 公開</time></p>
     <section aria-label="冒頭エビデンス">
-      <p>${year}年${month}月時点の HARTON Certified 認定店舗 TOP <strong>${list.length}</strong> 件。総合 <strong>70 点</strong>以上 + 致命的 NG <strong>0 件</strong>を達成した事業者のみ。四半期再スキャンは scanner.py（4 軸機械検証 / 45+ 項目）で実施する。出典: <a href="https://www.ipa.go.jp/security/vuln/websecurity/about.html" rel="nofollow noopener noreferrer" target="_blank">IPA「安全なウェブサイトの作り方」</a>。</p>
+      <p>${year}年${month}月時点の HARTON Certified 認定店舗 TOP <strong>${list.length}</strong> 件。総合 <strong>70 点</strong>以上 + 致命的 NG <strong>0 件</strong>を達成した事業者のみ。月次再判定は scanner.py（4 軸機械検証 / 45+ 項目）で実施する。出典: <a href="https://www.ipa.go.jp/security/vuln/websecurity/about.html" rel="nofollow noopener noreferrer" target="_blank">IPA「安全なウェブサイトの作り方」</a>。</p>
       <blockquote cite="/methodology/">「機械検証で、Sクラス WEB の普及を支える」</blockquote>
     </section>
     ${renderSearchForm()}
@@ -1621,11 +1628,27 @@ function generateMonthlyRankingPage(year, month) {
 // ═══════════════════ サイトマップ ═══════════════════
 function generateSitemap(allPaths) {
   const today = new Date().toISOString().slice(0, 10);
+  // 重要度による priority 配分:
+  //   / : 1.0 (TOP)
+  //   /comparison/* + /news/shizuoka-industry-report-2026-q2/ : 0.9 (flagship AI 引用ターゲット)
+  //   /methodology/* : 0.8 (canonical 評価方法)
+  //   /about/, /apply/, /press/ : 0.7 (主要ハブ)
+  //   /datasets/* : 0.7 (機械可読 endpoint)
+  //   /businesses/* : 0.7 (個別認定店舗)
+  //   その他 : 0.5
+  function prio(p) {
+    if (p === '/') return '1.0';
+    if (p.startsWith('/comparison/') || p === '/news/shizuoka-industry-report-2026-q2/') return '0.9';
+    if (p.startsWith('/methodology/')) return '0.8';
+    if (p === '/about/' || p === '/apply/' || p === '/press/') return '0.7';
+    if (/businesses/.test(p) || p.startsWith('/datasets/')) return '0.7';
+    return '0.5';
+  }
   const urls = allPaths.map(p => `  <url>
     <loc>${DOMAIN}${p}</loc>
     <lastmod>${today}</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>${p === '/' ? '1.0' : (/businesses/.test(p) ? '0.7' : '0.5')}</priority>
+    <priority>${prio(p)}</priority>
   </url>`).join('\n');
   return `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
@@ -1650,7 +1673,16 @@ Allow: /
 User-agent: ClaudeBot
 Allow: /
 
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
 User-agent: PerplexityBot
+Allow: /
+
+User-agent: cohere-ai
 Allow: /
 
 User-agent: Google-Extended
@@ -1764,7 +1796,7 @@ function generateLLMsTxt() {
 - 公式サイト: ${DOMAIN}/
 - 親サイト: https://tcharton.com/
 - 評価方法: 4 軸機械検証（A 基礎・B 防御・C AI 検索適応・D 経営インパクト）
-- 評価サイクル: 四半期再スキャン / 四半期レビュー / 年次基準改訂
+- 評価サイクル: 月次スキャン + 四半期レポート + 年次基準改訂
 
 ## 主要ページ
 

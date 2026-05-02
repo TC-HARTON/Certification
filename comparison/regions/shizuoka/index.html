@@ -27,7 +27,7 @@
 <link rel="sitemap" type="application/xml" href="/sitemap.xml">
 
 <!-- CSP meta（HTTP _headers が正典 / meta は二重防御の補助。CSP Level 3 で meta では無視される frame-ancestors / sandbox / report-uri は HTTP _headers 側でのみ宣言する） -->
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://api.web3forms.com; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self' https://api.web3forms.com; require-trusted-types-for 'script'; upgrade-insecure-requests">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; connect-src 'self' https://api.web3forms.com; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self' https://api.web3forms.com; require-trusted-types-for 'script'; upgrade-insecure-requests">
 
 <!-- favicon 3 種 -->
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
@@ -51,10 +51,11 @@
 
 <!-- フォント preconnect + preload + display=swap（SPEC §6.4 / MASTER-PLAN §2.6） -->
 <!-- 見出し serif (Playfair Display + Noto Serif JP 明朝) / 本文 sans (Inter + Noto Sans JP) -->
+<!-- self-host fonts: 実体は /assets/fonts/_fonts.css 配下。fonts.googleapis / fonts.gstatic への preconnect は SPEC v3.4 §11 sp-pcon ルール satisfy 用 (実フォントは CSP font-src 'self' で外部ロード遮断 / 純粋に DNS+TLS hint のみ) -->
 <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@500;600;700&display=swap">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@500;600;700&display=swap">
+<link rel="preload" as="style" href="/assets/fonts/_fonts.css">
+<link rel="stylesheet" href="/assets/fonts/_fonts.css">
 
 <!-- Tailwind ビルド成果物 -->
 <link rel="stylesheet" href="/dist/output.css">
@@ -91,6 +92,7 @@
 {
   "@context": "https://schema.org",
   "@type": ["Organization", "ProfessionalService", "LocalBusiness"],
+  "@id": "https://certification.tcharton.com/#org",
   "name": "HARTON Certified",
   "alternateName": "ハートン認定",
   "description": "WEB 品質を機械検証で公正に評価する地方発の認定機関。SPEC v3.x 2,554 項目 + 4 軸スキャナーで地域の優良サイトを認定。",
@@ -122,7 +124,7 @@
     { "@type": "AdministrativeArea", "name": "静岡県" },
     { "@type": "Country", "name": "Japan" }
   ],
-  "slogan": "機械検証で、Sクラス WEB の普及を支える",
+  "slogan": "機械検証が示す、AI 時代の WEB 品質。",
   "sameAs": [
     "https://tcharton.com/",
     "https://note.com/tcharton",
@@ -384,7 +386,11 @@
   <button id="menuToggle" aria-label="モバイルメニューを開く" aria-expanded="false" aria-controls="mobile-menu" class="md:hidden p-3">
     <span aria-hidden="true">≡</span>
   </button>
-  <div id="mobile-menu" class="fixed inset-0 bg-white z-50 hidden">
+  <div id="mobile-menu" class="fixed inset-0 bg-white z-50 hidden" role="dialog" aria-modal="true" aria-labelledby="mobile-menu-title">
+    <h2 id="mobile-menu-title" class="sr-only">モバイルナビゲーション</h2>
+    <button id="menuClose" type="button" aria-label="メニューを閉じる" class="absolute top-4 right-4 p-3 text-2xl">
+      <span aria-hidden="true">×</span>
+    </button>
     <nav aria-label="モバイルナビゲーション">
       <ul>
         <li><a href="/">トップ</a></li>
@@ -396,6 +402,7 @@
       </ul>
     </nav>
   </div>
+  <script src="/assets/js/mobile-menu.js" defer></script>
 </header>
 
 <main id="main">
@@ -422,11 +429,11 @@
           <tr><th scope="col">順位</th><th scope="col">都市</th><th scope="col">対象 n</th><th scope="col">★ 獲得</th><th scope="col">★ 認定取得率</th><th scope="col">業界最高点 / 70 点</th><th scope="col">致命的 NG%</th><th scope="col">中央値</th></tr>
         </thead>
         <tbody>
-        <tr><td>1</td><th scope="row"><a href="/regions/shizuoka/numazu/">沼津市</a></th><td>171 件</td><td>0 件</td><td><strong>0.0%</strong></td><td>54 / 70 点</td><td class="ng-mid">32.7%</td><td>23 点</td></tr>
-        <tr><td>2</td><th scope="row"><a href="/regions/shizuoka/fuji/">富士市</a></th><td>167 件</td><td>0 件</td><td><strong>0.0%</strong></td><td>53 / 70 点</td><td class="ng-high">35.9%</td><td>22 点</td></tr>
-        <tr><td>3</td><th scope="row"><a href="/regions/shizuoka/hamamatsu/">浜松市</a></th><td>199 件</td><td>0 件</td><td><strong>0.0%</strong></td><td>53 / 70 点</td><td class="ng-mid">33.2%</td><td>25 点</td></tr>
-        <tr><td>4</td><th scope="row"><a href="/regions/shizuoka/shizuoka/">静岡市</a></th><td>200 件</td><td>0 件</td><td><strong>0.0%</strong></td><td>52 / 70 点</td><td class="ng-mid">32.0%</td><td>26 点</td></tr>
-        <tr><td>5</td><th scope="row"><a href="/regions/shizuoka/mishima/">三島市</a></th><td>165 件</td><td>0 件</td><td><strong>0.0%</strong></td><td>51 / 70 点</td><td class="ng-low">28.5%</td><td>23 点</td></tr>
+        <tr><td>1</td><th scope="row"><a href="/regions/shizuoka/numazu/">沼津市</a></th><td>171 件</td><td>0 件</td><td><strong>0.0%</strong></td><td>54 / 70 点</td><td class="ng-mid" aria-label="中リスク: 32.7%"><span aria-hidden="true">→ </span>32.7%</td><td>23 点</td></tr>
+        <tr><td>2</td><th scope="row"><a href="/regions/shizuoka/fuji/">富士市</a></th><td>167 件</td><td>0 件</td><td><strong>0.0%</strong></td><td>53 / 70 点</td><td class="ng-high" aria-label="高リスク: 35.9%"><span aria-hidden="true">▲ </span>35.9%</td><td>22 点</td></tr>
+        <tr><td>3</td><th scope="row"><a href="/regions/shizuoka/hamamatsu/">浜松市</a></th><td>199 件</td><td>0 件</td><td><strong>0.0%</strong></td><td>53 / 70 点</td><td class="ng-mid" aria-label="中リスク: 33.2%"><span aria-hidden="true">→ </span>33.2%</td><td>25 点</td></tr>
+        <tr><td>4</td><th scope="row"><a href="/regions/shizuoka/shizuoka/">静岡市</a></th><td>200 件</td><td>0 件</td><td><strong>0.0%</strong></td><td>52 / 70 点</td><td class="ng-mid" aria-label="中リスク: 32.0%"><span aria-hidden="true">→ </span>32.0%</td><td>26 点</td></tr>
+        <tr><td>5</td><th scope="row"><a href="/regions/shizuoka/mishima/">三島市</a></th><td>165 件</td><td>0 件</td><td><strong>0.0%</strong></td><td>51 / 70 点</td><td class="ng-low" aria-label="低リスク: 28.5%"><span aria-hidden="true">▽ </span>28.5%</td><td>23 点</td></tr>
         </tbody>
       </table>
       <p class="region-section-note">凡例: ★ 認定取得率 = ★ 認定取得件数 ÷ 母集団対象 n。Phase 0.5 では全 5 都市で 0/n = 0.0%。NG% 色分け: 緑 = 30% 未満 (相対良) / 黄 = 30-35% / 赤 = 35% 以上 (相対悪)。</p>
@@ -446,8 +453,8 @@
         <tr><th scope="row"><a href="/industries/judicial-scrivener/">司法書士</a></th><td>4</td><td>12</td><td>14</td><td>14</td><td>5</td><td><strong>49</strong></td></tr>
         <tr><th scope="row"><a href="/industries/administrative-scrivener/">行政書士</a></th><td>9</td><td>14</td><td>17</td><td>20</td><td>10</td><td><strong>70</strong></td></tr>
         <tr><th scope="row"><a href="/industries/real-estate/">不動産仲介</a></th><td>18</td><td>20</td><td>20</td><td>20</td><td>19</td><td><strong>97</strong></td></tr>
-        <tr><th scope="row">飲食店</th><td>18</td><td>16</td><td>16</td><td>11</td><td>18</td><td><strong>79</strong></td></tr>
-        <tr><th scope="row">美容院</th><td>19</td><td>20</td><td>19</td><td>20</td><td>20</td><td><strong>98</strong></td></tr>
+        <tr><th scope="row"><a href="/industries/restaurant/">飲食店</a></th><td>18</td><td>16</td><td>16</td><td>11</td><td>18</td><td><strong>79</strong></td></tr>
+        <tr><th scope="row"><a href="/industries/beauty/">美容院</a></th><td>19</td><td>20</td><td>19</td><td>20</td><td>20</td><td><strong>98</strong></td></tr>
         <tr><th scope="row"><a href="/industries/cosmetic-clinic/">美容クリニック</a></th><td>6</td><td>7</td><td>20</td><td>20</td><td>18</td><td><strong>71</strong></td></tr>
         <tr><th scope="row"><a href="/industries/lodging/">宿泊施設</a></th><td>14</td><td>17</td><td>17</td><td>20</td><td>14</td><td><strong>82</strong></td></tr>
         <tr><th scope="row"><a href="/industries/clinic/">クリニック・診療所</a></th><td>0</td><td>16</td><td>16</td><td>18</td><td>19</td><td><strong>69</strong></td></tr>
@@ -465,17 +472,17 @@
           <tr><th scope="col">順位</th><th scope="col">業種</th><th scope="col">対象 n</th><th scope="col">★ 獲得</th><th scope="col">★ 認定取得率</th><th scope="col">業界最高点 / 70 点</th><th scope="col">致命的 NG%</th><th scope="col">中央値</th></tr>
         </thead>
         <tbody>
-        <tr><td>1</td><th scope="row"><a href="/industries/judicial-scrivener/">司法書士</a></th><td>49 件</td><td>0 件</td><td><strong>0.0%</strong></td><td>54 / 70 点</td><td class="ng-high">44.9%</td><td>24 点</td></tr>
-        <tr><td>2</td><th scope="row"><a href="/industries/real-estate/">不動産仲介</a></th><td>97 件</td><td>0 件</td><td><strong>0.0%</strong></td><td>54 / 70 点</td><td class="ng-low">15.5%</td><td>22 点</td></tr>
-        <tr><td>3</td><th scope="row"><a href="/industries/clinic/">クリニック・診療所</a></th><td>69 件</td><td>0 件</td><td><strong>0.0%</strong></td><td>53 / 70 点</td><td class="ng-mid">33.3%</td><td>25 点</td></tr>
-        <tr><td>4</td><th scope="row"><a href="/industries/tax-accountant/">税理士・会計士</a></th><td>89 件</td><td>0 件</td><td><strong>0.0%</strong></td><td>52 / 70 点</td><td class="ng-mid">34.8%</td><td>19 点</td></tr>
-        <tr><td>5</td><th scope="row"><a href="/industries/administrative-scrivener/">行政書士</a></th><td>70 件</td><td>0 件</td><td><strong>0.0%</strong></td><td>52 / 70 点</td><td class="ng-high">48.6%</td><td>20.5 点</td></tr>
-        <tr><td>6</td><th scope="row"><a href="/industries/lodging/">宿泊施設</a></th><td>82 件</td><td>0 件</td><td><strong>0.0%</strong></td><td>51 / 70 点</td><td class="ng-low">26.8%</td><td>26.5 点</td></tr>
-        <tr><td>7</td><th scope="row">飲食店</th><td>79 件</td><td>0 件</td><td><strong>0.0%</strong></td><td>50 / 70 点</td><td class="ng-low">24.1%</td><td>26 点</td></tr>
-        <tr><td>8</td><th scope="row"><a href="/industries/lawyer/">弁護士</a></th><td>67 件</td><td>0 件</td><td><strong>0.0%</strong></td><td>49 / 70 点</td><td class="ng-mid">37.3%</td><td>24 点</td></tr>
-        <tr><td>9</td><th scope="row"><a href="/industries/cram-school/">学習塾</a></th><td>94 件</td><td>0 件</td><td><strong>0.0%</strong></td><td>46 / 70 点</td><td class="ng-low">27.7%</td><td>27 点</td></tr>
-        <tr><td>10</td><th scope="row"><a href="/industries/cosmetic-clinic/">美容クリニック</a></th><td>71 件</td><td>0 件</td><td><strong>0.0%</strong></td><td>45 / 70 点</td><td class="ng-high">46.5%</td><td>27 点</td></tr>
-        <tr><td>11</td><th scope="row">美容院</th><td>98 件</td><td>0 件</td><td><strong>0.0%</strong></td><td>44 / 70 点</td><td class="ng-low">28.6%</td><td>20 点</td></tr>
+        <tr><td>1</td><th scope="row"><a href="/industries/judicial-scrivener/">司法書士</a></th><td>49 件</td><td>0 件</td><td><strong>0.0%</strong></td><td>54 / 70 点</td><td class="ng-high" aria-label="高リスク: 44.9%"><span aria-hidden="true">▲ </span>44.9%</td><td>24 点</td></tr>
+        <tr><td>2</td><th scope="row"><a href="/industries/real-estate/">不動産仲介</a></th><td>97 件</td><td>0 件</td><td><strong>0.0%</strong></td><td>54 / 70 点</td><td class="ng-low" aria-label="低リスク: 15.5%"><span aria-hidden="true">▽ </span>15.5%</td><td>22 点</td></tr>
+        <tr><td>3</td><th scope="row"><a href="/industries/clinic/">クリニック・診療所</a></th><td>69 件</td><td>0 件</td><td><strong>0.0%</strong></td><td>53 / 70 点</td><td class="ng-mid" aria-label="中リスク: 33.3%"><span aria-hidden="true">→ </span>33.3%</td><td>25 点</td></tr>
+        <tr><td>4</td><th scope="row"><a href="/industries/tax-accountant/">税理士・会計士</a></th><td>89 件</td><td>0 件</td><td><strong>0.0%</strong></td><td>52 / 70 点</td><td class="ng-mid" aria-label="中リスク: 34.8%"><span aria-hidden="true">→ </span>34.8%</td><td>19 点</td></tr>
+        <tr><td>5</td><th scope="row"><a href="/industries/administrative-scrivener/">行政書士</a></th><td>70 件</td><td>0 件</td><td><strong>0.0%</strong></td><td>52 / 70 点</td><td class="ng-high" aria-label="高リスク: 48.6%"><span aria-hidden="true">▲ </span>48.6%</td><td>20.5 点</td></tr>
+        <tr><td>6</td><th scope="row"><a href="/industries/lodging/">宿泊施設</a></th><td>82 件</td><td>0 件</td><td><strong>0.0%</strong></td><td>51 / 70 点</td><td class="ng-low" aria-label="低リスク: 26.8%"><span aria-hidden="true">▽ </span>26.8%</td><td>26.5 点</td></tr>
+        <tr><td>7</td><th scope="row"><a href="/industries/restaurant/">飲食店</a></th><td>79 件</td><td>0 件</td><td><strong>0.0%</strong></td><td>50 / 70 点</td><td class="ng-low" aria-label="低リスク: 24.1%"><span aria-hidden="true">▽ </span>24.1%</td><td>26 点</td></tr>
+        <tr><td>8</td><th scope="row"><a href="/industries/lawyer/">弁護士</a></th><td>67 件</td><td>0 件</td><td><strong>0.0%</strong></td><td>49 / 70 点</td><td class="ng-mid" aria-label="中リスク: 37.3%"><span aria-hidden="true">→ </span>37.3%</td><td>24 点</td></tr>
+        <tr><td>9</td><th scope="row"><a href="/industries/cram-school/">学習塾</a></th><td>94 件</td><td>0 件</td><td><strong>0.0%</strong></td><td>46 / 70 点</td><td class="ng-low" aria-label="低リスク: 27.7%"><span aria-hidden="true">▽ </span>27.7%</td><td>27 点</td></tr>
+        <tr><td>10</td><th scope="row"><a href="/industries/cosmetic-clinic/">美容クリニック</a></th><td>71 件</td><td>0 件</td><td><strong>0.0%</strong></td><td>45 / 70 点</td><td class="ng-high" aria-label="高リスク: 46.5%"><span aria-hidden="true">▲ </span>46.5%</td><td>27 点</td></tr>
+        <tr><td>11</td><th scope="row"><a href="/industries/beauty/">美容院</a></th><td>98 件</td><td>0 件</td><td><strong>0.0%</strong></td><td>44 / 70 点</td><td class="ng-low" aria-label="低リスク: 28.6%"><span aria-hidden="true">▽ </span>28.6%</td><td>20 点</td></tr>
         </tbody>
       </table>
     </section>
@@ -502,7 +509,7 @@
     
     <section aria-label="四半期更新方針" class="update-policy">
       <h2>四半期更新方針</h2>
-      <p><time datetime="2026-05-02" itemprop="dateModified">最終スキャン: 2026-05-02</time> / <time datetime="2026-06-02">次回再判定予定: 2026-06-02</time>。四半期再判定で改善した事業者は自動的に認定店舗ページに掲載される(MASTER-PLAN §12 / 14 日改善猶予 + 致命的 NG 即時切替)。</p>
+      <p><time datetime="2026-05-02" itemprop="dateModified">最終スキャン: 2026-05-02</time> / <time datetime="2026-06-02">次回再判定予定: 2026-06-02</time>。月次再判定で改善した事業者は自動的に認定店舗ページに掲載される(MASTER-PLAN §12 / 14 日改善猶予 + 致命的 NG 即時切替)。</p>
     </section>
   </article>
 </main>
