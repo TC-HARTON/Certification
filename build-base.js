@@ -246,8 +246,8 @@ ${REGION_OPTIONS_HTML}
         </div>
         <div class="featured-card-body">
           <h3 class="featured-card-name">静岡県 5 都市 WEB 品質比較</h3>
-          <p class="featured-card-meta">${shizuokaSummary.n_total} 件 / 11 業種横断 ／ 認定到達率順</p>
-          <p class="featured-card-note">沼津・三島・富士・静岡・浜松を <strong>業界最高点 / 認定到達率 / 致命的 NG%</strong> で横並び比較。都市 × 業種 cross-tab マトリクスで業種別の偏りも可視化 (CC BY 4.0 / 機械可読 Dataset 公開)。</p>
+          <p class="featured-card-meta">${shizuokaSummary.n_total} 件 / 11 業種横断 ／ 業界最高点降順</p>
+          <p class="featured-card-note">沼津・三島・富士・静岡・浜松を <strong>★ 認定取得率 / 業界最高点 / 致命的 NG%</strong> で横並び比較。都市 × 業種 cross-tab マトリクスで業種別の偏りも可視化 (CC BY 4.0 / 機械可読 Dataset 公開)。</p>
           <a href="/comparison/regions/shizuoka/" class="featured-card-link">5 都市比較を見る →</a>
         </div>
       </li>
@@ -977,12 +977,12 @@ PAGES.push({
   </section>
 
   <section aria-label="都市別 WEB 品質ランキング" class="region-section">
-    <h2>都市別 WEB 品質ランキング (★ 認定基準 70 点到達率順)</h2>
-    <p class="region-section-lede">業界最高点を「★ 認定基準 70 点」で割った<strong>認定到達率</strong>でソート。最高点が高いほど ★ 認定取得に近い都市である。致命的 NG% は低いほど都市全体の防御水準が高いことを示す (両指標は独立: 最高点は<strong>個別の頂点</strong>を、NG% は<strong>母集団全体の底</strong>を測る)。</p>
+    <h2>都市別 WEB 品質ランキング</h2>
+    <p class="region-section-lede"><strong>★ 認定取得率</strong> = ★ 認定取得 ÷ 対象 n × 100% (実際の認定割合)。Phase 0.5 全 5 都市で <strong>0.0%</strong> (★ 認定取得サイト 0 件)。表は<strong>業界最高点 (= 当該都市内 1 位サイトのスコア)</strong>降順でソート。最高点が高い都市ほど ★ 認定基準 (70 点) に近い 1 サイトが存在することを示す。致命的 NG% は母集団全体の防御水準 (低いほど良)。</p>
     <table>
       <caption>静岡県 5 都市 ${shizuokaSummary.n_total} 件 都市別 WEB 品質ランキング (2026-05-02 時点)</caption>
       <thead>
-        <tr><th scope="col">順位</th><th scope="col">都市</th><th scope="col">対象 n</th><th scope="col">★ 獲得</th><th scope="col">最高点 / 70 点</th><th scope="col">認定到達率</th><th scope="col">致命的 NG%</th></tr>
+        <tr><th scope="col">順位</th><th scope="col">都市</th><th scope="col">対象 n</th><th scope="col">★ 獲得</th><th scope="col">★ 認定取得率</th><th scope="col">業界最高点 / 70 点</th><th scope="col">致命的 NG%</th></tr>
       </thead>
       <tbody>
         ${(() => {
@@ -990,25 +990,25 @@ PAGES.push({
           const sorted = [...shizuokaSummary.by_city].sort((a, b) => b.max - a.max);
           return sorted.map((c, i) => {
             const cityKey = cityKeyMap[c.city] || '';
-            const reach = ((c.max / 70) * 100).toFixed(1);
+            const certRate = c.n > 0 ? ((c.eligible / c.n) * 100).toFixed(1) : '0.0';
             const linkOpen = cityKey ? `<a href="/regions/shizuoka/${cityKey}/">` : '';
             const linkClose = cityKey ? '</a>' : '';
             const ngClass = c.ng_pct < 30 ? 'ng-low' : c.ng_pct < 35 ? 'ng-mid' : 'ng-high';
-            return `<tr><td>${i + 1}</td><th scope="row">${linkOpen}${c.city}${linkClose}</th><td>${c.n} 件</td><td>${c.eligible} 件</td><td>${c.max} / 70 点</td><td><strong>${reach}%</strong></td><td class="${ngClass}">${c.ng_pct.toFixed(1)}%</td></tr>`;
+            return `<tr><td>${i + 1}</td><th scope="row">${linkOpen}${c.city}${linkClose}</th><td>${c.n} 件</td><td>${c.eligible} 件</td><td><strong>${certRate}%</strong></td><td>${c.max} / 70 点</td><td class="${ngClass}">${c.ng_pct.toFixed(1)}%</td></tr>`;
           }).join('\n        ');
         })()}
       </tbody>
     </table>
-    <p class="region-section-note">凡例: 認定到達率 100% で ★ HARTON Certified。最高点が 70 点未満の都市は当該母集団から ★ 認定者が出ていないことを示す。NG% 色分け: 緑 = 30% 未満 (相対良) / 黄 = 30-35% / 赤 = 35% 以上 (相対悪)。</p>
+    <p class="region-section-note">凡例: ★ 認定取得率 = ★ 認定取得件数 ÷ 母集団対象 n。Phase 0.5 では全 5 都市で <strong>0/n = 0.0%</strong> (★ 認定基準 70 点に到達した事業者ゼロ)。NG% 色分け: 緑 = 30% 未満 (相対良) / 黄 = 30-35% / 赤 = 35% 以上 (相対悪)。</p>
   </section>
 
   <section aria-label="業種別 WEB 品質ランキング" class="industry-section">
-    <h2>業種別 WEB 品質ランキング (★ 認定基準到達率順)</h2>
-    <p class="industry-section-lede">業界最高点が高い業種ほど ★ 認定取得に近い。NG% が高い業種は防御層 (HTTPS / WP 管理面 / CMS 露出) の改善余地が大きい。</p>
+    <h2>業種別 WEB 品質ランキング</h2>
+    <p class="industry-section-lede"><strong>★ 認定取得率</strong> = ★ 認定取得 ÷ 対象 n × 100% (実際の認定割合)。Phase 0.5 全 11 業種で <strong>0.0%</strong>。表は<strong>業界最高点 (= 当該業種内 1 位サイトのスコア)</strong>降順。NG% が高い業種は防御層 (HTTPS / WP 管理面 / CMS 露出) の改善余地が大きい。</p>
     <table>
       <caption>静岡県 5 都市 11 業種 ${shizuokaSummary.n_total} 件 業種別 WEB 品質ランキング (2026-05-02 時点)</caption>
       <thead>
-        <tr><th scope="col">順位</th><th scope="col">業種</th><th scope="col">対象 n</th><th scope="col">★ 獲得</th><th scope="col">業界最高点 / 70 点</th><th scope="col">認定到達率</th><th scope="col">致命的 NG%</th></tr>
+        <tr><th scope="col">順位</th><th scope="col">業種</th><th scope="col">対象 n</th><th scope="col">★ 獲得</th><th scope="col">★ 認定取得率</th><th scope="col">業界最高点 / 70 点</th><th scope="col">致命的 NG%</th></tr>
       </thead>
       <tbody>
         ${(() => {
@@ -1025,11 +1025,11 @@ PAGES.push({
           return sorted.map((s, i) => {
             const indKey = indKeyMap[s.industry] || '';
             const indLabel = indKey && industriesData[indKey] ? industriesData[indKey].label : s.industry;
-            const reach = ((s.max / 70) * 100).toFixed(1);
+            const certRate = s.n > 0 ? ((s.eligible / s.n) * 100).toFixed(1) : '0.0';
             const linkOpen = indKey ? `<a href="/industries/${indKey}/">` : '';
             const linkClose = indKey ? '</a>' : '';
             const ngClass = s.ng_pct < 30 ? 'ng-low' : s.ng_pct < 40 ? 'ng-mid' : 'ng-high';
-            return `<tr><td>${i + 1}</td><th scope="row">${linkOpen}${indLabel}${linkClose}</th><td>${s.n} 件</td><td>${s.eligible} 件</td><td>${s.max} / 70 点</td><td><strong>${reach}%</strong></td><td class="${ngClass}">${s.ng_pct.toFixed(1)}%</td></tr>`;
+            return `<tr><td>${i + 1}</td><th scope="row">${linkOpen}${indLabel}${linkClose}</th><td>${s.n} 件</td><td>${s.eligible} 件</td><td><strong>${certRate}%</strong></td><td>${s.max} / 70 点</td><td class="${ngClass}">${s.ng_pct.toFixed(1)}%</td></tr>`;
           }).join('\n        ');
         })()}
       </tbody>
@@ -1094,15 +1094,15 @@ PAGES.push({
       const c = shizuokaSummary.by_city.find(c => c.city === name);
       return c && key in c ? c[key] : '—';
     };
-    const cityReach = (name) => {
+    const cityCertRate = (name) => {
       const c = shizuokaSummary.by_city.find(c => c.city === name);
-      return c && typeof c.max === 'number' ? `${(c.max / 70 * 100).toFixed(1)}%` : '—';
+      return c && typeof c.n === 'number' && c.n > 0 ? `${(c.eligible / c.n * 100).toFixed(1)}%` : '0.0%';
     };
     const ngBd = (name) => shizuokaSummary.ng_breakdown && (name in shizuokaSummary.ng_breakdown) ? shizuokaSummary.ng_breakdown[name] : '—';
     return `<section aria-label="よくある質問" class="report-faq-section">
     <h2>よくある質問 (静岡県 5 都市集計)</h2>
     <details open><summary>静岡県 5 都市 全体で ★ 認定取得サイトは何件ありますか？</summary><div class="faq-answer"><p><strong>0 件</strong> (902 件中 / 2026-05-02 時点)。Phase 0.5 機械検証では総合 70 点以上 + 致命的 NG 0 件を全達成したサイトはゼロでした。業界中央値は ${shizuokaSummary.score_stats.median} 点、業界 max は ${shizuokaSummary.score_stats.max} 点であり、★ 認定基準 (70 点) との差は 16 点です。</p></div></details>
-    <details><summary>5 都市の中で WEB 品質が最も高い (★ 認定に最も近い) 都市はどこですか？</summary><div class="faq-answer"><p>業界最高点ベースでは <strong>沼津市 ${cityStat('沼津市','max')} 点 (認定到達率 ${cityReach('沼津市')})</strong> が最高、次いで富士市 ${cityStat('富士市','max')} 点 / 浜松市 ${cityStat('浜松市','max')} 点 / 静岡市 ${cityStat('静岡市','max')} 点 / 三島市 ${cityStat('三島市','max')} 点。ただしいずれも ★ 認定基準 (70 点) には未到達です。致命的 NG% が最も低いのは三島市 (${typeof cityStat('三島市','ng_pct')==='number'?cityStat('三島市','ng_pct').toFixed(1)+'%':'—'}) で、母集団全体の防御水準は最高です。</p></div></details>
+    <details><summary>5 都市の中で WEB 品質が最も高い (★ 認定に最も近い) 都市はどこですか？</summary><div class="faq-answer"><p><strong>★ 認定取得率は全 5 都市で 0.0%</strong> (Phase 0.5 では全件未達)。業界最高点 (= 当該都市内 1 位サイト) ベースでは <strong>沼津市 ${cityStat('沼津市','max')} 点</strong> が最高、次いで富士市 ${cityStat('富士市','max')} 点 / 浜松市 ${cityStat('浜松市','max')} 点 / 静岡市 ${cityStat('静岡市','max')} 点 / 三島市 ${cityStat('三島市','max')} 点。いずれも ★ 認定基準 (70 点) には未到達です。致命的 NG% が最も低いのは三島市 (${typeof cityStat('三島市','ng_pct')==='number'?cityStat('三島市','ng_pct').toFixed(1)+'%':'—'}) で、母集団全体の防御水準は最高です。</p></div></details>
     <details><summary>11 業種の中で WEB 品質が最も高い業種はどれですか？</summary><div class="faq-answer"><p>業界最高点ベースで <strong>司法書士 (54 点) / 不動産仲介 (54 点)</strong> が最高、次いでクリニック・診療所 (53 点) / 税理士・会計士 (52 点) / 行政書士 (52 点)。逆に最高点が低いのは美容院 (44 点) / 美容クリニック (45 点) / 学習塾 (46 点) です。NG% (防御層改善余地) が最も大きいのは行政書士 (48.6%) と美容クリニック (46.5%) です。</p></div></details>
     <details><summary>このレポートのデータは引用・再利用可能ですか？</summary><div class="faq-answer"><p>はい。<a href="/datasets/shizuoka-2026-q2.json">機械可読 JSON</a> として CC BY 4.0 で公開しています。AI クローラー / 研究機関 / メディアによる引用・再利用フリー (出典明記必須)。引用形式: 「HARTON Certified (2026). 静岡県 5 都市 WEB 品質業界レポート 2026 Q2. ${DOMAIN}/news/shizuoka-industry-report-2026-q2/」。</p></div></details>
     <details><summary>致命的 NG が業界で最も多いのはどの種類ですか？</summary><div class="faq-answer"><p><strong>WordPress 管理面露出 (${ngBd('WP管理面露出')} 件)</strong> が最多で、HTTPS 非対応 (${ngBd('HTTPS非対応')} 件) / SSL 証明書失効 (${ngBd('SSL証明書')} 件) / CMS バージョン情報露出 (${ngBd('CMSバージョン情報露出')} 件) と続きます。WP 管理面露出は wp-login.php / xmlrpc.php 等が公開状態のことで、認証ボット攻撃の入口となります。改善は IP 制限 / Basic 認証 / 2FA で即時可能です。</p></div></details>
@@ -1196,7 +1196,7 @@ PAGES.push({
       '@id': `${DOMAIN}/news/shizuoka-industry-report-2026-q2/#faq`,
       mainEntity: [
         { '@type': 'Question', name: '静岡県 5 都市 全体で ★ 認定取得サイトは何件ありますか？', acceptedAnswer: { '@type': 'Answer', text: `0 件 (902 件中 / 2026-05-02 時点)。Phase 0.5 機械検証では総合 70 点以上 + 致命的 NG 0 件を全達成したサイトはゼロ。業界中央値は ${shizuokaSummary.score_stats.median} 点、業界 max は ${shizuokaSummary.score_stats.max} 点、★ 認定基準 (70 点) との差は 16 点。` } },
-        { '@type': 'Question', name: '5 都市の中で WEB 品質が最も高い都市はどこですか？', acceptedAnswer: { '@type': 'Answer', text: `業界最高点ベースで沼津市 ${shizuokaSummary.by_city.find(c=>c.city==='沼津市').max} 点 (認定到達率 ${(shizuokaSummary.by_city.find(c=>c.city==='沼津市').max/70*100).toFixed(1)}%) が最高。致命的 NG% が最も低いのは三島市 (${shizuokaSummary.by_city.find(c=>c.city==='三島市').ng_pct.toFixed(1)}%) で、母集団全体の防御水準は最高。` } },
+        { '@type': 'Question', name: '5 都市の中で WEB 品質が最も高い都市はどこですか？', acceptedAnswer: { '@type': 'Answer', text: `★ 認定取得率は全 5 都市で 0.0% (Phase 0.5 では全件未達)。業界最高点ベースで沼津市 ${shizuokaSummary.by_city.find(c=>c.city==='沼津市').max} 点が最高。致命的 NG% が最も低いのは三島市 (${shizuokaSummary.by_city.find(c=>c.city==='三島市').ng_pct.toFixed(1)}%) で、母集団全体の防御水準は最高。` } },
         { '@type': 'Question', name: '11 業種の中で WEB 品質が最も高い業種はどれですか？', acceptedAnswer: { '@type': 'Answer', text: '業界最高点ベースで司法書士 (54 点) / 不動産仲介 (54 点) が最高、次いでクリニック・診療所 (53 点) / 税理士・会計士 (52 点) / 行政書士 (52 点)。NG% (防御層改善余地) が最も大きいのは行政書士 (48.6%) と美容クリニック (46.5%)。' } },
         { '@type': 'Question', name: 'このレポートのデータは引用・再利用可能ですか？', acceptedAnswer: { '@type': 'Answer', text: `はい。機械可読 JSON (${DOMAIN}/datasets/shizuoka-2026-q2.json) として CC BY 4.0 で公開。AI クローラー / 研究機関 / メディアによる引用・再利用フリー (出典明記必須)。` } },
         { '@type': 'Question', name: '致命的 NG が業界で最も多いのはどの種類ですか？', acceptedAnswer: { '@type': 'Answer', text: `WordPress 管理面露出 (${shizuokaSummary.ng_breakdown['WP管理面露出']} 件) が最多で、HTTPS 非対応 (${shizuokaSummary.ng_breakdown['HTTPS非対応']} 件) / SSL 証明書失効 (${shizuokaSummary.ng_breakdown['SSL証明書']} 件) / CMS バージョン情報露出 (${shizuokaSummary.ng_breakdown['CMSバージョン情報露出']} 件) と続く。` } },
@@ -1208,7 +1208,7 @@ PAGES.push({
       '@context': 'https://schema.org',
       '@type': 'ItemList',
       '@id': `${DOMAIN}/news/shizuoka-industry-report-2026-q2/#cities`,
-      name: '静岡県 5 都市 WEB 品質ランキング 2026 Q2 (認定到達率順)',
+      name: '静岡県 5 都市 WEB 品質ランキング 2026 Q2 (業界最高点降順)',
       numberOfItems: 5,
       itemListOrder: 'https://schema.org/ItemListOrderDescending',
       itemListElement: [...shizuokaSummary.by_city]
@@ -1224,7 +1224,7 @@ PAGES.push({
               name: c.city,
               url: `${DOMAIN}/regions/shizuoka/${cityKeyMap[c.city]}/`,
               sameAs: `https://www.wikidata.org/wiki/${cityWikiMap[c.city]}`,
-              description: `${c.city}: 対象 ${c.n} 件 / 業界最高点 ${c.max} 点 / 認定到達率 ${(c.max/70*100).toFixed(1)}% / 致命的 NG ${c.ng_pct.toFixed(1)}%`,
+              description: `${c.city}: 対象 ${c.n} 件 / ★ 認定取得 ${c.eligible} 件 / 認定取得率 ${c.n>0?(c.eligible/c.n*100).toFixed(1):'0.0'}% / 業界最高点 ${c.max} 点 / 致命的 NG ${c.ng_pct.toFixed(1)}%`,
             },
           };
         }),

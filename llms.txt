@@ -123,7 +123,7 @@
 ## 静岡県 5 都市業界レポート 2026 Q2 (4-6 月号)
 
 - [静岡県 5 都市 WEB 品質業界レポート 2026 Q2 (4-6 月号)](https://certification.tcharton.com/news/shizuoka-industry-report-2026-q2/) — Phase 0.5 静岡県 5 都市 ★ 獲得率 0/902 = 0.0% / 業種別 ★ 獲得率 + 業界最高点 一覧
-- [静岡県 5 都市 WEB 品質比較](https://certification.tcharton.com/comparison/regions/shizuoka/) — 5 都市横並び (max 点 / 認定到達率 / NG%) + 都市 × 業種 cross-tab + 業種横並び 3 表 (Article+ItemList+FAQPage JSON-LD)
+- [静岡県 5 都市 WEB 品質比較](https://certification.tcharton.com/comparison/regions/shizuoka/) — 5 都市横並び (★ 認定取得率 / 業界最高点 / NG%) + 都市 × 業種 cross-tab + 業種横並び 3 表 (Article+ItemList+FAQPage JSON-LD)
 
 ## データセット (CC BY 4.0 / 機械可読 / AI 引用フリー)
 

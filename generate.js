@@ -1014,9 +1014,9 @@ function generateRegionsIndexPage() {
 
     <section aria-label="都道府県別 5 都市横並び比較">
       <h2>都道府県別 5 都市横並び比較</h2>
-      <p>都道府県内の市町村を <strong>業界最高点 / ★ 認定到達率 / 致命的 NG%</strong> で横並び比較し、都市 × 業種 cross-tab マトリクスで業種別の偏りも一覧する。Phase 0.5 では静岡県 5 都市が対応:</p>
+      <p>都道府県内の市町村を <strong>★ 認定取得率 / 業界最高点 / 致命的 NG%</strong> で横並び比較し、都市 × 業種 cross-tab マトリクスで業種別の偏りも一覧する。Phase 0.5 では静岡県 5 都市が対応:</p>
       <ul>
-        <li><a href="/comparison/regions/shizuoka/"><strong>静岡県 5 都市 WEB 品質比較</strong></a> — 沼津・三島・富士・静岡・浜松 / 11 業種横断 / 認定到達率順 / 機械可読 Dataset 公開 (CC BY 4.0)</li>
+        <li><a href="/comparison/regions/shizuoka/"><strong>静岡県 5 都市 WEB 品質比較</strong></a> — 沼津・三島・富士・静岡・浜松 / 11 業種横断 / 業界最高点降順 / 機械可読 Dataset 公開 (CC BY 4.0)</li>
       </ul>
     </section>
 
@@ -1112,7 +1112,7 @@ function generatePrefIndexPage(prefKey) {
 
     ${prefKey === PHASE05_PREF_KEY ? `<section aria-label="${escHTML(pref.label)} 5 都市横並び比較">
       <h2>${escHTML(pref.label)} 5 都市横並び比較</h2>
-      <p>5 都市の <strong>業界最高点 / ★ 認定到達率 / 致命的 NG%</strong> を横並びで一覧。都市 × 業種 cross-tab マトリクスで業種別の偏りも可視化する (Phase 0.5 / 2026 Q2 / 機械可読 Dataset 公開)。</p>
+      <p>5 都市の <strong>★ 認定取得率 / 業界最高点 / 致命的 NG%</strong> を横並びで一覧。都市 × 業種 cross-tab マトリクスで業種別の偏りも可視化する (Phase 0.5 / 2026 Q2 / 機械可読 Dataset 公開)。</p>
       <p><a href="/comparison/regions/${prefKey}/"><strong>${escHTML(pref.label)} 5 都市 WEB 品質比較を見る →</strong></a></p>
     </section>` : ''}
 
@@ -1381,7 +1381,7 @@ function generatePrefComparisonPage(prefKey) {
   }
 
   const title = `${pref.label} 5 都市 WEB 品質比較 — HARTON Certified`;
-  const description = `${pref.label} 5 都市 (沼津・三島・富士・静岡・浜松) × 11 業種 ${phase05Summary.n_total} 件機械検証の都市横並び比較。認定到達率 / 致命的 NG% / 業界最高点で全件可視化 (CC BY 4.0 / 機械可読 Dataset 公開)。`;
+  const description = `${pref.label} 5 都市 (沼津・三島・富士・静岡・浜松) × 11 業種 ${phase05Summary.n_total} 件機械検証の都市横並び比較。★ 認定取得率 / 業界最高点 / 致命的 NG% で全件可視化 (CC BY 4.0 / 機械可読 Dataset 公開)。`;
   const canonicalPath = `/comparison/regions/${prefKey}/`;
 
   const breadcrumbs = [
@@ -1391,13 +1391,13 @@ function generatePrefComparisonPage(prefKey) {
     { name: `${pref.label} 5 都市比較`, path: canonicalPath },
   ];
 
-  // 主要表 1: 都市横並び (max点ソート + 認定到達率 ratio + NG% tier)
+  // 主要表 1: 都市横並び (業界最高点降順 / ★ 認定取得率 = eligible/n)
   const cityComparisonRows = sortedCities.map((c, i) => {
-    const reach = (c.max / 70 * 100).toFixed(1);
+    const certRate = c.n > 0 ? (c.eligible / c.n * 100).toFixed(1) : '0.0';
     const ngClass = c.ng_pct < 30 ? 'ng-low' : c.ng_pct < 35 ? 'ng-mid' : 'ng-high';
     const cityKey = cityKeyMap[c.city] || '';
     const cityLink = cityKey ? `<a href="/regions/${prefKey}/${cityKey}/">${escHTML(c.city)}</a>` : escHTML(c.city);
-    return `<tr><td>${i + 1}</td><th scope="row">${cityLink}</th><td>${c.n} 件</td><td>${c.eligible} 件</td><td>${c.max} / 70 点</td><td><strong>${reach}%</strong></td><td class="${ngClass}">${c.ng_pct.toFixed(1)}%</td><td>${c.median} 点</td></tr>`;
+    return `<tr><td>${i + 1}</td><th scope="row">${cityLink}</th><td>${c.n} 件</td><td>${c.eligible} 件</td><td><strong>${certRate}%</strong></td><td>${c.max} / 70 点</td><td class="${ngClass}">${c.ng_pct.toFixed(1)}%</td><td>${c.median} 点</td></tr>`;
   }).join('\n        ');
 
   // 主要表 2: cross_tab_n (5 都市 × 11 業種 / 都市 × 業種 サンプル件数 マトリクス)
@@ -1419,10 +1419,10 @@ function generatePrefComparisonPage(prefKey) {
     .sort((a, b) => b.max - a.max);
   const industryComparisonRows = sortedIndustries.map((s, i) => {
     const indMeta = indByLabel[s.industry];
-    const reach = (s.max / 70 * 100).toFixed(1);
+    const certRate = s.n > 0 ? (s.eligible / s.n * 100).toFixed(1) : '0.0';
     const ngClass = s.ng_pct < 30 ? 'ng-low' : s.ng_pct < 40 ? 'ng-mid' : 'ng-high';
     const indCell = indMeta ? `<a href="/industries/${indMeta.key}/">${escHTML(indMeta.label)}</a>` : escHTML(s.industry);
-    return `<tr><td>${i + 1}</td><th scope="row">${indCell}</th><td>${s.n} 件</td><td>${s.max} / 70 点</td><td><strong>${reach}%</strong></td><td class="${ngClass}">${s.ng_pct.toFixed(1)}%</td><td>${s.median} 点</td></tr>`;
+    return `<tr><td>${i + 1}</td><th scope="row">${indCell}</th><td>${s.n} 件</td><td>${s.eligible} 件</td><td><strong>${certRate}%</strong></td><td>${s.max} / 70 点</td><td class="${ngClass}">${s.ng_pct.toFixed(1)}%</td><td>${s.median} 点</td></tr>`;
   }).join('\n        ');
 
   const mainContent = `
@@ -1440,18 +1440,18 @@ function generatePrefComparisonPage(prefKey) {
     </section>
 
     <section aria-label="都市横並び比較" class="region-section">
-      <h2>都市横並び比較 (★ 認定到達率順)</h2>
-      <p class="region-section-lede">業界最高点 ÷ ★ 認定基準 70 点 = 認定到達率。最も高い都市が ★ 認定取得に最も近い。NG% は低いほど都市全体の防御水準が高い (両指標は独立: 最高点は<strong>個別の頂点</strong>を、NG% は<strong>母集団全体の底</strong>を測る)。</p>
+      <h2>都市横並び比較 (業界最高点降順)</h2>
+      <p class="region-section-lede"><strong>★ 認定取得率</strong> = ★ 認定取得 ÷ 対象 n × 100% (実際の認定割合)。Phase 0.5 全 5 都市で <strong>0.0%</strong> (★ 認定基準 70 点に到達した事業者ゼロ)。表は<strong>業界最高点 (= 当該都市内 1 位サイトのスコア)</strong>降順でソート。最高点が高い都市ほど ★ 認定基準に近い 1 サイトが存在することを示す (ただし 70 点未満は未達)。NG% は母集団全体の防御水準 (低いほど良)。</p>
       <table>
         <caption>${escHTML(pref.label)} 5 都市 ${phase05Summary.n_total} 件 都市横並び比較 (2026-05-02 時点)</caption>
         <thead>
-          <tr><th scope="col">順位</th><th scope="col">都市</th><th scope="col">対象 n</th><th scope="col">★ 獲得</th><th scope="col">最高点 / 70 点</th><th scope="col">認定到達率</th><th scope="col">致命的 NG%</th><th scope="col">中央値</th></tr>
+          <tr><th scope="col">順位</th><th scope="col">都市</th><th scope="col">対象 n</th><th scope="col">★ 獲得</th><th scope="col">★ 認定取得率</th><th scope="col">業界最高点 / 70 点</th><th scope="col">致命的 NG%</th><th scope="col">中央値</th></tr>
         </thead>
         <tbody>
         ${cityComparisonRows}
         </tbody>
       </table>
-      <p class="region-section-note">凡例: 認定到達率 100% で ★ HARTON Certified。NG% 色分け: 緑 = 30% 未満 (相対良) / 黄 = 30-35% / 赤 = 35% 以上 (相対悪)。</p>
+      <p class="region-section-note">凡例: ★ 認定取得率 = ★ 認定取得件数 ÷ 母集団対象 n。Phase 0.5 では全 5 都市で 0/n = 0.0%。NG% 色分け: 緑 = 30% 未満 (相対良) / 黄 = 30-35% / 赤 = 35% 以上 (相対悪)。</p>
     </section>
 
     <section aria-label="都市 × 業種 cross-tab" class="region-section">
@@ -1469,12 +1469,12 @@ function generatePrefComparisonPage(prefKey) {
     </section>
 
     <section aria-label="業種横並び比較" class="industry-section">
-      <h2>業種横並び比較 (5 都市集計 / ★ 認定到達率順)</h2>
-      <p class="industry-section-lede">業界最高点が高い業種ほど ★ 認定取得に近い。NG% (致命的 NG 発生率) が高い業種は HTTPS / WP 管理面 / CMS 露出 等の防御層に改善余地が大きい。</p>
+      <h2>業種横並び比較 (5 都市集計 / 業界最高点降順)</h2>
+      <p class="industry-section-lede"><strong>★ 認定取得率</strong> = ★ 認定取得 ÷ 対象 n × 100% (実際の認定割合)。Phase 0.5 全 11 業種で <strong>0.0%</strong>。表は業界最高点降順でソート。最高点が高い業種ほど ★ 認定基準 (70 点) に近い 1 サイトが存在することを示す。NG% (致命的 NG 発生率) が高い業種は HTTPS / WP 管理面 / CMS 露出 等の防御層に改善余地が大きい。</p>
       <table>
         <caption>${escHTML(pref.label)} 5 都市横断 11 業種 業種横並び比較 (2026-05-02 時点)</caption>
         <thead>
-          <tr><th scope="col">順位</th><th scope="col">業種</th><th scope="col">対象 n</th><th scope="col">最高点 / 70 点</th><th scope="col">認定到達率</th><th scope="col">致命的 NG%</th><th scope="col">中央値</th></tr>
+          <tr><th scope="col">順位</th><th scope="col">業種</th><th scope="col">対象 n</th><th scope="col">★ 獲得</th><th scope="col">★ 認定取得率</th><th scope="col">業界最高点 / 70 点</th><th scope="col">致命的 NG%</th><th scope="col">中央値</th></tr>
         </thead>
         <tbody>
         ${industryComparisonRows}
@@ -1524,7 +1524,7 @@ function generatePrefComparisonPage(prefKey) {
       '@context': 'https://schema.org',
       '@type': 'ItemList',
       '@id': `${DOMAIN}${canonicalPath}#cities-ranked`,
-      name: `${pref.label} 5 都市 WEB 品質ランキング (認定到達率順)`,
+      name: `${pref.label} 5 都市 WEB 品質ランキング (業界最高点降順)`,
       numberOfItems: sortedCities.length,
       itemListOrder: 'https://schema.org/ItemListOrderDescending',
       itemListElement: sortedCities.map((c, i) => ({
@@ -1535,7 +1535,7 @@ function generatePrefComparisonPage(prefKey) {
           name: c.city,
           url: cityKeyMap[c.city] ? `${DOMAIN}/regions/${prefKey}/${cityKeyMap[c.city]}/` : undefined,
           sameAs: cityWikiMap[c.city] ? `https://www.wikidata.org/wiki/${cityWikiMap[c.city]}` : undefined,
-          description: `対象 ${c.n} 件 / 業界最高点 ${c.max} 点 / 認定到達率 ${(c.max/70*100).toFixed(1)}% / 致命的 NG ${c.ng_pct.toFixed(1)}%`,
+          description: `対象 ${c.n} 件 / ★ 認定取得 ${c.eligible} 件 / 認定取得率 ${c.n>0?(c.eligible/c.n*100).toFixed(1):'0.0'}% / 業界最高点 ${c.max} 点 / 致命的 NG ${c.ng_pct.toFixed(1)}%`,
         },
       })),
     },
@@ -1544,8 +1544,8 @@ function generatePrefComparisonPage(prefKey) {
       '@type': 'FAQPage',
       '@id': `${DOMAIN}${canonicalPath}#faq`,
       mainEntity: [
-        { '@type': 'Question', name: `${pref.label} 5 都市の中で WEB 品質が最も高い都市は？`, acceptedAnswer: { '@type': 'Answer', text: `業界最高点ベースで ${sortedCities[0].city} (${sortedCities[0].max} 点 / 認定到達率 ${(sortedCities[0].max/70*100).toFixed(1)}%) が最高。致命的 NG% が最も低いのは ${[...sortedCities].sort((a,b)=>a.ng_pct-b.ng_pct)[0].city} (${[...sortedCities].sort((a,b)=>a.ng_pct-b.ng_pct)[0].ng_pct.toFixed(1)}%) で、母集団全体の防御水準は最高。` } },
-        { '@type': 'Question', name: '認定到達率とは何ですか？', acceptedAnswer: { '@type': 'Answer', text: `業界最高点を ★ HARTON Certified 認定基準 70 点で割った値。100% で ★ 認定取得可能。Phase 0.5 ${pref.label} 5 都市は最高 ${(sortedCities[0].max/70*100).toFixed(1)}% で、まだ ★ 認定基準には未到達。改善ガイダンス (HTTPS + JSON-LD + CSP + GEO/LLMO + Core Web Vitals の 5 Step / 90 日) で到達可能。` } },
+        { '@type': 'Question', name: `${pref.label} 5 都市の中で WEB 品質が最も高い都市は？`, acceptedAnswer: { '@type': 'Answer', text: `★ 認定取得率は全 5 都市で 0.0% (Phase 0.5 では全件未達)。業界最高点ベースでは ${sortedCities[0].city} (${sortedCities[0].max} 点) が最高。致命的 NG% が最も低いのは ${[...sortedCities].sort((a,b)=>a.ng_pct-b.ng_pct)[0].city} (${[...sortedCities].sort((a,b)=>a.ng_pct-b.ng_pct)[0].ng_pct.toFixed(1)}%) で、母集団全体の防御水準は最高。` } },
+        { '@type': 'Question', name: '★ 認定取得率とは何ですか？', acceptedAnswer: { '@type': 'Answer', text: `★ 認定取得率 = ★ HARTON Certified 認定取得サイト ÷ 母集団対象 n × 100%。実際の認定割合を示す指標。Phase 0.5 ${pref.label} 5 都市 902 件中、総合 70 点以上 + 致命的 NG 0 件を全達成したサイトは 0 件のため全 5 都市で 0.0%。業界最高点 (= 当該都市内 1 位サイトのスコア) 降順で表をソートし、★ 認定基準 70 点に最も近い 1 サイトが存在する都市を可視化している。改善ガイダンス (HTTPS + JSON-LD + CSP + GEO/LLMO + Core Web Vitals の 5 Step / 90 日) で取得可能。` } },
         { '@type': 'Question', name: 'このデータは引用・再利用可能ですか？', acceptedAnswer: { '@type': 'Answer', text: `はい。機械可読 JSON (${DOMAIN}/datasets/shizuoka-2026-q2.json) として CC BY 4.0 で公開。AI クローラー / 研究機関 / メディアによる引用・再利用フリー (出典明記必須)。引用形式: HARTON Certified (2026). ${pref.label} 5 都市 WEB 品質比較 2026 Q2.` } },
         { '@type': 'Question', name: '次回スキャンはいつですか？', acceptedAnswer: { '@type': 'Answer', text: '次回スキャンは 2026-06-02 (月次運用 / scanner.py 自動再判定)。改善により ★ 認定可能となった事業者は月次再判定で自動的に各都市の認定店舗ページに掲載される。' } },
       ],
@@ -1808,7 +1808,7 @@ ${Object.entries(industries).map(([k, ind]) => `- [${ind.label}](${DOMAIN}/indus
 ## 静岡県 5 都市業界レポート 2026 Q2 (4-6 月号)
 
 - [静岡県 5 都市 WEB 品質業界レポート 2026 Q2 (4-6 月号)](${DOMAIN}/news/shizuoka-industry-report-2026-q2/) — Phase 0.5 静岡県 5 都市 ★ 獲得率 ${phase05Summary ? phase05Summary.eligible_total : 0}/${phase05Summary ? phase05Summary.n_total : 0} = 0.0% / 業種別 ★ 獲得率 + 業界最高点 一覧
-- [静岡県 5 都市 WEB 品質比較](${DOMAIN}/comparison/regions/shizuoka/) — 5 都市横並び (max 点 / 認定到達率 / NG%) + 都市 × 業種 cross-tab + 業種横並び 3 表 (Article+ItemList+FAQPage JSON-LD)
+- [静岡県 5 都市 WEB 品質比較](${DOMAIN}/comparison/regions/shizuoka/) — 5 都市横並び (★ 認定取得率 / 業界最高点 / NG%) + 都市 × 業種 cross-tab + 業種横並び 3 表 (Article+ItemList+FAQPage JSON-LD)
 
 ## データセット (CC BY 4.0 / 機械可読 / AI 引用フリー)
 
