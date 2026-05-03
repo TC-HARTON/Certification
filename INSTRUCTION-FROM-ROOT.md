@@ -877,3 +877,209 @@ Phase 0.5 業界レポート + 比較ページ実装は **新規大規模実装*
 4. `/gstack` 本番実機
 5. REPORT に §HSCEL-V1 §3 セクション完全記載
 6. **commit せず** disk artifact + REPORT で ① 承認待ち
+
+---
+
+## 【追記 2026-05-03 / v1.16】国内トップ制作会社比較 5 観点 → ⑤ 適用 4 観点（観点 5 除外）
+
+> **発信**: ① HARTON 総合責任者（代表 2026-05-03 受領 5 観点提言批判的継承）
+> **連動**: `tcharton/INSTRUCTION-FROM-ROOT.md` v1.20 / `BRAND-STRATEGY-V1.1.7.md` / `UX-UI-DIRECTIVE-V1.md`
+
+### ⑤ への適用（観点 5 除外）
+
+| # | 観点 | ⑤ 適用 | 統合先 |
+|---|---|---|---|
+| 1 | マイクロインタラクション | ✅ View Transitions API（PJAX/SPA 禁止）+ CSS 慣性 | UX-UI Phase B 編集体験 |
+| 2 | ストーリーテリング | ✅ 認定事業者の「課題 → 改善 → ★ 取得」3 段構成 | UX-UI Phase B 機械検証コメント拡張 |
+| 3 | 余白 + タイポ階層 | ✅ Michelin Guide 公式モデル整合 | UX-UI Phase A 既存 |
+| 4 | ビジュアル戦略 | ⚠️ 段階導入（独自アイコン Phase B / WebGL は v2.x）| UX-UI Phase A SVG 化既存 |
+| 5 | 診断ツール | ❌ 対象外（⑤ では「現状診断レポート PDF」として別実装 / v1.12.2 (B) 連動）| — |
+
+### ⑤ への適用条件（mandatory）
+
+- **PJAX/SPA 化禁止**（spec-checker 4194 項目との整合性破壊リスク）
+- **Chart.js 等ライブラリ追加禁止**（SVG 自前実装 mandatory）
+- WebGL/Canvas は段階導入（CWV S-RANK 維持リスク）
+- 富士山キービジュアルは ② tcharton 専用 / ⑤ は別ビジュアル戦略（地域マップベース推奨）
+
+### 統合タイミング
+
+UX-UI Phase A → B → C → D 進行と統合:
+- Phase A 既存: 観点 3 + 観点 4 SVG 化（既に発令済 / v1.13 §UX-UI-DIRECTIVE-V1）
+- Phase B 拡張: 観点 1 + 観点 2 ストーリーテリング統合
+- Phase C/D: 観点 4 段階導入
+
+### ブランド戦略整合性
+
+⑤ は「評価機関」として ② tcharton（自己実証体）と並ぶ存在:
+- ② = 技術 + 表現の両立による自己実証
+- ⑤ = 評価基準の表現 + 認定事業者の物語化
+
+両サイトが「真の国内トップレベル」を **dogfooding 構造**で実証する。
+
+### v1.1.7 草案 redo との関係
+
+⑤ v1.1.7 草案 redo（HSCEL §6.1 Tier 1 / 2026-04-30 §27 発令）+ v1.2.0 §0.5 ロードマップ + 本 5 観点 = **統合 commit 推奨**（@feature-dev:feature-dev Phase 1-7 の規模拡大として）。
+
+### 着手前提
+
+⑤ Phase 0.5 完了データ受領済 + Wikidata Q 検証完遂後 + Phase 1 Wikidata Q 20 件検証完了後に着手。
+
+---
+
+## 【追記 2026-05-03 / v1.17】④ v1.11 連動: PII 除外再確認 + Wikidata CSV 受領
+
+### 1. certification/data/phase-0.5-results.csv PII 除外 物理 grep 再確認
+
+④ Reviewer A-HIGH 指摘で、⑤ certification/.gitignore に `data/*.csv` 除外パターン物理確認指示:
+
+```bash
+grep -E "data/.*\.csv|data/\*\.csv" certification/.gitignore
+```
+
+→ 確認結果を ① 報告。除外あれば確認のみ / 除外なければ即時追加（v2.1 §27.3 同種事案再発防止）。
+
+### 2. Wikidata CSV ④ → ⑤ 移動受領
+
+④ が `git mv` で以下を ⑤ に移動:
+
+```
+scanner/wikidata-verification-phase0.5.csv
+  → certification/data/wikidata-verification-phase0-scanner.csv
+```
+
+⑤ で既存 `certification/data/industries-verification-v1.15.csv` との整合確認:
+
+| 確認項目 | 内容 |
+|---|---|
+| 業種 Q 番号一致 | 11 業種全件 ④ ファイル ↔ ⑤ ファイル の Q 番号一致確認 |
+| 地域 Q 番号一致 | Phase 0.5 都市 5 件 + Phase 0 7 市町 全件確認 |
+| 重複データ判定 | 完全一致なら一方削除 / 差異あれば統合 |
+
+→ 整合確認結果を ① 報告。
+
+### 3. ⑤ 着手前提（Wikidata 担当 v1.15.1 連動）
+
+v1.15.1 役割分担で **Wikidata Q 取得は ⑤ 専担**。④ の越境作業痕跡（v2.1 で発生）は今回 C 案で正規化（⑤ への移動）。今後 Wikidata 関連は全件 ⑤ 担当遵守。
+
+### 4. ⑤ 業界レポート信頼性向上連動
+
+④ scanner.py CSP 厳格化（v1.16 発令済 / Step B 着手承認）後、業界 902 件再評価で品質ギャップ拡大 → ⑤ 業界レポート「静岡県業界レポート 2026-05」更新タイミングを ④ 再評価完了に同期。
+
+---
+
+## 【追記 2026-05-03 / v1.18】v2.3-v2.7 事後承認 + エスカ 4 件判定 + MASTER-PLAN v1.1.7 redo C 案採用
+
+### v2.3-v2.7 事後承認 + 再発防止指示
+
+commit `a20ac12` push 済（公開前 360 度検証 21 件全件解消 + 並列 7 reviewer + data-integrity-checker.js）= **HSCEL §5 全 Step 実質完遂**として事後承認。
+
+**🔴 再発防止指示**: 今後 ⑤ は HSCEL §5 Step 4「commit 前 ① 承認」を文書記載だけでなく **実際の commit 停止で遵守**。② tcharton と同等の厳格遵守 mandatory。
+
+### 🔴 data-integrity-checker.js 高評価（v3.6 §0.0.12 ⑤ 側第一例 ① 公式記録）
+
+9 invariants 自主実装は **HSCEL §6.3 Tier 3 hook 配備の精神を ⑤ 側で先取り実装**:
+- ② tcharton `validatePageTypeConsistency()` / `validateNoInlineScriptUnsafe()` / `validateAssetsignoreAnchor()` と同一思想
+- HARTON 全担当の machine gate 文化確立の第一実装例として **v3.6 §0.0.12「全担当 machine gate 展開原則」公式記録**
+- pre-push hook で物理拒否 = Phase 1 都市量産時の同種ミス再発防止層
+
+### ⑤ エスカ 4 件 判定
+
+| # | 判定 |
+|---|---|
+| 1. Web3Forms allowlist 代表ダッシュボード作業 | 代表通告事項（access_key `9fda1d98-e246-4730-a12c-2251a5ae35b0` / 2 分）|
+| 2. ④ Wikidata CSV git mv 再通告 | ✅ ④ INSTRUCTION v1.18 で再強調（次 commit で必須実施）|
+| 3. MASTER-PLAN v1.1.7 redo 方針 | ✅ **C 案採用**（v1.2.0 統合 redo / 工数 0h / 詳細後述）|
+| 4. DNS 設定 + GBP + Turnstile | 代表手動（DNS 一括対応として保留中）|
+
+### MASTER-PLAN v1.1.7 redo → C 案採用 + 1 条件
+
+#### 採用根拠
+
+⑤ v2.7 §4.2 で本文サイト側に v1.1.7 ブランド戦略 7 項目（マニフェスト / dogfooding / 自己実証体 / 沼津起点 / 金銭非依存 / ★区分の物語 / 失効・降格運用）**全件実装済 verbatim 確認**。MASTER-PLAN.md テキスト本体のみ v1.1.6 のままだが、実装乖離なく実質達成。
+
+#### 🔴 ① 追加条件
+
+- **v1.1.7 草案 .md は disk 残置**（履歴保全 / 削除禁止）
+- **公式版は v1.1.6 継続**（次回 v1.2.0 統合 redo 時に正式昇格）
+- **v1.2.0 統合 redo タスク**:
+  - スコープ: v1.1.7 ブランド戦略 + Phase 1 ロードマップ + 5 観点（v1.20 §37）+ v2.6 360 度検証成果
+  - 着手時期: Phase 1 着手前
+  - HSCEL §3.1 4 Skill フルプロセス + 並列 3+ reviewer mandatory
+  - v1.2.0 commit で v1.1.7 redo 命令（HSCEL §6.1 Tier 1 / §27）**正式解消**
+
+### ⑤ v2.7 評価
+
+⑤ v1.1.7 草案違反（§27）→ v2.0/2.1 Wikidata 12 件誤り（§30）→ **v2.6/2.7 = 規範遵守 + machine gate 自主実装 + 並列 7 reviewer + Q103103 捏造自主検出 = 質的飛躍の到達点**
+
+② v1.10-v1.17（規範遵守の最高水準）と並ぶ ⑤ の質的飛躍実証。
+
+### 残タスク優先順位
+
+| 優先 | 内容 | 前提 |
+|---|---|---|
+| 🔴 高 | Wikidata CSV ④→⑤ 受領 + 整合確認 | ④ INSTRUCTION v1.18 git mv 再通告 |
+| 🔴 高 | DNS 設定後の /gstack 本番実機検証 | 代表 DNS 設定 |
+| 🟡 中 | Phase 1 都市 20 件 Wikidata Q verbatim 検証 | ① Phase 1 着手承認 |
+| 🟡 中 | **MASTER-PLAN v1.2.0 統合 redo** | Phase 1 着手前 / 4 Skill フルプロセス |
+| 🟢 低 | UX-UI Phase B/C/D（5 観点 1-4 統合）| v1.2.0 後 |
+
+---
+
+## 【追記 2026-05-03 / v1.19】🔴🔴 緊急是正発令: 観点 1-4 即時着手 mandatory（v1.2.0 後ではない / 並行ではなく上位）
+
+### ① 設計欠陥 自己認知
+
+v1.16 §「⑤ 適用」で「UX-UI Phase A-D と統合」「v1.1.7 redo + v1.2.0 と並行可」と曖昧表現 → ⑤ v2.7 §6 で「UX-UI Phase B/C/D（5 観点 1-4 統合）/ 着手は v1.2.0 後」と先送り解釈された。代表 2026-05-03 直接指示「真の国内トップレベル」が伝わっていない。
+
+### 是正発令
+
+| 項目 | 旧（v1.16）| **新（v1.19）** |
+|---|---|---|
+| 着手順序 | v1.1.7 redo + v1.2.0 と並行可 | **v1.2.0 redo を待たず / UX-UI Phase A-D と統合 / 即時着手 mandatory** |
+| 優先度 | 通常 | **🔴🔴 高**（v1.2.0 統合 redo より上位 / Phase 0.5 完了済 = 着手前提クリア）|
+| 進捗報告 | 任意 | **次セッション disk artifact + REPORT で観点 1-4 進捗 必須併記** |
+
+### 着手前提達成確認
+
+| 前提 | 状態 |
+|---|---|
+| Phase 0.5 完了 | ✅ 完了（5 都市 / 11 業種 / 902 件 / commit `a20ac12`）|
+| spec-checker S-RANK | ✅ 維持（PASS=6346）|
+| data-integrity-checker | ✅ 9 invariants 動作 |
+
+→ 着手前提全件クリア。観点 1-4 即時着手可能。
+
+### v1.18-v1.20 タスク（観点 1-4 ⑤ 側適用）
+
+| Phase | 観点 | 内容 |
+|---|---|---|
+| **v1.18** | 観点 2 ストーリーテリング | 認定事業者の「課題 → 改善 → ★ 取得」3 段構成 / Goodpatch 型適用 |
+| **v1.19** | 観点 3 余白 + タイポ | UX-UI Phase A 既存をベースに段階強化 |
+| **v1.20** | 観点 1 マイクロインタラクション | View Transitions API（PJAX/SPA 禁止）+ CSS 慣性自前 |
+| **v1.21** | 観点 4 ビジュアル | 段階導入（独自アイコン / WebGL/Canvas は段階）|
+
+観点 5（診断ツール）は ② tcharton 専用 / ⑤ では「現状診断 PDF」として別実装（v1.12.2 (B) 連動）。
+
+### v1.2.0 統合 redo との関係（明確化）
+
+旧発令の「v1.1.7 redo + v1.2.0 と並行可」を訂正:
+
+| タスク | 着手時期 |
+|---|---|
+| **観点 1-4 各 Phase 実装**（v1.18-v1.21）| **即時着手**（最優先 / 他タスクより上位）|
+| v1.2.0 統合 redo | Phase 1 着手前（観点 1-4 完了後 / v1.30 §41 確定）|
+
+→ 観点 1-4 が v1.2.0 redo の **前提条件** ではない（並行）。但し v1.2.0 redo 時に観点 1-4 成果を統合反映。
+
+### 各 Phase の HSCEL §3.1 4 Skill mandatory
+
+各 Phase で feature-dev + requesting-code-review 並列 3 reviewer + receiving-code-review + preview verbatim 確認 + REPORT §HSCEL-V1 §3。
+
+### REPORT 様式追加要件
+
+次セッション以降、REPORT 冒頭に **「観点 1-4 進捗一覧表」必須記載**（② tcharton と同様）。
+
+### ⑤ への評価
+
+⑤ v2.5/v2.6 で AI 視点 6 項全実装は **代表 verbatim「AI視点推奨を全て実装」を受けた先行実施** = 5 観点の §2/§3 に部分的に相当する成果あり（業界レポート JSON-LD 10 種 / Dataset 公開 / methodology DefinedTerm/HowTo / FAQ city/pref 分離）。但し代表の 5 観点提言は **HARTON サイト + ランキングサイト両方** に取り入れる戦略指示であり、⑤ も観点 1-4 を **明示的に体系化実装**する必要。

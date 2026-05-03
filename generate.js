@@ -387,6 +387,25 @@ function generateIndustryPage(industryKey, ind) {
         : `<ol>${list.map(([slug, b]) => `<li><a href="/businesses/${slug}/">${escHTML(b.name)}</a> — ${escHTML(b.scan.rating)} / ${b.scan.score}点 / ${escHTML(b.address.addressLocality)}</li>`).join('')}</ol>`}
     </section>
 
+    <section aria-label="${escHTML(ind.label)} 業界の改善ロードマップ" class="industry-roadmap-section">
+      <h2>${escHTML(ind.label)} 業界 改善ロードマップ (3 段)</h2>
+      <p>${escHTML(PHASE05_SCOPE_LABEL)} の${escHTML(ind.label)} ${summary ? summary.n : 0} 件機械検証から、業界共通の「課題 → 改善 → ★ 取得」3 段ストーリーを抽出した。自社サイトの ★ 区分判定を目指す事業者は、本ロードマップを参考に改善計画を立てられる。</p>
+      <ol class="industry-roadmap-3step">
+        <li class="roadmap-step-challenge">
+          <h3><span class="roadmap-num">1</span> 課題</h3>
+          <p>${summary ? `業界中央値 <strong>${summary.median}</strong> 点 / 業界 max <strong>${summary.max}</strong> 点 / 致命的 NG <strong>${typeof summary.ng_pct === 'number' ? summary.ng_pct.toFixed(1) : '-'}%</strong>。${PHASE05_SCOPE_LABEL} 全 ${summary.n} 件で ★ 認定基準 (70 点) に到達した事業者は <strong>${summary.eligible} 件</strong> (★ 認定取得率 ${summary.n > 0 ? (summary.eligible/summary.n*100).toFixed(1) : '0.0'}%)。` : `Phase 0.5 実測待機。`}業界全体として防御層 (HTTPS / WP 管理面 / CMS 露出) と AI 検索適応 (JSON-LD / GEO) に改善余地が大きい。</p>
+        </li>
+        <li class="roadmap-step-improvement">
+          <h3><span class="roadmap-num">2</span> 改善</h3>
+          <p>${escHTML(ind.label)} サイトが ★ 認定取得に必要な 5 Step (90 日) は <a href="/improvement-guide/">改善ガイダンス</a> で全公開。本業種固有の評価ポイントは <a href="${escHTML(ind.wikidata_uri)}" rel="nofollow noopener noreferrer" target="_blank">Wikidata ${escHTML(ind.wikidata)}</a> + <a href="https://schema.org/${escHTML(ind.schema_type?.[0] || 'LocalBusiness')}" rel="nofollow noopener noreferrer" target="_blank">Schema.org ${escHTML(ind.schema_type?.[0] || 'LocalBusiness')}</a> 整合の構造化データ実装、業種固有のサービス Schema (例: openingHours / priceRange / acceptedPaymentMethod) で機械可読性を最大化することにある。</p>
+        </li>
+        <li class="roadmap-step-acquired">
+          <h3><span class="roadmap-num">3</span> 取得</h3>
+          <p>総合 70 点以上 + 致命的 NG 0 件で <strong>★ HARTON Certified</strong> 取得。+ S 条件 4/5 で <strong>★★ HARTON 優良</strong>、+ S 条件 5/5 で <strong>★★★ HARTON S-Class</strong>。tcharton.com (運営主体 T.C.HARTON) が dogfooding 倫理に基づき先行取得した実例は <a href="/case-studies/tcharton-com/">自己実証体 第 1 号 case study</a>で 7 commit timeline を verbatim 公開。</p>
+        </li>
+      </ol>
+    </section>
+
     ${renderFaqSection(ind, PHASE05_SCOPE_LABEL, summary)}
 
     ${renderCtaSection(ind)}
@@ -893,10 +912,12 @@ function renderFaqSection(ind, cityLabel, summary = null, prefStats = null) {
     prefStats = phase05Summary.by_industry.find(s => s.industry === ind.label_short || s.industry === ind.label) || null;
   }
   if (!ind || !Array.isArray(ind.faq_industry)) return '';
-  const items = ind.faq_industry.map(qa => {
+  const items = ind.faq_industry.map((qa, i) => {
     const q = escHTML(expandFaqPlaceholders(qa.q, ind, cityLabel, summary, prefStats));
     const a = escHTML(expandFaqPlaceholders(qa.a, ind, cityLabel, summary, prefStats));
-    return `<details open><summary>${q}</summary><div class="faq-answer"><p>${a}</p></div></details>`;
+    // 1 件目のみ open / 残りは collapsed (情報密度緩和 / scannability 向上 / WCAG 4.1.2 視覚的アフォーダンス回復)
+    const openAttr = i === 0 ? ' open' : '';
+    return `<details${openAttr}><summary>${q}</summary><div class="faq-answer"><p>${a}</p></div></details>`;
   }).join('');
   return `
     <section aria-label="よくある質問" class="faq-section">
@@ -1489,9 +1510,29 @@ function generatePrefComparisonPage(prefKey) {
       </table>
     </section>
 
+    <section aria-label="都市単位の改善ポテンシャル narrative" class="comparison-narrative-section">
+      <h2>都市単位の改善ポテンシャル (3 段ストーリー)</h2>
+      <p>${escHTML(pref.label)} 5 都市の中で「★ 認定基準 70 点」に最も近い都市は <strong>${sortedCities[0].city} (業界最高点 ${sortedCities[0].max} 点 / 残り ${70 - sortedCities[0].max} 点)</strong>。最も防御水準が高い (致命的 NG% が低い) のは <strong>${[...sortedCities].sort((a,b)=>a.ng_pct-b.ng_pct)[0].city} (${[...sortedCities].sort((a,b)=>a.ng_pct-b.ng_pct)[0].ng_pct.toFixed(1)}%)</strong>。両指標の組み合わせで、各都市の改善ポテンシャルが可視化される。</p>
+      <ol class="comparison-narrative-3step">
+        <li class="comparison-narrative-challenge">
+          <h3><span class="comparison-num">1</span> 課題</h3>
+          <p>業界最高点 (個別の頂点) と致命的 NG% (母集団全体の防御水準の底) は独立指標。最高点が高くとも母集団の NG% が高い場合は、1 サイトのみが優れていて他は脆弱性を抱えていることを示す。逆に NG% が低くとも最高点が低い場合は、母集団全体は均質的だが ★ 認定到達の頂点がまだ生まれていない状態を示す。</p>
+        </li>
+        <li class="comparison-narrative-improvement">
+          <h3><span class="comparison-num">2</span> 認定取得最短経路</h3>
+          <p>業界最高点が高い都市 (${sortedCities[0].city} 等) では既に <strong>★ 認定基準まで残り ${Math.max(0, 70 - sortedCities[0].max)}-${Math.max(0, 70 - sortedCities[sortedCities.length-1].max)} 点</strong>の事業者が存在する。<a href="${DOMAIN}/improvement-guide/">改善ガイダンス 5 Step</a> の Step 5 (Core Web Vitals + WCAG 2.2 AA + NAP) のみで到達圏内。一方、業界最高点が低い都市は Step 1-4 から段階的に積み上げる必要があるが、<a href="${DOMAIN}/case-studies/tcharton-com/">tcharton.com case study</a> が示す通り 90 日で C/65 → S/90 (+25 点) は再現可能。</p>
+        </li>
+        <li class="comparison-narrative-acquired">
+          <h3><span class="comparison-num">3</span> 取得: あなたが最初の ★ 認定事業者になる日</h3>
+          <p>${escHTML(pref.label)} 5 都市の中で <strong>業界最高点 ${sortedCities[0].max} 点 (${sortedCities[0].city})</strong> がリードしているが、★ 認定基準 70 点まで残り ${Math.max(0, 70 - sortedCities[0].max)} 点。<a href="${DOMAIN}/improvement-guide/">改善 5 Step (90 日)</a>を完遂すれば、あなたのサイトが ${escHTML(pref.label)} 5 都市で最初の <strong>★ HARTON Certified</strong> 認定事業者となり、月次再判定で <a href="/regions/shizuoka/">5 都市の認定店舗ページ</a>に掲載される。${escHTML(pref.label)} 5 都市から最初の ★ 認定取得事業者が生まれた段階で、Phase 1 都市 (倉敷・四日市・松本・盛岡 等 / 2026 Q3〜) にロールモデルとして提示される。</p>
+        </li>
+      </ol>
+    </section>
+
     <section aria-label="出典・引用">
       <h2>出典・引用</h2>
       <ul>
+        <li><a href="/case-studies/tcharton-com/">tcharton.com 自己実証 case study</a> — ★★★ HARTON S-Class 取得経緯 (7 commit timeline / 90 日)</li>
         <li><a href="/news/shizuoka-industry-report-2026-q2/">${escHTML(pref.label)} 5 都市 WEB 品質業界レポート 2026 Q2 (4-6 月号)</a> — 詳細レポート (NG 内訳 / FAQ / dogfooding 倫理)</li>
         <li><a href="/datasets/shizuoka-2026-q2.json">機械可読 JSON データセット (CC BY 4.0)</a> — Schema.org Dataset / AI クローラー引用フリー</li>
         <li><a href="/methodology/">評価方法 (4 軸機械検証 全公開)</a> — A 基礎 / B 防御 / C AI 検索 / D 経営の閾値</li>

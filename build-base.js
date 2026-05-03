@@ -225,7 +225,7 @@ ${REGION_OPTIONS_HTML}
           <h3 class="featured-card-name">自己実証体 第 1 号: tcharton.com</h3>
           <p class="featured-card-meta">IT・WEB 制作 ／ 静岡県沼津市</p>
           <p class="featured-card-note">scanner 実機判定で <strong>総合 90 点 / 必須 4/4 + 1 保留 / 致命的 NG 0 / NAP 100</strong>。dogfooding 倫理に基づく自己実証体。</p>
-          <a href="/about/" class="featured-card-link">自己実証体としての信頼根拠 →</a>
+          <a href="/case-studies/tcharton-com/" class="featured-card-link">課題 → 改善 → 取得 の詳細 (7 commit timeline) を見る →</a>
         </div>
       </li>
       <li class="featured-card">
@@ -351,13 +351,15 @@ PAGES.push({
   breadcrumbs: bcl([['トップ', '/'], ['サイトについて', '/about/']]),
   mainContent: `
 <article>
+  <header>
+    <h1>サイトについて</h1>
+    <p><time datetime="2026-04-27" itemprop="datePublished">2026-04-27 公開</time> ／ <time datetime="2026-05-04" itemprop="dateModified">2026-05-04 v1.18 ストーリーテリング統合</time></p>
+  </header>
   <section aria-label="冒頭エビデンス">
     <p>HARTON Certified は <strong>2026 年 4 月</strong>、静岡県沼津市で T.C.HARTON が立ち上げた、<strong>金銭非依存・評価基準全公開型</strong>の独立認定機関である。掲載料・認定料・広告料を一切徴収せず、評価項目・閾値・実施手順は <a href="/methodology/">methodology</a> で全て開示する。沼津起点で自社サイト tcharton.com を機械検証し ★★★（HARTON S-Class）を取得した自己実証体 第 1 号として、業界の WEB 品質改善のため運営する (dogfooding 倫理)。出典: <a href="https://www.digital.go.jp/resources/govdashboard/local-government-dx#guidance2" rel="nofollow noopener noreferrer" target="_blank">デジタル庁（地方 DX の現状）</a>。</p>
     <blockquote cite="${DOMAIN}/methodology/">
       「機械検証が示す、AI 時代の WEB 品質。」 — HARTON Certified 信頼根拠の核（MASTER-PLAN §2.0.4）
     </blockquote>
-    <p><time datetime="2026-04-27" itemprop="datePublished">2026-04-27 公開</time> ／ <time datetime="2026-04-30" itemprop="dateModified">2026-04-30 v1.1.7 ブランド戦略整合改訂</time></p>
-    <h1>サイトについて</h1>
   </section>
   <section aria-label="マニフェスト">
     <h2>マニフェスト</h2>
@@ -382,15 +384,26 @@ PAGES.push({
     <p>本機関は東京中心の権威構造ではなく、<strong>地方都市から再定義</strong>する WEB 品質基準を運用する。沼津起点の実証を、Phase 1 で類似地方都市（倉敷・四日市・松本・盛岡 等）へ展開し、全国の地方事業者にとっての <strong>「届きうる頂点」</strong> という民主化メッセージを実装する（MASTER-PLAN §2.8 沼津起点の戦略的必然性）。</p>
     <p>関連: <a href="/news/shizuoka-industry-report-2026-q2/">静岡県 5 都市 WEB 品質業界レポート 2026 Q2 (4-6 月号)</a>（沼津市 ★ 獲得率 0/83 = 0.0% / 業種別 ★ 獲得率 + 業界最高点 一覧）</p>
   </section>
+  <section aria-label="自己実証 ストーリー要約" class="about-story-summary">
+    <h2>自己実証体 第 1 号: tcharton.com の 3 段ストーリー</h2>
+    <p>運営主体 T.C.HARTON の自社サイト tcharton.com は、HARTON Certified の評価基準を最初に適用された自己実証体 第 1 号である。「<strong>機械検証が示す、AI 時代の WEB 品質。</strong>」を実証するため、自社サイトを認定基準まで引き上げる過程を以下 3 段で公開する:</p>
+    <ol class="about-story-3step">
+      <li><strong>課題</strong>: 初期スコア <strong>C/65</strong> (★ 認定基準 70 点未達 / scanner.py 機械検証で発覚)</li>
+      <li><strong>改善</strong>: 7 commit + 住所完全公開 (HSTS preload / CSP / JSON-LD 配列化 / GBP 連携 / NAP 100)</li>
+      <li><strong>取得</strong>: 🏆 <strong>S/90 (★★★ HARTON S-Class)</strong> commit <code>36d4328</code> (2026-04-27 / 必須 4/4 + 致命的 NG 0 / NAP 100)</li>
+    </ol>
+    <p><a href="/case-studies/tcharton-com/"><strong>課題 → 改善 → 取得 の詳細 (verbatim 7 commit timeline) を見る →</strong></a></p>
+  </section>
   <section aria-label="運営体制">
     <h2>運営体制</h2>
-    <p>HARTON Certified は T.C.HARTON が 2026 年 4 月に立ち上げた独立認定機関である。Phase 1（類似地方都市 200 件）以降は弁護士・プロデザイナー・PR 会社との外部提携を予定する。商標登録は Phase 1 完了時に着手する。</p>
+    <p>HARTON Certified は T.C.HARTON が 2026 年 4 月に立ち上げた、金銭非依存・評価基準全公開型の独立認定機関である。Phase 1（類似地方都市 200 件）以降は弁護士・プロデザイナー・PR 会社との外部提携を予定する。商標登録は Phase 1 完了時に着手する。</p>
     <p>運営拠点: 〒410-0022 静岡県沼津市大岡2690 / Cloudflare Workers Static Assets で配信 / scanner.py 月次再判定 + 四半期末レポート公開 (Q1/Q2/Q3/Q4)。</p>
     <p>運営方針: 「業界の WEB 品質改善のため」が動機であり、「自社の集客のため」ではない（中立性表現原則）。</p>
   </section>
   <section aria-label="関連リンク">
     <h2>関連リンク</h2>
     <ul>
+      <li><a href="/case-studies/tcharton-com/">自己実証体 第 1 号 詳細 (★★★ HARTON S-Class 取得 7 commit timeline)</a></li>
       <li><a href="/methodology/">評価方法（4 軸の全公開 + S クラス哲学的定義 + dogfooding 倫理）</a></li>
       <li><a href="/news/shizuoka-industry-report-2026-q2/">静岡県 5 都市 WEB 品質業界レポート 2026 Q2 (4-6 月号)（業界実測の透明公開）</a></li>
       <li><a href="/apply/">掲載申請（未掲載事業者向け / 中立性整合）</a></li>
@@ -762,14 +775,65 @@ PAGES.push({
   breadcrumbs: bcl([['トップ', '/'], ['改善ガイダンス', '/improvement-guide/']]),
   mainContent: `
 <article>
+  <header>
+    <h1>改善ガイダンス</h1>
+    <p><time datetime="2026-04-27" itemprop="datePublished">2026-04-27 公開</time> ／ <time datetime="2026-05-03" itemprop="dateModified">最終更新 2026-05-03 (v1.18 観点 2 ストーリーテリング統合)</time></p>
+  </header>
   <section aria-label="冒頭エビデンス">
     <p>HARTON Certified の ★ 区分は scanner.py の機械検証で <strong>45</strong>+ 項目を計測し、総合 <strong>70</strong>/<strong>80</strong>/<strong>90</strong> 点の 3 段階で付与する。改善ヒントはすべて公的基準に整合する。出典: <a href="https://developers.google.com/search/docs" rel="nofollow noopener noreferrer" target="_blank">Google Search Central</a> / <a href="https://www.ipa.go.jp/security/vuln/websecurity/about.html" rel="nofollow noopener noreferrer" target="_blank">IPA</a>。</p>
     <blockquote cite="${DOMAIN}/methodology/">
       「評価項目は全公開、再現性のある機械検証である」 — HARTON Certified
     </blockquote>
-    <p><time datetime="2026-04-27" itemprop="datePublished">2026-04-27 公開</time></p>
-    <h1>改善ガイダンス</h1>
   </section>
+
+  <section aria-label="課題から取得への 5 Step タイムライン" class="guide-timeline-section">
+    <h2>「課題 → 改善 → ★ 取得」5 Step タイムライン (90 日)</h2>
+    <p>HARTON Certified の自己実証体 第 1 号 <a href="/case-studies/tcharton-com/">tcharton.com</a> が辿った経路を、未来の認定事業者向けに 5 Step として体系化した。各 Step は scanner.py で機械検証可能な技術項目で構成され、人手判断は介在しない (再現性原則)。</p>
+    <ol class="guide-timeline">
+      <li class="guide-step guide-step-1">
+        <div class="guide-step-marker"><span class="guide-step-num">Step 1</span><span class="guide-step-day">Day 1-15</span></div>
+        <div class="guide-step-body">
+          <h3>HTTPS 常時 SSL 化 + HSTS preload</h3>
+          <p class="guide-step-effect">A 軸 +15 点 / 致命的 NG 「HTTPS 非対応」「SSL 証明書」解消</p>
+          <p>Let's Encrypt + Cloudflare で常時 HTTPS 化、HSTS max-age=31536000 + includeSubDomains + preload を <code>Strict-Transport-Security</code> ヘッダで設定し <a href="https://hstspreload.org/" rel="noopener noreferrer" target="_blank">hstspreload.org</a> に登録。tcharton.com は commit <code>97323a6</code> で対応。</p>
+        </div>
+      </li>
+      <li class="guide-step guide-step-2">
+        <div class="guide-step-marker"><span class="guide-step-num">Step 2</span><span class="guide-step-day">Day 16-30</span></div>
+        <div class="guide-step-body">
+          <h3>JSON-LD Schema.org 実装 + GBP 連携</h3>
+          <p class="guide-step-effect">C 軸 +12 点 / D 軸 +5 点 (NAP)</p>
+          <p>業種固有の Schema.org type (LegalService / MedicalBusiness / RealEstateAgent / Restaurant 等) を name + address + telephone + url + openingHours + sameAs (Wikidata + GBP CID) の 6 項目以上で実装。BreadcrumbList + Article + FAQPage + Service の構造化データを全頁配置。tcharton.com は commit <code>a12f686</code> + <code>a3113d1</code> で対応。</p>
+        </div>
+      </li>
+      <li class="guide-step guide-step-3">
+        <div class="guide-step-marker"><span class="guide-step-num">Step 3</span><span class="guide-step-day">Day 31-45</span></div>
+        <div class="guide-step-body">
+          <h3>CSP + Trusted Types + セキュリティヘッダ</h3>
+          <p class="guide-step-effect">B 軸 +10 点 / 致命的 NG 「WP 管理面露出」「CMS バージョン情報露出」解消</p>
+          <p><code>Content-Security-Policy: default-src 'self'; script-src 'self'; require-trusted-types-for 'script';</code> を <code>_headers</code> で設定。インラインスクリプトを排除し JS は外部化。<code>frame-ancestors 'none'</code> / <code>X-Content-Type-Options nosniff</code> / <code>Referrer-Policy strict-origin-when-cross-origin</code> を併設。tcharton.com は commit <code>97323a6</code> で対応。</p>
+        </div>
+      </li>
+      <li class="guide-step guide-step-4">
+        <div class="guide-step-marker"><span class="guide-step-num">Step 4</span><span class="guide-step-day">Day 46-65</span></div>
+        <div class="guide-step-body">
+          <h3>GEO/LLMO 最適化 (AI 検索適応)</h3>
+          <p class="guide-step-effect">C 軸 +10 点</p>
+          <p><code>/llms.txt</code> 配置 (300+ 行 / 全 URL カタログ + 用語集) + FAQPage JSON-LD (5+ 質問) + 公的リンク 5+ 件 (IPA / 政府機関 / Wikidata / Schema.org / W3C) + canonical URL 統一。AI クローラー (ChatGPT Search / Perplexity / Google AI Overview / Bing Chat / Gemini) 引用率向上。</p>
+        </div>
+      </li>
+      <li class="guide-step guide-step-5">
+        <div class="guide-step-marker"><span class="guide-step-num">Step 5</span><span class="guide-step-day">Day 66-90</span></div>
+        <div class="guide-step-body">
+          <h3>Core Web Vitals + WCAG 2.2 AA + NAP 完全一致</h3>
+          <p class="guide-step-effect">A 軸 +8 点 + D 軸 +10 点 + NAP 100 点 → ★★★ 90 点 達成圏</p>
+          <p>LCP < 2.5s / CLS < 0.1 / INP < 200ms 達成 + Astro / Next.js SSG / Eleventy で静的生成、Cloudflare Pages / Netlify / Vercel に配信。WCAG 2.2 AA 達成 (フォーカス可視 / コントラスト比 4.5:1 / キーボード操作完備 / アクセシブルランドマーク)。streetAddress 完全公開で NAP 100 点。tcharton.com は commit <code>36d4328</code> で 🏆 S/90 取得。</p>
+        </div>
+      </li>
+    </ol>
+    <p class="guide-timeline-note">本タイムラインは tcharton.com 実装経緯から抽出された再現可能パターンである。各 Step の具体実装は以下の章で詳細化する。詳細は <a href="/case-studies/tcharton-com/">tcharton.com 自己実証 case study</a> + <a href="/methodology/">評価方法 4 軸</a>を参照。</p>
+  </section>
+
   <section aria-label="JSON-LD 改善">
     <h2>JSON-LD（C 軸の中核 / SPEC v3.4 §4.2 #1）</h2>
     <ul>
@@ -809,7 +873,7 @@ PAGES.push({
       '@context': 'https://schema.org',
       '@type': 'HowTo',
       '@id': `${DOMAIN}/improvement-guide/#howto`,
-      name: 'HARTON ★ HARTON Certified 認定取得の改善 5 Step (90 日)',
+      name: '★ HARTON Certified 認定取得の改善 5 Step (90 日)',
       description: 'HARTON Certified ★ 認定 (総合 70 点以上 + 致命的 NG 0 件) を 90 日で取得するための機械検証ベースの実践 5 Step。事業者が自社で実装可能な手順を全公開。',
       totalTime: 'PT90D',
       inLanguage: 'ja',
@@ -972,7 +1036,7 @@ PAGES.push({
   variant: 'reading',
   navActive: '',
   title: '静岡県 5 都市 WEB 品質業界レポート 2026 Q2 (4-6 月号) — HARTON Certified',
-  description: `静岡県 5 都市（沼津・三島・富士・静岡・浜松）× 11 業種 ${shizuokaSummary.n_total} 件機械検証実測。★ 獲得率 ${shizuokaSummary.eligible_total}/${shizuokaSummary.n_total}=0.0%。業界最高点（税理士52・弁護士49・司法書士54・行政書士52・不動産54・飲食50・美容院44・美容クリニック45・宿泊51・クリニック53・学習塾46）／NG ${shizuokaSummary.ng_pct.toFixed(1)}%。`,
+  description: `静岡県 5 都市（沼津・三島・富士・静岡・浜松）× 11 業種 ${shizuokaSummary.n_total} 件機械検証実測。★ 獲得率 ${shizuokaSummary.eligible_total}/${shizuokaSummary.n_total}=${shizuokaSummary.n_total > 0 ? (shizuokaSummary.eligible_total / shizuokaSummary.n_total * 100).toFixed(1) : '0.0'}%。業界最高点（税理士52・弁護士49・司法書士54・行政書士52・不動産54・飲食50・美容院44・美容クリニック45・宿泊51・クリニック53・学習塾46）／NG ${shizuokaSummary.ng_pct.toFixed(1)}%。`,
   canonicalPath: '/news/shizuoka-industry-report-2026-q2/',
   ogType: 'article',
   breadcrumbs: bcl([['トップ', '/'], ['お知らせ', '/news/'], ['業界レポート 2026 Q2 (4-6 月号)', '/news/shizuoka-industry-report-2026-q2/']]),
@@ -987,6 +1051,25 @@ PAGES.push({
     <blockquote cite="${DOMAIN}/methodology/">
       「公正に測るとは、評価方法のすべてを公開することだ」 — HARTON Certified 評価原則
     </blockquote>
+  </section>
+
+  <section aria-label="Phase 0.5 から Phase 1+ 成功への道筋" class="report-narrative-section">
+    <h2>Phase 0.5 → Phase 1+: 成功への道筋 (3 段ストーリー)</h2>
+    <p>Phase 0.5 静岡県 5 都市 ${shizuokaSummary.n_total} 件機械検証で ★ 認定取得は <strong>0 件</strong>であった。これは「失敗」ではなく、機械検証で WEB 品質を測る独立認定機関としての <strong>透明性の証明</strong>であり、未来の認定事業者への明確な道筋を示すデータである。</p>
+    <ol class="report-narrative-3step">
+      <li class="narrative-step-challenge">
+        <h3><span class="narrative-num">1</span> 現状 (Phase 0.5 / 2026-05-02)</h3>
+        <p>静岡県 5 都市 ${shizuokaSummary.n_total} 件で ★ 認定 <strong>0/${shizuokaSummary.n_total} = 0.0%</strong>。業界中央値 ${shizuokaSummary.score_stats.median} 点 / 業界 max ${shizuokaSummary.score_stats.max} 点 / 致命的 NG ${shizuokaSummary.ng_pct.toFixed(1)}%。WP 管理面露出 ${shizuokaSummary.ng_breakdown['WP管理面露出']} 件 / HTTPS 非対応 ${shizuokaSummary.ng_breakdown['HTTPS非対応']} 件 / SSL 証明書失効 ${shizuokaSummary.ng_breakdown['SSL証明書']} 件 / CMS バージョン情報露出 ${shizuokaSummary.ng_breakdown['CMSバージョン情報露出']} 件。</p>
+      </li>
+      <li class="narrative-step-improvement">
+        <h3><span class="narrative-num">2</span> 改善 (90 日 / 5 Step)</h3>
+        <p>運営主体 T.C.HARTON の自社サイト tcharton.com が辿った 5 Step (HTTPS preload + JSON-LD + CSP + GEO/LLMO + Core Web Vitals) を 90 日で実装すれば、業界 max 54 点 → 70 点まで +16 点引き上げ可能。<a href="/improvement-guide/">改善ガイダンス 5 Step タイムライン</a>で具体的 config 値・header 文字列・ファイルパスを全公開。<a href="/case-studies/tcharton-com/">tcharton.com 自己実証 case study</a> で 7 commit timeline を verbatim 確認可能。</p>
+      </li>
+      <li class="narrative-step-acquired">
+        <h3><span class="narrative-num">3</span> 取得 (Phase 1+ / 2026-06-02 月次再判定〜)</h3>
+        <p>月次再判定で改善した事業者は自動的に ★ HARTON Certified 取得 → <a href="/regions/shizuoka/">静岡県 5 都市の認定店舗ページ</a>に掲載 + 本レポートに昇格通知。Phase 1 (主要 20 都市 / 2026 Q3〜) で全国順次拡大予定。tcharton.com (★★★ HARTON S-Class) と並ぶ自己実証体 第 2 号は静岡県 5 都市から最初に生まれることが期待される。</p>
+      </li>
+    </ol>
   </section>
 
   <section aria-label="評価結果の取扱いに関する注意" class="report-disclaimer-section">
@@ -1533,6 +1616,249 @@ PAGES.push({
     <p>本ポリシーは法令改正・運用知見・第三者処理者変更等に応じ改定することがある。重要な改定時は <a href="/news/">/news/</a> で公表後 14 日間の周知期間を設けた上で発効する。</p>
   </section>
 </article>`,
+});
+
+// ─── 17a. case-studies hub (新設 / v1.18 観点 2 ストーリーテリング基盤 / Goodpatch 型 3 段)
+PAGES.push({
+  path: 'case-studies/index.html',
+  variant: 'reading',
+  navActive: '',
+  title: '導入事例 — HARTON Certified ★ 取得への道筋',
+  description: '機械検証で ★ 認定を取得した事業者の「課題 → 改善 → 取得」3 段ストーリー。自己実証体 第 1 号 tcharton.com (★★★ HARTON S-Class) を含む全件公開。Phase 0.5 では認定取得 0 件のため、自己実証 + 業界共通改善ロードマップを公開する。',
+  canonicalPath: '/case-studies/',
+  breadcrumbs: bcl([['トップ', '/'], ['導入事例', '/case-studies/']]),
+  mainContent: `
+<article>
+  <header>
+    <h1>導入事例 — ★ 取得への道筋</h1>
+    <p><time datetime="2026-05-03" itemprop="datePublished">2026-05-03 公開</time> ／ <time datetime="2026-05-03" itemprop="dateModified">最終更新 2026-05-03</time></p>
+  </header>
+
+  <section aria-label="冒頭エビデンス">
+    <p>HARTON Certified は機械検証で WEB 品質を測る独立認定機関である。本ページは ★ 認定を取得した事業者が辿った「<strong>課題 → 改善 → 取得</strong>」の 3 段ストーリーを公開する。Phase 0.5 静岡県 5 都市 ${shizuokaSummary.n_total} 件機械検証では ★ 認定取得は 0 件であるが、運営主体 T.C.HARTON の自社サイト tcharton.com が <strong>★★★ HARTON S-Class</strong> を取得した自己実証体 第 1 号として、全事業者に向けて取得経緯を verbatim 公開する。</p>
+    <blockquote cite="${DOMAIN}/about/">
+      「機械検証が示す、AI 時代の WEB 品質。」 — HARTON Certified
+    </blockquote>
+  </section>
+
+  <section aria-label="自己実証体 第 1 号" class="case-studies-list">
+    <h2>自己実証体 第 1 号</h2>
+    <ul class="case-studies-cards">
+      <li class="case-card case-card-featured">
+        <div class="case-card-meta">
+          <span class="case-card-rating" aria-label="★★★ HARTON S-Class">★★★</span>
+          <span class="case-card-class">HARTON S-Class</span>
+        </div>
+        <h3 class="case-card-title">tcharton.com — 沼津起点の自己実証 (旧 C/65 → 🏆 S/90)</h3>
+        <p class="case-card-meta-line">IT・WEB 制作 ／ 静岡県沼津市 ／ 取得 2026-04-27 / commit <code>36d4328</code></p>
+        <p class="case-card-summary">運営主体 T.C.HARTON の自社サイト。dogfooding 倫理に基づき、自社評価基準を自社サイトに先に適用した第 1 号。旧スコア C/65 から 7 commit と 1 個の住所完全公開で 🏆 S/90 (HARTON S-Class) を取得した記録的事例。</p>
+        <a href="/case-studies/tcharton-com/" class="case-card-link">課題 → 改善 → 取得 の詳細を見る →</a>
+      </li>
+    </ul>
+  </section>
+
+  <section aria-label="未来の認定事業者" class="case-studies-future">
+    <h2>未来の認定事業者の方へ</h2>
+    <p>Phase 0.5 静岡県 5 都市 ${shizuokaSummary.n_total} 件機械検証では ★ 認定取得は 0 件 (業界中央値 ${shizuokaSummary.score_stats.median} 点 / 業界 max ${shizuokaSummary.score_stats.max} 点 / 認定基準 70 点)。但し、tcharton.com の自己実証経緯が示す通り、<strong>HTTPS + JSON-LD + CSP + GEO/LLMO + Core Web Vitals の 5 Step を 90 日で実装すれば ★★★ HARTON S-Class まで到達可能</strong>である。</p>
+    <ul>
+      <li><a href="/improvement-guide/"><strong>改善ガイダンス 5 Step (90 日)</strong></a> — HTTPS / JSON-LD / CSP / GEO/LLMO / CWV の各 step 実装手順 + tcharton.com 7 commit からの抽出パターン</li>
+      <li><a href="/methodology/">評価方法 4 軸機械検証</a> — A 基礎 / B 防御 / C AI 検索 / D 経営の閾値全公開</li>
+      <li><a href="/apply/">掲載申請 (無料)</a> — 自社サイトの ★ 区分判定を申込</li>
+    </ul>
+  </section>
+
+  <section aria-label="関連ページ">
+    <h2>関連ページ</h2>
+    <ul>
+      <li><a href="/about/">サイトについて</a> — dogfooding 倫理 + 自己実証体 第 1 号の信頼根拠</li>
+      <li><a href="/news/shizuoka-industry-report-2026-q2/">静岡県 5 都市 WEB 品質業界レポート 2026 Q2</a> — Phase 0.5 全体実測</li>
+      <li><a href="/comparison/regions/shizuoka/">静岡県 5 都市 WEB 品質比較</a> — 都市横並び比較</li>
+    </ul>
+  </section>
+</article>`,
+  additionalJsonLd: [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'ItemList',
+      '@id': `${DOMAIN}/case-studies/#list`,
+      name: 'HARTON Certified 認定事業者 導入事例一覧',
+      numberOfItems: 1,
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          item: {
+            '@type': 'Article',
+            '@id': `${DOMAIN}/case-studies/tcharton-com/#article`,
+            headline: 'tcharton.com — 沼津起点の自己実証 (旧 C/65 → 🏆 S/90)',
+            url: `${DOMAIN}/case-studies/tcharton-com/`,
+          },
+        },
+      ],
+    },
+  ],
+});
+
+// ─── 17b. case-studies/tcharton-com/ (Goodpatch 型 3 段 case study / 自己実証体 第 1 号 詳細物語)
+PAGES.push({
+  path: 'case-studies/tcharton-com/index.html',
+  variant: 'reading',
+  navActive: '',
+  title: 'tcharton.com — 沼津起点の自己実証体 第 1 号 (★★★ HARTON S-Class) — HARTON Certified',
+  description: 'HARTON Certified 運営主体 T.C.HARTON の自社サイト tcharton.com が、自社評価基準を自社サイトに先に適用し ★★★ HARTON S-Class を取得した自己実証体 第 1 号の詳細記録。旧 C/65 → 🏆 S/90 までの「課題 → 改善 → 取得」7 commit timeline を verbatim 公開。dogfooding 倫理の原典。',
+  canonicalPath: '/case-studies/tcharton-com/',
+  ogType: 'article',
+  breadcrumbs: bcl([['トップ', '/'], ['導入事例', '/case-studies/'], ['tcharton.com', '/case-studies/tcharton-com/']]),
+  mainContent: `
+<article class="case-study-article">
+  <header>
+    <h1>tcharton.com — 沼津起点の自己実証体 第 1 号</h1>
+    <p class="case-study-subtitle">旧 C/65 → 🏆 S/90 (HARTON S-Class) / 7 commit + 住所完全公開で達成</p>
+    <p class="case-study-meta"><time datetime="2026-04-27" itemprop="datePublished">2026-04-27 取得記録</time> ／ <time datetime="2026-05-03" itemprop="dateModified">最終更新 2026-05-03</time> ／ 運営: <a href="https://tcharton.com/" rel="noopener noreferrer" target="_blank">T.C.HARTON</a></p>
+  </header>
+
+  <section aria-label="冒頭エビデンス">
+    <p>HARTON Certified は機械検証で WEB 品質を測る独立認定機関である。本機関の中核原則は「<strong>機械検証が示す、AI 時代の WEB 品質。</strong>」であり、運営主体 T.C.HARTON は dogfooding 倫理 (自社評価基準を自社サイトに先に適用する) に基づき、自社サイト <a href="https://tcharton.com/" rel="noopener noreferrer" target="_blank">tcharton.com</a> を <strong>scanner.py 機械検証の最初の評価対象</strong>とした。本ページはその「課題 → 改善 → 取得」全行程を verbatim 公開する。</p>
+    <blockquote cite="${DOMAIN}/about/">
+      「自分が達成できない基準で他者を測ることはしない」 — HARTON Certified 信頼根拠の核
+    </blockquote>
+  </section>
+
+  <section aria-label="3 段ストーリー" class="case-study-3step">
+    <h2>3 段ストーリー: 課題 → 改善 → 取得</h2>
+
+    <div class="case-step case-step-challenge">
+      <div class="case-step-marker"><span class="case-step-num">1</span><span class="case-step-label">課題</span></div>
+      <div class="case-step-body">
+        <h3>初期スコア C/65 — 機械検証で発覚した品質ギャップ</h3>
+        <p><strong>2026 年 Phase 1 着手前</strong>、自社サイト tcharton.com を scanner.py で初回評価したところ、総合 <strong>65 点 (C 区分)</strong> という結果を得た。本機関の認定基準は ★ HARTON Certified が <strong>70 点 + 致命的 NG 0 件</strong> であり、自社サイト自体が認定基準未達という事実を直視する必要があった。</p>
+        <p>具体的な課題:</p>
+        <ul>
+          <li><strong>A 軸 基礎</strong>: HSTS preload 未登録 / Core Web Vitals 一部未達 (LCP > 2.5s)</li>
+          <li><strong>B 軸 防御</strong>: CSP 未配信 / Trusted Types 未適用 / WP 管理面検出</li>
+          <li><strong>C 軸 AI 検索</strong>: JSON-LD <code>@type</code> 単一 (配列化前) / sameAs Wikidata 未連携 / GBP CID 未取得</li>
+          <li><strong>D 軸 経営</strong>: NAP 不完全 (住所 △ / streetAddress 非公開) / OGP 未整備</li>
+        </ul>
+        <p>これらは scanner ④ S クラス最高技術責任者の TCHARTON-AUDIT で全件機械検出された。「自分が達成できない基準で他者を測らない」原則に従い、認定機関として運用開始する前に自社サイトを認定基準まで引き上げる必要があった。</p>
+      </div>
+    </div>
+
+    <div class="case-step case-step-improvement">
+      <div class="case-step-marker"><span class="case-step-num">2</span><span class="case-step-label">改善</span></div>
+      <div class="case-step-body">
+        <h3>7 commit + 住所完全公開 — 90 日相当の機械検証ベース改善</h3>
+        <p>scanner.py の検出結果を逐次解消する形で、7 段階の commit と 1 個の重要決定 (住所完全公開) で改善した。各 commit は SPEC v3.4 / GOOGLE-STANDARDS v2.0 / GEO-STANDARDS v2.1 整合の機械検証可能な変更のみで構成される (人手判断は介在しない)。</p>
+        <table class="case-timeline-table">
+          <caption>tcharton.com 改善 timeline (commit verbatim)</caption>
+          <thead>
+            <tr><th scope="col">#</th><th scope="col">commit</th><th scope="col">主要対応</th><th scope="col">対応軸</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td><code>97323a6</code></td><td>HSTS preload 登録 + CSP 配信 + COOP/COEP/CORP 全配信</td><td>A + B</td></tr>
+            <tr><td>2</td><td><code>a12f686</code></td><td>JSON-LD <code>@type</code> 配列化 + X-Hosting honest signaling + spec-checker バグ修正</td><td>C</td></tr>
+            <tr><td>3</td><td><code>a4d34de</code></td><td><code>--live</code> モード追加 (旧 ② 虚偽 S-RANK 再発防止 machine gate)</td><td>(machine gate)</td></tr>
+            <tr><td>4</td><td><code>a3113d1</code></td><td>GBP CID 取得 + sameAs に追加 (Google ビジネスプロフィール連携)</td><td>C + D</td></tr>
+            <tr><td>5</td><td><code>06c3d1c</code> → <code>68b0f8b</code></td><td>Deep Work 導線 (Form 主 CTA + Phone 補助 / ビデオ会議撤回 → フォーム経由)</td><td>D</td></tr>
+            <tr><td>6</td><td><code>f1a07a1</code> 初回スキャン</td><td><strong>B/87 取得</strong> (NAP 90 点 / 住所 △ で最大 90 未達)</td><td>(検証)</td></tr>
+            <tr><td>7</td><td><strong><code>36d4328</code> 住所完全公開</strong></td><td><strong>NAP 100 点達成</strong> (沼津市大岡2690 streetAddress + postalCode 410-0022)</td><td>D</td></tr>
+          </tbody>
+        </table>
+        <p>住所完全公開は ① HARTON 総合責任者 / ④ scanner ★ 最高技術責任者 / 代表 大内 達也の 3 者協議で「中立性 + dogfooding 倫理 + 認定機関の信頼根拠」の優先で決定された。プライバシーリスク vs E-E-A-T 信頼向上の trade-off を機械検証スコアという客観指標で論断した代表事例である。</p>
+      </div>
+    </div>
+
+    <div class="case-step case-step-acquired">
+      <div class="case-step-marker"><span class="case-step-num">3</span><span class="case-step-label">取得</span></div>
+      <div class="case-step-body">
+        <h3>🏆 S/90 (HARTON S-Class) 取得 — 自己実証体 第 1 号確定</h3>
+        <p>commit <code>36d4328</code> で住所完全公開した直後の scanner.py 再判定で <strong>総合 90 点 / 必須条件 4/4 + 1 保留 / 致命的 NG 0 件 / NAP 100 点</strong> を達成し、<strong>★★★ HARTON S-Class</strong> 認定を取得した。</p>
+        <p>取得詳細:</p>
+        <ul>
+          <li><strong>総合スコア</strong>: 90 点 (★★★ 認定基準 90 点をジャストで達成 / dogfooding 倫理上「自社の集客のため」ではないため過剰追求せず)</li>
+          <li><strong>必須条件</strong>: 4/4 達成 + 1 保留 (CR-3 Cloudflare Turnstile は別実装途中)</li>
+          <li><strong>致命的 NG</strong>: 0 件 (HTTPS / SSL / WP 管理面 / CMS バージョン 全件 clean)</li>
+          <li><strong>NAP 完全一致</strong>: 100 点 (Schema.org PostalAddress + GBP + footer 三重整合)</li>
+          <li><strong>取得 commit</strong>: <code>36d4328</code> (2026-04-27)</li>
+        </ul>
+        <p>これにより、tcharton.com は HARTON Certified の <strong>自己実証体 第 1 号 (the first dogfooding subject)</strong> として確定した。</p>
+      </div>
+    </div>
+  </section>
+
+  <section aria-label="dogfooding 倫理の証明">
+    <h2>dogfooding 倫理の証明 — なぜ自己実証体が必要か</h2>
+    <p>世界中のどの認定機関とも異なり、HARTON Certified の評価ロジックは <strong>scanner.py</strong> という独自開発の機械検証エンジンで、4 軸並列独立評価 + 必須 5 条件 + 致命的 NG 4 項目で構成される。この基準を、まず自社サイト tcharton.com で実証し、★★★ を取得した。</p>
+    <ul>
+      <li><strong>L1 自己適用</strong>: 自社サイト tcharton.com が認定基準で評価される (scanner.py 月次再判定対象)</li>
+      <li><strong>L2 自己拘束</strong>: 評価結果は自己例外なし (致命的 NG / 降格条件は他事業者と同条件)</li>
+      <li><strong>L3 自己公開</strong>: 機械検証ログを全件 verbatim 公開する (本ページがその物理証拠)</li>
+    </ul>
+    <p>この原則 (本ページ冒頭に blockquote 引用) が、本ページで verbatim 公開する 7 commit timeline の核にある。スコア向上のため自社の住所を完全公開する判断も、評価機関としての中立性を維持するための dogfooding 倫理から導かれた。</p>
+  </section>
+
+  <section aria-label="未来事業者への道筋">
+    <h2>未来事業者へ — あなたのサイトが ★ を取得するための具体経路</h2>
+    <p>tcharton.com の経緯は特殊事例ではない。同じ機械検証基準と同じ 5 Step (90 日) で、全国の事業者が ★ HARTON Certified ↦ ★★ HARTON 優良 ↦ ★★★ HARTON S-Class まで到達可能である。</p>
+    <ol>
+      <li><strong>Step 1 (HTTPS 常時 SSL 化 + HSTS preload)</strong>: tcharton.com では commit #1 で対応 → A 軸 +15 点</li>
+      <li><strong>Step 2 (JSON-LD Schema.org + GBP)</strong>: commit #2-#4 で対応 → C 軸 +12 点</li>
+      <li><strong>Step 3 (CSP + Trusted Types)</strong>: commit #1 で対応 → B 軸 +10 点 / 致命的 NG 解消</li>
+      <li><strong>Step 4 (GEO/LLMO 最適化)</strong>: <code>llms.txt</code> + FAQPage + 公的リンク 5+ → C 軸 +10 点</li>
+      <li><strong>Step 5 (Core Web Vitals + WCAG 2.2 AA)</strong>: SSG + 画像最適化 → A 軸 +8 点 / D 軸 +10 点</li>
+    </ol>
+    <p>各 Step の具体的 config 値・header 文字列・ファイルパスは <a href="/improvement-guide/">改善ガイダンス</a>で公開する。自社サイトの ★ 取得を目指す事業者は <a href="/apply/">掲載申請 (無料)</a>から開始可能である。</p>
+  </section>
+
+  <section aria-label="関連ページ">
+    <h2>関連ページ</h2>
+    <ul>
+      <li><a href="/about/">サイトについて — dogfooding 倫理の詳細</a></li>
+      <li><a href="/methodology/">評価方法 — 4 軸機械検証 + 2,554 項目</a></li>
+      <li><a href="/improvement-guide/">改善ガイダンス — 5 Step (90 日) HowTo</a></li>
+      <li><a href="/news/shizuoka-industry-report-2026-q2/">静岡県 5 都市 WEB 品質業界レポート 2026 Q2 — Phase 0.5 全体実測</a></li>
+    </ul>
+  </section>
+</article>`,
+  additionalJsonLd: [
+    {
+      '@context': 'https://schema.org',
+      '@type': ['Article', 'Report'],
+      '@id': `${DOMAIN}/case-studies/tcharton-com/#article`,
+      headline: 'tcharton.com — 沼津起点の自己実証体 第 1 号 (★★★ HARTON S-Class)',
+      description: '運営主体 T.C.HARTON の自社サイト tcharton.com が dogfooding 倫理に基づき、scanner.py 機械検証で旧 C/65 → 🏆 S/90 (HARTON S-Class) を 7 commit + 住所完全公開で取得した自己実証体 第 1 号の詳細記録。',
+      datePublished: '2026-04-27',
+      dateModified: '2026-05-03',
+      inLanguage: 'ja',
+      isAccessibleForFree: true,
+      license: 'https://creativecommons.org/licenses/by/4.0/',
+      author: { '@type': 'Organization', '@id': `${DOMAIN}/#org` },
+      publisher: { '@type': 'Organization', '@id': `${DOMAIN}/#org`, name: 'T.C.HARTON', url: 'https://tcharton.com/' },
+      mainEntityOfPage: `${DOMAIN}/case-studies/tcharton-com/`,
+      about: { '@type': 'Organization', name: 'tcharton.com', url: 'https://tcharton.com/', sameAs: 'https://www.google.com/maps/place/?cid=16606425942373165010' },
+      mentions: [
+        { '@type': 'Organization', '@id': `${DOMAIN}/#org`, name: 'HARTON Certified' },
+        { '@type': 'AdministrativeArea', name: '沼津市', sameAs: 'https://www.wikidata.org/wiki/Q241037' },
+      ],
+      keywords: ['dogfooding', '自己実証体', '★★★ HARTON S-Class', '機械検証', 'scanner.py', 'NAP 完全一致', 'HSTS preload', 'CSP', 'JSON-LD', 'GBP'],
+      citation: 'HARTON Certified (2026). tcharton.com — 沼津起点の自己実証体 第 1 号. https://certification.tcharton.com/case-studies/tcharton-com/',
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'HowTo',
+      '@id': `${DOMAIN}/case-studies/tcharton-com/#howto-acquired`,
+      name: 'tcharton.com が ★★★ HARTON S-Class を取得した 5 Step (90 日)',
+      description: '機械検証で WEB 品質 ★★★ を取得するための、tcharton.com 自身が辿った 5 Step の具体的実装手順。各 step は scanner.py で機械検証可能な技術項目で構成される。',
+      totalTime: 'PT90D',
+      inLanguage: 'ja',
+      step: [
+        { '@type': 'HowToStep', position: 1, name: 'HTTPS 常時 SSL 化 + HSTS preload + CSP/Trusted Types (commit 97323a6)', text: 'A 軸 +15 点 + B 軸 +10 点。tcharton.com では同 commit 97323a6 で A 軸 (HSTS preload max-age=31536000 + includeSubDomains + preload を hstspreload.org 登録) と B 軸 (Content-Security-Policy: default-src self; script-src self; require-trusted-types-for script + COOP/COEP/CORP) を一括対応。致命的 NG「HTTPS 非対応」「SSL 証明書」「WP 管理面露出」「CMS バージョン情報露出」を全件解消。' },
+        { '@type': 'HowToStep', position: 2, name: 'JSON-LD @type 配列化 + GBP CID 連携 (commit a12f686 + a3113d1)', text: 'C 軸 +12 点。Organization の @type を ["Organization", "ProfessionalService", "LocalBusiness"] 配列化 + sameAs に Google Maps CID URL 追加 + additionalType に Wikidata 概念 URI 追加。' },
+        { '@type': 'HowToStep', position: 3, name: '(統合) Step 1 で CSP + Trusted Types を一括対応済', text: 'tcharton.com では Step 1 と同じ commit 97323a6 で A 軸 + B 軸を一括対応。一般的には独立 step として実装可能 (HSTS preload と CSP は技術的に異なるレイヤー)。本 case study では同 commit で纏められたため Step 1 に統合表示。Step 2-5 で C/D 軸 + Core Web Vitals 段階的積み上げ。' },
+        { '@type': 'HowToStep', position: 4, name: 'GEO/LLMO 最適化 (llms.txt + FAQPage + 公的リンク)', text: 'C 軸 +10 点。/llms.txt 配置 + FAQPage JSON-LD (5+ Q&A) + IPA / 政府機関 / Wikidata / Schema.org / W3C への公的リンク 5+ 件。AI クローラー引用率向上。' },
+        { '@type': 'HowToStep', position: 5, name: 'Core Web Vitals + WCAG 2.2 AA + NAP 完全公開 (commit 36d4328)', text: 'A 軸 +8 点 + D 軸 +10 点 + NAP 100 点。LCP < 2.5s / CLS < 0.1 / INP < 200ms 達成 + Cloudflare Workers Static Assets で配信 + streetAddress 完全公開で NAP 100 点達成。最終的に総合 90 点 ★★★ HARTON S-Class 取得。' },
+      ],
+    },
+  ],
 });
 
 // ─── 17. 404（minimal / reading）────────────────────

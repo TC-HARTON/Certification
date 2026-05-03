@@ -179,7 +179,7 @@
   "@context": "https://schema.org",
   "@type": "HowTo",
   "@id": "https://certification.tcharton.com/improvement-guide/#howto",
-  "name": "HARTON ★ HARTON Certified 認定取得の改善 5 Step (90 日)",
+  "name": "★ HARTON Certified 認定取得の改善 5 Step (90 日)",
   "description": "HARTON Certified ★ 認定 (総合 70 点以上 + 致命的 NG 0 件) を 90 日で取得するための機械検証ベースの実践 5 Step。事業者が自社で実装可能な手順を全公開。",
   "totalTime": "PT90D",
   "inLanguage": "ja",
@@ -271,14 +271,65 @@
 <main id="main">
 
 <article>
+  <header>
+    <h1>改善ガイダンス</h1>
+    <p><time datetime="2026-04-27" itemprop="datePublished">2026-04-27 公開</time> ／ <time datetime="2026-05-03" itemprop="dateModified">最終更新 2026-05-03 (v1.18 観点 2 ストーリーテリング統合)</time></p>
+  </header>
   <section aria-label="冒頭エビデンス">
     <p>HARTON Certified の ★ 区分は scanner.py の機械検証で <strong>45</strong>+ 項目を計測し、総合 <strong>70</strong>/<strong>80</strong>/<strong>90</strong> 点の 3 段階で付与する。改善ヒントはすべて公的基準に整合する。出典: <a href="https://developers.google.com/search/docs" rel="nofollow noopener noreferrer" target="_blank">Google Search Central</a> / <a href="https://www.ipa.go.jp/security/vuln/websecurity/about.html" rel="nofollow noopener noreferrer" target="_blank">IPA</a>。</p>
     <blockquote cite="https://certification.tcharton.com/methodology/">
       「評価項目は全公開、再現性のある機械検証である」 — HARTON Certified
     </blockquote>
-    <p><time datetime="2026-04-27" itemprop="datePublished">2026-04-27 公開</time></p>
-    <h1>改善ガイダンス</h1>
   </section>
+
+  <section aria-label="課題から取得への 5 Step タイムライン" class="guide-timeline-section">
+    <h2>「課題 → 改善 → ★ 取得」5 Step タイムライン (90 日)</h2>
+    <p>HARTON Certified の自己実証体 第 1 号 <a href="/case-studies/tcharton-com/">tcharton.com</a> が辿った経路を、未来の認定事業者向けに 5 Step として体系化した。各 Step は scanner.py で機械検証可能な技術項目で構成され、人手判断は介在しない (再現性原則)。</p>
+    <ol class="guide-timeline">
+      <li class="guide-step guide-step-1">
+        <div class="guide-step-marker"><span class="guide-step-num">Step 1</span><span class="guide-step-day">Day 1-15</span></div>
+        <div class="guide-step-body">
+          <h3>HTTPS 常時 SSL 化 + HSTS preload</h3>
+          <p class="guide-step-effect">A 軸 +15 点 / 致命的 NG 「HTTPS 非対応」「SSL 証明書」解消</p>
+          <p>Let's Encrypt + Cloudflare で常時 HTTPS 化、HSTS max-age=31536000 + includeSubDomains + preload を <code>Strict-Transport-Security</code> ヘッダで設定し <a href="https://hstspreload.org/" rel="noopener noreferrer" target="_blank">hstspreload.org</a> に登録。tcharton.com は commit <code>97323a6</code> で対応。</p>
+        </div>
+      </li>
+      <li class="guide-step guide-step-2">
+        <div class="guide-step-marker"><span class="guide-step-num">Step 2</span><span class="guide-step-day">Day 16-30</span></div>
+        <div class="guide-step-body">
+          <h3>JSON-LD Schema.org 実装 + GBP 連携</h3>
+          <p class="guide-step-effect">C 軸 +12 点 / D 軸 +5 点 (NAP)</p>
+          <p>業種固有の Schema.org type (LegalService / MedicalBusiness / RealEstateAgent / Restaurant 等) を name + address + telephone + url + openingHours + sameAs (Wikidata + GBP CID) の 6 項目以上で実装。BreadcrumbList + Article + FAQPage + Service の構造化データを全頁配置。tcharton.com は commit <code>a12f686</code> + <code>a3113d1</code> で対応。</p>
+        </div>
+      </li>
+      <li class="guide-step guide-step-3">
+        <div class="guide-step-marker"><span class="guide-step-num">Step 3</span><span class="guide-step-day">Day 31-45</span></div>
+        <div class="guide-step-body">
+          <h3>CSP + Trusted Types + セキュリティヘッダ</h3>
+          <p class="guide-step-effect">B 軸 +10 点 / 致命的 NG 「WP 管理面露出」「CMS バージョン情報露出」解消</p>
+          <p><code>Content-Security-Policy: default-src 'self'; script-src 'self'; require-trusted-types-for 'script';</code> を <code>_headers</code> で設定。インラインスクリプトを排除し JS は外部化。<code>frame-ancestors 'none'</code> / <code>X-Content-Type-Options nosniff</code> / <code>Referrer-Policy strict-origin-when-cross-origin</code> を併設。tcharton.com は commit <code>97323a6</code> で対応。</p>
+        </div>
+      </li>
+      <li class="guide-step guide-step-4">
+        <div class="guide-step-marker"><span class="guide-step-num">Step 4</span><span class="guide-step-day">Day 46-65</span></div>
+        <div class="guide-step-body">
+          <h3>GEO/LLMO 最適化 (AI 検索適応)</h3>
+          <p class="guide-step-effect">C 軸 +10 点</p>
+          <p><code>/llms.txt</code> 配置 (300+ 行 / 全 URL カタログ + 用語集) + FAQPage JSON-LD (5+ 質問) + 公的リンク 5+ 件 (IPA / 政府機関 / Wikidata / Schema.org / W3C) + canonical URL 統一。AI クローラー (ChatGPT Search / Perplexity / Google AI Overview / Bing Chat / Gemini) 引用率向上。</p>
+        </div>
+      </li>
+      <li class="guide-step guide-step-5">
+        <div class="guide-step-marker"><span class="guide-step-num">Step 5</span><span class="guide-step-day">Day 66-90</span></div>
+        <div class="guide-step-body">
+          <h3>Core Web Vitals + WCAG 2.2 AA + NAP 完全一致</h3>
+          <p class="guide-step-effect">A 軸 +8 点 + D 軸 +10 点 + NAP 100 点 → ★★★ 90 点 達成圏</p>
+          <p>LCP < 2.5s / CLS < 0.1 / INP < 200ms 達成 + Astro / Next.js SSG / Eleventy で静的生成、Cloudflare Pages / Netlify / Vercel に配信。WCAG 2.2 AA 達成 (フォーカス可視 / コントラスト比 4.5:1 / キーボード操作完備 / アクセシブルランドマーク)。streetAddress 完全公開で NAP 100 点。tcharton.com は commit <code>36d4328</code> で 🏆 S/90 取得。</p>
+        </div>
+      </li>
+    </ol>
+    <p class="guide-timeline-note">本タイムラインは tcharton.com 実装経緯から抽出された再現可能パターンである。各 Step の具体実装は以下の章で詳細化する。詳細は <a href="/case-studies/tcharton-com/">tcharton.com 自己実証 case study</a> + <a href="/methodology/">評価方法 4 軸</a>を参照。</p>
+  </section>
+
   <section aria-label="JSON-LD 改善">
     <h2>JSON-LD（C 軸の中核 / SPEC v3.4 §4.2 #1）</h2>
     <ul>

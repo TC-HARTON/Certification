@@ -975,6 +975,255 @@
     color: var(--fg-body);
   }
 
+  /* ───────────────────────────────────────────────────────
+     v1.18 観点 2 ストーリーテリング 3 段デザイン (Goodpatch 型)
+     適用先: case-studies / about / improvement-guide / industries / news / comparison
+     ─────────────────────────────────────────────────────── */
+
+  /* 共通: 3 段ストーリーカード (case-step / guide-step / roadmap-step / narrative-step) */
+  body > main > article .case-step,
+  body > main > article .guide-step,
+  body > main > article .industry-roadmap-3step > li,
+  body > main > article .report-narrative-3step > li,
+  body > main > article .comparison-narrative-3step > li,
+  body > main > article .about-story-3step > li {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1.25rem;
+    padding: 1.25rem 1.5rem;
+    margin: 1rem 0;
+    background: var(--bg-card);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 6px 6px 0;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.18s ease, transform 0.18s ease;
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    body > main > article .case-step:hover,
+    body > main > article .guide-step:hover,
+    body > main > article .industry-roadmap-3step > li:hover,
+    body > main > article .report-narrative-3step > li:hover,
+    body > main > article .comparison-narrative-3step > li:hover,
+    body > main > article .about-story-3step > li:hover {
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      transform: translateY(-2px);
+    }
+  }
+
+  /* Step 1 (課題 / Challenge) — 警鐘色 */
+  body > main > article .case-step-challenge,
+  body > main > article .guide-step-1,
+  body > main > article .industry-roadmap-3step .roadmap-step-challenge,
+  body > main > article .report-narrative-3step .narrative-step-challenge,
+  body > main > article .comparison-narrative-3step .comparison-narrative-challenge {
+    border-left-color: #f87171; /* red-400 */
+  }
+
+  /* Step 2 (改善 / Improvement) — 進行色 */
+  body > main > article .case-step-improvement,
+  body > main > article .guide-step-2,
+  body > main > article .guide-step-3,
+  body > main > article .guide-step-4,
+  body > main > article .industry-roadmap-3step .roadmap-step-improvement,
+  body > main > article .report-narrative-3step .narrative-step-improvement,
+  body > main > article .comparison-narrative-3step .comparison-narrative-improvement {
+    border-left-color: #fbbf24; /* amber-400 */
+  }
+
+  /* Step 3 (取得 / Acquired) — 達成色 */
+  body > main > article .case-step-acquired,
+  body > main > article .guide-step-5,
+  body > main > article .industry-roadmap-3step .roadmap-step-acquired,
+  body > main > article .report-narrative-3step .narrative-step-acquired,
+  body > main > article .comparison-narrative-3step .comparison-narrative-acquired {
+    border-left-color: #34d399; /* emerald-400 */
+  }
+
+  /* マーカー (左側の Step 番号 + ラベル) */
+  body > main > article .case-step-marker,
+  body > main > article .guide-step-marker {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-width: 5rem;
+    padding-top: 0.25rem;
+  }
+  body > main > article .case-step-num,
+  body > main > article .guide-step-num {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    color: var(--accent-strong);
+    font-weight: 700;
+    line-height: 1;
+  }
+  body > main > article .case-step-label,
+  body > main > article .guide-step-day {
+    font-size: 0.85rem;
+    color: var(--fg-muted);
+    margin-top: 0.25rem;
+  }
+
+  /* 数字バッジ (industry-roadmap / report-narrative / comparison-narrative) */
+  body > main > article .roadmap-num,
+  body > main > article .narrative-num,
+  body > main > article .comparison-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.75rem;
+    height: 1.75rem;
+    background: var(--accent);
+    color: var(--bg-page);
+    border-radius: 50%;
+    font-weight: 700;
+    margin-right: 0.5rem;
+    font-variant-numeric: tabular-nums;
+    font-size: 0.95rem;
+  }
+
+  /* case-study-article 全体 */
+  body > main > article.case-study-article header h1 {
+    line-height: 1.4;
+  }
+  body > main > article.case-study-article .case-study-subtitle {
+    font-size: 1.1rem;
+    color: var(--accent);
+    margin-top: 0.5rem;
+    font-weight: 500;
+  }
+  body > main > article.case-study-article .case-study-meta {
+    font-size: 0.9rem;
+    color: var(--fg-muted);
+    margin: 0.5rem 0 1.5rem;
+  }
+  body > main > article.case-study-article .case-timeline-table {
+    margin: 1.5rem 0;
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    width: 100%;
+    max-width: 100%;
+  }
+  body > main > article.case-study-article .case-timeline-table thead,
+  body > main > article.case-study-article .case-timeline-table tbody,
+  body > main > article.case-study-article .case-timeline-table tr {
+    display: table;
+    width: 100%;
+    table-layout: auto;
+  }
+
+  /* case-studies hub のカード */
+  body > main > article ul.case-studies-cards {
+    list-style: none;
+    padding-left: 0;
+    margin: 1.5rem 0;
+  }
+  body > main > article ul.case-studies-cards > li::before {
+    content: none;
+  }
+  body > main > article .case-card {
+    padding: 1.5rem 1.75rem;
+    background: var(--bg-card);
+    border-radius: 6px;
+    border-left: 3px solid var(--accent-strong);
+    margin: 1rem 0;
+    padding-left: 1.75rem;
+  }
+  body > main > article .case-card-featured {
+    border-left-width: 4px;
+    border-left-color: #D4AF37; /* classic gold */
+  }
+  body > main > article .case-card-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+  body > main > article .case-card-rating {
+    color: #D4AF37;
+    font-size: 1.5rem;
+    line-height: 1;
+    font-weight: 700;
+  }
+  body > main > article .case-card-class {
+    font-size: 0.9rem;
+    color: var(--fg-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  body > main > article .case-card-title {
+    margin: 0;
+    color: var(--fg-strong);
+  }
+  body > main > article .case-card-meta-line {
+    font-size: 0.85rem;
+    color: var(--fg-muted);
+    margin: 0.25rem 0 0.75rem;
+  }
+  body > main > article .case-card-link {
+    display: inline-block;
+    margin-top: 0.5rem;
+    font-weight: 600;
+  }
+
+  /* guide-timeline-section / industry-roadmap-section / report-narrative-section / comparison-narrative-section
+     共通: section 内 ol のリセット */
+  body > main > article > section.guide-timeline-section ol.guide-timeline,
+  body > main > article > section.industry-roadmap-section ol.industry-roadmap-3step,
+  body > main > article > section.report-narrative-section ol.report-narrative-3step,
+  body > main > article > section.comparison-narrative-section ol.comparison-narrative-3step,
+  body > main > article > section.about-story-summary ol.about-story-3step {
+    list-style: none;
+    padding-left: 0;
+    margin: 1.5rem 0;
+  }
+  body > main > article > section.guide-timeline-section ol.guide-timeline > li::marker,
+  body > main > article > section.industry-roadmap-section ol.industry-roadmap-3step > li::marker,
+  body > main > article > section.report-narrative-section ol.report-narrative-3step > li::marker,
+  body > main > article > section.comparison-narrative-section ol.comparison-narrative-3step > li::marker,
+  body > main > article > section.about-story-summary ol.about-story-3step > li::marker {
+    content: none;
+  }
+
+  body > main > article > section.guide-timeline-section .guide-step-effect {
+    color: var(--accent-strong);
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin: 0.25rem 0 0.5rem;
+  }
+  body > main > article > section.guide-timeline-section .guide-timeline-note,
+  body > main > article > section.industry-roadmap-section .industry-roadmap-3step + p {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: var(--fg-muted);
+  }
+
+  /* レポートページ disclaimer */
+  body > main > article > section.report-disclaimer-section {
+    padding: 1rem 1.25rem;
+    background: var(--bg-soft);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 4px 4px 0;
+    margin: 1.5rem 0;
+    font-size: 0.92rem;
+  }
+
+  /* mobile responsive */
+  @media (max-width: 480px) {
+    body > main > article .case-step,
+    body > main > article .guide-step {
+      grid-template-columns: 1fr;
+    }
+    body > main > article .case-step-marker,
+    body > main > article .guide-step-marker {
+      flex-direction: row;
+      gap: 0.75rem;
+      min-width: auto;
+      align-items: baseline;
+    }
+  }
+
   /* 7 列表 mobile overflow wrapper (reviewer 信頼 92)
      都市別 / 業種別ランキング表が 7 列に拡張され mobile (<480px) で body 横スクロールが発生するため、
      <table> を直接配置せず親 section 内で table-scroll wrapper として扱う */

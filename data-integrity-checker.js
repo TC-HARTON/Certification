@@ -52,7 +52,9 @@ const CANONICAL = {
     { pattern: /Q3 \(7-9 月号\)/, label: '"Q3 (7-9 月号)" (5 月時点は Q2 / 代表 verbatim)' },
   ],
   // Cloudflare Pages 配信対象 ディレクトリ
-  htmlScanDirs: ['index.html', 'about', 'methodology', 'apply', 'contact', 'press', 'opt-out', 'faq', 'news', 'legal', 'privacy', 'industries', 'regions', 'rankings', 'businesses', 'improvement-guide'],
+  htmlScanDirs: ['index.html', 'about', 'methodology', 'apply', 'contact', 'press', 'opt-out', 'faq', 'news', 'legal', 'privacy', 'industries', 'regions', 'rankings', 'businesses', 'improvement-guide', 'case-studies', 'comparison'],
+  // 旧スローガン allowlist: 認定機関の信頼根拠の核として verbatim 引用が必要な箇所 (case-studies/tcharton-com / about) は v1.18 観点 2 ストーリーテリングで例外的に保持
+  obsoleteSlogansAllowlistPaths: ['case-studies/tcharton-com/index.html', 'about/index.html'],
 };
 
 // ═══════════════════ 失敗集積 ═══════════════════
@@ -143,10 +145,13 @@ function checkGeneratedHtml() {
         }
       }
 
-      // Check 5: スローガン旧 variants
-      for (const oldS of CANONICAL.obsoleteSlogans) {
-        if (content.includes(oldS)) {
-          fail('obsolete-slogan', rel, `旧スローガン variant 検出: 「${oldS}」 (公式: 「${CANONICAL.slogan}」)`);
+      // Check 5: スローガン旧 variants (v1.18 案件: case-studies/tcharton-com/ + about/ は dogfooding 倫理の verbatim 引用として allowlist)
+      const isAllowlist = CANONICAL.obsoleteSlogansAllowlistPaths.some(p => rel === p || rel.endsWith('/' + p));
+      if (!isAllowlist) {
+        for (const oldS of CANONICAL.obsoleteSlogans) {
+          if (content.includes(oldS)) {
+            fail('obsolete-slogan', rel, `旧スローガン variant 検出: 「${oldS}」 (公式: 「${CANONICAL.slogan}」)`);
+          }
         }
       }
 
@@ -233,6 +238,49 @@ function checkIncompleteExternalLinks() {
   }
 }
 
+// ═══════════════════ Check 8b: case-studies 整合性 (v1.18 観点 2 ストーリーテリング基盤) ═══════════════════
+// /case-studies/ hub + /case-studies/tcharton-com/ 詳細物語 + 主要参照ページからの cross-link 整合
+function checkCaseStudiesIntegrity() {
+  const required = [
+    { path: 'case-studies/index.html', label: 'case-studies hub' },
+    { path: 'case-studies/tcharton-com/index.html', label: 'tcharton.com case study' },
+  ];
+  for (const r of required) {
+    const full = path.join(ROOT, r.path);
+    if (!fs.existsSync(full)) {
+      fail('case-studies-missing', r.path, `${r.label} ファイル不在`);
+      continue;
+    }
+    const content = fs.readFileSync(full, 'utf-8');
+    // tcharton-com 詳細は 3 段ストーリー (case-step-challenge / case-step-improvement / case-step-acquired) 必須
+    if (r.path.includes('tcharton-com')) {
+      const required3step = ['case-step-challenge', 'case-step-improvement', 'case-step-acquired'];
+      for (const cls of required3step) {
+        if (!content.includes(cls)) {
+          fail('case-studies-3step-missing', r.path, `必須クラス "${cls}" 不在 (Goodpatch 型 3 段構成違反)`);
+        }
+      }
+      // 7 commit verbatim 必須 (HSCEL §3.3 物理確認)
+      const required_commits = ['97323a6', 'a12f686', 'a4d34de', 'a3113d1', '06c3d1c', 'f1a07a1', '36d4328'];
+      for (const c of required_commits) {
+        if (!content.includes(c)) {
+          fail('case-studies-commit-missing', r.path, `tcharton.com 7 commit verbatim 不在: ${c}`);
+        }
+      }
+    }
+  }
+  // 主要参照ページから case-studies/tcharton-com/ への cross-link 必須
+  const crossLinkPages = ['about/index.html', 'improvement-guide/index.html', 'news/shizuoka-industry-report-2026-q2/index.html', 'comparison/regions/shizuoka/index.html'];
+  for (const p of crossLinkPages) {
+    const full = path.join(ROOT, p);
+    if (!fs.existsSync(full)) continue;
+    const content = fs.readFileSync(full, 'utf-8');
+    if (!content.includes('/case-studies/tcharton-com/')) {
+      fail('case-studies-crosslink-missing', p, `/case-studies/tcharton-com/ への cross-link 不在 (v1.18 観点 2 ストーリーテリング統合違反)`);
+    }
+  }
+}
+
 // ═══════════════════ Check 8: dataset endpoint 存在確認 ═══════════════════
 function checkDatasetEndpoint() {
   const dpath = path.join(ROOT, 'datasets/shizuoka-2026-q2.json');
@@ -259,9 +307,10 @@ function run() {
   checkReportJsonLd();
   checkDatasetEndpoint();
   checkIncompleteExternalLinks();
+  checkCaseStudiesIntegrity();
 
   if (failures.length === 0) {
-    console.log('  ✅ PASS — 全 9 検証 / semantic invariants 整合');
+    console.log('  ✅ PASS — 全 10 検証 / semantic invariants 整合 (v1.18 観点 2 ストーリーテリング統合)');
     console.log('  ' + '='.repeat(64));
     process.exit(0);
   }

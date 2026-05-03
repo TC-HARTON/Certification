@@ -453,10 +453,29 @@
       <p><strong>現時点で ★ 以上達成事業者: 0 件</strong>。Phase 0.5 静岡県 5 都市 97 件機械検証の実測結果は <a href="/news/shizuoka-industry-report-2026-q2/">静岡県 5 都市 WEB 品質業界レポート 2026 Q2 (4-6 月号)</a>を参照。静岡県 5 都市以外の地域は Phase 1（類似地方都市: 倉敷・四日市・松本・盛岡 等）で順次拡大予定。</p>
     </section>
 
+    <section aria-label="不動産仲介 業界の改善ロードマップ" class="industry-roadmap-section">
+      <h2>不動産仲介 業界 改善ロードマップ (3 段)</h2>
+      <p>Phase 0.5 静岡県 5 都市 の不動産仲介 97 件機械検証から、業界共通の「課題 → 改善 → ★ 取得」3 段ストーリーを抽出した。自社サイトの ★ 区分判定を目指す事業者は、本ロードマップを参考に改善計画を立てられる。</p>
+      <ol class="industry-roadmap-3step">
+        <li class="roadmap-step-challenge">
+          <h3><span class="roadmap-num">1</span> 課題</h3>
+          <p>業界中央値 <strong>22</strong> 点 / 業界 max <strong>54</strong> 点 / 致命的 NG <strong>15.5%</strong>。Phase 0.5 静岡県 5 都市 全 97 件で ★ 認定基準 (70 点) に到達した事業者は <strong>0 件</strong> (★ 認定取得率 0.0%)。業界全体として防御層 (HTTPS / WP 管理面 / CMS 露出) と AI 検索適応 (JSON-LD / GEO) に改善余地が大きい。</p>
+        </li>
+        <li class="roadmap-step-improvement">
+          <h3><span class="roadmap-num">2</span> 改善</h3>
+          <p>不動産仲介 サイトが ★ 認定取得に必要な 5 Step (90 日) は <a href="/improvement-guide/">改善ガイダンス</a> で全公開。本業種固有の評価ポイントは <a href="https://www.wikidata.org/wiki/Q519076" rel="nofollow noopener noreferrer" target="_blank">Wikidata Q519076</a> + <a href="https://schema.org/LocalBusiness" rel="nofollow noopener noreferrer" target="_blank">Schema.org LocalBusiness</a> 整合の構造化データ実装、業種固有のサービス Schema (例: openingHours / priceRange / acceptedPaymentMethod) で機械可読性を最大化することにある。</p>
+        </li>
+        <li class="roadmap-step-acquired">
+          <h3><span class="roadmap-num">3</span> 取得</h3>
+          <p>総合 70 点以上 + 致命的 NG 0 件で <strong>★ HARTON Certified</strong> 取得。+ S 条件 4/5 で <strong>★★ HARTON 優良</strong>、+ S 条件 5/5 で <strong>★★★ HARTON S-Class</strong>。tcharton.com (運営主体 T.C.HARTON) が dogfooding 倫理に基づき先行取得した実例は <a href="/case-studies/tcharton-com/">自己実証体 第 1 号 case study</a>で 7 commit timeline を verbatim 公開。</p>
+        </li>
+      </ol>
+    </section>
+
     
     <section aria-label="よくある質問" class="faq-section">
       <h2>よくある質問</h2>
-      <details open><summary>Phase 0.5 静岡県 5 都市 で信頼できる 不動産仲介 会社のサイトを判断するには？</summary><div class="faq-answer"><p>HARTON Certified は 4 軸機械検証で WEB 品質を客観評価する。不動産仲介 固有の評価軸は物件ページの Schema.org RealEstateAgent 適合、HTTPS + 地図埋込整合、Core Web Vitals 達成を含む。</p></div></details><details open><summary>Phase 0.5 静岡県 5 都市 の 不動産仲介 サイトで HARTON Certified 認定件数は？</summary><div class="faq-answer"><p>Phase 0.5 静岡県 5 都市の 不動産仲介 サイト 97 件中、★ 認定 0 件。業界全体 (静岡県 5 都市横断) では業界最高点 54 点 / 致命的 NG 15.5% (2026-05-02 時点)。詳細は静岡県 5 都市 WEB 品質業界レポート 2026 Q2 (4-6 月号)に公開。</p></div></details><details open><summary>不動産仲介 サイトで機械検証スコアが低い主要因は？</summary><div class="faq-answer"><p>(1) HTTPS 非対応 / SSL 期限切れ (2) 物件画像の width/height/fetchpriority 未指定で CLS 悪化 (3) JSON-LD RealEstateAgent 未実装 / 構造化データ欠如 が 3 大要因。</p></div></details><details open><summary>RealEstateAgent の Schema.org 必須項目は？</summary><div class="faq-answer"><p>areaServed (営業地域) + address (本店所在地) + telephone (連絡先) + url (公式 URL) の 4 項目が必須。物件ページには Place + RealEstateListing の追加が AI 検索引用率を向上させる。</p></div></details><details open><summary>不動産仲介 サイトで AI 検索に表示されるには？</summary><div class="faq-answer"><p>GEO/LLMO 対応 (llms.txt 配置 + FAQPage JSON-LD + 公的リンク 3+ 件) が必要。さらに &lt;blockquote cite&gt; で宅建業法を引用すると AI 引用率 +27.8% (KDD 2024)。</p></div></details>
+      <details open><summary>Phase 0.5 静岡県 5 都市 で信頼できる 不動産仲介 会社のサイトを判断するには？</summary><div class="faq-answer"><p>HARTON Certified は 4 軸機械検証で WEB 品質を客観評価する。不動産仲介 固有の評価軸は物件ページの Schema.org RealEstateAgent 適合、HTTPS + 地図埋込整合、Core Web Vitals 達成を含む。</p></div></details><details><summary>Phase 0.5 静岡県 5 都市 の 不動産仲介 サイトで HARTON Certified 認定件数は？</summary><div class="faq-answer"><p>Phase 0.5 静岡県 5 都市の 不動産仲介 サイト 97 件中、★ 認定 0 件。業界全体 (静岡県 5 都市横断) では業界最高点 54 点 / 致命的 NG 15.5% (2026-05-02 時点)。詳細は静岡県 5 都市 WEB 品質業界レポート 2026 Q2 (4-6 月号)に公開。</p></div></details><details><summary>不動産仲介 サイトで機械検証スコアが低い主要因は？</summary><div class="faq-answer"><p>(1) HTTPS 非対応 / SSL 期限切れ (2) 物件画像の width/height/fetchpriority 未指定で CLS 悪化 (3) JSON-LD RealEstateAgent 未実装 / 構造化データ欠如 が 3 大要因。</p></div></details><details><summary>RealEstateAgent の Schema.org 必須項目は？</summary><div class="faq-answer"><p>areaServed (営業地域) + address (本店所在地) + telephone (連絡先) + url (公式 URL) の 4 項目が必須。物件ページには Place + RealEstateListing の追加が AI 検索引用率を向上させる。</p></div></details><details><summary>不動産仲介 サイトで AI 検索に表示されるには？</summary><div class="faq-answer"><p>GEO/LLMO 対応 (llms.txt 配置 + FAQPage JSON-LD + 公的リンク 3+ 件) が必要。さらに &lt;blockquote cite&gt; で宅建業法を引用すると AI 引用率 +27.8% (KDD 2024)。</p></div></details>
     </section>
 
     
