@@ -14,7 +14,7 @@
 
 ### サブコピー（33 字）
 ```
-HARTON Certified — 静岡県東部の優良ウェブサイト認定
+HARTON Stella — 静岡県東部の優良ウェブサイト認定
 ```
 
 → 3 秒で「何のサイトか + どこの認定か」が伝わる設計。
@@ -26,7 +26,7 @@ HARTON Certified — 静岡県東部の優良ウェブサイト認定
 ```
 熟練の技と誠実な商いがある。
 しかし WEB の世界では、本物が埋もれていく。
-HARTON Certified は、SPEC v3.2 という独自基準で
+HARTON Stella は、SPEC v3.2 という独自基準で
 地域のサイトを公正に測る、技術監査の灯台。
 ```
 
@@ -49,7 +49,7 @@ HARTON Certified は、SPEC v3.2 という独自基準で
 そして 15 年のエンジニア経験で気付いた。
 「技術は、本物を見抜くために使える」と。
 
-HARTON Certified は、SPEC v3.2 という、
+HARTON Stella は、SPEC v3.2 という、
 2,554 項目の独自基準で地域のサイトを公正に測る。
 情にも、規模にも、流行にも左右されない、4 軸の機械検証。
 
@@ -70,7 +70,7 @@ HARTON Certified は、SPEC v3.2 という、
 `<meta name="description">` 用：
 
 ```
-HARTON Certified — 静岡県東部の優良 WEB サイト認定。
+HARTON Stella — 静岡県東部の優良 WEB サイト認定。
 SPEC v3.2 の 2,554 項目で公正に評価された事業者を業種別・地域別に紹介。
 沼津・三島から、日本の地方 DX の新しい基準を。
 ```
@@ -83,7 +83,7 @@ SPEC v3.2 の 2,554 項目で公正に評価された事業者を業種別・地
 
 ```
 {屋号} は、SPEC v3.2 の {N} 項目をクリアした
-HARTON Certified ★{X} 認定店舗。
+HARTON Stella ★{X} 認定店舗。
 {業種} 部門で {地域} {Y}/{Z} 位。
 技術と誠実が結ばれた、デジタル時代の灯台。
 ```
@@ -96,12 +96,12 @@ HARTON Certified ★{X} 認定店舗。
 
 ### フル版
 ```
-HARTON Certified — 移住者の眼で、地域の真価を測る。
+HARTON Stella — 移住者の眼で、地域の真価を測る。
 ```
 
 ### 短縮版
 ```
-HARTON Certified ／ 静岡県東部 公正 WEB 認定
+HARTON Stella ／ 静岡県東部 公正 WEB 認定
 ```
 
 → 全ページ常駐の自己紹介。
@@ -129,7 +129,7 @@ SPEC v3.2 の 2,554 項目で機械検証された事業者を業種別・地域
 ```
 T.C.HARTON は 2026 年 X 月 X 日、
 静岡県東部の優良 WEB サイトを公正に評価・認定する
-新サービス「HARTON Certified」（certification.tcharton.com）を
+新サービス「HARTON Stella」（stella.tcharton.com）を
 ローンチした。
 
 独自規格 SPEC v3.2 の 2,554 項目を機械検証する
@@ -158,7 +158,7 @@ T.C.HARTON は 2026 年 X 月 X 日、
 
 ### 「灯台」メタファーは中核として保護
 
-灯台のメタファーは HARTON Certified のシンボルとして頻出させるが、**他の比喩を増やさない**。
+灯台のメタファーは HARTON Stella のシンボルとして頻出させるが、**他の比喩を増やさない**。
 - ❌ 「灯台」「道しるべ」「光」「ガイド」「鑑定士」全部使う
 - ✅ 「灯台」「道しるべ」を 2〜3 ヶ所、控えめに
 

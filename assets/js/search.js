@@ -1,5 +1,5 @@
 /**
- * HARTON Certified — 検索フォーム ルーター (generate.js 自動生成 / 手動編集禁止)
+ * HARTON Stella — 検索フォーム ルーター (generate.js 自動生成 / 手動編集禁止)
  * ─────────────────────────────────────────
  * SPEC v3.4 §1.0 / §8.1 (CSP script-src 'self') 準拠
  * GEO-STANDARDS §G-3 §G-6 (位置最適化 / Lead Evidence) 連動

@@ -15,7 +15,7 @@
    ├─ ② S クラスサイト構築責任者(tcharton)  …  実装
    ├─ ③ ブログ担当(note)                  …  発信
    ├─ ④ S クラス最高技術責任者(scanner)     …  S クラス基準の技術定義
-   └─ ⑤ HARTON Certified 認定運用責任者(certification) … 認定運用
+   └─ ⑤ HARTON Stella 認定運用責任者(certification) … 認定運用
 ```
 
 ### 0.2 全サブセッション ① への報告義務(SPEC §0.0.7 mandatory / 5 項目)
@@ -110,7 +110,7 @@
 
 | 項目 | 状態 |
 |---|---|
-| ドメイン | certification.tcharton.com(DNS 設定未 / 代表手動作業) |
+| ドメイン | stella.tcharton.com(DNS 設定未 / 代表手動作業) |
 | MASTER-PLAN | **v1.1.6**(★3 段階化反映済) → v1.1.6.1 patch 中(マッピング層撤去 + CRITICAL-2 + MEDIUM-1 解消) |
 | GitHub | TC-HARTON/Certification 11 commit push 済 |
 
@@ -209,20 +209,20 @@
 
 ### 4.3 信頼根拠の核(300 字 / 自社開発・自社実証)
 
-> HARTON Certified は、世界中のどの認定機関とも異なる。
+> HARTON Stella は、世界中のどの認定機関とも異なる。
 > 評価ロジックは **scanner.py** という独自開発の機械検証エンジンで、
 > **4 軸並列独立評価 + 必須 5 条件 + 致命的 NG 4 項目** で構成される。
 > この基準を、まず**自社サイト tcharton.com で実証し、★★★ を取得した**。
 >
 > **「自分が達成できない基準で他者を測ることはしない」**
 >
-> ――それが、HARTON Certified の唯一無二の信頼根拠である。
+> ――それが、HARTON Stella の唯一無二の信頼根拠である。
 
 ### 4.4 ★区分の物語(ミシュラン型 動機喚起文)
 
 | ★ | 称号 | 物語 |
 |---|---|---|
-| **★** | HARTON Certified | 「同業種で確実に信頼できる」 |
+| **★** | HARTON Stella | 「同業種で確実に信頼できる」 |
 | **★★** | HARTON 優良 | 「他県からでも訪れる価値がある WEB 品質」 |
 | **★★★** | HARTON S-Class Certified | 「業界の方向性を定義する到達点」 |
 
@@ -246,7 +246,7 @@
 | 1 | Cloudflare Turnstile site key + secret | Cloudflare ダッシュボード |
 | 2 | Web3Forms 本番実送信テスト | contact ページから |
 | 3 | certification 用 GBP **新規作成** | <https://business.google.com>(Service Area Business 推奨) |
-| 4 | DNS 設定(certification.tcharton.com → CF Workers Static Assets) | Cloudflare DNS |
+| 4 | DNS 設定(stella.tcharton.com → CF Workers Static Assets) | Cloudflare DNS |
 
 → 代表着手指示まで保留、個別進捗確認不要。
 

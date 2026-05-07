@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * HARTON Certified 基盤 17 ページ構築スクリプト
+ * HARTON Stella 基盤 17 ページ構築スクリプト
  * ─────────────────────────────────────────
  * 目的: MASTER-PLAN §4.1 / SPEC v3.4 §1.0 / §4.2 / §8.1 / §11.x / GEO 整合の 17 基盤ページを生成
  * 設計: 各ページの本文・JSON-LD・Lead Evidence は本書内にハンド執筆
@@ -19,7 +19,7 @@ const fs = require('fs');
 const path = require('path');
 
 const ROOT = __dirname;
-const DOMAIN = 'https://certification.tcharton.com';
+const DOMAIN = 'https://stella.tcharton.com';
 
 // ═══════════════════ data 読込 (TOP 検索バー全国対応 / 動的生成) ═══════════════════
 // MASTER-PLAN §0.5 ロードマップ「Phase 4 で 47 都道府県」前提で data 駆動構造を堅持。
@@ -139,11 +139,12 @@ const FAQ_TOP = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
   mainEntity: [
-    { '@type': 'Question', name: 'HARTON Certified は何を評価するのか？', acceptedAnswer: { '@type': 'Answer', text: 'WEB サイトの品質を 4 軸（基礎・防御・AI 検索・経営インパクト）で機械検証し、総合 70 点以上 + 致命的 NG ゼロを満たす事業者を ★ 以上で認定する。' } },
-    { '@type': 'Question', name: '掲載は有料か？', acceptedAnswer: { '@type': 'Answer', text: '無料である。HARTON Certified は完全中立・金銭非依存で運用し、課金で順位を買えるサービスではない。' } },
+    { '@type': 'Question', name: 'HARTON Stella と HARTON Certified は同じ機関か？', acceptedAnswer: { '@type': 'Answer', text: '同一機関である。2026 年 5 月 7 日にブランド名を「HARTON Certified（ハートン認定）」から「HARTON Stella（ハートンステラ／イタリア語で星）」へ改めた。ドメインも certification.tcharton.com から stella.tcharton.com へ移行 (旧ドメインから 301 redirect)。評価基準・運営主体・認定済事業者は完全に連続している。' } },
+    { '@type': 'Question', name: 'HARTON Stella は何を評価するのか？', acceptedAnswer: { '@type': 'Answer', text: 'WEB サイトの品質を 4 軸（基礎・防御・AI 検索・経営インパクト）で機械検証し、総合 70 点以上 + 致命的 NG ゼロを満たす事業者を ★ 以上で認定する。' } },
+    { '@type': 'Question', name: '掲載は有料か？', acceptedAnswer: { '@type': 'Answer', text: '無料である。HARTON Stella は完全中立・金銭非依存で運用し、課金で順位を買えるサービスではない。' } },
     { '@type': 'Question', name: '評価項目は公開されているか？', acceptedAnswer: { '@type': 'Answer', text: '評価項目・閾値・実施手順は /methodology/ ですべて公開している。再現性のある機械検証である。' } },
     { '@type': 'Question', name: '掲載を拒否したい場合は？', acceptedAnswer: { '@type': 'Answer', text: '/opt-out/ より理由不要で 24 時間以内に対応する。再掲載は事業者の明示申請がない限り行わない。' } },
-    { '@type': 'Question', name: '食べログとは何が違うのか？', acceptedAnswer: { '@type': 'Answer', text: '食べログは口コミで業務品質を評価する。HARTON Certified は機械検証で WEB 品質を評価する。評価軸が独立で、両立は補完関係である。' } },
+    { '@type': 'Question', name: '食べログとは何が違うのか？', acceptedAnswer: { '@type': 'Answer', text: '食べログは口コミで業務品質を評価する。HARTON Stella は機械検証で WEB 品質を評価する。評価軸が独立で、両立は補完関係である。' } },
   ],
 };
 
@@ -157,16 +158,16 @@ PAGES.push({
   path: 'index.html',
   variant: 'reading',
   navActive: '',
-  title: 'HARTON Certified — 機械検証 WEB 品質認定機関',
-  description: 'HARTON Certified は WEB 品質を機械検証 (2,554 項目 / 4 軸) で公正評価する金銭非依存・評価基準全公開型の独立認定機関。Sクラス WEB の普及を支える。完全中立・金銭非依存、★ 以上のみ掲載のポジティブセレクション。',
+  title: 'HARTON Stella — 機械検証 WEB 品質認定機関',
+  description: 'HARTON Stella は WEB 品質を機械検証 (2,554 項目 / 4 軸) で公正評価する金銭非依存・評価基準全公開型の独立認定機関。Sクラス WEB の普及を支える。完全中立・金銭非依存、★ 以上のみ掲載のポジティブセレクション。',
   canonicalPath: '/',
   ogType: 'website',
-  breadcrumbs: bcl([['HARTON Certified トップ', '/']]),
+  breadcrumbs: bcl([['HARTON Stella トップ', '/']]),
   additionalJsonLd: [FAQ_TOP],
   mainContent: `
 <article>
   <section aria-label="マニフェスト" class="hero-manifest">
-    <p class="hero-eyebrow">HARTON Certified — 機械検証で WEB 品質を評価する独立認定機関</p>
+    <p class="hero-eyebrow">HARTON Stella — 機械検証で WEB 品質を評価する独立認定機関</p>
     <h1 class="hero-h1">機械検証が示す、AI 時代の WEB 品質。</h1>
     <p class="hero-manifest-text">「S クラスとは、機械が客観検証する、AI 時代における信頼の最大値である」</p>
     <div class="hero-cta-row">
@@ -175,7 +176,7 @@ PAGES.push({
     </div>
   </section>
   <section aria-label="冒頭エビデンス（Lead Evidence Block）">
-    <p>HARTON Certified は、<strong>2,554 項目</strong>の機械検証で WEB 品質を公正に測る、<strong>金銭非依存・評価基準全公開型の独立認定機関</strong>である。掲載料・認定料・広告料を一切徴収せず、評価項目・閾値・実施手順は <a href="/methodology/">methodology</a> で全て開示する。全国の事業者の Sクラス WEB 普及を支えるため、4 軸の客観評価を 2026 年に開始した。沼津起点での自己実証（自社サイト ★★★ 取得 / dogfooding 倫理）を基盤とし、地方都市から再定義する WEB 品質の民主化を推進する。出典: <a href="https://www.digital.go.jp/resources/govdashboard/local-government-dx#guidance2" rel="nofollow noopener noreferrer" target="_blank">日本政府・公的機関</a>（HSTS / WCAG / Core Web Vitals 等の公的基準に準拠）。</p>
+    <p>HARTON Stella は、<strong>2,554 項目</strong>の機械検証で WEB 品質を公正に測る、<strong>金銭非依存・評価基準全公開型の独立認定機関</strong>である。掲載料・認定料・広告料を一切徴収せず、評価項目・閾値・実施手順は <a href="/methodology/">methodology</a> で全て開示する。全国の事業者の Sクラス WEB 普及を支えるため、4 軸の客観評価を 2026 年に開始した。沼津起点での自己実証（自社サイト ★★★ 取得 / dogfooding 倫理）を基盤とし、地方都市から再定義する WEB 品質の民主化を推進する。出典: <a href="https://www.digital.go.jp/resources/govdashboard/local-government-dx#guidance2" rel="nofollow noopener noreferrer" target="_blank">日本政府・公的機関</a>（HSTS / WCAG / Core Web Vitals 等の公的基準に準拠）。</p>
     <p><time datetime="2026-04-27" itemprop="datePublished">2026 年 4 月 27 日 公開</time> ／ <time datetime="2026-04-30" itemprop="dateModified">2026-04-30 v1.1.7 ブランド戦略整合改訂</time></p>
     <p>機械検証による公正評価を通じて、地域から全国へ、Sクラス WEB サイトの普及を支える。Phase 0.5（静岡県 5 都市 ${shizuokaSummary.n_total} 件機械検証実測 / 11 業種 / 2026-05-01）から始まり、<strong>Phase 1 第 1 弾として東京都 渋谷区 208 件機械検証 (2026-05-07 完了)</strong> を経て、Phase 4（2027 年）で全 47 都道府県 10,000 件以上の認定を目標とする。</p>
   </section>
@@ -203,7 +204,7 @@ ${REGION_OPTIONS_HTML}
           <option value="">すべての認定（全件）</option>
           <option value="3star">★★★ のみ（HARTON S-Class）</option>
           <option value="2star">★★ 以上（HARTON 優良 + S-Class）</option>
-          <option value="1star">★ 以上（HARTON Certified 以上）</option>
+          <option value="1star">★ 以上（HARTON Stella 以上）</option>
         </select>
       </div>
       <div class="search-field search-field-submit">
@@ -214,11 +215,11 @@ ${REGION_OPTIONS_HTML}
   </section>
   <section aria-label="注目認定 rail" class="featured-rail-section">
     <h2>Phase 0.5 + Phase 1 機械検証実測の公開</h2>
-    <p class="featured-rail-lede">HARTON Certified は機械検証 4 軸（基礎・防御・AI 検索・経営インパクト）で WEB 品質を客観評価する金銭非依存・評価基準全公開型の独立認定機関。<strong>Phase 0.5 静岡県 5 都市 11 業種 ${shizuokaSummary.n_total} 件</strong>（★ 獲得 ${shizuokaSummary.eligible_total}/${shizuokaSummary.n_total} = 0.0% / 業界 max ${shizuokaSummary.score_stats.max} 点 / NG ${shizuokaSummary.ng_pct.toFixed(1)}%）+ <strong>Phase 1 東京都 渋谷区 11 業種 208 件</strong>（★ 獲得 0/208 = 0.0% / 業界 max 55 点 / NG 41.3%）= 計 <strong>1,110 件</strong>機械検証実測を公開中。Phase 1 第 1 弾として渋谷区 (2026-05-07) を完了。Phase 1+ で全国順次拡大予定。</p>
+    <p class="featured-rail-lede">HARTON Stella は機械検証 4 軸（基礎・防御・AI 検索・経営インパクト）で WEB 品質を客観評価する金銭非依存・評価基準全公開型の独立認定機関。<strong>Phase 0.5 静岡県 5 都市 11 業種 ${shizuokaSummary.n_total} 件</strong>（★ 獲得 ${shizuokaSummary.eligible_total}/${shizuokaSummary.n_total} = 0.0% / 業界 max ${shizuokaSummary.score_stats.max} 点 / NG ${shizuokaSummary.ng_pct.toFixed(1)}%）+ <strong>Phase 1 東京都 渋谷区 11 業種 208 件</strong>（★ 獲得 0/208 = 0.0% / 業界 max 55 点 / NG 41.3%）= 計 <strong>1,110 件</strong>機械検証実測を公開中。Phase 1 第 1 弾として渋谷区 (2026-05-07) を完了。Phase 1+ で全国順次拡大予定。</p>
     <ul class="featured-rail" role="list">
       <li class="featured-card">
         <div class="featured-card-thumb">
-          <span class="featured-card-rating" role="img" aria-label="★★★ HARTON S-Class Certified"><svg class="star-svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L14.6 8.6L21.6 9.3L16.3 14L17.8 21L12 17.5L6.2 21L7.7 14L2.4 9.3L9.4 8.6L12 2Z" fill="currentColor"/></svg><svg class="star-svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L14.6 8.6L21.6 9.3L16.3 14L17.8 21L12 17.5L6.2 21L7.7 14L2.4 9.3L9.4 8.6L12 2Z" fill="currentColor"/></svg><svg class="star-svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L14.6 8.6L21.6 9.3L16.3 14L17.8 21L12 17.5L6.2 21L7.7 14L2.4 9.3L9.4 8.6L12 2Z" fill="currentColor"/></svg></span>
+          <span class="featured-card-rating" role="img" aria-label="★★★ HARTON Stella S-Class Certified"><svg class="star-svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L14.6 8.6L21.6 9.3L16.3 14L17.8 21L12 17.5L6.2 21L7.7 14L2.4 9.3L9.4 8.6L12 2Z" fill="currentColor"/></svg><svg class="star-svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L14.6 8.6L21.6 9.3L16.3 14L17.8 21L12 17.5L6.2 21L7.7 14L2.4 9.3L9.4 8.6L12 2Z" fill="currentColor"/></svg><svg class="star-svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L14.6 8.6L21.6 9.3L16.3 14L17.8 21L12 17.5L6.2 21L7.7 14L2.4 9.3L9.4 8.6L12 2Z" fill="currentColor"/></svg></span>
           <span class="featured-card-thumb-label" aria-hidden="true">tcharton.com</span>
         </div>
         <div class="featured-card-body">
@@ -286,10 +287,10 @@ ${REGION_OPTIONS_HTML}
     <p class="distinction-lede">4 つの観点（A 基礎・B 防御・C AI 検索・D 経営）で並列独立評価し、各観点の項目別減点を合算する（MASTER-PLAN §3.2）。各 ★区分は、機械検証スコアと S 条件達成度に応じて、固有の<strong>物語</strong>を持つ。</p>
     <ul class="distinction-cards" role="list">
       <li class="distinction-card distinction-1">
-        <div class="distinction-card-rating" role="img" aria-label="HARTON Certified ★（1 つ星）">
+        <div class="distinction-card-rating" role="img" aria-label="HARTON Stella ★（1 つ星）">
           <svg class="star-svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L14.6 8.6L21.6 9.3L16.3 14L17.8 21L12 17.5L6.2 21L7.7 14L2.4 9.3L9.4 8.6L12 2Z" fill="currentColor"/></svg>
         </div>
-        <h3 class="distinction-card-title">HARTON Certified</h3>
+        <h3 class="distinction-card-title">HARTON Stella</h3>
         <p class="distinction-card-story">「AI 時代の信頼を体現する」</p>
         <dl class="distinction-card-criteria">
           <dt>総合スコア</dt><dd>70 点以上（B 以上）</dd>
@@ -345,8 +346,8 @@ PAGES.push({
   path: 'about/index.html',
   variant: 'reading',
   navActive: 'about',
-  title: 'サイトについて — HARTON Certified の理念と自己実証体としての信頼根拠',
-  description: 'HARTON Certified（運営: T.C.HARTON）の理念と dogfooding 倫理に基づく自己実証型認定機関の信頼根拠。沼津起点の自己実証（自社 ★★★ 取得）+ 地方都市から再定義する WEB 品質の民主化を運営方針とする。',
+  title: 'サイトについて — HARTON Stella の理念と自己実証体としての信頼根拠',
+  description: 'HARTON Stella（運営: T.C.HARTON）の理念と dogfooding 倫理に基づく自己実証型認定機関の信頼根拠。沼津起点の自己実証（自社 ★★★ 取得）+ 地方都市から再定義する WEB 品質の民主化を運営方針とする。',
   canonicalPath: '/about/',
   breadcrumbs: bcl([['トップ', '/'], ['サイトについて', '/about/']]),
   mainContent: `
@@ -356,9 +357,9 @@ PAGES.push({
     <p><time datetime="2026-04-27" itemprop="datePublished">2026-04-27 公開</time> ／ <time datetime="2026-05-04" itemprop="dateModified">2026-05-04 v1.18 ストーリーテリング統合</time></p>
   </header>
   <section aria-label="冒頭エビデンス">
-    <p>HARTON Certified は <strong>2026 年 4 月</strong>、静岡県沼津市で T.C.HARTON が立ち上げた、<strong>金銭非依存・評価基準全公開型</strong>の独立認定機関である。掲載料・認定料・広告料を一切徴収せず、評価項目・閾値・実施手順は <a href="/methodology/">methodology</a> で全て開示する。沼津起点で自社サイト tcharton.com を機械検証し ★★★（HARTON S-Class）を取得した自己実証体 第 1 号として、業界の WEB 品質改善のため運営する (dogfooding 倫理)。出典: <a href="https://www.digital.go.jp/resources/govdashboard/local-government-dx#guidance2" rel="nofollow noopener noreferrer" target="_blank">デジタル庁（地方 DX の現状）</a>。</p>
+    <p>HARTON Stella は <strong>2026 年 4 月</strong>、静岡県沼津市で T.C.HARTON が立ち上げた、<strong>金銭非依存・評価基準全公開型</strong>の独立認定機関である。掲載料・認定料・広告料を一切徴収せず、評価項目・閾値・実施手順は <a href="/methodology/">methodology</a> で全て開示する。沼津起点で自社サイト tcharton.com を機械検証し ★★★（HARTON S-Class）を取得した自己実証体 第 1 号として、業界の WEB 品質改善のため運営する (dogfooding 倫理)。出典: <a href="https://www.digital.go.jp/resources/govdashboard/local-government-dx#guidance2" rel="nofollow noopener noreferrer" target="_blank">デジタル庁（地方 DX の現状）</a>。</p>
     <blockquote cite="${DOMAIN}/methodology/">
-      「機械検証が示す、AI 時代の WEB 品質。」 — HARTON Certified 信頼根拠の核（MASTER-PLAN §2.0.4）
+      「機械検証が示す、AI 時代の WEB 品質。」 — HARTON Stella 信頼根拠の核（MASTER-PLAN §2.0.4）
     </blockquote>
   </section>
   <section aria-label="マニフェスト">
@@ -368,8 +369,8 @@ PAGES.push({
   </section>
   <section aria-label="私たちの信頼根拠">
     <h2>私たちの信頼根拠（自己実証体・dogfooding 倫理）</h2>
-    <p>HARTON Certified は、世界中のどの認定機関とも異なる。評価ロジックは <strong>scanner.py</strong> という独自開発の機械検証エンジンで、<strong>4 軸並列独立評価 + 必須 5 条件 + 致命的 NG 4 項目</strong> で構成される。この基準を、まず<strong>自社サイト tcharton.com で実証し、★★★ を取得した</strong>。</p>
-    <p><strong>「機械検証が示す、AI 時代の WEB 品質。」</strong>――それが、HARTON Certified の唯一無二の信頼根拠である（MASTER-PLAN §2.0.4 信頼根拠の核 300 字 verbatim）。</p>
+    <p>HARTON Stella は、世界中のどの認定機関とも異なる。評価ロジックは <strong>scanner.py</strong> という独自開発の機械検証エンジンで、<strong>4 軸並列独立評価 + 必須 5 条件 + 致命的 NG 4 項目</strong> で構成される。この基準を、まず<strong>自社サイト tcharton.com で実証し、★★★ を取得した</strong>。</p>
+    <p><strong>「機械検証が示す、AI 時代の WEB 品質。」</strong>――それが、HARTON Stella の唯一無二の信頼根拠である（MASTER-PLAN §2.0.4 信頼根拠の核 300 字 verbatim）。</p>
     <p>本機関は dogfooding 倫理（自社製品＝評価基準を自社で適用する倫理規範）を 3 階層で運用する:</p>
     <ul>
       <li><strong>L1 自己適用</strong>: 自社サイト tcharton.com が認定基準で評価される（scanner.py 月次再判定 (四半期末レポート集計)）</li>
@@ -386,24 +387,24 @@ PAGES.push({
   </section>
   <section aria-label="自己実証 ストーリー要約" class="about-story-summary">
     <h2>自己実証体 第 1 号: tcharton.com の 3 段ストーリー</h2>
-    <p>運営主体 T.C.HARTON の自社サイト tcharton.com は、HARTON Certified の評価基準を最初に適用された自己実証体 第 1 号である。「<strong>機械検証が示す、AI 時代の WEB 品質。</strong>」を実証するため、自社サイトを認定基準まで引き上げる過程を以下 3 段で公開する:</p>
+    <p>運営主体 T.C.HARTON の自社サイト tcharton.com は、HARTON Stella の評価基準を最初に適用された自己実証体 第 1 号である。「<strong>機械検証が示す、AI 時代の WEB 品質。</strong>」を実証するため、自社サイトを認定基準まで引き上げる過程を以下 3 段で公開する:</p>
     <ol class="about-story-3step">
       <li><strong>課題</strong>: 初期スコア <strong>C/65</strong> (★ 認定基準 70 点未達 / scanner.py 機械検証で発覚)</li>
       <li><strong>改善</strong>: 7 commit + 住所完全公開 (HSTS preload / CSP / JSON-LD 配列化 / GBP 連携 / NAP 100)</li>
-      <li><strong>取得</strong>: 🏆 <strong>S/90 (★★★ HARTON S-Class)</strong> commit <code>36d4328</code> (2026-04-27 / 必須 4/4 + 致命的 NG 0 / NAP 100)</li>
+      <li><strong>取得</strong>: 🏆 <strong>S/90 (★★★ HARTON Stella S-Class)</strong> commit <code>36d4328</code> (2026-04-27 / 必須 4/4 + 致命的 NG 0 / NAP 100)</li>
     </ol>
     <p><a href="/case-studies/tcharton-com/"><strong>課題 → 改善 → 取得 の詳細 (verbatim 7 commit timeline) を見る →</strong></a></p>
   </section>
   <section aria-label="運営体制">
     <h2>運営体制</h2>
-    <p>HARTON Certified は T.C.HARTON が 2026 年 4 月に立ち上げた、金銭非依存・評価基準全公開型の独立認定機関である。Phase 1（類似地方都市 200 件）以降は弁護士・プロデザイナー・PR 会社との外部提携を予定する。商標登録は Phase 1 完了時に着手する。</p>
+    <p>HARTON Stella は T.C.HARTON が 2026 年 4 月に立ち上げた、金銭非依存・評価基準全公開型の独立認定機関である。Phase 1（類似地方都市 200 件）以降は弁護士・プロデザイナー・PR 会社との外部提携を予定する。商標登録は Phase 1 完了時に着手する。</p>
     <p>運営拠点: 〒410-0022 静岡県沼津市大岡2690 / Cloudflare Workers Static Assets で配信 / scanner.py 月次再判定 + 四半期末レポート公開 (Q1/Q2/Q3/Q4)。</p>
     <p>運営方針: 「業界の WEB 品質改善のため」が動機であり、「自社の集客のため」ではない（中立性表現原則）。</p>
   </section>
   <section aria-label="関連リンク">
     <h2>関連リンク</h2>
     <ul>
-      <li><a href="/case-studies/tcharton-com/">自己実証体 第 1 号 詳細 (★★★ HARTON S-Class 取得 7 commit timeline)</a></li>
+      <li><a href="/case-studies/tcharton-com/">自己実証体 第 1 号 詳細 (★★★ HARTON Stella S-Class 取得 7 commit timeline)</a></li>
       <li><a href="/methodology/">評価方法（4 軸の全公開 + S クラス哲学的定義 + dogfooding 倫理）</a></li>
       <li><a href="/news/shizuoka-industry-report-2026-q2/">静岡県 5 都市 WEB 品質業界レポート 2026 Q2 (4-6 月号)（業界実測の透明公開）</a></li>
       <li><a href="/apply/">掲載申請（未掲載事業者向け / 中立性整合）</a></li>
@@ -416,16 +417,16 @@ PAGES.push({
       '@context': 'https://schema.org',
       '@type': ['Article', 'AboutPage'],
       '@id': `${DOMAIN}/about/#article`,
-      headline: 'HARTON Certified の理念と自己実証体としての信頼根拠',
-      description: 'WEB 品質を機械検証で公正に評価する地方発の独立認定機関 HARTON Certified の理念、dogfooding 倫理、自己実証型認定構造、沼津起点の地方都市から再定義するブランド戦略。',
+      headline: 'HARTON Stella の理念と自己実証体としての信頼根拠',
+      description: 'WEB 品質を機械検証で公正に評価する地方発の独立認定機関 HARTON Stella の理念、dogfooding 倫理、自己実証型認定構造、沼津起点の地方都市から再定義するブランド戦略。',
       datePublished: '2026-04-27',
       dateModified: '2026-05-02',
       inLanguage: 'ja',
       isAccessibleForFree: true,
-      author: { '@type': 'Organization', '@id': `${DOMAIN}/#org`, name: 'HARTON Certified' },
+      author: { '@type': 'Organization', '@id': `${DOMAIN}/#org`, name: 'HARTON Stella' },
       publisher: { '@type': 'Organization', '@id': `${DOMAIN}/#org`, name: 'T.C.HARTON', url: 'https://tcharton.com/' },
       mainEntityOfPage: `${DOMAIN}/about/`,
-      about: { '@type': 'Organization', '@id': `${DOMAIN}/#org`, name: 'HARTON Certified' },
+      about: { '@type': 'Organization', '@id': `${DOMAIN}/#org`, name: 'HARTON Stella' },
     },
   ],
 });
@@ -435,16 +436,16 @@ PAGES.push({
   path: 'methodology/index.html',
   variant: 'reading',
   navActive: 'methodology',
-  title: '評価方法 — HARTON Certified の 4 軸機械検証',
-  description: 'HARTON Certified の 4 軸機械検証（基礎・防御・AI 検索・経営インパクト）の概観と各軸詳細。評価項目・閾値・実施手順を完全公開する透明性の中核ページ。',
+  title: '評価方法 — HARTON Stella の 4 軸機械検証',
+  description: 'HARTON Stella の 4 軸機械検証（基礎・防御・AI 検索・経営インパクト）の概観と各軸詳細。評価項目・閾値・実施手順を完全公開する透明性の中核ページ。',
   canonicalPath: '/methodology/',
   breadcrumbs: bcl([['トップ', '/'], ['評価方法', '/methodology/']]),
   mainContent: `
 <article>
   <section aria-label="冒頭エビデンス">
-    <p>HARTON Certified は WEB サイトを <strong>4 つ</strong>の観点で並列独立評価する。各観点は scanner.py で <strong>45</strong>+ 項目を機械検証し、合計 <strong>2554</strong> 項目の SPEC v3.4.2 と整合する。本機関は dogfooding 倫理（自己実証体としての自社サイト ★★★ 取得）と地方都市から再定義する WEB 品質の民主化を運営方針とする。出典: <a href="https://web.dev/articles/vitals" rel="nofollow noopener noreferrer" target="_blank">Google Web Vitals 公式</a> / <a href="https://www.w3.org/WAI/standards-guidelines/wcag/" rel="nofollow noopener noreferrer" target="_blank">W3C WCAG 2.2</a>。</p>
+    <p>HARTON Stella は WEB サイトを <strong>4 つ</strong>の観点で並列独立評価する。各観点は scanner.py で <strong>45</strong>+ 項目を機械検証し、合計 <strong>2554</strong> 項目の SPEC v3.4.2 と整合する。本機関は dogfooding 倫理（自己実証体としての自社サイト ★★★ 取得）と地方都市から再定義する WEB 品質の民主化を運営方針とする。出典: <a href="https://web.dev/articles/vitals" rel="nofollow noopener noreferrer" target="_blank">Google Web Vitals 公式</a> / <a href="https://www.w3.org/WAI/standards-guidelines/wcag/" rel="nofollow noopener noreferrer" target="_blank">W3C WCAG 2.2</a>。</p>
     <blockquote cite="${DOMAIN}/about/">
-      「機械検証が示す、AI 時代の WEB 品質。」 — HARTON Certified 信頼根拠の核（MASTER-PLAN §2.0.4）
+      「機械検証が示す、AI 時代の WEB 品質。」 — HARTON Stella 信頼根拠の核（MASTER-PLAN §2.0.4）
     </blockquote>
     <p><time datetime="2026-04-27" itemprop="datePublished">2026-04-27 公開</time> ／ <time datetime="2026-04-30" itemprop="dateModified">2026-04-30 v1.1.7 ブランド戦略整合改訂</time></p>
     <h1>評価方法</h1>
@@ -477,7 +478,7 @@ PAGES.push({
   <section aria-label="4 軸概観">
     <h2>4 軸機械検証（並列独立評価）</h2>
     <table>
-      <caption>HARTON Certified 4 軸の役割と詳細導線</caption>
+      <caption>HARTON Stella 4 軸の役割と詳細導線</caption>
       <thead>
         <tr><th scope="col">軸</th><th scope="col">名称</th><th scope="col">評価対象</th><th scope="col">詳細</th></tr>
       </thead>
@@ -494,9 +495,9 @@ PAGES.push({
     <h2>★区分の閾値（MASTER-PLAN §3.4）</h2>
     <ul class="star-tiers">
       <li>
-        <span class="star star-1" role="img" aria-label="HARTON Certified ★（1 つ星）"><svg class="star-svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L14.6 8.6L21.6 9.3L16.3 14L17.8 21L12 17.5L6.2 21L7.7 14L2.4 9.3L9.4 8.6L12 2Z" fill="currentColor"/></svg></span>
+        <span class="star star-1" role="img" aria-label="HARTON Stella ★（1 つ星）"><svg class="star-svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L14.6 8.6L21.6 9.3L16.3 14L17.8 21L12 17.5L6.2 21L7.7 14L2.4 9.3L9.4 8.6L12 2Z" fill="currentColor"/></svg></span>
         <div>
-          <strong>HARTON Certified</strong>
+          <strong>HARTON Stella</strong>
           <p>総合 <strong>70</strong> 点以上 + 致命的 NG <strong>0</strong> 件 + S 条件不問。物語: 「<strong>AI 時代の信頼を体現する</strong>」</p>
         </div>
       </li>
@@ -543,13 +544,13 @@ PAGES.push({
       '@context': 'https://schema.org',
       '@type': ['Article', 'TechArticle'],
       '@id': `${DOMAIN}/methodology/#article`,
-      headline: 'HARTON Certified 4 軸機械検証 評価方法',
-      description: 'HARTON Certified の 4 軸機械検証 (A 基礎・B 防御・C AI 検索・D 経営インパクト) の評価項目・閾値・実施手順を完全公開。SPEC v3.4.2 の 2,554 項目と整合。scanner.py による自動計測。',
+      headline: 'HARTON Stella 4 軸機械検証 評価方法',
+      description: 'HARTON Stella の 4 軸機械検証 (A 基礎・B 防御・C AI 検索・D 経営インパクト) の評価項目・閾値・実施手順を完全公開。SPEC v3.4.2 の 2,554 項目と整合。scanner.py による自動計測。',
       datePublished: '2026-04-27',
       dateModified: '2026-05-02',
       inLanguage: 'ja',
       isAccessibleForFree: true,
-      author: { '@type': 'Organization', '@id': `${DOMAIN}/#org`, name: 'HARTON Certified' },
+      author: { '@type': 'Organization', '@id': `${DOMAIN}/#org`, name: 'HARTON Stella' },
       publisher: { '@type': 'Organization', '@id': `${DOMAIN}/#org`, name: 'T.C.HARTON' },
       mainEntityOfPage: `${DOMAIN}/methodology/`,
       proficiencyLevel: 'Expert',
@@ -559,7 +560,7 @@ PAGES.push({
       '@context': 'https://schema.org',
       '@type': 'DefinedTermSet',
       '@id': `${DOMAIN}/methodology/#axes`,
-      name: 'HARTON Certified 4 軸機械検証 用語集',
+      name: 'HARTON Stella 4 軸機械検証 用語集',
       hasDefinedTerm: [
         { '@type': 'DefinedTerm', '@id': `${DOMAIN}/methodology/technical/#term`, name: 'A 軸 基礎・身だしなみ', description: 'HTTPS / SSL / Core Web Vitals (LCP 2.5s / CLS 0.1 / INP 200ms) / モバイル対応 / 画像最適化を機械検証する評価軸。', url: `${DOMAIN}/methodology/technical/`, inDefinedTermSet: `${DOMAIN}/methodology/#axes` },
         { '@type': 'DefinedTerm', '@id': `${DOMAIN}/methodology/security/#term`, name: 'B 軸 防御力・生存率', description: 'CSP / Trusted Types / HSTS / WP 管理面非露出 / CMS バージョン非露出など脆弱性・WAF・防御層を機械検証する評価軸。', url: `${DOMAIN}/methodology/security/`, inDefinedTermSet: `${DOMAIN}/methodology/#axes` },
@@ -574,7 +575,7 @@ PAGES.push({
       '@type': 'HowTo',
       '@id': `${DOMAIN}/methodology/#howto-sclass`,
       name: 'HARTON ★★★ S-Class WEB 品質を取得する 5 Step (90 日)',
-      description: 'HARTON Certified ★★★ HARTON S-Class (総合 90 点以上 + 致命的 NG 0 件 + S 条件 5/5) を 90 日で取得するための機械検証ベースの実践 5 Step。',
+      description: 'HARTON Stella ★★★ HARTON Stella S-Class (総合 90 点以上 + 致命的 NG 0 件 + S 条件 5/5) を 90 日で取得するための機械検証ベースの実践 5 Step。',
       totalTime: 'PT90D',
       inLanguage: 'ja',
       step: [
@@ -592,7 +593,7 @@ PAGES.push({
 const AXIS_PAGES = [
   {
     slug: 'technical',
-    title: 'A 軸 基礎・身だしなみ — HARTON Certified 評価方法',
+    title: 'A 軸 基礎・身だしなみ — HARTON Stella 評価方法',
     desc: 'A 軸（基礎・身だしなみ）は HTTPS / SSL / モバイル対応 / 表示速度 / 画像最適化を機械検証する。Core Web Vitals の LCP 2.5 秒以下 / CLS 0.1 以下 / INP 200ms 以下が目標値。',
     label: 'A 軸 基礎・身だしなみ',
     points: [
@@ -609,7 +610,7 @@ const AXIS_PAGES = [
   },
   {
     slug: 'security',
-    title: 'B 軸 防御力・生存率 — HARTON Certified 評価方法',
+    title: 'B 軸 防御力・生存率 — HARTON Stella 評価方法',
     desc: 'B 軸（防御力・生存率）は脆弱性 / WAF / CSP / Cookie / Cross-Origin / Trusted Types を機械検証する。OWASP Top 10:2025 + IPA 安全なウェブサイトの作り方 11 項目を網羅。',
     label: 'B 軸 防御力・生存率',
     points: [
@@ -627,7 +628,7 @@ const AXIS_PAGES = [
   },
   {
     slug: 'ai-search',
-    title: 'C 軸 AI 検索適応 — HARTON Certified 評価方法',
+    title: 'C 軸 AI 検索適応 — HARTON Stella 評価方法',
     desc: 'C 軸（AI 検索適応）は JSON-LD 構造化データ / セマンティック HTML / NAP 整合性 / GEO 戦略を機械検証する。Aggarwal et al. KDD2024 GEO 9 戦略に整合する評価軸。',
     label: 'C 軸 AI 検索適応',
     points: [
@@ -645,7 +646,7 @@ const AXIS_PAGES = [
   },
   {
     slug: 'business-impact',
-    title: 'D 軸 経営インパクト — HARTON Certified 評価方法',
+    title: 'D 軸 経営インパクト — HARTON Stella 評価方法',
     desc: 'D 軸（経営インパクト）は OGP / SNS 連携 / モバイル最適化 / アクセシビリティ / SEO E-E-A-T を機械検証する。WCAG 2.2 AA + Google E-E-A-T 評価枠組みに整合。',
     label: 'D 軸 経営インパクト',
     points: [
@@ -705,16 +706,16 @@ PAGES.push({
   path: 'apply/index.html',
   variant: 'reading',
   navActive: 'apply',
-  title: '掲載申請 — HARTON Certified ★ 認定を獲得する',
-  description: 'HARTON Certified への掲載申請ページ。無料機械検証で自社サイトの ★ 区分を判定する。dogfooding 倫理に基づく完全中立・金銭非依存の認定機関。改善は自社実装または外部コンサルタント・WEB 専門事業者への相談（複数選択肢併記）の両論で支援する。C 未掲載事業者向け最重要動線。',
+  title: '掲載申請 — HARTON Stella ★ 認定を獲得する',
+  description: 'HARTON Stella への掲載申請ページ。無料機械検証で自社サイトの ★ 区分を判定する。dogfooding 倫理に基づく完全中立・金銭非依存の認定機関。改善は自社実装または外部コンサルタント・WEB 専門事業者への相談（複数選択肢併記）の両論で支援する。C 未掲載事業者向け最重要動線。',
   canonicalPath: '/apply/',
   breadcrumbs: bcl([['トップ', '/'], ['掲載申請', '/apply/']]),
   mainContent: `
 <article>
   <section aria-label="冒頭エビデンス">
-    <p>HARTON Certified への掲載申請は <strong>無料</strong>である。掲載対象は ★ 以上（総合 <strong>70</strong> 点以上 + 致命的 NG <strong>0</strong> 件）を達成した事業者のみで、課金で順位を買えるサービスではない。本機関は dogfooding 倫理（自社製品＝評価基準を自社で適用する倫理規範）に基づき、業界の品質改善のため独立中立に運営する。出典: <a href="https://www.ppc.go.jp/" rel="nofollow noopener noreferrer" target="_blank">個人情報保護委員会</a>（評価機関の中立性に関する公的指針）。</p>
+    <p>HARTON Stella への掲載申請は <strong>無料</strong>である。掲載対象は ★ 以上（総合 <strong>70</strong> 点以上 + 致命的 NG <strong>0</strong> 件）を達成した事業者のみで、課金で順位を買えるサービスではない。本機関は dogfooding 倫理（自社製品＝評価基準を自社で適用する倫理規範）に基づき、業界の品質改善のため独立中立に運営する。出典: <a href="https://www.ppc.go.jp/" rel="nofollow noopener noreferrer" target="_blank">個人情報保護委員会</a>（評価機関の中立性に関する公的指針）。</p>
     <blockquote cite="${DOMAIN}/methodology/">
-      「機械検証が示す、AI 時代の WEB 品質。」 — HARTON Certified 信頼根拠の核（MASTER-PLAN §2.0.4）
+      「機械検証が示す、AI 時代の WEB 品質。」 — HARTON Stella 信頼根拠の核（MASTER-PLAN §2.0.4）
     </blockquote>
     <p><time datetime="2026-04-27" itemprop="datePublished">2026-04-27 公開</time> ／ <time datetime="2026-04-30" itemprop="dateModified">2026-04-30 中立性整合改訂</time></p>
     <h1>掲載申請</h1>
@@ -735,7 +736,7 @@ PAGES.push({
   </section>
   <section aria-label="改善が必要な場合 / 中立性表現原則">
     <h2>改善が必要な場合</h2>
-    <p>初回診断で ★ 未達でも申請を続行できる。改善経路は事業者の判断で以下から選択する（HARTON Certified は<strong>業界の品質改善のため</strong>独立中立に運営し、特定の制作会社の推奨はしない）:</p>
+    <p>初回診断で ★ 未達でも申請を続行できる。改善経路は事業者の判断で以下から選択する（HARTON Stella は<strong>業界の品質改善のため</strong>独立中立に運営し、特定の制作会社の推奨はしない）:</p>
     <ol>
       <li><strong>自社実装</strong>: <a href="/methodology/">評価方法ページ</a>と <a href="/improvement-guide/">改善ガイダンス</a>を参考に、社内で SPEC 整合の改善を実装する。機械検証で項目別の不適合が示されるため、再現可能な手順で対応できる</li>
       <li><strong>制作会社相談</strong>: 独立した WEB 制作会社・コンサルタントに改善を依頼する。相談先候補は事業者の判断で選定する（地元商工会議所・IT 関連協会の紹介、複数社相見積もりが推奨される一般的な調達手順）</li>
@@ -745,7 +746,7 @@ PAGES.push({
   <section aria-label="料金透明性">
     <h2>料金透明性</h2>
     <ul>
-      <li>HARTON Certified への掲載: <strong>無料</strong></li>
+      <li>HARTON Stella への掲載: <strong>無料</strong></li>
       <li>無料機械検証診断: <strong>無料</strong></li>
       <li>改善サービス（任意）: 事業者の選択する制作会社・コンサルタントの料金体系に従う（本機関は仲介・推奨しない）</li>
     </ul>
@@ -770,7 +771,7 @@ PAGES.push({
   variant: 'reading',
   navActive: '',
   title: '改善ガイダンス — ★ 区分を上げるための実践手順',
-  description: 'HARTON Certified ★ 区分昇格の実践手順。SPEC v3.4 §4.2 #1.0-#1.3 への対応 / GBP 作成 / NAP 完全一致 / Trusted Types 等の機械検証可能な改善点を順に解説する。',
+  description: 'HARTON Stella ★ 区分昇格の実践手順。SPEC v3.4 §4.2 #1.0-#1.3 への対応 / GBP 作成 / NAP 完全一致 / Trusted Types 等の機械検証可能な改善点を順に解説する。',
   canonicalPath: '/improvement-guide/',
   breadcrumbs: bcl([['トップ', '/'], ['改善ガイダンス', '/improvement-guide/']]),
   mainContent: `
@@ -780,15 +781,15 @@ PAGES.push({
     <p><time datetime="2026-04-27" itemprop="datePublished">2026-04-27 公開</time> ／ <time datetime="2026-05-03" itemprop="dateModified">最終更新 2026-05-03 (v1.18 観点 2 ストーリーテリング統合)</time></p>
   </header>
   <section aria-label="冒頭エビデンス">
-    <p>HARTON Certified の ★ 区分は scanner.py の機械検証で <strong>45</strong>+ 項目を計測し、総合 <strong>70</strong>/<strong>80</strong>/<strong>90</strong> 点の 3 段階で付与する。改善ヒントはすべて公的基準に整合する。出典: <a href="https://developers.google.com/search/docs" rel="nofollow noopener noreferrer" target="_blank">Google Search Central</a> / <a href="https://www.ipa.go.jp/security/vuln/websecurity/about.html" rel="nofollow noopener noreferrer" target="_blank">IPA</a>。</p>
+    <p>HARTON Stella の ★ 区分は scanner.py の機械検証で <strong>45</strong>+ 項目を計測し、総合 <strong>70</strong>/<strong>80</strong>/<strong>90</strong> 点の 3 段階で付与する。改善ヒントはすべて公的基準に整合する。出典: <a href="https://developers.google.com/search/docs" rel="nofollow noopener noreferrer" target="_blank">Google Search Central</a> / <a href="https://www.ipa.go.jp/security/vuln/websecurity/about.html" rel="nofollow noopener noreferrer" target="_blank">IPA</a>。</p>
     <blockquote cite="${DOMAIN}/methodology/">
-      「評価項目は全公開、再現性のある機械検証である」 — HARTON Certified
+      「評価項目は全公開、再現性のある機械検証である」 — HARTON Stella
     </blockquote>
   </section>
 
   <section aria-label="課題から取得への 5 Step タイムライン" class="guide-timeline-section">
     <h2>「課題 → 改善 → ★ 取得」5 Step タイムライン (90 日)</h2>
-    <p>HARTON Certified の自己実証体 第 1 号 <a href="/case-studies/tcharton-com/">tcharton.com</a> が辿った経路を、未来の認定事業者向けに 5 Step として体系化した。各 Step は scanner.py で機械検証可能な技術項目で構成され、人手判断は介在しない (再現性原則)。</p>
+    <p>HARTON Stella の自己実証体 第 1 号 <a href="/case-studies/tcharton-com/">tcharton.com</a> が辿った経路を、未来の認定事業者向けに 5 Step として体系化した。各 Step は scanner.py で機械検証可能な技術項目で構成され、人手判断は介在しない (再現性原則)。</p>
     <ol class="guide-timeline">
       <li class="guide-step guide-step-1">
         <div class="guide-step-marker"><span class="guide-step-num">Step 1</span><span class="guide-step-day">Day 1-15</span></div>
@@ -873,8 +874,8 @@ PAGES.push({
       '@context': 'https://schema.org',
       '@type': 'HowTo',
       '@id': `${DOMAIN}/improvement-guide/#howto`,
-      name: '★ HARTON Certified 認定取得の改善 5 Step (90 日)',
-      description: 'HARTON Certified ★ 認定 (総合 70 点以上 + 致命的 NG 0 件) を 90 日で取得するための機械検証ベースの実践 5 Step。事業者が自社で実装可能な手順を全公開。',
+      name: '★ HARTON Stella 認定取得の改善 5 Step (90 日)',
+      description: 'HARTON Stella ★ 認定 (総合 70 点以上 + 致命的 NG 0 件) を 90 日で取得するための機械検証ベースの実践 5 Step。事業者が自社で実装可能な手順を全公開。',
       totalTime: 'PT90D',
       inLanguage: 'ja',
       author: { '@type': 'Organization', '@id': `${DOMAIN}/#org` },
@@ -894,16 +895,16 @@ PAGES.push({
   path: 'press/index.html',
   variant: 'reading',
   navActive: 'press',
-  title: 'メディア向け — HARTON Certified の引用素材と取材依頼',
+  title: 'メディア向け — HARTON Stella の引用素材と取材依頼',
   description: 'メディア向けページ。月次ランキング CSV / ロゴ・代表写真高解像度 / 引用条件・クレジット表記方法 / 取材実績・問合せフォームを提供する。',
   canonicalPath: '/press/',
   breadcrumbs: bcl([['トップ', '/'], ['メディア向け', '/press/']]),
   mainContent: `
 <article>
   <section aria-label="冒頭エビデンス">
-    <p>HARTON Certified は <strong>2026 年 4 月</strong>に立ち上がった独立認定機関で、Phase 0.5 静岡県 5 都市 (沼津・三島・富士・静岡・浜松) × 11 業種 <strong>${shizuokaSummary.n_total}</strong> 件機械検証を 2026 年 5 月 2 日に完了した。月次ランキング・ロゴ・代表写真・<a href="/datasets/shizuoka-2026-q2.json">機械可読データセット (CC BY 4.0)</a> をプレス向けに無償提供する。出典: <a href="https://www.digital.go.jp/resources/govdashboard/local-government-dx#guidance2" rel="nofollow noopener noreferrer" target="_blank">日本政府公的機関</a>（中小事業者の DX 状況）。</p>
+    <p>HARTON Stella は <strong>2026 年 4 月</strong>に立ち上がった独立認定機関で、Phase 0.5 静岡県 5 都市 (沼津・三島・富士・静岡・浜松) × 11 業種 <strong>${shizuokaSummary.n_total}</strong> 件機械検証を 2026 年 5 月 2 日に完了した。月次ランキング・ロゴ・代表写真・<a href="/datasets/shizuoka-2026-q2.json">機械可読データセット (CC BY 4.0)</a> をプレス向けに無償提供する。出典: <a href="https://www.digital.go.jp/resources/govdashboard/local-government-dx#guidance2" rel="nofollow noopener noreferrer" target="_blank">日本政府公的機関</a>（中小事業者の DX 状況）。</p>
     <blockquote cite="${DOMAIN}/methodology/">
-      「機械検証で、Sクラス WEB の普及を支える」 — HARTON Certified ブランドナラティブ
+      「機械検証で、Sクラス WEB の普及を支える」 — HARTON Stella ブランドナラティブ
     </blockquote>
     <p><time datetime="2026-04-27" itemprop="datePublished">2026-04-27 公開</time></p>
     <h1>メディア向け</h1>
@@ -918,7 +919,7 @@ PAGES.push({
   </section>
   <section aria-label="クレジット表記">
     <h2>クレジット表記ルール</h2>
-    <p>引用時は出典として「HARTON Certified（${DOMAIN}/methodology/）」を明記する。スクリーンショットは批評目的の最小限引用に限り、商用転用は禁止する。認定店舗紹介時は認定 ID と検証 URL を併記する。</p>
+    <p>引用時は出典として「HARTON Stella（${DOMAIN}/methodology/）」を明記する。スクリーンショットは批評目的の最小限引用に限り、商用転用は禁止する。認定店舗紹介時は認定 ID と検証 URL を併記する。</p>
   </section>
   <section aria-label="取材実績">
     <h2>取材実績</h2>
@@ -943,8 +944,8 @@ PAGES.push({
   path: 'opt-out/index.html',
   variant: 'reading',
   navActive: '',
-  title: '掲載拒否権 — HARTON Certified',
-  description: 'HARTON Certified への掲載拒否窓口。理由不要、24 時間以内に対応、関連データを即時削除する。再掲載は事業者の明示申請がない限り行わない。',
+  title: '掲載拒否権 — HARTON Stella',
+  description: 'HARTON Stella への掲載拒否窓口。理由不要、24 時間以内に対応、関連データを即時削除する。再掲載は事業者の明示申請がない限り行わない。',
   canonicalPath: '/opt-out/',
   robots: 'index, follow',
   mainContent: `
@@ -954,7 +955,7 @@ PAGES.push({
     <p>本機関への掲載をご希望されない場合、本ページから 24 時間以内に対応する。理由のご説明は不要である。</p>
     <p>掲載拒否の方法:</p>
     <ul>
-      <li>メール: <a href="mailto:opt-out@certification.tcharton.com">opt-out@certification.tcharton.com</a></li>
+      <li>メール: <a href="mailto:opt-out@stella.tcharton.com">opt-out@stella.tcharton.com</a></li>
       <li>問合せフォーム: <a href="/contact/">/contact/</a> で「掲載辞退」を選択</li>
     </ul>
     <p>掲載辞退いただいた場合、関連データを即時削除する。今後の再掲載は事業者の明示的な申請がない限り行わない。</p>
@@ -967,15 +968,15 @@ PAGES.push({
   path: 'faq/index.html',
   variant: 'reading',
   navActive: '',
-  title: 'よくある質問 — HARTON Certified の評価・運営に関する Q&A',
-  description: 'HARTON Certified への質問集。評価方法 / 掲載基準 / 課金方針 / オプトアウト / 食べログ等との違い / 弁護士相談済の法的整備状況などを Q&A 形式でまとめる。',
+  title: 'よくある質問 — HARTON Stella の評価・運営に関する Q&A',
+  description: 'HARTON Stella への質問集。評価方法 / 掲載基準 / 課金方針 / オプトアウト / 食べログ等との違い / 弁護士相談済の法的整備状況などを Q&A 形式でまとめる。',
   canonicalPath: '/faq/',
   breadcrumbs: bcl([['トップ', '/'], ['よくある質問', '/faq/']]),
   additionalJsonLd: [FAQ_TOP],
   mainContent: `
 <article>
   <section aria-label="冒頭エビデンス">
-    <p>HARTON Certified によくある質問を <strong>5</strong> 項目に整理した。評価方法 / 掲載基準 / 課金方針の核心点を <strong>2026 年 4 月</strong>時点の運営方針で回答する。出典: <a href="https://www.ppc.go.jp/" rel="nofollow noopener noreferrer" target="_blank">個人情報保護委員会</a>（中立評価機関の運用指針）。</p>
+    <p>HARTON Stella によくある質問を <strong>5</strong> 項目に整理した。評価方法 / 掲載基準 / 課金方針の核心点を <strong>2026 年 4 月</strong>時点の運営方針で回答する。出典: <a href="https://www.ppc.go.jp/" rel="nofollow noopener noreferrer" target="_blank">個人情報保護委員会</a>（中立評価機関の運用指針）。</p>
     <blockquote cite="${DOMAIN}/about/">
       「全評価項目を /methodology/ で公開し、再現性のある機械検証で運用する」
     </blockquote>
@@ -985,16 +986,18 @@ PAGES.push({
   <section aria-label="質問一覧">
     <h2>質問</h2>
     <dl>
-      <dt>Q1: HARTON Certified は何を評価するのか？</dt>
+      <dt>Q1: HARTON Stella と HARTON Certified は同じ機関か？</dt>
+      <dd>はい、同一機関である。<strong>2026 年 5 月 7 日</strong>にブランド名を「HARTON Certified（ハートン認定）」から「HARTON Stella（ハートンステラ／イタリア語で星）」に改めた。ドメインも <code>certification.tcharton.com</code> から <code>stella.tcharton.com</code> へ移行（旧ドメインからは 301 redirect で恒久移転）。評価基準（SPEC v3.4 / 2,554 項目 + 4 軸スキャナー）・運営主体（T.C.HARTON）・認定済事業者は完全に連続している。</dd>
+      <dt>Q2: HARTON Stella は何を評価するのか？</dt>
       <dd>WEB サイトの品質を 4 軸（基礎・防御・AI 検索・経営インパクト）で機械検証し、総合 70 点以上 + 致命的 NG ゼロを満たす事業者を ★ 以上で認定する。</dd>
-      <dt>Q2: 掲載は有料か？</dt>
+      <dt>Q3: 掲載は有料か？</dt>
       <dd>無料である。完全中立・金銭非依存で運用し、課金で順位を買えるサービスではない。</dd>
-      <dt>Q3: 評価項目は公開されているか？</dt>
+      <dt>Q4: 評価項目は公開されているか？</dt>
       <dd>評価項目・閾値・実施手順は <a href="/methodology/">/methodology/</a> ですべて公開している。再現性のある機械検証である。</dd>
-      <dt>Q4: 掲載を拒否したい場合は？</dt>
+      <dt>Q5: 掲載を拒否したい場合は？</dt>
       <dd><a href="/opt-out/">/opt-out/</a> より理由不要で 24 時間以内に対応する。再掲載は事業者の明示申請がない限り行わない。</dd>
-      <dt>Q5: 食べログとは何が違うのか？</dt>
-      <dd>食べログは口コミで業務品質を評価する。HARTON Certified は機械検証で WEB 品質を評価する。評価軸が独立で、両立は補完関係である。</dd>
+      <dt>Q6: 食べログとは何が違うのか？</dt>
+      <dd>食べログは口コミで業務品質を評価する。HARTON Stella は機械検証で WEB 品質を評価する。評価軸が独立で、両立は補完関係である。</dd>
     </dl>
   </section>
 </article>`,
@@ -1005,16 +1008,16 @@ PAGES.push({
   path: 'news/index.html',
   variant: 'reading',
   navActive: '',
-  title: 'お知らせ — HARTON Certified の運営状況更新',
-  description: 'HARTON Certified からのお知らせ一覧。新規認定 / 基準改訂 / 月次ランキング更新 / 取材実績などの運営状況を時系列で公開する。MASTER-PLAN 改訂と SPEC v3.x 連動の最新履歴も記録する。',
+  title: 'お知らせ — HARTON Stella の運営状況更新',
+  description: 'HARTON Stella からのお知らせ一覧。新規認定 / 基準改訂 / 月次ランキング更新 / 取材実績などの運営状況を時系列で公開する。MASTER-PLAN 改訂と SPEC v3.x 連動の最新履歴も記録する。',
   canonicalPath: '/news/',
   breadcrumbs: bcl([['トップ', '/'], ['お知らせ', '/news/']]),
   mainContent: `
 <article>
   <section aria-label="冒頭エビデンス">
-    <p>HARTON Certified からのお知らせを時系列で公開する。<strong>2026 年 4 月 27 日</strong>に MASTER-PLAN v<strong>1.1.4</strong> 改訂と SPEC v<strong>3.4</strong> 連動を完了した。出典: <a href="https://www.digital.go.jp/resources/govdashboard/local-government-dx#guidance2" rel="nofollow noopener noreferrer" target="_blank">公的機関基準</a>。</p>
+    <p>HARTON Stella からのお知らせを時系列で公開する。<strong>2026 年 4 月 27 日</strong>に MASTER-PLAN v<strong>1.1.4</strong> 改訂と SPEC v<strong>3.4</strong> 連動を完了した。出典: <a href="https://www.digital.go.jp/resources/govdashboard/local-government-dx#guidance2" rel="nofollow noopener noreferrer" target="_blank">公的機関基準</a>。</p>
     <blockquote cite="${DOMAIN}/about/">
-      「年次で基準を改訂、過去評価もアーカイブとして残す」 — HARTON Certified 進化原則
+      「年次で基準を改訂、過去評価もアーカイブとして残す」 — HARTON Stella 進化原則
     </blockquote>
     <p><time datetime="2026-04-27" itemprop="datePublished">2026-04-27 公開</time></p>
     <h1>お知らせ</h1>
@@ -1025,7 +1028,7 @@ PAGES.push({
       <li><time datetime="2026-05-07">2026-05-07</time>: <strong>Phase 1 都市拡張開始</strong> / 東京都 渋谷区 11 業種 208 サイト機械検証 (★ 認定 0 件 / 業界最高点 55 点 / NG 41.3%) — <a href="/regions/tokyo/shibuya/">渋谷区認定店舗ページ</a> + <a href="/datasets/shibuya-2026-q2.json">機械可読データセット (CC BY 4.0)</a> 公開 / Phase 0.5 静岡県 5 都市と同 11 業種一律 / Phase 1 第 1 弾</li>
       <li><time datetime="2026-05-01">2026-05-01</time>: <a href="/news/shizuoka-industry-report-2026-q2/">静岡県 5 都市 WEB 品質業界レポート 2026 Q2 (4-6 月号)</a> 公開（5 都市 × 11 業種 ${shizuokaSummary.n_total} 件機械検証 / ★ 認定 ${shizuokaSummary.eligible_total} 件 / 致命的 NG ${shizuokaSummary.ng_pct.toFixed(1)}%）</li>
       <li><time datetime="2026-04-27">2026-04-27</time>: MASTER-PLAN v1.1.4 改訂（SPEC v3.4 連動完了）</li>
-      <li><time datetime="2026-04-26">2026-04-26</time>: HARTON Certified 創設発表 / Phase 0.5 静岡県 5 都市パイロット計画策定</li>
+      <li><time datetime="2026-04-26">2026-04-26</time>: HARTON Stella 創設発表 / Phase 0.5 静岡県 5 都市パイロット計画策定</li>
     </ul>
   </section>
 </article>`,
@@ -1036,7 +1039,7 @@ PAGES.push({
   path: 'news/shizuoka-industry-report-2026-q2/index.html',
   variant: 'reading',
   navActive: '',
-  title: '静岡県 5 都市 WEB 品質業界レポート 2026 Q2 (4-6 月号) — HARTON Certified',
+  title: '静岡県 5 都市 WEB 品質業界レポート 2026 Q2 (4-6 月号) — HARTON Stella',
   description: `静岡県 5 都市（沼津・三島・富士・静岡・浜松）× 11 業種 ${shizuokaSummary.n_total} 件機械検証実測。★ 獲得率 ${shizuokaSummary.eligible_total}/${shizuokaSummary.n_total}=${shizuokaSummary.n_total > 0 ? (shizuokaSummary.eligible_total / shizuokaSummary.n_total * 100).toFixed(1) : '0.0'}%。業界最高点（税理士52・弁護士49・司法書士54・行政書士52・不動産54・飲食50・美容院44・美容クリニック45・宿泊51・クリニック53・学習塾46）／NG ${shizuokaSummary.ng_pct.toFixed(1)}%。`,
   canonicalPath: '/news/shizuoka-industry-report-2026-q2/',
   ogType: 'article',
@@ -1050,7 +1053,7 @@ PAGES.push({
   <section aria-label="冒頭エビデンス">
     <p><strong>2026 年 5 月 2 日</strong>、静岡県 5 都市（沼津市・三島市・富士市・静岡市・浜松市）× 11 業種（税理士・弁護士・司法書士・行政書士・不動産仲介・飲食店・美容院・美容クリニック・宿泊施設・クリニック / 診療所・学習塾）<strong>${shizuokaSummary.n_total}</strong> 件の公開 WEB サイトを 4 軸機械検証した。業界中央値は <strong>${shizuokaSummary.score_stats.median}</strong> 点（業界 max <strong>${shizuokaSummary.score_stats.max}</strong> 点）であり、★ 以上認定可能なサイトは <strong>${shizuokaSummary.eligible_total}</strong> 件、致命的 NG 発生率は <strong>${shizuokaSummary.ng_pct.toFixed(1)}%</strong> であった。本レポートのデータ全件は <a href="/datasets/shizuoka-2026-q2.json" type="application/json">機械可読 JSON</a> として CC BY 4.0 で公開する (AI クローラー / 研究者 / 引用フリー)。出典: <a href="https://web.dev/articles/vitals" rel="noopener noreferrer" target="_blank">Google Web Vitals 公式</a> / <a href="https://www.w3.org/WAI/standards-guidelines/wcag/" rel="noopener noreferrer" target="_blank">W3C WCAG 2.2</a> / <a href="https://www.ipa.go.jp/security/vuln/websecurity/about.html" rel="noopener noreferrer" target="_blank">IPA 安全なウェブサイトの作り方</a>。</p>
     <blockquote cite="${DOMAIN}/methodology/">
-      「公正に測るとは、評価方法のすべてを公開することだ」 — HARTON Certified 評価原則
+      「公正に測るとは、評価方法のすべてを公開することだ」 — HARTON Stella 評価原則
     </blockquote>
   </section>
 
@@ -1068,7 +1071,7 @@ PAGES.push({
       </li>
       <li class="narrative-step-acquired">
         <h3><span class="narrative-num">3</span> 取得 (Phase 1+ / 2026-06-02 月次再判定〜)</h3>
-        <p>月次再判定で改善した事業者は自動的に ★ HARTON Certified 取得 → <a href="/regions/shizuoka/">静岡県 5 都市の認定店舗ページ</a>に掲載 + 本レポートに昇格通知。Phase 1 (主要 20 都市 / 2026 Q3〜) で全国順次拡大予定。tcharton.com (★★★ HARTON S-Class) と並ぶ自己実証体 第 2 号は静岡県 5 都市から最初に生まれることが期待される。</p>
+        <p>月次再判定で改善した事業者は自動的に ★ HARTON Stella 取得 → <a href="/regions/shizuoka/">静岡県 5 都市の認定店舗ページ</a>に掲載 + 本レポートに昇格通知。Phase 1 (主要 20 都市 / 2026 Q3〜) で全国順次拡大予定。tcharton.com (★★★ HARTON Stella S-Class) と並ぶ自己実証体 第 2 号は静岡県 5 都市から最初に生まれることが期待される。</p>
       </li>
     </ol>
   </section>
@@ -1169,7 +1172,7 @@ PAGES.push({
   <section aria-label="dogfooding 倫理開示">
     <h2>dogfooding 倫理：自己実証体としての透明性</h2>
     <blockquote cite="${DOMAIN}/about/">
-      「機械検証が示す、AI 時代の WEB 品質。」 — HARTON Certified 信頼根拠の核
+      「機械検証が示す、AI 時代の WEB 品質。」 — HARTON Stella 信頼根拠の核
     </blockquote>
     <p>本機関の自己実証体 第 1 号は scanner.py により ★★★（HARTON S-Class）を取得し、月次再判定の対象となる（自己例外なし）。自己実証体 自身に致命的 NG 検出時は即時非掲載状態に切替え、機械検証ログを verbatim 公開する。静岡県 5 都市 ${shizuokaSummary.n_total} 件の業界実測で 70 点以上を達成したサイトはゼロ件である。これは認定基準が「人間の主観や金銭、規模に依存しない」客観的な技術指標であることを業界実測で示している。</p>
   </section>
@@ -1214,7 +1217,7 @@ PAGES.push({
     <details open><summary>静岡県 5 都市 全体で ★ 認定取得サイトは何件ありますか？</summary><div class="faq-answer"><p><strong>0 件</strong> (902 件中 / 2026-05-02 時点)。Phase 0.5 機械検証では総合 70 点以上 + 致命的 NG 0 件を全達成したサイトはゼロでした。業界中央値は ${shizuokaSummary.score_stats.median} 点、業界 max は ${shizuokaSummary.score_stats.max} 点であり、★ 認定基準 (70 点) との差は 16 点です。</p></div></details>
     <details><summary>5 都市の中で WEB 品質が最も高い (★ 認定に最も近い) 都市はどこですか？</summary><div class="faq-answer"><p><strong>★ 認定取得率は全 5 都市で 0.0%</strong> (Phase 0.5 では全件未達)。業界最高点 (= 当該都市内 1 位サイト) ベースでは <strong>沼津市 ${cityStat('沼津市','max')} 点</strong> が最高、次いで富士市 ${cityStat('富士市','max')} 点 / 浜松市 ${cityStat('浜松市','max')} 点 / 静岡市 ${cityStat('静岡市','max')} 点 / 三島市 ${cityStat('三島市','max')} 点。いずれも ★ 認定基準 (70 点) には未到達です。致命的 NG% が最も低いのは三島市 (${typeof cityStat('三島市','ng_pct')==='number'?cityStat('三島市','ng_pct').toFixed(1)+'%':'—'}) で、母集団全体の防御水準は最高です。</p></div></details>
     <details><summary>11 業種の中で WEB 品質が最も高い業種はどれですか？</summary><div class="faq-answer"><p>業界最高点ベースで <strong>司法書士 (54 点) / 不動産仲介 (54 点)</strong> が最高、次いでクリニック・診療所 (53 点) / 税理士・会計士 (52 点) / 行政書士 (52 点)。逆に最高点が低いのは美容院 (44 点) / 美容クリニック (45 点) / 学習塾 (46 点) です。NG% (防御層改善余地) が最も大きいのは行政書士 (48.6%) と美容クリニック (46.5%) です。</p></div></details>
-    <details><summary>このレポートのデータは引用・再利用可能ですか？</summary><div class="faq-answer"><p>はい。<a href="/datasets/shizuoka-2026-q2.json">機械可読 JSON</a> として CC BY 4.0 で公開しています。AI クローラー / 研究機関 / メディアによる引用・再利用フリー (出典明記必須)。引用形式: 「HARTON Certified (2026). 静岡県 5 都市 WEB 品質業界レポート 2026 Q2. ${DOMAIN}/news/shizuoka-industry-report-2026-q2/」。</p></div></details>
+    <details><summary>このレポートのデータは引用・再利用可能ですか？</summary><div class="faq-answer"><p>はい。<a href="/datasets/shizuoka-2026-q2.json">機械可読 JSON</a> として CC BY 4.0 で公開しています。AI クローラー / 研究機関 / メディアによる引用・再利用フリー (出典明記必須)。引用形式: 「HARTON Stella (2026). 静岡県 5 都市 WEB 品質業界レポート 2026 Q2. ${DOMAIN}/news/shizuoka-industry-report-2026-q2/」。</p></div></details>
     <details><summary>致命的 NG が業界で最も多いのはどの種類ですか？</summary><div class="faq-answer"><p><strong>WordPress 管理面露出 (${ngBd('WP管理面露出')} 件)</strong> が最多で、HTTPS 非対応 (${ngBd('HTTPS非対応')} 件) / SSL 証明書失効 (${ngBd('SSL証明書')} 件) / CMS バージョン情報露出 (${ngBd('CMSバージョン情報露出')} 件) と続きます。WP 管理面露出は wp-login.php / xmlrpc.php 等が公開状態のことで、認証ボット攻撃の入口となります。改善は IP 制限 / Basic 認証 / 2FA で即時可能です。</p></div></details>
     <details><summary>次回スキャンと改善後の再判定はいつですか？</summary><div class="faq-answer"><p><strong>次回スキャンは 2026-06-02</strong> (月次運用 / scanner.py 自動再判定)。改善により ★ 認定可能となった事業者は月次再判定で自動的に <a href="/regions/shizuoka/">静岡県 5 都市の認定店舗ページ</a>に掲載されます。事業者からの即時再スキャン依頼は <a href="/contact/">お問合せ</a>から受付。</p></div></details>
   </section>`;
@@ -1234,7 +1237,7 @@ PAGES.push({
       inLanguage: 'ja',
       isAccessibleForFree: true,
       license: 'https://creativecommons.org/licenses/by/4.0/',
-      author: { '@type': 'Organization', '@id': `${DOMAIN}/#org`, name: 'HARTON Certified', url: DOMAIN + '/' },
+      author: { '@type': 'Organization', '@id': `${DOMAIN}/#org`, name: 'HARTON Stella', url: DOMAIN + '/' },
       publisher: { '@type': 'Organization', '@id': `${DOMAIN}/#org`, name: 'T.C.HARTON', url: 'https://tcharton.com/' },
       mainEntityOfPage: `${DOMAIN}/news/shizuoka-industry-report-2026-q2/`,
       about: [
@@ -1248,7 +1251,7 @@ PAGES.push({
         { '@type': 'AdministrativeArea', name: '静岡市', sameAs: 'https://www.wikidata.org/wiki/Q174691' },
         { '@type': 'AdministrativeArea', name: '浜松市', sameAs: 'https://www.wikidata.org/wiki/Q185125' },
       ],
-      citation: 'HARTON Certified (2026). 静岡県 5 都市 WEB 品質業界レポート 2026 Q2 (4-6 月号). https://certification.tcharton.com/news/shizuoka-industry-report-2026-q2/',
+      citation: 'HARTON Stella (2026). 静岡県 5 都市 WEB 品質業界レポート 2026 Q2 (4-6 月号). https://stella.tcharton.com/news/shizuoka-industry-report-2026-q2/',
     },
     // Dataset: AI / 研究者が直接統計参照可能な機械可読データ (Schema.org Dataset 仕様準拠)
     {
@@ -1257,7 +1260,7 @@ PAGES.push({
       '@id': `${DOMAIN}/news/shizuoka-industry-report-2026-q2/#dataset`,
       name: '静岡県 5 都市 × 11 業種 WEB 品質機械検証データ 2026 Q2',
       alternateName: 'Shizuoka 5-City × 11-Industry WEB Quality Verification Dataset 2026 Q2',
-      description: '静岡県 5 都市 (沼津・三島・富士・静岡・浜松) × 11 業種 902 件の公開 WEB サイトを HARTON Certified scanner.py (4 軸 / 2,554 項目) で機械検証した結果データセット。総合スコア / ★ 認定可否 / 致命的 NG 内訳 / 業界中央値・max / 都市 × 業種 cross-tab を含む。',
+      description: '静岡県 5 都市 (沼津・三島・富士・静岡・浜松) × 11 業種 902 件の公開 WEB サイトを HARTON Stella scanner.py (4 軸 / 2,554 項目) で機械検証した結果データセット。総合スコア / ★ 認定可否 / 致命的 NG 内訳 / 業界中央値・max / 都市 × 業種 cross-tab を含む。',
       url: `${DOMAIN}/news/shizuoka-industry-report-2026-q2/`,
       identifier: 'harton-certified-shizuoka-2026-q2',
       keywords: ['WEB 品質', 'Web Quality', '機械検証', 'Machine Verification', '静岡県', 'Shizuoka', 'Web Vitals', 'WCAG 2.2', 'GEO/LLMO', 'Schema.org', 'HTTPS', 'CSP'],
@@ -1273,7 +1276,7 @@ PAGES.push({
       inLanguage: 'ja',
       isAccessibleForFree: true,
       license: 'https://creativecommons.org/licenses/by/4.0/',
-      creator: { '@type': 'Organization', '@id': `${DOMAIN}/#org`, name: 'HARTON Certified', url: DOMAIN + '/' },
+      creator: { '@type': 'Organization', '@id': `${DOMAIN}/#org`, name: 'HARTON Stella', url: DOMAIN + '/' },
       publisher: { '@type': 'Organization', '@id': `${DOMAIN}/#org`, name: 'T.C.HARTON', url: 'https://tcharton.com/' },
       variableMeasured: [
         { '@type': 'PropertyValue', name: '対象サイト数 (n_total)', value: shizuokaSummary.n_total, unitText: 'サイト' },
@@ -1296,8 +1299,8 @@ PAGES.push({
           encodesCreativeWork: { '@id': `${DOMAIN}/news/shizuoka-industry-report-2026-q2/#dataset` },
         },
       ],
-      citation: 'HARTON Certified (2026). 静岡県 5 都市 × 11 業種 WEB 品質機械検証データセット 2026 Q2. https://certification.tcharton.com/datasets/shizuoka-2026-q2.json',
-      isBasedOn: { '@type': 'CreativeWork', '@id': `${DOMAIN}/methodology/#article`, name: 'HARTON Certified SPEC v3.4 (2,554 項目 / 4 軸機械検証)', url: `${DOMAIN}/methodology/` },
+      citation: 'HARTON Stella (2026). 静岡県 5 都市 × 11 業種 WEB 品質機械検証データセット 2026 Q2. https://stella.tcharton.com/datasets/shizuoka-2026-q2.json',
+      isBasedOn: { '@type': 'CreativeWork', '@id': `${DOMAIN}/methodology/#article`, name: 'HARTON Stella SPEC v3.4 (2,554 項目 / 4 軸機械検証)', url: `${DOMAIN}/methodology/` },
     },
     // FAQPage: AI Overview / Featured Snippet 引用機会の獲得
     {
@@ -1347,14 +1350,14 @@ PAGES.push({
   path: 'contact/index.html',
   variant: 'reading',
   navActive: '',
-  title: 'お問合せ — HARTON Certified',
-  description: 'HARTON Certified へのお問合せフォーム。掲載申請 / 取材依頼 / 掲載辞退 / その他のご質問を 1 営業日以内に対応する。送信前に内容確認画面を表示し、Web3Forms 経由で受信する。',
+  title: 'お問合せ — HARTON Stella',
+  description: 'HARTON Stella へのお問合せフォーム。掲載申請 / 取材依頼 / 掲載辞退 / その他のご質問を 1 営業日以内に対応する。送信前に内容確認画面を表示し、Web3Forms 経由で受信する。',
   canonicalPath: '/contact/',
   breadcrumbs: bcl([['トップ', '/'], ['お問合せ', '/contact/']]),
   mainContent: `
 <article>
   <section aria-label="冒頭エビデンス">
-    <p>HARTON Certified へのお問合せは <strong>1</strong> 営業日以内に対応する。<strong>4</strong> カテゴリの問合せ種別を選択でき、月間処理件数は <strong>30</strong> 件規模を想定する。送信前に確認画面で内容を再確認できる。非侵入型ボット防御（<a href="https://www.cloudflare.com/products/turnstile/" rel="nofollow noopener noreferrer" target="_blank">Cloudflare Turnstile</a>）は CR-3 で別途実装予定（site key 受領後）。</p>
+    <p>HARTON Stella へのお問合せは <strong>1</strong> 営業日以内に対応する。<strong>4</strong> カテゴリの問合せ種別を選択でき、月間処理件数は <strong>30</strong> 件規模を想定する。送信前に確認画面で内容を再確認できる。非侵入型ボット防御（<a href="https://www.cloudflare.com/products/turnstile/" rel="nofollow noopener noreferrer" target="_blank">Cloudflare Turnstile</a>）は CR-3 で別途実装予定（site key 受領後）。</p>
     <blockquote cite="${DOMAIN}/methodology/">
       「非侵入型ボット防御を必須とする」 — SPEC v3.4 §8.8
     </blockquote>
@@ -1365,10 +1368,10 @@ PAGES.push({
     <h2>フォーム</h2>
     <form action="https://api.web3forms.com/submit" method="POST" id="contactForm" novalidate>
       <input type="hidden" name="access_key" value="9fda1d98-e246-4730-a12c-2251a5ae35b0">
-      <input type="hidden" name="subject" value="HARTON Certified サイトからのお問い合わせ">
-      <input type="hidden" name="from_name" value="HARTON Certified Contact Form">
+      <input type="hidden" name="subject" value="HARTON Stella サイトからのお問い合わせ">
+      <input type="hidden" name="from_name" value="HARTON Stella Contact Form">
       <!-- JS 無効環境では Web3Forms が直接ここへリダイレクトする / JS 有効環境では fetch で hijack するため未参照 -->
-      <input type="hidden" name="redirect" value="https://certification.tcharton.com/thanks.html">
+      <input type="hidden" name="redirect" value="https://stella.tcharton.com/thanks.html">
       <input type="checkbox" name="botcheck" class="hidden" style="display:none" tabindex="-1" autocomplete="off">
       <p><label for="name">お名前（必須）</label>
       <input type="text" id="name" name="name" required></p>
@@ -1419,8 +1422,8 @@ PAGES.push({
   path: 'legal/index.html',
   variant: 'reading',
   navActive: '',
-  title: '利用規約・特定商取引法表記 — HARTON Certified',
-  description: 'HARTON Certified サイトの利用規約および特定商取引法に基づく表記。事業者 T.C.HARTON / 〒410-0022 静岡県沼津市大岡2690。',
+  title: '利用規約・特定商取引法表記 — HARTON Stella',
+  description: 'HARTON Stella サイトの利用規約および特定商取引法に基づく表記。事業者 T.C.HARTON / 〒410-0022 静岡県沼津市大岡2690。',
   canonicalPath: '/legal/',
   robots: 'index, follow',
   mainContent: `
@@ -1429,14 +1432,14 @@ PAGES.push({
 
   <section aria-label="特定商取引法に基づく表記">
     <h2>特定商取引法に基づく表記</h2>
-    <p>本表記は特定商取引法第 11 条（通信販売についての広告）に基づく事業者情報である。HARTON Certified は無料で運用される独立認定機関であり、課金を伴う物販・役務提供は本サイト経由で行わない。</p>
+    <p>本表記は特定商取引法第 11 条（通信販売についての広告）に基づく事業者情報である。HARTON Stella は無料で運用される独立認定機関であり、課金を伴う物販・役務提供は本サイト経由で行わない。</p>
 
     <table>
       <caption>事業者情報（特商法第 11 条 準拠）</caption>
       <tbody>
         <tr><th scope="row">事業者名</th><td>T.C.HARTON</td></tr>
         <tr><th scope="row">所在地</th><td>〒410-0022 静岡県沼津市大岡2690</td></tr>
-        <tr><th scope="row">運営事業</th><td>HARTON Certified（独立認定機関 / 機械検証による WEB 品質公正評価）</td></tr>
+        <tr><th scope="row">運営事業</th><td>HARTON Stella（独立認定機関 / 機械検証による WEB 品質公正評価）</td></tr>
         <tr><th scope="row">連絡先</th><td><a href="/contact/">/contact/</a> のお問合せフォームより受付。1 営業日以内に返信する。</td></tr>
         <tr><th scope="row">運営サイト</th><td><a href="${DOMAIN}/">${DOMAIN}/</a></td></tr>
         <tr><th scope="row">役務対価</th><td>無料。掲載料・認定料・更新料その他の課金は一切発生しない（完全中立 / 金銭非依存運用）。</td></tr>
@@ -1449,7 +1452,7 @@ PAGES.push({
 
   <section aria-label="利用規約">
     <h2>利用規約</h2>
-    <p>本利用規約 (以下「本規約」) は、HARTON Certified (以下「本サービス」) の利用条件を定めるものである。本サービスを利用する全ての利用者 (掲載事業者・閲覧者・データ利用者) は本規約に同意したものとみなす。</p>
+    <p>本利用規約 (以下「本規約」) は、HARTON Stella (以下「本サービス」) の利用条件を定めるものである。本サービスを利用する全ての利用者 (掲載事業者・閲覧者・データ利用者) は本規約に同意したものとみなす。</p>
 
     <h3>第 1 条 (本サービスの目的)</h3>
     <p>本サービスは、機械検証 (scanner.py / SPEC v3.4 / 2,554 項目 / 4 軸) による WEB サイト品質の客観評価を通じ、AI 検索時代における信頼ある WEB の普及を支援することを目的とする。本サービスは特定の事業者を不利益に取扱う意図を一切有しない。</p>
@@ -1460,7 +1463,7 @@ PAGES.push({
       <li>金銭非依存運用: 掲載料・認定料・更新料・広告料その他の対価を一切徴収しない (本ページ上部「特商法表記」参照)。</li>
       <li>評価基準全公開: 評価項目・閾値・実施手順は <a href="/methodology/">/methodology/</a> で全て開示する。</li>
       <li>scanner.py による機械的判定: 評価結果は人為的判断を排し、自動計測のみで生成する。</li>
-      <li>自己実証体としての適用: 運営主体 T.C.HARTON の自社サイト tcharton.com も本サービスの評価基準を自社で適用しており、★★★ HARTON S-Class を取得している (dogfooding 倫理 / 詳細は <a href="/about/">/about/</a>)。</li>
+      <li>自己実証体としての適用: 運営主体 T.C.HARTON の自社サイト tcharton.com も本サービスの評価基準を自社で適用しており、★★★ HARTON Stella S-Class を取得している (dogfooding 倫理 / 詳細は <a href="/about/">/about/</a>)。</li>
       <li>ポジティブセレクション: ★ 以上達成事業者のみ掲載対象とし、未達事業者の個別公開は行わない (業種別集計データのみ統計値として公開)。</li>
     </ul>
 
@@ -1481,7 +1484,7 @@ PAGES.push({
     <ul>
       <li><strong>サイトデザイン / レイアウト / コピーライティング / ロゴ / バッジ素材 / ブランド要素</strong>: T.C.HARTON に帰属。無断複製・転用を禁ずる。</li>
       <li><strong>機械検証統計データ (業界レポート / 比較ページ / Dataset endpoint)</strong>: <strong>Creative Commons Attribution 4.0 International (CC BY 4.0)</strong> ライセンスで公開。出典明記の上、AI クローラー・研究機関・メディア・教育機関による引用・再利用フリー (license URL: <a href="https://creativecommons.org/licenses/by/4.0/" rel="noopener noreferrer" target="_blank">https://creativecommons.org/licenses/by/4.0/</a>)。</li>
-      <li>引用形式: 「HARTON Certified (2026). [レポート名]. ${DOMAIN}/[ページ URL]」</li>
+      <li>引用形式: 「HARTON Stella (2026). [レポート名]. ${DOMAIN}/[ページ URL]」</li>
       <li>機械可読 Dataset endpoint: <a href="/datasets/shizuoka-2026-q2.json">/datasets/shizuoka-2026-q2.json</a> 他、Phase 1+ で順次拡張</li>
     </ul>
 
@@ -1501,8 +1504,8 @@ PAGES.push({
   path: 'privacy/index.html',
   variant: 'reading',
   navActive: '',
-  title: 'プライバシーポリシー — HARTON Certified',
-  description: 'HARTON Certified の個人情報取扱方針。法人情報・公開連絡先のみ収集、第三者提供なし、個人情報保護法 2022 改正・GDPR 対応。',
+  title: 'プライバシーポリシー — HARTON Stella',
+  description: 'HARTON Stella の個人情報取扱方針。法人情報・公開連絡先のみ収集、第三者提供なし、個人情報保護法 2022 改正・GDPR 対応。',
   canonicalPath: '/privacy/',
   robots: 'index, follow',
   mainContent: `
@@ -1518,7 +1521,7 @@ PAGES.push({
         <tr><th scope="row">事業者名</th><td>T.C.HARTON</td></tr>
         <tr><th scope="row">所在地</th><td>〒410-0022 静岡県沼津市大岡2690</td></tr>
         <tr><th scope="row">代表者</th><td>大内 達也</td></tr>
-        <tr><th scope="row">運営サービス</th><td>HARTON Certified (${DOMAIN}/)</td></tr>
+        <tr><th scope="row">運営サービス</th><td>HARTON Stella (${DOMAIN}/)</td></tr>
         <tr><th scope="row">個人情報保護管理責任者</th><td>大内 達也 (代表者兼任)</td></tr>
         <tr><th scope="row">問合せ窓口</th><td><a href="/contact/">/contact/</a> (1 営業日以内に返信)</td></tr>
       </tbody>
@@ -1595,7 +1598,7 @@ PAGES.push({
     <p><strong>請求方法</strong>: 以下のいずれかで受付。本人確認後、原則 2 週間以内 (法定上限 30 日) に対応する。手数料は無料。</p>
     <ul>
       <li>お問合せフォーム: <a href="/contact/">/contact/</a> (種別「その他」で個人情報請求と明記)</li>
-      <li>メール直接送付: <strong>certification@tcharton.com</strong></li>
+      <li>メール直接送付: <strong>stella@tcharton.com</strong></li>
       <li>書面: 〒410-0022 静岡県沼津市大岡2690 T.C.HARTON 個人情報保護管理責任者 宛</li>
     </ul>
     <p>掲載対象事業者の掲載辞退については、より迅速な専用窓口 <a href="/opt-out/">/opt-out/</a> をご利用いただきたい (24 時間以内対応)。</p>
@@ -1603,7 +1606,7 @@ PAGES.push({
 
   <section aria-label="掲載対象事業者の取扱い">
     <h2>7. 機械検証対象事業者の情報の取扱い</h2>
-    <p>HARTON Certified は公開 WEB サイトを scanner.py で機械検証する独立認定機関である。検証対象となる事業者情報の取扱いは以下の通り:</p>
+    <p>HARTON Stella は公開 WEB サイトを scanner.py で機械検証する独立認定機関である。検証対象となる事業者情報の取扱いは以下の通り:</p>
     <ul>
       <li><strong>収集情報</strong>: 公開 WEB サイトの URL / 公開メタデータ (Schema.org / OGP / robots.txt 等) / HTTP レスポンスヘッダのみ。事業者の非公開情報は一切収集しない。</li>
       <li><strong>個別公開条件</strong>: ★ 以上 (総合 70 点 + 致命的 NG 0 件) を達成した事業者のみ。未達事業者の個別情報は公開しない (業種別集計値のみ統計データとして公開)。</li>
@@ -1624,8 +1627,8 @@ PAGES.push({
   path: 'case-studies/index.html',
   variant: 'reading',
   navActive: '',
-  title: '導入事例 — HARTON Certified ★ 取得への道筋',
-  description: '機械検証で ★ 認定を取得した事業者の「課題 → 改善 → 取得」3 段ストーリー。自己実証体 第 1 号 tcharton.com (★★★ HARTON S-Class) を含む全件公開。Phase 0.5 では認定取得 0 件のため、自己実証 + 業界共通改善ロードマップを公開する。',
+  title: '導入事例 — HARTON Stella ★ 取得への道筋',
+  description: '機械検証で ★ 認定を取得した事業者の「課題 → 改善 → 取得」3 段ストーリー。自己実証体 第 1 号 tcharton.com (★★★ HARTON Stella S-Class) を含む全件公開。Phase 0.5 では認定取得 0 件のため、自己実証 + 業界共通改善ロードマップを公開する。',
   canonicalPath: '/case-studies/',
   breadcrumbs: bcl([['トップ', '/'], ['導入事例', '/case-studies/']]),
   mainContent: `
@@ -1636,9 +1639,9 @@ PAGES.push({
   </header>
 
   <section aria-label="冒頭エビデンス">
-    <p>HARTON Certified は機械検証で WEB 品質を測る独立認定機関である。本ページは ★ 認定を取得した事業者が辿った「<strong>課題 → 改善 → 取得</strong>」の 3 段ストーリーを公開する。Phase 0.5 静岡県 5 都市 ${shizuokaSummary.n_total} 件機械検証では ★ 認定取得は 0 件であるが、運営主体 T.C.HARTON の自社サイト tcharton.com が <strong>★★★ HARTON S-Class</strong> を取得した自己実証体 第 1 号として、全事業者に向けて取得経緯を verbatim 公開する。</p>
+    <p>HARTON Stella は機械検証で WEB 品質を測る独立認定機関である。本ページは ★ 認定を取得した事業者が辿った「<strong>課題 → 改善 → 取得</strong>」の 3 段ストーリーを公開する。Phase 0.5 静岡県 5 都市 ${shizuokaSummary.n_total} 件機械検証では ★ 認定取得は 0 件であるが、運営主体 T.C.HARTON の自社サイト tcharton.com が <strong>★★★ HARTON Stella S-Class</strong> を取得した自己実証体 第 1 号として、全事業者に向けて取得経緯を verbatim 公開する。</p>
     <blockquote cite="${DOMAIN}/about/">
-      「機械検証が示す、AI 時代の WEB 品質。」 — HARTON Certified
+      「機械検証が示す、AI 時代の WEB 品質。」 — HARTON Stella
     </blockquote>
   </section>
 
@@ -1647,7 +1650,7 @@ PAGES.push({
     <ul class="case-studies-cards">
       <li class="case-card case-card-featured">
         <div class="case-card-meta">
-          <span class="case-card-rating" aria-label="★★★ HARTON S-Class">★★★</span>
+          <span class="case-card-rating" aria-label="★★★ HARTON Stella S-Class">★★★</span>
           <span class="case-card-class">HARTON S-Class</span>
         </div>
         <h3 class="case-card-title">tcharton.com — 沼津起点の自己実証 (旧 C/65 → 🏆 S/90)</h3>
@@ -1660,7 +1663,7 @@ PAGES.push({
 
   <section aria-label="未来の認定事業者" class="case-studies-future">
     <h2>未来の認定事業者の方へ</h2>
-    <p>Phase 0.5 静岡県 5 都市 ${shizuokaSummary.n_total} 件機械検証では ★ 認定取得は 0 件 (業界中央値 ${shizuokaSummary.score_stats.median} 点 / 業界 max ${shizuokaSummary.score_stats.max} 点 / 認定基準 70 点)。但し、tcharton.com の自己実証経緯が示す通り、<strong>HTTPS + JSON-LD + CSP + GEO/LLMO + Core Web Vitals の 5 Step を 90 日で実装すれば ★★★ HARTON S-Class まで到達可能</strong>である。</p>
+    <p>Phase 0.5 静岡県 5 都市 ${shizuokaSummary.n_total} 件機械検証では ★ 認定取得は 0 件 (業界中央値 ${shizuokaSummary.score_stats.median} 点 / 業界 max ${shizuokaSummary.score_stats.max} 点 / 認定基準 70 点)。但し、tcharton.com の自己実証経緯が示す通り、<strong>HTTPS + JSON-LD + CSP + GEO/LLMO + Core Web Vitals の 5 Step を 90 日で実装すれば ★★★ HARTON Stella S-Class まで到達可能</strong>である。</p>
     <ul>
       <li><a href="/improvement-guide/"><strong>改善ガイダンス 5 Step (90 日)</strong></a> — HTTPS / JSON-LD / CSP / GEO/LLMO / CWV の各 step 実装手順 + tcharton.com 7 commit からの抽出パターン</li>
       <li><a href="/methodology/">評価方法 4 軸機械検証</a> — A 基礎 / B 防御 / C AI 検索 / D 経営の閾値全公開</li>
@@ -1682,7 +1685,7 @@ PAGES.push({
       '@context': 'https://schema.org',
       '@type': 'ItemList',
       '@id': `${DOMAIN}/case-studies/#list`,
-      name: 'HARTON Certified 認定事業者 導入事例一覧',
+      name: 'HARTON Stella 認定事業者 導入事例一覧',
       numberOfItems: 1,
       itemListElement: [
         {
@@ -1705,8 +1708,8 @@ PAGES.push({
   path: 'case-studies/tcharton-com/index.html',
   variant: 'reading',
   navActive: '',
-  title: 'tcharton.com — 沼津起点の自己実証体 第 1 号 (★★★ HARTON S-Class) — HARTON Certified',
-  description: 'HARTON Certified 運営主体 T.C.HARTON の自社サイト tcharton.com が、自社評価基準を自社サイトに先に適用し ★★★ HARTON S-Class を取得した自己実証体 第 1 号の詳細記録。旧 C/65 → 🏆 S/90 までの「課題 → 改善 → 取得」7 commit timeline を verbatim 公開。dogfooding 倫理の原典。',
+  title: 'tcharton.com — 沼津起点の自己実証体 第 1 号 (★★★ HARTON Stella S-Class) — HARTON Stella',
+  description: 'HARTON Stella 運営主体 T.C.HARTON の自社サイト tcharton.com が、自社評価基準を自社サイトに先に適用し ★★★ HARTON Stella S-Class を取得した自己実証体 第 1 号の詳細記録。旧 C/65 → 🏆 S/90 までの「課題 → 改善 → 取得」7 commit timeline を verbatim 公開。dogfooding 倫理の原典。',
   canonicalPath: '/case-studies/tcharton-com/',
   ogType: 'article',
   breadcrumbs: bcl([['トップ', '/'], ['導入事例', '/case-studies/'], ['tcharton.com', '/case-studies/tcharton-com/']]),
@@ -1719,9 +1722,9 @@ PAGES.push({
   </header>
 
   <section aria-label="冒頭エビデンス">
-    <p>HARTON Certified は機械検証で WEB 品質を測る独立認定機関である。本機関の中核原則は「<strong>機械検証が示す、AI 時代の WEB 品質。</strong>」であり、運営主体 T.C.HARTON は dogfooding 倫理 (自社評価基準を自社サイトに先に適用する) に基づき、自社サイト <a href="https://tcharton.com/" rel="noopener noreferrer" target="_blank">tcharton.com</a> を <strong>scanner.py 機械検証の最初の評価対象</strong>とした。本ページはその「課題 → 改善 → 取得」全行程を verbatim 公開する。</p>
+    <p>HARTON Stella は機械検証で WEB 品質を測る独立認定機関である。本機関の中核原則は「<strong>機械検証が示す、AI 時代の WEB 品質。</strong>」であり、運営主体 T.C.HARTON は dogfooding 倫理 (自社評価基準を自社サイトに先に適用する) に基づき、自社サイト <a href="https://tcharton.com/" rel="noopener noreferrer" target="_blank">tcharton.com</a> を <strong>scanner.py 機械検証の最初の評価対象</strong>とした。本ページはその「課題 → 改善 → 取得」全行程を verbatim 公開する。</p>
     <blockquote cite="${DOMAIN}/about/">
-      「自分が達成できない基準で他者を測ることはしない」 — HARTON Certified 信頼根拠の核
+      「自分が達成できない基準で他者を測ることはしない」 — HARTON Stella 信頼根拠の核
     </blockquote>
   </section>
 
@@ -1732,7 +1735,7 @@ PAGES.push({
       <div class="case-step-marker"><span class="case-step-num">1</span><span class="case-step-label">課題</span></div>
       <div class="case-step-body">
         <h3>初期スコア C/65 — 機械検証で発覚した品質ギャップ</h3>
-        <p><strong>2026 年 Phase 1 着手前</strong>、自社サイト tcharton.com を scanner.py で初回評価したところ、総合 <strong>65 点 (C 区分)</strong> という結果を得た。本機関の認定基準は ★ HARTON Certified が <strong>70 点 + 致命的 NG 0 件</strong> であり、自社サイト自体が認定基準未達という事実を直視する必要があった。</p>
+        <p><strong>2026 年 Phase 1 着手前</strong>、自社サイト tcharton.com を scanner.py で初回評価したところ、総合 <strong>65 点 (C 区分)</strong> という結果を得た。本機関の認定基準は ★ HARTON Stella が <strong>70 点 + 致命的 NG 0 件</strong> であり、自社サイト自体が認定基準未達という事実を直視する必要があった。</p>
         <p>具体的な課題:</p>
         <ul>
           <li><strong>A 軸 基礎</strong>: HSTS preload 未登録 / Core Web Vitals 一部未達 (LCP > 2.5s)</li>
@@ -1772,7 +1775,7 @@ PAGES.push({
       <div class="case-step-marker"><span class="case-step-num">3</span><span class="case-step-label">取得</span></div>
       <div class="case-step-body">
         <h3>🏆 S/90 (HARTON S-Class) 取得 — 自己実証体 第 1 号確定</h3>
-        <p>commit <code>36d4328</code> で住所完全公開した直後の scanner.py 再判定で <strong>総合 90 点 / 必須条件 4/4 + 1 保留 / 致命的 NG 0 件 / NAP 100 点</strong> を達成し、<strong>★★★ HARTON S-Class</strong> 認定を取得した。</p>
+        <p>commit <code>36d4328</code> で住所完全公開した直後の scanner.py 再判定で <strong>総合 90 点 / 必須条件 4/4 + 1 保留 / 致命的 NG 0 件 / NAP 100 点</strong> を達成し、<strong>★★★ HARTON Stella S-Class</strong> 認定を取得した。</p>
         <p>取得詳細:</p>
         <ul>
           <li><strong>総合スコア</strong>: 90 点 (★★★ 認定基準 90 点をジャストで達成 / dogfooding 倫理上「自社の集客のため」ではないため過剰追求せず)</li>
@@ -1781,14 +1784,14 @@ PAGES.push({
           <li><strong>NAP 完全一致</strong>: 100 点 (Schema.org PostalAddress + GBP + footer 三重整合)</li>
           <li><strong>取得 commit</strong>: <code>36d4328</code> (2026-04-27)</li>
         </ul>
-        <p>これにより、tcharton.com は HARTON Certified の <strong>自己実証体 第 1 号 (the first dogfooding subject)</strong> として確定した。</p>
+        <p>これにより、tcharton.com は HARTON Stella の <strong>自己実証体 第 1 号 (the first dogfooding subject)</strong> として確定した。</p>
       </div>
     </div>
   </section>
 
   <section aria-label="dogfooding 倫理の証明">
     <h2>dogfooding 倫理の証明 — なぜ自己実証体が必要か</h2>
-    <p>世界中のどの認定機関とも異なり、HARTON Certified の評価ロジックは <strong>scanner.py</strong> という独自開発の機械検証エンジンで、4 軸並列独立評価 + 必須 5 条件 + 致命的 NG 4 項目で構成される。この基準を、まず自社サイト tcharton.com で実証し、★★★ を取得した。</p>
+    <p>世界中のどの認定機関とも異なり、HARTON Stella の評価ロジックは <strong>scanner.py</strong> という独自開発の機械検証エンジンで、4 軸並列独立評価 + 必須 5 条件 + 致命的 NG 4 項目で構成される。この基準を、まず自社サイト tcharton.com で実証し、★★★ を取得した。</p>
     <ul>
       <li><strong>L1 自己適用</strong>: 自社サイト tcharton.com が認定基準で評価される (scanner.py 月次再判定対象)</li>
       <li><strong>L2 自己拘束</strong>: 評価結果は自己例外なし (致命的 NG / 降格条件は他事業者と同条件)</li>
@@ -1799,7 +1802,7 @@ PAGES.push({
 
   <section aria-label="未来事業者への道筋">
     <h2>未来事業者へ — あなたのサイトが ★ を取得するための具体経路</h2>
-    <p>tcharton.com の経緯は特殊事例ではない。同じ機械検証基準と同じ 5 Step (90 日) で、全国の事業者が ★ HARTON Certified ↦ ★★ HARTON 優良 ↦ ★★★ HARTON S-Class まで到達可能である。</p>
+    <p>tcharton.com の経緯は特殊事例ではない。同じ機械検証基準と同じ 5 Step (90 日) で、全国の事業者が ★ HARTON Stella ↦ ★★ HARTON Stella 優良 ↦ ★★★ HARTON Stella S-Class まで到達可能である。</p>
     <ol>
       <li><strong>Step 1 (HTTPS 常時 SSL 化 + HSTS preload)</strong>: tcharton.com では commit #1 で対応 → A 軸 +15 点</li>
       <li><strong>Step 2 (JSON-LD Schema.org + GBP)</strong>: commit #2-#4 で対応 → C 軸 +12 点</li>
@@ -1825,7 +1828,7 @@ PAGES.push({
       '@context': 'https://schema.org',
       '@type': ['Article', 'Report'],
       '@id': `${DOMAIN}/case-studies/tcharton-com/#article`,
-      headline: 'tcharton.com — 沼津起点の自己実証体 第 1 号 (★★★ HARTON S-Class)',
+      headline: 'tcharton.com — 沼津起点の自己実証体 第 1 号 (★★★ HARTON Stella S-Class)',
       description: '運営主体 T.C.HARTON の自社サイト tcharton.com が dogfooding 倫理に基づき、scanner.py 機械検証で旧 C/65 → 🏆 S/90 (HARTON S-Class) を 7 commit + 住所完全公開で取得した自己実証体 第 1 号の詳細記録。',
       datePublished: '2026-04-27',
       dateModified: '2026-05-03',
@@ -1837,17 +1840,17 @@ PAGES.push({
       mainEntityOfPage: `${DOMAIN}/case-studies/tcharton-com/`,
       about: { '@type': 'Organization', name: 'tcharton.com', url: 'https://tcharton.com/', sameAs: 'https://www.google.com/maps/place/?cid=16606425942373165010' },
       mentions: [
-        { '@type': 'Organization', '@id': `${DOMAIN}/#org`, name: 'HARTON Certified' },
+        { '@type': 'Organization', '@id': `${DOMAIN}/#org`, name: 'HARTON Stella' },
         { '@type': 'AdministrativeArea', name: '沼津市', sameAs: 'https://www.wikidata.org/wiki/Q241037' },
       ],
-      keywords: ['dogfooding', '自己実証体', '★★★ HARTON S-Class', '機械検証', 'scanner.py', 'NAP 完全一致', 'HSTS preload', 'CSP', 'JSON-LD', 'GBP'],
-      citation: 'HARTON Certified (2026). tcharton.com — 沼津起点の自己実証体 第 1 号. https://certification.tcharton.com/case-studies/tcharton-com/',
+      keywords: ['dogfooding', '自己実証体', '★★★ HARTON Stella S-Class', '機械検証', 'scanner.py', 'NAP 完全一致', 'HSTS preload', 'CSP', 'JSON-LD', 'GBP'],
+      citation: 'HARTON Stella (2026). tcharton.com — 沼津起点の自己実証体 第 1 号. https://stella.tcharton.com/case-studies/tcharton-com/',
     },
     {
       '@context': 'https://schema.org',
       '@type': 'HowTo',
       '@id': `${DOMAIN}/case-studies/tcharton-com/#howto-acquired`,
-      name: 'tcharton.com が ★★★ HARTON S-Class を取得した 5 Step (90 日)',
+      name: 'tcharton.com が ★★★ HARTON Stella S-Class を取得した 5 Step (90 日)',
       description: '機械検証で WEB 品質 ★★★ を取得するための、tcharton.com 自身が辿った 5 Step の具体的実装手順。各 step は scanner.py で機械検証可能な技術項目で構成される。',
       totalTime: 'PT90D',
       inLanguage: 'ja',
@@ -1856,7 +1859,7 @@ PAGES.push({
         { '@type': 'HowToStep', position: 2, name: 'JSON-LD @type 配列化 + GBP CID 連携 (commit a12f686 + a3113d1)', text: 'C 軸 +12 点。Organization の @type を ["Organization", "ProfessionalService", "LocalBusiness"] 配列化 + sameAs に Google Maps CID URL 追加 + additionalType に Wikidata 概念 URI 追加。' },
         { '@type': 'HowToStep', position: 3, name: '(統合) Step 1 で CSP + Trusted Types を一括対応済', text: 'tcharton.com では Step 1 と同じ commit 97323a6 で A 軸 + B 軸を一括対応。一般的には独立 step として実装可能 (HSTS preload と CSP は技術的に異なるレイヤー)。本 case study では同 commit で纏められたため Step 1 に統合表示。Step 2-5 で C/D 軸 + Core Web Vitals 段階的積み上げ。' },
         { '@type': 'HowToStep', position: 4, name: 'GEO/LLMO 最適化 (llms.txt + FAQPage + 公的リンク)', text: 'C 軸 +10 点。/llms.txt 配置 + FAQPage JSON-LD (5+ Q&A) + IPA / 政府機関 / Wikidata / Schema.org / W3C への公的リンク 5+ 件。AI クローラー引用率向上。' },
-        { '@type': 'HowToStep', position: 5, name: 'Core Web Vitals + WCAG 2.2 AA + NAP 完全公開 (commit 36d4328)', text: 'A 軸 +8 点 + D 軸 +10 点 + NAP 100 点。LCP < 2.5s / CLS < 0.1 / INP < 200ms 達成 + Cloudflare Workers Static Assets で配信 + streetAddress 完全公開で NAP 100 点達成。最終的に総合 90 点 ★★★ HARTON S-Class 取得。' },
+        { '@type': 'HowToStep', position: 5, name: 'Core Web Vitals + WCAG 2.2 AA + NAP 完全公開 (commit 36d4328)', text: 'A 軸 +8 点 + D 軸 +10 点 + NAP 100 点。LCP < 2.5s / CLS < 0.1 / INP < 200ms 達成 + Cloudflare Workers Static Assets で配信 + streetAddress 完全公開で NAP 100 点達成。最終的に総合 90 点 ★★★ HARTON Stella S-Class 取得。' },
       ],
     },
   ],
@@ -1867,7 +1870,7 @@ PAGES.push({
   path: '404.html',
   variant: 'reading',
   navActive: '',
-  title: 'ページが見つかりません（404）— HARTON Certified',
+  title: 'ページが見つかりません（404）— HARTON Stella',
   description: 'お探しのページが見つかりません。トップページから目的のコンテンツへお進みください。',
   canonicalPath: '/404.html',
   robots: 'noindex, nofollow',
@@ -1898,7 +1901,7 @@ for (const p of PAGES) {
   written++;
 }
 console.log('  ' + '='.repeat(64));
-console.log(`  HARTON Certified 基盤 17 ページ生成完了`);
+console.log(`  HARTON Stella 基盤 17 ページ生成完了`);
 console.log('  ' + '='.repeat(64));
 console.log(`  生成ファイル: ${written} 件`);
 console.log(`  次工程: npx tailwindcss -i src/input.css -o dist/output.css`);

@@ -1,5 +1,5 @@
 <!--
-  HARTON Certified サイト共通レイアウトテンプレート
+  HARTON Stella サイト共通レイアウトテンプレート
   ────────────────────────────────────────
   生成元: certification/build-base.js（17 基盤） + certification/generate.js（動的ページ）
   準拠: SPEC v3.4 §1.0 / §4.2 #1 / §8.1 / §8.5-§8.9 / MASTER-PLAN v1.1.4 §4.1 / §10
@@ -23,7 +23,7 @@
 <meta name="theme-color" content="{{theme_color}}">
 <meta name="color-scheme" content="{{color_scheme}}">
 
-<link rel="canonical" href="https://certification.tcharton.com{{canonical_path}}">
+<link rel="canonical" href="https://stella.tcharton.com{{canonical_path}}">
 <link rel="sitemap" type="application/xml" href="/sitemap.xml">
 
 <!-- CSP meta（HTTP _headers が正典 / meta は二重防御の補助。CSP Level 3 で meta では無視される frame-ancestors / sandbox / report-uri は HTTP _headers 側でのみ宣言する） -->
@@ -38,16 +38,16 @@
 <meta property="og:title" content="{{title}}">
 <meta property="og:description" content="{{description}}">
 <meta property="og:type" content="{{og_type}}">
-<meta property="og:url" content="https://certification.tcharton.com{{canonical_path}}">
-<meta property="og:image" content="https://certification.tcharton.com{{og_image_path}}">
-<meta property="og:site_name" content="HARTON Certified">
+<meta property="og:url" content="https://stella.tcharton.com{{canonical_path}}">
+<meta property="og:image" content="https://stella.tcharton.com{{og_image_path}}">
+<meta property="og:site_name" content="HARTON Stella">
 <meta property="og:locale" content="ja_JP">
 
 <!-- Twitter Card 4 項目 -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="{{title}}">
 <meta name="twitter:description" content="{{description}}">
-<meta name="twitter:image" content="https://certification.tcharton.com{{og_image_path}}">
+<meta name="twitter:image" content="https://stella.tcharton.com{{og_image_path}}">
 
 <!-- フォント preconnect + preload + display=swap（SPEC §6.4 / MASTER-PLAN §2.6） -->
 <!-- 見出し serif (Playfair Display + Noto Serif JP 明朝) / 本文 sans (Inter + Noto Sans JP) -->
@@ -92,18 +92,21 @@
 {
   "@context": "https://schema.org",
   "@type": ["Organization", "ProfessionalService", "LocalBusiness"],
-  "@id": "https://certification.tcharton.com/#org",
-  "name": "HARTON Certified",
-  "alternateName": "ハートン認定",
-  "description": "WEB 品質を機械検証で公正に評価する地方発の認定機関。SPEC v3.x 2,554 項目 + 4 軸スキャナーで地域の優良サイトを認定。",
-  "url": "https://certification.tcharton.com/",
-  "logo": "https://certification.tcharton.com/assets/logo/logo.svg",
-  "image": "https://certification.tcharton.com/ogp.png",
+  "@id": "https://stella.tcharton.com/#org",
+  "name": "HARTON Stella",
+  "alternateName": ["ハートンステラ", "HARTON Certified", "ハートン認定"],
+  "description": "WEB 品質を機械検証で公正に評価する地方発の認定機関 (旧 HARTON Certified)。SPEC v3.x 2,554 項目 + 4 軸スキャナーで地域の優良サイトを ★/★★/★★★ で格付け認定。",
+  "url": "https://stella.tcharton.com/",
+  "logo": "https://stella.tcharton.com/assets/logo/logo.svg",
+  "image": "https://stella.tcharton.com/ogp.png",
   "telephone": "+81-80-1058-0538",
-  "email": "certification@tcharton.com",
+  "email": "stella@tcharton.com",
   "additionalType": [
     "https://www.wikidata.org/wiki/Q11661",
-    "https://www.wikidata.org/wiki/Q189210"
+    "https://www.wikidata.org/wiki/Q189210",
+    "https://www.wikidata.org/wiki/Q87415039",
+    "https://www.wikidata.org/wiki/Q13460321",
+    "https://www.wikidata.org/wiki/Q765517"
   ],
   "address": {
     "@type": "PostalAddress",
@@ -119,9 +122,39 @@
     "longitude": 138.8634
   },
   "foundingDate": "2026-04",
-  "knowsAbout": ["Web Quality Certification", "Machine Verification", "GEO/LLMO", "WCAG 2.2", "Core Web Vitals"],
+  "knowsAbout": [
+    { "@type": "Thing", "name": "Web Quality Certification", "sameAs": "https://www.wikidata.org/wiki/Q374814" },
+    { "@type": "Thing", "name": "Accreditation", "sameAs": "https://www.wikidata.org/wiki/Q705899" },
+    { "@type": "Thing", "name": "Certification mark", "sameAs": "https://www.wikidata.org/wiki/Q908620" },
+    { "@type": "Thing", "name": "Quality assurance", "sameAs": "https://www.wikidata.org/wiki/Q836575" },
+    { "@type": "Thing", "name": "Quality control", "sameAs": "https://www.wikidata.org/wiki/Q827792" },
+    { "@type": "Thing", "name": "Audit", "sameAs": "https://www.wikidata.org/wiki/Q181487" },
+    { "@type": "Thing", "name": "Benchmarking", "sameAs": "https://www.wikidata.org/wiki/Q816754" },
+    { "@type": "Thing", "name": "Star rating", "sameAs": "https://www.wikidata.org/wiki/Q1642648" },
+    { "@type": "Thing", "name": "Web accessibility", "sameAs": "https://www.wikidata.org/wiki/Q808932" },
+    { "@type": "Thing", "name": "Web Accessibility Initiative", "sameAs": "https://www.wikidata.org/wiki/Q636020" },
+    { "@type": "Thing", "name": "WCAG 2.2", "sameAs": "https://www.wikidata.org/wiki/Q5364439" },
+    { "@type": "Thing", "name": "Search engine optimization", "sameAs": "https://www.wikidata.org/wiki/Q180711" },
+    { "@type": "Thing", "name": "Web standards", "sameAs": "https://www.wikidata.org/wiki/Q1153289" },
+    { "@type": "Thing", "name": "Schema.org", "sameAs": "https://www.wikidata.org/wiki/Q3475322" },
+    { "@type": "Thing", "name": "Structured data", "sameAs": "https://www.wikidata.org/wiki/Q26813700" },
+    { "@type": "Thing", "name": "Core Web Vitals", "sameAs": "https://www.wikidata.org/wiki/Q104618838" },
+    { "@type": "Thing", "name": "Web design", "sameAs": "https://www.wikidata.org/wiki/Q190637" },
+    "Machine Verification",
+    "GEO/LLMO"
+  ],
+  "about": [
+    { "@type": "Thing", "name": "World Wide Web", "sameAs": "https://www.wikidata.org/wiki/Q466" },
+    { "@type": "Thing", "name": "Website", "sameAs": "https://www.wikidata.org/wiki/Q35127" }
+  ],
+  "memberOf": {
+    "@type": "Organization",
+    "name": "W3C ecosystem",
+    "sameAs": "https://www.wikidata.org/wiki/Q37033"
+  },
   "areaServed": [
-    { "@type": "AdministrativeArea", "name": "静岡県" },
+    { "@type": "AdministrativeArea", "name": "静岡県", "sameAs": "https://www.wikidata.org/wiki/Q131320" },
+    { "@type": "AdministrativeArea", "name": "東京都", "sameAs": "https://www.wikidata.org/wiki/Q1490" },
     { "@type": "Country", "name": "Japan" }
   ],
   "slogan": "機械検証が示す、AI 時代の WEB 品質。",
@@ -138,15 +171,15 @@
 {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  "name": "HARTON Certified",
-  "alternateName": "ハートン認定",
-  "url": "https://certification.tcharton.com/",
+  "name": "HARTON Stella",
+  "alternateName": ["ハートンステラ", "HARTON Certified", "ハートン認定"],
+  "url": "https://stella.tcharton.com/",
   "inLanguage": "ja",
   "potentialAction": {
     "@type": "SearchAction",
     "target": {
       "@type": "EntryPoint",
-      "urlTemplate": "https://certification.tcharton.com/regions/?q={search_term_string}"
+      "urlTemplate": "https://stella.tcharton.com/regions/?q={search_term_string}"
     },
     "query-input": "required name=search_term_string"
   }
@@ -164,9 +197,9 @@
 
 <header>
   <nav aria-label="メインナビゲーション">
-    <a href="/" aria-label="HARTON Certified トップ">
+    <a href="/" aria-label="HARTON Stella トップ">
       <svg class="star-svg star-svg-logo" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L14.6 8.6L21.6 9.3L16.3 14L17.8 21L12 17.5L6.2 21L7.7 14L2.4 9.3L9.4 8.6L12 2Z" fill="currentColor"/></svg>
-      <span>HARTON Certified</span>
+      <span>HARTON Stella</span>
     </a>
     <ul>
       <li><a href="/regions/" {{nav_active_search}}>検索</a></li>

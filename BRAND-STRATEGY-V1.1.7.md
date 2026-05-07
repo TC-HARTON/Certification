@@ -1,7 +1,7 @@
-# HARTON Certified ブランド戦略 v1.1.7（① 確定 / 2026-04-30）
+# HARTON Stella ブランド戦略 v1.1.7（① 確定 / 2026-04-30）
 
 > **発信**: ① HARTON 総合責任者
-> **宛先**: ⑤ HARTON Certified 認定運用責任者（主受信） / ② tcharton / ③ note-content / ④ scanner（共有）
+> **宛先**: ⑤ HARTON Stella 認定運用責任者（主受信） / ② tcharton / ③ note-content / ④ scanner（共有）
 > **出典**: Gemini 提言書 `_archive/2026-04-28-skill-mandatory-cleanup/Project_Michelin_Strategy_v1.md` ① 批判的継承
 > **連動**: `HARTON/CRITICAL-ISSUES-REPORT.md` §23.3 / `MASTER-PLAN.md` v1.1.7 草案議題
 
@@ -16,7 +16,7 @@
 ## 1. ブランド戦略 3 行サマリ
 
 ```
-[実体]    沼津 = HARTON Certified 評価基準の「自己実証体 第 1 号」誕生地
+[実体]    沼津 = HARTON Stella 評価基準の「自己実証体 第 1 号」誕生地
 [物語]    地方都市から AI 時代の WEB 品質を再定義する
 [証明]    自分が ★★★ を取れない基準で、他者を測ることはしない（dogfooding 倫理）
 ```
@@ -88,14 +88,14 @@
 3. Gemini 「審査と実務の垂直統合」より一段深い**「審査基準そのものの自己実証体」**位置付け
 4. **権威の自己拘束**: 認定機関が自らの基準で評価される構造（自己例外の禁止）
 
-### §4.X tcharton.com / certification.tcharton.com 役割再定義（新設）
+### §4.X tcharton.com / stella.tcharton.com 役割再定義（新設）
 
 含めるべき要素:
 
 | サイト | 改訂後の役割定義 |
 |---|---|
 | **tcharton.com** | 「**自己実証体 第 1 号**」— 評価基準を自ら満たす唯一の制作集団 |
-| **certification.tcharton.com** | 「**評価機関**」— 同基準で全国を発掘・格付け |
+| **stella.tcharton.com** | 「**評価機関**」— 同基準で全国を発掘・格付け |
 
 - 「シェフの厨房 / ガイドブック」比喩は **不採用**
 - 評価 ↔ 構築の循環を **「dogfooding 構造」**と命名
@@ -109,7 +109,7 @@
 |---|---|---|---|
 | A | 「沼津で証明し、全国へ。AI 時代の WEB 品質を再定義する。」 | ② tcharton ヒーロー副題 | ② |
 | **B**（主軸）| **「自分が ★★★ を取れない基準で、他者を測らない。」** | ⑤ certification ブランドマニフェスト直結 | ⑤ §3.X / ② Why Numazu? / ③ シリーズ第 1 回 |
-| C | 「地方発・自己実証型認定。HARTON Certified。」 | バッジ・短尺 | ⑤ バッジ素材 / ② フッタータグライン |
+| C | 「地方発・自己実証型認定。HARTON Stella。」 | バッジ・短尺 | ⑤ バッジ素材 / ② フッタータグライン |
 
 ---
 
@@ -132,7 +132,7 @@
 |---|---|
 | 自己実証体 | tcharton.com の役割定義（評価基準を自ら満たす実証体）|
 | dogfooding 倫理 | 自社製品（評価基準）を自社で適用する倫理規範 |
-| 沼津起点 | HARTON Certified の地理的・物語的起点 |
+| 沼津起点 | HARTON Stella の地理的・物語的起点 |
 | WEB 品質の民主化 | 機械評価は資本に依存しないという主張 |
 | 地方都市から再定義 | 東京中心の権威構造への対抗フレーミング |
 

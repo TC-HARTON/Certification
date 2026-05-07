@@ -7,7 +7,7 @@
 
 ## 全体観
 
-HARTON Certified の最重要 KPI は、最終的に **「HARTON 本体（tcharton.com）への送客と契約」**に直結する。
+HARTON Stella の最重要 KPI は、最終的に **「HARTON 本体（tcharton.com）への送客と契約」**に直結する。
 サブドメイン自体は無料運営だが、ブランド資産として HARTON のサービス需要を生み出す装置として設計する。
 
 ---
@@ -65,8 +65,8 @@ PV / セッション / 滞在時間 / 被リンク
 
 #### B の成功定義
 - 認定された事業者の半数以上がバッジを取得
-- 自社サイトに HARTON Certified バッジを表示する事業者が増加
-- HARTON Certified からのバックリンクが累積（SEO 効果）
+- 自社サイトに HARTON Stella バッジを表示する事業者が増加
+- HARTON Stella からのバックリンクが累積（SEO 効果）
 
 ---
 
@@ -84,7 +84,7 @@ PV / セッション / 滞在時間 / 被リンク
 #### C の成功定義（**事業全体の成功定義でもある**）
 - 月間 tcharton.com 送客が安定的に増加
 - 無料診断申込から有料契約への変換率 20%+
-- HARTON サービス契約者の中で「HARTON Certified 経由」が 30%+
+- HARTON サービス契約者の中で「HARTON Stella 経由」が 30%+
 
 ---
 
@@ -137,7 +137,7 @@ PV / セッション / 滞在時間 / 被リンク
 [Phase 2 → Phase 3 移行判断]
 ✅ 静岡県内 500 件認定
 ✅ 月間 PV 50,000+
-✅ HARTON 契約者の 30%+ が「HARTON Certified 経由」
+✅ HARTON 契約者の 30%+ が「HARTON Stella 経由」
 ✅ Wikipedia 記事化 / 業界誌掲載
 ```
 
@@ -192,13 +192,13 @@ PV / セッション / 滞在時間 / 被リンク
 tcharton.com への送客時には UTM 付与：
 
 ```
-?utm_source=certification.tcharton.com
+?utm_source=stella.tcharton.com
 &utm_medium=referral
 &utm_campaign=apply_page  # or other page
 &utm_content=cta_button   # or other element
 ```
 
-→ tcharton.com 側 GA4 で「HARTON Certified 経由」を正確に分離計測。
+→ tcharton.com 側 GA4 で「HARTON Stella 経由」を正確に分離計測。
 
 ---
 
@@ -208,7 +208,7 @@ tcharton.com への送客時には UTM 付与：
 |---|---|
 | GA4 で外部リンククリックは標準計測されない | カスタムイベント `outbound_link_click` を実装 |
 | バッジ埋込み率はバックリンク調査でしか計測不可 | 月次で ahrefs / semrush を確認、または自社サイトに「埋込みコード使用通知」機能 |
-| 「契約が HARTON Certified 経由か」の特定 | 申込時に「どこで知りましたか?」項目必須 + UTM |
+| 「契約が HARTON Stella 経由か」の特定 | 申込時に「どこで知りましたか?」項目必須 + UTM |
 | 直帰率の解釈 | 業種ページから個別事業者ページへの流れは「直帰でない」と設計（イベント発火）|
 
 ---

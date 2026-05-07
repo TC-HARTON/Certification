@@ -1,10 +1,10 @@
 # ⑤ certification UX/UI 最善化指示書 v1（① HARTON 総合責任者 確定 / 2026-04-30）
 
 > **発信**: ① HARTON 総合責任者
-> **宛先**: ⑤ HARTON Certified 認定運用責任者
+> **宛先**: ⑤ HARTON Stella 認定運用責任者
 > **モデル参照**: **ミシュランガイド公式 `guide.michelin.com`**
 > **連動**: `BRAND-STRATEGY-V1.1.7.md` / `MASTER-PLAN.md` v1.1.7 草案議題
-> **適用範囲**: certification.tcharton.com 全ページ（基盤 17 + 動的 50 + ルート 3）
+> **適用範囲**: stella.tcharton.com 全ページ（基盤 17 + 動的 50 + ルート 3）
 > **着手前提**: Critical 3 件（CR-1 streetAddress / CR-2 Web3Forms / CR-3 Turnstile）解消後、または並行可能箇所のみ先行可
 
 ---

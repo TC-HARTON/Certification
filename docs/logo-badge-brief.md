@@ -7,7 +7,7 @@
 
 ## 0. プロジェクト概要
 
-HARTON Certified（certification.tcharton.com）は、静岡県東部の優良 WEB サイトを公正に評価・認定する独立機関。SPEC v3.2 という独自規格と、4 軸スキャナーによる機械検証で業種別・地域別ランキングを公開する。
+HARTON Stella（stella.tcharton.com）は、静岡県東部の優良 WEB サイトを公正に評価・認定する独立機関。SPEC v3.2 という独自規格と、4 軸スキャナーによる機械検証で業種別・地域別ランキングを公開する。
 
 ## 1. ブランド原型
 
@@ -91,7 +91,7 @@ HARTON CERTIFIED
 
 ## 5. バッジシステム（3 段階★ 視覚差別化）
 
-### ★★★ HARTON Certified（基本認定）
+### ★★★ HARTON Stella（基本認定）
 
 ```
 背景: クリーム（#FAF8F3）
@@ -102,7 +102,7 @@ HARTON CERTIFIED
 印象: 控えめ、認定の事実を淡々と示す
 ```
 
-### ★★★★ HARTON 優良（誇り認定）
+### ★★★★ HARTON Stella 優良（誇り認定）
 
 ```
 背景: 紺（#0F172A）
@@ -113,7 +113,7 @@ HARTON CERTIFIED
 印象: 誇り、自信、上品
 ```
 
-### ★★★★★ HARTON S-Class Certified（ブランド頂点）
+### ★★★★★ HARTON Stella S-Class Certified（ブランド頂点）
 
 ```
 背景: 紺グラデーション（深い紺 → やや明るい紺）
@@ -157,7 +157,7 @@ HARTON CERTIFIED
 
 ```
 必須:
-✅ HARTON Certified シンボル
+✅ HARTON Stella シンボル
 ✅ ★ 区分（★★★ / ★★★★ / ★★★★★）
 ✅ 認定 ID（例: HC-NUMAZU-2026-001）
 ✅ 認定日（YYYY-MM-DD）
@@ -166,7 +166,7 @@ HARTON CERTIFIED
 オプション:
 □ 業種カテゴリ
 □ 地域名
-□ QR コード（検証用、certification.tcharton.com/businesses/<slug>/）
+□ QR コード（検証用、stella.tcharton.com/businesses/<slug>/）
 □ 公式サイト URL
 ```
 
@@ -177,11 +177,11 @@ HARTON CERTIFIED
 ### HTML スニペット例
 
 ```html
-<a href="https://certification.tcharton.com/businesses/example-shop/" 
+<a href="https://stella.tcharton.com/businesses/example-shop/" 
    target="_blank" 
    rel="noopener">
-  <img src="https://certification.tcharton.com/badges/example-shop-4star.svg" 
-       alt="HARTON Certified ★★★★ 優良 認定" 
+  <img src="https://stella.tcharton.com/badges/example-shop-4star.svg" 
+       alt="HARTON Stella ★★★★ 優良 認定" 
        width="200" 
        height="200">
 </a>

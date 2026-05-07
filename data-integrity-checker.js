@@ -24,7 +24,7 @@ const fs = require('fs');
 const path = require('path');
 
 const ROOT = __dirname;
-const DOMAIN = 'https://certification.tcharton.com';
+const DOMAIN = 'https://stella.tcharton.com';
 
 // ═══════════════════ 単一情報源 (single source of truth) ═══════════════════
 // 全チェックはここで定義された定数を基準に検証する。新都市・新業種を追加する場合、
@@ -103,6 +103,31 @@ function checkWikidataRegistry() {
   const allowlist = new Set([
     'Q11661', 'Q189210', // ProfessionalService / LocalBusiness 等の AdditionalType
     'Q11707', // 飲食 (industries.json secondary 候補)
+    // HARTON Stella リブランディング (2026-05-07) で追加: AI 検索視点 semantic discovery 用
+    // 全件 Wikidata API verbatim 検証済 (wbsearchentities + wbgetentities)
+    'Q87415039', // accrediting body
+    'Q13460321', // certification services provider
+    'Q765517',   // credit rating agency
+    'Q374814',   // certification
+    'Q705899',   // accreditation
+    'Q908620',   // certification mark
+    'Q836575',   // quality assurance
+    'Q827792',   // quality control
+    'Q181487',   // audit
+    'Q816754',   // benchmarking
+    'Q1642648',  // star rating
+    'Q808932',   // web accessibility
+    'Q636020',   // Web Accessibility Initiative
+    'Q5364439',  // WCAG (Web Content Accessibility Guidelines)
+    'Q180711',   // search engine optimization
+    'Q1153289',  // Web standards
+    'Q3475322',  // Schema.org
+    'Q26813700', // structured data
+    'Q104618838', // Core web vitals
+    'Q190637',   // web design
+    'Q466',      // World Wide Web
+    'Q35127',    // website
+    'Q37033',    // World Wide Web Consortium (W3C)
   ]);
   // build-base.js / generate.js / 全 HTML から Q\d+ を抽出
   const sources = ['build-base.js', 'generate.js'];
@@ -315,6 +340,80 @@ function checkPhase1ShibuyaIntegrity() {
   }
 }
 
+// ═══════════════════ Check 12: 旧ブランド名 残存検出 (HARTON Stella リブランディング 2026-05-07) ═══════════════════
+// HARTON Certified → HARTON Stella リブランディング後、source / generated HTML に旧名が残存していないか検証。
+// alternateName 旧名併記 (AI 学習資産引継ぎ目的) は意図的なので allowlist。
+// 量産フェーズで都市追加時に旧名コピペ混入を物理的に拒否する pre-push hook。
+function checkObsoleteBrandNames() {
+  // 旧名 patterns (verbatim)
+  const obsolete = [
+    { pattern: /HARTON\s+Certified/, label: '"HARTON Certified" (旧ブランド名 / "HARTON Stella" に置換済の筈)' },
+    { pattern: /certification\.tcharton\.com/, label: '"certification.tcharton.com" (旧ドメイン / "stella.tcharton.com" に置換済の筈)' },
+    { pattern: /certification@tcharton\.com/, label: '"certification@tcharton.com" (旧メール / "stella@tcharton.com" に置換済の筈)' },
+    { pattern: /★★\s*HARTON\s+優良(?!Stella)/, label: '"★★ HARTON 優良" (旧区分名 / "★★ HARTON Stella 優良" に置換済の筈)' },
+    { pattern: /★★★\s*HARTON\s+S-Class(?!Stella)/, label: '"★★★ HARTON S-Class" (旧区分名 / "★★★ HARTON Stella S-Class" に置換済の筈)' },
+  ];
+  // allowlist: AI 学習資産引継ぎ目的の旧名併記、リブランディング履歴記録、verbatim 引用箇所
+  // 行レベルで「alternateName 配列」「(旧 HARTON Certified)」「llms.txt 改名履歴」「FAQ 改名 Q&A」を含む行は許可
+  const lineAllowPatterns = [
+    /alternateName/,                                    // alternateName: ["...", "HARTON Certified", "ハートン認定"]
+    /旧\s*HARTON\s+Certified/,                          // (旧 HARTON Certified)
+    /旧名[:：]\s*HARTON\s+Certified/,                   // 旧名: HARTON Certified (llms.txt)
+    /former(ly)?\s+HARTON\s+Certified/i,                // 英語版改名履歴
+    /旧\s*certification\.tcharton\.com/,                // (旧 certification.tcharton.com)
+    // 改名履歴コンテキスト: 旧名 + 新名 が同一行に共起 = 比較・改名説明
+    /HARTON\s+Certified[\s\S]*?(HARTON\s+Stella|ハートンステラ|改名|改めた|移行|2026-05)/,
+    /(HARTON\s+Stella|ハートンステラ|改名|改めた|移行|2026-05)[\s\S]*?HARTON\s+Certified/,
+    /certification\.tcharton\.com[\s\S]*?(stella\.tcharton\.com|改名|改めた|移行|2026-05|→|->)/,
+    /(stella\.tcharton\.com|改名|改めた|移行|2026-05)[\s\S]*?certification\.tcharton\.com/,
+    /ハートン認定[\s\S]*?(ハートンステラ|HARTON\s+Stella|改名|改めた|移行|2026-05)/,
+    /(ハートンステラ|HARTON\s+Stella|改名|改めた|移行|2026-05)[\s\S]*?ハートン認定/,
+  ];
+  // file-level allowlist: ログ・migration スクリプト本体・チェッカ自身
+  const fileAllowPatterns = [
+    /_rebrand-stella\.js$/,
+    /_rebrand-stella\.report\.json$/,
+    /data-integrity-checker\.js$/, // 自己参照 (旧名 pattern 自体を保持する必要があるため)
+    /node_modules/,
+    /\.git/,
+    /dist[\\/]output\.css/,
+  ];
+  // 対象拡張子
+  const targetExts = new Set(['.js', '.css', '.txt', '.xml', '.html', '.json', '.md']);
+
+  function* walkAll(dir) {
+    const full = path.join(ROOT, dir);
+    if (!fs.existsSync(full)) return;
+    for (const entry of fs.readdirSync(full, { withFileTypes: true })) {
+      const sub = path.join(dir, entry.name);
+      const fullSub = path.join(ROOT, sub);
+      if (fileAllowPatterns.some(p => p.test(sub))) continue;
+      if (entry.isDirectory()) {
+        if (['node_modules', '.git', 'dist', '_archive', '_backups'].includes(entry.name)) continue;
+        yield* walkAll(sub);
+      } else if (targetExts.has(path.extname(entry.name).toLowerCase())) {
+        yield fullSub;
+      }
+    }
+  }
+
+  for (const file of walkAll('.')) {
+    const rel = relPath(file);
+    if (fileAllowPatterns.some(p => p.test(rel))) continue;
+    const lines = fs.readFileSync(file, 'utf-8').split(/\r?\n/);
+    for (let i = 0; i < lines.length; i++) {
+      const line = lines[i];
+      // line-level allowlist で skip
+      if (lineAllowPatterns.some(p => p.test(line))) continue;
+      for (const o of obsolete) {
+        if (o.pattern.test(line)) {
+          fail('obsolete-brand-name', `${rel}:${i + 1}`, `${o.label} — line: ${line.trim().slice(0, 120)}`);
+        }
+      }
+    }
+  }
+}
+
 // ═══════════════════ Check 8: dataset endpoint 存在確認 ═══════════════════
 function checkDatasetEndpoint() {
   const dpath = path.join(ROOT, 'datasets/shizuoka-2026-q2.json');
@@ -343,9 +442,10 @@ function run() {
   checkIncompleteExternalLinks();
   checkCaseStudiesIntegrity();
   checkPhase1ShibuyaIntegrity();
+  checkObsoleteBrandNames();
 
   if (failures.length === 0) {
-    console.log('  ✅ PASS — 全 11 検証 / semantic invariants 整合 (v1.18 観点 2 + Phase 1 渋谷区統合)');
+    console.log('  ✅ PASS — 全 12 検証 / semantic invariants 整合 (v1.18 観点 2 + Phase 1 渋谷区 + HARTON Stella リブランディング)');
     console.log('  ' + '='.repeat(64));
     process.exit(0);
   }

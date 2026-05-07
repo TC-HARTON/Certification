@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * SPEC.md v3.4 完全自動検証エージェント (certification.tcharton.com)
+ * SPEC.md v3.4 完全自動検証エージェント (stella.tcharton.com)
  * ─────────────────────────────────────
  * 派生元: tcharton/spec-checker.js（同一ロジック / DOMAIN・TARGETS のみ certification 用）
  * SPEC.md v3.4 §1.0 派生サイト絶対法規 / §4.2 #1 JSON-LD / §8.1-§8.9 セキュリティ
@@ -11,7 +11,7 @@
  * 使い方:
  *   node spec-checker.js                                                # 全対象（静的 + 動的）
  *   node spec-checker.js index.html                                     # 個別ファイル
- *   node spec-checker.js --live https://certification.tcharton.com/     # 本番 HTTP ヘッダ実測併用
+ *   node spec-checker.js --live https://stella.tcharton.com/     # 本番 HTTP ヘッダ実測併用
  */
 
 const fs = require('fs');
@@ -20,9 +20,9 @@ const https = require('https');
 
 // ═══════════════════ 設定 ═══════════════════
 const ROOT = __dirname;
-const DOMAIN = 'https://certification.tcharton.com';
+const DOMAIN = 'https://stella.tcharton.com';
 
-// MASTER-PLAN §4.1 — certification.tcharton.com 22 ページ設計
+// MASTER-PLAN §4.1 — stella.tcharton.com 22 ページ設計
 // 静的（基盤）: TOP + 信頼の核 6 + 動線 4 + 必須情報 5 + 補助 1 = 17 件
 // 動的（量産）: regions / industries / businesses / rankings は glob で自動列挙
 const STATIC_TARGETS = [
@@ -1156,7 +1156,7 @@ function report(all) {
   }));
 
   console.log('\n' + '='.repeat(72));
-  console.log('  SPEC.md v3.4 完全自動検証レポート (certification.tcharton.com 22 ページ設計)');
+  console.log('  SPEC.md v3.4 完全自動検証レポート (stella.tcharton.com 22 ページ設計)');
   console.log('  検証日時: ' + new Date().toISOString());
   console.log('  チェックリスト: 11.1(6)+11.2(12)+11.3(3)+11.4(7)+11.5(7)+11.6(4)+11.7モバイル+11.8Google+11.9(2)');
   console.log('                 + GEO/LLMO(G-1〜G-6) + SPEC本文 + グローバル + コントラスト比');

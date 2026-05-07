@@ -1,5 +1,5 @@
 /** @type {import('tailwindcss').Config} */
-// HARTON Certified Tailwind 設定
+// HARTON Stella Tailwind 設定
 // MASTER-PLAN §2.4 ブランドカラーシステム（確定済 / 議論再開禁止）
 // MASTER-PLAN §2.6 タイポグラフィ方針（serif / sans / tabular-nums）
 // 旧 tcharton 配色（teal/dark）は spec-checker のコントラスト固定検査整合のため保持

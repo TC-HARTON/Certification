@@ -38,7 +38,8 @@
             "千本松原"
           ],
           "public_url": "https://www.city.numazu.shizuoka.jp/",
-          "public_source_label": "沼津市 公式サイト"
+          "public_source_label": "沼津市 公式サイト",
+          "population": "約 18.7 万人 (2024)"
         }
       },
       "mishima": {
@@ -60,7 +61,8 @@
             "新幹線三島駅"
           ],
           "public_url": "https://www.city.mishima.shizuoka.jp/",
-          "public_source_label": "三島市 公式サイト"
+          "public_source_label": "三島市 公式サイト",
+          "population": "約 10.5 万人 (2024)"
         }
       },
       "fuji": {
@@ -82,7 +84,8 @@
             "東海道本線"
           ],
           "public_url": "https://www.city.fuji.shizuoka.jp/",
-          "public_source_label": "富士市 公式サイト"
+          "public_source_label": "富士市 公式サイト",
+          "population": "約 24.5 万人 (2024)"
         }
       },
       "shizuoka": {
@@ -107,7 +110,8 @@
             "新幹線静岡駅"
           ],
           "public_url": "https://www.city.shizuoka.lg.jp/",
-          "public_source_label": "静岡市 公式サイト"
+          "public_source_label": "静岡市 公式サイト",
+          "population": "約 67.5 万人 (2024 / 政令指定都市)"
         }
       },
       "hamamatsu": {
@@ -132,7 +136,8 @@
             "新幹線浜松駅"
           ],
           "public_url": "https://www.city.hamamatsu.shizuoka.jp/",
-          "public_source_label": "浜松市 公式サイト"
+          "public_source_label": "浜松市 公式サイト",
+          "population": "約 78.5 万人 (2024 / 政令指定都市)"
         }
       }
     }
@@ -162,7 +167,7 @@
         "wikidata": "Q193638",
         "phase": 1,
         "geo": {
-          "latitude": 35.6640,
+          "latitude": 35.664,
           "longitude": 139.6982
         },
         "city_facts": {
@@ -176,7 +181,8 @@
             "代々木"
           ],
           "public_url": "https://www.city.shibuya.tokyo.jp/",
-          "public_source_label": "渋谷区 公式サイト"
+          "public_source_label": "渋谷区 公式サイト",
+          "population": "約 23.5 万人 (2024 / 東京都特別区)"
         }
       }
     }

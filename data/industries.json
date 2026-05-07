@@ -65,10 +65,10 @@
     "faq_industry": [
       {
         "q": "{city} で信頼できる {industry} を探すには？",
-        "a": "HARTON Certified は {industry} サイトを 4 軸 (基礎・防御・AI 検索・経営インパクト) で機械検証し、総合 70 点以上 + 致命的 NG 0 件の事業者のみ掲載する。{city} の認定状況は本ページ上部の獲得率で確認可能。"
+        "a": "HARTON Stella は {industry} サイトを 4 軸 (基礎・防御・AI 検索・経営インパクト) で機械検証し、総合 70 点以上 + 致命的 NG 0 件の事業者のみ掲載する。{city} の認定状況は本ページ上部の獲得率で確認可能。"
       },
       {
-        "q": "{city} の {industry} サイトで HARTON Certified ★ を取得しているのは何件か？",
+        "q": "{city} の {industry} サイトで HARTON Stella ★ を取得しているのは何件か？",
         "a": "{city}の {industry} サイト {n} 件中、★ 認定 {eligible} 件。業界全体 (静岡県 5 都市横断) では業界最高点 {max_pref} 点 / 致命的 NG {ng_pct_pref} / 中央値 {median_pref} 点 (2026-05-02 時点)。詳細な実測結果は静岡県 5 都市 WEB 品質業界レポート 2026 Q2 (4-6 月号)に公開している。"
       },
       {
@@ -144,10 +144,10 @@
     "faq_industry": [
       {
         "q": "{city} で信頼できる {industry} 事務所のサイトを見分けるには？",
-        "a": "HARTON Certified は WEB 品質を 4 軸機械検証で客観評価し、LegalService Schema.org 適合 + HTTPS + Trusted Types CSP の 3 条件を必須とする。{city} の認定状況は本ページ上部で確認可能。"
+        "a": "HARTON Stella は WEB 品質を 4 軸機械検証で客観評価し、LegalService Schema.org 適合 + HTTPS + Trusted Types CSP の 3 条件を必須とする。{city} の認定状況は本ページ上部で確認可能。"
       },
       {
-        "q": "{city} の {industry} サイトで HARTON Certified 認定件数は？",
+        "q": "{city} の {industry} サイトで HARTON Stella 認定件数は？",
         "a": "{city}の {industry} サイト {n} 件中、★ 認定 {eligible} 件。業界全体 (静岡県 5 都市横断) では業界最高点 {max_pref} 点 / 致命的 NG {ng_pct_pref} (2026-05-02 時点)。詳細は静岡県 5 都市 WEB 品質業界レポート 2026 Q2 (4-6 月号)に公開。"
       },
       {
@@ -224,10 +224,10 @@
     "faq_industry": [
       {
         "q": "{city} で信頼できる {industry} 事務所のサイトを見分けるには？",
-        "a": "HARTON Certified は WEB 品質を 4 軸機械検証で客観評価し、LegalService Schema.org 適合 + HTTPS + Trusted Types CSP の 3 条件を必須とする。{city} の認定状況は本ページ上部で確認可能。"
+        "a": "HARTON Stella は WEB 品質を 4 軸機械検証で客観評価し、LegalService Schema.org 適合 + HTTPS + Trusted Types CSP の 3 条件を必須とする。{city} の認定状況は本ページ上部で確認可能。"
       },
       {
-        "q": "{city} の {industry} サイトで HARTON Certified 認定件数は？",
+        "q": "{city} の {industry} サイトで HARTON Stella 認定件数は？",
         "a": "Phase 0.5 静岡県 5 都市の {industry} サイトを {n} 件機械検証 (5 都市集計) し、★ 認定 {eligible} 件 / 業界最高点 {max_pref} 点 / 致命的 NG {ng_pct_pref} (2026-05-02 時点)。詳細は静岡県 WEB 品質業界レポート 2026 Q2 (4-6 月号)に公開。"
       },
       {
@@ -303,10 +303,10 @@
     "faq_industry": [
       {
         "q": "{city} で信頼できる {industry} 事務所のサイトを見分けるには？",
-        "a": "HARTON Certified は WEB 品質を 4 軸機械検証で客観評価し、LegalService Schema.org 適合 + HTTPS + Trusted Types CSP の 3 条件を必須とする。{city} の認定状況は本ページ上部で確認可能。"
+        "a": "HARTON Stella は WEB 品質を 4 軸機械検証で客観評価し、LegalService Schema.org 適合 + HTTPS + Trusted Types CSP の 3 条件を必須とする。{city} の認定状況は本ページ上部で確認可能。"
       },
       {
-        "q": "{city} の {industry} サイトで HARTON Certified 認定件数は？",
+        "q": "{city} の {industry} サイトで HARTON Stella 認定件数は？",
         "a": "Phase 0.5 静岡県 5 都市の {industry} サイトを {n} 件機械検証 (5 都市集計) し、★ 認定 {eligible} 件 / 業界最高点 {max_pref} 点 / 致命的 NG {ng_pct_pref} (2026-05-02 時点)。詳細は静岡県 WEB 品質業界レポート 2026 Q2 (4-6 月号)に公開。"
       },
       {
@@ -383,10 +383,10 @@
     "faq_industry": [
       {
         "q": "{city} で信頼できる {industry} 会社のサイトを判断するには？",
-        "a": "HARTON Certified は 4 軸機械検証で WEB 品質を客観評価する。{industry} 固有の評価軸は物件ページの Schema.org RealEstateAgent 適合、HTTPS + 地図埋込整合、Core Web Vitals 達成を含む。"
+        "a": "HARTON Stella は 4 軸機械検証で WEB 品質を客観評価する。{industry} 固有の評価軸は物件ページの Schema.org RealEstateAgent 適合、HTTPS + 地図埋込整合、Core Web Vitals 達成を含む。"
       },
       {
-        "q": "{city} の {industry} サイトで HARTON Certified 認定件数は？",
+        "q": "{city} の {industry} サイトで HARTON Stella 認定件数は？",
         "a": "{city}の {industry} サイト {n} 件中、★ 認定 {eligible} 件。業界全体 (静岡県 5 都市横断) では業界最高点 {max_pref} 点 / 致命的 NG {ng_pct_pref} (2026-05-02 時点)。詳細は静岡県 5 都市 WEB 品質業界レポート 2026 Q2 (4-6 月号)に公開。"
       },
       {
@@ -463,15 +463,15 @@
     "faq_industry": [
       {
         "q": "{city} の {industry} で WEB 品質が高い店はどこか？",
-        "a": "HARTON Certified は 4 軸機械検証（基礎・防御・AI 検索・経営）で {industry} サイトを評価する。{city}の {industry} サイト {n} 件中、★ 認定 {eligible} 件。業界全体 (静岡県 5 都市横断) では業界最高点 {max_pref} 点 / 致命的 NG {ng_pct_pref} (2026-05-02 時点)。{city} の認定状況は本ページ上部の獲得率で確認可能。"
+        "a": "HARTON Stella は 4 軸機械検証（基礎・防御・AI 検索・経営）で {industry} サイトを評価する。{city}の {industry} サイト {n} 件中、★ 認定 {eligible} 件。業界全体 (静岡県 5 都市横断) では業界最高点 {max_pref} 点 / 致命的 NG {ng_pct_pref} (2026-05-02 時点)。{city} の認定状況は本ページ上部の獲得率で確認可能。"
       },
       {
         "q": "{industry} サイトの Schema.org Restaurant に必要な項目は？",
         "a": "name + address + telephone + servesCuisine + menu + openingHours + acceptsReservations の 7 項目を推奨。AI 検索 (ChatGPT/Perplexity) でメニュー検索時の引用率を最大化する。"
       },
       {
-        "q": "食べログと HARTON Certified の違いは？",
-        "a": "食べログは口コミでサービス品質を評価する。HARTON Certified は機械検証で WEB 品質を評価する独立認定機関であり、評価軸が異なる。両方を併用することで多角的に店舗を判断できる。"
+        "q": "食べログと HARTON Stella の違いは？",
+        "a": "食べログは口コミでサービス品質を評価する。HARTON Stella は機械検証で WEB 品質を評価する独立認定機関であり、評価軸が異なる。両方を併用することで多角的に店舗を判断できる。"
       },
       {
         "q": "{industry} サイトで致命的 NG になる項目は？",
@@ -543,7 +543,7 @@
     "faq_industry": [
       {
         "q": "{city} の {industry} で WEB 品質が高い店は？",
-        "a": "HARTON Certified は 4 軸機械検証で {industry} サイトを評価する。{city} の認定状況は本ページ上部の獲得率で確認可能（現在 {eligible}/{n} 件 / 2026-05-02 時点）。"
+        "a": "HARTON Stella は 4 軸機械検証で {industry} サイトを評価する。{city} の認定状況は本ページ上部の獲得率で確認可能（現在 {eligible}/{n} 件 / 2026-05-02 時点）。"
       },
       {
         "q": "{industry} サイトで SNS 連携と Schema.org を両立するには？",
@@ -624,10 +624,10 @@
     "faq_industry": [
       {
         "q": "{city} で信頼できる {industry} のサイトを見分けるには？",
-        "a": "HARTON Certified は {industry} サイトを 4 軸（基礎・防御・AI 検索・経営）で機械検証し、MedicalClinic Schema.org 適合 + HTTPS + Trusted Types CSP の 3 条件を必須とする。医療広告ガイドライン遵守も評価軸。"
+        "a": "HARTON Stella は {industry} サイトを 4 軸（基礎・防御・AI 検索・経営）で機械検証し、MedicalClinic Schema.org 適合 + HTTPS + Trusted Types CSP の 3 条件を必須とする。医療広告ガイドライン遵守も評価軸。"
       },
       {
-        "q": "{city} の {industry} サイトで HARTON Certified 認定件数は？",
+        "q": "{city} の {industry} サイトで HARTON Stella 認定件数は？",
         "a": "Phase 0.5 静岡県 5 都市の {industry} サイトを {n} 件機械検証 (5 都市集計) し、★ 認定 {eligible} 件 / 業界最高点 {max_pref} 点 / 致命的 NG {ng_pct_pref} (2026-05-02 時点)。詳細は静岡県 WEB 品質業界レポート 2026 Q2 (4-6 月号)に公開。"
       },
       {
@@ -706,10 +706,10 @@
     "faq_industry": [
       {
         "q": "{city} で信頼できる {industry} のサイトを判断するには？",
-        "a": "HARTON Certified は {industry} サイトを 4 軸（基礎・防御・AI 検索・経営）で機械検証し、Hotel Schema.org 適合 + HTTPS + CSP の 3 条件を必須とする。{city} の認定状況は本ページ上部で確認可能。"
+        "a": "HARTON Stella は {industry} サイトを 4 軸（基礎・防御・AI 検索・経営）で機械検証し、Hotel Schema.org 適合 + HTTPS + CSP の 3 条件を必須とする。{city} の認定状況は本ページ上部で確認可能。"
       },
       {
-        "q": "{city} の {industry} サイトで HARTON Certified 認定件数は？",
+        "q": "{city} の {industry} サイトで HARTON Stella 認定件数は？",
         "a": "{city}の {industry} サイト {n} 件中、★ 認定 {eligible} 件。業界全体 (静岡県 5 都市横断) では業界最高点 {max_pref} 点 / 致命的 NG {ng_pct_pref} (2026-05-02 時点)。詳細は静岡県 5 都市 WEB 品質業界レポート 2026 Q2 (4-6 月号)に公開。"
       },
       {
@@ -789,10 +789,10 @@
     "faq_industry": [
       {
         "q": "{city} で信頼できる {industry} のサイトを見分けるには？",
-        "a": "HARTON Certified は {industry} サイトを 4 軸（基礎・防御・AI 検索・経営）で機械検証し、MedicalClinic Schema.org 適合 + HTTPS + Trusted Types CSP の 3 条件を必須とする。{city} の認定状況は本ページ上部で確認可能。"
+        "a": "HARTON Stella は {industry} サイトを 4 軸（基礎・防御・AI 検索・経営）で機械検証し、MedicalClinic Schema.org 適合 + HTTPS + Trusted Types CSP の 3 条件を必須とする。{city} の認定状況は本ページ上部で確認可能。"
       },
       {
-        "q": "{city} の {industry} サイトで HARTON Certified 認定件数は？",
+        "q": "{city} の {industry} サイトで HARTON Stella 認定件数は？",
         "a": "Phase 0.5 静岡県 5 都市の {industry} サイトを {n} 件機械検証 (5 都市集計) し、★ 認定 {eligible} 件 / 業界最高点 {max_pref} 点 / 致命的 NG {ng_pct_pref} (2026-05-02 時点)。詳細は静岡県 WEB 品質業界レポート 2026 Q2 (4-6 月号)に公開。"
       },
       {
@@ -868,10 +868,10 @@
     "faq_industry": [
       {
         "q": "{city} で信頼できる {industry} を見分けるには？",
-        "a": "HARTON Certified は {industry} サイトを 4 軸（基礎・防御・AI 検索・経営）で機械検証し、EducationalOrganization Schema.org 適合 + HTTPS + Trusted Types CSP の 3 条件を必須とする。料金透明性 + 合格実績出典明記も評価軸。"
+        "a": "HARTON Stella は {industry} サイトを 4 軸（基礎・防御・AI 検索・経営）で機械検証し、EducationalOrganization Schema.org 適合 + HTTPS + Trusted Types CSP の 3 条件を必須とする。料金透明性 + 合格実績出典明記も評価軸。"
       },
       {
-        "q": "{city} の {industry} サイトで HARTON Certified 認定件数は？",
+        "q": "{city} の {industry} サイトで HARTON Stella 認定件数は？",
         "a": "Phase 0.5 静岡県 5 都市の {industry} サイトを {n} 件機械検証 (5 都市集計) し、★ 認定 {eligible} 件 / 業界最高点 {max_pref} 点 / 致命的 NG {ng_pct_pref} (2026-05-02 時点)。詳細は静岡県 WEB 品質業界レポート 2026 Q2 (4-6 月号)に公開。"
       },
       {

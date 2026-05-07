@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * HARTON Certified サイト生成エンジン v0.1（最小実装）
+ * HARTON Stella サイト生成エンジン v0.1（最小実装）
  * ─────────────────────────────────────────
  * 生成対象:
  *   1. data/businesses.json → businesses/<slug>/index.html + businesses/<slug>/badge/index.html
@@ -33,7 +33,7 @@ const fs = require('fs');
 const path = require('path');
 
 const ROOT = __dirname;
-const DOMAIN = 'https://certification.tcharton.com';
+const DOMAIN = 'https://stella.tcharton.com';
 
 // ═══════════════════ 引数 ═══════════════════
 const args = process.argv.slice(2);
@@ -217,7 +217,7 @@ function buildBusinessJsonLd(slug, b) {
     '@context': 'https://schema.org',
     '@type': ind.schema_type || ['LocalBusiness', 'ProfessionalService'],
     name: b.name,
-    description: `${b.address.addressLocality}の${ind.label}。HARTON Certified ${b.scan.rating}（総合 ${b.scan.score} 点）認定。`,
+    description: `${b.address.addressLocality}の${ind.label}。HARTON Stella ${b.scan.rating}（総合 ${b.scan.score} 点）認定。`,
     url: b.url,
     telephone: b.telephone,
     additionalType,
@@ -243,8 +243,8 @@ function generateBusinessPage(slug, b) {
   const region = regions[pref];
   const cityData = region?.cities?.[city];
 
-  const title = `${b.name} — HARTON Certified ${b.scan.rating}（${cityData?.label || ''}の${ind.label}）`;
-  const description = `HARTON Certified ${b.scan.rating}認定。${b.name}（${cityData?.label || b.address.addressLocality}・${ind.label}）の機械検証スコアと評価詳細。総合 ${b.scan.score} 点 / 致命的 NG ${b.scan.critical_ng} 件 / 必須条件 ${b.scan.must5}。公式サイトへの導線も掲載。`;
+  const title = `${b.name} — HARTON Stella ${b.scan.rating}（${cityData?.label || ''}の${ind.label}）`;
+  const description = `HARTON Stella ${b.scan.rating}認定。${b.name}（${cityData?.label || b.address.addressLocality}・${ind.label}）の機械検証スコアと評価詳細。総合 ${b.scan.score} 点 / 致命的 NG ${b.scan.critical_ng} 件 / 必須条件 ${b.scan.must5}。公式サイトへの導線も掲載。`;
   const canonicalPath = `/businesses/${slug}/`;
 
   const breadcrumbs = [
@@ -259,18 +259,18 @@ function generateBusinessPage(slug, b) {
     <header>
       <p><a href="/regions/${pref}/${city}/">${escHTML(cityData?.label || '')}</a> &gt; <a href="/regions/${pref}/${city}/industries/${b.industry}/">${escHTML(ind.label)}</a></p>
       <h1>${escHTML(b.name)}</h1>
-      <p><strong>HARTON Certified ${escHTML(b.scan.rating)}</strong> 認定 / 総合スコア <strong>${b.scan.score} / 100</strong></p>
+      <p><strong>HARTON Stella ${escHTML(b.scan.rating)}</strong> 認定 / 総合スコア <strong>${b.scan.score} / 100</strong></p>
       <p>認定日: <time datetime="${escHTML(b.scan.scanned_at)}" itemprop="datePublished">${escHTML(b.scan.scanned_at)}</time></p>
     </header>
 
     <section aria-label="冒頭エビデンス">
-      <p>${escHTML(b.name)}（${escHTML(b.address.addressLocality)}・${escHTML(ind.label)}）は、当機関の機械検証で総合 <strong>${b.scan.score}</strong> 点（100 点満点）、必須条件 <strong>${escHTML(b.scan.must5)}</strong> 達成、致命的 NG <strong>${b.scan.critical_ng}</strong> 件で評価され、HARTON Certified ${escHTML(b.scan.rating)} と認定された。出典は <a href="https://www.ipa.go.jp/" rel="nofollow noopener noreferrer" target="_blank">公的セキュリティ基準</a>（HSTS / CSP / WCAG 2.2 AA）に整合する 4 軸の独立評価による。</p>
-      <blockquote cite="https://certification.tcharton.com/methodology/">「機械検証で WEB 品質を公正に測る、地方発の認定機関」 — HARTON Certified 評価方法</blockquote>
+      <p>${escHTML(b.name)}（${escHTML(b.address.addressLocality)}・${escHTML(ind.label)}）は、当機関の機械検証で総合 <strong>${b.scan.score}</strong> 点（100 点満点）、必須条件 <strong>${escHTML(b.scan.must5)}</strong> 達成、致命的 NG <strong>${b.scan.critical_ng}</strong> 件で評価され、HARTON Stella ${escHTML(b.scan.rating)} と認定された。出典は <a href="https://www.ipa.go.jp/" rel="nofollow noopener noreferrer" target="_blank">公的セキュリティ基準</a>（HSTS / CSP / WCAG 2.2 AA）に整合する 4 軸の独立評価による。</p>
+      <blockquote cite="https://stella.tcharton.com/methodology/">「機械検証で WEB 品質を公正に測る、地方発の認定機関」 — HARTON Stella 評価方法</blockquote>
     </section>
 
     <section aria-label="4 軸スコア（並列独立評価）">
       <h2>4 軸スコア</h2>
-      <p>HARTON Certified は 4 つの観点で独立評価し、各観点の項目別減点を合算する（軸間の重み比率は採用しない / MASTER-PLAN §3.2）。</p>
+      <p>HARTON Stella は 4 つの観点で独立評価し、各観点の項目別減点を合算する（軸間の重み比率は採用しない / MASTER-PLAN §3.2）。</p>
       <table>
         <caption>4 軸機械検証スコア（${b.scan.scanned_at} 計測 / scanner ${b.scan.scanner_version}）</caption>
         <thead>
@@ -321,14 +321,14 @@ function generateBusinessPage(slug, b) {
 
 // ═══════════════════ badge ページ（minimal） ═══════════════════
 function generateBadgePage(slug, b) {
-  const title = `${b.name} 認定バッジ — HARTON Certified ${b.scan.rating}`;
-  const description = `${b.name}の HARTON Certified ${b.scan.rating} 認定バッジダウンロード。SVG / PNG / HTML 埋込コードを提供。`;
+  const title = `${b.name} 認定バッジ — HARTON Stella ${b.scan.rating}`;
+  const description = `${b.name}の HARTON Stella ${b.scan.rating} 認定バッジダウンロード。SVG / PNG / HTML 埋込コードを提供。`;
   const canonicalPath = `/businesses/${slug}/badge/`;
 
   const mainContent = `
   <article>
     <h1>${escHTML(b.name)} 認定バッジ</h1>
-    <p>HARTON Certified ${escHTML(b.scan.rating)} 認定（${escHTML(b.scan.scanned_at)}）。バッジ画像は配備後にここに表示される。</p>
+    <p>HARTON Stella ${escHTML(b.scan.rating)} 認定（${escHTML(b.scan.scanned_at)}）。バッジ画像は配備後にここに表示される。</p>
     <p><a href="/businesses/${slug}/">事業者ページへ戻る</a></p>
   </article>`;
 
@@ -358,8 +358,8 @@ function generateIndustryPage(industryKey, ind) {
   const indN = summary ? summary.n : (phase05Summary ? phase05Summary.n_total : 0);
   const indMax = summary ? summary.max : '-';
 
-  const title = `${ind.label} 認定店舗一覧 — HARTON Certified`;
-  const description = `HARTON Certified が機械検証で公正評価した${ind.label} 認定店舗一覧。${PHASE05_SCOPE_LABEL}の${ind.label}サイト ${indN} 件機械検証で ★ 以上達成 ${list.length} 件 / 業界最高点 ${indMax} 点、Phase 1 で全国順次拡大予定。評価方法は全公開、金銭非依存、ポジティブセレクション。`;
+  const title = `${ind.label} 認定店舗一覧 — HARTON Stella`;
+  const description = `HARTON Stella が機械検証で公正評価した${ind.label} 認定店舗一覧。${PHASE05_SCOPE_LABEL}の${ind.label}サイト ${indN} 件機械検証で ★ 以上達成 ${list.length} 件 / 業界最高点 ${indMax} 点、Phase 1 で全国順次拡大予定。評価方法は全公開、金銭非依存、ポジティブセレクション。`;
   const canonicalPath = `/industries/${industryKey}/`;
 
   const breadcrumbs = [
@@ -395,7 +395,7 @@ function generateIndustryPage(industryKey, ind) {
       const median = s ? s.median : 0;
       const ng = s ? s.ng : 0;
       const certRate = n > 0 ? (eligible / n * 100).toFixed(1) : '0.0';
-      const reachPct = Math.min(100, (max / 70 * 100)).toFixed(1);
+      const reachPct = Math.min(100, Math.max(0, max)).toFixed(1);
       const remainPts = Math.max(0, 70 - max);
       const ngTier = ngPct < 30 ? 'good' : ngPct < 40 ? 'mid' : 'bad';
       const ngLabel = ngPct < 30 ? '低リスク' : ngPct < 40 ? '中リスク' : '高リスク';
@@ -409,7 +409,7 @@ function generateIndustryPage(industryKey, ind) {
       <div class="hero-progress-block" aria-label="業界 1 位サイトの ★ 認定基準到達状況">
         <p class="hero-progress-caption">業界 1 位サイトの最高点 <strong>${max} 点</strong> / ★ 認定基準 <strong>70 点</strong> ${remainPts > 0 ? `<span class="progress-gap">残り ${remainPts} 点</span>` : '<span class="progress-reached">達成済</span>'}</p>
         <div class="progress-bar-track" role="progressbar" aria-valuenow="${max}" aria-valuemin="0" aria-valuemax="100" aria-label="業界最高点 ${max} / 100">
-          <div class="progress-bar-fill" style="width: ${reachPct}%"></div>
+          <div class="progress-bar-fill" style="width: ${reachPct}%; --reach-pct: ${reachPct};"></div>
           <div class="progress-marker progress-marker-target" style="left: 70%" aria-hidden="true"><span class="progress-marker-label">★ 70</span></div>
         </div>
         <p class="hero-progress-scale" aria-hidden="true"><span>0</span><span>★認定 70</span><span>★★ 80</span><span>★★★ 90</span><span>100</span></p>
@@ -418,12 +418,12 @@ function generateIndustryPage(industryKey, ind) {
       <div class="hero-3phase">
         <div class="phase-card phase-as-is">
           <p class="phase-tag">現状 (As-Is)</p>
-          <p class="phase-headline">業界中央値 <strong>${median}</strong> / 70 点</p>
+          <p class="phase-headline">業界中央値 <strong>${median}</strong> 点 <span class="phase-headline-sub">(★ 認定基準 70 点まで -${Math.max(0, 70 - median)} 点)</span></p>
           <p class="phase-detail">${n} サイトの母集団中央値。業界全体としての WEB 品質の重心。</p>
         </div>
         <div class="phase-card phase-to-be">
           <p class="phase-tag">目標 (To-Be)</p>
-          <p class="phase-headline"><span class="phase-star">★</span> HARTON Certified <strong>70</strong> 点</p>
+          <p class="phase-headline"><span class="phase-star">★</span> HARTON Stella <strong>70</strong> 点</p>
           <p class="phase-detail">総合 70 点以上 + 致命的 NG 0 件で取得。業界 1 位サイトは <strong>${remainPts}</strong> 点の改善で到達圏。</p>
         </div>
         <div class="phase-card phase-how">
@@ -433,20 +433,20 @@ function generateIndustryPage(industryKey, ind) {
         </div>
       </div>
 
-      <div class="hero-ng-bar" aria-label="業界母集団の致命的 NG 発生率">
+      <div class="hero-ng-bar" aria-label="業界の致命的 NG 検出率と業界水準">
         <div class="ng-bar-header">
-          <span class="ng-bar-title">業界母集団の防御層リスク</span>
-          <span class="ng-bar-value ng-tier-${ngTier}">${ngPct.toFixed(1)}% <span class="ng-tier-label">(${ngLabel})</span></span>
+          <span class="ng-bar-title">業界の致命的 NG 検出率 <span class="ng-bar-subtitle">(${n} サイト中 ${ng} サイトで検出)</span></span>
+          <span class="ng-bar-value ng-tier-${ngTier}">${ngPct.toFixed(1)}% <span class="ng-tier-label">(業界水準: ${ngLabel})</span></span>
         </div>
-        <div class="ng-bar-track" role="progressbar" aria-valuenow="${ngPct.toFixed(1)}" aria-valuemin="0" aria-valuemax="100">
+        <div class="ng-bar-track" role="progressbar" aria-valuenow="${ngPct.toFixed(1)}" aria-valuemin="0" aria-valuemax="100" aria-label="致命的 NG 検出率 ${ngPct.toFixed(1)}%">
           <div class="ng-bar-fill ng-tier-${ngTier}" style="width: ${Math.min(100, ngPct)}%"></div>
         </div>
-        <p class="ng-bar-note">${ng} サイト / ${n} サイト中で HTTPS 非対応・SSL 失効・WP 管理面露出・CMS バージョン情報露出 のいずれかを検出 (致命的 NG 4 項目)。改善は <a href="/improvement-guide/">改善ガイダンス Step 1+3</a> で 1-2 週間で解消可能。</p>
+        <p class="ng-bar-note"><strong>NG 4 項目</strong>: HTTPS 非対応・SSL 失効・WP 管理面露出・CMS バージョン情報露出 — このいずれか 1 つでも検出されれば <strong>★ 認定不可</strong> (一発除外条件)。${ngPct < 30 ? `業界水準は<strong>良好</strong> (${n} サイト中 ${ng} サイトのみ = ${ngPct.toFixed(1)}% に NG あり / 業界全体としてセキュリティ意識が高い)。但しあなたのサイトに NG があれば認定不可なので、` : ngPct < 40 ? `業界水準は<strong>中位</strong> (${n} サイト中 ${ng} サイト = ${ngPct.toFixed(1)}% に NG あり / 改善するだけで競合の ${(100 - ngPct).toFixed(1)}% 圏に届く)。` : `業界水準は<strong>低調</strong> (${n} サイト中 ${ng} サイト = ${ngPct.toFixed(1)}% に NG あり / 改善するだけで業界上位 ${(100 - ngPct).toFixed(1)}% に入れる好機)。`}<a href="/improvement-guide/">改善ガイダンス Step 1+3</a> で 1-2 週間で解消可能。</p>
       </div>
 
       <aside class="hero-cta-banner" aria-label="認定取得への行動">
         <div class="cta-banner-text">
-          ${eligible === 0 ? `<p class="cta-banner-headline">あなたが ${escHTML(PHASE05_SCOPE_LABEL)} 最初の<br>★ HARTON Certified ${escHTML(ind.label)} 認定取得者になる</p><p class="cta-banner-sub">業界実態 = ${certRate}% は<strong>取得困難</strong>を意味しない。業界 1 位サイトは残り ${remainPts} 点で取得圏内。改善 5 Step を 90 日で完遂すれば、${escHTML(ind.label)} 業界の最初の認定取得者として認定店舗ページに掲載される。</p>` : `<p class="cta-banner-headline">${eligible} サイトの ★ 認定店舗を以下に表示</p><p class="cta-banner-sub">改善ガイダンスで ★★ HARTON 優良 / ★★★ HARTON S-Class への上位区分昇格が可能。</p>`}
+          ${eligible === 0 ? `<p class="cta-banner-headline">あなたが ${escHTML(PHASE05_SCOPE_LABEL)} 最初の<br>★ HARTON Stella ${escHTML(ind.label)} 認定取得者になる</p><p class="cta-banner-sub">業界実態 = ${certRate}% は<strong>取得困難</strong>を意味しない。業界 1 位サイトは残り ${remainPts} 点で取得圏内。改善 5 Step を 90 日で完遂すれば、${escHTML(ind.label)} 業界の最初の認定取得者として認定店舗ページに掲載される。</p>` : `<p class="cta-banner-headline">${eligible} サイトの ★ 認定店舗を以下に表示</p><p class="cta-banner-sub">改善ガイダンスで ★★ HARTON Stella 優良 / ★★★ HARTON Stella S-Class への上位区分昇格が可能。</p>`}
         </div>
         <div class="cta-banner-actions">
           <a href="/apply/" class="cta-primary">掲載申請 (無料)</a>
@@ -458,8 +458,8 @@ function generateIndustryPage(industryKey, ind) {
     })()}
 
     <section aria-label="冒頭エビデンス">
-      <p>HARTON Certified が機械検証で公正評価する${escHTML(ind.label)} 認定店舗一覧。総合 <strong>70 点</strong>以上 + 致命的 NG <strong>0 件</strong>を達成した事業者のみ掲載する。出典は <a href="https://schema.org/${escHTML(ind.schema_type?.[0] || 'LocalBusiness')}" rel="nofollow noopener noreferrer" target="_blank">Schema.org ${escHTML(ind.schema_type?.[0] || 'LocalBusiness')}</a> および <a href="https://www.wikidata.org/wiki/${escHTML(ind.wikidata)}" rel="nofollow noopener noreferrer" target="_blank">Wikidata ${escHTML(ind.wikidata)}</a> に整合する。Phase 1 で全国順次拡大予定。</p>
-      <blockquote cite="/methodology/">「機械検証で WEB 品質を公正に測る、地方発の認定機関」 — HARTON Certified 評価方法</blockquote>
+      <p>HARTON Stella が機械検証で公正評価する${escHTML(ind.label)} 認定店舗一覧。総合 <strong>70 点</strong>以上 + 致命的 NG <strong>0 件</strong>を達成した事業者のみ掲載する。出典は <a href="https://schema.org/${escHTML(ind.schema_type?.[0] || 'LocalBusiness')}" rel="nofollow noopener noreferrer" target="_blank">Schema.org ${escHTML(ind.schema_type?.[0] || 'LocalBusiness')}</a> および <a href="https://www.wikidata.org/wiki/${escHTML(ind.wikidata)}" rel="nofollow noopener noreferrer" target="_blank">Wikidata ${escHTML(ind.wikidata)}</a> に整合する。Phase 1 で全国順次拡大予定。</p>
+      <blockquote cite="/methodology/">「機械検証で WEB 品質を公正に測る、地方発の認定機関」 — HARTON Stella 評価方法</blockquote>
     </section>
 
     ${renderSearchForm({ presetIndustry: industryKey })}
@@ -493,7 +493,7 @@ function generateIndustryPage(industryKey, ind) {
         </li>
         <li class="roadmap-step-acquired">
           <h3><span class="roadmap-num">3</span> 取得</h3>
-          <p>総合 70 点以上 + 致命的 NG 0 件で <strong>★ HARTON Certified</strong> 取得。+ S 条件 4/5 で <strong>★★ HARTON 優良</strong>、+ S 条件 5/5 で <strong>★★★ HARTON S-Class</strong>。tcharton.com (運営主体 T.C.HARTON) が dogfooding 倫理に基づき先行取得した実例は <a href="/case-studies/tcharton-com/">自己実証体 第 1 号 case study</a>で 7 commit timeline を verbatim 公開。</p>
+          <p>総合 70 点以上 + 致命的 NG 0 件で <strong>★ HARTON Stella</strong> 取得。+ S 条件 4/5 で <strong>★★ HARTON Stella 優良</strong>、+ S 条件 5/5 で <strong>★★★ HARTON Stella S-Class</strong>。tcharton.com (運営主体 T.C.HARTON) が dogfooding 倫理に基づき先行取得した実例は <a href="/case-studies/tcharton-com/">自己実証体 第 1 号 case study</a>で 7 commit timeline を verbatim 公開。</p>
         </li>
       </ol>
     </section>
@@ -512,13 +512,13 @@ function generateIndustryPage(industryKey, ind) {
       '@context': 'https://schema.org',
       '@type': 'ItemList',
       '@id': DOMAIN + canonicalPath + '#itemlist',
-      name: `${ind.label} 認定店舗一覧 — HARTON Certified`,
+      name: `${ind.label} 認定店舗一覧 — HARTON Stella`,
       numberOfItems: list.length,
       itemListElement: itemList,
     },
     buildArticleJsonLd({
       canonicalPath,
-      headline: `${ind.label} 認定店舗一覧 — HARTON Certified`,
+      headline: `${ind.label} 認定店舗一覧 — HARTON Stella`,
       description,
       about: { '@type': 'Thing', name: ind.label, sameAs: ind.wikidata_uri },
     }),
@@ -551,8 +551,8 @@ function generateRegionPage(prefKey, cityKey) {
     .filter(([_, b]) => b.region === `${prefKey}/${cityKey}`)
     .sort((a, b) => b[1].scan.score - a[1].scan.score);
 
-  const title = `${city.label} 認定店舗一覧 — HARTON Certified（${pref.label}）`;
-  const description = `${city.label}（${pref.label}）の HARTON Certified 認定店舗一覧。機械検証で総合 70 点以上 + 致命的 NG ゼロを達成した ${list.length} 件を業種横断で掲載。`;
+  const title = `${city.label} 認定店舗一覧 — HARTON Stella（${pref.label}）`;
+  const description = `${city.label}（${pref.label}）の HARTON Stella 認定店舗一覧。機械検証で総合 70 点以上 + 致命的 NG ゼロを達成した ${list.length} 件を業種横断で掲載。`;
   const canonicalPath = `/regions/${prefKey}/${cityKey}/`;
 
   const breadcrumbs = [
@@ -568,7 +568,24 @@ function generateRegionPage(prefKey, cityKey) {
     if (!byIndustry[b.industry]) byIndustry[b.industry] = [];
     byIndustry[b.industry].push([slug, b]);
   }
-  const industryLinks = Object.keys(byIndustry).map(k =>
+  // 認定店舗 (publishable) 0 件の場合でも、scanner 機械検証された業種を全件 link 化 (BLOCKER-C1 解消 / 渋谷区 11 業種到達経路確保)
+  // pref summary の cross_tab_n / by_industry を参照して、当該都市で機械検証実施済の業種にもリンクを生成
+  const cityLinkPrefSum = (PREF_SUMMARY_MAP[prefKey] && PREF_SUMMARY_MAP[prefKey].summary) ? PREF_SUMMARY_MAP[prefKey].summary : null;
+  const cityCrossTab = cityLinkPrefSum && cityLinkPrefSum.cross_tab_n && cityLinkPrefSum.cross_tab_n[city.label] ? cityLinkPrefSum.cross_tab_n[city.label] : {};
+  const allIndustryKeys = new Set([...Object.keys(byIndustry), ...Object.keys(industries)]);
+  const industryLinks = [...allIndustryKeys].map(k => {
+    const ind = industries[k];
+    if (!ind) return '';
+    const indLabel = ind.label_short || ind.label;
+    const eligibleN = (byIndustry[k] || []).length;
+    const scanN = (cityCrossTab[indLabel] !== undefined) ? cityCrossTab[indLabel] : null;
+    const countText = eligibleN > 0
+      ? `★ 認定 ${eligibleN} 件`
+      : (scanN !== null ? `機械検証 ${scanN} 件 / ★ 認定 0 件` : '実測待機');
+    return `<li><a href="/regions/${prefKey}/${cityKey}/industries/${k}/">${escHTML(ind.label)}</a> — ${countText}</li>`;
+  }).filter(Boolean).join('');
+  // 旧レガシー return (使われない / dead) を残置抑制
+  const _legacy = Object.keys(byIndustry).map(k =>
     `<li><a href="/regions/${prefKey}/${cityKey}/industries/${k}/">${escHTML(industries[k]?.label || k)}（${byIndustry[k].length}件）</a></li>`
   ).join('');
 
@@ -596,7 +613,7 @@ function generateRegionPage(prefKey, cityKey) {
       const median = cityRow ? cityRow.median : 0;
       const ng = cityRow ? cityRow.ng : 0;
       const certRate = cityN > 0 ? (cityEligible / cityN * 100).toFixed(1) : '0.0';
-      const reachPct = Math.min(100, (max / 70 * 100)).toFixed(1);
+      const reachPct = Math.min(100, Math.max(0, max)).toFixed(1);
       const remainPts = Math.max(0, 70 - max);
       const ngTier = ngPct < 30 ? 'good' : ngPct < 35 ? 'mid' : 'bad';
       const ngLabel = ngPct < 30 ? '低リスク' : ngPct < 35 ? '中リスク' : '高リスク';
@@ -610,7 +627,7 @@ function generateRegionPage(prefKey, cityKey) {
       <div class="hero-progress-block" aria-label="${escHTML(city.label)} 1 位サイトの ★ 認定基準到達状況">
         <p class="hero-progress-caption">${escHTML(city.label)} 1 位サイトの最高点 <strong>${max} 点</strong> / ★ 認定基準 <strong>70 点</strong> ${remainPts > 0 ? `<span class="progress-gap">残り ${remainPts} 点</span>` : '<span class="progress-reached">達成済</span>'}</p>
         <div class="progress-bar-track" role="progressbar" aria-valuenow="${max}" aria-valuemin="0" aria-valuemax="100" aria-label="${escHTML(city.label)} 最高点 ${max} / 100">
-          <div class="progress-bar-fill" style="width: ${reachPct}%"></div>
+          <div class="progress-bar-fill" style="width: ${reachPct}%; --reach-pct: ${reachPct};"></div>
           <div class="progress-marker progress-marker-target" style="left: 70%" aria-hidden="true"><span class="progress-marker-label">★ 70</span></div>
         </div>
         <p class="hero-progress-scale" aria-hidden="true"><span>0</span><span>★認定 70</span><span>★★ 80</span><span>★★★ 90</span><span>100</span></p>
@@ -619,12 +636,12 @@ function generateRegionPage(prefKey, cityKey) {
       <div class="hero-3phase">
         <div class="phase-card phase-as-is">
           <p class="phase-tag">現状 (As-Is)</p>
-          <p class="phase-headline">${escHTML(city.label)} 中央値 <strong>${median}</strong> / 70 点</p>
+          <p class="phase-headline">${escHTML(city.label)} 中央値 <strong>${median}</strong> 点 <span class="phase-headline-sub">(★ 認定基準 70 点まで -${Math.max(0, 70 - median)} 点)</span></p>
           <p class="phase-detail">${cityN} サイト (11 業種横断) の母集団中央値。${escHTML(city.label)} 全体としての WEB 品質の重心。</p>
         </div>
         <div class="phase-card phase-to-be">
           <p class="phase-tag">目標 (To-Be)</p>
-          <p class="phase-headline"><span class="phase-star">★</span> HARTON Certified <strong>70</strong> 点</p>
+          <p class="phase-headline"><span class="phase-star">★</span> HARTON Stella <strong>70</strong> 点</p>
           <p class="phase-detail">総合 70 点以上 + 致命的 NG 0 件で取得。${escHTML(city.label)} 1 位サイトは <strong>${remainPts}</strong> 点の改善で到達圏。</p>
         </div>
         <div class="phase-card phase-how">
@@ -647,7 +664,7 @@ function generateRegionPage(prefKey, cityKey) {
 
       <aside class="hero-cta-banner" aria-label="認定取得への行動">
         <div class="cta-banner-text">
-          ${cityEligible === 0 ? `<p class="cta-banner-headline">あなたが ${escHTML(city.label)} 最初の<br>★ HARTON Certified 認定取得者になる</p><p class="cta-banner-sub">業界実態 = ${certRate}% は<strong>取得困難</strong>を意味しない。${escHTML(city.label)} 1 位サイトは残り ${remainPts} 点で取得圏内。改善 5 Step を 90 日で完遂すれば、${escHTML(city.label)} 最初の認定取得者として認定店舗ページに掲載される。</p>` : `<p class="cta-banner-headline">${cityEligible} サイトの ★ 認定店舗を以下に表示</p><p class="cta-banner-sub">改善ガイダンスで ★★ HARTON 優良 / ★★★ HARTON S-Class への上位区分昇格が可能。</p>`}
+          ${cityEligible === 0 ? `<p class="cta-banner-headline">あなたが ${escHTML(city.label)} 最初の<br>★ HARTON Stella 認定取得者になる</p><p class="cta-banner-sub">業界実態 = ${certRate}% は<strong>取得困難</strong>を意味しない。${escHTML(city.label)} 1 位サイトは残り ${remainPts} 点で取得圏内。改善 5 Step を 90 日で完遂すれば、${escHTML(city.label)} 最初の認定取得者として認定店舗ページに掲載される。</p>` : `<p class="cta-banner-headline">${cityEligible} サイトの ★ 認定店舗を以下に表示</p><p class="cta-banner-sub">改善ガイダンスで ★★ HARTON Stella 優良 / ★★★ HARTON Stella S-Class への上位区分昇格が可能。</p>`}
         </div>
         <div class="cta-banner-actions">
           <a href="/apply/" class="cta-primary">掲載申請 (無料)</a>
@@ -659,28 +676,28 @@ function generateRegionPage(prefKey, cityKey) {
     })()}
 
     <section aria-label="冒頭エビデンス">
-      <p>${escHTML(city.label)}（${escHTML(pref.label)}）の HARTON Certified 認定店舗一覧。総合 <strong>70 点</strong>以上 + 致命的 NG <strong>0 件</strong>を達成した事業者のみ掲載する。Phase ${city.phase || 0} 対象地域。緯度 ${city.geo?.latitude || ''} / 経度 ${city.geo?.longitude || ''}。</p>
-      <blockquote cite="/methodology/">「機械検証で WEB 品質を公正に測る、地方発の認定機関」 — HARTON Certified 評価方法</blockquote>
+      <p>${escHTML(city.label)}（${escHTML(pref.label)}）の HARTON Stella 認定店舗一覧。総合 <strong>70 点</strong>以上 + 致命的 NG <strong>0 件</strong>を達成した事業者のみ掲載する。Phase ${city.phase || 0} 対象地域。緯度 ${city.geo?.latitude || ''} / 経度 ${city.geo?.longitude || ''}。</p>
+      <blockquote cite="/methodology/">「機械検証で WEB 品質を公正に測る、地方発の認定機関」 — HARTON Stella 評価方法</blockquote>
     </section>
 
     ${renderSearchForm({ presetRegion: `${prefKey}/${cityKey}` })}
 
     ${renderLeadEvidenceSection({ cityLabel: city.label, n: cityN, eligible: cityEligible })}
 
-    ${renderRegionNarrativeSection(pref, city)}
+    ${renderRegionNarrativeSection(pref, city, prefKey)}
 
     ${renderPublicSources(null, city)}
 
     <section aria-label="業種別">
       <h2>${escHTML(city.label)} 業種別検索</h2>
       <ul>${industryLinks || `<li>業種別認定は Phase 1 以降で順次拡大予定（対応業種: ${Object.values(industries).map(v => escHTML(v.label)).join('・')}）</li>`}</ul>
-      <p>${escHTML(city.label)}の事業者で HARTON Certified 認定取得を目指す方は <a href="/apply/">掲載申請</a>から登録可能。AI 時代の信頼を体現する WEB 品質を機械検証で公正評価する。</p>
+      <p>${escHTML(city.label)}の事業者で HARTON Stella 認定取得を目指す方は <a href="/apply/">掲載申請</a>から登録可能。AI 時代の信頼を体現する WEB 品質を機械検証で公正評価する。</p>
     </section>
 
     <section aria-label="認定店舗一覧">
       <h2>全認定店舗（${list.length}件）</h2>
       ${list.length === 0
-        ? `<p><strong>現時点で ★ 以上達成事業者: 0 件</strong>。${cityRow ? `Phase 0.5 ${escHTML(city.label)} ${cityN} 件機械検証の業界実態 (★ 認定 ${cityEligible} 件 / 致命的 NG ${cityNgPct.toFixed(1)}% / 業界最高点 ${cityMax} 点) は <a href="/news/shizuoka-industry-report-2026-q2/">静岡県 5 都市 WEB 品質業界レポート 2026 Q2 (4-6 月号)</a>で堂々と公開している。` : `Phase 1 で対応開始予定。`}静岡県 5 都市以外の地域は Phase 1（類似地方都市: 倉敷・四日市・松本・盛岡 等）で順次拡大予定。</p>`
+        ? `<p><strong>現時点で ★ 以上達成事業者: 0 件</strong>。${cityRow ? `${prefSummaryEntry ? prefSummaryEntry.phaseTag : ''} ${escHTML(city.label)} ${cityN} 件機械検証の業界実態 (★ 認定 ${cityEligible} 件 / 致命的 NG ${cityNgPct.toFixed(1)}% / 業界最高点 ${cityMax} 点) は <a href="/comparison/regions/${prefKey}/">${escHTML(pref.label)} WEB 品質比較ページ</a>で堂々と公開している。` : `Phase 1 で対応開始予定。`}他の地域は Phase 2+（類似地方都市: 倉敷・四日市・松本・盛岡 等）で順次拡大予定。</p>`
         : `<ol>${list.map(([slug, b]) => `<li><a href="/businesses/${slug}/">${escHTML(b.name)}</a> — ${escHTML(industries[b.industry]?.label || b.industry)} / ${escHTML(b.scan.rating)} / ${b.scan.score}点</li>`).join('')}</ol>`}
     </section>
 
@@ -694,7 +711,7 @@ function generateRegionPage(prefKey, cityKey) {
   const additionalJsonLd = [
     buildArticleJsonLd({
       canonicalPath,
-      headline: `${city.label} 認定店舗一覧 — HARTON Certified`,
+      headline: `${city.label} 認定店舗一覧 — HARTON Stella`,
       description,
       mentions: { '@type': 'AdministrativeArea', name: city.label, sameAs: city.wikidata ? `https://www.wikidata.org/wiki/${city.wikidata}` : undefined },
     }),
@@ -724,8 +741,8 @@ function generateRegionIndustryPage(prefKey, cityKey, industryKey) {
     .filter(([_, b]) => b.region === `${prefKey}/${cityKey}` && b.industry === industryKey)
     .sort((a, b) => b[1].scan.score - a[1].scan.score);
 
-  const title = `${city.label} ${ind.label} 認定店舗 — HARTON Certified`;
-  const description = `${city.label}（${pref.label}）の${ind.label} HARTON Certified 認定店舗 TOP ${list.length} 件。機械検証で公正評価、総合 70 点以上のみ掲載。`;
+  const title = `${city.label} ${ind.label} 認定店舗 — HARTON Stella`;
+  const description = `${city.label}（${pref.label}）の${ind.label} HARTON Stella 認定店舗 TOP ${list.length} 件。機械検証で公正評価、総合 70 点以上のみ掲載。`;
   const canonicalPath = `/regions/${prefKey}/${cityKey}/industries/${industryKey}/`;
 
   // 都市別 × 業種別 verbatim (cross_tab_n 引用 / pref に応じて Phase 0.5 or Phase 1 summary)
@@ -761,7 +778,7 @@ function generateRegionIndustryPage(prefKey, cityKey, industryKey) {
       const ng = indByIndustry ? indByIndustry.ng : 0;
       const indN = indByIndustry ? indByIndustry.n : 0;
       const certRate = cityN > 0 ? (cityEligible / cityN * 100).toFixed(1) : '0.0';
-      const reachPct = Math.min(100, (max / 70 * 100)).toFixed(1);
+      const reachPct = Math.min(100, Math.max(0, max)).toFixed(1);
       const remainPts = Math.max(0, 70 - max);
       const ngTier = ngPct < 30 ? 'good' : ngPct < 40 ? 'mid' : 'bad';
       const ngLabel = ngPct < 30 ? '低リスク' : ngPct < 40 ? '中リスク' : '高リスク';
@@ -775,7 +792,7 @@ function generateRegionIndustryPage(prefKey, cityKey, industryKey) {
       <div class="hero-progress-block" aria-label="${escHTML(ind.label)} 業界 1 位サイトの ★ 認定基準到達状況">
         <p class="hero-progress-caption">${escHTML(ind.label)} 業界 1 位サイト (静岡県 5 都市横断) の最高点 <strong>${max} 点</strong> / ★ 認定基準 <strong>70 点</strong> ${remainPts > 0 ? `<span class="progress-gap">残り ${remainPts} 点</span>` : '<span class="progress-reached">達成済</span>'}</p>
         <div class="progress-bar-track" role="progressbar" aria-valuenow="${max}" aria-valuemin="0" aria-valuemax="100" aria-label="${escHTML(ind.label)} 業界最高点 ${max} / 100">
-          <div class="progress-bar-fill" style="width: ${reachPct}%"></div>
+          <div class="progress-bar-fill" style="width: ${reachPct}%; --reach-pct: ${reachPct};"></div>
           <div class="progress-marker progress-marker-target" style="left: 70%" aria-hidden="true"><span class="progress-marker-label">★ 70</span></div>
         </div>
         <p class="hero-progress-scale" aria-hidden="true"><span>0</span><span>★認定 70</span><span>★★ 80</span><span>★★★ 90</span><span>100</span></p>
@@ -784,12 +801,12 @@ function generateRegionIndustryPage(prefKey, cityKey, industryKey) {
       <div class="hero-3phase">
         <div class="phase-card phase-as-is">
           <p class="phase-tag">現状 (As-Is)</p>
-          <p class="phase-headline">${escHTML(ind.label)} 業界中央値 <strong>${median}</strong> / 70 点</p>
+          <p class="phase-headline">${escHTML(ind.label)} 業界中央値 <strong>${median}</strong> 点 <span class="phase-headline-sub">(★ 認定基準 70 点まで -${Math.max(0, 70 - median)} 点)</span></p>
           <p class="phase-detail">${escHTML(ind.label)} 5 都市横断 ${indN} サイトの母集団中央値。${escHTML(city.label)} 内では ${cityN} サイトが対象。</p>
         </div>
         <div class="phase-card phase-to-be">
           <p class="phase-tag">目標 (To-Be)</p>
-          <p class="phase-headline"><span class="phase-star">★</span> HARTON Certified <strong>70</strong> 点</p>
+          <p class="phase-headline"><span class="phase-star">★</span> HARTON Stella <strong>70</strong> 点</p>
           <p class="phase-detail">総合 70 点以上 + 致命的 NG 0 件で取得。${escHTML(ind.label)} 業界 1 位は <strong>${remainPts}</strong> 点の改善で到達圏。</p>
         </div>
         <div class="phase-card phase-how">
@@ -812,7 +829,7 @@ function generateRegionIndustryPage(prefKey, cityKey, industryKey) {
 
       <aside class="hero-cta-banner" aria-label="認定取得への行動">
         <div class="cta-banner-text">
-          ${cityEligible === 0 ? `<p class="cta-banner-headline">あなたが ${escHTML(city.label)} 最初の<br>★ HARTON Certified ${escHTML(ind.label)} 認定取得者になる</p><p class="cta-banner-sub">業界実態 = ${certRate}% は<strong>取得困難</strong>を意味しない。${escHTML(ind.label)} 業界 1 位サイトは残り ${remainPts} 点で取得圏内。改善 5 Step を 90 日で完遂すれば、${escHTML(city.label)} の ${escHTML(ind.label)} 業界 最初の認定取得者として認定店舗ページに掲載される。</p>` : `<p class="cta-banner-headline">${cityEligible} サイトの ★ 認定店舗を以下に表示</p><p class="cta-banner-sub">改善ガイダンスで ★★ HARTON 優良 / ★★★ HARTON S-Class への上位区分昇格が可能。</p>`}
+          ${cityEligible === 0 ? `<p class="cta-banner-headline">あなたが ${escHTML(city.label)} 最初の<br>★ HARTON Stella ${escHTML(ind.label)} 認定取得者になる</p><p class="cta-banner-sub">業界実態 = ${certRate}% は<strong>取得困難</strong>を意味しない。${escHTML(ind.label)} 業界 1 位サイトは残り ${remainPts} 点で取得圏内。改善 5 Step を 90 日で完遂すれば、${escHTML(city.label)} の ${escHTML(ind.label)} 業界 最初の認定取得者として認定店舗ページに掲載される。</p>` : `<p class="cta-banner-headline">${cityEligible} サイトの ★ 認定店舗を以下に表示</p><p class="cta-banner-sub">改善ガイダンスで ★★ HARTON Stella 優良 / ★★★ HARTON Stella S-Class への上位区分昇格が可能。</p>`}
         </div>
         <div class="cta-banner-actions">
           <a href="/apply/" class="cta-primary">掲載申請 (無料)</a>
@@ -824,15 +841,15 @@ function generateRegionIndustryPage(prefKey, cityKey, industryKey) {
     })()}
 
     <section aria-label="冒頭エビデンス">
-      <p>${escHTML(city.label)}（${escHTML(pref.label)}）の${escHTML(ind.label)} HARTON Certified 認定店舗一覧。総合 <strong>70 点</strong>以上 + 致命的 NG <strong>0 件</strong>達成事業者のみ掲載する。出典: <a href="https://www.wikidata.org/wiki/${escHTML(ind.wikidata)}" rel="nofollow noopener noreferrer" target="_blank">Wikidata ${escHTML(ind.wikidata)}</a> / <a href="https://schema.org/${escHTML(ind.schema_type?.[0] || 'LocalBusiness')}" rel="nofollow noopener noreferrer" target="_blank">Schema.org ${escHTML(ind.schema_type?.[0] || 'LocalBusiness')}</a>。</p>
-      <blockquote cite="/methodology/">「機械検証で WEB 品質を公正に測る、地方発の認定機関」 — HARTON Certified 評価方法</blockquote>
+      <p>${escHTML(city.label)}（${escHTML(pref.label)}）の${escHTML(ind.label)} HARTON Stella 認定店舗一覧。総合 <strong>70 点</strong>以上 + 致命的 NG <strong>0 件</strong>達成事業者のみ掲載する。出典: <a href="https://www.wikidata.org/wiki/${escHTML(ind.wikidata)}" rel="nofollow noopener noreferrer" target="_blank">Wikidata ${escHTML(ind.wikidata)}</a> / <a href="https://schema.org/${escHTML(ind.schema_type?.[0] || 'LocalBusiness')}" rel="nofollow noopener noreferrer" target="_blank">Schema.org ${escHTML(ind.schema_type?.[0] || 'LocalBusiness')}</a>。</p>
+      <blockquote cite="/methodology/">「機械検証で WEB 品質を公正に測る、地方発の認定機関」 — HARTON Stella 評価方法</blockquote>
     </section>
 
     ${renderSearchForm({ presetIndustry: industryKey, presetRegion: `${prefKey}/${cityKey}` })}
 
     ${renderLeadEvidenceSection({ cityLabel: city.label, n: cityN, eligible: cityEligible })}
 
-    ${renderRegionNarrativeSection(pref, city)}
+    ${renderRegionNarrativeSection(pref, city, prefKey)}
 
     ${renderEvaluationPointsSection(ind)}
 
@@ -843,7 +860,7 @@ function generateRegionIndustryPage(prefKey, cityKey, industryKey) {
     <section aria-label="認定店舗一覧">
       <h2>${escHTML(city.label)} ${escHTML(ind.label)} 認定店舗（${list.length}件）</h2>
       ${list.length === 0
-        ? `<p><strong>現時点で ★ 以上達成事業者: 0 件</strong>。${(cityIndustryN !== null && cityIndustryN > 0) ? `Phase 0.5 ${escHTML(city.label)} の${escHTML(ind.label)}サイトを ${cityIndustryN} 件機械検証${indByIndustry ? `（業界 (静岡県 5 都市横断) 最高点 ${indByIndustry.max} 点）` : ''}。` : ''}実測結果は <a href="/news/shizuoka-industry-report-2026-q2/">静岡県 5 都市 WEB 品質業界レポート 2026 Q2 (4-6 月号)</a>を参照。Phase 1 で類似地方都市に順次拡大予定。</p>`
+        ? `<p><strong>現時点で ★ 以上達成事業者: 0 件</strong>。${(cityIndustryN !== null && cityIndustryN > 0) ? `${prefSummaryEntry ? prefSummaryEntry.phaseTag : ''} ${escHTML(city.label)} の${escHTML(ind.label)}サイトを ${cityIndustryN} 件機械検証${indByIndustry ? `（業界 (${escHTML(prefSummaryEntry ? prefSummaryEntry.scopeLabel : pref.label)} 横断) 最高点 ${indByIndustry.max} 点）` : ''}。` : ''}実測結果は <a href="/comparison/regions/${prefKey}/">${escHTML(pref.label)} WEB 品質比較ページ</a>を参照。他の地域は Phase 2+ で順次拡大予定。</p>`
         : `<ol>${list.map(([slug, b]) => `<li><a href="/businesses/${slug}/">${escHTML(b.name)}</a> — ${escHTML(b.scan.rating)} / ${b.scan.score}点</li>`).join('')}</ol>`}
     </section>
 
@@ -859,7 +876,7 @@ function generateRegionIndustryPage(prefKey, cityKey, industryKey) {
   const additionalJsonLd = [
     buildArticleJsonLd({
       canonicalPath,
-      headline: `${city.label} ${ind.label} 認定店舗 — HARTON Certified`,
+      headline: `${city.label} ${ind.label} 認定店舗 — HARTON Stella`,
       description,
       about: { '@type': 'Thing', name: ind.label, sameAs: ind.wikidata_uri },
       mentions: { '@type': 'AdministrativeArea', name: city.label, sameAs: city.wikidata ? `https://www.wikidata.org/wiki/${city.wikidata}` : undefined },
@@ -895,9 +912,9 @@ function renderRatingNarratives() {
     <section aria-label="★区分の物語" class="rating-narratives">
       <h2>★区分の物語（期待値）</h2>
       <ul>
-        <li id="rating-1star"><strong>★ HARTON Certified</strong> — 「AI 時代の信頼を体現する」（総合 70 点以上 + 致命的 NG 0 件）</li>
-        <li id="rating-2star"><strong>★★ HARTON 優良</strong> — 「地域を代表する WEB 品質」（総合 80 点以上 + 必須 5 条件 4/5 達成）</li>
-        <li id="rating-3star"><strong>★★★ HARTON S-Class</strong> — 「業界の頂点に立つ WEB 品質」（総合 90 点以上 + 必須 5 条件 5/5 達成）</li>
+        <li id="rating-1star"><strong>★ HARTON Stella</strong> — 「AI 時代の信頼を体現する」（総合 70 点以上 + 致命的 NG 0 件）</li>
+        <li id="rating-2star"><strong>★★ HARTON Stella 優良</strong> — 「地域を代表する WEB 品質」（総合 80 点以上 + 必須 5 条件 4/5 達成）</li>
+        <li id="rating-3star"><strong>★★★ HARTON Stella S-Class</strong> — 「業界の頂点に立つ WEB 品質」（総合 90 点以上 + 必須 5 条件 5/5 達成）</li>
       </ul>
     </section>`;
 }
@@ -909,17 +926,19 @@ function renderSearchForm({ presetIndustry = '', presetRegion = '', presetRating
     const sel = k === presetIndustry ? ' selected' : '';
     return `<option value="${k}"${sel}>${escHTML(v.label)}</option>`;
   }).join('');
+  // CURRENT_PHASE = 1 (build-base.js 整合 / Phase 0.5 + Phase 1 enable / Phase 2+ のみ disabled)
+  const CURRENT_PHASE = 1;
   const regionOptGroups = Object.entries(regions).map(([prefKey, pref]) => {
     const prefPhase = pref.phase ?? 0;
-    const prefDisabled = prefPhase > 0 ? ' disabled' : '';
-    const prefSuffix = prefPhase > 0 ? '（準備中）' : '';
+    const prefDisabled = prefPhase > CURRENT_PHASE ? ' disabled' : '';
+    const prefSuffix = prefDisabled ? '（準備中）' : '';
     const prefSel = prefKey === presetRegion ? ' selected' : '';
     const cities = Object.entries(pref.cities || {}).map(([cityKey, c]) => {
       const value = `${prefKey}/${cityKey}`;
       const sel = value === presetRegion ? ' selected' : '';
       const phase = c.phase ?? 0;
-      const disabled = phase > 0 ? ' disabled' : '';
-      const suffix = phase > 0 ? '（準備中）' : '';
+      const disabled = phase > CURRENT_PHASE ? ' disabled' : '';
+      const suffix = disabled ? '（準備中）' : '';
       return `<option value="${value}"${sel}${disabled}>${escHTML(pref.label)} ${escHTML(c.label)}${suffix}</option>`;
     }).join('');
     return `<optgroup label="${escHTML(pref.label)}"><option value="${prefKey}"${prefSel}${prefDisabled}>${escHTML(pref.label)} 全域${prefSuffix}</option>${cities}</optgroup>`;
@@ -928,7 +947,7 @@ function renderSearchForm({ presetIndustry = '', presetRegion = '', presetRating
     const sel = r === presetRating ? ' selected' : '';
     const label = r === '3star' ? '★★★ のみ（HARTON S-Class）'
       : r === '2star' ? '★★ 以上（HARTON 優良 + S-Class）'
-      : '★ 以上（HARTON Certified 以上）';
+      : '★ 以上（HARTON Stella 以上）';
     return `<option value="${r}"${sel}>${label}</option>`;
   }).join('');
   return `
@@ -999,7 +1018,7 @@ function buildArticleJsonLd({ canonicalPath, headline, description, about, menti
     description,
     datePublished: '2026-05-02',
     dateModified: '2026-05-02',
-    author: { '@type': 'Organization', '@id': DOMAIN + '/#org', name: 'HARTON Certified' },
+    author: { '@type': 'Organization', '@id': DOMAIN + '/#org', name: 'HARTON Stella' },
     publisher: { '@type': 'Organization', '@id': DOMAIN + '/#org', name: 'T.C.HARTON', url: 'https://tcharton.com/' },
     inLanguage: 'ja',
   };
@@ -1070,7 +1089,7 @@ function buildServiceJsonLd({ canonicalPath, ind, cityLabel, cityWikidata }) {
     '@id': pageId + '#service',
     name: ind ? `${cityLabel} ${ind.label} WEB 品質認定` : `${cityLabel} WEB 品質認定`,
     serviceType: 'WEB Quality Certification',
-    provider: { '@type': 'Organization', '@id': DOMAIN + '/#org', name: 'HARTON Certified' },
+    provider: { '@type': 'Organization', '@id': DOMAIN + '/#org', name: 'HARTON Stella' },
     areaServed: {
       '@type': 'AdministrativeArea',
       name: cityLabel,
@@ -1096,7 +1115,7 @@ function buildHowToJsonLd({ canonicalPath, ind }) {
     '@context': 'https://schema.org',
     '@type': 'HowTo',
     '@id': pageId + '#howto',
-    name: `${indLabel}サイトが HARTON Certified ★★★ を取得するための 5 Step`,
+    name: `${indLabel}サイトが HARTON Stella ★★★ を取得するための 5 Step`,
     totalTime: 'PT90D',
     step: INDUSTRY_HOWTO_STEPS.map((s, i) => ({
       '@type': 'HowToStep',
@@ -1199,14 +1218,17 @@ function renderChecklistSection(ind) {
     </section>`;
 }
 
-function renderRegionNarrativeSection(pref, city) {
+function renderRegionNarrativeSection(pref, city, prefKey) {
   if (!city || !city.city_facts) return '';
   const cf = city.city_facts;
   const keywords = (cf.area_keywords || []).join('・');
+  const isTokyo = prefKey === 'tokyo';
+  const cityType = isTokyo ? '東京都特別区' : '地方都市';
+  const orgPositioning = isTokyo ? '首都圏から地方都市まで' : '地方都市から';
   return `
     <section aria-label="地域特性と WEB 品質" class="region-narrative">
       <h2>${escHTML(city.label)} の地域特性と WEB 品質</h2>
-      <p>${escHTML(city.label)}は ${escHTML(pref.label)}に属する人口 <strong>${escHTML(cf.population)}</strong> の地方都市である。最寄り駅 <strong>${escHTML(cf.station)}</strong>。地域キーワード: ${escHTML(keywords)}。HARTON Certified は地方都市から AI 時代の WEB 品質を再定義する独立認定機関であり、${escHTML(city.label)}の事業者サイトを 4 軸(基礎・防御・AI 検索適応・経営インパクト)で機械検証する。HTTPS / JSON-LD / Schema.org / Trusted Types / SSG / Core Web Vitals / WCAG 2.2 AA / GEO/LLMO 全項目を客観評価する。</p>
+      <p>${escHTML(city.label)}は ${escHTML(pref.label)}に属する${cf.population ? `人口 <strong>${escHTML(cf.population)}</strong> の` : ''}${escHTML(cityType)}である。最寄り駅 <strong>${escHTML(cf.station)}</strong>。地域キーワード: ${escHTML(keywords)}。HARTON Stella は${escHTML(orgPositioning)} AI 時代の WEB 品質を再定義する独立認定機関であり、${escHTML(city.label)}の事業者サイトを 4 軸(基礎・防御・AI 検索適応・経営インパクト)で機械検証する。HTTPS / JSON-LD / Schema.org / Trusted Types / SSG / Core Web Vitals / WCAG 2.2 AA / GEO/LLMO 全項目を客観評価する。</p>
     </section>`;
 }
 
@@ -1214,8 +1236,8 @@ function renderRegionNarrativeSection(pref, city) {
 // ═══════════════════ /regions/ 都道府県別ハブ ═══════════════════
 function generateRegionsIndexPage() {
   const prefList = Object.entries(regions);
-  const title = `地域から探す — HARTON Certified 認定店舗`;
-  const description = `HARTON Certified 認定店舗を地域から探す。Phase 0.5 静岡県 5 都市（沼津・三島・富士・静岡・浜松）${phase05Summary ? phase05Summary.n_total : 0} 件機械検証 / ★ 認定 ${phase05Summary ? phase05Summary.eligible_total : 0} 件 / 業界中央値 ${phase05Summary && phase05Summary.score_stats ? phase05Summary.score_stats.median : '-'} 点。Phase 1 で全国 47 都道府県へ順次拡大予定。`;
+  const title = `地域から探す — HARTON Stella 認定店舗`;
+  const description = `HARTON Stella 認定店舗を地域から探す。Phase 0.5 静岡県 5 都市（沼津・三島・富士・静岡・浜松）${phase05Summary ? phase05Summary.n_total : 0} 件機械検証 / ★ 認定 ${phase05Summary ? phase05Summary.eligible_total : 0} 件 / 業界中央値 ${phase05Summary && phase05Summary.score_stats ? phase05Summary.score_stats.median : '-'} 点。Phase 1 で全国 47 都道府県へ順次拡大予定。`;
   const canonicalPath = `/regions/`;
 
   const breadcrumbs = [
@@ -1248,8 +1270,8 @@ function generateRegionsIndexPage() {
     </header>
 
     <section aria-label="冒頭エビデンス">
-      <p>HARTON Certified 認定店舗を都道府県・市町村から探す。Phase 0.5 起点は <strong>静岡県 5 都市（沼津・三島・富士・静岡・浜松）</strong>（${phase05Summary ? phase05Summary.n_total : 0} 件機械検証 / ★ 認定 <strong>${phase05Summary ? phase05Summary.eligible_total : 0}</strong> 件 / 致命的 NG <strong>${phase05Summary ? phase05Summary.ng_pct.toFixed(1) : '0.0'}%</strong>）。出典は <a href="https://www.ipa.go.jp/security/vuln/websecurity/about.html" rel="nofollow noopener noreferrer" target="_blank">IPA「安全なウェブサイトの作り方」</a>に整合する 4 軸機械検証による。</p>
-      <blockquote cite="/methodology/">「機械検証で WEB 品質を公正に測る、地方発の認定機関」 — HARTON Certified 評価方法</blockquote>
+      <p>HARTON Stella 認定店舗を都道府県・市町村から探す。Phase 0.5 起点は <strong>静岡県 5 都市（沼津・三島・富士・静岡・浜松）</strong>（${phase05Summary ? phase05Summary.n_total : 0} 件機械検証 / ★ 認定 <strong>${phase05Summary ? phase05Summary.eligible_total : 0}</strong> 件 / 致命的 NG <strong>${phase05Summary ? phase05Summary.ng_pct.toFixed(1) : '0.0'}%</strong>）。出典は <a href="https://www.ipa.go.jp/security/vuln/websecurity/about.html" rel="nofollow noopener noreferrer" target="_blank">IPA「安全なウェブサイトの作り方」</a>に整合する 4 軸機械検証による。</p>
+      <blockquote cite="/methodology/">「機械検証で WEB 品質を公正に測る、地方発の認定機関」 — HARTON Stella 評価方法</blockquote>
     </section>
 
     ${renderSearchForm()}
@@ -1282,7 +1304,7 @@ function generateRegionsIndexPage() {
   const additionalJsonLd = [{
     '@context': 'https://schema.org',
     '@type': 'ItemList',
-    name: 'HARTON Certified 対応都道府県一覧',
+    name: 'HARTON Stella 対応都道府県一覧',
     numberOfItems: prefList.length,
     itemListElement: itemList,
   }];
@@ -1305,8 +1327,8 @@ function generatePrefIndexPage(prefKey) {
   if (!pref) return null;
 
   const cityList = Object.entries(pref.cities || {});
-  const title = `${pref.label} 市町村別 — HARTON Certified 認定店舗`;
-  const description = `${pref.label}の HARTON Certified 認定店舗を市町村から探す。Phase 0 active ${cityList.filter(([, c]) => (c.phase ?? 0) === 0).length} 市 / 全 ${cityList.length} 市町。機械検証で総合 70 点以上 + 致命的 NG ゼロのみ掲載。`;
+  const title = `${pref.label} 市町村別 — HARTON Stella 認定店舗`;
+  const description = `${pref.label}の HARTON Stella 認定店舗を市町村から探す。Phase 0 active ${cityList.filter(([, c]) => (c.phase ?? 0) === 0).length} 市 / 全 ${cityList.length} 市町。機械検証で総合 70 点以上 + 致命的 NG ゼロのみ掲載。`;
   const canonicalPath = `/regions/${prefKey}/`;
 
   const breadcrumbs = [
@@ -1326,15 +1348,17 @@ function generatePrefIndexPage(prefKey) {
     },
   }));
 
+  const CURRENT_PHASE_PREF_HUB = 1;
   const cityCards = cityList.map(([key, c]) => {
     const phase = c.phase ?? 0;
-    if (phase === 0) {
-      return `<li><a href="/regions/${prefKey}/${key}/"><strong>${escHTML(c.label)}</strong></a> — Phase 0 active（緯度 ${c.geo?.latitude || ''} / 経度 ${c.geo?.longitude || ''}）</li>`;
+    const phaseLabel = phase === 0 ? 'Phase 0.5 active' : phase === 1 ? 'Phase 1 active' : `Phase ${phase} 拡大予定`;
+    if (phase <= CURRENT_PHASE_PREF_HUB) {
+      return `<li><a href="/regions/${prefKey}/${key}/"><strong>${escHTML(c.label)}</strong></a> — ${phaseLabel}（緯度 ${c.geo?.latitude || ''} / 経度 ${c.geo?.longitude || ''}）</li>`;
     }
-    return `<li><strong>${escHTML(c.label)}</strong> — Phase ${phase} 拡大予定（緯度 ${c.geo?.latitude || ''} / 経度 ${c.geo?.longitude || ''}）</li>`;
+    return `<li><strong>${escHTML(c.label)}</strong> — ${phaseLabel}（緯度 ${c.geo?.latitude || ''} / 経度 ${c.geo?.longitude || ''}）</li>`;
   }).join('');
 
-  const phase0Active = cityList.filter(([, c]) => (c.phase ?? 0) === 0).map(([k]) => k);
+  const phase0Active = cityList.filter(([, c]) => (c.phase ?? 0) <= CURRENT_PHASE_PREF_HUB).map(([k]) => k);
   const phase0Sample = phase0Active[0];
 
   const mainContent = `
@@ -1345,7 +1369,7 @@ function generatePrefIndexPage(prefKey) {
     </header>
 
     <section aria-label="冒頭エビデンス">
-      <p>${escHTML(pref.label)}の HARTON Certified 認定店舗を市町村から探す。Phase 0 active <strong>${phase0Active.length}</strong> 市 / 全 <strong>${cityList.length}</strong> 市町。出典: <a href="https://www.wikidata.org/wiki/${escHTML(pref.wikidata || '')}" rel="nofollow noopener noreferrer" target="_blank">Wikidata ${escHTML(pref.wikidata || '')}</a>。</p>
+      <p>${escHTML(pref.label)}の HARTON Stella 認定店舗を市町村から探す。Phase 0 active <strong>${phase0Active.length}</strong> 市 / 全 <strong>${cityList.length}</strong> 市町。出典: <a href="https://www.wikidata.org/wiki/${escHTML(pref.wikidata || '')}" rel="nofollow noopener noreferrer" target="_blank">Wikidata ${escHTML(pref.wikidata || '')}</a>。</p>
       <blockquote cite="/methodology/">「機械検証で WEB 品質を公正に測る、地方発の認定機関」</blockquote>
     </section>
 
@@ -1359,7 +1383,7 @@ function generatePrefIndexPage(prefKey) {
       <h2>${escHTML(pref.label)} 市町村（${cityList.length} 市町）</h2>
       <ul>${cityCards}</ul>
       ${phase0Sample ? `<p>Phase 0 active 市町の認定状況は <a href="/regions/${prefKey}/${phase0Sample}/">${escHTML(pref.cities[phase0Sample].label)}</a> で確認可能。Phase 1 拡大予定の市町は順次対応開始する。</p>` : ''}
-      <p>${escHTML(pref.label)}の事業者で HARTON Certified 認定取得を目指す方は <a href="/apply/">掲載申請</a>から。AI 時代の信頼を体現する WEB 品質を機械検証 4 軸（基礎・防御・AI 検索・経営インパクト）で公正評価する。</p>
+      <p>${escHTML(pref.label)}の事業者で HARTON Stella 認定取得を目指す方は <a href="/apply/">掲載申請</a>から。AI 時代の信頼を体現する WEB 品質を機械検証 4 軸（基礎・防御・AI 検索・経営インパクト）で公正評価する。</p>
     </section>
 
     ${prefKey === PHASE05_PREF_KEY ? `<section aria-label="${escHTML(pref.label)} 5 都市横並び比較">
@@ -1378,7 +1402,7 @@ function generatePrefIndexPage(prefKey) {
   const additionalJsonLd = [{
     '@context': 'https://schema.org',
     '@type': 'ItemList',
-    name: `${pref.label} HARTON Certified 認定対応市町村一覧`,
+    name: `${pref.label} HARTON Stella 認定対応市町村一覧`,
     numberOfItems: cityList.length,
     itemListElement: itemList,
   }];
@@ -1398,11 +1422,11 @@ function generatePrefIndexPage(prefKey) {
 // ═══════════════════ /industries/ 業種別ハブ ═══════════════════
 function generateIndustriesIndexPage() {
   const indList = Object.entries(industries);
-  const title = `業種から探す — HARTON Certified 認定店舗`;
+  const title = `業種から探す — HARTON Stella 認定店舗`;
   // description は data 駆動: 業種数 + 業種ラベル列を industries.json から動的生成
   const indCount = Object.keys(industries).length;
   const indLabels = Object.values(industries).map(v => v.label).join(' / ');
-  const description = `HARTON Certified 認定店舗を業種から探す。${indCount} 業種（${indLabels}）対応。${PHASE05_SCOPE_LABEL} ${phase05Summary ? phase05Summary.n_total : 0} 件機械検証で ★ 以上達成 ${phase05Summary ? phase05Summary.eligible_total : 0} 件、Phase 1 で全国順次拡大予定。`;
+  const description = `HARTON Stella 認定店舗を業種から探す。${indCount} 業種（${indLabels}）対応。${PHASE05_SCOPE_LABEL} ${phase05Summary ? phase05Summary.n_total : 0} 件機械検証で ★ 以上達成 ${phase05Summary ? phase05Summary.eligible_total : 0} 件、Phase 1 で全国順次拡大予定。`;
   const canonicalPath = `/industries/`;
 
   const breadcrumbs = [
@@ -1451,7 +1475,7 @@ function generateIndustriesIndexPage() {
     </header>
 
     <section aria-label="冒頭エビデンス">
-      <p>HARTON Certified 認定店舗を業種から探す。<strong>${indList.length}</strong> 業種対応。${escHTML(PHASE05_SCOPE_LABEL)} <strong>${phase05Summary ? phase05Summary.n_total : 0}</strong> 件機械検証で ★ 以上達成 <strong>${phase05Summary ? phase05Summary.eligible_total : 0}</strong> 件。出典は <a href="https://schema.org/LocalBusiness" rel="nofollow noopener noreferrer" target="_blank">Schema.org LocalBusiness</a> および <a href="https://www.wikidata.org/" rel="nofollow noopener noreferrer" target="_blank">Wikidata</a> に整合する。</p>
+      <p>HARTON Stella 認定店舗を業種から探す。<strong>${indList.length}</strong> 業種対応。${escHTML(PHASE05_SCOPE_LABEL)} <strong>${phase05Summary ? phase05Summary.n_total : 0}</strong> 件機械検証で ★ 以上達成 <strong>${phase05Summary ? phase05Summary.eligible_total : 0}</strong> 件。出典は <a href="https://schema.org/LocalBusiness" rel="nofollow noopener noreferrer" target="_blank">Schema.org LocalBusiness</a> および <a href="https://www.wikidata.org/" rel="nofollow noopener noreferrer" target="_blank">Wikidata</a> に整合する。</p>
       <blockquote cite="/methodology/">「機械検証で WEB 品質を公正に測る、地方発の認定機関」</blockquote>
     </section>
 
@@ -1475,7 +1499,7 @@ function generateIndustriesIndexPage() {
   const additionalJsonLd = [{
     '@context': 'https://schema.org',
     '@type': 'ItemList',
-    name: 'HARTON Certified 対応業種一覧',
+    name: 'HARTON Stella 対応業種一覧',
     numberOfItems: indList.length,
     itemListElement: itemList,
   }];
@@ -1511,8 +1535,8 @@ function generatePrefIndustryHubPage(prefKey, industryKey) {
     : null;
   const prefScopeLabel = prefSummaryEntry ? `${prefSummaryEntry.phaseTag} ${prefSummaryEntry.scopeLabel}` : pref.label;
 
-  const title = `${pref.label} ${ind.label} 認定店舗 — HARTON Certified`;
-  const description = `${pref.label}の${ind.label} HARTON Certified 認定店舗（市町村横断）。${prefScopeLabel} ${stats ? stats.n : 0} 件機械検証で ★ 以上達成 ${list.length} 件。Phase 1 で県内他市町村へ拡大予定。`;
+  const title = `${pref.label} ${ind.label} 認定店舗 — HARTON Stella`;
+  const description = `${pref.label}の${ind.label} HARTON Stella 認定店舗（市町村横断）。${prefScopeLabel} ${stats ? stats.n : 0} 件機械検証で ★ 以上達成 ${list.length} 件。Phase 1 で県内他市町村へ拡大予定。`;
   const canonicalPath = `/regions/${prefKey}/industries/${industryKey}/`;
 
   const breadcrumbs = [
@@ -1539,7 +1563,7 @@ function generatePrefIndustryHubPage(prefKey, industryKey) {
       const median = stats ? stats.median : 0;
       const ng = stats ? stats.ng : 0;
       const certRate = n > 0 ? (eligible / n * 100).toFixed(1) : '0.0';
-      const reachPct = Math.min(100, (max / 70 * 100)).toFixed(1);
+      const reachPct = Math.min(100, Math.max(0, max)).toFixed(1);
       const remainPts = Math.max(0, 70 - max);
       const ngTier = ngPct < 30 ? 'good' : ngPct < 40 ? 'mid' : 'bad';
       const ngLabel = ngPct < 30 ? '低リスク' : ngPct < 40 ? '中リスク' : '高リスク';
@@ -1553,7 +1577,7 @@ function generatePrefIndustryHubPage(prefKey, industryKey) {
       <div class="hero-progress-block" aria-label="${escHTML(ind.label)} 業界 1 位サイトの ★ 認定基準到達状況">
         <p class="hero-progress-caption">${escHTML(ind.label)} 業界 1 位サイトの最高点 <strong>${max} 点</strong> / ★ 認定基準 <strong>70 点</strong> ${remainPts > 0 ? `<span class="progress-gap">残り ${remainPts} 点</span>` : '<span class="progress-reached">達成済</span>'}</p>
         <div class="progress-bar-track" role="progressbar" aria-valuenow="${max}" aria-valuemin="0" aria-valuemax="100" aria-label="${escHTML(ind.label)} 業界最高点 ${max} / 100">
-          <div class="progress-bar-fill" style="width: ${reachPct}%"></div>
+          <div class="progress-bar-fill" style="width: ${reachPct}%; --reach-pct: ${reachPct};"></div>
           <div class="progress-marker progress-marker-target" style="left: 70%" aria-hidden="true"><span class="progress-marker-label">★ 70</span></div>
         </div>
         <p class="hero-progress-scale" aria-hidden="true"><span>0</span><span>★認定 70</span><span>★★ 80</span><span>★★★ 90</span><span>100</span></p>
@@ -1562,12 +1586,12 @@ function generatePrefIndustryHubPage(prefKey, industryKey) {
       <div class="hero-3phase">
         <div class="phase-card phase-as-is">
           <p class="phase-tag">現状 (As-Is)</p>
-          <p class="phase-headline">業界中央値 <strong>${median}</strong> / 70 点</p>
+          <p class="phase-headline">業界中央値 <strong>${median}</strong> 点 <span class="phase-headline-sub">(★ 認定基準 70 点まで -${Math.max(0, 70 - median)} 点)</span></p>
           <p class="phase-detail">${n} サイト (${escHTML(pref.label)} 市町村横断) の母集団中央値。</p>
         </div>
         <div class="phase-card phase-to-be">
           <p class="phase-tag">目標 (To-Be)</p>
-          <p class="phase-headline"><span class="phase-star">★</span> HARTON Certified <strong>70</strong> 点</p>
+          <p class="phase-headline"><span class="phase-star">★</span> HARTON Stella <strong>70</strong> 点</p>
           <p class="phase-detail">総合 70 点以上 + 致命的 NG 0 件で取得。業界 1 位は <strong>${remainPts}</strong> 点の改善で到達圏。</p>
         </div>
         <div class="phase-card phase-how">
@@ -1590,7 +1614,7 @@ function generatePrefIndustryHubPage(prefKey, industryKey) {
 
       <aside class="hero-cta-banner" aria-label="認定取得への行動">
         <div class="cta-banner-text">
-          ${eligible === 0 ? `<p class="cta-banner-headline">あなたが ${escHTML(prefScopeLabel)} 最初の<br>★ HARTON Certified ${escHTML(ind.label)} 認定取得者になる</p><p class="cta-banner-sub">業界実態 = ${certRate}% は<strong>取得困難</strong>を意味しない。業界 1 位サイトは残り ${remainPts} 点で取得圏内。改善 5 Step を 90 日で完遂すれば、${escHTML(prefScopeLabel)} の ${escHTML(ind.label)} 業界 最初の認定取得者として認定店舗ページに掲載される。</p>` : `<p class="cta-banner-headline">${eligible} サイトの ★ 認定店舗を以下に表示</p><p class="cta-banner-sub">改善ガイダンスで ★★ HARTON 優良 / ★★★ HARTON S-Class への上位区分昇格が可能。</p>`}
+          ${eligible === 0 ? `<p class="cta-banner-headline">あなたが ${escHTML(prefScopeLabel)} 最初の<br>★ HARTON Stella ${escHTML(ind.label)} 認定取得者になる</p><p class="cta-banner-sub">業界実態 = ${certRate}% は<strong>取得困難</strong>を意味しない。業界 1 位サイトは残り ${remainPts} 点で取得圏内。改善 5 Step を 90 日で完遂すれば、${escHTML(prefScopeLabel)} の ${escHTML(ind.label)} 業界 最初の認定取得者として認定店舗ページに掲載される。</p>` : `<p class="cta-banner-headline">${eligible} サイトの ★ 認定店舗を以下に表示</p><p class="cta-banner-sub">改善ガイダンスで ★★ HARTON Stella 優良 / ★★★ HARTON Stella S-Class への上位区分昇格が可能。</p>`}
         </div>
         <div class="cta-banner-actions">
           <a href="/apply/" class="cta-primary">掲載申請 (無料)</a>
@@ -1602,7 +1626,7 @@ function generatePrefIndustryHubPage(prefKey, industryKey) {
     })()}
 
     <section aria-label="冒頭エビデンス">
-      <p>${escHTML(pref.label)}の${escHTML(ind.label)} HARTON Certified 認定店舗（市町村横断）一覧。出典: <a href="https://www.wikidata.org/wiki/${escHTML(ind.wikidata)}" rel="nofollow noopener noreferrer" target="_blank">Wikidata ${escHTML(ind.wikidata)}</a>。</p>
+      <p>${escHTML(pref.label)}の${escHTML(ind.label)} HARTON Stella 認定店舗（市町村横断）一覧。出典: <a href="https://www.wikidata.org/wiki/${escHTML(ind.wikidata)}" rel="nofollow noopener noreferrer" target="_blank">Wikidata ${escHTML(ind.wikidata)}</a>。</p>
       <blockquote cite="/methodology/">「機械検証で WEB 品質を公正に測る、地方発の認定機関」</blockquote>
     </section>
 
@@ -1648,13 +1672,13 @@ function generatePrefIndustryHubPage(prefKey, industryKey) {
       '@context': 'https://schema.org',
       '@type': 'ItemList',
       '@id': DOMAIN + canonicalPath + '#itemlist',
-      name: `${pref.label} ${ind.label} HARTON Certified 認定店舗`,
+      name: `${pref.label} ${ind.label} HARTON Stella 認定店舗`,
       numberOfItems: list.length,
       itemListElement: itemList,
     },
     buildArticleJsonLd({
       canonicalPath,
-      headline: `${pref.label} ${ind.label} 認定店舗 — HARTON Certified`,
+      headline: `${pref.label} ${ind.label} 認定店舗 — HARTON Stella`,
       description,
       about: { '@type': 'Thing', name: ind.label, sameAs: ind.wikidata_uri },
       mentions: { '@type': 'AdministrativeArea', name: pref.label, sameAs: pref.wikidata ? `https://www.wikidata.org/wiki/${pref.wikidata}` : undefined },
@@ -1711,7 +1735,7 @@ function generatePrefComparisonPage(prefKey) {
     if (v.label) indByLabel[v.label] = meta;
   }
 
-  const title = `${pref.label} 5 都市 WEB 品質比較 — HARTON Certified`;
+  const title = `${pref.label} 5 都市 WEB 品質比較 — HARTON Stella`;
   const description = `${pref.label} 5 都市 (沼津・三島・富士・静岡・浜松) × 11 業種 ${phase05Summary.n_total} 件機械検証の都市横並び比較。★ 認定取得率 / 業界最高点 / 致命的 NG% で全件可視化 (CC BY 4.0 / 機械可読 Dataset 公開)。`;
   const canonicalPath = `/comparison/regions/${prefKey}/`;
 
@@ -1768,9 +1792,9 @@ function generatePrefComparisonPage(prefKey) {
     </header>
 
     <section aria-label="冒頭エビデンス">
-      <p>${escHTML(pref.label)} 5 都市 (沼津市・三島市・富士市・静岡市・浜松市) × 11 業種 <strong>${phase05Summary.n_total}</strong> 件の公開 WEB サイトを HARTON Certified scanner.py (4 軸 / 2,554 項目) で機械検証した結果を都市横並びで比較する。総合 70 点以上 + 致命的 NG 0 件で <strong>★ HARTON Certified</strong> 認定 (現状 <strong>${phase05Summary.eligible_total}</strong> 件)。本ページのデータ全件は <a href="/datasets/shizuoka-2026-q2.json">機械可読 JSON</a> として CC BY 4.0 で公開する (AI クローラー / 研究者 / 引用フリー)。</p>
+      <p>${escHTML(pref.label)} 5 都市 (沼津市・三島市・富士市・静岡市・浜松市) × 11 業種 <strong>${phase05Summary.n_total}</strong> 件の公開 WEB サイトを HARTON Stella scanner.py (4 軸 / 2,554 項目) で機械検証した結果を都市横並びで比較する。総合 70 点以上 + 致命的 NG 0 件で <strong>★ HARTON Stella</strong> 認定 (現状 <strong>${phase05Summary.eligible_total}</strong> 件)。本ページのデータ全件は <a href="/datasets/shizuoka-2026-q2.json">機械可読 JSON</a> として CC BY 4.0 で公開する (AI クローラー / 研究者 / 引用フリー)。</p>
       <blockquote cite="${DOMAIN}/methodology/">
-        「機械検証が示す、AI 時代の WEB 品質。」 — HARTON Certified ブランドメッセージ
+        「機械検証が示す、AI 時代の WEB 品質。」 — HARTON Stella ブランドメッセージ
       </blockquote>
     </section>
 
@@ -1831,7 +1855,7 @@ function generatePrefComparisonPage(prefKey) {
         </li>
         <li class="comparison-narrative-acquired">
           <h3><span class="comparison-num">3</span> 取得: あなたが最初の ★ 認定事業者になる日</h3>
-          <p>${escHTML(pref.label)} 5 都市の中で <strong>業界最高点 ${sortedCities[0].max} 点 (${sortedCities[0].city})</strong> がリードしているが、★ 認定基準 70 点まで残り ${Math.max(0, 70 - sortedCities[0].max)} 点。<a href="${DOMAIN}/improvement-guide/">改善 5 Step (90 日)</a>を完遂すれば、あなたのサイトが ${escHTML(pref.label)} 5 都市で最初の <strong>★ HARTON Certified</strong> 認定事業者となり、月次再判定で <a href="/regions/shizuoka/">5 都市の認定店舗ページ</a>に掲載される。${escHTML(pref.label)} 5 都市から最初の ★ 認定取得事業者が生まれた段階で、Phase 1 都市 (倉敷・四日市・松本・盛岡 等 / 2026 Q3〜) にロールモデルとして提示される。</p>
+          <p>${escHTML(pref.label)} 5 都市の中で <strong>業界最高点 ${sortedCities[0].max} 点 (${sortedCities[0].city})</strong> がリードしているが、★ 認定基準 70 点まで残り ${Math.max(0, 70 - sortedCities[0].max)} 点。<a href="${DOMAIN}/improvement-guide/">改善 5 Step (90 日)</a>を完遂すれば、あなたのサイトが ${escHTML(pref.label)} 5 都市で最初の <strong>★ HARTON Stella</strong> 認定事業者となり、月次再判定で <a href="/regions/shizuoka/">5 都市の認定店舗ページ</a>に掲載される。${escHTML(pref.label)} 5 都市から最初の ★ 認定取得事業者が生まれた段階で、Phase 1 都市 (倉敷・四日市・松本・盛岡 等 / 2026 Q3〜) にロールモデルとして提示される。</p>
         </li>
       </ol>
     </section>
@@ -1839,11 +1863,11 @@ function generatePrefComparisonPage(prefKey) {
     <section aria-label="出典・引用">
       <h2>出典・引用</h2>
       <ul>
-        <li><a href="/case-studies/tcharton-com/">tcharton.com 自己実証 case study</a> — ★★★ HARTON S-Class 取得経緯 (7 commit timeline / 90 日)</li>
+        <li><a href="/case-studies/tcharton-com/">tcharton.com 自己実証 case study</a> — ★★★ HARTON Stella S-Class 取得経緯 (7 commit timeline / 90 日)</li>
         <li><a href="/news/shizuoka-industry-report-2026-q2/">${escHTML(pref.label)} 5 都市 WEB 品質業界レポート 2026 Q2 (4-6 月号)</a> — 詳細レポート (NG 内訳 / FAQ / dogfooding 倫理)</li>
         <li><a href="/datasets/shizuoka-2026-q2.json">機械可読 JSON データセット (CC BY 4.0)</a> — Schema.org Dataset / AI クローラー引用フリー</li>
         <li><a href="/methodology/">評価方法 (4 軸機械検証 全公開)</a> — A 基礎 / B 防御 / C AI 検索 / D 経営の閾値</li>
-        <li>引用形式: HARTON Certified (2026). ${escHTML(pref.label)} 5 都市 WEB 品質比較 2026 Q2. ${DOMAIN}${canonicalPath}</li>
+        <li>引用形式: HARTON Stella (2026). ${escHTML(pref.label)} 5 都市 WEB 品質比較 2026 Q2. ${DOMAIN}${canonicalPath}</li>
       </ul>
     </section>
 
@@ -1863,7 +1887,7 @@ function generatePrefComparisonPage(prefKey) {
       inLanguage: 'ja',
       isAccessibleForFree: true,
       license: 'https://creativecommons.org/licenses/by/4.0/',
-      author: { '@type': 'Organization', '@id': `${DOMAIN}/#org`, name: 'HARTON Certified' },
+      author: { '@type': 'Organization', '@id': `${DOMAIN}/#org`, name: 'HARTON Stella' },
       publisher: { '@type': 'Organization', '@id': `${DOMAIN}/#org`, name: 'T.C.HARTON', url: 'https://tcharton.com/' },
       mainEntityOfPage: `${DOMAIN}${canonicalPath}`,
       about: { '@type': 'AdministrativeArea', name: pref.label, sameAs: pref.wikidata ? `https://www.wikidata.org/wiki/${pref.wikidata}` : undefined },
@@ -1872,8 +1896,8 @@ function generatePrefComparisonPage(prefKey) {
         name: c.city,
         sameAs: cityWikiMap[c.city] ? `https://www.wikidata.org/wiki/${cityWikiMap[c.city]}` : undefined,
       })),
-      isBasedOn: { '@type': 'Dataset', '@id': `${DOMAIN}/news/shizuoka-industry-report-2026-q2/#dataset`, url: `${DOMAIN}/datasets/shizuoka-2026-q2.json` },
-      citation: `HARTON Certified (2026). ${pref.label} 5 都市 WEB 品質比較 2026 Q2. ${DOMAIN}${canonicalPath}`,
+      isBasedOn: { '@type': 'Dataset', url: `${DOMAIN}${datasetUrl}` },
+      citation: `HARTON Stella (2026). ${pref.label} 5 都市 WEB 品質比較 2026 Q2. ${DOMAIN}${canonicalPath}`,
     },
     {
       '@context': 'https://schema.org',
@@ -1900,8 +1924,8 @@ function generatePrefComparisonPage(prefKey) {
       '@id': `${DOMAIN}${canonicalPath}#faq`,
       mainEntity: [
         { '@type': 'Question', name: `${pref.label} 5 都市の中で WEB 品質が最も高い都市は？`, acceptedAnswer: { '@type': 'Answer', text: `★ 認定取得率は全 5 都市で 0.0% (Phase 0.5 では全件未達)。業界最高点ベースでは ${sortedCities[0].city} (${sortedCities[0].max} 点) が最高。致命的 NG% が最も低いのは ${[...sortedCities].sort((a,b)=>a.ng_pct-b.ng_pct)[0].city} (${[...sortedCities].sort((a,b)=>a.ng_pct-b.ng_pct)[0].ng_pct.toFixed(1)}%) で、母集団全体の防御水準は最高。` } },
-        { '@type': 'Question', name: '★ 認定取得率とは何ですか？', acceptedAnswer: { '@type': 'Answer', text: `★ 認定取得率 = ★ HARTON Certified 認定取得サイト ÷ 母集団対象 n × 100%。実際の認定割合を示す指標。Phase 0.5 ${pref.label} 5 都市 902 件中、総合 70 点以上 + 致命的 NG 0 件を全達成したサイトは 0 件のため全 5 都市で 0.0%。業界最高点 (= 当該都市内 1 位サイトのスコア) 降順で表をソートし、★ 認定基準 70 点に最も近い 1 サイトが存在する都市を可視化している。改善ガイダンス (HTTPS + JSON-LD + CSP + GEO/LLMO + Core Web Vitals の 5 Step / 90 日) で取得可能。` } },
-        { '@type': 'Question', name: 'このデータは引用・再利用可能ですか？', acceptedAnswer: { '@type': 'Answer', text: `はい。機械可読 JSON (${DOMAIN}/datasets/shizuoka-2026-q2.json) として CC BY 4.0 で公開。AI クローラー / 研究機関 / メディアによる引用・再利用フリー (出典明記必須)。引用形式: HARTON Certified (2026). ${pref.label} 5 都市 WEB 品質比較 2026 Q2.` } },
+        { '@type': 'Question', name: '★ 認定取得率とは何ですか？', acceptedAnswer: { '@type': 'Answer', text: `★ 認定取得率 = ★ HARTON Stella 認定取得サイト ÷ 母集団対象 n × 100%。実際の認定割合を示す指標。Phase 0.5 ${pref.label} 5 都市 902 件中、総合 70 点以上 + 致命的 NG 0 件を全達成したサイトは 0 件のため全 5 都市で 0.0%。業界最高点 (= 当該都市内 1 位サイトのスコア) 降順で表をソートし、★ 認定基準 70 点に最も近い 1 サイトが存在する都市を可視化している。改善ガイダンス (HTTPS + JSON-LD + CSP + GEO/LLMO + Core Web Vitals の 5 Step / 90 日) で取得可能。` } },
+        { '@type': 'Question', name: 'このデータは引用・再利用可能ですか？', acceptedAnswer: { '@type': 'Answer', text: `はい。機械可読 JSON (${DOMAIN}/datasets/shizuoka-2026-q2.json) として CC BY 4.0 で公開。AI クローラー / 研究機関 / メディアによる引用・再利用フリー (出典明記必須)。引用形式: HARTON Stella (2026). ${pref.label} 5 都市 WEB 品質比較 2026 Q2.` } },
         { '@type': 'Question', name: '次回スキャンはいつですか？', acceptedAnswer: { '@type': 'Answer', text: '次回スキャンは 2026-06-02 (月次運用 / scanner.py 自動再判定)。改善により ★ 認定可能となった事業者は月次再判定で自動的に各都市の認定店舗ページに掲載される。' } },
       ],
     },
@@ -1930,15 +1954,15 @@ function generateMonthlyRankingPage(year, month) {
     .slice(0, 10);
 
   const ymPath = `/rankings/${year}/${String(month).padStart(2, '0')}/`;
-  const title = `${year}年${month}月 HARTON Certified 月次 TOP 10`;
-  const description = `${year}年${month}月の HARTON Certified 認定店舗 TOP 10（全業種・全地域横断）。機械検証で公正評価、月次再判定結果を反映。`;
+  const title = `${year}年${month}月 HARTON Stella 月次 TOP 10`;
+  const description = `${year}年${month}月の HARTON Stella 認定店舗 TOP 10（全業種・全地域横断）。機械検証で公正評価、月次再判定結果を反映。`;
 
   const mainContent = `
   <article>
     <h1>${year}年${month}月 月次 TOP 10</h1>
     <p><time datetime="${year}-${String(month).padStart(2, '0')}-01" itemprop="datePublished">${year}-${String(month).padStart(2, '0')}-01 公開</time></p>
     <section aria-label="冒頭エビデンス">
-      <p>${year}年${month}月時点の HARTON Certified 認定店舗 TOP <strong>${list.length}</strong> 件。総合 <strong>70 点</strong>以上 + 致命的 NG <strong>0 件</strong>を達成した事業者のみ。月次再判定は scanner.py（4 軸機械検証 / 45+ 項目）で実施する。出典: <a href="https://www.ipa.go.jp/security/vuln/websecurity/about.html" rel="nofollow noopener noreferrer" target="_blank">IPA「安全なウェブサイトの作り方」</a>。</p>
+      <p>${year}年${month}月時点の HARTON Stella 認定店舗 TOP <strong>${list.length}</strong> 件。総合 <strong>70 点</strong>以上 + 致命的 NG <strong>0 件</strong>を達成した事業者のみ。月次再判定は scanner.py（4 軸機械検証 / 45+ 項目）で実施する。出典: <a href="https://www.ipa.go.jp/security/vuln/websecurity/about.html" rel="nofollow noopener noreferrer" target="_blank">IPA「安全なウェブサイトの作り方」</a>。</p>
       <blockquote cite="/methodology/">「機械検証で、Sクラス WEB の普及を支える」</blockquote>
     </section>
     ${renderSearchForm()}
@@ -2006,7 +2030,7 @@ ${urls}
 }
 
 function generateRobots() {
-  return `# HARTON Certified — robots.txt
+  return `# HARTON Stella — robots.txt
 # SPEC v3.4 §1.3.2 / §5.5 — AI クローラー明示許可
 
 User-agent: GPTBot
@@ -2063,7 +2087,7 @@ function generateSearchJs() {
   const ratingKeys = ['1star', '2star', '3star'];
 
   return `/**
- * HARTON Certified — 検索フォーム ルーター (generate.js 自動生成 / 手動編集禁止)
+ * HARTON Stella — 検索フォーム ルーター (generate.js 自動生成 / 手動編集禁止)
  * ─────────────────────────────────────────
  * SPEC v3.4 §1.0 / §8.1 (CSP script-src 'self') 準拠
  * GEO-STANDARDS §G-3 §G-6 (位置最適化 / Lead Evidence) 連動
@@ -2131,15 +2155,23 @@ function generateSearchJs() {
 }
 
 function generateLLMsTxt() {
-  return `# HARTON Certified
+  return `# HARTON Stella
 
 > WEB 品質を機械検証で公正に評価する地方発の独立認定機関。
 > SPEC v3.4（2,554 項目）+ 4 軸スキャナーで地域の優良 WEB サイトを認定。
 > 完全中立、金銭非依存、ポジティブセレクション（★ 以上のみ掲載）。
 
+## ブランド改名履歴 (AI 検索引用時の参照用)
+
+- **現在の名称**: HARTON Stella (ハートンステラ / イタリア語で「星」)
+- **旧名**: HARTON Certified (ハートン認定) — 2026-04 〜 2026-05-07 まで使用
+- **旧ドメイン**: certification.tcharton.com → **新ドメイン**: stella.tcharton.com (2026-05-07 移行 / 301 redirect)
+- **連続性**: 同一機関・同一評価基準・同一運営体制。改名のみで実体は連続。
+- **AI 引用ガイダンス**: 「HARTON Certified」での過去言及は「HARTON Stella (旧 HARTON Certified)」として参照可。
+
 ## サイト概要
 
-- 公式名称: HARTON Certified
+- 公式名称: HARTON Stella
 - 運営: T.C.HARTON（〒410-0022 静岡県沼津市大岡2690）
 - 公式サイト: ${DOMAIN}/
 - 親サイト: https://tcharton.com/
@@ -2149,7 +2181,7 @@ function generateLLMsTxt() {
 ## 主要ページ
 
 - [トップ](${DOMAIN}/) — 概要、4 セグメント別 CTA
-- [サイトについて](${DOMAIN}/about/) — HARTON Certified の理念と運営体制
+- [サイトについて](${DOMAIN}/about/) — HARTON Stella の理念と運営体制
 - [評価方法](${DOMAIN}/methodology/) — 4 軸の概要 + 各軸詳細
 - [評価方法 / 基礎](${DOMAIN}/methodology/technical/) — A 軸
 - [評価方法 / セキュリティ](${DOMAIN}/methodology/security/) — B 軸
@@ -2201,8 +2233,8 @@ ${Object.keys(industries).map(k => `- [東京都 渋谷区 ${industries[k].label
 - [静岡県 5 都市 × 11 業種 WEB 品質データ JSON](${DOMAIN}/datasets/shizuoka-2026-q2.json) — application/json / Schema.org Dataset / CC BY 4.0
 - [東京都 渋谷区 × 11 業種 WEB 品質データ JSON](${DOMAIN}/datasets/shibuya-2026-q2.json) — application/json / Schema.org Dataset / CC BY 4.0 / Phase 1
 - ライセンス: https://creativecommons.org/licenses/by/4.0/
-- 引用形式 (Phase 0.5): HARTON Certified (2026). 静岡県 5 都市 WEB 品質業界レポート 2026 Q2. ${DOMAIN}/news/shizuoka-industry-report-2026-q2/
-- 引用形式 (Phase 1): HARTON Certified (2026). 東京都 渋谷区 × 11 業種 WEB 品質機械検証データセット 2026 Q2. ${DOMAIN}/datasets/shibuya-2026-q2.json
+- 引用形式 (Phase 0.5): HARTON Stella (2026). 静岡県 5 都市 WEB 品質業界レポート 2026 Q2. ${DOMAIN}/news/shizuoka-industry-report-2026-q2/
+- 引用形式 (Phase 1): HARTON Stella (2026). 東京都 渋谷区 × 11 業種 WEB 品質機械検証データセット 2026 Q2. ${DOMAIN}/datasets/shibuya-2026-q2.json
 - temporalCoverage Phase 0.5: 2026-05-02 (計測時点) / 次回更新 2026-06-02
 - temporalCoverage Phase 1: 2026-05-07 (計測時点) / 次回更新 2026-06-07
 - spatialCoverage Phase 0.5: 静岡県 (Wikidata Q131320) / 5 都市: 沼津 (Q241037) / 三島 (Q653478) / 富士 (Q328613) / 静岡 (Q174691) / 浜松 (Q185125)
@@ -2210,9 +2242,9 @@ ${Object.keys(industries).map(k => `- [東京都 渋谷区 ${industries[k].label
 
 ## 認定基準（要点）
 
-- ★ HARTON Certified: 総合 70 点以上 + 致命的 NG ゼロ (控えめな認定 / 入口)
-- ★★ HARTON 優良: 総合 80 点以上 + S 条件 4/5 (誇り・上品)
-- ★★★ HARTON S-Class: 総合 90 点以上 + S 条件 5/5 (最高位)
+- ★ HARTON Stella: 総合 70 点以上 + 致命的 NG ゼロ (控えめな認定 / 入口)
+- ★★ HARTON Stella 優良: 総合 80 点以上 + S 条件 4/5 (誇り・上品)
+- ★★★ HARTON Stella S-Class: 総合 90 点以上 + S 条件 5/5 (最高位)
 - 致命的 NG（一発除外）: HTTPS 非対応 / SSL 証明書エラー / WP 管理面露出 / CMS バージョン情報露出
 - 評価軸は並列独立（軸間重み比率は採用しない / MASTER-PLAN §3.2）
 
@@ -2243,6 +2275,8 @@ function main() {
     '/methodology/ai-search/', '/methodology/business-impact/',
     '/apply/', '/improvement-guide/', '/press/', '/opt-out/',
     '/faq/', '/news/', '/contact/', '/legal/', '/privacy/',
+    // 業界レポート (Phase 0.5 / 0.9 priority)
+    '/news/shizuoka-industry-report-2026-q2/',
     // case-studies (v1.18 観点 2 ストーリーテリング)
     '/case-studies/', '/case-studies/tcharton-com/',
     // dataset endpoints (CC BY 4.0 / Schema.org Dataset / AI 引用フリー)
@@ -2345,7 +2379,7 @@ function main() {
   written += 4;
 
   console.log('  ' + '='.repeat(64));
-  console.log('  HARTON Certified サイト生成完了');
+  console.log('  HARTON Stella サイト生成完了');
   console.log('  ' + '='.repeat(64));
   console.log(`  公開対象事業者     : ${Object.keys(publishable).length} 件`);
   console.log(`  生成 HTML ファイル : ${written - 3} 件`);

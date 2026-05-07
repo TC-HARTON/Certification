@@ -29,8 +29,8 @@
 |---|---|
 | Google 検索 | 「沼津 美容院 おすすめ」「三島 ラーメン 老舗」 |
 | AI 検索 | Perplexity / ChatGPT / Gemini で同様クエリ |
-| SNS シェア | X / Instagram で「HARTON Certified」タグ |
-| 掲載店のサイト | バッジ →（クリック）→ certification.tcharton.com |
+| SNS シェア | X / Instagram で「HARTON Stella」タグ |
+| 掲載店のサイト | バッジ →（クリック）→ stella.tcharton.com |
 | メインサイト | tcharton.com の事例ページから |
 | note | 「水/土の地域業種別レポート」記事から |
 
@@ -45,7 +45,7 @@
    ・4 軸スコア（レーダーチャート）
    ・サイトのスクリーンショット
    ・公式サイトリンク
-5. 公式サイトへ離脱（HARTON Certified 役割完了）
+5. 公式サイトへ離脱（HARTON Stella 役割完了）
 ```
 
 ### 必要な UX 機能
@@ -131,8 +131,8 @@
 |---|---|
 | 業種仲間のバッジ | クリックで certification 着地 |
 | 業種ページで自社不在 | 「あれ、うちは?」 |
-| メディア記事 | 取材記事で HARTON Certified を知る |
-| Google 検索 | 「HARTON Certified 申請」「優良 WEB 認定 静岡」 |
+| メディア記事 | 取材記事で HARTON Stella を知る |
+| Google 検索 | 「HARTON Stella 申請」「優良 WEB 認定 静岡」 |
 
 ### Journey（最重要動線・MASTER-PLAN §5.2 Q3(a) ダイレクト）
 
@@ -251,13 +251,13 @@
 ### B 既掲載事業者向け（ブランド検索）
 | クエリ | 着地 |
 |---|---|
-| 「HARTON Certified バッジ」 | `/businesses/<slug>/badge/` |
-| 「HARTON Certified 自社サイト 表示」 | `/improvement-guide/badge-embed/` |
+| 「HARTON Stella バッジ」 | `/businesses/<slug>/badge/` |
+| 「HARTON Stella 自社サイト 表示」 | `/improvement-guide/badge-embed/` |
 
 ### C 未掲載事業者向け（取引意向）
 | クエリ | 着地 |
 |---|---|
-| 「HARTON Certified 申請」 | `/apply/` |
+| 「HARTON Stella 申請」 | `/apply/` |
 | 「優良 WEB サイト 認定 静岡」 | `/apply/` or `/methodology/` |
 | 「自社サイト 評価 沼津」 | `/apply/` + tcharton.com 送客 |
 | 「沼津 WEB 認定機関」 | `/about/` |

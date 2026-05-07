@@ -57,7 +57,7 @@ REPORT-TO-ROOT-FROM-{担当}.md に以下を必ず記載:
 
 ---
 
-# ⑤ certification 指示書（HARTON Certified 認定運用責任者）
+# ⑤ certification 指示書（HARTON Stella 認定運用責任者）
 
 **最終更新**: 2026-04-27 / ① HARTON 総合責任者
 **現状**: ✅ **Step 2 完了**（基盤 17 + 動的 50 ページ / spec-checker 4194 項目 100% / 5 件 AND 達成）
@@ -164,9 +164,9 @@ REPORT-TO-ROOT-FROM-{担当}.md に以下を必ず記載:
    ```html
    <form action="https://api.web3forms.com/submit" method="POST">
      <input type="hidden" name="access_key" value="{受領した access_key}">
-     <input type="hidden" name="from_name" value="HARTON Certified Contact">
-     <input type="hidden" name="redirect" value="https://certification.tcharton.com/thanks.html">
-     <input type="hidden" name="subject" value="HARTON Certified お問合せ">
+     <input type="hidden" name="from_name" value="HARTON Stella Contact">
+     <input type="hidden" name="redirect" value="https://stella.tcharton.com/thanks.html">
+     <input type="hidden" name="subject" value="HARTON Stella お問合せ">
      {既存 name / email / company / category / message フィールド維持}
      {Cloudflare Turnstile widget 配置 — CR-3 連動}
      <button type="submit">送信する</button>
@@ -299,7 +299,7 @@ REPORT-TO-ROOT-FROM-{担当}.md に以下を必ず記載:
 /distinctions/                            ← ★区分一覧トップ
 /distinctions/three-stars/                ← ★★★ 一覧（HARTON S-Class）
 /distinctions/two-stars/                  ← ★★ 一覧（HARTON 優良）
-/distinctions/one-star/                   ← ★ 一覧（HARTON Certified）
+/distinctions/one-star/                   ← ★ 一覧（HARTON Stella）
 /distinctions/llmo-special/               ← LLMO 特別認定（将来 / グリーンスター相当）
 /methodology/                             ← 既存 4 軸解説
 /stories/                                 ← NEW: ③ note 連携エディトリアル集約
@@ -377,10 +377,10 @@ REPORT-TO-ROOT-FROM-{担当}.md に以下を必ず記載:
 
 **コミット**: `feat: Phase 0 numazu 30 businesses data per MASTER-PLAN §8.1`
 
-### 🚧 Step 6 — scanner で certification.tcharton.com S クラス取得（外部依存）
+### 🚧 Step 6 — scanner で stella.tcharton.com S クラス取得（外部依存）
 
 **前提（全件揃ってから着手）**:
-- 代表 DNS 完了（certification.tcharton.com → Cloudflare Workers Static Assets）
+- 代表 DNS 完了（stella.tcharton.com → Cloudflare Workers Static Assets）
 - 代表 certification 用 GBP **新規作成**完了 → CID 共有
 - Step 4 完了 + push 済 + 本番デプロイ済
 
@@ -391,7 +391,7 @@ py -c "
 import os; os.environ['USE_PLAYWRIGHT']='1'
 import scanner, requests
 sess = requests.Session()
-res = scanner.scan_single({'社名':'HARTON Certified','業種':'IT','URL':'https://certification.tcharton.com/','住所':'静岡県沼津市大岡2690','電話番号':'+81-80-1058-0538'}, sess)
+res = scanner.scan_single({'社名':'HARTON Stella','業種':'IT','URL':'https://stella.tcharton.com/','住所':'静岡県沼津市大岡2690','電話番号':'+81-80-1058-0538'}, sess)
 print('格付け:', res['格付け'])
 print('総合:', res['総合スコア'])
 print('必須条件:', res['必須条件達成'])
@@ -454,7 +454,7 @@ Step 6 完了時は ① 最終承認案件として明示。
 ### ブランド戦略 3 行サマリ（暗記必須）
 
 ```
-[実体]    沼津 = HARTON Certified 評価基準の「自己実証体 第 1 号」誕生地
+[実体]    沼津 = HARTON Stella 評価基準の「自己実証体 第 1 号」誕生地
 [物語]    地方都市から AI 時代の WEB 品質を再定義する
 [証明]    自分が ★★★ を取れない基準で、他者を測ることはしない（dogfooding 倫理）
 ```
@@ -467,7 +467,7 @@ Step 6 完了時は ① 最終承認案件として明示。
 |---|---|---|
 | **§2.X** | 沼津起点の戦略的必然性 | 地方都市での ★★★ 取得 = 「機械評価は資本に依存しない」民主化の旗印として明文化 / 三島・富士ではなく類似地方都市（倉敷・四日市）展開根拠 / 沼津人口 19 万の数値根拠 |
 | **§3.X** | 自己実証型認定の倫理規範 | 「自分が達成できない基準で他者を測らない」を信頼根拠の核に正本化 / Gemini 型「審査と実務の垂直統合」より一段深い「審査基準そのものの自己実証体」位置付け / 月次再判定で tcharton.com 自身も降格対象（権威の自己拘束） |
-| **§4.X** | tcharton.com / certification.tcharton.com 役割再定義 | tcharton = 自己実証体 第 1 号 / certification = 評価機関 / 「シェフの厨房 / ガイドブック」比喩は不採用 / 評価 ↔ 構築の循環を「dogfooding 構造」と命名 |
+| **§4.X** | tcharton.com / stella.tcharton.com 役割再定義 | tcharton = 自己実証体 第 1 号 / certification = 評価機関 / 「シェフの厨房 / ガイドブック」比喩は不採用 / 評価 ↔ 構築の循環を「dogfooding 構造」と命名 |
 
 #### 完了条件 AND（4 Skill 必須化適用 / v1.1.11）
 
@@ -568,7 +568,7 @@ Step 6 完了時は ① 最終承認案件として明示。
 | バックエンド | Web3Forms（CR-2 連動）→ ⑤ で受信 → ④ scanner 単発スキャン → PDF 生成 → メール送付 |
 | PDF 内容 | 致命的 NG 警告 + ★ 取得までの改善 Step + scanner 出力 verbatim hash |
 | 改善 Step 末尾 | 「改善は (1) 自社実装 (2) 制作会社相談（候補例: tcharton.com 等）」両論併記 |
-| 中立性条項 | 「本診断は HARTON Certified 認定機関の独立業務であり、特定の制作会社推奨ではありません」明記 |
+| 中立性条項 | 「本診断は HARTON Stella 認定機関の独立業務であり、特定の制作会社推奨ではありません」明記 |
 
 **実装は CR-2/CR-3 解消後に着手**（フォーム実送信 + Turnstile 描画が前提）。
 

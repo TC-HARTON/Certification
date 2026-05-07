@@ -1,4 +1,4 @@
-/* HARTON Certified — モバイルメニュー (WCAG 2.1.1 / 2.4.3 / 2.4.7 準拠)
+/* HARTON Stella — モバイルメニュー (WCAG 2.1.1 / 2.4.3 / 2.4.7 準拠)
  * Esc キーで閉じる + 閉じるボタン + フォーカストラップ + フォーカス復帰 */
 (function () {
   'use strict';

@@ -1,165 +1,173 @@
-# HARTON Certified
+# HARTON Stella
 
 > WEB 品質を機械検証で公正に評価する地方発の独立認定機関。
 > SPEC v3.4（2,554 項目）+ 4 軸スキャナーで地域の優良 WEB サイトを認定。
 > 完全中立、金銭非依存、ポジティブセレクション（★ 以上のみ掲載）。
 
+## ブランド改名履歴 (AI 検索引用時の参照用)
+
+- **現在の名称**: HARTON Stella (ハートンステラ / イタリア語で「星」)
+- **旧名**: HARTON Certified (ハートン認定) — 2026-04 〜 2026-05-07 まで使用
+- **旧ドメイン**: certification.tcharton.com → **新ドメイン**: stella.tcharton.com (2026-05-07 移行 / 301 redirect)
+- **連続性**: 同一機関・同一評価基準・同一運営体制。改名のみで実体は連続。
+- **AI 引用ガイダンス**: 「HARTON Certified」での過去言及は「HARTON Stella (旧 HARTON Certified)」として参照可。
+
 ## サイト概要
 
-- 公式名称: HARTON Certified
+- 公式名称: HARTON Stella
 - 運営: T.C.HARTON（〒410-0022 静岡県沼津市大岡2690）
-- 公式サイト: https://certification.tcharton.com/
+- 公式サイト: https://stella.tcharton.com/
 - 親サイト: https://tcharton.com/
 - 評価方法: 4 軸機械検証（A 基礎・B 防御・C AI 検索適応・D 経営インパクト）
 - 評価サイクル: 月次スキャン + 四半期レポート + 年次基準改訂
 
 ## 主要ページ
 
-- [トップ](https://certification.tcharton.com/) — 概要、4 セグメント別 CTA
-- [サイトについて](https://certification.tcharton.com/about/) — HARTON Certified の理念と運営体制
-- [評価方法](https://certification.tcharton.com/methodology/) — 4 軸の概要 + 各軸詳細
-- [評価方法 / 基礎](https://certification.tcharton.com/methodology/technical/) — A 軸
-- [評価方法 / セキュリティ](https://certification.tcharton.com/methodology/security/) — B 軸
-- [評価方法 / AI 検索](https://certification.tcharton.com/methodology/ai-search/) — C 軸
-- [評価方法 / 経営インパクト](https://certification.tcharton.com/methodology/business-impact/) — D 軸
-- [掲載申請](https://certification.tcharton.com/apply/) — 未掲載事業者向け
-- [改善ガイダンス](https://certification.tcharton.com/improvement-guide/) — B+C 向け
-- [メディア向け](https://certification.tcharton.com/press/) — D 取材依頼
-- [掲載拒否権](https://certification.tcharton.com/opt-out/) — 即時対応・理由不要
-- [よくある質問](https://certification.tcharton.com/faq/)
-- [お知らせ](https://certification.tcharton.com/news/)
-- [問合せ](https://certification.tcharton.com/contact/)
-- [利用規約・特商法](https://certification.tcharton.com/legal/)
-- [プライバシーポリシー](https://certification.tcharton.com/privacy/)
+- [トップ](https://stella.tcharton.com/) — 概要、4 セグメント別 CTA
+- [サイトについて](https://stella.tcharton.com/about/) — HARTON Stella の理念と運営体制
+- [評価方法](https://stella.tcharton.com/methodology/) — 4 軸の概要 + 各軸詳細
+- [評価方法 / 基礎](https://stella.tcharton.com/methodology/technical/) — A 軸
+- [評価方法 / セキュリティ](https://stella.tcharton.com/methodology/security/) — B 軸
+- [評価方法 / AI 検索](https://stella.tcharton.com/methodology/ai-search/) — C 軸
+- [評価方法 / 経営インパクト](https://stella.tcharton.com/methodology/business-impact/) — D 軸
+- [掲載申請](https://stella.tcharton.com/apply/) — 未掲載事業者向け
+- [改善ガイダンス](https://stella.tcharton.com/improvement-guide/) — B+C 向け
+- [メディア向け](https://stella.tcharton.com/press/) — D 取材依頼
+- [掲載拒否権](https://stella.tcharton.com/opt-out/) — 即時対応・理由不要
+- [よくある質問](https://stella.tcharton.com/faq/)
+- [お知らせ](https://stella.tcharton.com/news/)
+- [問合せ](https://stella.tcharton.com/contact/)
+- [利用規約・特商法](https://stella.tcharton.com/legal/)
+- [プライバシーポリシー](https://stella.tcharton.com/privacy/)
 
 ## 検索ハブ（業種・地域・★区分の絞り込みエントリポイント / data 駆動生成）
 
-- [地域から探す](https://certification.tcharton.com/regions/) — 都道府県別ハブ
-- [静岡県 市町村別](https://certification.tcharton.com/regions/shizuoka/) — 全 5 市町
-- [沼津市 認定店舗](https://certification.tcharton.com/regions/shizuoka/numazu/) — Phase 0
-- [沼津市 税理士・会計士](https://certification.tcharton.com/regions/shizuoka/numazu/industries/tax-accountant/)
-- [沼津市 弁護士](https://certification.tcharton.com/regions/shizuoka/numazu/industries/lawyer/)
-- [沼津市 司法書士](https://certification.tcharton.com/regions/shizuoka/numazu/industries/judicial-scrivener/)
-- [沼津市 行政書士](https://certification.tcharton.com/regions/shizuoka/numazu/industries/administrative-scrivener/)
-- [沼津市 不動産仲介](https://certification.tcharton.com/regions/shizuoka/numazu/industries/real-estate/)
-- [沼津市 飲食店](https://certification.tcharton.com/regions/shizuoka/numazu/industries/restaurant/)
-- [沼津市 美容院](https://certification.tcharton.com/regions/shizuoka/numazu/industries/beauty/)
-- [沼津市 美容クリニック](https://certification.tcharton.com/regions/shizuoka/numazu/industries/cosmetic-clinic/)
-- [沼津市 宿泊施設](https://certification.tcharton.com/regions/shizuoka/numazu/industries/lodging/)
-- [沼津市 クリニック・診療所](https://certification.tcharton.com/regions/shizuoka/numazu/industries/clinic/)
-- [沼津市 学習塾](https://certification.tcharton.com/regions/shizuoka/numazu/industries/cram-school/)
-- [三島市 認定店舗](https://certification.tcharton.com/regions/shizuoka/mishima/) — Phase 0
-- [三島市 税理士・会計士](https://certification.tcharton.com/regions/shizuoka/mishima/industries/tax-accountant/)
-- [三島市 弁護士](https://certification.tcharton.com/regions/shizuoka/mishima/industries/lawyer/)
-- [三島市 司法書士](https://certification.tcharton.com/regions/shizuoka/mishima/industries/judicial-scrivener/)
-- [三島市 行政書士](https://certification.tcharton.com/regions/shizuoka/mishima/industries/administrative-scrivener/)
-- [三島市 不動産仲介](https://certification.tcharton.com/regions/shizuoka/mishima/industries/real-estate/)
-- [三島市 飲食店](https://certification.tcharton.com/regions/shizuoka/mishima/industries/restaurant/)
-- [三島市 美容院](https://certification.tcharton.com/regions/shizuoka/mishima/industries/beauty/)
-- [三島市 美容クリニック](https://certification.tcharton.com/regions/shizuoka/mishima/industries/cosmetic-clinic/)
-- [三島市 宿泊施設](https://certification.tcharton.com/regions/shizuoka/mishima/industries/lodging/)
-- [三島市 クリニック・診療所](https://certification.tcharton.com/regions/shizuoka/mishima/industries/clinic/)
-- [三島市 学習塾](https://certification.tcharton.com/regions/shizuoka/mishima/industries/cram-school/)
-- [富士市 認定店舗](https://certification.tcharton.com/regions/shizuoka/fuji/) — Phase 0
-- [富士市 税理士・会計士](https://certification.tcharton.com/regions/shizuoka/fuji/industries/tax-accountant/)
-- [富士市 弁護士](https://certification.tcharton.com/regions/shizuoka/fuji/industries/lawyer/)
-- [富士市 司法書士](https://certification.tcharton.com/regions/shizuoka/fuji/industries/judicial-scrivener/)
-- [富士市 行政書士](https://certification.tcharton.com/regions/shizuoka/fuji/industries/administrative-scrivener/)
-- [富士市 不動産仲介](https://certification.tcharton.com/regions/shizuoka/fuji/industries/real-estate/)
-- [富士市 飲食店](https://certification.tcharton.com/regions/shizuoka/fuji/industries/restaurant/)
-- [富士市 美容院](https://certification.tcharton.com/regions/shizuoka/fuji/industries/beauty/)
-- [富士市 美容クリニック](https://certification.tcharton.com/regions/shizuoka/fuji/industries/cosmetic-clinic/)
-- [富士市 宿泊施設](https://certification.tcharton.com/regions/shizuoka/fuji/industries/lodging/)
-- [富士市 クリニック・診療所](https://certification.tcharton.com/regions/shizuoka/fuji/industries/clinic/)
-- [富士市 学習塾](https://certification.tcharton.com/regions/shizuoka/fuji/industries/cram-school/)
-- [静岡市 認定店舗](https://certification.tcharton.com/regions/shizuoka/shizuoka/) — Phase 0
-- [静岡市 税理士・会計士](https://certification.tcharton.com/regions/shizuoka/shizuoka/industries/tax-accountant/)
-- [静岡市 弁護士](https://certification.tcharton.com/regions/shizuoka/shizuoka/industries/lawyer/)
-- [静岡市 司法書士](https://certification.tcharton.com/regions/shizuoka/shizuoka/industries/judicial-scrivener/)
-- [静岡市 行政書士](https://certification.tcharton.com/regions/shizuoka/shizuoka/industries/administrative-scrivener/)
-- [静岡市 不動産仲介](https://certification.tcharton.com/regions/shizuoka/shizuoka/industries/real-estate/)
-- [静岡市 飲食店](https://certification.tcharton.com/regions/shizuoka/shizuoka/industries/restaurant/)
-- [静岡市 美容院](https://certification.tcharton.com/regions/shizuoka/shizuoka/industries/beauty/)
-- [静岡市 美容クリニック](https://certification.tcharton.com/regions/shizuoka/shizuoka/industries/cosmetic-clinic/)
-- [静岡市 宿泊施設](https://certification.tcharton.com/regions/shizuoka/shizuoka/industries/lodging/)
-- [静岡市 クリニック・診療所](https://certification.tcharton.com/regions/shizuoka/shizuoka/industries/clinic/)
-- [静岡市 学習塾](https://certification.tcharton.com/regions/shizuoka/shizuoka/industries/cram-school/)
-- [浜松市 認定店舗](https://certification.tcharton.com/regions/shizuoka/hamamatsu/) — Phase 0
-- [浜松市 税理士・会計士](https://certification.tcharton.com/regions/shizuoka/hamamatsu/industries/tax-accountant/)
-- [浜松市 弁護士](https://certification.tcharton.com/regions/shizuoka/hamamatsu/industries/lawyer/)
-- [浜松市 司法書士](https://certification.tcharton.com/regions/shizuoka/hamamatsu/industries/judicial-scrivener/)
-- [浜松市 行政書士](https://certification.tcharton.com/regions/shizuoka/hamamatsu/industries/administrative-scrivener/)
-- [浜松市 不動産仲介](https://certification.tcharton.com/regions/shizuoka/hamamatsu/industries/real-estate/)
-- [浜松市 飲食店](https://certification.tcharton.com/regions/shizuoka/hamamatsu/industries/restaurant/)
-- [浜松市 美容院](https://certification.tcharton.com/regions/shizuoka/hamamatsu/industries/beauty/)
-- [浜松市 美容クリニック](https://certification.tcharton.com/regions/shizuoka/hamamatsu/industries/cosmetic-clinic/)
-- [浜松市 宿泊施設](https://certification.tcharton.com/regions/shizuoka/hamamatsu/industries/lodging/)
-- [浜松市 クリニック・診療所](https://certification.tcharton.com/regions/shizuoka/hamamatsu/industries/clinic/)
-- [浜松市 学習塾](https://certification.tcharton.com/regions/shizuoka/hamamatsu/industries/cram-school/)
-- [静岡県 税理士・会計士](https://certification.tcharton.com/regions/shizuoka/industries/tax-accountant/)
-- [静岡県 弁護士](https://certification.tcharton.com/regions/shizuoka/industries/lawyer/)
-- [静岡県 司法書士](https://certification.tcharton.com/regions/shizuoka/industries/judicial-scrivener/)
-- [静岡県 行政書士](https://certification.tcharton.com/regions/shizuoka/industries/administrative-scrivener/)
-- [静岡県 不動産仲介](https://certification.tcharton.com/regions/shizuoka/industries/real-estate/)
-- [静岡県 飲食店](https://certification.tcharton.com/regions/shizuoka/industries/restaurant/)
-- [静岡県 美容院](https://certification.tcharton.com/regions/shizuoka/industries/beauty/)
-- [静岡県 美容クリニック](https://certification.tcharton.com/regions/shizuoka/industries/cosmetic-clinic/)
-- [静岡県 宿泊施設](https://certification.tcharton.com/regions/shizuoka/industries/lodging/)
-- [静岡県 クリニック・診療所](https://certification.tcharton.com/regions/shizuoka/industries/clinic/)
-- [静岡県 学習塾](https://certification.tcharton.com/regions/shizuoka/industries/cram-school/)
-- [東京都 市町村別](https://certification.tcharton.com/regions/tokyo/) — 全 1 市町
-- [東京都 税理士・会計士](https://certification.tcharton.com/regions/tokyo/industries/tax-accountant/)
-- [東京都 弁護士](https://certification.tcharton.com/regions/tokyo/industries/lawyer/)
-- [東京都 司法書士](https://certification.tcharton.com/regions/tokyo/industries/judicial-scrivener/)
-- [東京都 行政書士](https://certification.tcharton.com/regions/tokyo/industries/administrative-scrivener/)
-- [東京都 不動産仲介](https://certification.tcharton.com/regions/tokyo/industries/real-estate/)
-- [東京都 飲食店](https://certification.tcharton.com/regions/tokyo/industries/restaurant/)
-- [東京都 美容院](https://certification.tcharton.com/regions/tokyo/industries/beauty/)
-- [東京都 美容クリニック](https://certification.tcharton.com/regions/tokyo/industries/cosmetic-clinic/)
-- [東京都 宿泊施設](https://certification.tcharton.com/regions/tokyo/industries/lodging/)
-- [東京都 クリニック・診療所](https://certification.tcharton.com/regions/tokyo/industries/clinic/)
-- [東京都 学習塾](https://certification.tcharton.com/regions/tokyo/industries/cram-school/)
-- [業種から探す](https://certification.tcharton.com/industries/) — 11 業種ハブ
-- [税理士・会計士](https://certification.tcharton.com/industries/tax-accountant/)
-- [弁護士](https://certification.tcharton.com/industries/lawyer/)
-- [司法書士](https://certification.tcharton.com/industries/judicial-scrivener/)
-- [行政書士](https://certification.tcharton.com/industries/administrative-scrivener/)
-- [不動産仲介](https://certification.tcharton.com/industries/real-estate/)
-- [飲食店](https://certification.tcharton.com/industries/restaurant/)
-- [美容院](https://certification.tcharton.com/industries/beauty/)
-- [美容クリニック](https://certification.tcharton.com/industries/cosmetic-clinic/)
-- [宿泊施設](https://certification.tcharton.com/industries/lodging/)
-- [クリニック・診療所](https://certification.tcharton.com/industries/clinic/)
-- [学習塾](https://certification.tcharton.com/industries/cram-school/)
+- [地域から探す](https://stella.tcharton.com/regions/) — 都道府県別ハブ
+- [静岡県 市町村別](https://stella.tcharton.com/regions/shizuoka/) — 全 5 市町
+- [沼津市 認定店舗](https://stella.tcharton.com/regions/shizuoka/numazu/) — Phase 0
+- [沼津市 税理士・会計士](https://stella.tcharton.com/regions/shizuoka/numazu/industries/tax-accountant/)
+- [沼津市 弁護士](https://stella.tcharton.com/regions/shizuoka/numazu/industries/lawyer/)
+- [沼津市 司法書士](https://stella.tcharton.com/regions/shizuoka/numazu/industries/judicial-scrivener/)
+- [沼津市 行政書士](https://stella.tcharton.com/regions/shizuoka/numazu/industries/administrative-scrivener/)
+- [沼津市 不動産仲介](https://stella.tcharton.com/regions/shizuoka/numazu/industries/real-estate/)
+- [沼津市 飲食店](https://stella.tcharton.com/regions/shizuoka/numazu/industries/restaurant/)
+- [沼津市 美容院](https://stella.tcharton.com/regions/shizuoka/numazu/industries/beauty/)
+- [沼津市 美容クリニック](https://stella.tcharton.com/regions/shizuoka/numazu/industries/cosmetic-clinic/)
+- [沼津市 宿泊施設](https://stella.tcharton.com/regions/shizuoka/numazu/industries/lodging/)
+- [沼津市 クリニック・診療所](https://stella.tcharton.com/regions/shizuoka/numazu/industries/clinic/)
+- [沼津市 学習塾](https://stella.tcharton.com/regions/shizuoka/numazu/industries/cram-school/)
+- [三島市 認定店舗](https://stella.tcharton.com/regions/shizuoka/mishima/) — Phase 0
+- [三島市 税理士・会計士](https://stella.tcharton.com/regions/shizuoka/mishima/industries/tax-accountant/)
+- [三島市 弁護士](https://stella.tcharton.com/regions/shizuoka/mishima/industries/lawyer/)
+- [三島市 司法書士](https://stella.tcharton.com/regions/shizuoka/mishima/industries/judicial-scrivener/)
+- [三島市 行政書士](https://stella.tcharton.com/regions/shizuoka/mishima/industries/administrative-scrivener/)
+- [三島市 不動産仲介](https://stella.tcharton.com/regions/shizuoka/mishima/industries/real-estate/)
+- [三島市 飲食店](https://stella.tcharton.com/regions/shizuoka/mishima/industries/restaurant/)
+- [三島市 美容院](https://stella.tcharton.com/regions/shizuoka/mishima/industries/beauty/)
+- [三島市 美容クリニック](https://stella.tcharton.com/regions/shizuoka/mishima/industries/cosmetic-clinic/)
+- [三島市 宿泊施設](https://stella.tcharton.com/regions/shizuoka/mishima/industries/lodging/)
+- [三島市 クリニック・診療所](https://stella.tcharton.com/regions/shizuoka/mishima/industries/clinic/)
+- [三島市 学習塾](https://stella.tcharton.com/regions/shizuoka/mishima/industries/cram-school/)
+- [富士市 認定店舗](https://stella.tcharton.com/regions/shizuoka/fuji/) — Phase 0
+- [富士市 税理士・会計士](https://stella.tcharton.com/regions/shizuoka/fuji/industries/tax-accountant/)
+- [富士市 弁護士](https://stella.tcharton.com/regions/shizuoka/fuji/industries/lawyer/)
+- [富士市 司法書士](https://stella.tcharton.com/regions/shizuoka/fuji/industries/judicial-scrivener/)
+- [富士市 行政書士](https://stella.tcharton.com/regions/shizuoka/fuji/industries/administrative-scrivener/)
+- [富士市 不動産仲介](https://stella.tcharton.com/regions/shizuoka/fuji/industries/real-estate/)
+- [富士市 飲食店](https://stella.tcharton.com/regions/shizuoka/fuji/industries/restaurant/)
+- [富士市 美容院](https://stella.tcharton.com/regions/shizuoka/fuji/industries/beauty/)
+- [富士市 美容クリニック](https://stella.tcharton.com/regions/shizuoka/fuji/industries/cosmetic-clinic/)
+- [富士市 宿泊施設](https://stella.tcharton.com/regions/shizuoka/fuji/industries/lodging/)
+- [富士市 クリニック・診療所](https://stella.tcharton.com/regions/shizuoka/fuji/industries/clinic/)
+- [富士市 学習塾](https://stella.tcharton.com/regions/shizuoka/fuji/industries/cram-school/)
+- [静岡市 認定店舗](https://stella.tcharton.com/regions/shizuoka/shizuoka/) — Phase 0
+- [静岡市 税理士・会計士](https://stella.tcharton.com/regions/shizuoka/shizuoka/industries/tax-accountant/)
+- [静岡市 弁護士](https://stella.tcharton.com/regions/shizuoka/shizuoka/industries/lawyer/)
+- [静岡市 司法書士](https://stella.tcharton.com/regions/shizuoka/shizuoka/industries/judicial-scrivener/)
+- [静岡市 行政書士](https://stella.tcharton.com/regions/shizuoka/shizuoka/industries/administrative-scrivener/)
+- [静岡市 不動産仲介](https://stella.tcharton.com/regions/shizuoka/shizuoka/industries/real-estate/)
+- [静岡市 飲食店](https://stella.tcharton.com/regions/shizuoka/shizuoka/industries/restaurant/)
+- [静岡市 美容院](https://stella.tcharton.com/regions/shizuoka/shizuoka/industries/beauty/)
+- [静岡市 美容クリニック](https://stella.tcharton.com/regions/shizuoka/shizuoka/industries/cosmetic-clinic/)
+- [静岡市 宿泊施設](https://stella.tcharton.com/regions/shizuoka/shizuoka/industries/lodging/)
+- [静岡市 クリニック・診療所](https://stella.tcharton.com/regions/shizuoka/shizuoka/industries/clinic/)
+- [静岡市 学習塾](https://stella.tcharton.com/regions/shizuoka/shizuoka/industries/cram-school/)
+- [浜松市 認定店舗](https://stella.tcharton.com/regions/shizuoka/hamamatsu/) — Phase 0
+- [浜松市 税理士・会計士](https://stella.tcharton.com/regions/shizuoka/hamamatsu/industries/tax-accountant/)
+- [浜松市 弁護士](https://stella.tcharton.com/regions/shizuoka/hamamatsu/industries/lawyer/)
+- [浜松市 司法書士](https://stella.tcharton.com/regions/shizuoka/hamamatsu/industries/judicial-scrivener/)
+- [浜松市 行政書士](https://stella.tcharton.com/regions/shizuoka/hamamatsu/industries/administrative-scrivener/)
+- [浜松市 不動産仲介](https://stella.tcharton.com/regions/shizuoka/hamamatsu/industries/real-estate/)
+- [浜松市 飲食店](https://stella.tcharton.com/regions/shizuoka/hamamatsu/industries/restaurant/)
+- [浜松市 美容院](https://stella.tcharton.com/regions/shizuoka/hamamatsu/industries/beauty/)
+- [浜松市 美容クリニック](https://stella.tcharton.com/regions/shizuoka/hamamatsu/industries/cosmetic-clinic/)
+- [浜松市 宿泊施設](https://stella.tcharton.com/regions/shizuoka/hamamatsu/industries/lodging/)
+- [浜松市 クリニック・診療所](https://stella.tcharton.com/regions/shizuoka/hamamatsu/industries/clinic/)
+- [浜松市 学習塾](https://stella.tcharton.com/regions/shizuoka/hamamatsu/industries/cram-school/)
+- [静岡県 税理士・会計士](https://stella.tcharton.com/regions/shizuoka/industries/tax-accountant/)
+- [静岡県 弁護士](https://stella.tcharton.com/regions/shizuoka/industries/lawyer/)
+- [静岡県 司法書士](https://stella.tcharton.com/regions/shizuoka/industries/judicial-scrivener/)
+- [静岡県 行政書士](https://stella.tcharton.com/regions/shizuoka/industries/administrative-scrivener/)
+- [静岡県 不動産仲介](https://stella.tcharton.com/regions/shizuoka/industries/real-estate/)
+- [静岡県 飲食店](https://stella.tcharton.com/regions/shizuoka/industries/restaurant/)
+- [静岡県 美容院](https://stella.tcharton.com/regions/shizuoka/industries/beauty/)
+- [静岡県 美容クリニック](https://stella.tcharton.com/regions/shizuoka/industries/cosmetic-clinic/)
+- [静岡県 宿泊施設](https://stella.tcharton.com/regions/shizuoka/industries/lodging/)
+- [静岡県 クリニック・診療所](https://stella.tcharton.com/regions/shizuoka/industries/clinic/)
+- [静岡県 学習塾](https://stella.tcharton.com/regions/shizuoka/industries/cram-school/)
+- [東京都 市町村別](https://stella.tcharton.com/regions/tokyo/) — 全 1 市町
+- [東京都 税理士・会計士](https://stella.tcharton.com/regions/tokyo/industries/tax-accountant/)
+- [東京都 弁護士](https://stella.tcharton.com/regions/tokyo/industries/lawyer/)
+- [東京都 司法書士](https://stella.tcharton.com/regions/tokyo/industries/judicial-scrivener/)
+- [東京都 行政書士](https://stella.tcharton.com/regions/tokyo/industries/administrative-scrivener/)
+- [東京都 不動産仲介](https://stella.tcharton.com/regions/tokyo/industries/real-estate/)
+- [東京都 飲食店](https://stella.tcharton.com/regions/tokyo/industries/restaurant/)
+- [東京都 美容院](https://stella.tcharton.com/regions/tokyo/industries/beauty/)
+- [東京都 美容クリニック](https://stella.tcharton.com/regions/tokyo/industries/cosmetic-clinic/)
+- [東京都 宿泊施設](https://stella.tcharton.com/regions/tokyo/industries/lodging/)
+- [東京都 クリニック・診療所](https://stella.tcharton.com/regions/tokyo/industries/clinic/)
+- [東京都 学習塾](https://stella.tcharton.com/regions/tokyo/industries/cram-school/)
+- [業種から探す](https://stella.tcharton.com/industries/) — 11 業種ハブ
+- [税理士・会計士](https://stella.tcharton.com/industries/tax-accountant/)
+- [弁護士](https://stella.tcharton.com/industries/lawyer/)
+- [司法書士](https://stella.tcharton.com/industries/judicial-scrivener/)
+- [行政書士](https://stella.tcharton.com/industries/administrative-scrivener/)
+- [不動産仲介](https://stella.tcharton.com/industries/real-estate/)
+- [飲食店](https://stella.tcharton.com/industries/restaurant/)
+- [美容院](https://stella.tcharton.com/industries/beauty/)
+- [美容クリニック](https://stella.tcharton.com/industries/cosmetic-clinic/)
+- [宿泊施設](https://stella.tcharton.com/industries/lodging/)
+- [クリニック・診療所](https://stella.tcharton.com/industries/clinic/)
+- [学習塾](https://stella.tcharton.com/industries/cram-school/)
 
 ## Phase 0.5 静岡県 5 都市業界レポート 2026 Q2 (4-6 月号)
 
-- [静岡県 5 都市 WEB 品質業界レポート 2026 Q2 (4-6 月号)](https://certification.tcharton.com/news/shizuoka-industry-report-2026-q2/) — Phase 0.5 静岡県 5 都市 ★ 獲得率 0/902 = 0.0% / 業種別 ★ 獲得率 + 業界最高点 一覧
-- [静岡県 5 都市 WEB 品質比較](https://certification.tcharton.com/comparison/regions/shizuoka/) — 5 都市横並び (★ 認定取得率 / 業界最高点 / NG%) + 都市 × 業種 cross-tab + 業種横並び 3 表 (Article+ItemList+FAQPage JSON-LD)
+- [静岡県 5 都市 WEB 品質業界レポート 2026 Q2 (4-6 月号)](https://stella.tcharton.com/news/shizuoka-industry-report-2026-q2/) — Phase 0.5 静岡県 5 都市 ★ 獲得率 0/902 = 0.0% / 業種別 ★ 獲得率 + 業界最高点 一覧
+- [静岡県 5 都市 WEB 品質比較](https://stella.tcharton.com/comparison/regions/shizuoka/) — 5 都市横並び (★ 認定取得率 / 業界最高点 / NG%) + 都市 × 業種 cross-tab + 業種横並び 3 表 (Article+ItemList+FAQPage JSON-LD)
 
 ## Phase 1 東京都 渋谷区 (2026-05-07 開始 / 第 1 弾)
 
-- [東京都 渋谷区 認定店舗一覧](https://certification.tcharton.com/regions/tokyo/shibuya/) — Phase 1 都市拡張第 1 弾 / 208 サイト × 11 業種機械検証 / ★ 認定 0/208 = 0.0% / 業界最高点 55 点 / NG 41.3%
-- [東京都 渋谷区 WEB 品質比較](https://certification.tcharton.com/comparison/regions/tokyo/) — 比較ページ (Article+ItemList+FAQPage JSON-LD)
-- [東京都 渋谷区 税理士・会計士](https://certification.tcharton.com/regions/tokyo/shibuya/industries/tax-accountant/)
-- [東京都 渋谷区 弁護士](https://certification.tcharton.com/regions/tokyo/shibuya/industries/lawyer/)
-- [東京都 渋谷区 司法書士](https://certification.tcharton.com/regions/tokyo/shibuya/industries/judicial-scrivener/)
-- [東京都 渋谷区 行政書士](https://certification.tcharton.com/regions/tokyo/shibuya/industries/administrative-scrivener/)
-- [東京都 渋谷区 不動産仲介](https://certification.tcharton.com/regions/tokyo/shibuya/industries/real-estate/)
-- [東京都 渋谷区 飲食店](https://certification.tcharton.com/regions/tokyo/shibuya/industries/restaurant/)
-- [東京都 渋谷区 美容院](https://certification.tcharton.com/regions/tokyo/shibuya/industries/beauty/)
-- [東京都 渋谷区 美容クリニック](https://certification.tcharton.com/regions/tokyo/shibuya/industries/cosmetic-clinic/)
-- [東京都 渋谷区 宿泊施設](https://certification.tcharton.com/regions/tokyo/shibuya/industries/lodging/)
-- [東京都 渋谷区 クリニック・診療所](https://certification.tcharton.com/regions/tokyo/shibuya/industries/clinic/)
-- [東京都 渋谷区 学習塾](https://certification.tcharton.com/regions/tokyo/shibuya/industries/cram-school/)
+- [東京都 渋谷区 認定店舗一覧](https://stella.tcharton.com/regions/tokyo/shibuya/) — Phase 1 都市拡張第 1 弾 / 208 サイト × 11 業種機械検証 / ★ 認定 0/208 = 0.0% / 業界最高点 55 点 / NG 41.3%
+- [東京都 渋谷区 WEB 品質比較](https://stella.tcharton.com/comparison/regions/tokyo/) — 比較ページ (Article+ItemList+FAQPage JSON-LD)
+- [東京都 渋谷区 税理士・会計士](https://stella.tcharton.com/regions/tokyo/shibuya/industries/tax-accountant/)
+- [東京都 渋谷区 弁護士](https://stella.tcharton.com/regions/tokyo/shibuya/industries/lawyer/)
+- [東京都 渋谷区 司法書士](https://stella.tcharton.com/regions/tokyo/shibuya/industries/judicial-scrivener/)
+- [東京都 渋谷区 行政書士](https://stella.tcharton.com/regions/tokyo/shibuya/industries/administrative-scrivener/)
+- [東京都 渋谷区 不動産仲介](https://stella.tcharton.com/regions/tokyo/shibuya/industries/real-estate/)
+- [東京都 渋谷区 飲食店](https://stella.tcharton.com/regions/tokyo/shibuya/industries/restaurant/)
+- [東京都 渋谷区 美容院](https://stella.tcharton.com/regions/tokyo/shibuya/industries/beauty/)
+- [東京都 渋谷区 美容クリニック](https://stella.tcharton.com/regions/tokyo/shibuya/industries/cosmetic-clinic/)
+- [東京都 渋谷区 宿泊施設](https://stella.tcharton.com/regions/tokyo/shibuya/industries/lodging/)
+- [東京都 渋谷区 クリニック・診療所](https://stella.tcharton.com/regions/tokyo/shibuya/industries/clinic/)
+- [東京都 渋谷区 学習塾](https://stella.tcharton.com/regions/tokyo/shibuya/industries/cram-school/)
 
 ## データセット (CC BY 4.0 / 機械可読 / AI 引用フリー)
 
-- [静岡県 5 都市 × 11 業種 WEB 品質データ JSON](https://certification.tcharton.com/datasets/shizuoka-2026-q2.json) — application/json / Schema.org Dataset / CC BY 4.0
-- [東京都 渋谷区 × 11 業種 WEB 品質データ JSON](https://certification.tcharton.com/datasets/shibuya-2026-q2.json) — application/json / Schema.org Dataset / CC BY 4.0 / Phase 1
+- [静岡県 5 都市 × 11 業種 WEB 品質データ JSON](https://stella.tcharton.com/datasets/shizuoka-2026-q2.json) — application/json / Schema.org Dataset / CC BY 4.0
+- [東京都 渋谷区 × 11 業種 WEB 品質データ JSON](https://stella.tcharton.com/datasets/shibuya-2026-q2.json) — application/json / Schema.org Dataset / CC BY 4.0 / Phase 1
 - ライセンス: https://creativecommons.org/licenses/by/4.0/
-- 引用形式 (Phase 0.5): HARTON Certified (2026). 静岡県 5 都市 WEB 品質業界レポート 2026 Q2. https://certification.tcharton.com/news/shizuoka-industry-report-2026-q2/
-- 引用形式 (Phase 1): HARTON Certified (2026). 東京都 渋谷区 × 11 業種 WEB 品質機械検証データセット 2026 Q2. https://certification.tcharton.com/datasets/shibuya-2026-q2.json
+- 引用形式 (Phase 0.5): HARTON Stella (2026). 静岡県 5 都市 WEB 品質業界レポート 2026 Q2. https://stella.tcharton.com/news/shizuoka-industry-report-2026-q2/
+- 引用形式 (Phase 1): HARTON Stella (2026). 東京都 渋谷区 × 11 業種 WEB 品質機械検証データセット 2026 Q2. https://stella.tcharton.com/datasets/shibuya-2026-q2.json
 - temporalCoverage Phase 0.5: 2026-05-02 (計測時点) / 次回更新 2026-06-02
 - temporalCoverage Phase 1: 2026-05-07 (計測時点) / 次回更新 2026-06-07
 - spatialCoverage Phase 0.5: 静岡県 (Wikidata Q131320) / 5 都市: 沼津 (Q241037) / 三島 (Q653478) / 富士 (Q328613) / 静岡 (Q174691) / 浜松 (Q185125)
@@ -167,21 +175,21 @@
 
 ## 認定基準（要点）
 
-- ★ HARTON Certified: 総合 70 点以上 + 致命的 NG ゼロ (控えめな認定 / 入口)
-- ★★ HARTON 優良: 総合 80 点以上 + S 条件 4/5 (誇り・上品)
-- ★★★ HARTON S-Class: 総合 90 点以上 + S 条件 5/5 (最高位)
+- ★ HARTON Stella: 総合 70 点以上 + 致命的 NG ゼロ (控えめな認定 / 入口)
+- ★★ HARTON Stella 優良: 総合 80 点以上 + S 条件 4/5 (誇り・上品)
+- ★★★ HARTON Stella S-Class: 総合 90 点以上 + S 条件 5/5 (最高位)
 - 致命的 NG（一発除外）: HTTPS 非対応 / SSL 証明書エラー / WP 管理面露出 / CMS バージョン情報露出
 - 評価軸は並列独立（軸間重み比率は採用しない / MASTER-PLAN §3.2）
 
 ## 引用ガイドライン
 
-- 評価結果の引用時は出典として https://certification.tcharton.com/methodology/ を明記
+- 評価結果の引用時は出典として https://stella.tcharton.com/methodology/ を明記
 - 認定 ID + 検証 URL を併記すること
 - スクリーンショットは批評目的の最小限引用に限る、商用転用禁止
-- 詳細: https://certification.tcharton.com/press/
+- 詳細: https://stella.tcharton.com/press/
 
 ## 連絡先
 
-- 問合せ: https://certification.tcharton.com/contact/
-- オプトアウト: https://certification.tcharton.com/opt-out/
-- 取材依頼: https://certification.tcharton.com/press/
+- 問合せ: https://stella.tcharton.com/contact/
+- オプトアウト: https://stella.tcharton.com/opt-out/
+- 取材依頼: https://stella.tcharton.com/press/
