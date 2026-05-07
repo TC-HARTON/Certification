@@ -361,12 +361,38 @@ function generateIndustryPage(industryKey, ind) {
   const mainContent = `
   <article>
     <header>
-      <p><time datetime="2026-05-02" itemprop="datePublished">2026-05-02 公開</time> / <time datetime="2026-05-02" itemprop="dateModified">最終更新 2026-05-02</time></p>
+      <p><time datetime="2026-05-02" itemprop="datePublished">2026-05-02 公開</time> / <time datetime="2026-05-04" itemprop="dateModified">最終更新 2026-05-04 (v1.19b 検索結果視認性改善)</time></p>
       <h1>${escHTML(ind.label)} 認定店舗一覧</h1>
     </header>
 
+    <section aria-label="検索結果サマリ" class="result-hero">
+      <div class="result-hero-primary">
+        <p class="result-hero-label">${escHTML(PHASE05_SCOPE_LABEL)} の ${escHTML(ind.label)} ★ 認定取得状況</p>
+        <p class="result-hero-figure"><span class="result-hero-num">${summary ? summary.eligible : 0}</span> <span class="result-hero-unit">件</span> <span class="result-hero-of">/ ${summary ? summary.n : (phase05Summary ? phase05Summary.n_total : 0)} 件 中</span></p>
+        <p class="result-hero-rate"><strong>★ 認定取得率 ${summary && summary.n > 0 ? (summary.eligible / summary.n * 100).toFixed(1) : '0.0'}%</strong></p>
+      </div>
+      <ul class="result-hero-metrics">
+        <li class="metric-card metric-card-max">
+          <span class="metric-label">業界最高点</span>
+          <span class="metric-value">${summary ? summary.max : '-'} <span class="metric-unit">/ 70 点</span></span>
+          <span class="metric-note">★ 認定基準まで残り ${summary && typeof summary.max === 'number' ? Math.max(0, 70 - summary.max) : '-'} 点</span>
+        </li>
+        <li class="metric-card metric-card-ng ${summary && summary.ng_pct < 30 ? 'metric-good' : summary && summary.ng_pct < 40 ? 'metric-mid' : 'metric-bad'}">
+          <span class="metric-label">致命的 NG 発生率</span>
+          <span class="metric-value">${summary && typeof summary.ng_pct === 'number' ? summary.ng_pct.toFixed(1) : '-'}<span class="metric-unit">%</span></span>
+          <span class="metric-note">${summary ? `${summary.ng} 件 / ${summary.n} 件中` : '実測待機'}</span>
+        </li>
+        <li class="metric-card metric-card-median">
+          <span class="metric-label">業界中央値</span>
+          <span class="metric-value">${summary ? summary.median : '-'} <span class="metric-unit">/ 70 点</span></span>
+          <span class="metric-note">scanner.py 機械検証 (4 軸 / 2,554 項目)</span>
+        </li>
+      </ul>
+      <p class="result-hero-cta">${(summary ? summary.eligible : 0) === 0 ? `<strong>★ 認定取得 0 件 = 業界実態の透明公開。</strong>「準備中」「Coming soon」等の婉曲表現は採用しない。<a href="/case-studies/tcharton-com/">tcharton.com 自己実証 case study</a> + <a href="/improvement-guide/">改善 5 Step (90 日)</a>で取得経路を全公開。<a href="/apply/">掲載申請 (無料)</a>から自社サイトの ★ 区分判定を申込可能。` : `${summary.eligible} 件の認定店舗を以下に表示。改善ガイダンスで上位区分昇格可能。`}</p>
+    </section>
+
     <section aria-label="冒頭エビデンス">
-      <p>HARTON Certified が機械検証で公正評価する${escHTML(ind.label)} 認定店舗一覧。総合 <strong>70 点</strong>以上 + 致命的 NG <strong>0 件</strong>を達成した事業者のみ掲載する。${escHTML(PHASE05_SCOPE_LABEL)}は ${summary ? `<strong>${summary.n}</strong> 件のスキャンで ★ 獲得率 <strong>${((summary.eligible / summary.n) * 100).toFixed(1)}%</strong>（${summary.eligible}/${summary.n}）、業界最高点 <strong>${summary.max}</strong> 点` : `<strong>${phase05Summary ? phase05Summary.n_total : 0}</strong> 件のスキャンで ★ 獲得率 <strong>0.0%</strong>`}、Phase 1 で全国順次拡大予定。出典は <a href="https://schema.org/${escHTML(ind.schema_type?.[0] || 'LocalBusiness')}" rel="nofollow noopener noreferrer" target="_blank">Schema.org ${escHTML(ind.schema_type?.[0] || 'LocalBusiness')}</a> および <a href="https://www.wikidata.org/wiki/${escHTML(ind.wikidata)}" rel="nofollow noopener noreferrer" target="_blank">Wikidata ${escHTML(ind.wikidata)}</a> に整合する。</p>
+      <p>HARTON Certified が機械検証で公正評価する${escHTML(ind.label)} 認定店舗一覧。総合 <strong>70 点</strong>以上 + 致命的 NG <strong>0 件</strong>を達成した事業者のみ掲載する。出典は <a href="https://schema.org/${escHTML(ind.schema_type?.[0] || 'LocalBusiness')}" rel="nofollow noopener noreferrer" target="_blank">Schema.org ${escHTML(ind.schema_type?.[0] || 'LocalBusiness')}</a> および <a href="https://www.wikidata.org/wiki/${escHTML(ind.wikidata)}" rel="nofollow noopener noreferrer" target="_blank">Wikidata ${escHTML(ind.wikidata)}</a> に整合する。Phase 1 で全国順次拡大予定。</p>
       <blockquote cite="/methodology/">「機械検証で WEB 品質を公正に測る、地方発の認定機関」 — HARTON Certified 評価方法</blockquote>
     </section>
 
@@ -492,12 +518,38 @@ function generateRegionPage(prefKey, cityKey) {
   const mainContent = `
   <article>
     <header>
-      <p><time datetime="2026-05-02" itemprop="datePublished">2026-05-02 公開</time> / <time datetime="2026-05-02" itemprop="dateModified">最終更新 2026-05-02</time></p>
+      <p><time datetime="2026-05-02" itemprop="datePublished">2026-05-02 公開</time> / <time datetime="2026-05-04" itemprop="dateModified">最終更新 2026-05-04 (v1.19b 検索結果視認性改善)</time></p>
       <h1>${escHTML(city.label)} 認定店舗一覧</h1>
     </header>
 
+    <section aria-label="検索結果サマリ" class="result-hero">
+      <div class="result-hero-primary">
+        <p class="result-hero-label">${escHTML(city.label)} (${escHTML(pref.label)}) ★ 認定取得状況</p>
+        <p class="result-hero-figure"><span class="result-hero-num">${cityEligible}</span> <span class="result-hero-unit">件</span> <span class="result-hero-of">/ ${cityN} 件 中</span></p>
+        <p class="result-hero-rate"><strong>★ 認定取得率 ${cityN > 0 ? (cityEligible / cityN * 100).toFixed(1) : '0.0'}%</strong></p>
+      </div>
+      <ul class="result-hero-metrics">
+        <li class="metric-card metric-card-max">
+          <span class="metric-label">業界最高点</span>
+          <span class="metric-value">${cityMax !== null ? cityMax : '-'} <span class="metric-unit">/ 70 点</span></span>
+          <span class="metric-note">★ 認定基準まで残り ${cityMax !== null ? Math.max(0, 70 - cityMax) : '-'} 点</span>
+        </li>
+        <li class="metric-card metric-card-ng ${cityNgPct !== null && cityNgPct < 30 ? 'metric-good' : cityNgPct !== null && cityNgPct < 35 ? 'metric-mid' : 'metric-bad'}">
+          <span class="metric-label">致命的 NG 発生率</span>
+          <span class="metric-value">${cityNgPct !== null ? cityNgPct.toFixed(1) : '-'}<span class="metric-unit">%</span></span>
+          <span class="metric-note">${cityRow ? `${cityRow.ng} 件 / ${cityN} 件中` : '実測待機'}</span>
+        </li>
+        <li class="metric-card metric-card-median">
+          <span class="metric-label">業界中央値</span>
+          <span class="metric-value">${cityRow ? cityRow.median : '-'} <span class="metric-unit">/ 70 点</span></span>
+          <span class="metric-note">scanner.py 機械検証 (4 軸 / 2,554 項目)</span>
+        </li>
+      </ul>
+      <p class="result-hero-cta">${cityEligible === 0 ? `<strong>★ 認定取得 0 件 = 業界実態の透明公開。</strong>${escHTML(city.label)}の事業者で ★ 認定取得を目指す場合は <a href="/case-studies/tcharton-com/">tcharton.com 自己実証 case study</a> + <a href="/improvement-guide/">改善 5 Step (90 日)</a>を参照。<a href="/apply/">掲載申請 (無料)</a>から自社サイトの ★ 区分判定を申込可能。` : `${cityEligible} 件の認定店舗を以下に表示。`}</p>
+    </section>
+
     <section aria-label="冒頭エビデンス">
-      <p>${escHTML(city.label)}（${escHTML(pref.label)}）の HARTON Certified 認定店舗 <strong>${list.length}</strong> 件を業種横断で掲載する。総合 <strong>70 点</strong>以上 + 致命的 NG <strong>0 件</strong>を達成した事業者のみ。Phase ${city.phase || 0} 対象地域。緯度 ${city.geo?.latitude || ''} / 経度 ${city.geo?.longitude || ''}。</p>
+      <p>${escHTML(city.label)}（${escHTML(pref.label)}）の HARTON Certified 認定店舗一覧。総合 <strong>70 点</strong>以上 + 致命的 NG <strong>0 件</strong>を達成した事業者のみ掲載する。Phase ${city.phase || 0} 対象地域。緯度 ${city.geo?.latitude || ''} / 経度 ${city.geo?.longitude || ''}。</p>
       <blockquote cite="/methodology/">「機械検証で WEB 品質を公正に測る、地方発の認定機関」 — HARTON Certified 評価方法</blockquote>
     </section>
 
@@ -588,12 +640,38 @@ function generateRegionIndustryPage(prefKey, cityKey, industryKey) {
   const mainContent = `
   <article>
     <header>
-      <p><time datetime="2026-05-02" itemprop="datePublished">2026-05-02 公開</time> / <time datetime="2026-05-02" itemprop="dateModified">最終更新 2026-05-02</time></p>
+      <p><time datetime="2026-05-02" itemprop="datePublished">2026-05-02 公開</time> / <time datetime="2026-05-04" itemprop="dateModified">最終更新 2026-05-04 (v1.19b 検索結果視認性改善)</time></p>
       <h1>${escHTML(city.label)} ${escHTML(ind.label)} 認定店舗</h1>
     </header>
 
+    <section aria-label="検索結果サマリ" class="result-hero">
+      <div class="result-hero-primary">
+        <p class="result-hero-label">${escHTML(city.label)} の ${escHTML(ind.label)} ★ 認定取得状況</p>
+        <p class="result-hero-figure"><span class="result-hero-num">${cityEligible}</span> <span class="result-hero-unit">件</span> <span class="result-hero-of">/ ${cityN} 件 中 (${escHTML(city.label)}内)</span></p>
+        <p class="result-hero-rate"><strong>${escHTML(city.label)} ${escHTML(ind.label)} ★ 認定取得率 ${cityN > 0 ? (cityEligible / cityN * 100).toFixed(1) : '0.0'}%</strong></p>
+      </div>
+      <ul class="result-hero-metrics">
+        <li class="metric-card metric-card-max">
+          <span class="metric-label">業界最高点 (静岡県 5 都市横断)</span>
+          <span class="metric-value">${indByIndustry ? indByIndustry.max : '-'} <span class="metric-unit">/ 70 点</span></span>
+          <span class="metric-note">${indByIndustry ? `★ 認定基準まで残り ${Math.max(0, 70 - indByIndustry.max)} 点` : '実測待機'}</span>
+        </li>
+        <li class="metric-card metric-card-ng ${indByIndustry && indByIndustry.ng_pct < 30 ? 'metric-good' : indByIndustry && indByIndustry.ng_pct < 40 ? 'metric-mid' : 'metric-bad'}">
+          <span class="metric-label">${escHTML(ind.label)} 業界 致命的 NG%</span>
+          <span class="metric-value">${indByIndustry && typeof indByIndustry.ng_pct === 'number' ? indByIndustry.ng_pct.toFixed(1) : '-'}<span class="metric-unit">%</span></span>
+          <span class="metric-note">5 都市横断 ${indByIndustry ? indByIndustry.ng : '-'} 件 / ${indByIndustry ? indByIndustry.n : '-'} 件中</span>
+        </li>
+        <li class="metric-card metric-card-median">
+          <span class="metric-label">${escHTML(ind.label)} 業界 中央値</span>
+          <span class="metric-value">${indByIndustry ? indByIndustry.median : '-'} <span class="metric-unit">/ 70 点</span></span>
+          <span class="metric-note">scanner.py 機械検証 (4 軸 / 2,554 項目)</span>
+        </li>
+      </ul>
+      <p class="result-hero-cta">${cityEligible === 0 ? `<strong>${escHTML(city.label)} ${escHTML(ind.label)} ★ 認定取得 0 件 = 業界実態の透明公開。</strong>${escHTML(city.label)} で${escHTML(ind.label)} ★ 認定取得を目指す場合は <a href="/case-studies/tcharton-com/">tcharton.com 自己実証 case study</a> + <a href="/improvement-guide/">改善 5 Step (90 日)</a>を参照。<a href="/apply/">掲載申請 (無料)</a>から自社サイトの ★ 区分判定を申込可能。` : `${cityEligible} 件の認定店舗を以下に表示。`}</p>
+    </section>
+
     <section aria-label="冒頭エビデンス">
-      <p>${escHTML(city.label)}（${escHTML(pref.label)}）の${escHTML(ind.label)} HARTON Certified 認定店舗 <strong>${list.length}</strong> 件。総合 <strong>70 点</strong>以上 + 致命的 NG <strong>0 件</strong>達成事業者のみ掲載する。${(cityIndustryN !== null && cityIndustryN > 0) ? `Phase 0.5 機械検証で当該都市の${escHTML(ind.label)}サイトを <strong>${cityIndustryN}</strong> 件評価し、★ 獲得率 <strong>${((list.length / cityIndustryN) * 100).toFixed(1)}%</strong>${indByIndustry ? `、業界 (静岡県 5 都市横断) 最高点 <strong>${indByIndustry.max}</strong> 点` : ''}。` : ''}出典: <a href="https://www.wikidata.org/wiki/${escHTML(ind.wikidata)}" rel="nofollow noopener noreferrer" target="_blank">Wikidata ${escHTML(ind.wikidata)}</a> / <a href="https://schema.org/${escHTML(ind.schema_type?.[0] || 'LocalBusiness')}" rel="nofollow noopener noreferrer" target="_blank">Schema.org ${escHTML(ind.schema_type?.[0] || 'LocalBusiness')}</a>。</p>
+      <p>${escHTML(city.label)}（${escHTML(pref.label)}）の${escHTML(ind.label)} HARTON Certified 認定店舗一覧。総合 <strong>70 点</strong>以上 + 致命的 NG <strong>0 件</strong>達成事業者のみ掲載する。出典: <a href="https://www.wikidata.org/wiki/${escHTML(ind.wikidata)}" rel="nofollow noopener noreferrer" target="_blank">Wikidata ${escHTML(ind.wikidata)}</a> / <a href="https://schema.org/${escHTML(ind.schema_type?.[0] || 'LocalBusiness')}" rel="nofollow noopener noreferrer" target="_blank">Schema.org ${escHTML(ind.schema_type?.[0] || 'LocalBusiness')}</a>。</p>
       <blockquote cite="/methodology/">「機械検証で WEB 品質を公正に測る、地方発の認定機関」 — HARTON Certified 評価方法</blockquote>
     </section>
 
@@ -1294,12 +1372,38 @@ function generatePrefIndustryHubPage(prefKey, industryKey) {
   const mainContent = `
   <article>
     <header>
-      <p><time datetime="2026-05-02" itemprop="datePublished">2026-05-02 公開</time></p>
+      <p><time datetime="2026-05-02" itemprop="datePublished">2026-05-02 公開</time> / <time datetime="2026-05-04" itemprop="dateModified">最終更新 2026-05-04 (v1.19b 検索結果視認性改善)</time></p>
       <h1>${escHTML(pref.label)} ${escHTML(ind.label)} 認定店舗</h1>
     </header>
 
+    <section aria-label="検索結果サマリ" class="result-hero">
+      <div class="result-hero-primary">
+        <p class="result-hero-label">${escHTML(prefScopeLabel)} の ${escHTML(ind.label)} ★ 認定取得状況 (市町村横断)</p>
+        <p class="result-hero-figure"><span class="result-hero-num">${stats ? stats.eligible : 0}</span> <span class="result-hero-unit">件</span> <span class="result-hero-of">/ ${stats ? stats.n : 0} 件 中</span></p>
+        <p class="result-hero-rate"><strong>★ 認定取得率 ${stats && stats.n > 0 ? (stats.eligible / stats.n * 100).toFixed(1) : '0.0'}%</strong></p>
+      </div>
+      <ul class="result-hero-metrics">
+        <li class="metric-card metric-card-max">
+          <span class="metric-label">業界最高点</span>
+          <span class="metric-value">${stats ? stats.max : '-'} <span class="metric-unit">/ 70 点</span></span>
+          <span class="metric-note">${stats ? `★ 認定基準まで残り ${Math.max(0, 70 - stats.max)} 点` : '実測待機'}</span>
+        </li>
+        <li class="metric-card metric-card-ng ${stats && stats.ng_pct < 30 ? 'metric-good' : stats && stats.ng_pct < 40 ? 'metric-mid' : 'metric-bad'}">
+          <span class="metric-label">致命的 NG 発生率</span>
+          <span class="metric-value">${stats && typeof stats.ng_pct === 'number' ? stats.ng_pct.toFixed(1) : '-'}<span class="metric-unit">%</span></span>
+          <span class="metric-note">${stats ? `${stats.ng} 件 / ${stats.n} 件中` : '実測待機'}</span>
+        </li>
+        <li class="metric-card metric-card-median">
+          <span class="metric-label">業界中央値</span>
+          <span class="metric-value">${stats ? stats.median : '-'} <span class="metric-unit">/ 70 点</span></span>
+          <span class="metric-note">scanner.py 機械検証 (4 軸 / 2,554 項目)</span>
+        </li>
+      </ul>
+      <p class="result-hero-cta">${(stats ? stats.eligible : 0) === 0 ? `<strong>${escHTML(prefScopeLabel)} の ${escHTML(ind.label)} ★ 認定取得 0 件 = 業界実態の透明公開。</strong>${escHTML(pref.label)}内で ${escHTML(ind.label)} ★ 認定取得を目指す場合は <a href="/case-studies/tcharton-com/">tcharton.com 自己実証 case study</a> + <a href="/improvement-guide/">改善 5 Step (90 日)</a>を参照。<a href="/apply/">掲載申請 (無料)</a>から自社サイトの ★ 区分判定を申込可能。` : `${stats.eligible} 件の認定店舗を以下に表示。`}</p>
+    </section>
+
     <section aria-label="冒頭エビデンス">
-      <p>${escHTML(pref.label)}の${escHTML(ind.label)} HARTON Certified 認定店舗（市町村横断）<strong>${list.length}</strong> 件。${stats ? `${escHTML(prefScopeLabel)} <strong>${stats.n}</strong> 件機械検証で 致命的 NG <strong>${stats.ng}</strong> 件（${stats.ng_pct.toFixed(1)}%）/ 中央値 <strong>${stats.median}</strong> 点 / 業界 max <strong>${stats.max}</strong> 点 / ★ 認定 <strong>${stats.eligible}</strong> 件。` : ''}出典: <a href="https://www.wikidata.org/wiki/${escHTML(ind.wikidata)}" rel="nofollow noopener noreferrer" target="_blank">Wikidata ${escHTML(ind.wikidata)}</a>。</p>
+      <p>${escHTML(pref.label)}の${escHTML(ind.label)} HARTON Certified 認定店舗（市町村横断）一覧。出典: <a href="https://www.wikidata.org/wiki/${escHTML(ind.wikidata)}" rel="nofollow noopener noreferrer" target="_blank">Wikidata ${escHTML(ind.wikidata)}</a>。</p>
       <blockquote cite="/methodology/">「機械検証で WEB 品質を公正に測る、地方発の認定機関」</blockquote>
     </section>
 

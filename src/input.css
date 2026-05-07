@@ -976,6 +976,145 @@
   }
 
   /* ───────────────────────────────────────────────────────
+     v1.19b 検索結果視認性改善 — .result-hero 大型 stat-display
+     適用先: 業種ハブ + 都市ハブ + 都市×業種 + 県×業種 = 78 ページ
+     代表 verbatim「結果が一目で分かるUIUX」
+     ─────────────────────────────────────────────────────── */
+  body > main > article > section.result-hero {
+    margin: 1.5rem 0 2rem;
+    padding: 2rem 1.75rem 1.75rem;
+    background: linear-gradient(135deg, var(--bg-card) 0%, var(--bg-soft) 100%);
+    border-left: 4px solid var(--accent-strong);
+    border-radius: 0 8px 8px 0;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+  }
+  body > main > article > section.result-hero .result-hero-primary {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.25rem;
+    border-bottom: 1px solid var(--border-soft);
+  }
+  body > main > article > section.result-hero .result-hero-label {
+    font-size: 0.95rem;
+    color: var(--fg-muted);
+    margin: 0 0 0.5rem;
+    letter-spacing: 0.02em;
+  }
+  body > main > article > section.result-hero .result-hero-figure {
+    margin: 0.25rem 0;
+    font-variant-numeric: tabular-nums;
+    font-family: var(--font-heading);
+    line-height: 1;
+    color: var(--fg-strong);
+  }
+  body > main > article > section.result-hero .result-hero-num {
+    font-size: clamp(3.5rem, 10vw, 5rem);
+    font-weight: 700;
+    color: var(--accent-strong);
+    letter-spacing: -0.02em;
+  }
+  body > main > article > section.result-hero .result-hero-unit {
+    font-size: clamp(1.25rem, 3vw, 1.75rem);
+    color: var(--fg-strong);
+    margin-left: 0.25rem;
+  }
+  body > main > article > section.result-hero .result-hero-of {
+    display: block;
+    font-size: 1rem;
+    color: var(--fg-muted);
+    font-family: var(--font-sans);
+    margin-top: 0.5rem;
+    font-weight: 400;
+  }
+  body > main > article > section.result-hero .result-hero-rate {
+    margin: 0.5rem 0 0;
+    font-size: 1.125rem;
+    color: var(--accent);
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* メトリクス 3 カード */
+  body > main > article > section.result-hero ul.result-hero-metrics {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 0.75rem;
+    list-style: none;
+    padding: 0;
+    margin: 1.25rem 0;
+  }
+  body > main > article > section.result-hero ul.result-hero-metrics > li {
+    padding: 1rem 1.125rem;
+    margin: 0;
+    background: var(--bg-page);
+    border-radius: 6px;
+    border-top: 3px solid var(--accent);
+    text-align: center;
+  }
+  body > main > article > section.result-hero ul.result-hero-metrics > li::before {
+    content: none;
+  }
+  body > main > article > section.result-hero .metric-card .metric-label {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--fg-muted);
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.02em;
+  }
+  body > main > article > section.result-hero .metric-card .metric-value {
+    display: block;
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--fg-strong);
+    font-family: var(--font-heading);
+    font-variant-numeric: tabular-nums;
+    line-height: 1.1;
+    margin-bottom: 0.4rem;
+  }
+  body > main > article > section.result-hero .metric-card .metric-unit {
+    font-size: 0.85rem;
+    color: var(--fg-muted);
+    font-weight: 400;
+  }
+  body > main > article > section.result-hero .metric-card .metric-note {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--fg-muted);
+    line-height: 1.4;
+  }
+  /* NG リスク 3 段カラー (challenge red / mid amber / good emerald) */
+  body > main > article > section.result-hero .metric-card-ng.metric-good { border-top-color: #34d399; }
+  body > main > article > section.result-hero .metric-card-ng.metric-good .metric-value { color: #34d399; }
+  body > main > article > section.result-hero .metric-card-ng.metric-mid { border-top-color: #fbbf24; }
+  body > main > article > section.result-hero .metric-card-ng.metric-mid .metric-value { color: #fbbf24; }
+  body > main > article > section.result-hero .metric-card-ng.metric-bad { border-top-color: #f87171; }
+  body > main > article > section.result-hero .metric-card-ng.metric-bad .metric-value { color: #f87171; }
+
+  /* CTA 行 (0 件時のストーリーテリング誘導) */
+  body > main > article > section.result-hero .result-hero-cta {
+    margin: 1rem 0 0;
+    padding: 1rem 1.125rem;
+    background: var(--bg-soft);
+    border-radius: 4px;
+    border-left: 3px solid var(--accent);
+    font-size: 0.92rem;
+    line-height: 1.7;
+    color: var(--fg-body);
+  }
+  body > main > article > section.result-hero .result-hero-cta strong {
+    color: var(--accent-strong);
+  }
+
+  /* mobile (<480px) */
+  @media (max-width: 480px) {
+    body > main > article > section.result-hero {
+      padding: 1.5rem 1rem 1.25rem;
+    }
+    body > main > article > section.result-hero ul.result-hero-metrics {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* ───────────────────────────────────────────────────────
      v1.18 観点 2 ストーリーテリング 3 段デザイン (Goodpatch 型)
      適用先: case-studies / about / improvement-guide / industries / news / comparison
      ─────────────────────────────────────────────────────── */
