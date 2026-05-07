@@ -961,7 +961,7 @@ function renderSearchForm({ presetIndustry = '', presetRegion = '', presetRating
           <button type="submit">絞り込む</button>
         </div>
       </form>
-      <script src="/assets/js/search.js" defer></script>
+      <script src="/assets/js/search.js?v=20260507c" defer></script>
     </section>`;
 }
 
@@ -984,7 +984,7 @@ function renderReportBridge() {
 
 // 共通: search.js script タグ
 function renderSearchScript() {
-  return `<script src="/assets/js/search.js" defer></script>`;
+  return `<script src="/assets/js/search.js?v=20260507c" defer></script>`;
 }
 
 // ═══════════════════ JSON-LD Builders (B 案 richness / @id URI 厳格分離) ═══════════════════
