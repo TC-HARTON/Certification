@@ -36,7 +36,7 @@ shizuokaSummary.industries = shizuokaSummary.by_industry;
 
 /** 現在の運用 Phase (MASTER-PLAN §0.5 ロードマップ準拠 / Phase 0 = 沼津パイロット稼働中)
  *  data/regions.json 内の `phase` ≤ CURRENT_PHASE のみ enable、それ以外は disabled + (準備中) 表示 */
-const CURRENT_PHASE = 0;
+const CURRENT_PHASE = 1;
 
 /** TOP 検索バー業種 select options を data/industries.json から動的生成
  *  scanner ④ INDUSTRY_WIKIDATA_MAP との整合は scanner_category フィールドで段階整備予定 */

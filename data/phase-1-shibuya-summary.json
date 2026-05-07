@@ -1,0 +1,181 @@
+{
+  "phase": "1",
+  "region": "東京都",
+  "cities": [
+    "渋谷区"
+  ],
+  "industries": [
+    "税理士",
+    "弁護士",
+    "司法書士",
+    "行政書士",
+    "不動産",
+    "飲食店",
+    "美容院",
+    "美容クリニック",
+    "宿泊施設",
+    "クリニック・診療所",
+    "学習塾"
+  ],
+  "n_total": 208,
+  "rating_distribution": {
+    "★★★": 0,
+    "★★": 0,
+    "★": 0,
+    "非掲載": 208
+  },
+  "ng_breakdown": {
+    "HTTPS非対応": 5,
+    "WP管理面露出": 78,
+    "SSL証明書": 6,
+    "CMSバージョン情報露出": 3
+  },
+  "ng_total_companies": 86,
+  "ng_pct": 41.3,
+  "score_stats": {
+    "min": 0,
+    "max": 55,
+    "median": 25.5,
+    "mean": 24.5,
+    "stdev": 14.1
+  },
+  "by_city": [
+    {
+      "city": "渋谷区",
+      "n": 208,
+      "ng": 86,
+      "ng_pct": 41.3,
+      "median": 25.5,
+      "max": 55,
+      "eligible": 0
+    }
+  ],
+  "by_industry": [
+    {
+      "industry": "税理士",
+      "n": 20,
+      "ng": 8,
+      "ng_pct": 40.0,
+      "median": 19.5,
+      "max": 42,
+      "eligible": 0
+    },
+    {
+      "industry": "弁護士",
+      "n": 20,
+      "ng": 11,
+      "ng_pct": 55.0,
+      "median": 30.0,
+      "max": 55,
+      "eligible": 0
+    },
+    {
+      "industry": "司法書士",
+      "n": 18,
+      "ng": 12,
+      "ng_pct": 66.7,
+      "median": 26.0,
+      "max": 48,
+      "eligible": 0
+    },
+    {
+      "industry": "行政書士",
+      "n": 19,
+      "ng": 11,
+      "ng_pct": 57.9,
+      "median": 26,
+      "max": 48,
+      "eligible": 0
+    },
+    {
+      "industry": "不動産",
+      "n": 20,
+      "ng": 6,
+      "ng_pct": 30.0,
+      "median": 3.0,
+      "max": 39,
+      "eligible": 0
+    },
+    {
+      "industry": "飲食店",
+      "n": 19,
+      "ng": 4,
+      "ng_pct": 21.1,
+      "median": 25,
+      "max": 42,
+      "eligible": 0
+    },
+    {
+      "industry": "美容院",
+      "n": 20,
+      "ng": 0,
+      "ng_pct": 0.0,
+      "median": 18.5,
+      "max": 38,
+      "eligible": 0
+    },
+    {
+      "industry": "美容クリニック",
+      "n": 19,
+      "ng": 11,
+      "ng_pct": 57.9,
+      "median": 30,
+      "max": 55,
+      "eligible": 0
+    },
+    {
+      "industry": "宿泊施設",
+      "n": 13,
+      "ng": 6,
+      "ng_pct": 46.2,
+      "median": 28,
+      "max": 41,
+      "eligible": 0
+    },
+    {
+      "industry": "クリニック・診療所",
+      "n": 20,
+      "ng": 12,
+      "ng_pct": 60.0,
+      "median": 26.5,
+      "max": 55,
+      "eligible": 0
+    },
+    {
+      "industry": "学習塾",
+      "n": 20,
+      "ng": 5,
+      "ng_pct": 25.0,
+      "median": 31.0,
+      "max": 54,
+      "eligible": 0
+    }
+  ],
+  "cross_tab_n": {
+    "渋谷区": {
+      "税理士": 20,
+      "弁護士": 20,
+      "司法書士": 18,
+      "行政書士": 19,
+      "不動産": 20,
+      "飲食店": 19,
+      "美容院": 20,
+      "美容クリニック": 19,
+      "宿泊施設": 13,
+      "クリニック・診療所": 20,
+      "学習塾": 20
+    }
+  },
+  "self_proof_marker": {
+    "tcharton_score": 90,
+    "tcharton_rating": "★★★",
+    "tcharton_class": "HARTON S-Class",
+    "tcharton_location": "沼津 (Phase 0.5)",
+    "industry_max_score": 55,
+    "gap_to_tcharton": 35,
+    "quality_ratio": 1.64
+  },
+  "eligible_total": 0,
+  "note": "渋谷区 Phase 1 (東京都特別区 / Wikidata Q193638). scanner ④ commit 受領 2026-05-07. 11 業種一律 (Phase 0.5 と同 mapping). ★ 認定基準 = 総合 70 点 + 致命的 NG 0 件 + 格付け識別子 ★/★★/★★★ いずれか.",
+  "scan_date": "2026-05-07"
+}

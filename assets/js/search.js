@@ -21,7 +21,7 @@
   if (!form) return;
 
   var INDUSTRY_KEYS = ["tax-accountant","lawyer","judicial-scrivener","administrative-scrivener","real-estate","restaurant","beauty","cosmetic-clinic","lodging","clinic","cram-school"];
-  var REGION_KEYS = ["shizuoka","shizuoka/numazu","shizuoka/mishima","shizuoka/fuji","shizuoka/shizuoka","shizuoka/hamamatsu"];
+  var REGION_KEYS = ["shizuoka","shizuoka/numazu","shizuoka/mishima","shizuoka/fuji","shizuoka/shizuoka","shizuoka/hamamatsu","tokyo","tokyo/shibuya"];
   var RATING_KEYS = ["1star","2star","3star"];
 
   function isAllowed(value, list) {

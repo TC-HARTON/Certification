@@ -136,5 +136,49 @@
         }
       }
     }
+  },
+  "tokyo": {
+    "label": "東京都",
+    "label_en": "Tokyo",
+    "wikidata": "Q1490",
+    "phase": 1,
+    "pref_facts": {
+      "area_keywords": [
+        "東京都",
+        "首都",
+        "23 区",
+        "山手線",
+        "JR 東日本",
+        "東京メトロ",
+        "都営地下鉄"
+      ],
+      "public_url": "https://www.metro.tokyo.lg.jp/",
+      "public_source_label": "東京都 公式サイト"
+    },
+    "cities": {
+      "shibuya": {
+        "label": "渋谷区",
+        "label_en": "Shibuya",
+        "wikidata": "Q193638",
+        "phase": 1,
+        "geo": {
+          "latitude": 35.6640,
+          "longitude": 139.6982
+        },
+        "city_facts": {
+          "station": "JR 渋谷駅 / 東京メトロ渋谷駅",
+          "area_keywords": [
+            "渋谷区",
+            "東京都特別区",
+            "山手線",
+            "渋谷駅",
+            "原宿",
+            "代々木"
+          ],
+          "public_url": "https://www.city.shibuya.tokyo.jp/",
+          "public_source_label": "渋谷区 公式サイト"
+        }
+      }
+    }
   }
 }

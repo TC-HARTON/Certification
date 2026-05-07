@@ -281,6 +281,40 @@ function checkCaseStudiesIntegrity() {
   }
 }
 
+// ═══════════════════ Check 9: Phase 1 渋谷区 整合性 (v3.x 都市拡張対応) ═══════════════════
+function checkPhase1ShibuyaIntegrity() {
+  const summaryPath = path.join(ROOT, 'data/phase-1-shibuya-summary.json');
+  const datasetPath = path.join(ROOT, 'datasets/shibuya-2026-q2.json');
+  if (!fs.existsSync(summaryPath)) return; // Phase 1 未着手なら skip
+  const summary = readJsonSafe('data/phase-1-shibuya-summary.json');
+  if (!summary) {
+    fail('phase1-summary-broken', 'data/phase-1-shibuya-summary.json', 'JSON 不正 / parse fail');
+    return;
+  }
+  // 必須 field 確認
+  const required = ['n_total', 'eligible_total', 'by_city', 'by_industry', 'cross_tab_n', 'ng_breakdown', 'score_stats'];
+  for (const k of required) {
+    if (!(k in summary)) fail('phase1-summary-incomplete', 'data/phase-1-shibuya-summary.json', `必須 field "${k}" 不在`);
+  }
+  // 渋谷区が data/regions.json tokyo 配下にあるか
+  const regions = readJsonSafe('data/regions.json') || {};
+  if (!regions.tokyo || !regions.tokyo.cities || !regions.tokyo.cities.shibuya) {
+    fail('phase1-region-missing', 'data/regions.json', '東京都 + 渋谷区が data/regions.json 未登録 (Phase 1 整合違反)');
+  }
+  // dataset endpoint 存在
+  if (!fs.existsSync(datasetPath)) {
+    fail('phase1-dataset-missing', 'datasets/shibuya-2026-q2.json', '公開 endpoint 不在');
+  }
+  // 11 業種カバレッジ (Phase 0.5 と同 mapping)
+  const expectedInd = ['税理士','弁護士','司法書士','行政書士','不動産','飲食店','美容院','美容クリニック','宿泊施設','クリニック・診療所','学習塾'];
+  const actualInd = (summary.by_industry || []).map(s => s.industry);
+  for (const e of expectedInd) {
+    if (!actualInd.includes(e)) {
+      fail('phase1-industry-coverage', 'data/phase-1-shibuya-summary.json', `必須業種 "${e}" 不在 (Phase 1 11 業種一律違反)`);
+    }
+  }
+}
+
 // ═══════════════════ Check 8: dataset endpoint 存在確認 ═══════════════════
 function checkDatasetEndpoint() {
   const dpath = path.join(ROOT, 'datasets/shizuoka-2026-q2.json');
@@ -308,9 +342,10 @@ function run() {
   checkDatasetEndpoint();
   checkIncompleteExternalLinks();
   checkCaseStudiesIntegrity();
+  checkPhase1ShibuyaIntegrity();
 
   if (failures.length === 0) {
-    console.log('  ✅ PASS — 全 10 検証 / semantic invariants 整合 (v1.18 観点 2 ストーリーテリング統合)');
+    console.log('  ✅ PASS — 全 11 検証 / semantic invariants 整合 (v1.18 観点 2 + Phase 1 渋谷区統合)');
     console.log('  ' + '='.repeat(64));
     process.exit(0);
   }

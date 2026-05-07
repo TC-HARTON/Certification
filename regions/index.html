@@ -179,7 +179,7 @@
   "@context": "https://schema.org",
   "@type": "ItemList",
   "name": "HARTON Certified 対応都道府県一覧",
-  "numberOfItems": 1,
+  "numberOfItems": 2,
   "itemListElement": [
     {
       "@type": "ListItem",
@@ -189,6 +189,16 @@
         "@id": "https://certification.tcharton.com/regions/shizuoka/",
         "name": "静岡県",
         "sameAs": "https://www.wikidata.org/wiki/Q131320"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "item": {
+        "@type": "AdministrativeArea",
+        "@id": "https://certification.tcharton.com/regions/tokyo/",
+        "name": "東京都",
+        "sameAs": "https://www.wikidata.org/wiki/Q1490"
       }
     }
   ]
@@ -265,7 +275,7 @@
           <label for="search-region">地域</label>
           <select id="search-region" name="region">
             <option value="" selected>すべての地域</option>
-            <optgroup label="静岡県"><option value="shizuoka">静岡県 全域</option><option value="shizuoka/numazu">静岡県 沼津市</option><option value="shizuoka/mishima">静岡県 三島市</option><option value="shizuoka/fuji">静岡県 富士市</option><option value="shizuoka/shizuoka">静岡県 静岡市</option><option value="shizuoka/hamamatsu">静岡県 浜松市</option></optgroup>
+            <optgroup label="静岡県"><option value="shizuoka">静岡県 全域</option><option value="shizuoka/numazu">静岡県 沼津市</option><option value="shizuoka/mishima">静岡県 三島市</option><option value="shizuoka/fuji">静岡県 富士市</option><option value="shizuoka/shizuoka">静岡県 静岡市</option><option value="shizuoka/hamamatsu">静岡県 浜松市</option></optgroup><optgroup label="東京都"><option value="tokyo" disabled>東京都 全域（準備中）</option><option value="tokyo/shibuya" disabled>東京都 渋谷区（準備中）</option></optgroup>
           </select>
         </div>
         <div class="search-field">
@@ -295,8 +305,8 @@
     </section>
 
     <section aria-label="対応都道府県一覧">
-      <h2>対応都道府県（1 都道府県）</h2>
-      <ul><li><a href="/regions/shizuoka/"><strong>静岡県</strong></a> — 対応 5 市町（Phase 0 active: 5 市）</li></ul>
+      <h2>対応都道府県（2 都道府県）</h2>
+      <ul><li><a href="/regions/shizuoka/"><strong>静岡県</strong></a> — 対応 5 市町（Phase 0 active: 5 市）</li><li><a href="/regions/tokyo/"><strong>東京都</strong></a> — 対応 1 市町（Phase 0 active: 0 市）</li></ul>
       <p>Phase 1 で全国 <strong>47</strong> 都道府県・<strong>10,000+</strong> 件への拡大を予定（類似地方都市優先: 倉敷・四日市・松本・盛岡 等 / 人口 15-25 万人規模）。</p>
     </section>
 

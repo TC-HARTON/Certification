@@ -94,6 +94,27 @@ const phase05Summary = (function () {
 })();
 // 旧変数名互換 alias (本ファイル内の既存参照との互換性保持 / 物理データは同一)
 const phase0Summary = phase05Summary;
+
+// Phase 1 東京都 渋谷区 208 件 11 業種 (2026-05-07 ④ scanner 受領)
+const phase1ShibuyaSummary = (function () {
+  try {
+    const s = readJSON('data/phase-1-shibuya-summary.json');
+    if (s && Array.isArray(s.by_industry)) {
+      if (Array.isArray(s.industries) && s.industries.length > 0 && typeof s.industries[0] === 'string') {
+        s.industry_labels = s.industries;
+      }
+      s.industries = s.by_industry;
+    }
+    return s;
+  } catch (_) { return null; }
+})();
+
+// pref → 各 Phase summary の lookup (Phase 0.5 + Phase 1 + 将来拡張)
+const PREF_SUMMARY_MAP = {
+  shizuoka: { summary: phase05Summary, scopeLabel: '静岡県 5 都市', phaseTag: 'Phase 0.5', dataset: '/datasets/shizuoka-2026-q2.json' },
+  tokyo: { summary: phase1ShibuyaSummary, scopeLabel: '東京都 渋谷区', phaseTag: 'Phase 1', dataset: '/datasets/shibuya-2026-q2.json' },
+};
+
 // Phase 0.5 集約スコープ表記 (cityLabel 規定値) と Wikidata Q (静岡県) を data 駆動で取得
 const PHASE05_PREF_KEY = 'shizuoka';
 const PHASE05_SCOPE_LABEL = `Phase 0.5 ${(typeof regions !== 'undefined' && regions && regions[PHASE05_PREF_KEY]) ? regions[PHASE05_PREF_KEY].label : '静岡県'} 5 都市`;
@@ -551,9 +572,11 @@ function generateRegionPage(prefKey, cityKey) {
     `<li><a href="/regions/${prefKey}/${cityKey}/industries/${k}/">${escHTML(industries[k]?.label || k)}（${byIndustry[k].length}件）</a></li>`
   ).join('');
 
-  // Phase 0.5 都市別 verbatim (by_city 引用 / 5 都市すべてが対象スコープ)
-  const cityRow = (phase05Summary && Array.isArray(phase05Summary.by_city))
-    ? phase05Summary.by_city.find(c => c.city === city.label) || null
+  // 都市別 verbatim — pref に応じて Phase 0.5 (静岡県) or Phase 1 (東京都) summary を選択
+  const prefSummaryEntry = PREF_SUMMARY_MAP[prefKey];
+  const prefSummary = prefSummaryEntry ? prefSummaryEntry.summary : null;
+  const cityRow = (prefSummary && Array.isArray(prefSummary.by_city))
+    ? prefSummary.by_city.find(c => c.city === city.label) || null
     : null;
   const cityN = cityRow ? cityRow.n : list.length;
   const cityEligible = cityRow ? cityRow.eligible : list.length;
@@ -705,17 +728,17 @@ function generateRegionIndustryPage(prefKey, cityKey, industryKey) {
   const description = `${city.label}（${pref.label}）の${ind.label} HARTON Certified 認定店舗 TOP ${list.length} 件。機械検証で公正評価、総合 70 点以上のみ掲載。`;
   const canonicalPath = `/regions/${prefKey}/${cityKey}/industries/${industryKey}/`;
 
-  // Phase 0.5 都市別 × 業種別 verbatim (cross_tab_n 引用 / 当該都市 × 当該業種の n を都市ページ FAQ/LeadEvidence に注入)
-  // 設計変更 (v2.4): 旧版は「全都市で Phase 0 沼津数値を流用」していたため業種ページ FAQ が沼津固定だった。
-  // Phase 0.5 で全 5 都市が同一 schema (cross_tab_n) を持つため、都市別 × 業種別 verbatim を data 駆動で参照する。
-  // by_industry (pref 集計) も保持し、業界 max などの pref 横断指標は引き続きそちらを参照する。
-  const indByIndustry = (phase05Summary && Array.isArray(phase05Summary.industries))
-    ? phase05Summary.industries.find(s => s.industry === ind.label_short || s.industry === ind.label) || null
+  // 都市別 × 業種別 verbatim (cross_tab_n 引用 / pref に応じて Phase 0.5 or Phase 1 summary)
+  // Phase 0.5 (静岡県 5 都市) + Phase 1 (東京都 渋谷区) 両者 data 駆動
+  const prefSummaryEntry = PREF_SUMMARY_MAP[prefKey];
+  const prefSummary = prefSummaryEntry ? prefSummaryEntry.summary : null;
+  const indByIndustry = (prefSummary && Array.isArray(prefSummary.industries))
+    ? prefSummary.industries.find(s => s.industry === ind.label_short || s.industry === ind.label) || null
     : null;
   const cityIndustryKey = ind.label_short || ind.label;
-  const cityIndustryN = (phase05Summary && phase05Summary.cross_tab_n && phase05Summary.cross_tab_n[city.label]
-    && cityIndustryKey in phase05Summary.cross_tab_n[city.label])
-    ? phase05Summary.cross_tab_n[city.label][cityIndustryKey]
+  const cityIndustryN = (prefSummary && prefSummary.cross_tab_n && prefSummary.cross_tab_n[city.label]
+    && cityIndustryKey in prefSummary.cross_tab_n[city.label])
+    ? prefSummary.cross_tab_n[city.label][cityIndustryKey]
     : null;
   // FAQ/JSON-LD に渡す summary は「都市別 n + pref 集計の max/median/ng_pct」をマージ (n は都市別 verbatim)
   const summary = (cityIndustryN !== null && indByIndustry)
@@ -1480,11 +1503,13 @@ function generatePrefIndustryHubPage(prefKey, industryKey) {
     .filter(([_, b]) => b.region.startsWith(`${prefKey}/`) && b.industry === industryKey)
     .sort((a, b) => b[1].scan.score - a[1].scan.score);
 
-  // summary から該当業種の県内全市町横断実測 (Phase 0.5 by_industry / 静岡県は 5 都市集約)
-  const stats = (prefKey === PHASE05_PREF_KEY && phase05Summary && Array.isArray(phase05Summary.industries))
-    ? (phase05Summary.industries.find(s => s.industry === ind.label_short || s.industry === ind.label) || null)
+  // 都道府県内全市町横断 該当業種実測 — Phase 0.5 (静岡県) or Phase 1 (東京都) 両対応
+  const prefSummaryEntry = PREF_SUMMARY_MAP[prefKey];
+  const prefSummary = prefSummaryEntry ? prefSummaryEntry.summary : null;
+  const stats = (prefSummary && Array.isArray(prefSummary.industries))
+    ? (prefSummary.industries.find(s => s.industry === ind.label_short || s.industry === ind.label) || null)
     : null;
-  const prefScopeLabel = (prefKey === PHASE05_PREF_KEY) ? PHASE05_SCOPE_LABEL : pref.label;
+  const prefScopeLabel = prefSummaryEntry ? `${prefSummaryEntry.phaseTag} ${prefSummaryEntry.scopeLabel}` : pref.label;
 
   const title = `${pref.label} ${ind.label} 認定店舗 — HARTON Certified`;
   const description = `${pref.label}の${ind.label} HARTON Certified 認定店舗（市町村横断）。${prefScopeLabel} ${stats ? stats.n : 0} 件機械検証で ★ 以上達成 ${list.length} 件。Phase 1 で県内他市町村へ拡大予定。`;
@@ -1660,8 +1685,12 @@ function generatePrefIndustryHubPage(prefKey, industryKey) {
 function generatePrefComparisonPage(prefKey) {
   const pref = regions[prefKey];
   if (!pref) return null;
-  // 対応 phase 0.5 のみ実装 (将来 phase 1+ で他都道府県に拡張する際は data/phase-N-{pref}-summary.json を参照)
-  if (prefKey !== PHASE05_PREF_KEY || !phase05Summary) return null;
+  // pref に対応 summary が登録されているもののみ生成 (Phase 0.5 静岡県 + Phase 1 東京都)
+  const prefSummaryEntry = PREF_SUMMARY_MAP[prefKey];
+  if (!prefSummaryEntry || !prefSummaryEntry.summary) return null;
+  const phase05Summary = prefSummaryEntry.summary;
+  const datasetUrl = prefSummaryEntry.dataset;
+  const phaseTagLabel = `${prefSummaryEntry.phaseTag} ${prefSummaryEntry.scopeLabel}`;
 
   const sortedCities = [...phase05Summary.by_city].sort((a, b) => b.max - a.max);
   const cityKeyMap = {};

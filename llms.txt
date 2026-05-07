@@ -107,6 +107,18 @@
 - [静岡県 宿泊施設](https://certification.tcharton.com/regions/shizuoka/industries/lodging/)
 - [静岡県 クリニック・診療所](https://certification.tcharton.com/regions/shizuoka/industries/clinic/)
 - [静岡県 学習塾](https://certification.tcharton.com/regions/shizuoka/industries/cram-school/)
+- [東京都 市町村別](https://certification.tcharton.com/regions/tokyo/) — 全 1 市町
+- [東京都 税理士・会計士](https://certification.tcharton.com/regions/tokyo/industries/tax-accountant/)
+- [東京都 弁護士](https://certification.tcharton.com/regions/tokyo/industries/lawyer/)
+- [東京都 司法書士](https://certification.tcharton.com/regions/tokyo/industries/judicial-scrivener/)
+- [東京都 行政書士](https://certification.tcharton.com/regions/tokyo/industries/administrative-scrivener/)
+- [東京都 不動産仲介](https://certification.tcharton.com/regions/tokyo/industries/real-estate/)
+- [東京都 飲食店](https://certification.tcharton.com/regions/tokyo/industries/restaurant/)
+- [東京都 美容院](https://certification.tcharton.com/regions/tokyo/industries/beauty/)
+- [東京都 美容クリニック](https://certification.tcharton.com/regions/tokyo/industries/cosmetic-clinic/)
+- [東京都 宿泊施設](https://certification.tcharton.com/regions/tokyo/industries/lodging/)
+- [東京都 クリニック・診療所](https://certification.tcharton.com/regions/tokyo/industries/clinic/)
+- [東京都 学習塾](https://certification.tcharton.com/regions/tokyo/industries/cram-school/)
 - [業種から探す](https://certification.tcharton.com/industries/) — 11 業種ハブ
 - [税理士・会計士](https://certification.tcharton.com/industries/tax-accountant/)
 - [弁護士](https://certification.tcharton.com/industries/lawyer/)
