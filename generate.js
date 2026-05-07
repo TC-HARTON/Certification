@@ -365,31 +365,76 @@ function generateIndustryPage(industryKey, ind) {
       <h1>${escHTML(ind.label)} 認定店舗一覧</h1>
     </header>
 
-    <section aria-label="検索結果サマリ" class="result-hero">
-      <div class="result-hero-primary">
-        <p class="result-hero-label">${escHTML(PHASE05_SCOPE_LABEL)} の ${escHTML(ind.label)} ★ 認定取得状況</p>
-        <p class="result-hero-figure"><span class="result-hero-num">${summary ? summary.eligible : 0}</span> <span class="result-hero-unit">件</span> <span class="result-hero-of">/ ${summary ? summary.n : (phase05Summary ? phase05Summary.n_total : 0)} 件 中</span></p>
-        <p class="result-hero-rate"><strong>★ 認定取得率 ${summary && summary.n > 0 ? (summary.eligible / summary.n * 100).toFixed(1) : '0.0'}%</strong></p>
+    ${(() => {
+      const s = summary;
+      const eligible = s ? s.eligible : 0;
+      const n = s ? s.n : (phase05Summary ? phase05Summary.n_total : 0);
+      const max = s ? s.max : 0;
+      const ngPct = s && typeof s.ng_pct === 'number' ? s.ng_pct : 0;
+      const median = s ? s.median : 0;
+      const ng = s ? s.ng : 0;
+      const certRate = n > 0 ? (eligible / n * 100).toFixed(1) : '0.0';
+      const reachPct = Math.min(100, (max / 70 * 100)).toFixed(1);
+      const remainPts = Math.max(0, 70 - max);
+      const ngTier = ngPct < 30 ? 'good' : ngPct < 40 ? 'mid' : 'bad';
+      const ngLabel = ngPct < 30 ? '低リスク' : ngPct < 40 ? '中リスク' : '高リスク';
+      return `<section aria-label="${escHTML(ind.label)} 業界の品質サマリ" class="result-hero-v2">
+      <header class="hero-headline">
+        <p class="hero-eyebrow">${escHTML(PHASE05_SCOPE_LABEL)} ${escHTML(ind.label)} 業界 機械検証 (${n} サイト)</p>
+        <h2 class="hero-h2-large"><span class="hero-num-xxl">${eligible}</span><span class="hero-num-of">／${n} サイト</span><span class="hero-num-tag">★ 認定取得</span></h2>
+        <p class="hero-rate-line"><span class="rate-pill rate-pill-${eligible === 0 ? 'zero' : 'won'}">★ 認定取得率 <strong>${certRate}%</strong></span> ${eligible === 0 ? '<span class="hero-tag-transparent">業界実態の透明公開</span>' : '<span class="hero-tag-won">認定取得サイト掲載中</span>'}</p>
+      </header>
+
+      <div class="hero-progress-block" aria-label="業界 1 位サイトの ★ 認定基準到達状況">
+        <p class="hero-progress-caption">業界 1 位サイトの最高点 <strong>${max} 点</strong> / ★ 認定基準 <strong>70 点</strong> ${remainPts > 0 ? `<span class="progress-gap">残り ${remainPts} 点</span>` : '<span class="progress-reached">達成済</span>'}</p>
+        <div class="progress-bar-track" role="progressbar" aria-valuenow="${max}" aria-valuemin="0" aria-valuemax="100" aria-label="業界最高点 ${max} / 100">
+          <div class="progress-bar-fill" style="width: ${reachPct}%"></div>
+          <div class="progress-marker progress-marker-target" style="left: 70%" aria-hidden="true"><span class="progress-marker-label">★ 70</span></div>
+        </div>
+        <p class="hero-progress-scale" aria-hidden="true"><span>0</span><span>★認定 70</span><span>★★ 80</span><span>★★★ 90</span><span>100</span></p>
       </div>
-      <ul class="result-hero-metrics">
-        <li class="metric-card metric-card-max">
-          <span class="metric-label">業界最高点</span>
-          <span class="metric-value">${summary ? summary.max : '-'} <span class="metric-unit">/ 70 点</span></span>
-          <span class="metric-note">★ 認定基準まで残り ${summary && typeof summary.max === 'number' ? Math.max(0, 70 - summary.max) : '-'} 点</span>
-        </li>
-        <li class="metric-card metric-card-ng ${summary && summary.ng_pct < 30 ? 'metric-good' : summary && summary.ng_pct < 40 ? 'metric-mid' : 'metric-bad'}">
-          <span class="metric-label">致命的 NG 発生率</span>
-          <span class="metric-value">${summary && typeof summary.ng_pct === 'number' ? summary.ng_pct.toFixed(1) : '-'}<span class="metric-unit">%</span></span>
-          <span class="metric-note">${summary ? `${summary.ng} 件 / ${summary.n} 件中` : '実測待機'}</span>
-        </li>
-        <li class="metric-card metric-card-median">
-          <span class="metric-label">業界中央値</span>
-          <span class="metric-value">${summary ? summary.median : '-'} <span class="metric-unit">/ 70 点</span></span>
-          <span class="metric-note">scanner.py 機械検証 (4 軸 / 2,554 項目)</span>
-        </li>
-      </ul>
-      <p class="result-hero-cta">${(summary ? summary.eligible : 0) === 0 ? `<strong>★ 認定取得 0 件 = 業界実態の透明公開。</strong>「準備中」「Coming soon」等の婉曲表現は採用しない。<a href="/case-studies/tcharton-com/">tcharton.com 自己実証 case study</a> + <a href="/improvement-guide/">改善 5 Step (90 日)</a>で取得経路を全公開。<a href="/apply/">掲載申請 (無料)</a>から自社サイトの ★ 区分判定を申込可能。` : `${summary.eligible} 件の認定店舗を以下に表示。改善ガイダンスで上位区分昇格可能。`}</p>
-    </section>
+
+      <div class="hero-3phase">
+        <div class="phase-card phase-as-is">
+          <p class="phase-tag">現状 (As-Is)</p>
+          <p class="phase-headline">業界中央値 <strong>${median}</strong> / 70 点</p>
+          <p class="phase-detail">${n} サイトの母集団中央値。業界全体としての WEB 品質の重心。</p>
+        </div>
+        <div class="phase-card phase-to-be">
+          <p class="phase-tag">目標 (To-Be)</p>
+          <p class="phase-headline"><span class="phase-star">★</span> HARTON Certified <strong>70</strong> 点</p>
+          <p class="phase-detail">総合 70 点以上 + 致命的 NG 0 件で取得。業界 1 位サイトは <strong>${remainPts}</strong> 点の改善で到達圏。</p>
+        </div>
+        <div class="phase-card phase-how">
+          <p class="phase-tag">経路 (How)</p>
+          <p class="phase-headline">改善 <strong>5 Step</strong> / <strong>90</strong> 日</p>
+          <p class="phase-detail">tcharton.com が C/65 → 🏆 S/90 を達成した実証パターン。<a href="/case-studies/tcharton-com/">7 commit timeline</a> 全公開。</p>
+        </div>
+      </div>
+
+      <div class="hero-ng-bar" aria-label="業界母集団の致命的 NG 発生率">
+        <div class="ng-bar-header">
+          <span class="ng-bar-title">業界母集団の防御層リスク</span>
+          <span class="ng-bar-value ng-tier-${ngTier}">${ngPct.toFixed(1)}% <span class="ng-tier-label">(${ngLabel})</span></span>
+        </div>
+        <div class="ng-bar-track" role="progressbar" aria-valuenow="${ngPct.toFixed(1)}" aria-valuemin="0" aria-valuemax="100">
+          <div class="ng-bar-fill ng-tier-${ngTier}" style="width: ${Math.min(100, ngPct)}%"></div>
+        </div>
+        <p class="ng-bar-note">${ng} サイト / ${n} サイト中で HTTPS 非対応・SSL 失効・WP 管理面露出・CMS バージョン情報露出 のいずれかを検出 (致命的 NG 4 項目)。改善は <a href="/improvement-guide/">改善ガイダンス Step 1+3</a> で 1-2 週間で解消可能。</p>
+      </div>
+
+      <aside class="hero-cta-banner" aria-label="認定取得への行動">
+        <div class="cta-banner-text">
+          ${eligible === 0 ? `<p class="cta-banner-headline">あなたが ${escHTML(PHASE05_SCOPE_LABEL)} 最初の<br>★ HARTON Certified ${escHTML(ind.label)} 認定取得者になる</p><p class="cta-banner-sub">業界実態 = ${certRate}% は<strong>取得困難</strong>を意味しない。業界 1 位サイトは残り ${remainPts} 点で取得圏内。改善 5 Step を 90 日で完遂すれば、${escHTML(ind.label)} 業界の最初の認定取得者として認定店舗ページに掲載される。</p>` : `<p class="cta-banner-headline">${eligible} サイトの ★ 認定店舗を以下に表示</p><p class="cta-banner-sub">改善ガイダンスで ★★ HARTON 優良 / ★★★ HARTON S-Class への上位区分昇格が可能。</p>`}
+        </div>
+        <div class="cta-banner-actions">
+          <a href="/apply/" class="cta-primary">掲載申請 (無料)</a>
+          <a href="/improvement-guide/" class="cta-secondary">改善 5 Step を見る</a>
+          <a href="/case-studies/tcharton-com/" class="cta-tertiary">自己実証 case study</a>
+        </div>
+      </aside>
+    </section>`;
+    })()}
 
     <section aria-label="冒頭エビデンス">
       <p>HARTON Certified が機械検証で公正評価する${escHTML(ind.label)} 認定店舗一覧。総合 <strong>70 点</strong>以上 + 致命的 NG <strong>0 件</strong>を達成した事業者のみ掲載する。出典は <a href="https://schema.org/${escHTML(ind.schema_type?.[0] || 'LocalBusiness')}" rel="nofollow noopener noreferrer" target="_blank">Schema.org ${escHTML(ind.schema_type?.[0] || 'LocalBusiness')}</a> および <a href="https://www.wikidata.org/wiki/${escHTML(ind.wikidata)}" rel="nofollow noopener noreferrer" target="_blank">Wikidata ${escHTML(ind.wikidata)}</a> に整合する。Phase 1 で全国順次拡大予定。</p>
@@ -522,31 +567,73 @@ function generateRegionPage(prefKey, cityKey) {
       <h1>${escHTML(city.label)} 認定店舗一覧</h1>
     </header>
 
-    <section aria-label="検索結果サマリ" class="result-hero">
-      <div class="result-hero-primary">
-        <p class="result-hero-label">${escHTML(city.label)} (${escHTML(pref.label)}) ★ 認定取得状況</p>
-        <p class="result-hero-figure"><span class="result-hero-num">${cityEligible}</span> <span class="result-hero-unit">件</span> <span class="result-hero-of">/ ${cityN} 件 中</span></p>
-        <p class="result-hero-rate"><strong>★ 認定取得率 ${cityN > 0 ? (cityEligible / cityN * 100).toFixed(1) : '0.0'}%</strong></p>
+    ${(() => {
+      const max = cityMax !== null ? cityMax : 0;
+      const ngPct = cityNgPct !== null ? cityNgPct : 0;
+      const median = cityRow ? cityRow.median : 0;
+      const ng = cityRow ? cityRow.ng : 0;
+      const certRate = cityN > 0 ? (cityEligible / cityN * 100).toFixed(1) : '0.0';
+      const reachPct = Math.min(100, (max / 70 * 100)).toFixed(1);
+      const remainPts = Math.max(0, 70 - max);
+      const ngTier = ngPct < 30 ? 'good' : ngPct < 35 ? 'mid' : 'bad';
+      const ngLabel = ngPct < 30 ? '低リスク' : ngPct < 35 ? '中リスク' : '高リスク';
+      return `<section aria-label="${escHTML(city.label)} 機械検証サマリ" class="result-hero-v2">
+      <header class="hero-headline">
+        <p class="hero-eyebrow">${escHTML(city.label)} (${escHTML(pref.label)}) 機械検証 (${cityN} サイト / 11 業種横断)</p>
+        <h2 class="hero-h2-large"><span class="hero-num-xxl">${cityEligible}</span><span class="hero-num-of">／${cityN} サイト</span><span class="hero-num-tag">★ 認定取得</span></h2>
+        <p class="hero-rate-line"><span class="rate-pill rate-pill-${cityEligible === 0 ? 'zero' : 'won'}">★ 認定取得率 <strong>${certRate}%</strong></span> ${cityEligible === 0 ? '<span class="hero-tag-transparent">業界実態の透明公開</span>' : '<span class="hero-tag-won">認定取得サイト掲載中</span>'}</p>
+      </header>
+
+      <div class="hero-progress-block" aria-label="${escHTML(city.label)} 1 位サイトの ★ 認定基準到達状況">
+        <p class="hero-progress-caption">${escHTML(city.label)} 1 位サイトの最高点 <strong>${max} 点</strong> / ★ 認定基準 <strong>70 点</strong> ${remainPts > 0 ? `<span class="progress-gap">残り ${remainPts} 点</span>` : '<span class="progress-reached">達成済</span>'}</p>
+        <div class="progress-bar-track" role="progressbar" aria-valuenow="${max}" aria-valuemin="0" aria-valuemax="100" aria-label="${escHTML(city.label)} 最高点 ${max} / 100">
+          <div class="progress-bar-fill" style="width: ${reachPct}%"></div>
+          <div class="progress-marker progress-marker-target" style="left: 70%" aria-hidden="true"><span class="progress-marker-label">★ 70</span></div>
+        </div>
+        <p class="hero-progress-scale" aria-hidden="true"><span>0</span><span>★認定 70</span><span>★★ 80</span><span>★★★ 90</span><span>100</span></p>
       </div>
-      <ul class="result-hero-metrics">
-        <li class="metric-card metric-card-max">
-          <span class="metric-label">業界最高点</span>
-          <span class="metric-value">${cityMax !== null ? cityMax : '-'} <span class="metric-unit">/ 70 点</span></span>
-          <span class="metric-note">★ 認定基準まで残り ${cityMax !== null ? Math.max(0, 70 - cityMax) : '-'} 点</span>
-        </li>
-        <li class="metric-card metric-card-ng ${cityNgPct !== null && cityNgPct < 30 ? 'metric-good' : cityNgPct !== null && cityNgPct < 35 ? 'metric-mid' : 'metric-bad'}">
-          <span class="metric-label">致命的 NG 発生率</span>
-          <span class="metric-value">${cityNgPct !== null ? cityNgPct.toFixed(1) : '-'}<span class="metric-unit">%</span></span>
-          <span class="metric-note">${cityRow ? `${cityRow.ng} 件 / ${cityN} 件中` : '実測待機'}</span>
-        </li>
-        <li class="metric-card metric-card-median">
-          <span class="metric-label">業界中央値</span>
-          <span class="metric-value">${cityRow ? cityRow.median : '-'} <span class="metric-unit">/ 70 点</span></span>
-          <span class="metric-note">scanner.py 機械検証 (4 軸 / 2,554 項目)</span>
-        </li>
-      </ul>
-      <p class="result-hero-cta">${cityEligible === 0 ? `<strong>★ 認定取得 0 件 = 業界実態の透明公開。</strong>${escHTML(city.label)}の事業者で ★ 認定取得を目指す場合は <a href="/case-studies/tcharton-com/">tcharton.com 自己実証 case study</a> + <a href="/improvement-guide/">改善 5 Step (90 日)</a>を参照。<a href="/apply/">掲載申請 (無料)</a>から自社サイトの ★ 区分判定を申込可能。` : `${cityEligible} 件の認定店舗を以下に表示。`}</p>
-    </section>
+
+      <div class="hero-3phase">
+        <div class="phase-card phase-as-is">
+          <p class="phase-tag">現状 (As-Is)</p>
+          <p class="phase-headline">${escHTML(city.label)} 中央値 <strong>${median}</strong> / 70 点</p>
+          <p class="phase-detail">${cityN} サイト (11 業種横断) の母集団中央値。${escHTML(city.label)} 全体としての WEB 品質の重心。</p>
+        </div>
+        <div class="phase-card phase-to-be">
+          <p class="phase-tag">目標 (To-Be)</p>
+          <p class="phase-headline"><span class="phase-star">★</span> HARTON Certified <strong>70</strong> 点</p>
+          <p class="phase-detail">総合 70 点以上 + 致命的 NG 0 件で取得。${escHTML(city.label)} 1 位サイトは <strong>${remainPts}</strong> 点の改善で到達圏。</p>
+        </div>
+        <div class="phase-card phase-how">
+          <p class="phase-tag">経路 (How)</p>
+          <p class="phase-headline">改善 <strong>5 Step</strong> / <strong>90</strong> 日</p>
+          <p class="phase-detail">tcharton.com (自己実証体 第 1 号) が C/65 → 🏆 S/90 を達成した実証パターン。<a href="/case-studies/tcharton-com/">7 commit timeline</a> 全公開。</p>
+        </div>
+      </div>
+
+      <div class="hero-ng-bar" aria-label="${escHTML(city.label)} 母集団の致命的 NG 発生率">
+        <div class="ng-bar-header">
+          <span class="ng-bar-title">${escHTML(city.label)} 母集団の防御層リスク</span>
+          <span class="ng-bar-value ng-tier-${ngTier}">${ngPct.toFixed(1)}% <span class="ng-tier-label">(${ngLabel})</span></span>
+        </div>
+        <div class="ng-bar-track" role="progressbar" aria-valuenow="${ngPct.toFixed(1)}" aria-valuemin="0" aria-valuemax="100">
+          <div class="ng-bar-fill ng-tier-${ngTier}" style="width: ${Math.min(100, ngPct)}%"></div>
+        </div>
+        <p class="ng-bar-note">${ng} サイト / ${cityN} サイト中で HTTPS 非対応・SSL 失効・WP 管理面露出・CMS バージョン情報露出 のいずれかを検出 (致命的 NG 4 項目)。改善は <a href="/improvement-guide/">改善ガイダンス Step 1+3</a> で 1-2 週間で解消可能。</p>
+      </div>
+
+      <aside class="hero-cta-banner" aria-label="認定取得への行動">
+        <div class="cta-banner-text">
+          ${cityEligible === 0 ? `<p class="cta-banner-headline">あなたが ${escHTML(city.label)} 最初の<br>★ HARTON Certified 認定取得者になる</p><p class="cta-banner-sub">業界実態 = ${certRate}% は<strong>取得困難</strong>を意味しない。${escHTML(city.label)} 1 位サイトは残り ${remainPts} 点で取得圏内。改善 5 Step を 90 日で完遂すれば、${escHTML(city.label)} 最初の認定取得者として認定店舗ページに掲載される。</p>` : `<p class="cta-banner-headline">${cityEligible} サイトの ★ 認定店舗を以下に表示</p><p class="cta-banner-sub">改善ガイダンスで ★★ HARTON 優良 / ★★★ HARTON S-Class への上位区分昇格が可能。</p>`}
+        </div>
+        <div class="cta-banner-actions">
+          <a href="/apply/" class="cta-primary">掲載申請 (無料)</a>
+          <a href="/improvement-guide/" class="cta-secondary">改善 5 Step を見る</a>
+          <a href="/case-studies/tcharton-com/" class="cta-tertiary">自己実証 case study</a>
+        </div>
+      </aside>
+    </section>`;
+    })()}
 
     <section aria-label="冒頭エビデンス">
       <p>${escHTML(city.label)}（${escHTML(pref.label)}）の HARTON Certified 認定店舗一覧。総合 <strong>70 点</strong>以上 + 致命的 NG <strong>0 件</strong>を達成した事業者のみ掲載する。Phase ${city.phase || 0} 対象地域。緯度 ${city.geo?.latitude || ''} / 経度 ${city.geo?.longitude || ''}。</p>
@@ -644,31 +731,74 @@ function generateRegionIndustryPage(prefKey, cityKey, industryKey) {
       <h1>${escHTML(city.label)} ${escHTML(ind.label)} 認定店舗</h1>
     </header>
 
-    <section aria-label="検索結果サマリ" class="result-hero">
-      <div class="result-hero-primary">
-        <p class="result-hero-label">${escHTML(city.label)} の ${escHTML(ind.label)} ★ 認定取得状況</p>
-        <p class="result-hero-figure"><span class="result-hero-num">${cityEligible}</span> <span class="result-hero-unit">件</span> <span class="result-hero-of">/ ${cityN} 件 中 (${escHTML(city.label)}内)</span></p>
-        <p class="result-hero-rate"><strong>${escHTML(city.label)} ${escHTML(ind.label)} ★ 認定取得率 ${cityN > 0 ? (cityEligible / cityN * 100).toFixed(1) : '0.0'}%</strong></p>
+    ${(() => {
+      const max = indByIndustry ? indByIndustry.max : 0;
+      const ngPct = indByIndustry && typeof indByIndustry.ng_pct === 'number' ? indByIndustry.ng_pct : 0;
+      const median = indByIndustry ? indByIndustry.median : 0;
+      const ng = indByIndustry ? indByIndustry.ng : 0;
+      const indN = indByIndustry ? indByIndustry.n : 0;
+      const certRate = cityN > 0 ? (cityEligible / cityN * 100).toFixed(1) : '0.0';
+      const reachPct = Math.min(100, (max / 70 * 100)).toFixed(1);
+      const remainPts = Math.max(0, 70 - max);
+      const ngTier = ngPct < 30 ? 'good' : ngPct < 40 ? 'mid' : 'bad';
+      const ngLabel = ngPct < 30 ? '低リスク' : ngPct < 40 ? '中リスク' : '高リスク';
+      return `<section aria-label="${escHTML(city.label)} ${escHTML(ind.label)} 機械検証サマリ" class="result-hero-v2">
+      <header class="hero-headline">
+        <p class="hero-eyebrow">${escHTML(city.label)} (${escHTML(pref.label)}) ${escHTML(ind.label)} 機械検証 (${cityN} サイト / ${escHTML(city.label)}内)</p>
+        <h2 class="hero-h2-large"><span class="hero-num-xxl">${cityEligible}</span><span class="hero-num-of">／${cityN} サイト</span><span class="hero-num-tag">★ 認定取得</span></h2>
+        <p class="hero-rate-line"><span class="rate-pill rate-pill-${cityEligible === 0 ? 'zero' : 'won'}">★ 認定取得率 <strong>${certRate}%</strong></span> ${cityEligible === 0 ? '<span class="hero-tag-transparent">業界実態の透明公開</span>' : '<span class="hero-tag-won">認定取得サイト掲載中</span>'}</p>
+      </header>
+
+      <div class="hero-progress-block" aria-label="${escHTML(ind.label)} 業界 1 位サイトの ★ 認定基準到達状況">
+        <p class="hero-progress-caption">${escHTML(ind.label)} 業界 1 位サイト (静岡県 5 都市横断) の最高点 <strong>${max} 点</strong> / ★ 認定基準 <strong>70 点</strong> ${remainPts > 0 ? `<span class="progress-gap">残り ${remainPts} 点</span>` : '<span class="progress-reached">達成済</span>'}</p>
+        <div class="progress-bar-track" role="progressbar" aria-valuenow="${max}" aria-valuemin="0" aria-valuemax="100" aria-label="${escHTML(ind.label)} 業界最高点 ${max} / 100">
+          <div class="progress-bar-fill" style="width: ${reachPct}%"></div>
+          <div class="progress-marker progress-marker-target" style="left: 70%" aria-hidden="true"><span class="progress-marker-label">★ 70</span></div>
+        </div>
+        <p class="hero-progress-scale" aria-hidden="true"><span>0</span><span>★認定 70</span><span>★★ 80</span><span>★★★ 90</span><span>100</span></p>
       </div>
-      <ul class="result-hero-metrics">
-        <li class="metric-card metric-card-max">
-          <span class="metric-label">業界最高点 (静岡県 5 都市横断)</span>
-          <span class="metric-value">${indByIndustry ? indByIndustry.max : '-'} <span class="metric-unit">/ 70 点</span></span>
-          <span class="metric-note">${indByIndustry ? `★ 認定基準まで残り ${Math.max(0, 70 - indByIndustry.max)} 点` : '実測待機'}</span>
-        </li>
-        <li class="metric-card metric-card-ng ${indByIndustry && indByIndustry.ng_pct < 30 ? 'metric-good' : indByIndustry && indByIndustry.ng_pct < 40 ? 'metric-mid' : 'metric-bad'}">
-          <span class="metric-label">${escHTML(ind.label)} 業界 致命的 NG%</span>
-          <span class="metric-value">${indByIndustry && typeof indByIndustry.ng_pct === 'number' ? indByIndustry.ng_pct.toFixed(1) : '-'}<span class="metric-unit">%</span></span>
-          <span class="metric-note">5 都市横断 ${indByIndustry ? indByIndustry.ng : '-'} 件 / ${indByIndustry ? indByIndustry.n : '-'} 件中</span>
-        </li>
-        <li class="metric-card metric-card-median">
-          <span class="metric-label">${escHTML(ind.label)} 業界 中央値</span>
-          <span class="metric-value">${indByIndustry ? indByIndustry.median : '-'} <span class="metric-unit">/ 70 点</span></span>
-          <span class="metric-note">scanner.py 機械検証 (4 軸 / 2,554 項目)</span>
-        </li>
-      </ul>
-      <p class="result-hero-cta">${cityEligible === 0 ? `<strong>${escHTML(city.label)} ${escHTML(ind.label)} ★ 認定取得 0 件 = 業界実態の透明公開。</strong>${escHTML(city.label)} で${escHTML(ind.label)} ★ 認定取得を目指す場合は <a href="/case-studies/tcharton-com/">tcharton.com 自己実証 case study</a> + <a href="/improvement-guide/">改善 5 Step (90 日)</a>を参照。<a href="/apply/">掲載申請 (無料)</a>から自社サイトの ★ 区分判定を申込可能。` : `${cityEligible} 件の認定店舗を以下に表示。`}</p>
-    </section>
+
+      <div class="hero-3phase">
+        <div class="phase-card phase-as-is">
+          <p class="phase-tag">現状 (As-Is)</p>
+          <p class="phase-headline">${escHTML(ind.label)} 業界中央値 <strong>${median}</strong> / 70 点</p>
+          <p class="phase-detail">${escHTML(ind.label)} 5 都市横断 ${indN} サイトの母集団中央値。${escHTML(city.label)} 内では ${cityN} サイトが対象。</p>
+        </div>
+        <div class="phase-card phase-to-be">
+          <p class="phase-tag">目標 (To-Be)</p>
+          <p class="phase-headline"><span class="phase-star">★</span> HARTON Certified <strong>70</strong> 点</p>
+          <p class="phase-detail">総合 70 点以上 + 致命的 NG 0 件で取得。${escHTML(ind.label)} 業界 1 位は <strong>${remainPts}</strong> 点の改善で到達圏。</p>
+        </div>
+        <div class="phase-card phase-how">
+          <p class="phase-tag">経路 (How)</p>
+          <p class="phase-headline">改善 <strong>5 Step</strong> / <strong>90</strong> 日</p>
+          <p class="phase-detail">tcharton.com (自己実証体 第 1 号) が C/65 → 🏆 S/90 を達成した実証パターン。<a href="/case-studies/tcharton-com/">7 commit timeline</a> 全公開。</p>
+        </div>
+      </div>
+
+      <div class="hero-ng-bar" aria-label="${escHTML(ind.label)} 業界母集団の致命的 NG 発生率">
+        <div class="ng-bar-header">
+          <span class="ng-bar-title">${escHTML(ind.label)} 業界 (静岡県 5 都市横断) の防御層リスク</span>
+          <span class="ng-bar-value ng-tier-${ngTier}">${ngPct.toFixed(1)}% <span class="ng-tier-label">(${ngLabel})</span></span>
+        </div>
+        <div class="ng-bar-track" role="progressbar" aria-valuenow="${ngPct.toFixed(1)}" aria-valuemin="0" aria-valuemax="100">
+          <div class="ng-bar-fill ng-tier-${ngTier}" style="width: ${Math.min(100, ngPct)}%"></div>
+        </div>
+        <p class="ng-bar-note">${ng} サイト / ${indN} サイト中で HTTPS 非対応・SSL 失効・WP 管理面露出・CMS バージョン情報露出 のいずれかを検出。改善は <a href="/improvement-guide/">改善ガイダンス Step 1+3</a> で 1-2 週間で解消可能。</p>
+      </div>
+
+      <aside class="hero-cta-banner" aria-label="認定取得への行動">
+        <div class="cta-banner-text">
+          ${cityEligible === 0 ? `<p class="cta-banner-headline">あなたが ${escHTML(city.label)} 最初の<br>★ HARTON Certified ${escHTML(ind.label)} 認定取得者になる</p><p class="cta-banner-sub">業界実態 = ${certRate}% は<strong>取得困難</strong>を意味しない。${escHTML(ind.label)} 業界 1 位サイトは残り ${remainPts} 点で取得圏内。改善 5 Step を 90 日で完遂すれば、${escHTML(city.label)} の ${escHTML(ind.label)} 業界 最初の認定取得者として認定店舗ページに掲載される。</p>` : `<p class="cta-banner-headline">${cityEligible} サイトの ★ 認定店舗を以下に表示</p><p class="cta-banner-sub">改善ガイダンスで ★★ HARTON 優良 / ★★★ HARTON S-Class への上位区分昇格が可能。</p>`}
+        </div>
+        <div class="cta-banner-actions">
+          <a href="/apply/" class="cta-primary">掲載申請 (無料)</a>
+          <a href="/improvement-guide/" class="cta-secondary">改善 5 Step を見る</a>
+          <a href="/case-studies/tcharton-com/" class="cta-tertiary">自己実証 case study</a>
+        </div>
+      </aside>
+    </section>`;
+    })()}
 
     <section aria-label="冒頭エビデンス">
       <p>${escHTML(city.label)}（${escHTML(pref.label)}）の${escHTML(ind.label)} HARTON Certified 認定店舗一覧。総合 <strong>70 点</strong>以上 + 致命的 NG <strong>0 件</strong>達成事業者のみ掲載する。出典: <a href="https://www.wikidata.org/wiki/${escHTML(ind.wikidata)}" rel="nofollow noopener noreferrer" target="_blank">Wikidata ${escHTML(ind.wikidata)}</a> / <a href="https://schema.org/${escHTML(ind.schema_type?.[0] || 'LocalBusiness')}" rel="nofollow noopener noreferrer" target="_blank">Schema.org ${escHTML(ind.schema_type?.[0] || 'LocalBusiness')}</a>。</p>
@@ -1376,31 +1506,75 @@ function generatePrefIndustryHubPage(prefKey, industryKey) {
       <h1>${escHTML(pref.label)} ${escHTML(ind.label)} 認定店舗</h1>
     </header>
 
-    <section aria-label="検索結果サマリ" class="result-hero">
-      <div class="result-hero-primary">
-        <p class="result-hero-label">${escHTML(prefScopeLabel)} の ${escHTML(ind.label)} ★ 認定取得状況 (市町村横断)</p>
-        <p class="result-hero-figure"><span class="result-hero-num">${stats ? stats.eligible : 0}</span> <span class="result-hero-unit">件</span> <span class="result-hero-of">/ ${stats ? stats.n : 0} 件 中</span></p>
-        <p class="result-hero-rate"><strong>★ 認定取得率 ${stats && stats.n > 0 ? (stats.eligible / stats.n * 100).toFixed(1) : '0.0'}%</strong></p>
+    ${(() => {
+      const eligible = stats ? stats.eligible : 0;
+      const n = stats ? stats.n : 0;
+      const max = stats ? stats.max : 0;
+      const ngPct = stats && typeof stats.ng_pct === 'number' ? stats.ng_pct : 0;
+      const median = stats ? stats.median : 0;
+      const ng = stats ? stats.ng : 0;
+      const certRate = n > 0 ? (eligible / n * 100).toFixed(1) : '0.0';
+      const reachPct = Math.min(100, (max / 70 * 100)).toFixed(1);
+      const remainPts = Math.max(0, 70 - max);
+      const ngTier = ngPct < 30 ? 'good' : ngPct < 40 ? 'mid' : 'bad';
+      const ngLabel = ngPct < 30 ? '低リスク' : ngPct < 40 ? '中リスク' : '高リスク';
+      return `<section aria-label="${escHTML(pref.label)} ${escHTML(ind.label)} 機械検証サマリ" class="result-hero-v2">
+      <header class="hero-headline">
+        <p class="hero-eyebrow">${escHTML(prefScopeLabel)} ${escHTML(ind.label)} 機械検証 (${n} サイト / 市町村横断)</p>
+        <h2 class="hero-h2-large"><span class="hero-num-xxl">${eligible}</span><span class="hero-num-of">／${n} サイト</span><span class="hero-num-tag">★ 認定取得</span></h2>
+        <p class="hero-rate-line"><span class="rate-pill rate-pill-${eligible === 0 ? 'zero' : 'won'}">★ 認定取得率 <strong>${certRate}%</strong></span> ${eligible === 0 ? '<span class="hero-tag-transparent">業界実態の透明公開</span>' : '<span class="hero-tag-won">認定取得サイト掲載中</span>'}</p>
+      </header>
+
+      <div class="hero-progress-block" aria-label="${escHTML(ind.label)} 業界 1 位サイトの ★ 認定基準到達状況">
+        <p class="hero-progress-caption">${escHTML(ind.label)} 業界 1 位サイトの最高点 <strong>${max} 点</strong> / ★ 認定基準 <strong>70 点</strong> ${remainPts > 0 ? `<span class="progress-gap">残り ${remainPts} 点</span>` : '<span class="progress-reached">達成済</span>'}</p>
+        <div class="progress-bar-track" role="progressbar" aria-valuenow="${max}" aria-valuemin="0" aria-valuemax="100" aria-label="${escHTML(ind.label)} 業界最高点 ${max} / 100">
+          <div class="progress-bar-fill" style="width: ${reachPct}%"></div>
+          <div class="progress-marker progress-marker-target" style="left: 70%" aria-hidden="true"><span class="progress-marker-label">★ 70</span></div>
+        </div>
+        <p class="hero-progress-scale" aria-hidden="true"><span>0</span><span>★認定 70</span><span>★★ 80</span><span>★★★ 90</span><span>100</span></p>
       </div>
-      <ul class="result-hero-metrics">
-        <li class="metric-card metric-card-max">
-          <span class="metric-label">業界最高点</span>
-          <span class="metric-value">${stats ? stats.max : '-'} <span class="metric-unit">/ 70 点</span></span>
-          <span class="metric-note">${stats ? `★ 認定基準まで残り ${Math.max(0, 70 - stats.max)} 点` : '実測待機'}</span>
-        </li>
-        <li class="metric-card metric-card-ng ${stats && stats.ng_pct < 30 ? 'metric-good' : stats && stats.ng_pct < 40 ? 'metric-mid' : 'metric-bad'}">
-          <span class="metric-label">致命的 NG 発生率</span>
-          <span class="metric-value">${stats && typeof stats.ng_pct === 'number' ? stats.ng_pct.toFixed(1) : '-'}<span class="metric-unit">%</span></span>
-          <span class="metric-note">${stats ? `${stats.ng} 件 / ${stats.n} 件中` : '実測待機'}</span>
-        </li>
-        <li class="metric-card metric-card-median">
-          <span class="metric-label">業界中央値</span>
-          <span class="metric-value">${stats ? stats.median : '-'} <span class="metric-unit">/ 70 点</span></span>
-          <span class="metric-note">scanner.py 機械検証 (4 軸 / 2,554 項目)</span>
-        </li>
-      </ul>
-      <p class="result-hero-cta">${(stats ? stats.eligible : 0) === 0 ? `<strong>${escHTML(prefScopeLabel)} の ${escHTML(ind.label)} ★ 認定取得 0 件 = 業界実態の透明公開。</strong>${escHTML(pref.label)}内で ${escHTML(ind.label)} ★ 認定取得を目指す場合は <a href="/case-studies/tcharton-com/">tcharton.com 自己実証 case study</a> + <a href="/improvement-guide/">改善 5 Step (90 日)</a>を参照。<a href="/apply/">掲載申請 (無料)</a>から自社サイトの ★ 区分判定を申込可能。` : `${stats.eligible} 件の認定店舗を以下に表示。`}</p>
-    </section>
+
+      <div class="hero-3phase">
+        <div class="phase-card phase-as-is">
+          <p class="phase-tag">現状 (As-Is)</p>
+          <p class="phase-headline">業界中央値 <strong>${median}</strong> / 70 点</p>
+          <p class="phase-detail">${n} サイト (${escHTML(pref.label)} 市町村横断) の母集団中央値。</p>
+        </div>
+        <div class="phase-card phase-to-be">
+          <p class="phase-tag">目標 (To-Be)</p>
+          <p class="phase-headline"><span class="phase-star">★</span> HARTON Certified <strong>70</strong> 点</p>
+          <p class="phase-detail">総合 70 点以上 + 致命的 NG 0 件で取得。業界 1 位は <strong>${remainPts}</strong> 点の改善で到達圏。</p>
+        </div>
+        <div class="phase-card phase-how">
+          <p class="phase-tag">経路 (How)</p>
+          <p class="phase-headline">改善 <strong>5 Step</strong> / <strong>90</strong> 日</p>
+          <p class="phase-detail">tcharton.com (自己実証体 第 1 号) が C/65 → 🏆 S/90 を達成した実証パターン。<a href="/case-studies/tcharton-com/">7 commit timeline</a> 全公開。</p>
+        </div>
+      </div>
+
+      <div class="hero-ng-bar" aria-label="${escHTML(ind.label)} 業界母集団の致命的 NG 発生率">
+        <div class="ng-bar-header">
+          <span class="ng-bar-title">${escHTML(ind.label)} 業界 (${escHTML(pref.label)} 市町村横断) の防御層リスク</span>
+          <span class="ng-bar-value ng-tier-${ngTier}">${ngPct.toFixed(1)}% <span class="ng-tier-label">(${ngLabel})</span></span>
+        </div>
+        <div class="ng-bar-track" role="progressbar" aria-valuenow="${ngPct.toFixed(1)}" aria-valuemin="0" aria-valuemax="100">
+          <div class="ng-bar-fill ng-tier-${ngTier}" style="width: ${Math.min(100, ngPct)}%"></div>
+        </div>
+        <p class="ng-bar-note">${ng} サイト / ${n} サイト中で HTTPS 非対応・SSL 失効・WP 管理面露出・CMS バージョン情報露出 のいずれかを検出。改善は <a href="/improvement-guide/">改善ガイダンス Step 1+3</a> で 1-2 週間で解消可能。</p>
+      </div>
+
+      <aside class="hero-cta-banner" aria-label="認定取得への行動">
+        <div class="cta-banner-text">
+          ${eligible === 0 ? `<p class="cta-banner-headline">あなたが ${escHTML(prefScopeLabel)} 最初の<br>★ HARTON Certified ${escHTML(ind.label)} 認定取得者になる</p><p class="cta-banner-sub">業界実態 = ${certRate}% は<strong>取得困難</strong>を意味しない。業界 1 位サイトは残り ${remainPts} 点で取得圏内。改善 5 Step を 90 日で完遂すれば、${escHTML(prefScopeLabel)} の ${escHTML(ind.label)} 業界 最初の認定取得者として認定店舗ページに掲載される。</p>` : `<p class="cta-banner-headline">${eligible} サイトの ★ 認定店舗を以下に表示</p><p class="cta-banner-sub">改善ガイダンスで ★★ HARTON 優良 / ★★★ HARTON S-Class への上位区分昇格が可能。</p>`}
+        </div>
+        <div class="cta-banner-actions">
+          <a href="/apply/" class="cta-primary">掲載申請 (無料)</a>
+          <a href="/improvement-guide/" class="cta-secondary">改善 5 Step を見る</a>
+          <a href="/case-studies/tcharton-com/" class="cta-tertiary">自己実証 case study</a>
+        </div>
+      </aside>
+    </section>`;
+    })()}
 
     <section aria-label="冒頭エビデンス">
       <p>${escHTML(pref.label)}の${escHTML(ind.label)} HARTON Certified 認定店舗（市町村横断）一覧。出典: <a href="https://www.wikidata.org/wiki/${escHTML(ind.wikidata)}" rel="nofollow noopener noreferrer" target="_blank">Wikidata ${escHTML(ind.wikidata)}</a>。</p>
