@@ -177,7 +177,7 @@ PAGES.push({
   <section aria-label="冒頭エビデンス（Lead Evidence Block）">
     <p>HARTON Certified は、<strong>2,554 項目</strong>の機械検証で WEB 品質を公正に測る、<strong>金銭非依存・評価基準全公開型の独立認定機関</strong>である。掲載料・認定料・広告料を一切徴収せず、評価項目・閾値・実施手順は <a href="/methodology/">methodology</a> で全て開示する。全国の事業者の Sクラス WEB 普及を支えるため、4 軸の客観評価を 2026 年に開始した。沼津起点での自己実証（自社サイト ★★★ 取得 / dogfooding 倫理）を基盤とし、地方都市から再定義する WEB 品質の民主化を推進する。出典: <a href="https://www.digital.go.jp/resources/govdashboard/local-government-dx#guidance2" rel="nofollow noopener noreferrer" target="_blank">日本政府・公的機関</a>（HSTS / WCAG / Core Web Vitals 等の公的基準に準拠）。</p>
     <p><time datetime="2026-04-27" itemprop="datePublished">2026 年 4 月 27 日 公開</time> ／ <time datetime="2026-04-30" itemprop="dateModified">2026-04-30 v1.1.7 ブランド戦略整合改訂</time></p>
-    <p>機械検証による公正評価を通じて、地域から全国へ、Sクラス WEB サイトの普及を支える。Phase 0.5（静岡県 5 都市 ${shizuokaSummary.n_total} 件機械検証実測 / 11 業種 / 2026-05-01）から始まり、Phase 4（2027 年）で全 47 都道府県 10,000 件以上の認定を目標とする。</p>
+    <p>機械検証による公正評価を通じて、地域から全国へ、Sクラス WEB サイトの普及を支える。Phase 0.5（静岡県 5 都市 ${shizuokaSummary.n_total} 件機械検証実測 / 11 業種 / 2026-05-01）から始まり、<strong>Phase 1 第 1 弾として東京都 渋谷区 208 件機械検証 (2026-05-07 完了)</strong> を経て、Phase 4（2027 年）で全 47 都道府県 10,000 件以上の認定を目標とする。</p>
   </section>
   <section aria-label="認定店舗を絞り込む" class="search-section">
     <h2>認定店舗を絞り込む</h2>
@@ -213,8 +213,8 @@ ${REGION_OPTIONS_HTML}
     <script src="/assets/js/search.js" defer></script>
   </section>
   <section aria-label="注目認定 rail" class="featured-rail-section">
-    <h2>Phase 0.5 機械検証実測の公開</h2>
-    <p class="featured-rail-lede">HARTON Certified は機械検証 4 軸（基礎・防御・AI 検索・経営インパクト）で WEB 品質を客観評価する独立認定機関。Phase 0.5 静岡県 5 都市 11 業種 <strong>${shizuokaSummary.n_total}</strong> 件機械検証で <strong>★ 獲得率 0.0%</strong>（${shizuokaSummary.eligible_total}/${shizuokaSummary.n_total}）/ 業界最高点 <strong>${shizuokaSummary.score_stats.max}</strong> 点 / 致命的 NG <strong>${shizuokaSummary.ng_pct.toFixed(1)}%</strong>。Phase 1 で全国順次拡大予定。</p>
+    <h2>Phase 0.5 + Phase 1 機械検証実測の公開</h2>
+    <p class="featured-rail-lede">HARTON Certified は機械検証 4 軸（基礎・防御・AI 検索・経営インパクト）で WEB 品質を客観評価する金銭非依存・評価基準全公開型の独立認定機関。<strong>Phase 0.5 静岡県 5 都市 11 業種 ${shizuokaSummary.n_total} 件</strong>（★ 獲得 ${shizuokaSummary.eligible_total}/${shizuokaSummary.n_total} = 0.0% / 業界 max ${shizuokaSummary.score_stats.max} 点 / NG ${shizuokaSummary.ng_pct.toFixed(1)}%）+ <strong>Phase 1 東京都 渋谷区 11 業種 208 件</strong>（★ 獲得 0/208 = 0.0% / 業界 max 55 点 / NG 41.3%）= 計 <strong>1,110 件</strong>機械検証実測を公開中。Phase 1 第 1 弾として渋谷区 (2026-05-07) を完了。Phase 1+ で全国順次拡大予定。</p>
     <ul class="featured-rail" role="list">
       <li class="featured-card">
         <div class="featured-card-thumb">
@@ -251,15 +251,15 @@ ${REGION_OPTIONS_HTML}
           <a href="/comparison/regions/shizuoka/" class="featured-card-link">5 都市比較を見る →</a>
         </div>
       </li>
-      <li class="featured-card featured-card-placeholder">
+      <li class="featured-card">
         <div class="featured-card-thumb">
-          <span class="featured-card-thumb-label" aria-hidden="true">展開予定</span>
+          <span class="featured-card-thumb-label" aria-hidden="true">Phase 1 開始</span>
         </div>
         <div class="featured-card-body">
-          <h3 class="featured-card-name">Phase 1 類似地方都市展開</h3>
-          <p class="featured-card-meta">〜2026-09 ／ 倉敷・四日市・松本・盛岡 等（人口 15-25 万人規模）</p>
-          <p class="featured-card-note">隣接市ではなく <strong>類似地方都市</strong>を優先展開（MASTER-PLAN §2.8.3）。沼津起点での実証を全国の地方事業者にとっての「届きうる頂点」へ拡張し、<strong>WEB 品質の民主化</strong>と<strong>地方都市から再定義</strong>を実装する。</p>
-          <a href="/methodology/" class="featured-card-link">評価方法を見る →</a>
+          <h3 class="featured-card-name">東京都 渋谷区 機械検証実測 (11 業種 / 208 サイト)</h3>
+          <p class="featured-card-meta">2026-05-07 スキャン完了 ／ ★ 認定 0 件 ／ 業界最高点 55 点 ／ NG 41.3%</p>
+          <p class="featured-card-note">Phase 1 都市展開の第 1 弾として東京都 渋谷区を ④ scanner で機械検証。Phase 0.5 静岡県 5 都市と同 11 業種一律で <strong>208 サイト</strong>を実測 (税理士・弁護士・司法書士・行政書士・不動産・飲食・美容院・美容クリニック・宿泊・クリニック・学習塾)。業界最高点 <strong>55</strong> 点 ／ ★ 認定基準 70 点まで残り 15 点。</p>
+          <a href="/regions/tokyo/shibuya/" class="featured-card-link">渋谷区 機械検証結果を見る →</a>
         </div>
       </li>
     </ul>
@@ -1022,6 +1022,7 @@ PAGES.push({
   <section aria-label="お知らせ一覧">
     <h2>2026 年</h2>
     <ul>
+      <li><time datetime="2026-05-07">2026-05-07</time>: <strong>Phase 1 都市拡張開始</strong> / 東京都 渋谷区 11 業種 208 サイト機械検証 (★ 認定 0 件 / 業界最高点 55 点 / NG 41.3%) — <a href="/regions/tokyo/shibuya/">渋谷区認定店舗ページ</a> + <a href="/datasets/shibuya-2026-q2.json">機械可読データセット (CC BY 4.0)</a> 公開 / Phase 0.5 静岡県 5 都市と同 11 業種一律 / Phase 1 第 1 弾</li>
       <li><time datetime="2026-05-01">2026-05-01</time>: <a href="/news/shizuoka-industry-report-2026-q2/">静岡県 5 都市 WEB 品質業界レポート 2026 Q2 (4-6 月号)</a> 公開（5 都市 × 11 業種 ${shizuokaSummary.n_total} 件機械検証 / ★ 認定 ${shizuokaSummary.eligible_total} 件 / 致命的 NG ${shizuokaSummary.ng_pct.toFixed(1)}%）</li>
       <li><time datetime="2026-04-27">2026-04-27</time>: MASTER-PLAN v1.1.4 改訂（SPEC v3.4 連動完了）</li>
       <li><time datetime="2026-04-26">2026-04-26</time>: HARTON Certified 創設発表 / Phase 0.5 静岡県 5 都市パイロット計画策定</li>

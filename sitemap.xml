@@ -97,6 +97,30 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://certification.tcharton.com/case-studies/</loc>
+    <lastmod>2026-05-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://certification.tcharton.com/case-studies/tcharton-com/</loc>
+    <lastmod>2026-05-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://certification.tcharton.com/datasets/shizuoka-2026-q2.json</loc>
+    <lastmod>2026-05-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://certification.tcharton.com/datasets/shibuya-2026-q2.json</loc>
+    <lastmod>2026-05-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://certification.tcharton.com/industries/</loc>
     <lastmod>2026-05-07</lastmod>
     <changefreq>weekly</changefreq>

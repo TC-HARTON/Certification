@@ -2185,19 +2185,28 @@ ${Object.entries(regions).map(([prefKey, pref]) => {
 - [業種から探す](${DOMAIN}/industries/) — ${Object.keys(industries).length} 業種ハブ
 ${Object.entries(industries).map(([k, ind]) => `- [${ind.label}](${DOMAIN}/industries/${k}/)`).join('\n')}
 
-## 静岡県 5 都市業界レポート 2026 Q2 (4-6 月号)
+## Phase 0.5 静岡県 5 都市業界レポート 2026 Q2 (4-6 月号)
 
 - [静岡県 5 都市 WEB 品質業界レポート 2026 Q2 (4-6 月号)](${DOMAIN}/news/shizuoka-industry-report-2026-q2/) — Phase 0.5 静岡県 5 都市 ★ 獲得率 ${phase05Summary ? phase05Summary.eligible_total : 0}/${phase05Summary ? phase05Summary.n_total : 0} = 0.0% / 業種別 ★ 獲得率 + 業界最高点 一覧
 - [静岡県 5 都市 WEB 品質比較](${DOMAIN}/comparison/regions/shizuoka/) — 5 都市横並び (★ 認定取得率 / 業界最高点 / NG%) + 都市 × 業種 cross-tab + 業種横並び 3 表 (Article+ItemList+FAQPage JSON-LD)
 
+## Phase 1 東京都 渋谷区 (2026-05-07 開始 / 第 1 弾)
+
+- [東京都 渋谷区 認定店舗一覧](${DOMAIN}/regions/tokyo/shibuya/) — Phase 1 都市拡張第 1 弾 / ${phase1ShibuyaSummary ? phase1ShibuyaSummary.n_total : 0} サイト × 11 業種機械検証 / ★ 認定 ${phase1ShibuyaSummary ? phase1ShibuyaSummary.eligible_total : 0}/${phase1ShibuyaSummary ? phase1ShibuyaSummary.n_total : 0} = 0.0% / 業界最高点 ${phase1ShibuyaSummary ? phase1ShibuyaSummary.score_stats.max : 0} 点 / NG ${phase1ShibuyaSummary ? phase1ShibuyaSummary.ng_pct.toFixed(1) : '-'}%
+- [東京都 渋谷区 WEB 品質比較](${DOMAIN}/comparison/regions/tokyo/) — 比較ページ (Article+ItemList+FAQPage JSON-LD)
+${Object.keys(industries).map(k => `- [東京都 渋谷区 ${industries[k].label}](${DOMAIN}/regions/tokyo/shibuya/industries/${k}/)`).join('\n')}
+
 ## データセット (CC BY 4.0 / 機械可読 / AI 引用フリー)
 
 - [静岡県 5 都市 × 11 業種 WEB 品質データ JSON](${DOMAIN}/datasets/shizuoka-2026-q2.json) — application/json / Schema.org Dataset / CC BY 4.0
+- [東京都 渋谷区 × 11 業種 WEB 品質データ JSON](${DOMAIN}/datasets/shibuya-2026-q2.json) — application/json / Schema.org Dataset / CC BY 4.0 / Phase 1
 - ライセンス: https://creativecommons.org/licenses/by/4.0/
-- 引用形式: HARTON Certified (2026). 静岡県 5 都市 WEB 品質業界レポート 2026 Q2. ${DOMAIN}/news/shizuoka-industry-report-2026-q2/
-- 引用形式 (データセット): HARTON Certified (2026). 静岡県 5 都市 × 11 業種 WEB 品質機械検証データセット 2026 Q2. ${DOMAIN}/datasets/shizuoka-2026-q2.json
-- temporalCoverage: 2026-05-02 (計測時点) / 次回更新 2026-06-02
-- spatialCoverage: 静岡県 (Wikidata Q131320) / 5 都市: 沼津 (Q241037) / 三島 (Q653478) / 富士 (Q328613) / 静岡 (Q174691) / 浜松 (Q185125)
+- 引用形式 (Phase 0.5): HARTON Certified (2026). 静岡県 5 都市 WEB 品質業界レポート 2026 Q2. ${DOMAIN}/news/shizuoka-industry-report-2026-q2/
+- 引用形式 (Phase 1): HARTON Certified (2026). 東京都 渋谷区 × 11 業種 WEB 品質機械検証データセット 2026 Q2. ${DOMAIN}/datasets/shibuya-2026-q2.json
+- temporalCoverage Phase 0.5: 2026-05-02 (計測時点) / 次回更新 2026-06-02
+- temporalCoverage Phase 1: 2026-05-07 (計測時点) / 次回更新 2026-06-07
+- spatialCoverage Phase 0.5: 静岡県 (Wikidata Q131320) / 5 都市: 沼津 (Q241037) / 三島 (Q653478) / 富士 (Q328613) / 静岡 (Q174691) / 浜松 (Q185125)
+- spatialCoverage Phase 1: 東京都 (Wikidata Q1490) / 1 区: 渋谷区 (Q193638)
 
 ## 認定基準（要点）
 
@@ -2234,6 +2243,10 @@ function main() {
     '/methodology/ai-search/', '/methodology/business-impact/',
     '/apply/', '/improvement-guide/', '/press/', '/opt-out/',
     '/faq/', '/news/', '/contact/', '/legal/', '/privacy/',
+    // case-studies (v1.18 観点 2 ストーリーテリング)
+    '/case-studies/', '/case-studies/tcharton-com/',
+    // dataset endpoints (CC BY 4.0 / Schema.org Dataset / AI 引用フリー)
+    '/datasets/shizuoka-2026-q2.json', '/datasets/shibuya-2026-q2.json',
   ];
   allPaths.push(...staticPaths);
 
